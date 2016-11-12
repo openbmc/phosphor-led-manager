@@ -6,92 +6,112 @@
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/interface.hpp>
 #include <sdbusplus/server/manager.hpp>
-
 namespace phosphor
 {
-
 namespace led
 {
 
-/** @class Manager
+/** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
  */
 
-class Manager
+class Group
 {
-private:
-
-    /** @brief Define possible actions on a given LED.
-     *  For the BLINK operation, follow 50-50 duty cycle
-     */
-    enum Action
-    {
-        OFF,
-        ON,
-        BLINK,
-    };
-
-    /** @brief Dbus constructs used by LED manager */
-    sdbusplus::bus::bus iv_bus;
-
-public:
-    Manager() = delete;
-    ~Manager() = default;
-    Manager(const Manager&) = delete;
-    Manager& operator=(const Manager&) = delete;
-    Manager(Manager&&) = default;
-    Manager& operator=(Manager&&) = default;
-
-    /** @brief Constructs LED manager
-     *
-     * @param[in] busName   - The Dbus name to own
-     * @param[in] objPath   - The Dbus path that hosts LED manager
-     * @param[in] intfName  - The Dbus interface
-     */
-    Manager(const char* busName, const char* objPath, const char* intfName);
-
-    /** @brief Name of the LED and it's proposed action.
-     *  This structure is supplied as configuration at build time
-     */
-    struct LedAction
-    {
-        std::string name;
-        Action action;
-
-        // Needed for inserting elements into sets
-        bool operator<(const LedAction& right) const
+    public:
+        /** @brief Define possible actions on a given LED.
+         *  For the BLINK operation, follow 50-50 duty cycle
+         */
+        enum Action
         {
-            if (name == right.name)
+            OFF,
+            ON,
+            BLINK,
+        };
+
+        Group() = delete;
+        ~Group() = default;
+        Group(const Group&) = delete;
+        Group& operator=(const Group&) = delete;
+        Group(Group&&) = delete;
+        Group& operator=(Group&&) = delete;
+
+        /** @brief Constructs LED manager
+         *
+         * @param[in] busName   - The Dbus name to own
+         * @param[in] objPath   - The Dbus path that hosts LED manager
+         * @param[in] intfName  - The Dbus interface
+         */
+        Group(const char* busName, const char* objPath, const char* intfName);
+
+        /** @brief Name of the LED and it's proposed action.
+         *  This structure is supplied as configuration at build time
+         */
+        struct LedAction
+        {
+            std::string name;
+            Action action;
+
+            // Needed for inserting elements into sets
+            bool operator<(const LedAction& right) const
             {
-                return action < right.action;
+                if (name == right.name)
+                {
+                    return action < right.action;
+                }
+                return name < right.name;
             }
-            return name < right.name;
+        };
+
+        /** @brief For finding intersection */
+        static bool ledComp(const LedAction& left, const LedAction& right)
+        {
+            return left.name < right.name;
         }
 
-        // Needed for set union / intersect
-        bool operator==(const LedAction& right) const
-        {
-            // Only if name and action are same, consider equal
-            if (name == right.name &&
-                    action == right.action)
-            {
-                return true;
-            }
-            return false;
-        }
-    };
+        using group = std::set<LedAction>;
 
-    /** @brief static global map constructed at compile time */
-    static const std::map<std::string,
-           std::set<LedAction>> cv_LedMap;
+        /** @brief static global map constructed at compile time */
+        static const std::map<std::string, group> ledMap;
 
-    /** @brief sd_bus object manager */
-    sdbusplus::server::manager::manager objManager;
+        /** @brief Dbus constructs used by LED manager */
+        sdbusplus::bus::bus bus;
 
-    /** @brief Individual objects */
-    std::vector<sdbusplus::server::interface::interface> intfContainer;
+        /** @brief sd_bus object manager */
+        sdbusplus::server::manager::manager objManager;
 
-    void run();
+        /** @brief Individual objects */
+        std::vector<sdbusplus::server::interface::interface> intfContainer;
+
+        /** @brief Pointers to groups that are in asserted state */
+        static std::set<const group*> assertedGroups;
+
+        /** @brief Contains the LEDs that are in asserted state */
+        static group currentState;
+
+        /** @brief Waits on the client request and processes them */
+        void run();
+
+        /** @brief Given a group name, tells if its in asserted state or not.
+         *
+         *  @param[in]  name    -  Group name
+         *  @return             -  Whether in asserted state or not
+         */
+        bool getGroupState(const std::string& name);
+
+        /** @brief Given a group name, applies the action on the group
+         *
+         *  @param[in]  name    -  Group name
+         *  @param[in]  assert  -  Could be 0 or 1
+         *  @return             -  Success or exception thrown
+         */
+        int setGroupState(const std::string& name, bool assert);
+
+    private:
+        /** @brief Finds the set of LEDs to operate on and executes action
+         *
+         *  @return: Returns '0' for now.
+         */
+        int driveLEDs();
 };
 
 } // namespace led
