@@ -3,7 +3,7 @@
 
 int main(void)
 {
-    phosphor::led::Manager ledMgr(BUSNAME, OBJPATH, INTERFACE);
+    phosphor::led::Group ledMgr(BUSNAME, OBJPATH, INTERFACE);
     ledMgr.run();
     return 0;
 }
