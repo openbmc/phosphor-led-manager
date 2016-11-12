@@ -1,119 +1,144 @@
 #include <iostream>
-#include <cstring>
-#include <sdbusplus/vtable.hpp>
+#include <string>
+#include <algorithm>
 #include <sdbusplus/message.hpp>
-#include <sdbusplus/bus.hpp>
 #include "led-manager.hpp"
 #include "led-gen.hpp"
-
 namespace phosphor
 {
-
 namespace led
 {
+// Initialize the globals
+std::set<Group::group*> Group::assertedGroups;
+Group::group Group::currentState;
 
-/** @brief Called when the group's property is read
- *         Signature as needed by sd_bus
- */
-int getGroupState(sd_bus *bus, const char *path, const char *interface,
-                  const char *property, sd_bus_message *reply,
-                  void *data, sd_bus_error* error)
+/** @brief Overloaded Property Setter function */
+bool Group::asserted(bool value)
 {
-    auto group = strrchr(path, '/');
-    if (group)
-    {
-        // Removing the starting '/' in /group
-        group++;
-    }
-
-    //TODO : Need to see how to represent group specific asserted state
-    // May be a new tuple / map ?
-    sd_bus_message_append(reply, "b", 0);
-    return 0;
+    // Set the base class's asserted to 'true' since the getter
+    // operation is handled there.
+    return sdbusplus::xyz::openbmc_project::Led::server::
+                      Group::asserted(setGroupState(value));
 }
 
 /** @brief Called when the group's asserted state is updated
  *         Signature as needed by sd_bus
  */
-int setGroupState(sd_bus *bus, const char *path, const char *interface,
+bool setGroupState(sd_bus *bus, const char *path, const char *interface,
                   const char *property, sd_bus_message *value,
-                  void *data, sd_bus_error* error)
+                  void *userdata, sd_bus_error* error)
 {
     bool state {};
-    auto group = strrchr(path, '/');
-    if (group)
-    {
-        // Removing the starting '/' in /group
-        group++;
-    }
-
     auto msg = sdbusplus::message::message(value);
     sd_bus_message_ref(value);
     msg.read(state);
 
-    //TODO : Need to see how to represent group specific asserted state
-    // May be a new tuple / map ?
-    return 1;
+    auto ledMgr = static_cast<Group*>(userdata);
+    return ledMgr->setGroupState(state);
 }
 
-/** @brief Users having to assert a group will just turn this property to 1
- *  similarly, setting this property to 0 will deassert the group
- */
-constexpr sdbusplus::vtable::vtable_t led_vtable[] =
+
+// Assert -or- De-assert
+bool Group::setGroupState(bool assert)
 {
-    sdbusplus::vtable::start(),
-    sdbusplus::vtable::property("Assert", "b",
-    getGroupState, setGroupState, sdbusplus::vtable::property_::emits_change),
-    sdbusplus::vtable::end()
-};
+    if (assert)
+    {
+        assertedGroups.insert(&ledMap[path]);
+    }
+    else
+    {
+        auto search = assertedGroups.find(&ledMap[path]);
+        if (search != assertedGroups.end())
+        {
+            assertedGroups.erase(&ledMap[path]);
+        }
+        else
+        {
+            std::cout <<"Object [ " << path << " ] Not present\n";
+        }
+    }
+    return driveLEDs();
+}
+
+/** @brief Run through the map and apply action on the LEDs */
+bool Group::driveLEDs()
+{
+    // This will contain the union of what's already in the asserted group
+    group desiredState {};
+    for(auto& grp : assertedGroups)
+    {
+        desiredState.insert(grp->cbegin(), grp->cend());
+    }
+
+    // Always Do execute Turn Off and then Turn on since we have the Blink
+    // taking priority over -on-
+    group ledsToDeAssert {};
+
+    std::set_difference(currentState.begin(), currentState.end(),
+                        desiredState.begin(), desiredState.end(),
+                        std::inserter(ledsToDeAssert, ledsToDeAssert.begin()));
+    if(ledsToDeAssert.size())
+    {
+        std::cout << "Turning off LEDs" << std::endl;
+        for (auto& it: ledsToDeAssert)
+        {
+            std::cout << "\t{" << it.name << "::" << it.action << "}"
+                      << std::endl;
+        }
+
+        // If we previously had a FRU in ON state , and then if there was a
+        // request to make it blink, the end state would now be blink.
+        // If we either turn off blink / fault, then we need to go back to its
+        // previous state.
+        group ledsToReAssert {};
+        std::set_intersection(desiredState.begin(), desiredState.end(),
+                              ledsToDeAssert.begin(), ledsToDeAssert.end(),
+                              std::inserter(ledsToReAssert, ledsToReAssert.begin()),
+                              ledComp);
+
+        if (ledsToReAssert.size())
+        {
+            std::cout << "Asserting LEDs again" << std::endl;
+            for (auto& it: ledsToReAssert)
+            {
+                std::cout << "\t{" << it.name << "::" << it.action << "}"
+                          << std::endl;
+            }
+        }
+    }
+
+    // Turn on these
+    group ledsToAssert {};
+    std::set_difference(desiredState.begin(), desiredState.end(),
+                        currentState.begin(), currentState.end(),
+                        std::inserter(ledsToAssert, ledsToAssert.begin()));
+
+    if(ledsToAssert.size())
+    {
+        std::cout << "Asserting LEDs" << std::endl;
+        for (auto& it: ledsToAssert)
+        {
+            std::cout << "\t{" << it.name << "::" << it.action << "}"
+                      << std::endl;
+        }
+    }
+
+    // Done.. Save the latest and greatest.
+    currentState = std::move(desiredState);
+
+    return true;
+}
 
 /** @brief Initialize the bus and announce services */
-Manager::Manager(const char* busName,
-                 const char* objPath,
-                 const char* intfName) :
-    iv_bus(sdbusplus::bus::new_system()),
-    objManager(iv_bus, objPath)
+Group::Group(sdbusplus::bus::bus& bus,
+             const std::string& objPath) :
+    sdbusplus::server::object::object<
+    sdbusplus::xyz::openbmc_project::Led::server::Group>(
+                            bus, objPath.c_str()),
+    path(objPath)
 {
-    // Like /org/openbmc/ledmanager/groups/
-    auto path = std::string(objPath) + "/";
-
-    /** Now create so many dbus objects as there are groups */
-    for (auto &grp: Manager::cv_LedMap)
-    {
-        auto grpPath = path + grp.first;
-        intfContainer.emplace_back(sdbusplus::server::interface::interface(
-                      iv_bus, grpPath.c_str(), intfName, led_vtable, this));
-
-        // These are now set of structs having LED name and the action. Do not
-        // have anything to be done here at the moment but need to create a
-        // mapping between led names to device strigs eventually
-        //for (auto &set: grp.second)
-        //{
-
-        //}
-    }
-    // Once done, claim the bus and systemd will
-    // consider this service started
-    iv_bus.request_name(busName);
-}
-
-/** @brief Wait for client requests */
-void Manager::run()
-{
-    while(true)
-    {
-        try
-        {
-            iv_bus.process_discard();
-            iv_bus.wait();
-        }
-        catch (std::exception &e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-    }
+    // Nothing to do here
 }
 
 } // namespace led
-
 } // namespace phosphor
