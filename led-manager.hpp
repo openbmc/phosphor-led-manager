@@ -20,7 +20,13 @@ namespace led
 class Manager
 {
 private:
+    /** @brief Dbus constructs used by LED manager */
+    sdbusplus::bus::bus iv_bus;
 
+    /** @brief Finds the set of LEDs to operate on and executes action */
+    int driveLEDs();
+
+public:
     /** @brief Define possible actions on a given LED.
      *  For the BLINK operation, follow 50-50 duty cycle
      */
@@ -31,10 +37,6 @@ private:
         BLINK,
     };
 
-    /** @brief Dbus constructs used by LED manager */
-    sdbusplus::bus::bus iv_bus;
-
-public:
     Manager() = delete;
     ~Manager() = default;
     Manager(const Manager&) = delete;
@@ -67,31 +69,49 @@ public:
             }
             return name < right.name;
         }
-
-        // Needed for set union / intersect
-        bool operator==(const LedAction& right) const
-        {
-            // Only if name and action are same, consider equal
-            if (name == right.name &&
-                    action == right.action)
-            {
-                return true;
-            }
-            return false;
-        }
     };
 
+    /** @brief For finding intersection */
+    static bool ledComp(const LedAction& left, const LedAction& right)
+    {
+        return left.name < right.name;
+    }
+
     /** @brief static global map constructed at compile time */
-    static const std::map<std::string,
+    static std::map<std::string,
            std::set<LedAction>> cv_LedMap;
 
     /** @brief sd_bus object manager */
-    sdbusplus::server::manager::manager objManager;
+    sdbusplus::server::manager::manager iv_ObjManager;
 
     /** @brief Individual objects */
-    std::vector<sdbusplus::server::interface::interface> intfContainer;
+    std::vector<sdbusplus::server::interface::interface> iv_IntfContainer;
 
+    using group = std::set<LedAction>;
+
+    /** @brief Pointers to groups that are in asserted state */
+    static std::set<group*> cv_AssertedGroups;
+
+    /** @brief Contains the LEDs that are in asserted state */
+    static group cv_CurrentState;
+
+    /** @brief Waits on the client request and processes them */
     void run();
+
+    /** @brief Given a group name, tells if its in asserted state or not.
+     *
+     *  @param[in]  name    -  Group name
+     *  @return             -  Whether in asserted state or not
+     */
+    bool getGroupState(const std::string& name);
+
+    /** @brief Given a group name, applies the action on the group
+     *
+     *  @param[in]  name    -  Group name
+     *  @param[in]  assert  -  Could be 0 or 1
+     *  @return             -  Success or exception thrown
+     */
+    int setGroupState(const std::string& name, const bool& assert);
 };
 
 } // namespace led

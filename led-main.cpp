@@ -3,7 +3,8 @@
 
 int main(void)
 {
-    phosphor::led::Manager ledMgr(BUSNAME, OBJPATH, INTERFACE);
-    ledMgr.run();
+    auto ledMgr = std::make_unique<phosphor::led::Manager>
+                  (BUSNAME, OBJPATH, INTERFACE);
+    ledMgr->run();
     return 0;
 }
