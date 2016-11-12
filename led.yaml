@@ -1,0 +1,119 @@
+EnclosureIdentify:
+    EnclosureIdentifyFront:
+        action: blink
+    EnclosureIdentifyBack:
+        action: blink
+
+EnclosureFault:
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+PowerSupply1Identify:
+    PowerSupply_1:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+PowerSupply1Fault:
+    PowerSupply_1:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+PowerSupply2Identify:
+    PowerSupply_2:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+PowerSupply2Fault:
+    PowerSupply_2:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+FanA1Identify:
+    Fan_A1:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+FanA1Fault:
+    Fan_A1:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+FanA2Identify:
+    Fan_A2:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+FanA2Fault:
+    Fan_A2:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+FanA3Identify:
+    Fan_A3:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+FanA3Fault:
+    Fan_A3:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+FanA4Identify:
+    Fan_A4:
+        action: blink
+    EnclosureIdentifyFront:
+        action: 'on'
+    EnclosureIdentifyBack:
+        action: 'on'
+
+FanA4Fault:
+    Fan_A4:
+        action: 'on'
+    EnclosureFaultFront:
+        action: 'on'
+    EnclosureFaultBack:
+        action: 'on'
+
+PowerOn:
+    OpPanelFront:
+        action: 'on'
+    PanelPowerButtonNote1:
+        action: 'on'
+
+PowerOff:
+    OpPanelFront:
+        action: blink
+    PanelPowerButtonNote1:
+        action: blink
