@@ -9,7 +9,7 @@ if __name__ == '__main__':
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
 
-        ofile.write('const std::map<std::string,')
+        ofile.write('std::map<std::string,')
         ofile.write(' std::set<phosphor::led::Manager::LedAction>>')
         ofile.write(' phosphor::led::Manager::cv_LedMap = {\n\n')
         for group in ifile.iterkeys():
