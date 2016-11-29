@@ -10,8 +10,8 @@ if __name__ == '__main__':
         ofile.write('Please do NOT Edit !!! */\n\n')
 
         ofile.write('std::map<std::string,')
-        ofile.write(' std::set<phosphor::led::Manager::LedAction>>')
-        ofile.write(' phosphor::led::Manager::cv_LedMap = {\n\n')
+        ofile.write(' std::set<phosphor::led::Group::LedAction>>')
+        ofile.write(' phosphor::led::Group::gLedMap = {\n\n')
         for group in ifile.iterkeys():
             # Value of this group is a std::set<string, led structure>
             ledset = ifile[group]
@@ -21,7 +21,7 @@ if __name__ == '__main__':
                 for name, value in list_dict.iteritems():
                     if group and led_dict and name and value:
                         ofile.write('        {\"' + led_dict + '\",')
-                        ofile.write(value.upper() + '},\n')
+                        ofile.write(value + '},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
 
