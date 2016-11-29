@@ -3,7 +3,8 @@ sbin_PROGRAMS = phosphor-ledmanager
 
 phosphor_ledmanager_SOURCES = \
                 led-main.cpp  \
-                led-manager.cpp
+                led-manager.cpp \
+                xyz.openbmc_project.Led.Group.cpp
 
 BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp

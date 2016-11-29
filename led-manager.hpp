@@ -2,10 +2,9 @@
 
 #include <map>
 #include <set>
-#include <vector>
 #include <sdbusplus/bus.hpp>
-#include <sdbusplus/server/interface.hpp>
-#include <sdbusplus/server/manager.hpp>
+#include <sdbusplus/server/object.hpp>
+#include "xyz/openbmc_project/Led/Group/server.hpp"
 namespace phosphor
 {
 namespace led
@@ -14,8 +13,8 @@ namespace led
 /** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
  */
-
-class Group
+class Group : sdbusplus::server::object::object<
+              sdbusplus::xyz::openbmc_project::Led::server::Group>
 {
     public:
         /** @brief Define possible actions on a given LED.
@@ -23,25 +22,33 @@ class Group
          */
         enum Action
         {
-            OFF,
-            ON,
-            BLINK,
+            Off,
+            On,
+            Blink,
         };
 
         Group() = delete;
         ~Group() = default;
         Group(const Group&) = delete;
         Group& operator=(const Group&) = delete;
-        Group(Group&&) = delete;
-        Group& operator=(Group&&) = delete;
+        Group(Group&&) = default;
+        Group& operator=(Group&&) = default;
 
-        /** @brief Constructs LED manager
+        /** @brief Constructs LED Group
          *
-         * @param[in] busName   - The Dbus name to own
-         * @param[in] objPath   - The Dbus path that hosts LED manager
-         * @param[in] intfName  - The Dbus interface
+         * @param[in] bus     - Handle to system dbus
+         * @param[in] objPath - The Dbus path that hosts LED group
          */
-        Group(const char* busName, const char* objPath, const char* intfName);
+        Group(sdbusplus::bus::bus& bus,
+              const std::string& objPath) :
+
+            sdbusplus::server::object::object<
+            sdbusplus::xyz::openbmc_project::Led::server::Group>(
+                    bus, objPath.c_str()),
+            path(objPath)
+        {
+            // Nothing to do here
+        }
 
         /** @brief Name of the LED and it's proposed action.
          *  This structure is supplied as configuration at build time
@@ -68,19 +75,13 @@ class Group
             return left.name < right.name;
         }
 
+        /** @brief Path of the group instance */
+        std::string path;
+
         using group = std::set<LedAction>;
 
         /** @brief static global map constructed at compile time */
         static const std::map<std::string, group> ledMap;
-
-        /** @brief Dbus constructs used by LED manager */
-        sdbusplus::bus::bus bus;
-
-        /** @brief sd_bus object manager */
-        sdbusplus::server::manager::manager objManager;
-
-        /** @brief Individual objects */
-        std::vector<sdbusplus::server::interface::interface> intfContainer;
 
         /** @brief Pointers to groups that are in asserted state */
         static std::set<const group*> assertedGroups;
@@ -88,32 +89,27 @@ class Group
         /** @brief Contains the LEDs that are in asserted state */
         static group currentState;
 
-        /** @brief Waits on the client request and processes them */
-        void run();
-
-        /** @brief Given a group name, tells if its in asserted state or not.
-         *
-         *  @param[in]  name    -  Group name
-         *  @return             -  Whether in asserted state or not
-         */
-        bool getGroupState(const std::string& name);
-
         /** @brief Given a group name, applies the action on the group
          *
-         *  @param[in]  name    -  Group name
          *  @param[in]  assert  -  Could be 0 or 1
          *  @return             -  Success or exception thrown
          */
-        int setGroupState(const std::string& name, bool assert);
+        bool setGroupState(bool assert);
+
+        /** @brief Property SET Override function
+         *
+         *  @param[in]  value   -  True or False
+         *  @return             -  Success or exception thrown
+         */
+        bool asserted(bool value) override;
 
     private:
         /** @brief Finds the set of LEDs to operate on and executes action
          *
-         *  @return: Returns '0' for now.
+         *  @return: None
          */
-        int driveLEDs();
+        void driveLEDs();
 };
 
 } // namespace led
-
 } // namespace phosphor
