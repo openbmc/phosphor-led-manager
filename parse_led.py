@@ -21,7 +21,7 @@ if __name__ == '__main__':
                 for name, value in list_dict.iteritems():
                     if group and led_dict and name and value:
                         ofile.write('        {\"' + led_dict + '\",')
-                        ofile.write(value.upper() + '},\n')
+                        ofile.write(value + '},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
 
