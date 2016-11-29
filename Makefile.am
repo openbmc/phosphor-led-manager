@@ -2,7 +2,8 @@ sbin_PROGRAMS = phosphor-ledmanager
 
 phosphor_ledmanager_SOURCES = \
 				led-main.cpp  \
-				led-manager.cpp
+				led-manager.cpp \
+				xyz.openbmc_project.Led.Group.cpp
 
 PYTHON="/usr/bin/python"
 led-gen.hpp: ${srcdir}/parse_led.py

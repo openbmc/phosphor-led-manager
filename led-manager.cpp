@@ -1,9 +1,7 @@
 #include <iostream>
-#include <cstring>
+#include <string>
 #include <algorithm>
-#include <sdbusplus/vtable.hpp>
 #include <sdbusplus/message.hpp>
-#include <sdbusplus/bus.hpp>
 #include "led-manager.hpp"
 #include "led-gen.hpp"
 namespace phosphor
@@ -11,27 +9,23 @@ namespace phosphor
 namespace led
 {
 
+// Initialize the globals
 std::set<const Group::group*> Group::assertedGroups;
 Group::group Group::currentState;
 
-/** @brief Called when the group's property is read
- *         Signature as needed by sd_bus
- */
-int getGroupState(sd_bus *bus, const char *path, const char *interface,
-                  const char *property, sd_bus_message *reply,
-                  void *data, sd_bus_error* error)
+/** @brief Overloaded Property Setter function */
+bool Group::asserted(bool value)
 {
-    auto ledMgr = static_cast<Group*>(data);
-    auto state = ledMgr->getGroupState(path);
-
-    sd_bus_message_append(reply, "b", state);
-    return 0;
+    // Set the base class's asserted to 'true' since the getter
+    // operation is handled there.
+    return sdbusplus::xyz::openbmc_project::Led::server::
+                      Group::asserted(setGroupState(value));
 }
 
 /** @brief Called when the group's asserted state is updated
  *         Signature as needed by sd_bus
  */
-int setGroupState(sd_bus *bus, const char *path, const char *interface,
+bool setGroupState(sd_bus *bus, const char *path, const char *interface,
                   const char *property, sd_bus_message *value,
                   void *data, sd_bus_error* error)
 {
@@ -41,17 +35,11 @@ int setGroupState(sd_bus *bus, const char *path, const char *interface,
     msg.read(state);
 
     auto ledMgr = static_cast<Group*>(data);
-    return ledMgr->setGroupState(path, state);
-}
-
-// Get the asserted state
-bool Group::getGroupState(const std::string& path)
-{
-    return assertedGroups.find(&ledMap.at(path)) != assertedGroups.end();
+    return ledMgr->setGroupState(state);
 }
 
 // Assert -or- De-assert
-int Group::setGroupState(const std::string& path, bool assert)
+bool Group::setGroupState(bool assert)
 {
     if (assert)
     {
@@ -66,14 +54,14 @@ int Group::setGroupState(const std::string& path, bool assert)
         }
         else
         {
-            std::cout << "Group [ " << path << " ] Not present\n";
+            std::cout <<"Object [ " << path << " ] Not present\n";
         }
     }
     return driveLEDs();
 }
 
-// Run through the map and apply action
-int Group::driveLEDs()
+/** @brief Run through the map and apply action on the LEDs */
+bool Group::driveLEDs()
 {
     // This will contain the union of what's already in the asserted group
     group desiredState {};
@@ -138,64 +126,19 @@ int Group::driveLEDs()
     // Done.. Save the latest and greatest.
     currentState = std::move(desiredState);
 
-    return 0;
+    return true;
 }
-
-/** @brief Users having to assert a group will just turn this property to TRUE
- *  similarly, setting this property to FALSE will deassert the group
- */
-constexpr sdbusplus::vtable::vtable_t led_vtable[] =
-{
-    sdbusplus::vtable::start(),
-    sdbusplus::vtable::property("Asserted", "b",
-                                getGroupState, setGroupState,
-                                sdbusplus::vtable::property_::emits_change),
-                                sdbusplus::vtable::end()
-};
 
 /** @brief Initialize the bus and announce services */
-Group::Group(const char* busName,
-             const char* objPath,
-             const char* intfName) :
-    bus(sdbusplus::bus::new_system()),
-    objManager(bus, objPath)
+Group::Group(sdbusplus::bus::bus& bus,
+             const std::string& objPath) :
+    sdbusplus::server::object::object<
+    sdbusplus::xyz::openbmc_project::Led::server::Group>(
+                            bus, objPath.c_str()),
+    path(objPath)
 {
-    /** Now create so many dbus objects as there are groups */
-    for (auto &grp: Group::ledMap)
-    {
-        intfContainer.emplace_back(bus, grp.first.c_str(),
-                                   intfName, led_vtable, this);
-
-        // These are now set of structs having LED name and the action. Do not
-        // have anything to be done here at the moment but need to create a
-        // mapping between led names to device strigs eventually
-        //for (auto &set: grp.second)
-        //{
-
-        //}
-    }
-    // Once done, claim the bus and systemd will
-    // consider this service started
-    bus.request_name(busName);
-}
-
-/** @brief Wait for client requests */
-void Group::run()
-{
-    while(true)
-    {
-        try
-        {
-            bus.process_discard();
-            bus.wait();
-        }
-        catch (std::exception &e)
-        {
-            std::cerr << e.what() << std::endl;
-        }
-    }
+    // Nothing to do here
 }
 
 } // namespace led
-
 } // namespace phosphor
