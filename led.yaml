@@ -1,119 +1,119 @@
 EnclosureIdentify:
     EnclosureIdentifyFront:
-        action: blink
+        action: Blink
     EnclosureIdentifyBack:
-        action: blink
+        action: Blink
 
 EnclosureFault:
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 PowerSupply1Identify:
     PowerSupply_1:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 PowerSupply1Fault:
     PowerSupply_1:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 PowerSupply2Identify:
     PowerSupply_2:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 PowerSupply2Fault:
     PowerSupply_2:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 FanA1Identify:
     Fan_A1:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 FanA1Fault:
     Fan_A1:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 FanA2Identify:
     Fan_A2:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 FanA2Fault:
     Fan_A2:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 FanA3Identify:
     Fan_A3:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 FanA3Fault:
     Fan_A3:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 FanA4Identify:
     Fan_A4:
-        action: blink
+        action: Blink
     EnclosureIdentifyFront:
-        action: 'on'
+        action: 'On'
     EnclosureIdentifyBack:
-        action: 'on'
+        action: 'On'
 
 FanA4Fault:
     Fan_A4:
-        action: 'on'
+        action: 'On'
     EnclosureFaultFront:
-        action: 'on'
+        action: 'On'
     EnclosureFaultBack:
-        action: 'on'
+        action: 'On'
 
 PowerOn:
     OpPanelFront:
-        action: 'on'
-    PanelPowerButtonNote1:
-        action: 'on'
+        action: 'On'
+    PanelPowerButtOnNote1:
+        action: 'On'
 
 PowerOff:
     OpPanelFront:
-        action: blink
-    PanelPowerButtonNote1:
-        action: blink
+        action: Blink
+    PanelPowerButtOnNote1:
+        action: Blink
