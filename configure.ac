@@ -39,10 +39,6 @@ AC_ARG_VAR(OBJPATH, [The Ledmanager Dbus root])
 AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/ledmanager/groups"])
 AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The Ledmanager Dbus root])
 
-AC_ARG_VAR(INTERFACE, [The Ledmanager Dbus interface])
-AS_IF([test "x$INTERFACE" == "x"], [INTERFACE="xyz.openbmc_project.ledmanager"])
-AC_DEFINE_UNQUOTED([INTERFACE], ["$INTERFACE"], [The Ledmanager Dbus interface])
-
 # Create configured output
 AC_CONFIG_FILES([Makefile])
 AC_OUTPUT
