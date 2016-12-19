@@ -41,15 +41,13 @@ void Manager::driveLEDs()
         desiredState.insert(grp->cbegin(), grp->cend());
     }
 
-    // Always Do execute Turn Off and then Turn on since we have the Blink
-    // taking priority over -on-
-    group ledsToDeAssert {};
-
+    // Has the LEDs that are either to be turned off -or- want a new assertion
+    group transient {};
     std::set_difference(currentState.begin(), currentState.end(),
                         desiredState.begin(), desiredState.end(),
-                        std::inserter(ledsToDeAssert, ledsToDeAssert.begin()));
+                        std::inserter(transient, transient.begin()));
 
-    if(ledsToDeAssert.size())
+    if(transient.size())
     {
         // We really do not want the Manager to know how a particular LED
         // transitions from State-A --> State-B and all this must be handled by
@@ -58,28 +56,37 @@ void Manager::driveLEDs()
         // LEDs and then turning it back on and let the physical LED controller
         // handle that.
 
-        // I am still experimenting on the algo..
-        std::cout << "De asserting the LEDs" << std::endl;
-        for (const auto& it: ledsToDeAssert)
-        {
-            std::cout << "\t{" << it.name << "::" << it.action << "}"
-                               << std::endl;
-        }
-
         // If we previously had a FRU in ON state , and then if there was a
         // request to make it blink, the end state would now be blink.
         // If we either turn off blink / fault, then we need to go back to its
         // previous state.
-        group ledsToReAssert {};
+        group ledsUpdate {};
         std::set_intersection(desiredState.begin(), desiredState.end(),
-                              ledsToDeAssert.begin(), ledsToDeAssert.end(),
-                              std::inserter(ledsToReAssert, ledsToReAssert.begin()),
+                              transient.begin(), transient.end(),
+                              std::inserter(ledsUpdate, ledsUpdate.begin()),
                               ledComp);
 
-        if (ledsToReAssert.size())
+        if (ledsUpdate.size())
         {
             std::cout << "Asserting LEDs again" << std::endl;
-            for (const auto& it: ledsToReAssert)
+            for (const auto& it: ledsUpdate)
+            {
+                std::cout << "\t{" << it.name << "::" << it.action << "}"
+                          << std::endl;
+            }
+        }
+
+        // These LEDs are only to be De-Asserted.
+        group ledsDeAssert {};
+        std::set_difference(transient.begin(), transient.end(),
+                            ledsUpdate.begin(), ledsUpdate.end(),
+                            std::inserter(ledsDeAssert, ledsDeAssert.begin()),
+                            ledComp);
+
+        if (ledsDeAssert.size())
+        {
+            std::cout << "De-Asserting LEDs" << std::endl;
+            for (const auto& it: ledsDeAssert)
             {
                 std::cout << "\t{" << it.name << "::" << it.action << "}"
                           << std::endl;
@@ -88,15 +95,15 @@ void Manager::driveLEDs()
     }
 
     // Turn on these
-    group ledsToAssert {};
+    group ledsAssert {};
     std::set_difference(desiredState.begin(), desiredState.end(),
                         currentState.begin(), currentState.end(),
-                        std::inserter(ledsToAssert, ledsToAssert.begin()));
+                        std::inserter(ledsAssert, ledsAssert.begin()));
 
-    if(ledsToAssert.size())
+    if(ledsAssert.size())
     {
         std::cout << "Asserting LEDs" << std::endl;
-        for (const auto& it: ledsToAssert)
+        for (const auto& it: ledsAssert)
         {
             std::cout << "\t{" << it.name << "::" << it.action << "}"
                       << std::endl;
