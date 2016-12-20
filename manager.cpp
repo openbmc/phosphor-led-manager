@@ -9,7 +9,9 @@ namespace led
 {
 
 // Assert -or- De-assert
-bool Manager::setGroupState(const std::string& path, bool assert)
+bool Manager::setGroupState(const std::string& path, bool assert,
+                            group& ledsAssert, group& ledsDeAssert,
+                            group& ledsUpdate)
 {
     if (assert)
     {
@@ -23,17 +25,7 @@ bool Manager::setGroupState(const std::string& path, bool assert)
             assertedGroups.erase(&ledMap.at(path));
         }
     }
-    // If something does not go right here, then there should be an sdbusplus
-    // exception thrown.
-    driveLEDs();
 
-    // If we survive, then set the state accordingly.
-    return assert;
-}
-
-/** @brief Run through the map and apply action on the LEDs */
-void Manager::driveLEDs()
-{
     // This will contain the union of what's already in the asserted group
     group desiredState {};
     for(const auto& grp : assertedGroups)
@@ -46,7 +38,6 @@ void Manager::driveLEDs()
     std::set_difference(currentState.begin(), currentState.end(),
                         desiredState.begin(), desiredState.end(),
                         std::inserter(transient, transient.begin()));
-
     if(transient.size())
     {
         // We really do not want the Manager to know how a particular LED
@@ -60,45 +51,57 @@ void Manager::driveLEDs()
         // request to make it blink, the end state would now be blink.
         // If we either turn off blink / fault, then we need to go back to its
         // previous state.
-        group ledsUpdate {};
         std::set_intersection(desiredState.begin(), desiredState.end(),
                               transient.begin(), transient.end(),
                               std::inserter(ledsUpdate, ledsUpdate.begin()),
                               ledComp);
 
-        if (ledsUpdate.size())
-        {
-            std::cout << "Asserting LEDs again" << std::endl;
-            for (const auto& it: ledsUpdate)
-            {
-                std::cout << "\t{" << it.name << "::" << it.action << "}"
-                          << std::endl;
-            }
-        }
-
         // These LEDs are only to be De-Asserted.
-        group ledsDeAssert {};
         std::set_difference(transient.begin(), transient.end(),
                             ledsUpdate.begin(), ledsUpdate.end(),
                             std::inserter(ledsDeAssert, ledsDeAssert.begin()),
                             ledComp);
 
-        if (ledsDeAssert.size())
-        {
-            std::cout << "De-Asserting LEDs" << std::endl;
-            for (const auto& it: ledsDeAssert)
-            {
-                std::cout << "\t{" << it.name << "::" << it.action << "}"
-                          << std::endl;
-            }
-        }
     }
 
     // Turn on these
-    group ledsAssert {};
     std::set_difference(desiredState.begin(), desiredState.end(),
                         currentState.begin(), currentState.end(),
                         std::inserter(ledsAssert, ledsAssert.begin()));
+
+
+    // Done.. Save the latest and greatest.
+    currentState = std::move(desiredState);
+
+    // If we survive, then set the state accordingly.
+    return assert;
+}
+
+/** @brief Run through the map and apply action on the LEDs */
+void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
+                        group& ledsUpdate)
+{
+    // This order of LED operation is important.
+    if (ledsUpdate.size())
+    {
+        std::cout << "Updating LED states between (On <--> Blink)"
+                  << std::endl;
+        for (const auto& it: ledsUpdate)
+        {
+            std::cout << "\t{" << it.name << "::" << it.action << "}"
+                << std::endl;
+        }
+    }
+
+    if (ledsDeAssert.size())
+    {
+        std::cout << "De-Asserting LEDs" << std::endl;
+        for (const auto& it: ledsDeAssert)
+        {
+            std::cout << "\t{" << it.name << "::" << it.action << "}"
+                << std::endl;
+        }
+    }
 
     if(ledsAssert.size())
     {
@@ -106,12 +109,9 @@ void Manager::driveLEDs()
         for (const auto& it: ledsAssert)
         {
             std::cout << "\t{" << it.name << "::" << it.action << "}"
-                      << std::endl;
+                << std::endl;
         }
     }
-
-    // Done.. Save the latest and greatest.
-    currentState = std::move(desiredState);
     return;
 }
 
