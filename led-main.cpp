@@ -1,12 +1,14 @@
 #include <iostream>
+#include "ledlayout.hpp"
 #include "manager.hpp"
 #include "group.hpp"
 #include "config.h"
+#include "led-gen.hpp"
 
 int main(void)
 {
     /** @brief Group manager object */
-    phosphor::led::Manager manager;
+    phosphor::led::Manager manager(systemLedMap);
 
     /** @brief Dbus constructs used by LED Group manager */
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
@@ -18,7 +20,7 @@ int main(void)
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
     /** Now create so many dbus objects as there are groups */
-    for (auto &grp: phosphor::led::Manager::ledMap)
+    for (auto &grp: systemLedMap)
     {
         groups.emplace_back(std::make_unique<phosphor::led::Group>(
                     bus, grp.first, manager));
