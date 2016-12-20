@@ -63,11 +63,18 @@ class Manager
 
         /** @brief Given a group name, applies the action on the group
          *
-         *  @param[in]  path    -  dbus path of group
-         *  @param[in]  assert  -  Could be true or false
-         *  @return             -  Success or exception thrown
+         *  @param[in]  path          -  dbus path of group
+         *  @param[in]  assert        -  Could be true or false
+         *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+         *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
+         *  @param[in]  ledsUpdate    -  LEDs that need a transition between
+         *                               different types of asserted states.
+         *
+         *  @return                   -  Success or exception thrown
          */
-        bool setGroupState(const std::string& path, bool assert);
+        bool setGroupState(const std::string& path, bool assert,
+                           group& ledsAssert, group& ledsDeAssert,
+                           group& ledsUpdate);
 
     private:
         /** @brief Pointers to groups that are in asserted state */
@@ -78,9 +85,15 @@ class Manager
 
         /** @brief Finds the set of LEDs to operate on and executes action
          *
+         *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+         *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
+         *  @param[in]  ledsUpdate    -  LEDs that need a transition between
+         *                               different types of asserted states.
+         *
          *  @return: None
          */
-        void driveLEDs();
+        void driveLEDs(group& ledsAssert, group& ledsDeAssert,
+                       group& ledsUpdate);
 };
 
 } // namespace led

@@ -9,7 +9,9 @@ namespace led
 {
 
 // Assert -or- De-assert
-bool Manager::setGroupState(const std::string& path, bool assert)
+bool Manager::setGroupState(const std::string& path, bool assert,
+                            group& ledsAssert, group& ledsDeAssert,
+                            group& ledsUpdate)
 {
     if (assert)
     {
@@ -25,14 +27,15 @@ bool Manager::setGroupState(const std::string& path, bool assert)
     }
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
-    driveLEDs();
+    driveLEDs(ledsAssert, ledsDeAssert, ledsUpdate);
 
     // If we survive, then set the state accordingly.
     return assert;
 }
 
 /** @brief Run through the map and apply action on the LEDs */
-void Manager::driveLEDs()
+void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
+                        group& ledsUpdate)
 {
     // This will contain the union of what's already in the asserted group
     group desiredState {};
@@ -46,7 +49,6 @@ void Manager::driveLEDs()
     std::set_difference(currentState.begin(), currentState.end(),
                         desiredState.begin(), desiredState.end(),
                         std::inserter(transient, transient.begin()));
-
     if(transient.size())
     {
         // We really do not want the Manager to know how a particular LED
@@ -60,7 +62,6 @@ void Manager::driveLEDs()
         // request to make it blink, the end state would now be blink.
         // If we either turn off blink / fault, then we need to go back to its
         // previous state.
-        group ledsUpdate {};
         std::set_intersection(desiredState.begin(), desiredState.end(),
                               transient.begin(), transient.end(),
                               std::inserter(ledsUpdate, ledsUpdate.begin()),
@@ -77,7 +78,6 @@ void Manager::driveLEDs()
         }
 
         // These LEDs are only to be De-Asserted.
-        group ledsDeAssert {};
         std::set_difference(transient.begin(), transient.end(),
                             ledsUpdate.begin(), ledsUpdate.end(),
                             std::inserter(ledsDeAssert, ledsDeAssert.begin()),
@@ -95,7 +95,6 @@ void Manager::driveLEDs()
     }
 
     // Turn on these
-    group ledsAssert {};
     std::set_difference(desiredState.begin(), desiredState.end(),
                         currentState.begin(), currentState.end(),
                         std::inserter(ledsAssert, ledsAssert.begin()));
