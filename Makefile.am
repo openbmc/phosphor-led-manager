@@ -15,3 +15,5 @@ led-gen.hpp: ${srcdir}/parse_led.py
 
 phosphor_ledmanager_LDFLAGS = $(SYSTEMD_LIBS)
 phosphor_ledmanager_CFLAGS = $(SYSTEMD_CFLAGS)
+
+SUBDIRS = test
