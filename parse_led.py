@@ -11,9 +11,9 @@ if __name__ == '__main__':
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
 
-        ofile.write('const std::map<std::string,')
-        ofile.write(' std::set<phosphor::led::Manager::LedAction>>')
-        ofile.write(' phosphor::led::Manager::ledMap = {\n\n')
+        ofile.write('static const std::map<std::string,')
+        ofile.write(' std::set<phosphor::led::Layout::LedAction>>')
+        ofile.write(' systemLedMap = {\n\n')
         for group in ifile.iterkeys():
             # Value of this group is a std::set<string, led structure>
             ledset = ifile[group]
@@ -23,7 +23,7 @@ if __name__ == '__main__':
                 for name, value in list_dict.iteritems():
                     if group and led_dict and name and value:
                         ofile.write('        {\"' + led_dict + '\",')
-                        ofile.write(value + '},\n')
+                        ofile.write('phosphor::led::Layout::' + value + '},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
 
