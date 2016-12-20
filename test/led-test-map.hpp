@@ -1,0 +1,39 @@
+static const std::map<std::string, std::set<phosphor::led::Layout::LedAction>> testLedMap = {
+
+   {"/xyz/openbmc_project/ledmanager/groups/Office",{
+        {"Desk",phosphor::led::Layout::Blink},
+        {"Room",phosphor::led::Layout::On},
+        {"Chairs",phosphor::led::Layout::On},
+        {"MeetingRoom",phosphor::led::Layout::On},
+        {"Floor",phosphor::led::Layout::Blink},
+        {"Phone",phosphor::led::Layout::On},
+        {"Computer",phosphor::led::Layout::On},
+   }},
+   {"/xyz/openbmc_project/ledmanager/groups/School",{
+        {"Desk",phosphor::led::Layout::On},
+        {"Room",phosphor::led::Layout::Blink},
+        {"Chairs",phosphor::led::Layout::On},
+        {"MeetingRoom",phosphor::led::Layout::Blink},
+        {"Floor",phosphor::led::Layout::On},
+        {"Phone",phosphor::led::Layout::Blink},
+   }},
+   {"/xyz/openbmc_project/ledmanager/groups/Desk",{
+        {"Computer",phosphor::led::Layout::On},
+        {"Phone",phosphor::led::Layout::Blink},
+        {"Book",phosphor::led::Layout::On},
+        {"Pens",phosphor::led::Layout::On},
+        {"Floor",phosphor::led::Layout::On},
+   }},
+   {"/xyz/openbmc_project/ledmanager/groups/Computer",{
+        {"Display",phosphor::led::Layout::On},
+        {"CPU",phosphor::led::Layout::Blink},
+        {"Memory",phosphor::led::Layout::On},
+        {"keyboard",phosphor::led::Layout::Blink},
+   }},
+   {"/xyz/openbmc_project/ledmanager/groups/Phones",{
+        {"Display",phosphor::led::Layout::Blink},
+        {"CPU",phosphor::led::Layout::On},
+        {"Memory",phosphor::led::Layout::On},
+        {"Touch",phosphor::led::Layout::On},
+   }},
+};
