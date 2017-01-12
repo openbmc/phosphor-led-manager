@@ -10,9 +10,8 @@ phosphor_ledmanager_SOURCES = \
 BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp
 
-PYTHON="/usr/bin/python"
 led-gen.hpp: ${srcdir}/parse_led.py
-	${AM_V_at}${PYTHON} $^ > $@
+	$(PYTHON) $^ > $@
 
 phosphor_ledmanager_LDFLAGS = $(SYSTEMD_LIBS)
 phosphor_ledmanager_CFLAGS = $(SYSTEMD_CFLAGS)
