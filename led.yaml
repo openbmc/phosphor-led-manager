@@ -1,119 +1,122 @@
-EnclosureIdentify:
-    EnclosureIdentifyFront:
-        action: Blink
-    EnclosureIdentifyBack:
-        action: Blink
-
 EnclosureFault:
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerSupply1Identify:
-    PowerSupply_1:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-PowerSupply1Fault:
-    PowerSupply_1:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerSupply2Identify:
-    PowerSupply_2:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-PowerSupply2Fault:
-    PowerSupply_2:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA1Identify:
-    Fan_A1:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA1Fault:
-    Fan_A1:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA2Identify:
-    Fan_A2:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA2Fault:
-    Fan_A2:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA3Identify:
-    Fan_A3:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA3Fault:
-    Fan_A3:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA4Identify:
-    Fan_A4:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA4Fault:
-    Fan_A4:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerOn:
-    OpPanelFront:
-        action: 'On'
-    PanelPowerButtOnNote1:
-        action: 'On'
-
-PowerOff:
-    OpPanelFront:
-        action: Blink
-    PanelPowerButtOnNote1:
-        action: Blink
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+EnclosureIdentify:
+    front-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan0Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    fan0:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+Fan0Identify:
+    front-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    rear-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    fan0:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan1Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    fan1:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+Fan1Identify:
+    front-id-led:
+        Period: 1000
+        DutyOn: 50
+        Action: 'Blink'
+    fan1:
+        Period: 1000
+        DutyOn: 50
+        Action: 'Blink'
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan2Fault:
+    fan2:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+Fan2Identify:
+    fan2:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+    front-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan3Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    fan3:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+Fan3Identify:
+    rear-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    front-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    fan3:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
