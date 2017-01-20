@@ -1,119 +1,464 @@
-EnclosureIdentify:
-    EnclosureIdentifyFront:
-        action: Blink
-    EnclosureIdentifyBack:
-        action: Blink
-
 EnclosureFault:
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerSupply1Identify:
-    PowerSupply_1:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-PowerSupply1Fault:
-    PowerSupply_1:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerSupply2Identify:
-    PowerSupply_2:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-PowerSupply2Fault:
-    PowerSupply_2:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA1Identify:
-    Fan_A1:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA1Fault:
-    Fan_A1:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA2Identify:
-    Fan_A2:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA2Fault:
-    Fan_A2:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA3Identify:
-    Fan_A3:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA3Fault:
-    Fan_A3:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-FanA4Identify:
-    Fan_A4:
-        action: Blink
-    EnclosureIdentifyFront:
-        action: 'On'
-    EnclosureIdentifyBack:
-        action: 'On'
-
-FanA4Fault:
-    Fan_A4:
-        action: 'On'
-    EnclosureFaultFront:
-        action: 'On'
-    EnclosureFaultBack:
-        action: 'On'
-
-PowerOn:
-    OpPanelFront:
-        action: 'On'
-    PanelPowerButtOnNote1:
-        action: 'On'
-
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+EnclosureIdentify:
+    front-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan0Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    fan0:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+Fan0Identify:
+    front-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    rear-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    fan0:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan1Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    fan1:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+Fan1Identify:
+    front-id-led:
+        Period: 1000
+        DutyOn: 50
+        Action: 'Blink'
+    fan1:
+        Period: 1000
+        DutyOn: 50
+        Action: 'Blink'
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan2Fault:
+    fan2:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+Fan2Identify:
+    fan2:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+    front-id-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    rear-id-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+Fan3Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    fan3:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+Fan3Identify:
+    rear-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    front-id-led:
+        Action: 'Blink'
+        DutyOn: 50
+        Period: 1000
+    fan3:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
 PowerOff:
-    OpPanelFront:
-        action: Blink
-    PanelPowerButtOnNote1:
-        action: Blink
+    rear-power-led:
+        Period: 1000
+        Action: 'Blink'
+        DutyOn: 50
+    front-power-led:
+        DutyOn: 50
+        Action: 'Blink'
+        Period: 1000
+PowerOn:
+    rear-power-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-power-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+bmcFault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+boxelderFault:
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+chassisFault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+cpu0Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+cpu1Fault:
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+dimm0Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+dimm10Fault:
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm11Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+dimm12Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+dimm13Fault:
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+dimm14Fault:
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm15Fault:
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm1Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm2Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+dimm3Fault:
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm4Fault:
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+dimm5Fault:
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm6Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+dimm7Fault:
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+dimm8Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+dimm9Fault:
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+gpu0Fault:
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+gpu1Fault:
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+gpu2Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+gpu3Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+gpu4Fault:
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+gpu5Fault:
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+motherboardFault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+pciecard0Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+pciecard1Fault:
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+pciecard2Fault:
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    front-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+pciecard3Fault:
+    rear-fault-led:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+powersupply0Fault:
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+    rear-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
+powersupply1Fault:
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    front-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+systemFault:
+    rear-fault-led:
+        DutyOn: 50
+        Action: 'On'
+        Period: 0
+    front-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+teakFault:
+    rear-fault-led:
+        Period: 0
+        DutyOn: 50
+        Action: 'On'
+    front-fault-led:
+        Period: 0
+        Action: 'On'
+        DutyOn: 50
