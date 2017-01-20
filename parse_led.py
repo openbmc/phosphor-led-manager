@@ -20,10 +20,17 @@ if __name__ == '__main__':
             ofile.write('   {\"' + "/xyz/openbmc_project/ledmanager/groups/" + group + '\",{\n')
 
             for led_dict, list_dict in ledset.iteritems():
+                # Need this to make sure the LED name is printed once
+                name_printed = False
                 for name, value in list_dict.iteritems():
-                    if group and led_dict and name and value:
-                        ofile.write('        {\"' + led_dict + '\",')
-                        ofile.write('phosphor::led::Layout::' + value + '},\n')
+                    if group and led_dict and name:
+                        if name_printed is False:
+                            ofile.write('        {\"' + led_dict + '\",')
+                            name_printed = True
+                        if name == 'Action':
+                            ofile.write('phosphor::led::Layout::')
+                        ofile.write(str(value) + ',')
+                ofile.write('},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
 

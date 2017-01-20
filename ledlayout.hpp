@@ -28,6 +28,8 @@ namespace Layout
     {
         std::string name;
         Action action;
+        uint8_t dutyOn;
+        uint16_t period;
 
         // Needed for inserting elements into sets
         bool operator<(const LedAction& right) const
