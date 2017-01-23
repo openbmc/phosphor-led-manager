@@ -1,10 +1,26 @@
 #!/usr/bin/env python
 import yaml
 import os
+import argparse
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(os.path.realpath(__file__))
-    with open(os.path.join(script_dir, 'led.yaml'), 'r') as f:
+    parser = argparse.ArgumentParser()
+    parser.add_argument("-f","--filename", default='led.yaml', help="Input File Name")
+    parser.add_argument("-d","--directory", default=script_dir, help="Input directory")
+    args = parser.parse_args()
+
+    # Default to the one that is in the current.
+    yaml_dir = script_dir;
+    yaml_file = os.path.join(yaml_dir, 'led.yaml')
+
+    if args.directory:
+        yaml_dir = args.directory
+
+    if args.filename:
+        yaml_file = os.path.join(yaml_dir, args.filename)
+
+    with open(yaml_file, 'r') as f:
         ifile = yaml.safe_load(f)
 
     with open(os.path.join(script_dir, 'led-gen.hpp'), 'w') as ofile:
