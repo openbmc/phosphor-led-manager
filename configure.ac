@@ -57,6 +57,11 @@ AC_ARG_VAR(OBJPATH, [The Ledmanager Dbus root])
 AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/ledmanager/groups"])
 AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The Ledmanager Dbus root])
 
+# Handling configuration files
+AC_ARG_VAR(YAML_PATH, [The path to the yaml config files.])
+AS_IF([test "x$YAML_PATH" == "x"], [YAML_PATH="$srcdir"])
+LEDGEN="$PYTHON $srcdir/parse_led.py -d $YAML_PATH"
+
 # Create configured output
 AC_CONFIG_FILES([Makefile test/Makefile])
 AC_OUTPUT
