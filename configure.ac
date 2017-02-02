@@ -49,12 +49,12 @@ AC_CHECK_HEADER(sdbusplus/server.hpp, ,[AC_MSG_ERROR([Could not find sdbusplus/s
 
 # Dbus service name
 AC_ARG_VAR(BUSNAME, [The Dbus busname to own])
-AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.ledmanager"])
+AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.LedManager"])
 AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The Dbus busname to own])
 
 # Service dbus root
 AC_ARG_VAR(OBJPATH, [The Ledmanager Dbus root])
-AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/ledmanager/groups"])
+AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/LedManager/Groups"])
 AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The Ledmanager Dbus root])
 
 # Handling configuration files

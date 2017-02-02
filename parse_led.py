@@ -34,7 +34,7 @@ if __name__ == '__main__':
             # This section generates an std::map of LedGroupNames to std::set
             # of LEDs containing the name and properties
             ledset = ifile[group]
-            ofile.write('   {\"' + "/xyz/openbmc_project/ledmanager/groups/" + group + '\",{\n')
+            ofile.write('   {\"' + "/xyz/openbmc_project/LedManager/Groups/" + group + '\",{\n')
 
             for led_dict, list_dict in ledset.iteritems():
                 # Need this to make sure the LED name is printed once
