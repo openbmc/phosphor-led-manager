@@ -61,6 +61,7 @@ AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The Ledmanager Dbus root])
 AC_ARG_VAR(YAML_PATH, [The path to the yaml config files.])
 AS_IF([test "x$YAML_PATH" == "x"], [YAML_PATH="$srcdir"])
 LEDGEN="$PYTHON $srcdir/parse_led.py -d $YAML_PATH"
+AC_SUBST(LEDGEN)
 
 # Create configured output
 AC_CONFIG_FILES([Makefile test/Makefile])

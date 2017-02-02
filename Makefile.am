@@ -11,7 +11,7 @@ BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp
 
 led-gen.hpp: ${srcdir}/parse_led.py
-	$(AM_V)@LEDGEN@ -d $YAML_PATH > $@
+	$(AM_V)@LEDGEN@ > $@
 
 phosphor_ledmanager_LDFLAGS = $(SYSTEMD_LIBS)
 phosphor_ledmanager_CFLAGS = $(SYSTEMD_CFLAGS)
