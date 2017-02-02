@@ -49,7 +49,7 @@ if __name__ == '__main__':
             ledset = ifile[group]
             ofile.write(
                 '   {\"' +
-                "/xyz/openbmc_project/ledmanager/groups/" +
+                "/xyz/openbmc_project/led/groups/" +
                 group +
                 '\",{\n')
 
