@@ -6,12 +6,18 @@ import argparse
 if __name__ == '__main__':
     script_dir = os.path.dirname(os.path.realpath(__file__))
     parser = argparse.ArgumentParser()
-    parser.add_argument("-f","--filename", default='led.yaml', help="Input File Name")
-    parser.add_argument("-d","--directory", default=script_dir, help="Input directory")
+    parser.add_argument(
+        "-f", "--filename",
+        default='led.yaml',
+        help="Input File Name")
+    parser.add_argument(
+        "-d", "--directory",
+        default=script_dir,
+        help="Input directory")
     args = parser.parse_args()
 
     # Default to the one that is in the current.
-    yaml_dir = script_dir;
+    yaml_dir = script_dir
     yaml_file = os.path.join(yaml_dir, 'led.yaml')
 
     if args.directory:
@@ -34,7 +40,11 @@ if __name__ == '__main__':
             # This section generates an std::map of LedGroupNames to std::set
             # of LEDs containing the name and properties
             ledset = ifile[group]
-            ofile.write('   {\"' + "/xyz/openbmc_project/ledmanager/groups/" + group + '\",{\n')
+            ofile.write(
+                '   {\"' +
+                "/xyz/openbmc_project/ledmanager/groups/" +
+                group +
+                '\",{\n')
 
             for led_dict, list_dict in ledset.iteritems():
                 # Need this to make sure the LED name is printed once
@@ -50,4 +60,3 @@ if __name__ == '__main__':
                 ofile.write('},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
-
