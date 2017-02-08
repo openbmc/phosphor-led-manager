@@ -11,17 +11,24 @@ if __name__ == '__main__':
         default='led.yaml',
         help="Input File Name")
     parser.add_argument(
-        "-d", "--directory",
+        "-i", "--input-dir",
+        dest='inputdir',
         default=script_dir,
         help="Input directory")
+    parser.add_argument(
+        '-o', '--output-dir',
+        dest='outputdir',
+        default='.',
+        help='Output directory.')
+
     args = parser.parse_args()
 
     # Default to the one that is in the current.
     yaml_dir = script_dir
     yaml_file = os.path.join(yaml_dir, 'led.yaml')
 
-    if args.directory:
-        yaml_dir = args.directory
+    if args.inputdir:
+        yaml_dir = args.inputdir
 
     if args.filename:
         yaml_file = os.path.join(yaml_dir, args.filename)
@@ -29,7 +36,7 @@ if __name__ == '__main__':
     with open(yaml_file, 'r') as f:
         ifile = yaml.safe_load(f)
 
-    with open(os.path.join(script_dir, 'led-gen.hpp'), 'w') as ofile:
+    with open(os.path.join(args.outputdir, 'led-gen.hpp'), 'w') as ofile:
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
 
