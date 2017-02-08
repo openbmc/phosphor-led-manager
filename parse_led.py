@@ -14,6 +14,12 @@ if __name__ == '__main__':
         "-d", "--directory",
         default=script_dir,
         help="Input directory")
+    parser.add_argument(
+        '-o', '--output-dir',
+        dest='outputdir',
+        default='.',
+        help='Output directory.')
+
     args = parser.parse_args()
 
     # Default to the one that is in the current.
@@ -29,7 +35,7 @@ if __name__ == '__main__':
     with open(yaml_file, 'r') as f:
         ifile = yaml.safe_load(f)
 
-    with open(os.path.join(script_dir, 'led-gen.hpp'), 'w') as ofile:
+    with open(os.path.join(args.outputdir, 'led-gen.hpp'), 'w') as ofile:
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
 
