@@ -80,6 +80,13 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
                         group& ledsUpdate)
 {
+    // For now, physical LED is driven by xyz.openbmc_project.Led.Controller
+    // at /xyz/openbmc_project/led/physical. However, its possible that in the
+    // future, the physical LEDs are driven by different dbus services.
+    // when that happens, service name needs to be obtained everytime a
+    // particular LED would be targeted as opposed to getting one now and then
+    // using it for all
+
     // This order of LED operation is important.
     if (ledsUpdate.size())
     {
@@ -87,8 +94,19 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
                   << std::endl;
         for (const auto& it: ledsUpdate)
         {
-            std::cout << "\t{" << it.name << "::" << it.action << "}"
-                << std::endl;
+            std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            auto service = getServiceName(objPath, PHY_LED_IFACE);
+            if (!service.empty())
+            {
+                // If Blink, set its property
+                if (it.action == Layout::Action::Blink)
+                {
+                    drivePhysicalLED(service, objPath, "DutyOn",
+                                     it.dutyOn);
+                }
+                drivePhysicalLED(service, objPath, "State",
+                                 getPhysicalAction(it.action));
+            }
         }
     }
 
@@ -97,8 +115,13 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
         std::cout << "De-Asserting LEDs" << std::endl;
         for (const auto& it: ledsDeAssert)
         {
-            std::cout << "\t{" << it.name << "::" << it.action << "}"
-                << std::endl;
+            std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            auto service = getServiceName(objPath, PHY_LED_IFACE);
+            if (!service.empty())
+            {
+                drivePhysicalLED(service, objPath,
+                        "State", getPhysicalAction(Layout::Action::Off));
+            }
         }
     }
 
@@ -107,11 +130,75 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
         std::cout << "Asserting LEDs" << std::endl;
         for (const auto& it: ledsAssert)
         {
-            std::cout << "\t{" << it.name << "::" << it.action << "}"
-                << std::endl;
+            std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            auto service = getServiceName(objPath, PHY_LED_IFACE);
+            if (!service.empty())
+            {
+                // If Blink, set its property
+                if (it.action == Layout::Action::Blink)
+                {
+                    drivePhysicalLED(service, objPath, "DutyOn",
+                                     it.dutyOn);
+                }
+                drivePhysicalLED(service, objPath, "State",
+                                 getPhysicalAction(it.action));
+            }
         }
     }
     return;
+}
+
+/** @brief Returns action string based on enum */
+const char* Manager::getPhysicalAction(Layout::Action action)
+{
+    if(action == Layout::Action::On)
+    {
+        return "xyz.openbmc_project.Led.Physical.Action.On";
+    }
+    else if(action == Layout::Action::Blink)
+    {
+        return "xyz.openbmc_project.Led.Physical.Action.Blink";
+    }
+    else
+    {
+        return "xyz.openbmc_project.Led.Physical.Action.Off";
+    }
+}
+
+/** Given the LED dbus path and interface, returns the service name */
+std::string Manager::getServiceName(const std::string& objPath,
+                                    const std::string& interface)
+{
+    // Mapper dbus constructs
+    constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/ObjectMapper";
+    constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
+
+    // Make a mapper call
+    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                          MAPPER_IFACE, "GetObject");
+    // Cook rest of the things.
+    mapperCall.append(objPath);
+    mapperCall.append(std::vector<std::string>({interface}));
+
+    auto reply = bus.call(mapperCall);
+    if (reply.is_method_error())
+    {
+        // Its okay if we do not see a corresponding physical LED.
+        return "";
+    }
+
+    // Response by mapper in the case of success
+    std::map<std::string, std::vector<std::string>> serviceNames;
+
+    // This is the service name for the passed in objpath
+    reply.read(serviceNames);
+    if (serviceNames.begin() == serviceNames.end())
+    {
+        // TODO : What do now ?. Throw an error ?
+    }
+
+    return serviceNames.begin()->first;
 }
 
 } // namespace led
