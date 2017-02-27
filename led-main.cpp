@@ -7,11 +7,11 @@
 
 int main(void)
 {
-    /** @brief Group manager object */
-    phosphor::led::Manager manager(systemLedMap);
-
     /** @brief Dbus constructs used by LED Group manager */
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+
+    /** @brief Group manager object */
+    phosphor::led::Manager manager(bus, systemLedMap);
 
     /** @brief sd_bus object manager */
     sdbusplus::server::manager::manager objManager(bus, OBJPATH);
