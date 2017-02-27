@@ -5,8 +5,8 @@ TESTS = $(check_PROGRAMS)
 
 # # Build/add utest to test suite
 check_PROGRAMS = utest
-utest_CPPFLAGS = -Igtest $(GTEST_CPPFLAGS) $(AM_CPPFLAGS)
+utest_CPPFLAGS = -Igtest $(GTEST_CPPFLAGS) $(AM_CPPFLAGS) $(PHOSPHOR_LOGGING_CFLAGS)
 utest_CXXFLAGS = $(PTHREAD_CFLAGS)
-utest_LDFLAGS = -lgtest_main -lgtest $(PTHREAD_LIBS) $(OESDK_TESTCASE_FLAGS)
+utest_LDFLAGS = -lgtest_main -lgtest $(PTHREAD_LIBS) $(OESDK_TESTCASE_FLAGS) $(SYSTEMD_LIBS) $(PHOSPHOR_LOGGING_LIBS)
 utest_SOURCES = utest.cpp
 utest_LDADD = $(top_builddir)/manager.o
