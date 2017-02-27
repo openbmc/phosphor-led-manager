@@ -13,7 +13,7 @@ CLEANFILES = led-gen.hpp
 led-gen.hpp: ${srcdir}/parse_led.py
 	$(AM_V)@LEDGEN@ > $@
 
-phosphor_ledmanager_LDFLAGS = $(SYSTEMD_LIBS)
-phosphor_ledmanager_CFLAGS = $(SYSTEMD_CFLAGS)
+phosphor_ledmanager_LDFLAGS = $(SYSTEMD_LIBS) $(SDBUSPLUS_LIBS)
+phosphor_ledmanager_CFLAGS = $(SYSTEMD_CFLAGS) $(SDBUSPLUS_CFLAGS)
 
 SUBDIRS = test
