@@ -7,6 +7,6 @@ TESTS = $(check_PROGRAMS)
 check_PROGRAMS = utest
 utest_CPPFLAGS = -Igtest $(GTEST_CPPFLAGS) $(AM_CPPFLAGS)
 utest_CXXFLAGS = $(PTHREAD_CFLAGS)
-utest_LDFLAGS = -lgtest_main -lgtest $(PTHREAD_LIBS) $(OESDK_TESTCASE_FLAGS)
+utest_LDFLAGS = -lgtest_main -lgtest $(PTHREAD_LIBS) $(OESDK_TESTCASE_FLAGS) $(SYSTEMD_LIBS)
 utest_SOURCES = utest.cpp
 utest_LDADD = $(top_builddir)/manager.o
