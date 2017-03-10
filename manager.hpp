@@ -4,6 +4,7 @@
 #include <set>
 #include <sdbusplus/bus.hpp>
 #include "ledlayout.hpp"
+#include <iostream>
 namespace phosphor
 {
 namespace led
@@ -97,7 +98,7 @@ class Manager
          *
          *  @return string equivalent of the passed in enumeration
          */
-        static const char* const getPhysicalAction(Layout::Action action);
+        static std::string getPhysicalAction(Layout::Action action);
 
         /** @brief Chooses appropriate action to be triggered on physical LED
          *  and calls into function that applies the actual action.

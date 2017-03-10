@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <phosphor-logging/log.hpp>
+#include <xyz/openbmc_project/Led/Physical/server.hpp>
 #include "manager.hpp"
 namespace phosphor
 {
@@ -141,21 +142,23 @@ void Manager::drivePhysicalLED(const std::string& objPath,
 }
 
 /** @brief Returns action string based on enum */
-const char* const Manager::getPhysicalAction(Layout::Action action)
+std::string Manager::getPhysicalAction(Layout::Action action)
 {
-    // TODO : When this is moved over to using libdus interfaces, this code will
-    // away. https://github.com/openbmc/phosphor-led-manager/issues/2
+    namespace Led = sdbusplus::xyz::openbmc_project::Led::server;
+
+    // TODO. Somehow need to use the generated Action enum
+    //       than giving one in ledlayout
     if(action == Layout::Action::On)
     {
-        return "xyz.openbmc_project.Led.Physical.Action.On";
+        return Led::convertForMessage(Led::Physical::Action::On);
     }
     else if(action == Layout::Action::Blink)
     {
-        return "xyz.openbmc_project.Led.Physical.Action.Blink";
+        return Led::convertForMessage(Led::Physical::Action::Blink);
     }
     else
     {
-        return "xyz.openbmc_project.Led.Physical.Action.Off";
+        return Led::convertForMessage(Led::Physical::Action::Off);
     }
 }
 
