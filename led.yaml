@@ -1,23 +1,23 @@
-EnclosureFault:
-    rear-fault-led:
+enclosure_fault:
+    fault_front:
         Action: 'On'
         DutyOn: 50
         Period: 0
-    front-fault-led:
+    fault_rear:
         Action: 'On'
         DutyOn: 50
         Period: 0
-EnclosureIdentify:
-    front-id-led:
+enclosure_identify:
+    front_id:
         Action: 'Blink'
         DutyOn: 50
         Period: 1000
-    rear-id-led:
+    rear_id:
         DutyOn: 50
         Action: 'Blink'
         Period: 1000
-Fan0Fault:
-    front-fault-led:
+fan_fault:
+    front_fault:
         Period: 0
         DutyOn: 50
         Action: 'On'
@@ -25,16 +25,16 @@ Fan0Fault:
         DutyOn: 50
         Action: 'On'
         Period: 0
-    rear-fault-led:
+    rear_fault:
         Period: 0
         DutyOn: 50
         Action: 'On'
-Fan0Identify:
-    front-id-led:
+fan_identify:
+    front_id:
         Period: 1000
         Action: 'Blink'
         DutyOn: 50
-    rear-id-led:
+    rear_id:
         Period: 1000
         Action: 'Blink'
         DutyOn: 50
@@ -42,81 +42,3 @@ Fan0Identify:
         DutyOn: 50
         Action: 'Blink'
         Period: 1000
-Fan1Fault:
-    front-fault-led:
-        Period: 0
-        Action: 'On'
-        DutyOn: 50
-    fan1:
-        Period: 0
-        DutyOn: 50
-        Action: 'On'
-    rear-fault-led:
-        Period: 0
-        Action: 'On'
-        DutyOn: 50
-Fan1Identify:
-    front-id-led:
-        Period: 1000
-        DutyOn: 50
-        Action: 'Blink'
-    fan1:
-        Period: 1000
-        DutyOn: 50
-        Action: 'Blink'
-    rear-id-led:
-        DutyOn: 50
-        Action: 'Blink'
-        Period: 1000
-Fan2Fault:
-    fan2:
-        Action: 'On'
-        DutyOn: 50
-        Period: 0
-    rear-fault-led:
-        Period: 0
-        Action: 'On'
-        DutyOn: 50
-    front-fault-led:
-        DutyOn: 50
-        Action: 'On'
-        Period: 0
-Fan2Identify:
-    fan2:
-        DutyOn: 50
-        Action: 'Blink'
-        Period: 1000
-    front-id-led:
-        Period: 1000
-        Action: 'Blink'
-        DutyOn: 50
-    rear-id-led:
-        DutyOn: 50
-        Action: 'Blink'
-        Period: 1000
-Fan3Fault:
-    front-fault-led:
-        DutyOn: 50
-        Action: 'On'
-        Period: 0
-    rear-fault-led:
-        Action: 'On'
-        DutyOn: 50
-        Period: 0
-    fan3:
-        DutyOn: 50
-        Action: 'On'
-        Period: 0
-Fan3Identify:
-    rear-id-led:
-        Action: 'Blink'
-        DutyOn: 50
-        Period: 1000
-    front-id-led:
-        Action: 'Blink'
-        DutyOn: 50
-        Period: 1000
-    fan3:
-        DutyOn: 50
-        Action: 'On'
-        Period: 0
