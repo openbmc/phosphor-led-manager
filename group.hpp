@@ -2,7 +2,7 @@
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
-#include "xyz/openbmc_project/Led/Group/server.hpp"
+#include <xyz/openbmc_project/Led/Group/server.hpp>
 #include "manager.hpp"
 namespace phosphor
 {
