@@ -166,9 +166,9 @@ std::string Manager::getServiceName(const std::string& objPath,
     using namespace phosphor::logging;
 
     // Mapper dbus constructs
-    constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.ObjectMapper";
-    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/ObjectMapper";
-    constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.object_mapper";
+    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/object_mapper";
+    constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.object_mapper";
 
     // Make a mapper call
     auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
