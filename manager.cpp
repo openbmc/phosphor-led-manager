@@ -167,7 +167,7 @@ std::string Manager::getServiceName(const std::string& objPath,
 
     // Mapper dbus constructs
     constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.ObjectMapper";
-    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/object_mapper";
     constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
 
     // Make a mapper call
