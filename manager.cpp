@@ -82,12 +82,14 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
                         group& ledsUpdate)
 {
-    // For now, physical LED is driven by xyz.openbmc_project.Led.Controller
-    // at /xyz/openbmc_project/led/physical. However, its possible that in the
-    // future, the physical LEDs are driven by different dbus services.
-    // when that happens, service name needs to be obtained everytime a
-    // particular LED would be targeted as opposed to getting one now and then
-    // using it for all
+    // Map of physical LED dbus paths to their Service providers
+    populateObjectMap();
+
+    if (phyLeds.empty())
+    {
+        // Error message is inside the map construction logic.
+        return;
+    }
 
     // This order of LED operation is important.
     if (ledsUpdate.size())
@@ -128,17 +130,24 @@ void Manager::drivePhysicalLED(const std::string& objPath,
                                Layout::Action action,
                                uint8_t dutyOn)
 {
-    auto service = getServiceName(objPath, PHY_LED_IFACE);
-    if (!service.empty())
+    using namespace phosphor::logging;
+
+    auto service = phyLeds.find(objPath);
+    if (service == phyLeds.end() || service->second.empty())
     {
-        // If Blink, set its property
-        if (action == Layout::Action::Blink)
-        {
-            drivePhysicalLED(service, objPath, "DutyOn", dutyOn);
-        }
-        drivePhysicalLED(service, objPath, "State",
-                getPhysicalAction(action));
+        log<level::ERR>("No service providers for physical LED",
+                entry("PATH=%s",objPath.c_str()));
+        return;
     }
+
+   // If Blink, set its property
+   if (action == Layout::Action::Blink)
+   {
+       drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
+   }
+   drivePhysicalLED(service->second, objPath, "State",
+           getPhysicalAction(action));
+   return;
 }
 
 /** @brief Returns action string based on enum */
@@ -163,9 +172,8 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     }
 }
 
-/** Given the LED dbus path and interface, returns the service name */
-std::string Manager::getServiceName(const std::string& objPath,
-                                    const std::string& interface) const
+/** Populates a map with physical LED paths to its service providers */
+void Manager::populateObjectMap()
 {
     using namespace phosphor::logging;
 
@@ -174,35 +182,48 @@ std::string Manager::getServiceName(const std::string& objPath,
     constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/object_mapper";
     constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
 
+    // Needed to be passed to get the SubTree level
+    auto depth = 0;
+
+    // Clean start
+    phyLeds.clear();
+
     // Make a mapper call
     auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                          MAPPER_IFACE, "GetObject");
+                                          MAPPER_IFACE, "GetSubTree");
     // Cook rest of the things.
-    mapperCall.append(objPath);
-    mapperCall.append(std::vector<std::string>({interface}));
+    mapperCall.append(PHY_LED_PATH);
+    mapperCall.append(depth);
+    mapperCall.append(std::vector<std::string>({PHY_LED_IFACE}));
 
     auto reply = bus.call(mapperCall);
     if (reply.is_method_error())
     {
         // Its okay if we do not see a corresponding physical LED.
-        log<level::INFO>("Error looking up Physical LED service",
-                entry("PATH=%s",objPath.c_str()));
-        return "";
+        log<level::INFO>("Error looking up Physical LED services",
+                entry("PATH=%s",PHY_LED_PATH));
+        return;
     }
 
     // Response by mapper in the case of success
-    std::map<std::string, std::vector<std::string>> serviceNames;
+    std::map<std::string, std::map<std::string,
+             std::vector<std::string>>> objectTree;
 
-    // This is the service name for the passed in objpath
-    reply.read(serviceNames);
-    if (serviceNames.empty())
+    // This is the dict of object paths - service names - interfaces
+    reply.read(objectTree);
+    if (objectTree.empty())
     {
-        log<level::INFO>("Physical LED lookup did not return any service",
-                entry("PATH=%s",objPath.c_str()));
-        return "";
+        log<level::INFO>("Physical LED lookup did not return any services",
+                entry("PATH=%s",PHY_LED_PATH));
+        return;
     }
 
-    return serviceNames.begin()->first;
+    // Now construct our path -> Service name map.
+    for (const auto& iter : objectTree)
+    {
+        phyLeds.emplace(iter.first, iter.second.begin()->first);
+    }
+    return;
 }
 
 } // namespace led

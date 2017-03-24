@@ -85,6 +85,9 @@ class Manager
         /** @brief sdbusplus handler */
         sdbusplus::bus::bus& bus;
 
+        /** Map of physical LED path to service name */
+        std::map<std::string, std::string> phyLeds {};
+
         /** @brief Pointers to groups that are in asserted state */
         std::set<const group*> assertedGroups;
 
@@ -138,15 +141,8 @@ class Manager
             return;
         }
 
-        /** @brief Finds the service name given a dbus object path and interface
-         *
-         *  @param[in]  objPath    -  dbus object path
-         *  @param[in]  interface  -  dbus interface
-         *
-         *  @return: Service name or none
-         */
-        std::string getServiceName(const std::string& objPath,
-                                   const std::string& interface) const;
+        /** @brief Populates map of Physical LED paths to service name */
+        void populateObjectMap();
 };
 
 } // namespace led
