@@ -1,3 +1,13 @@
+BmcBooted:
+    heartbeat:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
+PowerOn:
+    power:
+        Action: 'On'
+        DutyOn: 50
+        Period: 0
 enclosure_fault:
     fault_front:
         Action: 'On'
