@@ -2,6 +2,7 @@
 import yaml
 import os
 import argparse
+from inflection import underscore
 
 if __name__ == '__main__':
     script_dir = os.path.dirname(os.path.realpath(__file__))
@@ -50,7 +51,7 @@ if __name__ == '__main__':
             ofile.write(
                 '   {\"' +
                 "/xyz/openbmc_project/led/groups/" +
-                group +
+                underscore(group) +
                 '\",{\n')
 
             for led_dict, list_dict in ledset.iteritems():
@@ -59,7 +60,8 @@ if __name__ == '__main__':
                 for name, value in list_dict.iteritems():
                     if group and led_dict and name:
                         if name_printed is False:
-                            ofile.write('        {\"' + led_dict + '\",')
+                            ofile.write('        {\"' + underscore(led_dict) +
+                                        '\",')
                             name_printed = True
                         if name == 'Action':
                             ofile.write('phosphor::led::Layout::')
