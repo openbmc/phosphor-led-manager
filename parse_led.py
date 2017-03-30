@@ -54,6 +54,11 @@ if __name__ == '__main__':
                 underscore(group) +
                 '\",{\n')
 
+            # Some LED groups could be empty
+            if not ledset:
+                ofile.write('   }},\n')
+                continue
+
             for led_dict, list_dict in ledset.iteritems():
                 # Need this to make sure the LED name is printed once
                 name_printed = False
