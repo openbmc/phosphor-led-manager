@@ -4,7 +4,8 @@ sbin_PROGRAMS = phosphor-ledmanager
 phosphor_ledmanager_SOURCES = \
                 led-main.cpp  \
                 manager.cpp \
-                group.cpp
+                group.cpp  \
+                callout-led-handler.cpp 
 
 BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp

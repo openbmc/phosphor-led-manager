@@ -4,6 +4,9 @@
 #include "group.hpp"
 #include "config.h"
 #include "led-gen.hpp"
+#include "callout-led-handler.hpp"
+#include <phosphor-logging/log.hpp>
+using namespace phosphor::logging;
 
 int main(void)
 {
@@ -18,6 +21,10 @@ int main(void)
 
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
+
+    log<level::ERR>("starting ledhandle");
+
+    phosphor::led::LedCalloutHandler ledhndle(bus);
 
     /** Now create so many dbus objects as there are groups */
     for (auto &grp: systemLedMap)
