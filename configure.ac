@@ -62,5 +62,5 @@ LEDGEN="$PYTHON $srcdir/parse_led.py -i $YAML_PATH"
 AC_SUBST(LEDGEN)
 
 # Create configured output
-AC_CONFIG_FILES([Makefile test/Makefile])
+AC_CONFIG_FILES([Makefile test/Makefile fault-monitor/Makefile])
 AC_OUTPUT
