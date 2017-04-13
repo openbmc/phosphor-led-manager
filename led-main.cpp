@@ -26,6 +26,9 @@ int main(void)
                     bus, grp.first, manager));
     }
 
+    /** @brief LED callout handler */
+    phosphor::led::LedCalloutCreateHandler ledhndle(bus);
+
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
 
