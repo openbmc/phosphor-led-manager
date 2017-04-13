@@ -4,6 +4,7 @@
 #include "group.hpp"
 #include "config.h"
 #include "led-gen.hpp"
+#include "callout-led-handler.hpp"
 
 int main(void)
 {
@@ -25,6 +26,9 @@ int main(void)
         groups.emplace_back(std::make_unique<phosphor::led::Group>(
                     bus, grp.first, manager));
     }
+
+    /** @brief LED callout handler */
+    phosphor::led::LedCalloutHandler ledhndle(bus);
 
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
