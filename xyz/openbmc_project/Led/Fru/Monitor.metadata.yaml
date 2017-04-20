@@ -1,0 +1,9 @@
+- name: InventoryError
+  meta:
+    - str: "PATH=%s"
+      type: string
+
+- name: AssociationError
+  meta:
+    - str: "ELOG_ENTRY_PATH=%s"
+      type: string

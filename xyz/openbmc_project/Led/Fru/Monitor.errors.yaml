@@ -1,0 +1,7 @@
+#xyz.openbmc_project.Led.Fru.Monitor.InventoryError
+- name: InventoryError
+  description: Invalid Inventory Path
+
+#xyz.openbmc_project.Led.Fru.Monitor.AssociationError
+- name: AssociationError
+  description: Error in retrieving the associations
