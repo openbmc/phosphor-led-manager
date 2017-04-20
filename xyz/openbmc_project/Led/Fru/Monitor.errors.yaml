@@ -1,0 +1,7 @@
+#xyz.openbmc_project.Led.Fru.Monitor.InventoryPathError
+- name: InventoryPathError
+  description: Invalid Inventory Path.
+
+#xyz.openbmc_project.Led.Fru.Monitor.AssociationRetrieveError
+- name: AssociationRetrieveError
+  description: Error in retrieving the associations from elog entry.
