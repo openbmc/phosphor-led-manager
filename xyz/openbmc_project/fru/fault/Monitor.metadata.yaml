@@ -1,0 +1,4 @@
+- name: LedFailure
+  meta:
+    - str: "Error=%s"
+      type: string
