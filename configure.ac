@@ -63,6 +63,8 @@ AC_SUBST(LEDGEN)
 
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])
+AC_DEFINE(ELOG_ENTRY, "entry", [The word part of the specific error log entry.])
+AC_DEFINE(LED_FAULT, "fault", [Path element indicates fault LED for a group.])
 
 # Create configured output
 AC_CONFIG_FILES([Makefile test/Makefile fault-monitor/Makefile])
