@@ -36,7 +36,8 @@ TEST_F(LedTest, assertSingleLedOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -68,7 +69,8 @@ TEST_F(LedTest, assertSingleLedBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -100,7 +102,8 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -147,9 +150,12 @@ TEST_F(LedTest, assertMultipleLedOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -181,9 +187,12 @@ TEST_F(LedTest, assertMultipleLedBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -215,9 +224,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -243,9 +255,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -277,9 +292,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -305,9 +323,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -353,11 +374,16 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::Blink},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Four",phosphor::led::Layout::On},
-            {"Five",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::On,
+                0, phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On,
+                0, phosphor::led::Layout::Blink},
+            {"Five",phosphor::led::Layout::On,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -389,9 +415,12 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -417,9 +446,12 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Four",phosphor::led::Layout::On},
-            {"Five",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -451,9 +483,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -479,8 +514,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Four",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -495,8 +532,452 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
     }
 }
 
+/** @brief Assert 2 groups having one of the LEDs common but having Blink as
+ * priority and Deassert*/
+TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
+{
+    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // De-Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdated populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp1, temp1.begin()));
+        EXPECT_EQ(0, temp1.size());
+    }
+}
+
+/** @brief Assert 2 groups having one of the LEDs common but having Blink as
+ * priority and Deassert A */
+TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
+{
+    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // De-Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refDeAssert and ledsDeAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdate populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp1, temp1.begin()));
+        EXPECT_EQ(0, temp1.size());
+    }
+}
+
+/** @brief Assert 2 groups having one of the LEDs common but having ON as
+ * priority And Deassert A */
+TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
+{
+    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDOnPriority);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        // Three is set to ON due to ON priority.
+        std::set<Layout::LedAction> refAssert = {
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+    }
+    {
+        // De-Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdated populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+}
+
+/** @brief Assert 2 groups having one of the LEDs common but having ON as
+ * priority And Deassert B */
+TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
+{
+    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDOnPriority);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        // Three is set to ON due to ON priority.
+        std::set<Layout::LedAction> refAssert = {
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+    }
+    {
+        // De-Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdated populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+}
+
 /** @brief Assert 2 groups having one of the LEDs common in different state */
-TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentState)
+TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentStateAndDeAssertA)
 {
     Manager manager(bus, twoGroupsWithOneComonLEDInDifferentState);
     {
@@ -512,9 +993,12 @@ TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentState)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -540,10 +1024,14 @@ TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentState)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two",phosphor::led::Layout::Blink},
-            {"Four",phosphor::led::Layout::On},
-            {"Five",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -556,10 +1044,168 @@ TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentState)
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
     }
+    {
+        // De-Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdated populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+}
+
+/** @brief Assert 2 groups having one of the LEDs common in different state but
+ * with priority changed
+ */
+TEST_F(LedTest, assertTwoGroupsWithOneComonLEDInDifferentStateDifferentPriorityDeAssertB)
+{
+    Manager manager(bus, twoGroupsWithOneComonLEDInDifferentState);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // De-Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdated populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
 }
 
 /** @brief Assert 2 groups having multiple common LEDs in Same State */
-TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOn)
+TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 {
     Manager manager(bus, twoGroupsWithMultiplComonLEDOn);
     {
@@ -575,10 +1221,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
-            {"Seven",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Seven",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -604,7 +1254,109 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // De-Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsDeAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Seven",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+    }
+}
+
+/** @brief Assert 2 groups having multiple LEDs common in different state */
+TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
+{
+    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.'Two' gets to Blink
+        // due to higher priority.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -620,7 +1372,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOn)
 }
 
 /** @brief Assert 2 groups having multiple LEDs common in different state */
-TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStates)
+TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
 {
     Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
     {
@@ -630,35 +1382,6 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStates)
         Manager::group ledsUpdate {};
 
         auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
-        auto result = manager.setGroupState(group, true, ledsAssert,
-                                            ledsDeAssert, ledsUpdate);
-        EXPECT_EQ(true, result);
-
-        // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::On},
-            {"Four",phosphor::led::Layout::On},
-        };
-        EXPECT_EQ(refAssert.size(), ledsAssert.size());
-        EXPECT_EQ(0, ledsDeAssert.size());
-        EXPECT_EQ(0, ledsUpdate.size());
-
-        // difference of refAssert and ledsAssert must be null.
-        Manager::group temp {};
-        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
-                            refAssert.begin(), refAssert.end(),
-                            std::inserter(temp, temp.begin()));
-        EXPECT_EQ(0, temp.size());
-    }
-    {
-        // Assert Set-B
-        Manager::group ledsAssert {};
-        Manager::group ledsDeAssert {};
-        Manager::group ledsUpdate {};
-
-        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result = manager.setGroupState(group, true, ledsAssert,
                                             ledsDeAssert, ledsUpdate);
         EXPECT_EQ(true, result);
@@ -666,46 +1389,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStates)
         // Need just the ledsAssserted populated with these.'Two' gets to Blink
         // due to higher priority.
         std::set<Layout::LedAction> refAssert = {
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Five",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
-        };
-        EXPECT_EQ(refAssert.size(), ledsAssert.size());
-        EXPECT_EQ(0, ledsDeAssert.size());
-        EXPECT_EQ(0, ledsUpdate.size());
-
-        // difference of refAssert and ledsAssert must be null.
-        Manager::group temp {};
-        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
-                            refAssert.begin(), refAssert.end(),
-                            std::inserter(temp, temp.begin()));
-        EXPECT_EQ(0, temp.size());
-    }
-}
-
-/** @brief Assert 2 groups having multiple LEDs common in Same State
- *         and then De-Assert One
- */
-TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDAndDeAssertOne)
-{
-    Manager manager(bus, twoGroupsWithMultiplComonLEDOn);
-    {
-        // Assert Set-A
-        Manager::group ledsAssert {};
-        Manager::group ledsDeAssert {};
-        Manager::group ledsUpdate {};
-
-        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
-        auto result = manager.setGroupState(group, true, ledsAssert,
-                                            ledsDeAssert, ledsUpdate);
-        EXPECT_EQ(true, result);
-
-        // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -731,8 +1422,12 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDAndDeAssertOne)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Six",phosphor::led::Layout::On},
-            {"Seven",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -745,40 +1440,49 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDAndDeAssertOne)
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
     }
-    {
-        // DeAssert Set-A
-        Manager::group ledsAssert {};
-        Manager::group ledsDeAssert {};
-        Manager::group ledsUpdate {};
-
-        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
-        auto result = manager.setGroupState(group, false, ledsAssert,
-                                            ledsDeAssert, ledsUpdate);
-        EXPECT_EQ(false, result);
-
-        // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
-            {"One",phosphor::led::Layout::On},
-        };
-        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
-        EXPECT_EQ(0, ledsAssert.size());
-        EXPECT_EQ(0, ledsUpdate.size());
-
-        // difference of refAssert and ledsAssert must be null.
-        Manager::group temp {};
-        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
-                            refDeAssert.begin(), refDeAssert.end(),
-                            std::inserter(temp, temp.begin()));
-        EXPECT_EQ(0, temp.size());
-    }
 }
 
-/** @brief Assert 2 groups having multiple LEDs common but in
- *         different state and De-Assert one*/
-TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOne)
+/** @brief Assert 2 groups having multiple LEDs common in different state
+ *  DeAssert twice
+ */
+TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoBDeAssertTwice)
 {
     Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
     {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.'Two' gets to Blink
+        // due to higher priority.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refAssert and ledsAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
         // Assert Set-B
         Manager::group ledsAssert {};
         Manager::group ledsDeAssert {};
@@ -791,10 +1495,12 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOne)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Five",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -808,34 +1514,46 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOne)
         EXPECT_EQ(0, temp.size());
     }
     {
-        // Assert Set-A
+        // DeAssert Set-B
         Manager::group ledsAssert {};
         Manager::group ledsDeAssert {};
         Manager::group ledsUpdate {};
 
-        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
-        auto result = manager.setGroupState(group, true, ledsAssert,
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
                                             ledsDeAssert, ledsUpdate);
-        EXPECT_EQ(true, result);
+        EXPECT_EQ(false, result);
 
-        // Need just the ledsAssserted populated with these. 'Three` remains at
-        // Blink due to increased priority.
-        std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Four",phosphor::led::Layout::On},
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
-        EXPECT_EQ(refAssert.size(), ledsAssert.size());
-        EXPECT_EQ(0, ledsDeAssert.size());
-        EXPECT_EQ(0, ledsUpdate.size());
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
 
-        // difference of refAssert and ledsAssert must be null.
+        // difference of refDeAssert and ledsDeAssert must be null.
         Manager::group temp {};
-        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
-                            refAssert.begin(), refAssert.end(),
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdate populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp1, temp1.begin()));
+        EXPECT_EQ(0, temp1.size());
     }
     {
         // DeAssert Set-A
@@ -848,44 +1566,125 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOne)
                                             ledsDeAssert, ledsUpdate);
         EXPECT_EQ(false, result);
 
-        // Need just the ledsUpdated populated with these.
-        std::set<Layout::LedAction> refUpdate = {
-            {"Two",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::Blink},
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
-        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+
+        // difference of refDeAssert and ledsDeAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+    }
+    {
+        // DeAssert Set-A again and make sure we get all empty
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
+    }
+}
+
+/** @brief Assert 2 groups having multiple LEDs common in different state and
+ * mixed priority.
+ */
+TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityAandB)
+{
+    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    {
+        // Assert Set-A
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refAssert = {
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
 
         // difference of refAssert and ledsAssert must be null.
         Manager::group temp {};
-        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
-                            refUpdate.begin(), refUpdate.end(),
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
+    }
+    {
+        // Assert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
 
-        // Need just the ledsDeAsserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Four",phosphor::led::Layout::On},
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, true, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(true, result);
+
+        // Need just the ledsAssserted populated with these.'Two' gets to ON
+        // due to higher priority.
+        std::set<Layout::LedAction> refAssert = {
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
-        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(refAssert.size(), ledsAssert.size());
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
 
         // difference of refAssert and ledsAssert must be null.
-        temp.clear();
-        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
-                            refDeAssert.begin(), refDeAssert.end(),
+        Manager::group temp {};
+        std::set_difference(ledsAssert.begin(), ledsAssert.end(),
+                            refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
     }
 }
 
-/** @brief Assert 2 groups having multiple LEDs common but in
- *         different state and De-Assert one and make sure the
- *         state is changed back to Blink
+/** @brief Assert 2 groups having multiple LEDs common in different state and
+ * mixed priority and then DeAssert twice.
  */
-TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOneGetBlink)
+TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityBandA)
 {
-    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentStateBlinkAgain);
+    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
         Manager::group ledsAssert {};
@@ -899,10 +1698,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOneGe
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two",phosphor::led::Layout::Blink},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Five",phosphor::led::Layout::On},
-            {"Six",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -926,13 +1729,17 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOneGe
                                             ledsDeAssert, ledsUpdate);
         EXPECT_EQ(true, result);
 
-        // Need just the ledsAssserted populated with these. 'Three` remains at
-        // Blink due to increased priority. Two is already in asserted state and
-        // it wont be asserted again.
+        // Need just the ledsAssserted populated with these.'Three' gets to Blink
+        // due to higher priority.
         std::set<Layout::LedAction> refAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Three",phosphor::led::Layout::Blink},
-            {"Four",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -946,6 +1753,50 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOneGe
         EXPECT_EQ(0, temp.size());
     }
     {
+        // DeAssert Set-B
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+
+        // Need just the ledsAssserted populated with these.
+        std::set<Layout::LedAction> refDeAssert = {
+            {"Five",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+        };
+        EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+
+        // difference of refDeAssert and ledsDeAssert must be null.
+        Manager::group temp {};
+        std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
+                            refDeAssert.begin(), refDeAssert.end(),
+                            std::inserter(temp, temp.begin()));
+        EXPECT_EQ(0, temp.size());
+
+        // Need just the ledsUpdate populated with these.
+        std::set<Layout::LedAction> refUpdate = {
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+        };
+        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
+
+        // difference of refUpdate and ledsUpdate must be null.
+        Manager::group temp1 {};
+        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
+                            refUpdate.begin(), refUpdate.end(),
+                            std::inserter(temp1, temp1.begin()));
+        EXPECT_EQ(0, temp1.size());
+    }
+    {
         // DeAssert Set-A
         Manager::group ledsAssert {};
         Manager::group ledsDeAssert {};
@@ -956,32 +1807,40 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateDeAssertOneGe
                                             ledsDeAssert, ledsUpdate);
         EXPECT_EQ(false, result);
 
-        // Need just the ledsUpdated populated with these.
-        std::set<Layout::LedAction> refUpdate = {
-            {"Three",phosphor::led::Layout::Blink},
-        };
-        EXPECT_EQ(refUpdate.size(), ledsUpdate.size());
-        EXPECT_EQ(0, ledsAssert.size());
-
-        // difference of refAssert and ledsAssert must be null.
-        Manager::group temp {};
-        std::set_difference(ledsUpdate.begin(), ledsUpdate.end(),
-                            refUpdate.begin(), refUpdate.end(),
-                            std::inserter(temp, temp.begin()));
-        EXPECT_EQ(0, temp.size());
-
-        // Need just the ledsDeAsserted populated with these.
+        // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One",phosphor::led::Layout::On},
-            {"Four",phosphor::led::Layout::On},
+            {"One",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink, 0,
+                0, phosphor::led::Layout::On},
+            {"Three",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::Blink},
+            {"Four",phosphor::led::Layout::On, 0,
+                0, phosphor::led::Layout::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
 
-        // difference of refAssert and ledsAssert must be null.
-        temp.clear();
+        // difference of refDeAssert and ledsDeAssert must be null.
+        Manager::group temp {};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
+    }
+    {
+        // DeAssert Set-B again and make sure we get all empty
+        Manager::group ledsAssert {};
+        Manager::group ledsDeAssert {};
+        Manager::group ledsUpdate {};
+
+        auto group ="/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
+        auto result = manager.setGroupState(group, false, ledsAssert,
+                                            ledsDeAssert, ledsUpdate);
+        EXPECT_EQ(false, result);
+        EXPECT_EQ(0, ledsDeAssert.size());
+        EXPECT_EQ(0, ledsAssert.size());
+        EXPECT_EQ(0, ledsUpdate.size());
     }
 }
