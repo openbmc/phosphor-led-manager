@@ -3,52 +3,64 @@ bmc_booted:
         Action: 'On'
         DutyOn: 50
         Period: 0
+        priority: 'Blink'
 power_on:
     power:
         Action: 'On'
         DutyOn: 50
         Period: 0
+        priority: 'On'
 enclosure_fault:
-    fault_front:
+    front_fault:
         Action: 'On'
         DutyOn: 50
         Period: 0
-    fault_rear:
+        priority: 'Blink'
+    rear_fault:
         Action: 'On'
         DutyOn: 50
         Period: 0
+        priority: 'Blink'
 enclosure_identify:
     front_id:
         Action: 'Blink'
         DutyOn: 50
         Period: 1000
+        priority: 'Blink'
     rear_id:
         DutyOn: 50
         Action: 'Blink'
         Period: 1000
+        priority: 'Blink'
 fan_fault:
     front_fault:
         Period: 0
         DutyOn: 50
         Action: 'On'
+        priority: 'Blink'
     fan0:
         DutyOn: 50
         Action: 'On'
         Period: 0
+        priority: 'Blink'
     rear_fault:
         Period: 0
         DutyOn: 50
         Action: 'On'
+        priority: 'Blink'
 fan_identify:
     front_id:
         Period: 1000
         Action: 'Blink'
         DutyOn: 50
+        priority: 'Blink'
     rear_id:
         Period: 1000
         Action: 'Blink'
         DutyOn: 50
+        priority: 'Blink'
     fan0:
         DutyOn: 50
         Action: 'Blink'
         Period: 1000
+        priority: 'Blink'

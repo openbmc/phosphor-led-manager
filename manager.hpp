@@ -4,6 +4,7 @@
 #include <set>
 #include <sdbusplus/bus.hpp>
 #include "ledlayout.hpp"
+
 namespace phosphor
 {
 namespace led
@@ -28,11 +29,42 @@ class Manager
         Manager(Manager&&) = delete;
         Manager& operator=(Manager&&) = delete;
 
-        /** @brief For finding intersection */
+        /** @brief Special comparator for finding set difference */
         static bool ledComp(const phosphor::led::Layout::LedAction& left,
                             const phosphor::led::Layout::LedAction& right)
         {
+            // Example :
+            // If FIRST_1 is {fan0, 1, 1} and FIRST_2 is {fan0, 2, 2},
+            // with default priority of Blink, this comparator would return
+            // false. But considering the priority, this comparator would need
+            // to return true so that we consider appropriate set and in
+            // this case its {fan0, 1, 1}
+            if (left.name == right.name)
+            {
+                if (left.action == right.action)
+                {
+                    return false;
+                }
+                else
+                {
+                    return true;
+                }
+            }
             return left.name < right.name;
+        }
+
+        /** @brief Comparator for finding LEDs to be DeAsserted */
+        static bool ledLess(const phosphor::led::Layout::LedAction& left,
+                            const phosphor::led::Layout::LedAction& right)
+        {
+            return left.name < right.name;
+        }
+
+        /** @brief Comparator for helping unique_copy */
+        static bool ledEqual(const phosphor::led::Layout::LedAction& left,
+                             const phosphor::led::Layout::LedAction& right)
+        {
+            return left.name == right.name;
         }
 
         using group = std::set<phosphor::led::Layout::LedAction>;
@@ -58,28 +90,24 @@ class Manager
          *
          *  @param[in]  path          -  dbus path of group
          *  @param[in]  assert        -  Could be true or false
-         *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+         *  @param[in]  ledsAssert    -  LEDs that are to be asserted new
+         *                               or to a different state
          *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
-         *  @param[in]  ledsUpdate    -  LEDs that need a transition between
-         *                               different types of asserted states.
          *
          *  @return                   -  Success or exception thrown
          */
         bool setGroupState(const std::string& path, bool assert,
-                           group& ledsAssert, group& ledsDeAssert,
-                           group& ledsUpdate);
+                           group& ledsAssert, group& ledsDeAssert);
 
         /** @brief Finds the set of LEDs to operate on and executes action
          *
          *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+         *                               or to a different state
          *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
-         *  @param[in]  ledsUpdate    -  LEDs that need a transition between
-         *                               different types of asserted states.
          *
          *  @return: None
          */
-        void driveLEDs(group& ledsAssert, group& ledsDeAssert,
-                       group& ledsUpdate);
+        void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
     private:
         /** @brief sdbusplus handler */
@@ -93,6 +121,11 @@ class Manager
 
         /** @brief Contains the LEDs that are in asserted state */
         group currentState;
+
+        /** @brief Contains the LEDs that are virtually to be actioned
+         *  but in reality, only what meets the priority would be
+         */
+        group currentVirtual;
 
         /** @brief Returns action string based on enum
          *
