@@ -2,6 +2,7 @@
 
 #include <map>
 #include <set>
+
 namespace phosphor
 {
 namespace led
@@ -30,13 +31,21 @@ namespace Layout
         Action action;
         uint8_t dutyOn;
         uint16_t period;
+        Action priority;
 
         // Needed for inserting elements into sets
         bool operator<(const LedAction& right) const
         {
             if (name == right.name)
             {
-                return action < right.action;
+                if (action == right.action)
+                {
+                    return priority < right.priority;
+                }
+                else
+                {
+                    return action < right.action;
+                }
             }
             return name < right.name;
         }

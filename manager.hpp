@@ -4,6 +4,7 @@
 #include <set>
 #include <sdbusplus/bus.hpp>
 #include "ledlayout.hpp"
+
 namespace phosphor
 {
 namespace led
@@ -28,7 +29,21 @@ class Manager
         Manager(Manager&&) = delete;
         Manager& operator=(Manager&&) = delete;
 
-        /** @brief For finding intersection */
+        /** @brief Special comparator for finding set difference */
+        static bool ledComp1(const phosphor::led::Layout::LedAction& left,
+                            const phosphor::led::Layout::LedAction& right)
+        {
+            if (left.name == right.name)
+            {
+                if (left.action < right.action)
+                {
+                    return left.action == left.priority;
+                }
+            }
+            return left.name < right.name;
+        }
+
+        /** @brief Comparator for findind set intersectons */
         static bool ledComp(const phosphor::led::Layout::LedAction& left,
                             const phosphor::led::Layout::LedAction& right)
         {
