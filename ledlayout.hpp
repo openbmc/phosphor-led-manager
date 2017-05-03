@@ -2,6 +2,7 @@
 
 #include <map>
 #include <set>
+
 namespace phosphor
 {
 namespace led
@@ -30,13 +31,23 @@ namespace Layout
         Action action;
         uint8_t dutyOn;
         uint16_t period;
+        Action priority;
 
-        // Needed for inserting elements into sets
+        // Order LEDs such that same LEDs are grouped next to
+        // each other and the same LEDs are in priority order
+        // with the highest priority coming first
         bool operator<(const LedAction& right) const
         {
             if (name == right.name)
             {
-                return action < right.action;
+                if (action == right.action)
+                {
+                    return false;
+                }
+                else if (action == priority)
+                {
+                    return true;
+                }
             }
             return name < right.name;
         }
