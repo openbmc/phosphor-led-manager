@@ -1,54 +1,41 @@
 bmc_booted:
     heartbeat:
         Action: 'On'
-        DutyOn: 50
-        Period: 0
 power_on:
     power:
         Action: 'On'
-        DutyOn: 50
-        Period: 0
+        priority: 'On'
 enclosure_fault:
-    fault_front:
+    front_fault:
         Action: 'On'
-        DutyOn: 50
-        Period: 0
-    fault_rear:
+    rear_fault:
         Action: 'On'
-        DutyOn: 50
-        Period: 0
 enclosure_identify:
     front_id:
         Action: 'Blink'
         DutyOn: 50
         Period: 1000
     rear_id:
-        DutyOn: 50
         Action: 'Blink'
+        DutyOn: 50
         Period: 1000
 fan_fault:
     front_fault:
-        Period: 0
-        DutyOn: 50
         Action: 'On'
     fan0:
-        DutyOn: 50
         Action: 'On'
-        Period: 0
     rear_fault:
-        Period: 0
-        DutyOn: 50
         Action: 'On'
 fan_identify:
     front_id:
-        Period: 1000
         Action: 'Blink'
         DutyOn: 50
+        Period: 1000
     rear_id:
+        Action: 'Blink'
+        DutyOn: 50
         Period: 1000
-        Action: 'Blink'
-        DutyOn: 50
     fan0:
-        DutyOn: 50
         Action: 'Blink'
+        DutyOn: 50
         Period: 1000
