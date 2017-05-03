@@ -63,9 +63,10 @@ if __name__ == '__main__':
                 ofile.write('        {\"' + underscore(led_dict) + '\",')
                 ofile.write('phosphor::led::Layout::' +
                             str(list_dict.get('Action', 'Off')) + ',')
-                ofile.write(str(list_dict.get('DutyOn', 0)) + ',')
+                ofile.write(str(list_dict.get('DutyOn', 50)) + ',')
                 ofile.write(str(list_dict.get('Period', 0)) + ',')
-
+                priority = str(list_dict.get('Priority', 'Blink'))
+                ofile.write('phosphor::led::Layout::' + priority + ',')
                 ofile.write('},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')

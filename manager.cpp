@@ -11,8 +11,7 @@ namespace led
 
 // Assert -or- De-assert
 bool Manager::setGroupState(const std::string& path, bool assert,
-                            group& ledsAssert, group& ledsDeAssert,
-                            group& ledsUpdate)
+                            group& ledsAssert, group& ledsDeAssert)
 {
     if (assert)
     {
@@ -34,55 +33,73 @@ bool Manager::setGroupState(const std::string& path, bool assert,
         desiredState.insert(grp->cbegin(), grp->cend());
     }
 
-    // Has the LEDs that are either to be turned off -or- want a new assertion
+    // Find difference between Combined and Desired to identify
+    // which LEDs are getting altered
     group transient {};
-    std::set_difference(currentState.begin(), currentState.end(),
+    std::set_difference(combinedState.begin(), combinedState.end(),
                         desiredState.begin(), desiredState.end(),
                         std::inserter(transient, transient.begin()),
                         ledComp);
     if(transient.size())
     {
-        // We really do not want the Manager to know how a particular LED
-        // transitions from State-A --> State-B and all this must be handled by
-        // the physical LED controller implementation.
-        // So in this case, Manager really does not want to turn off the
-        // LEDs and then turning it back on and let the physical LED controller
-        // handle that.
+        // Find common LEDs between transient and Desired to know if some LEDs
+        // are changing state and not really getting DeAsserted
+        group ledsTransient {};
+        std::set_intersection(transient.begin(),transient.end(),
+                            desiredState.begin(), desiredState.end(),
+                            std::inserter(ledsTransient, ledsTransient.begin()),
+                            ledLess);
 
-        // If we previously had a FRU in ON state , and then if there was a
-        // request to make it blink, the end state would now be blink.
-        // If we either turn off blink / fault, then we need to go back to its
-        // previous state.
-        std::set_intersection(desiredState.begin(), desiredState.end(),
-                              transient.begin(), transient.end(),
-                              std::inserter(ledsUpdate, ledsUpdate.begin()),
-                              ledComp);
-
-        // These LEDs are only to be De-Asserted.
-        std::set_difference(transient.begin(), transient.end(),
-                            ledsUpdate.begin(), ledsUpdate.end(),
+        // Find difference between above 2 to identify those LEDs which are
+        // really getting DeAsserted
+        std::set_difference(transient.begin(),transient.end(),
+                            ledsTransient.begin(),ledsTransient.end(),
                             std::inserter(ledsDeAssert, ledsDeAssert.begin()),
-                            ledComp);
+                            ledLess);
 
+        // Remove the elements from Current that are being DeAsserted.
+        if(ledsDeAssert.size())
+        {
+            // Power off LEDs that are to be really DeAsserted
+            for (auto& it:ledsDeAssert)
+            {
+                // Update LEDs in "physically asserted" set by removing those
+                // LEDs which are De-Asserted
+                auto found = currentState.find(it);
+                if (found != currentState.end())
+                {
+                    currentState.erase(found);
+                }
+            }
+        }
     }
 
-    // Turn on these
-    std::set_difference(desiredState.begin(), desiredState.end(),
-                        currentState.begin(), currentState.end(),
-                        std::inserter(ledsAssert, ledsAssert.begin()),
-                        ledComp);
+    // Now LEDs that are to be Asserted. These could either be fresh asserts
+    // -or- change between [On]<-->[Blink]
+    group temp {};
+    std::unique_copy(desiredState.begin(), desiredState.end(),
+                     std::inserter(temp, temp.begin()),
+                     ledEqual);
+    if(temp.size())
+    {
+        // Find difference between [desired to be Asserted] and those LEDs
+        // that are physically asserted currently.
+        std::set_difference(temp.begin(), temp.end(),
+                            currentState.begin(), currentState.end(),
+                            std::inserter(ledsAssert, ledsAssert.begin()),
+                            ledComp);
+    }
 
-
-    // Done.. Save the latest and greatest.
-    currentState = std::move(desiredState);
+    // Update the current actual and desired(the virtual actual)
+    currentState = std::move(temp);
+    combinedState = std::move(desiredState);
 
     // If we survive, then set the state accordingly.
     return assert;
 }
 
 /** @brief Run through the map and apply action on the LEDs */
-void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
-                        group& ledsUpdate)
+void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
     // Map of physical LED dbus paths to their Service providers
     populateObjectMap();
@@ -94,17 +111,6 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert,
     }
 
     // This order of LED operation is important.
-    if (ledsUpdate.size())
-    {
-        std::cout << "Updating LED states between (On <--> Blink)"
-                  << std::endl;
-        for (const auto& it: ledsUpdate)
-        {
-            std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            drivePhysicalLED(objPath, it.action, it.dutyOn);
-        }
-    }
-
     if (ledsDeAssert.size())
     {
         std::cout << "De-Asserting LEDs" << std::endl;
