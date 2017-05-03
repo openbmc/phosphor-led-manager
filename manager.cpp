@@ -38,7 +38,8 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     group transient {};
     std::set_difference(currentState.begin(), currentState.end(),
                         desiredState.begin(), desiredState.end(),
-                        std::inserter(transient, transient.begin()));
+                        std::inserter(transient, transient.begin()),
+                        ledComp);
     if(transient.size())
     {
         // We really do not want the Manager to know how a particular LED
@@ -68,7 +69,8 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     // Turn on these
     std::set_difference(desiredState.begin(), desiredState.end(),
                         currentState.begin(), currentState.end(),
-                        std::inserter(ledsAssert, ledsAssert.begin()));
+                        std::inserter(ledsAssert, ledsAssert.begin()),
+                        ledComp);
 
 
     // Done.. Save the latest and greatest.

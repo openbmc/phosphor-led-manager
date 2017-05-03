@@ -132,3 +132,22 @@ static const std::map<std::string,
         }
     },
 };
+
+static const std::map<std::string,
+    std::set<phosphor::led::Layout::LedAction>>
+        twoGroupsWithMultipleComonLEDInDifferentStateBlinkAgain = {
+    {   "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet",{
+            {"One",phosphor::led::Layout::On},
+            {"Two",phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::On},
+            {"Four",phosphor::led::Layout::On},
+        }
+    },
+    {   "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet",{
+            {"Two",phosphor::led::Layout::Blink},
+            {"Three",phosphor::led::Layout::Blink},
+            {"Five",phosphor::led::Layout::On},
+            {"Six",phosphor::led::Layout::On},
+        }
+    },
+};
