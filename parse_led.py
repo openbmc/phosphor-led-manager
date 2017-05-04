@@ -70,6 +70,8 @@ if __name__ == '__main__':
                             name_printed = True
                         if name == 'Action':
                             ofile.write('phosphor::led::Layout::')
+                        if name == 'priority':
+                            ofile.write('phosphor::led::Layout::')
                         ofile.write(str(value) + ',')
                 ofile.write('},\n')
             ofile.write('   }},\n')
