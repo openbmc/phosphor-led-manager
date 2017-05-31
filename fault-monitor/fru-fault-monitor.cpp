@@ -117,22 +117,19 @@ void action(sdbusplus::bus::bus& bus,
     return;
 }
 
-int Add::created(sd_bus_message* msg,
-                 void* data,
-                 sd_bus_error* retError)
+void Add::created(sdbusplus::message::message& msg)
 {
-    auto m = sdbusplus::message::message(msg);
-    auto bus = m.get_bus();
+    auto bus = msg.get_bus();
 
     sdbusplus::message::object_path obPath;
-    m.read(obPath);
+    msg.read(obPath);
     std::string objectPath(std::move(obPath));
 
     std::size_t found = objectPath.find(ELOG_ENTRY);
     if (found == std::string::npos)
     {
         //Not a new error entry skip
-        return 0;
+        return;
     }
 
     std::string service;
@@ -143,12 +140,12 @@ int Add::created(sd_bus_message* msg,
     catch (MethodErr& e)
     {
         commit<MethodErr>();
-        return 0;
+        return;
     }
     catch (ObjectNotFoundErr& e)
     {
         commit<ObjectNotFoundErr>();
-        return 0;
+        return;
     }
 
     auto method =  bus.new_method_call(service.c_str(), objectPath.c_str(),
@@ -164,7 +161,7 @@ int Add::created(sd_bus_message* msg,
         report<AssociationRetrieveErr>(
             AssociationRetrieveError::ELOG_ENTRY_PATH(
                 objectPath.c_str()));
-        return 0;
+        return;
     }
 
     sdbusplus::message::variant<AssociationList> assoc;
@@ -175,7 +172,7 @@ int Add::created(sd_bus_message* msg,
     if (assocs.empty())
     {
         //No associations skip
-        return 0;
+        return;
     }
 
     for (const auto& item : assocs)
@@ -183,46 +180,43 @@ int Add::created(sd_bus_message* msg,
         if (std::get<1>(item).compare(CALLOUT_REV_ASSOCIATION) == 0)
         {
             action(bus, std::get<2>(item), true);
-            static_cast<Add*>(data)->removeWatches.emplace_back(
-                std::make_unique<Remove>(bus, std::get<2>(item)));
+            removeWatches.emplace_back(
+                    std::make_unique<Remove>(bus, std::get<2>(item)));
         }
     }
-    return 0;
+    return;
 }
 
-int Remove::removed(sd_bus_message* msg,
-                    void* data,
-                    sd_bus_error* retError)
+void Remove::removed(sdbusplus::message::message& msg)
 {
-    auto m = sdbusplus::message::message(msg);
-    auto bus = m.get_bus();
+    auto bus = msg.get_bus();
     std::string assoc;
-    m.read(assoc);
+    msg.read(assoc);
 
     if (assoc.compare("org.openbmc.Association"))
     {
         //Skip if not about association
-        return 0;
+        return;
     }
 
     std::map<std::string, std::vector<std::string>> endPoints;
-    m.read(endPoints);
+    msg.read(endPoints);
     auto it = endPoints.find("endpoints");
 
     if (it == endPoints.end())
     {
         //No end points,skip
-        return 0;
+        return;
     }
 
     if (!((*it).second.empty()))
     {
         //Skip, end points are not empty
-        return 0;
+        return;
     }
 
-    action(bus, static_cast<Remove*>(data)->inventoryPath, false);
-    return 0;
+    action(bus, inventoryPath, false);
+    return;
 }
 
 }//namespace monitor

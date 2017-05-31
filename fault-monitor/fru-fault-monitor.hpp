@@ -47,31 +47,25 @@ class Add
         Add(sdbusplus::bus::bus& bus):
             matchCreated(
                 bus,
-                "type='signal',"
-                "interface='org.freedesktop.DBus.ObjectManager',"
-                "member='InterfacesAdded',"
-                "path_namespace='/xyz/openbmc_project/logging'",
-                created,
-                this)
+                sdbusplus::bus::match::rules::interfacesAdded() +
+                sdbusplus::bus::match::rules::path_namespace(
+                        "/xyz/openbmc_project/logging"),
+                std::bind(std::mem_fn(&Add::created),
+                          this, std::placeholders::_1))
         {
             //Do nothing
         }
     private:
 
         /** @brief sdbusplus signal match for fault created */
-        sdbusplus::server::match::match matchCreated;
+        sdbusplus::bus::match_t matchCreated;
 
         std::vector<std::unique_ptr<Remove>> removeWatches;
 
         /** @brief Callback function for fru fault created
          *  @param[in] msg       - Data associated with subscribed signal
-         *  @param[in] data      - Pointer to this object instance
-         *  @param[out] retError - Error returned
-         *  @return zero on success and error code upon failure
          */
-        static int created(sd_bus_message* msg,
-                           void* data,
-                           sd_bus_error* retError);
+        void created(sdbusplus::message::message& msg);
 };
 
 /** @class Remove
@@ -97,9 +91,9 @@ class Remove
             inventoryPath(path),
             matchRemoved(
                 bus,
-                match(path).c_str(),
-                removed,
-                this)
+                match(path),
+                std::bind(std::mem_fn(&Remove::removed),
+                          this, std::placeholders::_1))
         {
             //Do nothing
         }
@@ -110,29 +104,26 @@ class Remove
         std::string inventoryPath;
 
         /** @brief sdbusplus signal matches for fault removed */
-        sdbusplus::server::match::match matchRemoved;
+        sdbusplus::bus::match_t matchRemoved;
 
         /** @brief Callback function for fru fault created
          *  @param[in] msg       - Data associated with subscribed signal
-         *  @param[in] data      - Pointer to this object instance
-         *  @param[out] retError - Error returned
-         *  @return zero on success and error code upon failure
          */
-        static int removed(sd_bus_message* msg,
-                           void* data,
-                           sd_bus_error* retError);
+        void removed(sdbusplus::message::message& msg);
 
         /** @brief function to create fault remove match for a fru
          *  @param[in] path  - Inventory path of the faulty unit.
          */
         std::string match(const std::string& path)
         {
+            namespace MatchRules = sdbusplus::bus::match::rules;
+
             std::string matchStmt =
-                "type='signal',"
-                "interface='org.freedesktop.DBus.Properties',"
-                "member='PropertiesChanged',"
-                "path='" + path +
-                "/" + CALLOUT_REV_ASSOCIATION + "'";
+                    MatchRules::type::signal() +
+                    MatchRules::interface("org.freedesktop.DBus.Properties") +
+                    MatchRules::member("PropertiesChanged") +
+                    MatchRules::path(path + "/" + CALLOUT_REV_ASSOCIATION);
+
             return matchStmt;
         }
 };
