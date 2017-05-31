@@ -44,7 +44,7 @@ if __name__ == '__main__':
         ofile.write('static const std::map<std::string,')
         ofile.write(' std::set<phosphor::led::Layout::LedAction>>')
         ofile.write(' systemLedMap = {\n\n')
-        for group in ifile.iterkeys():
+        for group in ifile.keys():
             # This section generates an std::map of LedGroupNames to std::set
             # of LEDs containing the name and properties
             ledset = ifile[group]
@@ -59,18 +59,13 @@ if __name__ == '__main__':
                 ofile.write('   }},\n')
                 continue
 
-            for led_dict, list_dict in ledset.iteritems():
-                # Need this to make sure the LED name is printed once
-                name_printed = False
-                for name, value in list_dict.iteritems():
-                    if group and led_dict and name:
-                        if name_printed is False:
-                            ofile.write('        {\"' + underscore(led_dict) +
-                                        '\",')
-                            name_printed = True
-                        if name == 'Action':
-                            ofile.write('phosphor::led::Layout::')
-                        ofile.write(str(value) + ',')
+            for led_dict, list_dict in ledset.items():
+                ofile.write('        {\"' + underscore(led_dict) + '\",')
+                ofile.write('phosphor::led::Layout::' +
+                            str(list_dict.get('Action', 'Off')) + ',')
+                ofile.write(str(list_dict.get('DutyOn', 0)) + ',')
+                ofile.write(str(list_dict.get('Period', 0)) + ',')
+
                 ofile.write('},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
