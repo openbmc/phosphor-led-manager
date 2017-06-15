@@ -37,6 +37,9 @@ if __name__ == '__main__':
     with open(yaml_file, 'r') as f:
         ifile = yaml.safe_load(f)
 
+    # Dictionary having [Name:Priority]
+    priority_dict = {}
+
     with open(os.path.join(args.outputdir, 'led-gen.hpp'), 'w') as ofile:
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
@@ -47,7 +50,7 @@ if __name__ == '__main__':
         for group in ifile.keys():
             # This section generates an std::map of LedGroupNames to std::set
             # of LEDs containing the name and properties
-            ledset = ifile[group]
+            led_dict = ifile[group]
             ofile.write(
                 '   {\"' +
                 "/xyz/openbmc_project/led/groups/" +
@@ -55,12 +58,25 @@ if __name__ == '__main__':
                 '\",{\n')
 
             # Some LED groups could be empty
-            if not ledset:
+            if not led_dict:
                 ofile.write('   }},\n')
                 continue
 
-            for led_dict, list_dict in ledset.items():
-                ofile.write('        {\"' + underscore(led_dict) + '\",')
+            for led_name, list_dict in led_dict.items():
+                value = list_dict.get('priority')
+                if led_name in priority_dict:
+                    if value != priority_dict[led_name]:
+                        # Priority for a particular LED needs to stay SAME
+                        # across all groups
+                        ofile.close()
+                        os.remove(ofile.name)
+                        raise ValueError("Priority for [" +
+                                         led_name +
+                                         "] is NOT same across all groups")
+                else:
+                    priority_dict[led_name] = value
+
+                ofile.write('        {\"' + underscore(led_name) + '\",')
                 ofile.write('phosphor::led::Layout::' +
                             str(list_dict.get('Action', 'Off')) + ',')
                 ofile.write(str(list_dict.get('DutyOn', 50)) + ',')
