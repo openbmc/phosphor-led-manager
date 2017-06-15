@@ -37,6 +37,9 @@ if __name__ == '__main__':
     with open(yaml_file, 'r') as f:
         ifile = yaml.safe_load(f)
 
+    # Dictionary having [Name:Priority]
+    priority_dict = {}
+
     with open(os.path.join(args.outputdir, 'led-gen.hpp'), 'w') as ofile:
         ofile.write('/* !!! WARNING: This is a GENERATED Code..')
         ofile.write('Please do NOT Edit !!! */\n\n')
@@ -60,6 +63,19 @@ if __name__ == '__main__':
                 continue
 
             for led_dict, list_dict in ledset.items():
+                value = list_dict.get('priority')
+                if led_dict in priority_dict:
+                    if value != priority_dict[led_dict]:
+                        # Priority for a particular LED needs to stay SAME
+                        # across all groups
+                        ofile.close()
+                        os.remove(ofile.name)
+                        raise ValueError("Priority for [" +
+                                         led_dict +
+                                         "] is NOT same across all groups")
+                else:
+                    priority_dict[led_dict] = value
+
                 ofile.write('        {\"' + underscore(led_dict) + '\",')
                 ofile.write('phosphor::led::Layout::' +
                             str(list_dict.get('Action', 'Off')) + ',')
