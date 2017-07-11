@@ -9,28 +9,6 @@
 #include <phosphor-logging/log.hpp>
 #include <phosphor-logging/elog.hpp>
 
-namespace sdbusplus
-{
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Led
-{
-namespace Fru
-{
-namespace Monitor
-{
-namespace Error
-{
-    struct AssociationRetrieveError;
-} // namespace Error
-} // namespace Monitor
-} // namespace Fru
-} // namespace Led
-} // namespace openbmc_project
-} // namespace xyz
-} // namespace sdbusplus
 
 namespace sdbusplus
 {
@@ -164,72 +142,6 @@ template <>
 struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::Error::InventoryPathError>
 {
     using type = xyz::openbmc_project::Led::Fru::Monitor::InventoryPathError;
-};
-
-}
-
-namespace xyz
-{
-namespace openbmc_project
-{
-namespace Led
-{
-namespace Fru
-{
-namespace Monitor
-{
-namespace _AssociationRetrieveError
-{
-
-struct ELOG_ENTRY_PATH
-{
-    static constexpr auto str = "ELOG_ENTRY_PATH=%s";
-    static constexpr auto str_short = "ELOG_ENTRY_PATH";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr ELOG_ENTRY_PATH(const char* a) : _entry(entry(str, a)) {};
-    type _entry;
-};
-
-}  // namespace _AssociationRetrieveError
-
-struct AssociationRetrieveError : public sdbusplus::exception_t
-{
-    static constexpr auto errName = "xyz.openbmc_project.Led.Fru.Monitor.AssociationRetrieveError";
-    static constexpr auto errDesc = "Error in retrieving the associations from elog entry.";
-    static constexpr auto L = level::INFO;
-    using ELOG_ENTRY_PATH = _AssociationRetrieveError::ELOG_ENTRY_PATH;
-    using metadata_types = std::tuple<ELOG_ENTRY_PATH>;
-
-    const char* name() const noexcept
-    {
-        return errName;
-    }
-
-    const char* description() const noexcept
-    {
-        return errDesc;
-    }
-
-    const char* what() const noexcept
-    {
-        return errName;
-    }
-};
-
-} // namespace Monitor
-} // namespace Fru
-} // namespace Led
-} // namespace openbmc_project
-} // namespace xyz
-
-
-namespace details
-{
-
-template <>
-struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::Error::AssociationRetrieveError>
-{
-    using type = xyz::openbmc_project::Led::Fru::Monitor::AssociationRetrieveError;
 };
 
 }
