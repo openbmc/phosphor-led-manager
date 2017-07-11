@@ -26,13 +26,18 @@ constexpr auto LOG_PATH         = "/xyz/openbmc_project/logging";
 
 using AssociationList = std::vector<std::tuple<
                         std::string, std::string, std::string>>;
+using Attributes = sdbusplus::message::variant<AssociationList, bool, uint32_t,
+      uint64_t, std::string, std::vector<std::string>>;
+using AttributeName = std::string;
+using AttributeMap = std::map<AttributeName, Attributes>;
+using PropertyName = std::string;
+using PropertyMap = std::map<PropertyName, AttributeMap>;
+using LogEntryMsg = std::pair<sdbusplus::message::object_path, PropertyMap>;
+
 using MethodErr  =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError;
 using ObjectNotFoundErr =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::ObjectNotFoundError;
-using AssociationRetrieveErr =
-    sdbusplus::xyz::openbmc_project::
-    Led::Fru::Monitor::Error::AssociationRetrieveError;
 using InventoryPathErr =
     sdbusplus::xyz::openbmc_project::
     Led::Fru::Monitor::Error::InventoryPathError;
@@ -121,9 +126,9 @@ void Add::created(sdbusplus::message::message& msg)
 {
     auto bus = msg.get_bus();
 
-    sdbusplus::message::object_path obPath;
-    msg.read(obPath);
-    std::string objectPath(std::move(obPath));
+    LogEntryMsg logEntry;
+    msg.read(logEntry);
+    std::string objectPath(std::move(logEntry.first));
 
     std::size_t found = objectPath.find(ELOG_ENTRY);
     if (found == std::string::npos)
@@ -131,44 +136,22 @@ void Add::created(sdbusplus::message::message& msg)
         //Not a new error entry skip
         return;
     }
+    log<level::ERR>(objectPath.c_str());
 
-    std::string service;
-    try
+    auto iter = logEntry.second.find("org.openbmc.Associations");
+    if (iter == logEntry.second.end())
     {
-        service = getService(bus, LOG_PATH);
-    }
-    catch (MethodErr& e)
-    {
-        commit<MethodErr>();
-        return;
-    }
-    catch (ObjectNotFoundErr& e)
-    {
-        commit<ObjectNotFoundErr>();
         return;
     }
 
-    auto method =  bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                       "org.freedesktop.DBus.Properties",
-                                       "Get");
-
-    method.append("org.openbmc.Associations");
-    method.append("associations");
-    auto reply = bus.call(method);
-    if (reply.is_method_error())
+    auto attr = iter->second.find("associations");
+    if (attr == iter->second.end())
     {
-        using namespace xyz::openbmc_project::Led::Fru::Monitor;
-        report<AssociationRetrieveErr>(
-            AssociationRetrieveError::ELOG_ENTRY_PATH(
-                objectPath.c_str()));
         return;
     }
 
-    sdbusplus::message::variant<AssociationList> assoc;
-    reply.read(assoc);
-
-    auto assocs =
-        sdbusplus::message::variant_ns::get<AssociationList>(assoc);
+    auto& assocs =
+        sdbusplus::message::variant_ns::get<AssociationList>(attr->second);
     if (assocs.empty())
     {
         //No associations skip
@@ -181,9 +164,10 @@ void Add::created(sdbusplus::message::message& msg)
         {
             action(bus, std::get<2>(item), true);
             removeWatches.emplace_back(
-                    std::make_unique<Remove>(bus, std::get<2>(item)));
+                std::make_unique<Remove>(bus, std::get<2>(item)));
         }
     }
+
     return;
 }
 

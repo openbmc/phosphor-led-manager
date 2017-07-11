@@ -2,8 +2,3 @@
   meta:
     - str: "PATH=%s"
       type: string
-
-- name: AssociationRetrieveError
-  meta:
-    - str: "ELOG_ENTRY_PATH=%s"
-      type: string
