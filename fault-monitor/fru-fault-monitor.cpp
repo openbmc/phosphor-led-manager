@@ -3,6 +3,8 @@
 #include "xyz/openbmc_project/Led/Mapper/error.hpp"
 #include "elog-errors.hpp"
 #include "fru-fault-monitor.hpp"
+#include <phosphor-logging/elog-errors.hpp>
+#include "xyz/openbmc_project/Common/error.hpp"
 
 namespace phosphor
 {
@@ -23,6 +25,7 @@ constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
 constexpr auto OBJMGR_IFACE     = "org.freedesktop.DBus.ObjectManager";
 constexpr auto LED_GROUPS       = "/xyz/openbmc_project/led/groups/";
 constexpr auto LOG_PATH         = "/xyz/openbmc_project/logging";
+constexpr auto LOG_IFACE        = "xyz.openbmc_project.Logging.Entry";
 
 using AssociationList = std::vector<std::tuple<
                         std::string, std::string, std::string>>;
@@ -32,6 +35,15 @@ using AttributeMap = std::map<AttributeName, Attributes>;
 using PropertyName = std::string;
 using PropertyMap = std::map<PropertyName, AttributeMap>;
 using LogEntryMsg = std::pair<sdbusplus::message::object_path, PropertyMap>;
+
+using Service = std::string;
+using Path = std::string;
+using Interface = std::string;
+using Interfaces = std::vector<Interface>;
+using MapperResponseType = std::map<Path, std::map<Service, Interfaces>>;
+
+using InternalFailure =
+    sdbusplus::xyz::openbmc_project::Common::Error::InternalFailure;
 
 using MethodErr  =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError;
@@ -161,13 +173,86 @@ void Add::created(sdbusplus::message::message& msg)
     {
         if (std::get<1>(item).compare(CALLOUT_REV_ASSOCIATION) == 0)
         {
-            action(bus, std::get<2>(item), true);
             removeWatches.emplace_back(
                 std::make_unique<Remove>(bus, std::get<2>(item)));
+            action(bus, std::get<2>(item), true);
         }
     }
 
     return;
+}
+
+void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
+{
+    auto depth = 0;
+    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME,
+                                          MAPPER_OBJ_PATH,
+                                          MAPPER_IFACE,
+                                          "GetSubTree");
+    mapperCall.append("/");
+    mapperCall.append(depth);
+    mapperCall.append(std::vector<Interface>({LOG_IFACE}));
+
+    auto mapperResponseMsg = bus.call(mapperCall);
+    if (mapperResponseMsg.is_method_error())
+    {
+        using namespace xyz::openbmc_project::Led::Mapper;
+        report<MethodErr>(
+            MethodError::METHOD_NAME("GetSubTree"),
+            MethodError::PATH(MAPPER_OBJ_PATH),
+            MethodError::INTERFACE(
+                OBJMGR_IFACE));
+        return;
+    }
+
+    MapperResponseType mapperResponse;
+    mapperResponseMsg.read(mapperResponse);
+    if (mapperResponse.empty())
+    {
+        using namespace xyz::openbmc_project::Led::Mapper;
+        report<ObjectNotFoundErr>(
+            ObjectNotFoundError::METHOD_NAME("GetSubTree"),
+            ObjectNotFoundError::PATH(MAPPER_OBJ_PATH),
+            ObjectNotFoundError::INTERFACE(
+                OBJMGR_IFACE));
+        return;
+    }
+
+    for (const auto& elem : mapperResponse)
+    {
+        auto method =  bus.new_method_call(elem.second.begin()->first.c_str(),
+                                           elem.first.c_str(),
+                                           "org.freedesktop.DBus.Properties",
+                                           "Get");
+        method.append("org.openbmc.Associations");
+        method.append("associations");
+        auto reply = bus.call(method);
+        if (reply.is_method_error())
+        {
+            //do not stop, continue with next elog
+            log<level::ERR>("Error in getting associations");
+            continue;
+        }
+
+        sdbusplus::message::variant<AssociationList> assoc;
+        reply.read(assoc);
+        auto& assocs = assoc.get<AssociationList>();
+        if (assocs.empty())
+        {
+            //no associations, skip
+            continue;
+        }
+
+        for (const auto& item : assocs)
+        {
+            if (std::get<1>(item).compare(CALLOUT_REV_ASSOCIATION) == 0)
+            {
+                removeWatches.emplace_back(
+                    std::make_unique<Remove>(bus, std::get<2>(item)));
+                action(bus, std::get<2>(item), true);
+            }
+        }
+    }
 }
 
 void Remove::removed(sdbusplus::message::message& msg)
