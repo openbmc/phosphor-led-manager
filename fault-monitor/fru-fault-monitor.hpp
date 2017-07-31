@@ -53,7 +53,7 @@ class Add
                 std::bind(std::mem_fn(&Add::created),
                           this, std::placeholders::_1))
         {
-            //Do nothing
+            processExistingCallouts(bus);
         }
     private:
 
@@ -66,6 +66,11 @@ class Add
          *  @param[in] msg       - Data associated with subscribed signal
          */
         void created(sdbusplus::message::message& msg);
+
+        /** @brief This function process all existing callouts while loading
+         *  @param[in] bus - The Dbus bus object
+         */
+        void processExistingCallouts(sdbusplus::bus::bus& bus);
 };
 
 /** @class Remove
