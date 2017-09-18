@@ -44,6 +44,14 @@ AS_IF([test "x$enable_oe_sdk" == "xyes"],
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, [AC_MSG_ERROR([Could not find sdbusplus...openbmc/sdbusplus package required])])
 PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],, [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces],, [AC_MSG_ERROR([Could not find phosphor-dbus-interfaces...openbmc/phosphor-dbus-interfaces package required])])
+PKG_CHECK_MODULES([OPENPOWER_DEBUG_COLLECTOR], [openpower-debug-collector],,[AC_MSG_ERROR([Could not find openpower-debug-collector])])
+# Check for elog-gen.py tool
+AC_PATH_PROG([ELOGGEN], [elog-gen.py])
+AS_IF([test "x$ELOGGEN" == "x"], AC_MSG_ERROR([Cannot find elog-gen.py]))
+
+# Check for elog-gen template
+AC_PATH_PROG([ELOGGENTEMPLATE], [elog-gen-template.mako.hpp])
+AS_IF([test "x$ELOGGENTEMPLATE" == "x"], AC_MSG_ERROR([Cannot find elog-gen-template.mako.hpp]))
 
 # Check for sdbus++ tool
 AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])
