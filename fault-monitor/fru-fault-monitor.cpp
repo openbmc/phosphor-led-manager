@@ -209,12 +209,7 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
     mapperResponseMsg.read(mapperResponse);
     if (mapperResponse.empty())
     {
-        using namespace xyz::openbmc_project::Led::Mapper;
-        report<ObjectNotFoundErr>(
-            ObjectNotFoundError::METHOD_NAME("GetSubTree"),
-            ObjectNotFoundError::PATH(MAPPER_OBJ_PATH),
-            ObjectNotFoundError::INTERFACE(
-                OBJMGR_IFACE));
+        //No errors to process.
         return;
     }
 
