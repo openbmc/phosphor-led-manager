@@ -48,7 +48,6 @@ namespace Layout
                 {
                     return true;
                 }
-                return action > right.action;
             }
             return name < right.name;
         }
