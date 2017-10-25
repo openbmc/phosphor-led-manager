@@ -15,7 +15,7 @@ class LedTest : public ::testing::Test
         }
         ~LedTest()
         {
-            // Leaving upto auto cleanup.
+            // Leaving up to auto cleanup.
         }
 };
 
