@@ -253,30 +253,6 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
 void Remove::removed(sdbusplus::message::message& msg)
 {
     auto bus = msg.get_bus();
-    std::string assoc;
-    msg.read(assoc);
-
-    if (assoc.compare("org.openbmc.Association"))
-    {
-        //Skip if not about association
-        return;
-    }
-
-    std::map<std::string, std::vector<std::string>> endPoints;
-    msg.read(endPoints);
-    auto it = endPoints.find("endpoints");
-
-    if (it == endPoints.end())
-    {
-        //No end points,skip
-        return;
-    }
-
-    if (!((*it).second.empty()))
-    {
-        //Skip, end points are not empty
-        return;
-    }
 
     action(bus, inventoryPath, false);
     return;

@@ -124,10 +124,9 @@ class Remove
             namespace MatchRules = sdbusplus::bus::match::rules;
 
             std::string matchStmt =
-                    MatchRules::type::signal() +
-                    MatchRules::interface("org.freedesktop.DBus.Properties") +
-                    MatchRules::member("PropertiesChanged") +
-                    MatchRules::path(path + "/" + CALLOUT_REV_ASSOCIATION);
+                    MatchRules::interfacesRemoved() +
+                    MatchRules::argNpath(
+                            0, path + "/" + CALLOUT_REV_ASSOCIATION);
 
             return matchStmt;
         }
