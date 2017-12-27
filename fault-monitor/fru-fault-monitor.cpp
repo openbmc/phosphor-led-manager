@@ -1,9 +1,8 @@
 #include <phosphor-logging/elog.hpp>
 #include "xyz/openbmc_project/Led/Fru/Monitor/error.hpp"
 #include "xyz/openbmc_project/Led/Mapper/error.hpp"
-#include "elog-errors.hpp"
 #include "fru-fault-monitor.hpp"
-#include <phosphor-logging/elog-errors.hpp>
+#include "phosphor-logging/elog-errors.hpp"
 #include "xyz/openbmc_project/Common/error.hpp"
 
 namespace phosphor
