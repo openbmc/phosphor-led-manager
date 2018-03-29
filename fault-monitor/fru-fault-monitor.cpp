@@ -147,13 +147,13 @@ void Add::created(sdbusplus::message::message& msg)
         //Not a new error entry skip
         return;
     }
-    log<level::ERR>(objectPath.c_str());
-
     auto iter = logEntry.second.find("org.openbmc.Associations");
     if (iter == logEntry.second.end())
     {
         return;
     }
+
+    log<level::ERR>(objectPath.c_str());
 
     auto attr = iter->second.find("associations");
     if (attr == iter->second.end())
