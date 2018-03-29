@@ -147,13 +147,16 @@ void Add::created(sdbusplus::message::message& msg)
         //Not a new error entry skip
         return;
     }
-    log<level::ERR>(objectPath.c_str());
-
     auto iter = logEntry.second.find("org.openbmc.Associations");
     if (iter == logEntry.second.end())
     {
         return;
     }
+
+    //Nothing else shows when a specific error log
+    //has been created. Do it here.
+    std::string message{objectPath + " created"};
+    log<level::INFO>(message.c_str());
 
     auto attr = iter->second.find("associations");
     if (attr == iter->second.end())
