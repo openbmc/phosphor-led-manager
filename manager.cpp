@@ -101,6 +101,7 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
+    using namespace phosphor::logging;
     // Map of physical LED dbus paths to their Service providers
     populateObjectMap();
 
@@ -113,20 +114,20 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
-        std::cout << "De-Asserting LEDs" << std::endl;
         for (const auto& it: ledsDeAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            log<level::DEBUG>("De-Asserting LED", entry("NAME=%s", it.name.c_str()));
             drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn);
         }
     }
 
     if(ledsAssert.size())
     {
-        std::cout << "Asserting LEDs" << std::endl;
         for (const auto& it: ledsAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            log<level::DEBUG>("Asserting LED", entry("NAME=%s", it.name.c_str()));
             drivePhysicalLED(objPath, it.action, it.dutyOn);
         }
     }
