@@ -2,6 +2,7 @@
 #include <string>
 #include <algorithm>
 #include <phosphor-logging/log.hpp>
+#include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 #include "manager.hpp"
 namespace phosphor
@@ -219,7 +220,17 @@ void Manager::populateObjectMap()
              std::vector<std::string>>> objectTree;
 
     // This is the dict of object paths - service names - interfaces
-    reply.read(objectTree);
+    try
+    {
+        reply.read(objectTree);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse Physical LED service lookup",
+                        entry("ERROR=%s", e.what()),
+                        entry("REPLY_SIG=%s", reply.get_signature()));
+        return;
+    }
     if (objectTree.empty())
     {
         log<level::INFO>("Physical LED lookup did not return any services",

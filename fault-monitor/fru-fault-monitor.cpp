@@ -1,4 +1,5 @@
 #include <phosphor-logging/elog.hpp>
+#include <sdbusplus/exception.hpp>
 #include "xyz/openbmc_project/Led/Fru/Monitor/error.hpp"
 #include "xyz/openbmc_project/Led/Mapper/error.hpp"
 #include "elog-errors.hpp"
@@ -72,7 +73,22 @@ std::string getService(sdbusplus::bus::bus& bus,
     }
 
     std::map<std::string, std::vector<std::string>> mapperResponse;
-    mapperResponseMsg.read(mapperResponse);
+    try
+    {
+        mapperResponseMsg.read(mapperResponse);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse getService mapper response",
+                        entry("ERROR=%s", e.what()),
+                        entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+        using namespace xyz::openbmc_project::Led::Mapper;
+        elog<ObjectNotFoundErr>(
+            ObjectNotFoundError::METHOD_NAME("GetObject"),
+            ObjectNotFoundError::PATH(path.c_str()),
+            ObjectNotFoundError::INTERFACE(
+                OBJMGR_IFACE));
+    }
     if (mapperResponse.empty())
     {
         using namespace xyz::openbmc_project::Led::Mapper;
@@ -138,7 +154,17 @@ void Add::created(sdbusplus::message::message& msg)
     auto bus = msg.get_bus();
 
     LogEntryMsg logEntry;
-    msg.read(logEntry);
+    try
+    {
+        msg.read(logEntry);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse created message",
+                        entry("ERROR=%s", e.what()),
+                        entry("REPLY_SIG=%s", msg.get_signature()));
+        return;
+    }
     std::string objectPath(std::move(logEntry.first));
 
     std::size_t found = objectPath.find(ELOG_ENTRY);
@@ -209,7 +235,17 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
     }
 
     MapperResponseType mapperResponse;
-    mapperResponseMsg.read(mapperResponse);
+    try
+    {
+        mapperResponseMsg.read(mapperResponse);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse existing callouts subtree message",
+                        entry("ERROR=%s", e.what()),
+                        entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+        return;
+    }
     if (mapperResponse.empty())
     {
         //No errors to process.
@@ -233,7 +269,17 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         }
 
         sdbusplus::message::variant<AssociationList> assoc;
-        reply.read(assoc);
+        try
+        {
+            reply.read(assoc);
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>("Failed to parse existing callouts associations message",
+                            entry("ERROR=%s", e.what()),
+                            entry("REPLY_SIG=%s", reply.get_signature()));
+            continue;
+        }
         auto& assocs = assoc.get<AssociationList>();
         if (assocs.empty())
         {
