@@ -31,11 +31,10 @@ constexpr auto LOG_IFACE        = "xyz.openbmc_project.Logging.Entry";
 using AssociationList = std::vector<std::tuple<
                         std::string, std::string, std::string>>;
 using Attributes = sdbusplus::message::variant<bool,AssociationList>;
-using AttributeName = std::string;
-using AttributeMap = std::map<AttributeName, Attributes>;
 using PropertyName = std::string;
-using PropertyMap = std::map<PropertyName, AttributeMap>;
-using LogEntryMsg = std::pair<sdbusplus::message::object_path, PropertyMap>;
+using PropertyMap = std::map<PropertyName, Attributes>;
+using InterfaceName = std::string;
+using InterfaceMap = std::map<InterfaceName, PropertyMap>;
 
 using Service = std::string;
 using Path = std::string;
@@ -153,10 +152,11 @@ void Add::created(sdbusplus::message::message& msg)
 {
     auto bus = msg.get_bus();
 
-    LogEntryMsg logEntry;
+    sdbusplus::message::object_path objectPath;
+    InterfaceMap interfaces;
     try
     {
-        msg.read(logEntry);
+        msg.read(objectPath, interfaces);
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
@@ -165,23 +165,22 @@ void Add::created(sdbusplus::message::message& msg)
                         entry("REPLY_SIG=%s", msg.get_signature()));
         return;
     }
-    std::string objectPath(std::move(logEntry.first));
 
-    std::size_t found = objectPath.find(ELOG_ENTRY);
+    std::size_t found = objectPath.str.find(ELOG_ENTRY);
     if (found == std::string::npos)
     {
         //Not a new error entry skip
         return;
     }
-    auto iter = logEntry.second.find("org.openbmc.Associations");
-    if (iter == logEntry.second.end())
+    auto iter = interfaces.find("org.openbmc.Associations");
+    if (iter == interfaces.end())
     {
         return;
     }
 
     //Nothing else shows when a specific error log
     //has been created. Do it here.
-    std::string message{objectPath + " created"};
+    std::string message{objectPath.str + " created"};
     log<level::INFO>(message.c_str());
 
     auto attr = iter->second.find("associations");
