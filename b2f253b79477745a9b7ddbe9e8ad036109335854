@@ -1,0 +1,10 @@
+Ok-To-Test+1: Jenkins <openbmc-ci-admin@ozlabs.org>
+Verified+1: Jenkins <openbmc-ci-admin@ozlabs.org>
+Code-Review+1: William A. Kennington III <wak@google.com>
+Code-Review+1: Jayanth Othayoth <ojayanth@in.ibm.com>
+Code-Review+2: Brad Bishop <bradleyb@fuzziesquirrel.com>
+Submitted-by: Brad Bishop <bradleyb@fuzziesquirrel.com>
+Submitted-at: Thu, 21 Jun 2018 15:07:01 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/11096
+Project: openbmc/phosphor-led-manager
+Branch: refs/heads/master
