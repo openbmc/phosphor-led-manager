@@ -4,8 +4,6 @@
 #include "xyz/openbmc_project/Led/Mapper/error.hpp"
 #include "elog-errors.hpp"
 #include "fru-fault-monitor.hpp"
-#include <phosphor-logging/elog-errors.hpp>
-#include "xyz/openbmc_project/Common/error.hpp"
 
 namespace phosphor
 {
@@ -41,9 +39,6 @@ using Path = std::string;
 using Interface = std::string;
 using Interfaces = std::vector<Interface>;
 using MapperResponseType = std::map<Path, std::map<Service, Interfaces>>;
-
-using InternalFailure =
-    sdbusplus::xyz::openbmc_project::Common::Error::InternalFailure;
 
 using MethodErr  =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError;
