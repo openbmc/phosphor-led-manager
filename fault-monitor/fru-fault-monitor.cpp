@@ -138,7 +138,17 @@ void action(sdbusplus::bus::bus& bus,
     method.append("Asserted");
 
     method.append(sdbusplus::message::variant<bool>(assert));
-    bus.call_noreply(method);
+
+    try
+    {
+        bus.call_noreply(method);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        // Log an info message, system may not have all the LED Groups defined
+        log<level::INFO>("Failed to Assert LED Group",
+                         entry("ERROR=%s", e.what()));
+    }
 
     return;
 }
