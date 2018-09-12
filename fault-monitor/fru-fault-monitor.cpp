@@ -103,7 +103,9 @@ void action(sdbusplus::bus::bus& bus,
     std::string service;
     try
     {
-        service = getService(bus, LED_GROUPS);
+        std::string groups{LED_GROUPS};
+        groups.pop_back();
+        service = getService(bus, groups);
     }
     catch (MethodErr& e)
     {
