@@ -217,7 +217,7 @@ void Add::created(sdbusplus::message::message& msg)
     return;
 }
 
-void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
+void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
 {
     auto depth = 0;
     auto mapperCall = bus.new_method_call(MAPPER_BUSNAME,
@@ -228,30 +228,41 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
     mapperCall.append(depth);
     mapperCall.append(std::vector<Interface>({LOG_IFACE}));
 
-    auto mapperResponseMsg = bus.call(mapperCall);
-    if (mapperResponseMsg.is_method_error())
-    {
-        using namespace xyz::openbmc_project::Led::Mapper;
-        report<MethodErr>(
-            MethodError::METHOD_NAME("GetSubTree"),
-            MethodError::PATH(MAPPER_OBJ_PATH),
-            MethodError::INTERFACE(
-                OBJMGR_IFACE));
-        return;
-    }
-
-    MapperResponseType mapperResponse;
     try
     {
-        mapperResponseMsg.read(mapperResponse);
+        auto mapperResponseMsg = bus.call(mapperCall);
+        if (mapperResponseMsg.is_method_error())
+        {
+            using namespace xyz::openbmc_project::Led::Mapper;
+            report<MethodErr>(
+                    MethodError::METHOD_NAME("GetSubTree"),
+                    MethodError::PATH(MAPPER_OBJ_PATH),
+                    MethodError::INTERFACE(OBJMGR_IFACE));
+            return;
+        }
+
+        try
+        {
+            mapperResponseMsg.read(subtree);
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>("Failed to parse existing callouts subtree message",
+                    entry("ERROR=%s", e.what()),
+                    entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+        }
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
-        log<level::ERR>("Failed to parse existing callouts subtree message",
-                        entry("ERROR=%s", e.what()),
-                        entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
-        return;
+        // Just means no log entries at the moment
     }
+}
+
+void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
+{
+    MapperResponseType  mapperResponse;
+
+    getLoggingSubTree(bus, mapperResponse);
     if (mapperResponse.empty())
     {
         //No errors to process.
