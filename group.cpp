@@ -1,5 +1,6 @@
-#include <sdbusplus/message.hpp>
 #include "group.hpp"
+
+#include <sdbusplus/message.hpp>
 namespace phosphor
 {
 namespace led
@@ -9,14 +10,13 @@ namespace led
 bool Group::asserted(bool value)
 {
     // Introducing these to enable gtest.
-    Manager::group ledsAssert {};
-    Manager::group ledsDeAssert {};
+    Manager::group ledsAssert{};
+    Manager::group ledsDeAssert{};
 
     // Group management is handled by Manager. The populated leds* sets are not
     // really used by production code. They are there to enable gtest for
     // validation.
-    auto result = manager.setGroupState(path, value, ledsAssert,
-                                        ledsDeAssert);
+    auto result = manager.setGroupState(path, value, ledsAssert, ledsDeAssert);
 
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
@@ -24,8 +24,8 @@ bool Group::asserted(bool value)
 
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
-    return sdbusplus::xyz::openbmc_project::Led::server::
-                      Group::asserted(result);
+    return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
+        result);
 }
 
 } // namespace led

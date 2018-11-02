@@ -1,9 +1,11 @@
-#include <iostream>
+#include "config.h"
+
+#include "group.hpp"
+#include "led-gen.hpp"
 #include "ledlayout.hpp"
 #include "manager.hpp"
-#include "group.hpp"
-#include "config.h"
-#include "led-gen.hpp"
+
+#include <iostream>
 
 int main(void)
 {
@@ -20,17 +22,17 @@ int main(void)
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
     /** Now create so many dbus objects as there are groups */
-    for (auto &grp: systemLedMap)
+    for (auto& grp : systemLedMap)
     {
-        groups.emplace_back(std::make_unique<phosphor::led::Group>(
-                    bus, grp.first, manager));
+        groups.emplace_back(
+            std::make_unique<phosphor::led::Group>(bus, grp.first, manager));
     }
 
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
 
     /** @brief Wait for client requests */
-    while(true)
+    while (true)
     {
         /** @brief process dbus calls / signals discarding unhandled */
         bus.process_discard();

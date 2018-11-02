@@ -1,9 +1,11 @@
-#include <phosphor-logging/elog.hpp>
-#include <sdbusplus/exception.hpp>
+#include "fru-fault-monitor.hpp"
+
+#include "elog-errors.hpp"
 #include "xyz/openbmc_project/Led/Fru/Monitor/error.hpp"
 #include "xyz/openbmc_project/Led/Mapper/error.hpp"
-#include "elog-errors.hpp"
-#include "fru-fault-monitor.hpp"
+
+#include <phosphor-logging/elog.hpp>
+#include <sdbusplus/exception.hpp>
 
 namespace phosphor
 {
@@ -18,17 +20,17 @@ namespace monitor
 
 using namespace phosphor::logging;
 
-constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.ObjectMapper";
-constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/object_mapper";
-constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
-constexpr auto OBJMGR_IFACE     = "org.freedesktop.DBus.ObjectManager";
-constexpr auto LED_GROUPS       = "/xyz/openbmc_project/led/groups/";
-constexpr auto LOG_PATH         = "/xyz/openbmc_project/logging";
-constexpr auto LOG_IFACE        = "xyz.openbmc_project.Logging.Entry";
+constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
+constexpr auto OBJMGR_IFACE = "org.freedesktop.DBus.ObjectManager";
+constexpr auto LED_GROUPS = "/xyz/openbmc_project/led/groups/";
+constexpr auto LOG_PATH = "/xyz/openbmc_project/logging";
+constexpr auto LOG_IFACE = "xyz.openbmc_project.Logging.Entry";
 
-using AssociationList = std::vector<std::tuple<
-                        std::string, std::string, std::string>>;
-using Attributes = sdbusplus::message::variant<bool,AssociationList>;
+using AssociationList =
+    std::vector<std::tuple<std::string, std::string, std::string>>;
+using Attributes = sdbusplus::message::variant<bool, AssociationList>;
 using PropertyName = std::string;
 using PropertyMap = std::map<PropertyName, Attributes>;
 using InterfaceName = std::string;
@@ -40,30 +42,25 @@ using Interface = std::string;
 using Interfaces = std::vector<Interface>;
 using MapperResponseType = std::map<Path, std::map<Service, Interfaces>>;
 
-using MethodErr  =
+using MethodErr =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError;
 using ObjectNotFoundErr =
     sdbusplus::xyz::openbmc_project::Led::Mapper::Error::ObjectNotFoundError;
-using InventoryPathErr =
-    sdbusplus::xyz::openbmc_project::
-    Led::Fru::Monitor::Error::InventoryPathError;
+using InventoryPathErr = sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::
+    Error::InventoryPathError;
 
-std::string getService(sdbusplus::bus::bus& bus,
-                       const std::string& path)
+std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
 {
-    auto mapper = bus.new_method_call(MAPPER_BUSNAME,
-                                      MAPPER_OBJ_PATH,
+    auto mapper = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
                                       MAPPER_IFACE, "GetObject");
     mapper.append(path.c_str(), std::vector<std::string>({OBJMGR_IFACE}));
     auto mapperResponseMsg = bus.call(mapper);
     if (mapperResponseMsg.is_method_error())
     {
         using namespace xyz::openbmc_project::Led::Mapper;
-        elog<MethodErr>(
-            MethodError::METHOD_NAME("GetObject"),
-            MethodError::PATH(path.c_str()),
-            MethodError::INTERFACE(
-                OBJMGR_IFACE));
+        elog<MethodErr>(MethodError::METHOD_NAME("GetObject"),
+                        MethodError::PATH(path.c_str()),
+                        MethodError::INTERFACE(OBJMGR_IFACE));
     }
 
     std::map<std::string, std::vector<std::string>> mapperResponse;
@@ -73,32 +70,27 @@ std::string getService(sdbusplus::bus::bus& bus,
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
-        log<level::ERR>("Failed to parse getService mapper response",
-                        entry("ERROR=%s", e.what()),
-                        entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+        log<level::ERR>(
+            "Failed to parse getService mapper response",
+            entry("ERROR=%s", e.what()),
+            entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
         using namespace xyz::openbmc_project::Led::Mapper;
-        elog<ObjectNotFoundErr>(
-            ObjectNotFoundError::METHOD_NAME("GetObject"),
-            ObjectNotFoundError::PATH(path.c_str()),
-            ObjectNotFoundError::INTERFACE(
-                OBJMGR_IFACE));
+        elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
+                                ObjectNotFoundError::PATH(path.c_str()),
+                                ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
     }
     if (mapperResponse.empty())
     {
         using namespace xyz::openbmc_project::Led::Mapper;
-        elog<ObjectNotFoundErr>(
-            ObjectNotFoundError::METHOD_NAME("GetObject"),
-            ObjectNotFoundError::PATH(path.c_str()),
-            ObjectNotFoundError::INTERFACE(
-                OBJMGR_IFACE));
+        elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
+                                ObjectNotFoundError::PATH(path.c_str()),
+                                ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
     }
 
     return mapperResponse.cbegin()->first;
 }
 
-void action(sdbusplus::bus::bus& bus,
-            const std::string& path,
-            bool assert)
+void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
 {
     std::string service;
     try
@@ -122,20 +114,15 @@ void action(sdbusplus::bus::bus& bus,
     if (pos == std::string::npos)
     {
         using namespace xyz::openbmc_project::Led::Fru::Monitor;
-        report<InventoryPathErr>(
-            InventoryPathError::PATH(
-                path.c_str()));
+        report<InventoryPathErr>(InventoryPathError::PATH(path.c_str()));
         return;
     }
     auto unit = path.substr(pos + 1);
 
-    std::string ledPath = LED_GROUPS +
-                          unit + '_' + LED_FAULT;
+    std::string ledPath = LED_GROUPS + unit + '_' + LED_FAULT;
 
-    auto method =  bus.new_method_call(service.c_str(),
-                                       ledPath.c_str(),
-                                       "org.freedesktop.DBus.Properties",
-                                       "Set");
+    auto method = bus.new_method_call(service.c_str(), ledPath.c_str(),
+                                      "org.freedesktop.DBus.Properties", "Set");
     method.append("xyz.openbmc_project.Led.Group");
     method.append("Asserted");
 
@@ -176,7 +163,7 @@ void Add::created(sdbusplus::message::message& msg)
     std::size_t found = objectPath.str.find(ELOG_ENTRY);
     if (found == std::string::npos)
     {
-        //Not a new error entry skip
+        // Not a new error entry skip
         return;
     }
     auto iter = interfaces.find("org.openbmc.Associations");
@@ -185,8 +172,8 @@ void Add::created(sdbusplus::message::message& msg)
         return;
     }
 
-    //Nothing else shows when a specific error log
-    //has been created. Do it here.
+    // Nothing else shows when a specific error log
+    // has been created. Do it here.
     std::string message{objectPath.str + " created"};
     log<level::INFO>(message.c_str());
 
@@ -200,7 +187,7 @@ void Add::created(sdbusplus::message::message& msg)
         sdbusplus::message::variant_ns::get<AssociationList>(attr->second);
     if (assocs.empty())
     {
-        //No associations skip
+        // No associations skip
         return;
     }
 
@@ -220,10 +207,8 @@ void Add::created(sdbusplus::message::message& msg)
 void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
 {
     auto depth = 0;
-    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME,
-                                          MAPPER_OBJ_PATH,
-                                          MAPPER_IFACE,
-                                          "GetSubTree");
+    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                          MAPPER_IFACE, "GetSubTree");
     mapperCall.append("/");
     mapperCall.append(depth);
     mapperCall.append(std::vector<Interface>({LOG_IFACE}));
@@ -234,10 +219,9 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
         if (mapperResponseMsg.is_method_error())
         {
             using namespace xyz::openbmc_project::Led::Mapper;
-            report<MethodErr>(
-                    MethodError::METHOD_NAME("GetSubTree"),
-                    MethodError::PATH(MAPPER_OBJ_PATH),
-                    MethodError::INTERFACE(OBJMGR_IFACE));
+            report<MethodErr>(MethodError::METHOD_NAME("GetSubTree"),
+                              MethodError::PATH(MAPPER_OBJ_PATH),
+                              MethodError::INTERFACE(OBJMGR_IFACE));
             return;
         }
 
@@ -247,9 +231,10 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to parse existing callouts subtree message",
-                    entry("ERROR=%s", e.what()),
-                    entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+            log<level::ERR>(
+                "Failed to parse existing callouts subtree message",
+                entry("ERROR=%s", e.what()),
+                entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
         }
     }
     catch (const sdbusplus::exception::SdBusError& e)
@@ -260,27 +245,26 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
 
 void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
 {
-    MapperResponseType  mapperResponse;
+    MapperResponseType mapperResponse;
 
     getLoggingSubTree(bus, mapperResponse);
     if (mapperResponse.empty())
     {
-        //No errors to process.
+        // No errors to process.
         return;
     }
 
     for (const auto& elem : mapperResponse)
     {
-        auto method =  bus.new_method_call(elem.second.begin()->first.c_str(),
-                                           elem.first.c_str(),
-                                           "org.freedesktop.DBus.Properties",
-                                           "Get");
+        auto method = bus.new_method_call(
+            elem.second.begin()->first.c_str(), elem.first.c_str(),
+            "org.freedesktop.DBus.Properties", "Get");
         method.append("org.openbmc.Associations");
         method.append("associations");
         auto reply = bus.call(method);
         if (reply.is_method_error())
         {
-            //do not stop, continue with next elog
+            // do not stop, continue with next elog
             log<level::ERR>("Error in getting associations");
             continue;
         }
@@ -292,15 +276,16 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to parse existing callouts associations message",
-                            entry("ERROR=%s", e.what()),
-                            entry("REPLY_SIG=%s", reply.get_signature()));
+            log<level::ERR>(
+                "Failed to parse existing callouts associations message",
+                entry("ERROR=%s", e.what()),
+                entry("REPLY_SIG=%s", reply.get_signature()));
             continue;
         }
         auto& assocs = assoc.get<AssociationList>();
         if (assocs.empty())
         {
-            //no associations, skip
+            // no associations, skip
             continue;
         }
 
@@ -324,8 +309,8 @@ void Remove::removed(sdbusplus::message::message& msg)
     return;
 }
 
-}//namespace monitor
-}//namespace fault
-}//namespace fru
-}//namespace led
-}//namespace phosphor
+} // namespace monitor
+} // namespace fault
+} // namespace fru
+} // namespace led
+} // namespace phosphor

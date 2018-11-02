@@ -2,13 +2,12 @@
 // See elog-gen.py for more details
 #pragma once
 
+#include <phosphor-logging/elog.hpp>
+#include <phosphor-logging/log.hpp>
+#include <sdbusplus/exception.hpp>
 #include <string>
 #include <tuple>
 #include <type_traits>
-#include <sdbusplus/exception.hpp>
-#include <phosphor-logging/log.hpp>
-#include <phosphor-logging/elog.hpp>
-
 
 namespace sdbusplus
 {
@@ -24,7 +23,7 @@ namespace Monitor
 {
 namespace Error
 {
-    struct InventoryPathError;
+struct InventoryPathError;
 } // namespace Error
 } // namespace Monitor
 } // namespace Fru
@@ -45,7 +44,7 @@ namespace Mapper
 {
 namespace Error
 {
-    struct ObjectNotFoundError;
+struct ObjectNotFoundError;
 } // namespace Error
 } // namespace Mapper
 } // namespace Led
@@ -65,14 +64,13 @@ namespace Mapper
 {
 namespace Error
 {
-    struct MethodError;
+struct MethodError;
 } // namespace Error
 } // namespace Mapper
 } // namespace Led
 } // namespace openbmc_project
 } // namespace xyz
 } // namespace sdbusplus
-
 
 namespace phosphor
 {
@@ -97,16 +95,17 @@ struct PATH
 {
     static constexpr auto str = "PATH=%s";
     static constexpr auto str_short = "PATH";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr PATH(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr PATH(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 
-}  // namespace _InventoryPathError
+} // namespace _InventoryPathError
 
 struct InventoryPathError : public sdbusplus::exception_t
 {
-    static constexpr auto errName = "xyz.openbmc_project.Led.Fru.Monitor.InventoryPathError";
+    static constexpr auto errName =
+        "xyz.openbmc_project.Led.Fru.Monitor.InventoryPathError";
     static constexpr auto errDesc = "Invalid Inventory Path.";
     static constexpr auto L = level::INFO;
     using PATH = _InventoryPathError::PATH;
@@ -134,17 +133,17 @@ struct InventoryPathError : public sdbusplus::exception_t
 } // namespace openbmc_project
 } // namespace xyz
 
-
 namespace details
 {
 
 template <>
-struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::Error::InventoryPathError>
+struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::
+                              Error::InventoryPathError>
 {
     using type = xyz::openbmc_project::Led::Fru::Monitor::InventoryPathError;
 };
 
-}
+} // namespace details
 
 namespace xyz
 {
@@ -161,32 +160,33 @@ struct METHOD_NAME
 {
     static constexpr auto str = "METHOD_NAME=%s";
     static constexpr auto str_short = "METHOD_NAME";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr METHOD_NAME(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr METHOD_NAME(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 struct PATH
 {
     static constexpr auto str = "PATH=%s";
     static constexpr auto str_short = "PATH";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr PATH(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr PATH(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 struct INTERFACE
 {
     static constexpr auto str = "INTERFACE=%s";
     static constexpr auto str_short = "INTERFACE";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr INTERFACE(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr INTERFACE(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 
-}  // namespace _MethodError
+} // namespace _MethodError
 
 struct MethodError : public sdbusplus::exception_t
 {
-    static constexpr auto errName = "xyz.openbmc_project.Led.Mapper.MethodError";
+    static constexpr auto errName =
+        "xyz.openbmc_project.Led.Mapper.MethodError";
     static constexpr auto errDesc = "Failed to invoke ObjectMapper method";
     static constexpr auto L = level::INFO;
     using METHOD_NAME = _MethodError::METHOD_NAME;
@@ -215,17 +215,17 @@ struct MethodError : public sdbusplus::exception_t
 } // namespace openbmc_project
 } // namespace xyz
 
-
 namespace details
 {
 
 template <>
-struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError>
+struct map_exception_type<
+    sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError>
 {
     using type = xyz::openbmc_project::Led::Mapper::MethodError;
 };
 
-}
+} // namespace details
 
 namespace xyz
 {
@@ -242,32 +242,33 @@ struct METHOD_NAME
 {
     static constexpr auto str = "METHOD_NAME=%s";
     static constexpr auto str_short = "METHOD_NAME";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr METHOD_NAME(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr METHOD_NAME(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 struct PATH
 {
     static constexpr auto str = "PATH=%s";
     static constexpr auto str_short = "PATH";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr PATH(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr PATH(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 struct INTERFACE
 {
     static constexpr auto str = "INTERFACE=%s";
     static constexpr auto str_short = "INTERFACE";
-    using type = std::tuple<std::decay_t<decltype(str)>,const char*>;
-    explicit constexpr INTERFACE(const char* a) : _entry(entry(str, a)) {};
+    using type = std::tuple<std::decay_t<decltype(str)>, const char*>;
+    explicit constexpr INTERFACE(const char* a) : _entry(entry(str, a)){};
     type _entry;
 };
 
-}  // namespace _ObjectNotFoundError
+} // namespace _ObjectNotFoundError
 
 struct ObjectNotFoundError : public sdbusplus::exception_t
 {
-    static constexpr auto errName = "xyz.openbmc_project.Led.Mapper.ObjectNotFoundError";
+    static constexpr auto errName =
+        "xyz.openbmc_project.Led.Mapper.ObjectNotFoundError";
     static constexpr auto errDesc = "Failed to get response from the method.";
     static constexpr auto L = level::INFO;
     using METHOD_NAME = _ObjectNotFoundError::METHOD_NAME;
@@ -296,18 +297,17 @@ struct ObjectNotFoundError : public sdbusplus::exception_t
 } // namespace openbmc_project
 } // namespace xyz
 
-
 namespace details
 {
 
 template <>
-struct map_exception_type<sdbusplus::xyz::openbmc_project::Led::Mapper::Error::ObjectNotFoundError>
+struct map_exception_type<
+    sdbusplus::xyz::openbmc_project::Led::Mapper::Error::ObjectNotFoundError>
 {
     using type = xyz::openbmc_project::Led::Mapper::ObjectNotFoundError;
 };
 
-}
-
+} // namespace details
 
 } // namespace logging
 

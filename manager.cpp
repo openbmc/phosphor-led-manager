@@ -1,10 +1,11 @@
-#include <iostream>
-#include <string>
+#include "manager.hpp"
+
 #include <algorithm>
+#include <iostream>
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/exception.hpp>
+#include <string>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
-#include "manager.hpp"
 namespace phosphor
 {
 namespace led
@@ -28,41 +29,40 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     }
 
     // This will contain the union of what's already in the asserted group
-    group desiredState {};
-    for(const auto& grp : assertedGroups)
+    group desiredState{};
+    for (const auto& grp : assertedGroups)
     {
         desiredState.insert(grp->cbegin(), grp->cend());
     }
 
     // Find difference between Combined and Desired to identify
     // which LEDs are getting altered
-    group transient {};
+    group transient{};
     std::set_difference(combinedState.begin(), combinedState.end(),
                         desiredState.begin(), desiredState.end(),
-                        std::inserter(transient, transient.begin()),
-                        ledComp);
-    if(transient.size())
+                        std::inserter(transient, transient.begin()), ledComp);
+    if (transient.size())
     {
         // Find common LEDs between transient and Desired to know if some LEDs
         // are changing state and not really getting DeAsserted
-        group ledsTransient {};
-        std::set_intersection(transient.begin(),transient.end(),
-                            desiredState.begin(), desiredState.end(),
-                            std::inserter(ledsTransient, ledsTransient.begin()),
-                            ledLess);
+        group ledsTransient{};
+        std::set_intersection(
+            transient.begin(), transient.end(), desiredState.begin(),
+            desiredState.end(),
+            std::inserter(ledsTransient, ledsTransient.begin()), ledLess);
 
         // Find difference between above 2 to identify those LEDs which are
         // really getting DeAsserted
-        std::set_difference(transient.begin(),transient.end(),
-                            ledsTransient.begin(),ledsTransient.end(),
+        std::set_difference(transient.begin(), transient.end(),
+                            ledsTransient.begin(), ledsTransient.end(),
                             std::inserter(ledsDeAssert, ledsDeAssert.begin()),
                             ledLess);
 
         // Remove the elements from Current that are being DeAsserted.
-        if(ledsDeAssert.size())
+        if (ledsDeAssert.size())
         {
             // Power off LEDs that are to be really DeAsserted
-            for (auto& it:ledsDeAssert)
+            for (auto& it : ledsDeAssert)
             {
                 // Update LEDs in "physically asserted" set by removing those
                 // LEDs which are De-Asserted
@@ -77,18 +77,16 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 
     // Now LEDs that are to be Asserted. These could either be fresh asserts
     // -or- change between [On]<-->[Blink]
-    group temp {};
+    group temp{};
     std::unique_copy(desiredState.begin(), desiredState.end(),
-                     std::inserter(temp, temp.begin()),
-                     ledEqual);
-    if(temp.size())
+                     std::inserter(temp, temp.begin()), ledEqual);
+    if (temp.size())
     {
         // Find difference between [desired to be Asserted] and those LEDs
         // that are physically asserted currently.
-        std::set_difference(temp.begin(), temp.end(),
-                            currentState.begin(), currentState.end(),
-                            std::inserter(ledsAssert, ledsAssert.begin()),
-                            ledComp);
+        std::set_difference(
+            temp.begin(), temp.end(), currentState.begin(), currentState.end(),
+            std::inserter(ledsAssert, ledsAssert.begin()), ledComp);
     }
 
     // Update the current actual and desired(the virtual actual)
@@ -115,20 +113,22 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
-        for (const auto& it: ledsDeAssert)
+        for (const auto& it : ledsDeAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("De-Asserting LED", entry("NAME=%s", it.name.c_str()));
+            log<level::DEBUG>("De-Asserting LED",
+                              entry("NAME=%s", it.name.c_str()));
             drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn);
         }
     }
 
-    if(ledsAssert.size())
+    if (ledsAssert.size())
     {
-        for (const auto& it: ledsAssert)
+        for (const auto& it : ledsAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("Asserting LED", entry("NAME=%s", it.name.c_str()));
+            log<level::DEBUG>("Asserting LED",
+                              entry("NAME=%s", it.name.c_str()));
             drivePhysicalLED(objPath, it.action, it.dutyOn);
         }
     }
@@ -137,8 +137,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 
 // Calls into driving physical LED post choosing the action
 void Manager::drivePhysicalLED(const std::string& objPath,
-                               Layout::Action action,
-                               uint8_t dutyOn)
+                               Layout::Action action, uint8_t dutyOn)
 {
     using namespace phosphor::logging;
 
@@ -146,18 +145,18 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     if (service == phyLeds.end() || service->second.empty())
     {
         log<level::ERR>("No service providers for physical LED",
-                entry("PATH=%s",objPath.c_str()));
+                        entry("PATH=%s", objPath.c_str()));
         return;
     }
 
-   // If Blink, set its property
-   if (action == Layout::Action::Blink)
-   {
-       drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
-   }
-   drivePhysicalLED(service->second, objPath, "State",
-           getPhysicalAction(action));
-   return;
+    // If Blink, set its property
+    if (action == Layout::Action::Blink)
+    {
+        drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
+    }
+    drivePhysicalLED(service->second, objPath, "State",
+                     getPhysicalAction(action));
+    return;
 }
 
 /** @brief Returns action string based on enum */
@@ -168,11 +167,11 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     // TODO: openbmc/phosphor-led-manager#5
     //    Somehow need to use the generated Action enum than giving one
     //    in ledlayout.
-    if(action == Layout::Action::On)
+    if (action == Layout::Action::On)
     {
         return server::convertForMessage(server::Physical::Action::On);
     }
-    else if(action == Layout::Action::Blink)
+    else if (action == Layout::Action::Blink)
     {
         return server::convertForMessage(server::Physical::Action::Blink);
     }
@@ -188,9 +187,9 @@ void Manager::populateObjectMap()
     using namespace phosphor::logging;
 
     // Mapper dbus constructs
-    constexpr auto MAPPER_BUSNAME   = "xyz.openbmc_project.ObjectMapper";
-    constexpr auto MAPPER_OBJ_PATH  = "/xyz/openbmc_project/object_mapper";
-    constexpr auto MAPPER_IFACE     = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
 
     // Needed to be passed to get the SubTree level
     auto depth = 0;
@@ -211,13 +210,13 @@ void Manager::populateObjectMap()
     {
         // Its okay if we do not see a corresponding physical LED.
         log<level::INFO>("Error looking up Physical LED services",
-                entry("PATH=%s",PHY_LED_PATH));
+                         entry("PATH=%s", PHY_LED_PATH));
         return;
     }
 
     // Response by mapper in the case of success
-    std::map<std::string, std::map<std::string,
-             std::vector<std::string>>> objectTree;
+    std::map<std::string, std::map<std::string, std::vector<std::string>>>
+        objectTree;
 
     // This is the dict of object paths - service names - interfaces
     try
@@ -234,7 +233,7 @@ void Manager::populateObjectMap()
     if (objectTree.empty())
     {
         log<level::INFO>("Physical LED lookup did not return any services",
-                entry("PATH=%s",PHY_LED_PATH));
+                         entry("PATH=%s", PHY_LED_PATH));
         return;
     }
 
