@@ -282,7 +282,8 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
                 entry("REPLY_SIG=%s", reply.get_signature()));
             continue;
         }
-        auto& assocs = assoc.get<AssociationList>();
+        auto& assocs =
+            sdbusplus::message::variant_ns::get<AssociationList>(assoc);
         if (assocs.empty())
         {
             // no associations, skip
