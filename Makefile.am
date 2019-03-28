@@ -1,5 +1,5 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
-sbin_PROGRAMS = phosphor-ledmanager
+bin_PROGRAMS = phosphor-ledmanager
 
 phosphor_ledmanager_SOURCES = \
                 led-main.cpp  \

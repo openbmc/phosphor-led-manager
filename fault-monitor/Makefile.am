@@ -3,7 +3,7 @@ AM_CPPFLAGS = -I$(top_srcdir)
 
 noinst_HEADERS = fru-fault-monitor.hpp
 
-sbin_PROGRAMS = phosphor-fru-fault-monitor
+bin_PROGRAMS = phosphor-fru-fault-monitor
 
 phosphor_fru_fault_monitor_SOURCES = \
                fru-fault-monitor.cpp \
