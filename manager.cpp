@@ -118,7 +118,8 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
             log<level::DEBUG>("De-Asserting LED",
                               entry("NAME=%s", it.name.c_str()));
-            drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn);
+            drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
+                             it.period);
         }
     }
 
@@ -129,7 +130,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
             log<level::DEBUG>("Asserting LED",
                               entry("NAME=%s", it.name.c_str()));
-            drivePhysicalLED(objPath, it.action, it.dutyOn);
+            drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
         }
     }
     return;
@@ -137,7 +138,8 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 
 // Calls into driving physical LED post choosing the action
 void Manager::drivePhysicalLED(const std::string& objPath,
-                               Layout::Action action, uint8_t dutyOn)
+                               Layout::Action action, uint8_t dutyOn,
+                               uint16_t period)
 {
     using namespace phosphor::logging;
 
@@ -153,6 +155,7 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     if (action == Layout::Action::Blink)
     {
         drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
+        drivePhysicalLED(service->second, objPath, "Period", period);
     }
     drivePhysicalLED(service->second, objPath, "State",
                      getPhysicalAction(action));
