@@ -140,9 +140,10 @@ class Manager
      *  @param[in]  objPath   -  dbus object path
      *  @param[in]  action    -  Intended action to be triggered
      *  @param[in]  dutyOn    -  Duty Cycle ON percentage
+     *  @param[in]  period    -  Time taken for one blink cycle
      */
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn);
+                          uint8_t dutyOn, const uint16_t period);
 
     /** @brief Makes a dbus call to a passed in service name.
      *  This is now the physical LED controller
