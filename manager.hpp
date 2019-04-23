@@ -142,7 +142,7 @@ class Manager
      *  @param[in]  dutyOn    -  Duty Cycle ON percentage
      */
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn);
+                          uint8_t dutyOn, uint16_t period);
 
     /** @brief Makes a dbus call to a passed in service name.
      *  This is now the physical LED controller
