@@ -166,7 +166,7 @@ void Add::created(sdbusplus::message::message& msg)
         // Not a new error entry skip
         return;
     }
-    auto iter = interfaces.find("org.openbmc.Associations");
+    auto iter = interfaces.find("xyz.openbmc_project.Association.Definitions");
     if (iter == interfaces.end())
     {
         return;
@@ -177,7 +177,7 @@ void Add::created(sdbusplus::message::message& msg)
     std::string message{objectPath.str + " created"};
     log<level::INFO>(message.c_str());
 
-    auto attr = iter->second.find("associations");
+    auto attr = iter->second.find("Associations");
     if (attr == iter->second.end())
     {
         return;
@@ -259,8 +259,8 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         auto method = bus.new_method_call(
             elem.second.begin()->first.c_str(), elem.first.c_str(),
             "org.freedesktop.DBus.Properties", "Get");
-        method.append("org.openbmc.Associations");
-        method.append("associations");
+        method.append("xyz.openbmc_project.Association.Definitions");
+        method.append("Associations");
         auto reply = bus.call(method);
         if (reply.is_method_error())
         {
