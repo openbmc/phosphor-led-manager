@@ -130,7 +130,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
             log<level::DEBUG>("Asserting LED",
                               entry("NAME=%s", it.name.c_str()));
-            drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
+            drivePhysicalLED(objPath, Layout::Action::On, it.dutyOn, it.period);
         }
     }
     return;
