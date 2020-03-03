@@ -47,7 +47,7 @@ if __name__ == '__main__':
         ofile.write('static const std::map<std::string,')
         ofile.write(' std::set<phosphor::led::Layout::LedAction>>')
         ofile.write(' systemLedMap = {\n\n')
-        for group in ifile.keys():
+        for group in list(ifile.keys()):
             # This section generates an std::map of LedGroupNames to std::set
             # of LEDs containing the name and properties
             led_dict = ifile[group]
@@ -62,7 +62,7 @@ if __name__ == '__main__':
                 ofile.write('   }},\n')
                 continue
 
-            for led_name, list_dict in led_dict.items():
+            for led_name, list_dict in list(led_dict.items()):
                 value = list_dict.get('Priority')
                 if led_name in priority_dict:
                     if value != priority_dict[led_name]:
