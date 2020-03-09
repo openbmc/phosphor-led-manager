@@ -16,7 +16,7 @@ AX_CXX_COMPILE_STDCXX_17([noext])
 AX_APPEND_COMPILE_FLAGS([-Wall -Werror], [CXXFLAGS])
 
 # Python
-AM_PATH_PYTHON([2.7], [AC_SUBST([PYTHON], [echo "$PYTHON"])], [AC_MSG_ERROR([Could not find python-2.7 installed...python-2.7 is required])])
+AM_PATH_PYTHON([3.0], [AC_SUBST([PYTHON], [echo "$PYTHON"])], [AC_MSG_ERROR([Could not find python-3.0 installed...python-3.0 is required])])
 
 LT_INIT # Removes WARNING: unrecognized options: --with-libtool-sysroot
 # Check/set gtest specific functions.
