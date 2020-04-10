@@ -65,6 +65,17 @@ AS_IF([test "x$YAML_PATH" == "x"], [YAML_PATH="$srcdir"])
 LEDGEN="$PYTHON $srcdir/parse_led.py -i $YAML_PATH"
 AC_SUBST(LEDGEN)
 
+# JSON configuration file
+AC_ARG_VAR(LED_JSON_FILE, [The LED configuration JSON file])
+AS_IF([test "x$LED_JSON_FILE" == "x"], [LED_JSON_FILE="/usr/share/phosphor-led-manager/led/led.json"])
+AC_DEFINE_UNQUOTED([LED_JSON_FILE], ["$LED_JSON_FILE"], [The LED configuration JSON file])
+
+# enable JSON configuration
+AC_ARG_ENABLE([json],
+    AS_HELP_STRING([--enable-json], [Enable JSON configuration.]))
+AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
+AM_CONDITIONAL([WANT_JSON], [test "x$enable_json" == "xyes"])
+
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])
 AC_DEFINE(ELOG_ENTRY, "entry", [Path element indicates an error log entry under logging namespace.])
