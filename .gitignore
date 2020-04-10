@@ -47,3 +47,6 @@ Makefile
 phosphor-ledmanager
 led-gen.hpp
 fault-monitor/phosphor-fru-fault-monitor
+
+# meson
+.vscode
