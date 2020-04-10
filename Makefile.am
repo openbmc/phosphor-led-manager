@@ -6,11 +6,13 @@ phosphor_ledmanager_SOURCES = \
                 manager.cpp \
                 group.cpp
 
+if !LED_USE_JSON
 BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp
 
 led-gen.hpp: ${srcdir}/parse_led.py
 	$(AM_V)@LEDGEN@ > $@
+endif
 
 phosphor_ledmanager_LDFLAGS = $(SDBUSPLUS_LIBS) \
                               $(PHOSPHOR_LOGGING_LIBS) \

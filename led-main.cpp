@@ -1,7 +1,11 @@
 #include "config.h"
 
 #include "group.hpp"
+#ifdef LED_USE_JSON
+#include "load-json-config.hpp"
+#else
 #include "led-gen.hpp"
+#endif
 #include "ledlayout.hpp"
 #include "manager.hpp"
 
@@ -11,6 +15,10 @@ int main(void)
 {
     /** @brief Dbus constructs used by LED Group manager */
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+
+#ifdef LED_USE_JSON
+    auto systemLedMap = loadJsonConfig();
+#endif
 
     /** @brief Group manager object */
     phosphor::led::Manager manager(bus, systemLedMap);
