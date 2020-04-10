@@ -1,0 +1,89 @@
+{
+    "leds": [
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/bmc_booted",
+            "groups": [
+                {
+                    "name": "heartbeat",
+                    "Action": "On"
+                }
+            ]
+        },
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/power_on",
+            "groups": [
+                {
+                    "name": "power",
+                    "Action": "On",
+                    "Priority": "On"
+                }
+            ]
+        },
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/enclosure_fault",
+            "groups": [
+                {
+                    "name": "front_fault",
+                    "Action": "On"
+                }
+            ]
+        },
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/enclosure_identify",
+            "groups": [
+                {
+                    "name": "front_id",
+                    "Action": "Blink",
+                    "DutyOn": 50,
+                    "Period": 1000
+                },
+                {
+                    "name": "rear_id",
+                    "Action": "Blink",
+                    "DutyOn": 50,
+                    "Period": 1000
+                }
+            ]
+        },
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/fan_fault",
+            "groups": [
+                {
+                    "name": "front_fault",
+                    "Action": "On"
+                },
+                {
+                    "name": "fan0",
+                    "Action": "On"
+                },
+                {
+                    "name": "rear_fault",
+                    "Action": "On"
+                }
+            ]
+        },
+        {
+            "objpath": "/xyz/openbmc_project/led/groups/fan_identify",
+            "groups": [
+                {
+                    "name": "front_id",
+                    "Action": "Blink",
+                    "DutyOn": 50,
+                    "Period": 1000
+                },
+                {
+                    "name": "rear_id",
+                    "Action": "Blink",
+                    "DutyOn": 50,
+                    "Period": 1000
+                },
+                {
+                    "name": "fan0",
+                    "Action": "Blink",
+                    "DutyOn": 50,
+                    "Period": 1000
+                }
+            ]
+        }
+    ]
+}
