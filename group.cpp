@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "group.hpp"
 
 #include <sdbusplus/message.hpp>
@@ -17,6 +19,9 @@ bool Group::asserted(bool value)
     // really used by production code. They are there to enable gtest for
     // validation.
     auto result = manager.setGroupState(path, value, ledsAssert, ledsDeAssert);
+
+    // Store asserted state
+    serialize.storeGroups(path, result);
 
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
