@@ -4,7 +4,8 @@ bin_PROGRAMS = phosphor-ledmanager
 phosphor_ledmanager_SOURCES = \
                 led-main.cpp  \
                 manager.cpp \
-                group.cpp
+                group.cpp \
+                serialize.cpp
 
 if !WANTS_JSON
 BUILT_SOURCES = led-gen.hpp
