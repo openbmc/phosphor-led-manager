@@ -79,6 +79,11 @@ AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
 )
 
+# Path of file for storing the current state of asserted
+AC_ARG_VAR(SAVED_GROUPS_PATH, [Path of file for storing the current state of asserted])
+AS_IF([test "x$SAVED_GROUPS_PATH" == "x"], [SAVED_GROUPS_PATH="/var/lib/phosphor-led-manager/savedGroups"])
+AC_DEFINE_UNQUOTED([SAVED_GROUPS_PATH], ["$SAVED_GROUPS_PATH"], [Path of file for storing the current state of asserted])
+
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])
 AC_DEFINE(ELOG_ENTRY, "entry", [Path element indicates an error log entry under logging namespace.])
