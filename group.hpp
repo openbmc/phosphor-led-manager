@@ -1,6 +1,7 @@
 #pragma once
 
 #include "manager.hpp"
+#include "serialize.hpp"
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
@@ -33,16 +34,24 @@ class Group :
      * @param[in] bus     - Handle to system dbus
      * @param[in] objPath - The Dbus path that hosts LED group
      * @param[in] manager - Reference to Manager
+     * @param[in] serialize - Serialize object
      */
     Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager) :
+          Manager& manager, Serialize& serialize) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
-            bus, objPath.c_str()),
-        path(objPath), manager(manager)
+            bus, objPath.c_str(), true),
+        path(objPath), manager(manager), serialize(serialize)
     {
-        // Nothing to do here
+        // Initialize Asserted property value
+        if (serialize.getGroupSavedState(objPath))
+        {
+            asserted(true);
+        }
+
+        // Emit deferred signal.
+        emit_object_added();
     }
 
     /** @brief Property SET Override function
@@ -58,6 +67,9 @@ class Group :
 
     /** @brief Reference to Manager object */
     Manager& manager;
+
+    /** @brief The serialize class for storing and restoring groups of LEDs */
+    Serialize& serialize;
 };
 
 } // namespace led
