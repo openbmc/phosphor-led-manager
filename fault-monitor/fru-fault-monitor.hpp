@@ -19,7 +19,7 @@ namespace monitor
 {
 
 /** @brief Assert or deassert an LED based on the input FRU
- *  @param[in] bus       -  The Dbus bus object
+ *  @param[in] bus       -  The D-Bus bus object
  *  @param[in] path      -  Inventory path of the FRU
  *  @param[in] assert    -  Assert if true deassert if false
  */
@@ -43,7 +43,7 @@ class Add
     Add& operator=(Add&&) = default;
 
     /** @brief constructs Add a watch for FRU faults.
-     *  @param[in] bus -  The Dbus bus object
+     *  @param[in] bus -  The D-Bus bus object
      */
     Add(sdbusplus::bus::bus& bus) :
         matchCreated(
@@ -68,7 +68,7 @@ class Add
     void created(sdbusplus::message::message& msg);
 
     /** @brief This function process all callouts at application start
-     *  @param[in] bus - The Dbus bus object
+     *  @param[in] bus - The D-Bus bus object
      */
     void processExistingCallouts(sdbusplus::bus::bus& bus);
 };
@@ -89,7 +89,7 @@ class Remove
     Remove& operator=(Remove&&) = default;
 
     /** @brief constructs Remove
-     *  @param[in] bus  -  The Dbus bus object
+     *  @param[in] bus  -  The D-Bus bus object
      *  @param[in] path -  Inventory path to fru
      */
     Remove(sdbusplus::bus::bus& bus, const std::string& path) :

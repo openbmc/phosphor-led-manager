@@ -50,15 +50,15 @@ AC_CHECK_HEADER(nlohmann/json.hpp, ,[AC_MSG_ERROR([Could not find nlohmann/json.
 AC_PATH_PROG([SDBUSPLUSPLUS], [sdbus++])
 AS_IF([test "x$SDBUSPLUSPLUS" == "x"], AC_MSG_ERROR([Cannot find sdbus++]))
 
-# Dbus service name
-AC_ARG_VAR(BUSNAME, [The Dbus busname to own])
+# D-Bus service name
+AC_ARG_VAR(BUSNAME, [The D-Bus busname to own])
 AS_IF([test "x$BUSNAME" == "x"], [BUSNAME="xyz.openbmc_project.LED.GroupManager"])
-AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The Dbus busname to own])
+AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The D-Bus busname to own])
 
 # Service dbus root
-AC_ARG_VAR(OBJPATH, [The LED group Dbus root])
+AC_ARG_VAR(OBJPATH, [The LED group D-Bus root])
 AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/groups"])
-AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The LED group Dbus root])
+AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The LED group D-Bus root])
 
 # Handling configuration files
 AC_ARG_VAR(YAML_PATH, [The path to the yaml config files.])
@@ -78,6 +78,11 @@ AM_CONDITIONAL([WANTS_JSON], [test "x$enable_use_json" == "xyes"])
 AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
 )
+
+# Path of file for storing the names of asserted groups
+AC_ARG_VAR(SAVED_GROUPS_FILE, [Path of file for storing the names of asserted groups])
+AS_IF([test "x$SAVED_GROUPS_FILE" == "x"], [SAVED_GROUPS_FILE="/var/lib/phosphor-led-manager/savedGroups"])
+AC_DEFINE_UNQUOTED([SAVED_GROUPS_FILE], ["$SAVED_GROUPS_FILE"], [Path of file for storing the names of asserted groups])
 
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])

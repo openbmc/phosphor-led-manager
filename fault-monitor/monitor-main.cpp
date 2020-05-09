@@ -2,7 +2,7 @@
 
 int main(void)
 {
-    /** @brief Dbus constructs used by Fault Monitor */
+    /** @brief D-Bus constructs used by Fault Monitor */
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
 
     phosphor::led::fru::fault::monitor::Add monitor(bus);
