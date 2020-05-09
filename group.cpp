@@ -22,6 +22,8 @@ bool Group::asserted(bool value)
     // exception thrown.
     manager.driveLEDs(ledsAssert, ledsDeAssert);
 
+    serialize.storeGroups(path, result);
+
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
     return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
