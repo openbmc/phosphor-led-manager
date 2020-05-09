@@ -8,6 +8,7 @@
 #endif
 #include "ledlayout.hpp"
 #include "manager.hpp"
+#include "serialize.hpp"
 
 #include <iostream>
 
@@ -29,11 +30,14 @@ int main(void)
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
+    /** @brief store and re-store Group */
+    phosphor::led::Serialize serialize(SAVED_GROUPS_FILE);
+
     /** Now create so many dbus objects as there are groups */
     for (auto& grp : systemLedMap)
     {
-        groups.emplace_back(
-            std::make_unique<phosphor::led::Group>(bus, grp.first, manager));
+        groups.emplace_back(std::make_unique<phosphor::led::Group>(
+            bus, grp.first, manager, serialize));
     }
 
     /** @brief Claim the bus */
