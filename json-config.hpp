@@ -84,7 +84,7 @@ LedMap loadJsonConfig()
 
                 // Since only have Blink/On, provided support to override the
                 // default Blink priority.
-                auto action = getAction(member.value("Action", "On"));
+                auto action = getAction(member.value("Action", ""));
                 uint8_t dutyOn = member.value("DutyOn", 50);
                 uint16_t period = member.value("Period", 0);
 
