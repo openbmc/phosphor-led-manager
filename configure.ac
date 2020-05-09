@@ -71,6 +71,10 @@ AC_ARG_VAR(LED_JSON_FILE, [The LED configuration JSON file])
 AS_IF([test "x$LED_JSON_FILE" == "x"], [LED_JSON_FILE="/usr/share/phosphor-led-manager/led-group-config.json"])
 AC_DEFINE_UNQUOTED([LED_JSON_FILE], ["$LED_JSON_FILE"], [The LED configuration JSON file])
 
+AC_ARG_VAR(CLASS_VERSION, [Class version to register with Cereal])
+AS_IF([test "x$CLASS_VERSION" == "x"], [CLASS_VERSION=1])
+AC_DEFINE_UNQUOTED([CLASS_VERSION], [$CLASS_VERSION], [Class version to register with Cereal])
+
 # enable JSON configuration
 AC_ARG_ENABLE([use_json],
     AS_HELP_STRING([--enable-use_json], [Enable JSON configuration.]))
@@ -78,6 +82,11 @@ AM_CONDITIONAL([WANTS_JSON], [test "x$enable_use_json" == "xyes"])
 AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
 )
+
+# Path of file for storing the names of asserted groups
+AC_ARG_VAR(SAVED_GROUPS_FILE, [Path of file for storing the names of asserted groups])
+AS_IF([test "x$SAVED_GROUPS_FILE" == "x"], [SAVED_GROUPS_FILE="/var/lib/phosphor-led-manager/savedGroups"])
+AC_DEFINE_UNQUOTED([SAVED_GROUPS_FILE], ["$SAVED_GROUPS_FILE"], [Path of file for storing the names of asserted groups])
 
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])
