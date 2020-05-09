@@ -1,6 +1,9 @@
 #include "json-config.hpp"
+#include "serialize.hpp"
 
 #include <gtest/gtest.h>
+
+using namespace phosphor::led;
 
 TEST(loadJsonConfig, testGoodPath)
 {
@@ -86,4 +89,19 @@ TEST(validatePriority, testBadPriority)
     ASSERT_THROW(
         validatePriority("heartbeat", phosphor::led::Layout::On, priorityMap),
         std::runtime_error);
+}
+
+TEST(SerializeTest, testStoreGroups)
+{
+    static constexpr auto& path = "config/led-save-group.json";
+    static constexpr auto& bmcBooted =
+        "/xyz/openbmc_project/led/groups/bmc_booted";
+    static constexpr auto& enclosureIdentify =
+        "/xyz/openbmc_project/led/groups/EnclosureIdentify";
+    Serialize serialize = Serialize(path);
+    serialize.storeGroups(bmcBooted, true);
+    serialize.storeGroups(enclosureIdentify, false);
+
+    ASSERT_EQ(true, serialize.getGroupSavedState(bmcBooted));
+    ASSERT_EQ(false, serialize.getGroupSavedState(enclosureIdentify));
 }
