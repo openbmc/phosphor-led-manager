@@ -1,6 +1,7 @@
 #pragma once
 
 #include "manager.hpp"
+#include "serialize.hpp"
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
@@ -31,14 +32,22 @@ class Group : sdbusplus::server::object::object<
      * @param[in] manager - Reference to Manager
      */
     Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager) :
+          Manager& manager, Serialize& serialize) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
             bus, objPath.c_str()),
-        path(objPath), manager(manager)
+        path(objPath), manager(manager), serialize(serialize)
     {
-        // Nothing to do here
+        auto assertedGroups = serialize.getAssertedGroups();
+
+        auto iter = std::find_if(
+            assertedGroups.begin(), assertedGroups.end(),
+            [&objPath](const auto& group) { return group == objPath; });
+        if (iter != assertedGroups.end())
+        {
+            sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(true);
+        }
     }
 
     /** @brief Property SET Override function
@@ -54,6 +63,8 @@ class Group : sdbusplus::server::object::object<
 
     /** @brief Reference to Manager object */
     Manager& manager;
+
+    Serialize& serialize;
 };
 
 } // namespace led
