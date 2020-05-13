@@ -158,7 +158,7 @@ class Manager
                           const std::string& objPath,
                           const std::string& property, const T& value)
     {
-        sdbusplus::message::variant<T> data = value;
+        std::variant<T> data = value;
 
         auto method = bus.new_method_call(service.c_str(), objPath.c_str(),
                                           DBUS_PROPERTY_IFACE, "Set");

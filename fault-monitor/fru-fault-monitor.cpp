@@ -30,7 +30,7 @@ constexpr auto LOG_IFACE = "xyz.openbmc_project.Logging.Entry";
 
 using AssociationList =
     std::vector<std::tuple<std::string, std::string, std::string>>;
-using Attributes = sdbusplus::message::variant<bool, AssociationList>;
+using Attributes = std::variant<bool, AssociationList>;
 using PropertyName = std::string;
 using PropertyMap = std::map<PropertyName, Attributes>;
 using InterfaceName = std::string;
@@ -126,7 +126,7 @@ void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
     method.append("xyz.openbmc_project.Led.Group");
     method.append("Asserted");
 
-    method.append(sdbusplus::message::variant<bool>(assert));
+    method.append(std::variant<bool>(assert));
 
     try
     {
@@ -268,7 +268,7 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
             continue;
         }
 
-        sdbusplus::message::variant<AssociationList> assoc;
+        std::variant<AssociationList> assoc;
         try
         {
             reply.read(assoc);
