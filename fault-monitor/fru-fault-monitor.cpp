@@ -183,8 +183,7 @@ void Add::created(sdbusplus::message::message& msg)
         return;
     }
 
-    auto& assocs =
-        sdbusplus::message::variant_ns::get<AssociationList>(attr->second);
+    auto& assocs = std::get<AssociationList>(attr->second);
     if (assocs.empty())
     {
         // No associations skip
@@ -282,8 +281,7 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
                 entry("REPLY_SIG=%s", reply.get_signature()));
             continue;
         }
-        auto& assocs =
-            sdbusplus::message::variant_ns::get<AssociationList>(assoc);
+        auto& assocs = std::get<AssociationList>(assoc);
         if (assocs.empty())
         {
             // no associations, skip
