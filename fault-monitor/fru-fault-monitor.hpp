@@ -4,6 +4,7 @@
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server.hpp>
+#include <string>
 
 namespace phosphor
 {

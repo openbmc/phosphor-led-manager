@@ -4,7 +4,9 @@
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
+#include <string>
 #include <xyz/openbmc_project/Led/Group/server.hpp>
+
 namespace phosphor
 {
 namespace led
