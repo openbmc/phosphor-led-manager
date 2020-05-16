@@ -5,6 +5,7 @@
 #include <map>
 #include <sdbusplus/bus.hpp>
 #include <set>
+#include <string>
 
 namespace phosphor
 {
