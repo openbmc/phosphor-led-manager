@@ -1,8 +1,9 @@
 #include "led-test-map.hpp"
 #include "manager.hpp"
 
-#include <algorithm>
 #include <sdbusplus/bus.hpp>
+
+#include <algorithm>
 #include <set>
 
 #include <gtest/gtest.h>

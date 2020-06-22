@@ -1,11 +1,12 @@
 #include "manager.hpp"
 
-#include <algorithm>
-#include <iostream>
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/exception.hpp>
-#include <string>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
+
+#include <algorithm>
+#include <iostream>
+#include <string>
 namespace phosphor
 {
 namespace led

@@ -4,8 +4,9 @@
 
 #include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
-#include <string>
 #include <xyz/openbmc_project/Led/Group/server.hpp>
+
+#include <string>
 
 namespace phosphor
 {
@@ -15,8 +16,9 @@ namespace led
 /** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
  */
-class Group : sdbusplus::server::object::object<
-                  sdbusplus::xyz::openbmc_project::Led::server::Group>
+class Group :
+    sdbusplus::server::object::object<
+        sdbusplus::xyz::openbmc_project::Led::server::Group>
 {
   public:
     Group() = delete;
