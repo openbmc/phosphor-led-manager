@@ -15,6 +15,10 @@ using Json = nlohmann::json;
 using LedAction = std::set<phosphor::led::Layout::LedAction>;
 using LedMap = std::map<std::string, LedAction>;
 
+// Priority for a particular LED needs to stay SAME across all groups
+// phosphor::led::Layout::Action can only be one of `Blink` and `On`
+using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
+
 /** @brief Parse LED JSON file and output Json object
  *
  *  @param[in] path - path of LED JSON file
@@ -60,6 +64,39 @@ phosphor::led::Layout::Action getAction(const std::string& action)
                              : phosphor::led::Layout::On;
 }
 
+/** @brief Validate the Priority of an LED is same across ALL groups
+ *
+ *  @param[in] name - member name of each group
+ *  @param[in] priority - member priority of each group
+ *  @param[out] priorityMap - std::map, key:name, value:priority
+ *
+ *  @return
+ */
+void validatePriority(const std::string& name,
+                      const phosphor::led::Layout::Action& priority,
+                      PriorityMap& priorityMap)
+{
+    using namespace phosphor::logging;
+
+    auto iter = priorityMap.find(name);
+    if (iter == priorityMap.end())
+    {
+        priorityMap.emplace(name, priority);
+        return;
+    }
+
+    if (iter->second != priority)
+    {
+        log<level::ERR>("Priority of LED is not same across all",
+                        entry("Name=%s", name.c_str()),
+                        entry(" Old Priority=%d", iter->second),
+                        entry(" New priority=%d", priority));
+
+        throw std::runtime_error(
+            "Priority of at least one LED is not same across groups");
+    }
+}
+
 /** @brief Load JSON config and return led map
  *
  *  @return LedMap - Generated an std::map of LedAction
@@ -67,12 +104,13 @@ phosphor::led::Layout::Action getAction(const std::string& action)
 const LedMap loadJsonConfig(const fs::path& path)
 {
     LedMap ledMap{};
+    PriorityMap priorityMap{};
 
     // define the default JSON as empty
     const Json empty{};
     auto json = readJson(path);
-
     auto leds = json.value("leds", empty);
+
     for (const auto& entry : leds)
     {
         fs::path tmpPath(std::string{OBJPATH});
@@ -90,6 +128,11 @@ const LedMap loadJsonConfig(const fs::path& path)
 
             // Since only have Blink/On and default priority is Blink
             auto priority = getAction(member.value("Priority", "Blink"));
+
+            // Same LEDs can be part of multiple groups. However, their
+            // priorities across groups need to match.
+            validatePriority(name, priority, priorityMap);
+
             phosphor::led::Layout::LedAction ledAction{name, action, dutyOn,
                                                        period, priority};
             ledActions.emplace(ledAction);
