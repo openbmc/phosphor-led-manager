@@ -60,6 +60,32 @@ phosphor::led::Layout::Action getAction(const std::string& action)
                              : phosphor::led::Layout::On;
 }
 
+/** @brief Validate the Priority of an LED is same across ALL groups
+ *
+ *  @param[in] priority - current priority
+ *  @param[out] previousPriority - previous priority
+ *  @param[in, out] fisrtIndex - first execution of each group identification
+ *
+ *  @return
+ */
+void validatePriority(const std::string& priority,
+                      std::string& previousPriority, bool& fisrtIndex)
+{
+    if (!fisrtIndex)
+    {
+        if (previousPriority != priority)
+        {
+            throw std::runtime_error("the Priority of an LED is not the same");
+        }
+        previousPriority = priority;
+    }
+    else
+    {
+        previousPriority = priority;
+        fisrtIndex = !fisrtIndex;
+    }
+}
+
 /** @brief Load JSON config and return led map
  *
  *  @return LedMap - Generated an std::map of LedAction
@@ -81,6 +107,8 @@ const LedMap loadJsonConfig(const fs::path& path)
         auto members = entry.value("members", empty);
 
         LedAction ledActions{};
+        std::string previousPriority{};
+        auto fisrtIndex = true;
         for (const auto& member : members)
         {
             auto name = member.value("name", "");
@@ -89,9 +117,11 @@ const LedMap loadJsonConfig(const fs::path& path)
             uint16_t period = member.value("Period", 0);
 
             // Since only have Blink/On and default priority is Blink
-            auto priority = getAction(member.value("Priority", "Blink"));
-            phosphor::led::Layout::LedAction ledAction{name, action, dutyOn,
-                                                       period, priority};
+            auto priority = member.value("Priority", "Blink");
+            validatePriority(priority, previousPriority, fisrtIndex);
+
+            phosphor::led::Layout::LedAction ledAction{
+                name, action, dutyOn, period, getAction(priority)};
             ledActions.emplace(ledAction);
         }
 
