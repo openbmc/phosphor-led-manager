@@ -66,3 +66,24 @@ TEST(loadJsonConfig, testBadPath)
     static constexpr auto jsonPath = "config/led-group-config-malformed.json";
     ASSERT_THROW(loadJsonConfig(jsonPath), std::exception);
 }
+
+TEST(validatePriority, testGoodPriority)
+{
+    PriorityMap priorityMap{};
+    validatePriority("heartbeat", phosphor::led::Layout::Blink, priorityMap);
+    validatePriority("power", phosphor::led::Layout::On, priorityMap);
+
+    ASSERT_EQ(priorityMap.at("heartbeat"), phosphor::led::Layout::Blink);
+    ASSERT_EQ(priorityMap.at("power"), phosphor::led::Layout::On);
+}
+
+TEST(validatePriority, testBadPriority)
+{
+    PriorityMap priorityMap{};
+    validatePriority("heartbeat", phosphor::led::Layout::Blink, priorityMap);
+
+    ASSERT_EQ(priorityMap.at("heartbeat"), phosphor::led::Layout::Blink);
+    ASSERT_THROW(
+        validatePriority("heartbeat", phosphor::led::Layout::On, priorityMap),
+        std::runtime_error);
+}
