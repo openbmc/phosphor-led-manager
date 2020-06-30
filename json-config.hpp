@@ -14,6 +14,7 @@ namespace fs = std::filesystem;
 using Json = nlohmann::json;
 using LedAction = std::set<phosphor::led::Layout::LedAction>;
 using LedMap = std::map<std::string, LedAction>;
+using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
 
 /** @brief Parse LED JSON file and output Json object
  *
@@ -60,6 +61,31 @@ phosphor::led::Layout::Action getAction(const std::string& action)
                              : phosphor::led::Layout::On;
 }
 
+/** @brief Validate the Priority of an LED is same across ALL groups
+ *
+ *  @param[in] name - member name of each group
+ *  @param[in] priority - member priority of each group
+ *  @param[out] priorityMap - std::map, key:name, value:priority
+ *
+ *  @return
+ */
+void validatePriority(const std::string& name,
+                      const phosphor::led::Layout::Action& priority,
+                      PriorityMap& priorityMap)
+{
+    auto priorityIter = priorityMap.find(name);
+    if (priorityIter == priorityMap.end())
+    {
+        priorityMap.emplace(name, priority);
+        return;
+    }
+
+    if (priorityIter->second != priority)
+    {
+        throw std::runtime_error("the Priority of an LED is not the same");
+    }
+}
+
 /** @brief Load JSON config and return led map
  *
  *  @return LedMap - Generated an std::map of LedAction
@@ -73,6 +99,7 @@ const LedMap loadJsonConfig(const fs::path& path)
     auto json = readJson(path);
 
     auto leds = json.value("leds", empty);
+    PriorityMap priorityMap{};
     for (const auto& entry : leds)
     {
         fs::path tmpPath(std::string{OBJPATH});
@@ -90,6 +117,9 @@ const LedMap loadJsonConfig(const fs::path& path)
 
             // Since only have Blink/On and default priority is Blink
             auto priority = getAction(member.value("Priority", "Blink"));
+
+            validatePriority(name, priority, priorityMap);
+
             phosphor::led::Layout::LedAction ledAction{name, action, dutyOn,
                                                        period, priority};
             ledActions.emplace(ledAction);
