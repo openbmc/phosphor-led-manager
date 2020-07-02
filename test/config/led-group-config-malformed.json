@@ -4,7 +4,7 @@
             "group": "bmc_booted"
             "members": [
                 {
-                    "name": "heartbeat",
+                    "Name": "heartbeat",
                     "Action": "On"
                 }
             ]
@@ -13,7 +13,7 @@
             "group": "power_on",
             "members": [
                 {
-                    "name": "power",
+                    "Name": "power",
                     "Action": "On",
                     "Priority": "On"
                 }
@@ -23,13 +23,13 @@
             "group": "enclosure_identify",
             "members": [
                 {
-                    "name": "front_id",
+                    "Name": "front_id",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000
                 },
                 {
-                    "name": "rear_id",
+                    "Name": "rear_id",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000

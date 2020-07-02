@@ -83,7 +83,7 @@ const LedMap loadJsonConfig(const fs::path& path)
         LedAction ledActions{};
         for (const auto& member : members)
         {
-            auto name = member.value("name", "");
+            auto name = member.value("Name", "");
             auto action = getAction(member.value("Action", ""));
             uint8_t dutyOn = member.value("DutyOn", 50);
             uint16_t period = member.value("Period", 0);
