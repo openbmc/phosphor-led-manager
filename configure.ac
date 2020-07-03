@@ -74,8 +74,10 @@ AC_DEFINE_UNQUOTED([LED_JSON_FILE], ["$LED_JSON_FILE"], [The LED configuration J
 # enable JSON configuration
 AC_ARG_ENABLE([use_json],
     AS_HELP_STRING([--enable-use_json], [Enable JSON configuration.]))
-AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
-AM_CONDITIONAL([LED_USE_JSON], [test "x$enable-use_json" == "xyes"])
+AM_CONDITIONAL([WANTS_JSON], [test "x$enable_use_json" == "xyes"])
+AS_IF([test "x$enable_use_json" == "xyes"],
+    AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
+)
 
 AC_DEFINE(CALLOUT_FWD_ASSOCIATION, "callout", [The name of the callout's forward association.])
 AC_DEFINE(CALLOUT_REV_ASSOCIATION, "fault", [The name of the callout's reverse association.])

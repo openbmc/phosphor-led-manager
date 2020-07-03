@@ -6,7 +6,7 @@ phosphor_ledmanager_SOURCES = \
                 manager.cpp \
                 group.cpp
 
-if !LED_USE_JSON
+if !WANTS_JSON
 BUILT_SOURCES = led-gen.hpp
 CLEANFILES = led-gen.hpp
 
