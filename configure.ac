@@ -76,8 +76,8 @@ AS_IF([test "x$CLASS_VERSION" == "x"], [CLASS_VERSION=1])
 AC_DEFINE_UNQUOTED([CLASS_VERSION], [$CLASS_VERSION], [Class version to register with Cereal])
 
 # enable JSON configuration
-AC_ARG_ENABLE([use_json],
-    AS_HELP_STRING([--enable-use_json], [Enable JSON configuration.]))
+AC_ARG_ENABLE([use-json],
+    AS_HELP_STRING([--enable-use-json], [Enable JSON configuration.]))
 AM_CONDITIONAL([WANTS_JSON], [test "x$enable_use_json" == "xyes"])
 AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
