@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -247,6 +248,16 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+bool Manager::getLampTestStatus()
+{
+    return this->lampTestStatus;
+}
+
+void Manager::setLampTestStatus(bool status)
+{
+    this->lampTestStatus = status;
 }
 
 } // namespace led
