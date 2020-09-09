@@ -21,17 +21,17 @@ int main(void)
     auto systemLedMap = loadJsonConfig(LED_JSON_FILE);
 #endif
 
+    /** @brief store and re-store Group */
+    phosphor::led::Serialize serialize(SAVED_GROUPS_FILE);
+
     /** @brief Group manager object */
-    phosphor::led::Manager manager(bus, systemLedMap);
+    phosphor::led::Manager manager(bus, systemLedMap, &serialize);
 
     /** @brief sd_bus object manager */
     sdbusplus::server::manager::manager objManager(bus, OBJPATH);
 
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
-
-    /** @brief store and re-store Group */
-    phosphor::led::Serialize serialize(SAVED_GROUPS_FILE);
 
     /** Now create so many dbus objects as there are groups */
     for (auto& grp : systemLedMap)

@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ledlayout.hpp"
+#include "serialize.hpp"
 
 #include <sdbusplus/bus.hpp>
 
@@ -80,11 +81,14 @@ class Manager
      *
      *  @param [in] bus       - sdbusplus handler
      *  @param [in] LedLayout - LEDs group layout
+     *  @param [in] serialize - Serialize object
      */
-    Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout) :
-        ledMap(ledLayout), bus(bus)
+    Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout,
+            Serialize* serialize = NULL) :
+        ledMap(ledLayout),
+        bus(bus), lampTestStatus(false), serialize(serialize)
     {
-        // Nothing here
+        listenLampTestEvent();
     }
 
     /** @brief Given a group name, applies the action on the group
@@ -110,9 +114,18 @@ class Manager
      */
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
+    /** @brief Get lamp test status, ture: On, false: Off */
+    bool getLampTestStatus();
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
+
+    /** @brief lamp test status, ture: On, false: Off(default) */
+    bool lampTestStatus;
+
+    /** @brief The serialize class for storing and restoring groups of LEDs */
+    Serialize* serialize;
 
     /** Map of physical LED path to service name */
     std::map<std::string, std::string> phyLeds{};
@@ -176,6 +189,21 @@ class Manager
 
     /** @brief Populates map of Physical LED paths to service name */
     void populateObjectMap();
+
+    /** @brief Update Asserted property of D-Bus
+     *
+     *  @param[in]  path   -  dbus object path
+     */
+    void updateAssertedProperty(std::string path);
+
+    /** @brief Set lamp test status, ture: On, false: Off
+     *
+     *  @param[in]  status   -  Asserted property status
+     */
+    void setLampTestStatus(bool status);
+
+    /** @brief Subscribe Lamp test to sdbusplus event a registers handle */
+    void listenLampTestEvent();
 };
 
 } // namespace led

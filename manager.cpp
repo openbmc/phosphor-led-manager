@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <cassert>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -247,6 +248,80 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+void Manager::updateAssertedProperty(std::string path)
+{
+    constexpr auto BUSNAME = "xyz.openbmc_project.LED.GroupManager";
+    constexpr auto ASSERTED_INTF = "xyz.openbmc_project.Led.Group";
+    constexpr auto PROPERTY_NAME = "Asserted";
+    constexpr auto DBUS_PROPERTIES = "org.freedesktop.DBus.Properties";
+
+    assert(serialize != NULL);
+    bool assertedStatus = serialize->getGroupSavedState(path);
+
+    try
+    {
+        auto method =
+            bus.new_method_call(BUSNAME, path.c_str(), DBUS_PROPERTIES, "Set");
+        std::variant<bool> value = assertedStatus;
+        method.append(ASSERTED_INTF, PROPERTY_NAME, value);
+        bus.call_noreply(method);
+    }
+    catch (const std::exception& e)
+    {
+        std::cerr << "failed to update Asserted property, ERROR=" << e.what()
+                  << "\n";
+    }
+}
+
+void Manager::setLampTestStatus(bool status)
+{
+    this->lampTestStatus = status;
+
+    if (!this->lampTestStatus)
+    {
+        // restore the indicator LED status
+        for (auto& ledLayout : ledMap)
+        {
+            updateAssertedProperty(ledLayout.first);
+        }
+    }
+}
+
+bool Manager::getLampTestStatus()
+{
+    return this->lampTestStatus;
+}
+
+void Manager::listenLampTestEvent()
+{
+    using namespace sdbusplus::bus::match::rules;
+
+    using PropertyValue = std::variant<bool, std::string>;
+    using DbusProp = std::string;
+    using DbusChangedProps = std::map<DbusProp, PropertyValue>;
+
+    constexpr auto LAMP_OBJECT_PATH = "";
+    constexpr auto LAMP_IFACE = "";
+
+    auto lampTestMatch = std::make_unique<sdbusplus::bus::match::match>(
+        bus, propertiesChanged(LAMP_OBJECT_PATH, LAMP_IFACE),
+        [this](auto& msg) {
+            constexpr auto LAMP_PROPERTY_NAME = "";
+
+            DbusChangedProps props{};
+            std::string intf;
+            msg.read(intf, props);
+
+            const auto iter = props.find(LAMP_PROPERTY_NAME);
+            if (iter != props.end())
+            {
+                PropertyValue value = iter->second;
+                auto status = std::get<bool>(value);
+                this->setLampTestStatus(status);
+            }
+        });
 }
 
 } // namespace led
