@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -160,7 +161,6 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     }
     drivePhysicalLED(service->second, objPath, "State",
                      getPhysicalAction(action));
-    return;
 }
 
 /** @brief Returns action string based on enum */
@@ -247,6 +247,43 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+bool Manager::getLampTestStatus()
+{
+    return this->lampTestStatus;
+}
+
+void Manager::setLampTestStatus(bool status)
+{
+    this->lampTestStatus = status;
+}
+
+std::vector<std::string> Manager::getSubTreePahts(const std::string& objPath,
+                                                  const std::string& intf)
+{
+    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
+
+    std::vector<std::string> paths;
+
+    auto method = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                      MAPPER_IFACE, "GetSubTreePaths");
+    method.append(objPath.c_str());
+    method.append(0); // Depth 0 to search all
+    method.append(std::vector<std::string>({intf.c_str()}));
+    auto reply = bus.call(method);
+
+    reply.read(paths);
+
+    return paths;
+}
+
+void Manager::restoreLedsAssert()
+{
+    group ledsDeAssert{};
+    driveLEDs(currentState, ledsDeAssert);
 }
 
 } // namespace led

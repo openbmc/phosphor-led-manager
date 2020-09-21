@@ -82,7 +82,7 @@ class Manager
      *  @param [in] LedLayout - LEDs group layout
      */
     Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout) :
-        ledMap(ledLayout), bus(bus)
+        ledMap(ledLayout), bus(bus), lampTestStatus(false)
     {
         // Nothing here
     }
@@ -110,9 +110,45 @@ class Manager
      */
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
+    /** @brief Chooses appropriate action to be triggered on physical LED
+     *  and calls into function that applies the actual action.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  action    -  Intended action to be triggered
+     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
+     *  @param[in]  period    -  Time taken for one blink cycle
+     */
+    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                          uint8_t dutyOn, const uint16_t period);
+
+    /** @brief Get lamp test status, ture: On, false: Off */
+    bool getLampTestStatus();
+
+    /** @brief Set lamp test status
+     *
+     *  @param[in]  status  -  ture: On, false: Off
+     */
+    void setLampTestStatus(bool status);
+
+    /** @brief Get sub tree paths by the path and interface of the DBus.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  intf      -  dbus object interface
+     *
+     *  @return std::vector<std::string> vector of subtree paths
+     */
+    std::vector<std::string> getSubTreePahts(const std::string& objPath,
+                                             const std::string& intf);
+
+    /** @brief Restore the Led Assert before the lamp test */
+    void restoreLedsAssert();
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
+
+    /** @brief lamp test status, ture: On, false: Off(default) */
+    bool lampTestStatus;
 
     /** Map of physical LED path to service name */
     std::map<std::string, std::string> phyLeds{};
@@ -135,17 +171,6 @@ class Manager
      *  @return string equivalent of the passed in enumeration
      */
     static std::string getPhysicalAction(Layout::Action action);
-
-    /** @brief Chooses appropriate action to be triggered on physical LED
-     *  and calls into function that applies the actual action.
-     *
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  action    -  Intended action to be triggered
-     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
-     *  @param[in]  period    -  Time taken for one blink cycle
-     */
-    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn, const uint16_t period);
 
     /** @brief Makes a dbus call to a passed in service name.
      *  This is now the physical LED controller

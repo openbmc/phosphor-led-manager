@@ -42,6 +42,7 @@ AS_IF([test "x$enable_oe_sdk" == "xyes"],
 
 # Checks for modules
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, [AC_MSG_ERROR([Could not find sdbusplus...openbmc/sdbusplus package required])])
+PKG_CHECK_MODULES([SDEVENTPLUS], [sdeventplus],, [AC_MSG_ERROR([Could not find sdeventplus...openbmc/sdeventplus package required])])
 PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],, [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces],, [AC_MSG_ERROR([Could not find phosphor-dbus-interfaces...openbmc/phosphor-dbus-interfaces package required])])
 AC_CHECK_HEADER(nlohmann/json.hpp, ,[AC_MSG_ERROR([Could not find nlohmann/json.hpp...nlohmann/json package required])])
@@ -81,6 +82,14 @@ AC_ARG_ENABLE([use-json],
 AM_CONDITIONAL([WANTS_JSON], [test "x$enable_use_json" == "xyes"])
 AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
+)
+
+# enable lamp test configuration
+AC_ARG_ENABLE([use-lampTest],
+    AS_HELP_STRING([--enable-use-lampTest], [Enable lamp test configuration.]))
+AM_CONDITIONAL([WANTS_LAMPTEST], [test "x$enable_use_lampTest" == "xyes"])
+AS_IF([test "x$enable_use_lampTest" == "xyes"],
+    AC_DEFINE([USE_LAMP_TEST],[],[Enable lamp test configuration.])
 )
 
 # Path of file for storing the names of asserted groups
