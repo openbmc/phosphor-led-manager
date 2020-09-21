@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -155,11 +156,13 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     // If Blink, set its property
     if (action == Layout::Action::Blink)
     {
-        drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
-        drivePhysicalLED(service->second, objPath, "Period", period);
+        setDbusProperty(service->second, objPath, PHY_LED_IFACE, "DutyOn",
+                        dutyOn);
+        setDbusProperty(service->second, objPath, PHY_LED_IFACE, "Period",
+                        period);
     }
-    drivePhysicalLED(service->second, objPath, "State",
-                     getPhysicalAction(action));
+    setDbusProperty(service->second, objPath, PHY_LED_IFACE, "State",
+                    getPhysicalAction(action));
     return;
 }
 
@@ -247,6 +250,56 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+bool Manager::getLampTestStatus()
+{
+    return this->lampTestStatus;
+}
+
+void Manager::setLampTestStatus(bool status)
+{
+    this->lampTestStatus = status;
+}
+
+std::vector<std::string> Manager::getSubTreePahts(const std::string& objPath,
+                                                  const std::string& intf)
+{
+    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
+
+    std::vector<std::string> paths;
+
+    auto method = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                      MAPPER_IFACE, "GetSubTreePaths");
+    method.append(objPath.c_str());
+    method.append(0); // Depth 0 to search all
+    method.append(std::vector<std::string>({intf.c_str()}));
+    auto reply = bus.call(method);
+
+    reply.read(paths);
+
+    return paths;
+}
+
+void Manager::setAssertedProperty()
+{
+    constexpr auto LED_SERVICE = "xyz.openbmc_project.LED.GroupManager";
+    constexpr auto PHYSICAL_IFACE = "xyz.openbmc_project.Led.Group";
+
+    assert(serialize != NULL);
+    for (auto& led : ledMap)
+    {
+        bool status = false;
+        if (serialize->getGroupSavedState(led.first))
+        {
+            status = true;
+        }
+
+        setDbusProperty(LED_SERVICE, led.first, PHYSICAL_IFACE, "State",
+                        status);
+    }
 }
 
 } // namespace led

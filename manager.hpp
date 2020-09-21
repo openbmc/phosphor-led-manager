@@ -1,9 +1,11 @@
 #pragma once
 
 #include "ledlayout.hpp"
+#include "serialize.hpp"
 
 #include <sdbusplus/bus.hpp>
 
+#include <cassert>
 #include <map>
 #include <set>
 #include <string>
@@ -81,8 +83,10 @@ class Manager
      *  @param [in] bus       - sdbusplus handler
      *  @param [in] LedLayout - LEDs group layout
      */
-    Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout) :
-        ledMap(ledLayout), bus(bus)
+    Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout,
+            Serialize* serialize = NULL) :
+        ledMap(ledLayout),
+        bus(bus), lampTestStatus(false), serialize(serialize)
     {
         // Nothing here
     }
@@ -110,9 +114,75 @@ class Manager
      */
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
+    /** @brief Get lamp test status, ture: On, false: Off */
+    bool getLampTestStatus();
+
+    /** @brief Set lamp test status
+     *
+     *  @param[in]  status  -  ture: On, false: Off
+     */
+    void setLampTestStatus(bool status);
+
+    /** @brief Chooses appropriate action to be triggered on physical LED
+     *  and calls into function that applies the actual action.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  action    -  Intended action to be triggered
+     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
+     *  @param[in]  period    -  Time taken for one blink cycle
+     */
+    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                          uint8_t dutyOn, const uint16_t period);
+
+    /** @brief Set DBus property by the service name.
+     *
+     *  @param[in]  service   -  dbus service name
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  intf      -  dbus object interface
+     *  @param[in]  property  -  property to be written to
+     *  @param[in]  value     -  Value to write
+     */
+    template <typename T>
+    void setDbusProperty(const std::string& service, const std::string& objPath,
+                         const std::string& intf, const std::string& property,
+                         const T& value)
+    {
+        std::variant<T> data = value;
+
+        auto method = bus.new_method_call(service.c_str(), objPath.c_str(),
+                                          DBUS_PROPERTY_IFACE, "Set");
+        method.append(intf.c_str());
+        method.append(property);
+        method.append(data);
+
+        // There will be exceptions going forward and hence don't need a
+        // response
+        bus.call_noreply(method);
+        return;
+    }
+
+    /** @brief Get sub tree paths by the path and interface of the DBus.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  intf      -  dbus object interface
+     *
+     *  @return std::vector<std::string> vector of subtree paths
+     */
+    std::vector<std::string> getSubTreePahts(const std::string& objPath,
+                                             const std::string& intf);
+
+    /** @brief Get sub tree paths by the path and interface of the DBus. */
+    void setAssertedProperty();
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
+
+    /** @brief lamp test status, ture: On, false: Off(default) */
+    bool lampTestStatus;
+
+    /** @brief The serialize class for storing and restoring groups of LEDs */
+    Serialize* serialize;
 
     /** Map of physical LED path to service name */
     std::map<std::string, std::string> phyLeds{};
@@ -135,44 +205,6 @@ class Manager
      *  @return string equivalent of the passed in enumeration
      */
     static std::string getPhysicalAction(Layout::Action action);
-
-    /** @brief Chooses appropriate action to be triggered on physical LED
-     *  and calls into function that applies the actual action.
-     *
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  action    -  Intended action to be triggered
-     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
-     *  @param[in]  period    -  Time taken for one blink cycle
-     */
-    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn, const uint16_t period);
-
-    /** @brief Makes a dbus call to a passed in service name.
-     *  This is now the physical LED controller
-     *
-     *  @param[in]  service   -  dbus service name
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  property  -  property to be written to
-     *  @param[in]  value     -  Value to write
-     */
-    template <typename T>
-    void drivePhysicalLED(const std::string& service,
-                          const std::string& objPath,
-                          const std::string& property, const T& value)
-    {
-        std::variant<T> data = value;
-
-        auto method = bus.new_method_call(service.c_str(), objPath.c_str(),
-                                          DBUS_PROPERTY_IFACE, "Set");
-        method.append(PHY_LED_IFACE);
-        method.append(property);
-        method.append(data);
-
-        // There will be exceptions going forward and hence don't need a
-        // response
-        bus.call_noreply(method);
-        return;
-    }
 
     /** @brief Populates map of Physical LED paths to service name */
     void populateObjectMap();

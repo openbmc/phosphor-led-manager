@@ -23,9 +23,12 @@ bool Group::asserted(bool value)
     // Store asserted state
     serialize.storeGroups(path, result);
 
-    // If something does not go right here, then there should be an sdbusplus
-    // exception thrown.
-    manager.driveLEDs(ledsAssert, ledsDeAssert);
+    if (!manager.getLampTestStatus())
+    {
+        // If something does not go right here, then there should be an
+        // sdbusplus exception thrown.
+        manager.driveLEDs(ledsAssert, ledsDeAssert);
+    }
 
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
