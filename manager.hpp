@@ -115,6 +115,26 @@ class Manager
      */
     void setOperationalStatus(const std::string& path, bool value) const;
 
+    /** @brief Get state of the lamp test operation
+     *
+     *  @return       - true: InProgress  false: Completed/Failed/Aborted
+     */
+    bool isLampTestInProgress();
+
+    /** @brief Chooses appropriate action to be triggered on physical LED
+     *  and calls into function that applies the actual action.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  action    -  Intended action to be triggered
+     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
+     *  @param[in]  period    -  Time taken for one blink cycle
+     */
+    bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                          uint8_t dutyOn, const uint16_t period);
+
+    /** @brief Restore the Led Assert before the lamp test */
+    void restoreLedsAssert();
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -143,17 +163,6 @@ class Manager
      *  @return string equivalent of the passed in enumeration
      */
     static std::string getPhysicalAction(Layout::Action action);
-
-    /** @brief Chooses appropriate action to be triggered on physical LED
-     *  and calls into function that applies the actual action.
-     *
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  action    -  Intended action to be triggered
-     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
-     *  @param[in]  period    -  Time taken for one blink cycle
-     */
-    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn, const uint16_t period);
 };
 
 } // namespace led

@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -133,7 +134,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 }
 
 // Calls into driving physical LED post choosing the action
-void Manager::drivePhysicalLED(const std::string& objPath,
+bool Manager::drivePhysicalLED(const std::string& objPath,
                                Layout::Action action, uint8_t dutyOn,
                                const uint16_t period)
 {
@@ -159,9 +160,11 @@ void Manager::drivePhysicalLED(const std::string& objPath,
         log<level::ERR>("Error setting property for physical LED",
                         entry("ERROR=%s", e.what()),
                         entry("OBJECT_PATH=%s", objPath.c_str()));
+
+        return false;
     }
 
-    return;
+    return true;
 }
 
 /** @brief Returns action string based on enum */
@@ -236,6 +239,44 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
                             entry("PATH=%s", fruInstancePath.c_str()));
         }
     }
+}
+
+bool Manager::isLampTestInProgress()
+{
+#ifdef USE_LAMP_TEST
+    try
+    {
+        PropertyValue staus{};
+        status = dBusHandler.getProperty(
+            LAMPTESTPATH, "xyz.openbmc_project.Common.Progress", "Status");
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to get endpoints property",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", LAMPTESTPATH));
+        return false;
+    }
+
+    auto& state = std::get<std::vector<std::string>>(status);
+    if (state.empty())
+    {
+        return false;
+    }
+
+    if (state == "xyz.openbmc_project.progress.operationStatus.InProgress")
+    {
+        return true;
+    }
+#endif
+
+    return false;
+}
+
+void Manager::restoreLedsAssert()
+{
+    group ledsDeAssert{};
+    driveLEDs(currentState, ledsDeAssert);
 }
 
 } // namespace led

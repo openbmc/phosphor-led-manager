@@ -24,4 +24,10 @@ phosphor_ledmanager_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                               $(PHOSPHOR_LOGGING_CFLAGS) \
                               $(PHOSPHOR_DBUS_INTERFACES_CFLAGS)
 
+if WANTS_LAMPTEST
+phosphor_ledmanager_SOURCES += lampTest.cpp
+phosphor_ledmanager_LDFLAGS += $(SDEVENTPLUS_LIBS)
+phosphor_ledmanager_CFLAGS += $(SDEVENTPLUS_CFLAGS)
+endif
+
 SUBDIRS = test fault-monitor
