@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2ccbb059_b8e6baee",
+        "filename": "lampTest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-09-21T07:48:32Z",
+      "side": 1,
+      "message": "This must be set after turning off all the physical LEDs",
+      "revId": "95302b2fc8a66f863cf01b4c276470fa4b558040",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f58477be_b8dcf629",
+        "filename": "led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-09-21T07:48:32Z",
+      "side": 1,
+      "message": "manager does not really need serialise ..\n\nWe should be able to do things out of what manager already has",
+      "revId": "95302b2fc8a66f863cf01b4c276470fa4b558040",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "30674b3a_c5629ac4",
+        "filename": "manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 164,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-09-21T07:48:32Z",
+      "side": 1,
+      "message": "why was this name changed ?.",
+      "range": {
+        "startLine": 164,
+        "startChar": 4,
+        "endLine": 164,
+        "endChar": 19
+      },
+      "revId": "95302b2fc8a66f863cf01b4c276470fa4b558040",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0de31f8b_d6b79773",
+        "filename": "manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 300,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-09-21T07:48:32Z",
+      "side": 1,
+      "message": "I don\u0027t think so it works and this will lead into deadlock. we should not make a Dbus call from that same application. D-Bus call is needed only when we want to communicate with external daemons.. inside the daemon, we should not do.",
+      "revId": "95302b2fc8a66f863cf01b4c276470fa4b558040",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
