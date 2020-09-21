@@ -5,6 +5,7 @@
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
 #include <algorithm>
+#include <chrono>
 #include <iostream>
 #include <string>
 namespace phosphor
@@ -155,12 +156,13 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     // If Blink, set its property
     if (action == Layout::Action::Blink)
     {
-        drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
-        drivePhysicalLED(service->second, objPath, "Period", period);
+        setDbusProperty(service->second, objPath, PHY_LED_IFACE, "DutyOn",
+                        dutyOn);
+        setDbusProperty(service->second, objPath, PHY_LED_IFACE, "Period",
+                        period);
     }
-    drivePhysicalLED(service->second, objPath, "State",
-                     getPhysicalAction(action));
-    return;
+    setDbusProperty(service->second, objPath, PHY_LED_IFACE, "State",
+                    getPhysicalAction(action));
 }
 
 /** @brief Returns action string based on enum */
@@ -247,6 +249,60 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+bool Manager::getLampTestStatus()
+{
+    return this->lampTestStatus;
+}
+
+void Manager::setLampTestStatus(bool status)
+{
+    this->lampTestStatus = status;
+}
+
+std::vector<std::string> Manager::getSubTreePahts(const std::string& objPath,
+                                                  const std::string& intf)
+{
+    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
+
+    std::vector<std::string> paths;
+
+    auto method = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                      MAPPER_IFACE, "GetSubTreePaths");
+    method.append(objPath.c_str());
+    method.append(0); // Depth 0 to search all
+    method.append(std::vector<std::string>({intf.c_str()}));
+    auto reply = bus.call(method);
+
+    reply.read(paths);
+
+    return paths;
+}
+
+void Manager::setLedsAssertGroups(
+    const std::string& path, std::tuple<LedsAssert, LedsDeAssert> ledAssert)
+{
+    const auto iter = ledAssertGroups.find(path);
+    if (iter != ledAssertGroups.end())
+    {
+        ledAssertGroups.erase(iter);
+    }
+
+    ledAssertGroups.emplace(path, ledAssert);
+}
+
+std::optional<std::tuple<LedsAssert, LedsDeAssert>>
+    Manager::getLedsAssertGroups(const std::string& path)
+{
+    if (ledAssertGroups.find(path) != ledAssertGroups.end())
+    {
+        return std::make_optional(ledAssertGroups.at(path));
+    }
+
+    return std::nullopt;
 }
 
 } // namespace led
