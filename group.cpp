@@ -35,8 +35,8 @@ bool Group::asserted(bool value)
     // vice-versa.
     manager.setOperationalStatus(path, !value);
 
-    // If something does not go right here, then there should be an sdbusplus
-    // exception thrown.
+    // If something does not go right here, then there should be an
+    // sdbusplus exception thrown.
     manager.driveLEDs(ledsAssert, ledsDeAssert);
 
     // Set the base class's asserted to 'true' since the getter
