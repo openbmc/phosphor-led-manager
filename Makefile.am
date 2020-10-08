@@ -1,5 +1,6 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 bin_PROGRAMS = phosphor-ledmanager
+bin_SCRIPTS = scripts/led-set-all-groups-asserted.sh
 
 phosphor_ledmanager_SOURCES = \
                 led-main.cpp  \
