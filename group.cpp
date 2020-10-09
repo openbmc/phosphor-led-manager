@@ -11,6 +11,13 @@ namespace led
 /** @brief Overloaded Property Setter function */
 bool Group::asserted(bool value)
 {
+    // If the value is already what is before, return right away
+    if (value ==
+            sdbusplus::xyz::openbmc_project::Led::server::Group::asserted())
+    {
+        return value;
+    }
+
     // Introducing these to enable gtest.
     Manager::group ledsAssert{};
     Manager::group ledsDeAssert{};
