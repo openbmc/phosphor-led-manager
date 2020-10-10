@@ -99,7 +99,7 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 }
 
 /** @brief Run through the map and apply action on the LEDs */
-void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
+bool Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
     using namespace phosphor::logging;
     // Map of physical LED dbus paths to their Service providers
@@ -108,7 +108,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
     if (phyLeds.empty())
     {
         // Error message is inside the map construction logic.
-        return;
+        return false;
     }
 
     // This order of LED operation is important.
@@ -119,8 +119,11 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
             log<level::DEBUG>("De-Asserting LED",
                               entry("NAME=%s", it.name.c_str()));
-            drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
-                             it.period);
+            if (!drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
+                                  it.period))
+            {
+                return false;
+            }
         }
     }
 
@@ -131,14 +134,17 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
             log<level::DEBUG>("Asserting LED",
                               entry("NAME=%s", it.name.c_str()));
-            drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
+            if (!drivePhysicalLED(objPath, it.action, it.dutyOn, it.period))
+            {
+                return false;
+            }
         }
     }
-    return;
+    return true;
 }
 
 // Calls into driving physical LED post choosing the action
-void Manager::drivePhysicalLED(const std::string& objPath,
+bool Manager::drivePhysicalLED(const std::string& objPath,
                                Layout::Action action, uint8_t dutyOn,
                                const uint16_t period)
 {
@@ -149,18 +155,29 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     {
         log<level::ERR>("No service providers for physical LED",
                         entry("PATH=%s", objPath.c_str()));
-        return;
+        return false;
     }
 
-    // If Blink, set its property
-    if (action == Layout::Action::Blink)
+    try
     {
-        drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
-        drivePhysicalLED(service->second, objPath, "Period", period);
+        // If Blink, set its property
+        if (action == Layout::Action::Blink)
+        {
+            drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
+            drivePhysicalLED(service->second, objPath, "Period", period);
+        }
+        drivePhysicalLED(service->second, objPath, "State",
+                         getPhysicalAction(action));
     }
-    drivePhysicalLED(service->second, objPath, "State",
-                     getPhysicalAction(action));
-    return;
+    catch (const std::exception& e)
+    {
+        log<level::ERR>("Control physical LED failed",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", objPath.c_str()));
+        return false;
+    }
+
+    return true;
 }
 
 /** @brief Returns action string based on enum */

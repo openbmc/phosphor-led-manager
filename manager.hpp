@@ -106,9 +106,9 @@ class Manager
      *                               or to a different state
      *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
      *
-     *  @return: None
+     *  @return                   -  Success or exception thrown
      */
-    void driveLEDs(group& ledsAssert, group& ledsDeAssert);
+    bool driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
   private:
     /** @brief sdbusplus handler */
@@ -143,8 +143,10 @@ class Manager
      *  @param[in]  action    -  Intended action to be triggered
      *  @param[in]  dutyOn    -  Duty Cycle ON percentage
      *  @param[in]  period    -  Time taken for one blink cycle
+     *
+     *  @return               -  Success or exception thrown
      */
-    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
+    bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
     /** @brief Makes a dbus call to a passed in service name.
