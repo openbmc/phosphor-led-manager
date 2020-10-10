@@ -25,7 +25,10 @@ bool Group::asserted(bool value)
 
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
-    manager.driveLEDs(ledsAssert, ledsDeAssert);
+    if (!manager.driveLEDs(ledsAssert, ledsDeAssert))
+    {
+        return value;
+    }
 
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
