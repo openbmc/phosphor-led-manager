@@ -186,5 +186,53 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     }
 }
 
+/** Set OperationalStatus according to the status of asserted */
+void Manager::setOperationalStatus(const std::string& path, bool value)
+{
+    using namespace phosphor::logging;
+
+    // Get endpoints from the rType
+    std::string fruGroups = path + "/fru_fault";
+    PropertyValue endpoint;
+
+    try
+    {
+        endpoint = dBusHandler.getProperty(
+            fruGroups, "xyz.openbmc_project.Association", "endpoints");
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse existing callouts endpoints message",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", fruGroups.c_str()));
+        return;
+    }
+
+    auto& endpoints = std::get<std::vector<std::string>>(endpoint);
+    if (endpoints.empty())
+    {
+        return;
+    }
+
+    for (const auto& fruPath : endpoints)
+    {
+        // Set OperationalStatus by object fru path
+        try
+        {
+            PropertyValue functionalValue{value};
+            dBusHandler.setProperty(
+                fruPath,
+                "xyz.openbmc_project.State.Decorator.OperationalStatus",
+                "Functional", functionalValue);
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>("Failed to set Functional",
+                            entry("ERROR=%s", e.what()),
+                            entry("PATH=%s", fruPath.c_str()));
+        }
+    }
+}
+
 } // namespace led
 } // namespace phosphor
