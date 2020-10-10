@@ -186,5 +186,53 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     }
 }
 
+// Set OperationalStatus functional according to the asserted state of the group
+void Manager::setOperationalStatus(const std::string& path, bool value) const
+{
+    using namespace phosphor::logging;
+
+    // Get endpoints from the rType
+    std::string fru = path + "/fru_fault";
+    PropertyValue endpoint{};
+
+    try
+    {
+        endpoint = dBusHandler.getProperty(
+            fru, "xyz.openbmc_project.Association", "endpoints");
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to get endpoints property",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", fru.c_str()));
+        return;
+    }
+
+    auto& endpoints = std::get<std::vector<std::string>>(endpoint);
+    if (endpoints.empty())
+    {
+        return;
+    }
+
+    for (const auto& fruPath : endpoints)
+    {
+        // Set OperationalStatus by fru path
+        try
+        {
+            PropertyValue functionalValue{value};
+            dBusHandler.setProperty(
+                fruPath,
+                "xyz.openbmc_project.State.Decorator.OperationalStatus",
+                "Functional", functionalValue);
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>("Failed to set Functional property",
+                            entry("ERROR=%s", e.what()),
+                            entry("PATH=%s", fruPath.c_str()));
+        }
+    }
+}
+
 } // namespace led
 } // namespace phosphor
