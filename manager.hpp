@@ -13,6 +13,11 @@ namespace phosphor
 namespace led
 {
 
+// Mapper dbus constructs
+constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
+constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
+constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
+
 /** @brief Physical LED dbus constructs */
 constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
 constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
@@ -109,6 +114,15 @@ class Manager
      *  @return: None
      */
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
+
+    /** @brief Set OperationalStatus according to the status of asserted
+     *
+     *  @param[in]  path          -  dbus path of group
+     *  @param[in]  value         -  Could be true or false
+     *
+     *  @return: None
+     */
+    void setOperationalStatus(const std::string& path, bool value);
 
   private:
     /** @brief sdbusplus handler */
