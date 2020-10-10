@@ -47,6 +47,30 @@ const std::string DBusHandler::getService(const std::string& path,
     return mapperResponse.cbegin()->first;
 }
 
+// Get the property name
+PropertyValue DBusHandler::getProperty(const std::string& objectPath,
+                                       const std::string& interface,
+                                       const std::string& propertyName) const
+{
+    PropertyValue value{};
+
+    auto& bus = DBusHandler::getBus();
+    auto service = getService(objectPath, interface);
+    if (service.empty())
+    {
+        return value;
+    }
+
+    auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
+                                      DBUS_PROPERTY_IFACE, "Get");
+    method.append(interface, propertyName);
+
+    auto reply = bus.call(method);
+    reply.read(value);
+
+    return value;
+}
+
 // Set property
 void DBusHandler::setProperty(const std::string& objectPath,
                               const std::string& interface,
