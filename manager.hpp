@@ -105,6 +105,16 @@ class Manager
      */
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
+    /** @brief Set OperationalStatus according to the status of asserted
+     *         property
+     *
+     *  @param[in]  path          -  D-Bus path of group
+     *  @param[in]  value         -  Could be true or false
+     *
+     *  @return: None
+     */
+    void setOperationalStatus(const std::string& path, bool value) const;
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
