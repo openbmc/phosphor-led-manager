@@ -190,11 +190,6 @@ void Manager::populateObjectMap()
 {
     using namespace phosphor::logging;
 
-    // Mapper dbus constructs
-    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
-    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
-    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
-
     // Needed to be passed to get the SubTree level
     auto depth = 0;
 
@@ -247,6 +242,83 @@ void Manager::populateObjectMap()
         phyLeds.emplace(iter.first, iter.second.begin()->first);
     }
     return;
+}
+
+/** Get the BUS Service name for the input dbus path */
+std::string Manager::getService(sdbusplus::bus::bus& bus,
+                                const std::string& path)
+{
+    std::map<std::string, std::vector<std::string>> mapperResponse;
+    auto mapper = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                      MAPPER_IFACE, "GetObject");
+    mapper.append(path.c_str(), std::vector<std::string>({OBJMGR_IFACE}));
+    auto mapperResponseMsg = bus.call(mapper);
+    mapperResponseMsg.read(mapperResponse);
+
+    return mapperResponse.cbegin()->first;
+}
+
+/** Set OperationalStatus according to the status of asserted */
+void Manager::setOperationalStatus(const std::string& path, bool value)
+{
+    using namespace phosphor::logging;
+
+    // Get endpoints from the rType
+    std::string fruGroups = path + "/fru_fault";
+
+    std::variant<std::vector<std::string>> endpoint;
+    try
+    {
+        auto method =
+            bus.new_method_call(MAPPER_BUSNAME, fruGroups.c_str(),
+                                "org.freedesktop.DBus.Properties", "Get");
+        method.append("xyz.openbmc_project.Association");
+        method.append("endpoints");
+        auto reply = bus.call(method);
+        if (reply.is_method_error())
+        {
+            log<level::ERR>("Error in getting endpoints");
+            return;
+        }
+
+        reply.read(endpoint);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to parse existing callouts endpoints message",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", fruGroups.c_str()));
+        return;
+    }
+
+    auto& endpoints = std::get<std::vector<std::string>>(endpoint);
+    if (endpoints.empty())
+    {
+        return;
+    }
+
+    for (const auto& fruPath : endpoints)
+    {
+        // Set OperationalStatus by object fru path
+        try
+        {
+            std::string service = getService(bus, fruPath);
+            auto method =
+                bus.new_method_call(service.c_str(), fruPath.c_str(),
+                                    "org.freedesktop.DBus.Properties", "Set");
+            method.append(
+                "xyz.openbmc_project.State.Decorator.OperationalStatus");
+            method.append("Functional");
+            method.append(std::variant<bool>(value));
+            bus.call_noreply(method);
+        }
+        catch (const sdbusplus::exception::SdBusError& e)
+        {
+            log<level::ERR>("Failed to set Functional",
+                            entry("ERROR=%s", e.what()),
+                            entry("PATH=%s", fruPath.c_str()));
+        }
+    }
 }
 
 } // namespace led
