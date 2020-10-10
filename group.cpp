@@ -27,6 +27,9 @@ bool Group::asserted(bool value)
     // exception thrown.
     manager.driveLEDs(ledsAssert, ledsDeAssert);
 
+    // Set OperationalStatus according to the status of asserted
+    manager.setOperationalStatus(path, !value);
+
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
     return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
