@@ -30,6 +30,11 @@ bool Group::asserted(bool value)
     // Store asserted state
     serialize.storeGroups(path, result);
 
+    // Set OperationalStatus according to the status of asserted property.
+    // If the group is asserted, then the functional status is false and
+    // vice-versa.
+    manager.setOperationalStatus(path, !value);
+
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
     manager.driveLEDs(ledsAssert, ledsDeAssert);
