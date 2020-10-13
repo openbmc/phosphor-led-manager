@@ -63,13 +63,13 @@ static const std::map<std::string, std::set<phosphor::led::Layout::LedAction>>
          {
              {"One", phosphor::led::Layout::Blink, 0, 0,
               phosphor::led::Layout::Blink},
-             {"Two", phosphor::led::Layout::On, 0,
+             {"Two", phosphor::led::Layout::On, 0, 0,
               phosphor::led::Layout::Blink},
-             {"Three", phosphor::led::Layout::Blink, 0,
+             {"Three", phosphor::led::Layout::Blink, 0, 0,
               phosphor::led::Layout::On},
-             {"Four", phosphor::led::Layout::On, 0,
+             {"Four", phosphor::led::Layout::On, 0, 0,
               phosphor::led::Layout::Blink},
-             {"Five", phosphor::led::Layout::On, 0,
+             {"Five", phosphor::led::Layout::On, 0, 0,
               phosphor::led::Layout::Blink},
          }},
 };

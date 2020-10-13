@@ -1,0 +1,5 @@
+option('tests', type : 'feature', description : 'Build tests', value: 'enabled')
+option('oe-sdk', type : 'feature', description : 'Enable OE SDK', value: 'disabled')
+option('use-json', type : 'feature', description : 'LEDs JSON filepath', value: 'disabled')
+option('use-lamp-test', type : 'feature', description : 'LEDs lamp test configuration', value: 'disabled')
+option('YAML_PATH', type: 'string', description: 'The path to the yaml config files', value: 'led.yaml')
