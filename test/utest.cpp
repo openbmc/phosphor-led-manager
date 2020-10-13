@@ -354,12 +354,13 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
         std::set<Layout::LedAction> refAssert = {
             {"One", phosphor::led::Layout::Blink, 0, 0,
              phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::On, 0, phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0,
+            {"Two", phosphor::led::Layout::On, 0, 0,
              phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0,
+            {"Three", phosphor::led::Layout::Blink, 0, 0,
+             phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::On, 0, 0,
+             phosphor::led::Layout::Blink},
+            {"Five", phosphor::led::Layout::On, 0, 0,
              phosphor::led::Layout::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
