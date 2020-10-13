@@ -1,0 +1,5 @@
+option('tests', type : 'feature', description : 'Build tests', value: 'enabled')
+option('oe-sdk', type : 'feature', description : 'Enable OE SDK')
+option('use-json', type : 'feature', description : 'LEDs JSON filepath', value: 'disabled')
+option('LED_YAML', type : 'string', description : 'LEDs YAML filepath', value : 'led.yaml')
+option('CLASS_VERSION', type : 'integer', description : 'Class version to register with Cereal', value : 1)
