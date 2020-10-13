@@ -11,7 +11,7 @@
 #include <fstream>
 
 // Register class version with Cereal
-CEREAL_CLASS_VERSION(phosphor::led::Serialize, CLASS_VERSION);
+CEREAL_CLASS_VERSION(phosphor::led::Serialize, CLASS_VERSION)
 
 namespace phosphor
 {
