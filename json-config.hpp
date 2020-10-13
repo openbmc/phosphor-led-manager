@@ -141,7 +141,7 @@ class JsonConfig
      *
      * @return
      */
-    const void getFilePath()
+    void getFilePath()
     {
         // Check override location
         confFile = fs::path{confOverridePath} / confFileName;
