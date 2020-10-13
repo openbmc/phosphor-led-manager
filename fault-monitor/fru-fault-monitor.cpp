@@ -1,8 +1,8 @@
 #include "fru-fault-monitor.hpp"
 
+#include "../gen/xyz/openbmc_project/Led/Fru/Monitor/error.hpp"
+#include "../gen/xyz/openbmc_project/Led/Mapper/error.hpp"
 #include "elog-errors.hpp"
-#include "xyz/openbmc_project/Led/Fru/Monitor/error.hpp"
-#include "xyz/openbmc_project/Led/Mapper/error.hpp"
 
 #include <phosphor-logging/elog.hpp>
 #include <sdbusplus/exception.hpp>
