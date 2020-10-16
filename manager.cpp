@@ -1,6 +1,5 @@
 #include "manager.hpp"
 
-#include <phosphor-logging/log.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
@@ -101,16 +100,6 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
-    using namespace phosphor::logging;
-    // Map of physical LED dbus paths to their Service providers
-    populateObjectMap();
-
-    if (phyLeds.empty())
-    {
-        // Error message is inside the map construction logic.
-        return;
-    }
-
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
@@ -142,24 +131,30 @@ void Manager::drivePhysicalLED(const std::string& objPath,
                                Layout::Action action, uint8_t dutyOn,
                                const uint16_t period)
 {
-    using namespace phosphor::logging;
-
-    auto service = phyLeds.find(objPath);
-    if (service == phyLeds.end() || service->second.empty())
+    try
     {
-        log<level::ERR>("No service providers for physical LED",
-                        entry("PATH=%s", objPath.c_str()));
-        return;
+        // If Blink, set its property
+        if (action == Layout::Action::Blink)
+        {
+            PropertyValue dutyOnValue{dutyOn};
+            PropertyValue periodValue{period};
+
+            dBusHandler.setProperty(objPath, PHY_LED_IFACE, "DutyOn",
+                                    dutyOnValue);
+            dBusHandler.setProperty(objPath, PHY_LED_IFACE, "Period",
+                                    periodValue);
+        }
+
+        PropertyValue actionValue{getPhysicalAction(action)};
+        dBusHandler.setProperty(objPath, PHY_LED_IFACE, "State", actionValue);
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>("Error setting property for physical LED",
+                        entry("ERROR=%s", e.what()),
+                        entry("OBJECT_PATH=%s", objPath.c_str()));
     }
 
-    // If Blink, set its property
-    if (action == Layout::Action::Blink)
-    {
-        drivePhysicalLED(service->second, objPath, "DutyOn", dutyOn);
-        drivePhysicalLED(service->second, objPath, "Period", period);
-    }
-    drivePhysicalLED(service->second, objPath, "State",
-                     getPhysicalAction(action));
     return;
 }
 
@@ -183,70 +178,6 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     {
         return server::convertForMessage(server::Physical::Action::Off);
     }
-}
-
-/** Populates a map with physical LED paths to its service providers */
-void Manager::populateObjectMap()
-{
-    using namespace phosphor::logging;
-
-    // Mapper dbus constructs
-    constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
-    constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
-    constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
-
-    // Needed to be passed to get the SubTree level
-    auto depth = 0;
-
-    // Clean start
-    phyLeds.clear();
-
-    // Make a mapper call
-    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                          MAPPER_IFACE, "GetSubTree");
-    // Cook rest of the things.
-    mapperCall.append(PHY_LED_PATH);
-    mapperCall.append(depth);
-    mapperCall.append(std::vector<std::string>({PHY_LED_IFACE}));
-
-    auto reply = bus.call(mapperCall);
-    if (reply.is_method_error())
-    {
-        // Its okay if we do not see a corresponding physical LED.
-        log<level::INFO>("Error looking up Physical LED services",
-                         entry("PATH=%s", PHY_LED_PATH));
-        return;
-    }
-
-    // Response by mapper in the case of success
-    std::map<std::string, std::map<std::string, std::vector<std::string>>>
-        objectTree;
-
-    // This is the dict of object paths - service names - interfaces
-    try
-    {
-        reply.read(objectTree);
-    }
-    catch (const sdbusplus::exception::SdBusError& e)
-    {
-        log<level::ERR>("Failed to parse Physical LED service lookup",
-                        entry("ERROR=%s", e.what()),
-                        entry("REPLY_SIG=%s", reply.get_signature()));
-        return;
-    }
-    if (objectTree.empty())
-    {
-        log<level::INFO>("Physical LED lookup did not return any services",
-                         entry("PATH=%s", PHY_LED_PATH));
-        return;
-    }
-
-    // Now construct our path -> Service name map.
-    for (const auto& iter : objectTree)
-    {
-        phyLeds.emplace(iter.first, iter.second.begin()->first);
-    }
-    return;
 }
 
 } // namespace led
