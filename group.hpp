@@ -2,8 +2,8 @@
 
 #include "manager.hpp"
 #include "serialize.hpp"
+#include "utils.hpp"
 
-#include <sdbusplus/bus.hpp>
 #include <sdbusplus/server/object.hpp>
 #include <xyz/openbmc_project/Led/Group/server.hpp>
 
@@ -13,6 +13,7 @@ namespace phosphor
 {
 namespace led
 {
+using namespace phosphor::utils;
 
 /** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
@@ -31,17 +32,15 @@ class Group :
 
     /** @brief Constructs LED Group
      *
-     * @param[in] bus     - Handle to system dbus
      * @param[in] objPath - The D-Bus path that hosts LED group
      * @param[in] manager - Reference to Manager
      * @param[in] serialize - Serialize object
      */
-    Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager, Serialize& serialize) :
+    Group(const std::string& objPath, Manager& manager, Serialize& serialize) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
-            bus, objPath.c_str(), true),
+            DBusHandler::getBus(), objPath.c_str(), true),
         path(objPath), manager(manager), serialize(serialize)
     {
         // Initialize Asserted property value

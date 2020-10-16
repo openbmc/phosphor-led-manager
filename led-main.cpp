@@ -9,20 +9,21 @@
 #include "ledlayout.hpp"
 #include "manager.hpp"
 #include "serialize.hpp"
+#include "utils.hpp"
 
 #include <iostream>
 
 int main(void)
 {
     /** @brief Dbus constructs used by LED Group manager */
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    auto& bus = phosphor::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
     auto systemLedMap = loadJsonConfig(LED_JSON_FILE);
 #endif
 
     /** @brief Group manager object */
-    phosphor::led::Manager manager(bus, systemLedMap);
+    phosphor::led::Manager manager(systemLedMap);
 
     /** @brief sd_bus object manager */
     sdbusplus::server::manager::manager objManager(bus, OBJPATH);
@@ -37,7 +38,7 @@ int main(void)
     for (auto& grp : systemLedMap)
     {
         groups.emplace_back(std::make_unique<phosphor::led::Group>(
-            bus, grp.first, manager, serialize));
+            grp.first, manager, serialize));
     }
 
     /** @brief Claim the bus */

@@ -1,8 +1,6 @@
 #include "led-test-map.hpp"
 #include "manager.hpp"
 
-#include <sdbusplus/bus.hpp>
-
 #include <algorithm>
 #include <set>
 
@@ -11,8 +9,7 @@ using namespace phosphor::led;
 class LedTest : public ::testing::Test
 {
   public:
-    sdbusplus::bus::bus bus;
-    LedTest() : bus(sdbusplus::bus::new_default())
+    LedTest()
     {
         // Nothing here
     }
@@ -25,7 +22,7 @@ class LedTest : public ::testing::Test
 /** @brief Assert Single LED to On */
 TEST_F(LedTest, assertSingleLedOn)
 {
-    Manager manager(bus, singleLedOn);
+    Manager manager(singleLedOn);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -56,7 +53,7 @@ TEST_F(LedTest, assertSingleLedOn)
 /** @brief Assert Single LED to Blink */
 TEST_F(LedTest, assertSingleLedBlink)
 {
-    Manager manager(bus, singleLedBlink);
+    Manager manager(singleLedBlink);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -87,7 +84,7 @@ TEST_F(LedTest, assertSingleLedBlink)
 /** @brief Assert Single LED to On and Try Assert Again */
 TEST_F(LedTest, assertSingleLedOnAndreAssert)
 {
-    Manager manager(bus, singleLedOn);
+    Manager manager(singleLedOn);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -131,7 +128,7 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
 /** @brief Assert Multiple LEDs to On */
 TEST_F(LedTest, assertMultipleLedOn)
 {
-    Manager manager(bus, multipleLedsOn);
+    Manager manager(multipleLedsOn);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -164,7 +161,7 @@ TEST_F(LedTest, assertMultipleLedOn)
 /** @brief Assert Multiple LEDs to Blink */
 TEST_F(LedTest, assertMultipleLedBlink)
 {
-    Manager manager(bus, multipleLedsBlink);
+    Manager manager(multipleLedsBlink);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -199,7 +196,7 @@ TEST_F(LedTest, assertMultipleLedBlink)
 /** @brief Assert Multiple LEDs to Blink, DeAssert */
 TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 {
-    Manager manager(bus, multipleLedsBlink);
+    Manager manager(multipleLedsBlink);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -263,7 +260,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 /** @brief Assert Multiple LEDs to Blink, DeAssert Twice */
 TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 {
-    Manager manager(bus, multipleLedsBlink);
+    Manager manager(multipleLedsBlink);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -339,7 +336,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 /** @brief Assert Multiple LEDs to mix of On and Blink */
 TEST_F(LedTest, assertMultipleLedOnAndBlink)
 {
-    Manager manager(bus, multipleLedsOnAndBlink);
+    Manager manager(multipleLedsOnAndBlink);
     {
         // Assert the LEDs.
         Manager::group ledsAssert{};
@@ -377,7 +374,7 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
 /** @brief Assert 2 groups having distinct LEDs */
 TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 {
-    Manager manager(bus, twoGroupsWithDistinctLEDsOn);
+    Manager manager(twoGroupsWithDistinctLEDsOn);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -439,7 +436,7 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 /** @brief Assert 2 groups having one of the LEDs common */
 TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
 {
-    Manager manager(bus, twoGroupsWithOneComonLEDOn);
+    Manager manager(twoGroupsWithOneComonLEDOn);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -499,7 +496,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
  * priority and Deassert*/
 TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
 {
-    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
+    Manager manager(twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -587,7 +584,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
  * priority and Deassert A */
 TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
 {
-    Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
+    Manager manager(twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -686,7 +683,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
  * priority And Deassert A */
 TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
 {
-    Manager manager(bus, twoGroupsWithOneComonLEDOnPriority);
+    Manager manager(twoGroupsWithOneComonLEDOnPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -774,7 +771,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
  * priority And Deassert B */
 TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 {
-    Manager manager(bus, twoGroupsWithOneComonLEDOnPriority);
+    Manager manager(twoGroupsWithOneComonLEDOnPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -875,7 +872,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 /** @brief Assert 2 groups having multiple common LEDs in Same State */
 TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 {
-    Manager manager(bus, twoGroupsWithMultiplComonLEDOn);
+    Manager manager(twoGroupsWithMultiplComonLEDOn);
     {
         // Assert Set-B
         Manager::group ledsAssert{};
@@ -960,7 +957,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 /** @brief Assert 2 groups having multiple LEDs common in different state */
 TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
 {
-    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-B
         Manager::group ledsAssert{};
@@ -1023,7 +1020,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
 /** @brief Assert 2 groups having multiple LEDs common in different state */
 TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
 {
-    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -1092,7 +1089,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
 TEST_F(LedTest,
        assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoBDeAssertTwice)
 {
-    Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -1242,8 +1239,7 @@ TEST_F(LedTest,
 TEST_F(LedTest,
        assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityAandB)
 {
-    Manager manager(bus,
-                    twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -1350,8 +1346,7 @@ TEST_F(
     LedTest,
     assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityAandBDeAssertB)
 {
-    Manager manager(bus,
-                    twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-A
         Manager::group ledsAssert{};
@@ -1457,8 +1452,7 @@ TEST_F(
 TEST_F(LedTest,
        assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityBandA)
 {
-    Manager manager(bus,
-                    twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
         Manager::group ledsAssert{};
@@ -1530,8 +1524,7 @@ TEST_F(
     LedTest,
     assertTwoGroupsWithMultipleComonLEDInDifferentStateDiffPriorityBandADeAssertA)
 {
-    Manager manager(bus,
-                    twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
         Manager::group ledsAssert{};
@@ -1638,8 +1631,7 @@ TEST_F(
 TEST_F(LedTest,
        assertTwoGroupsWithMultipleComonLEDInDifferentStateOnBlinkPriorityBandA)
 {
-    Manager manager(bus,
-                    twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
+    Manager manager(twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
         Manager::group ledsAssert{};

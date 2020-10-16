@@ -1,8 +1,9 @@
 #pragma once
 
 #include "ledlayout.hpp"
+#include "utils.hpp"
 
-#include <sdbusplus/bus.hpp>
+#include <phosphor-logging/log.hpp>
 
 #include <map>
 #include <set>
@@ -12,11 +13,12 @@ namespace phosphor
 {
 namespace led
 {
+using namespace phosphor::utils;
+using namespace phosphor::logging;
 
 /** @brief Physical LED dbus constructs */
 constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
 constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
-constexpr auto DBUS_PROPERTY_IFACE = "org.freedesktop.DBus.Properties";
 
 /** @class Manager
  *  @brief Manages group of LEDs and applies action on the elements of group
@@ -78,11 +80,9 @@ class Manager
 
     /** @brief Refer the user supplied LED layout and sdbusplus handler
      *
-     *  @param [in] bus       - sdbusplus handler
      *  @param [in] LedLayout - LEDs group layout
      */
-    Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout) :
-        ledMap(ledLayout), bus(bus)
+    Manager(const LedLayout& ledLayout) : ledMap(ledLayout)
     {
         // Nothing here
     }
@@ -111,9 +111,6 @@ class Manager
     void driveLEDs(group& ledsAssert, group& ledsDeAssert);
 
   private:
-    /** @brief sdbusplus handler */
-    sdbusplus::bus::bus& bus;
-
     /** Map of physical LED path to service name */
     std::map<std::string, std::string> phyLeds{};
 
@@ -146,36 +143,6 @@ class Manager
      */
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
-
-    /** @brief Makes a dbus call to a passed in service name.
-     *  This is now the physical LED controller
-     *
-     *  @param[in]  service   -  dbus service name
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  property  -  property to be written to
-     *  @param[in]  value     -  Value to write
-     */
-    template <typename T>
-    void drivePhysicalLED(const std::string& service,
-                          const std::string& objPath,
-                          const std::string& property, const T& value)
-    {
-        std::variant<T> data = value;
-
-        auto method = bus.new_method_call(service.c_str(), objPath.c_str(),
-                                          DBUS_PROPERTY_IFACE, "Set");
-        method.append(PHY_LED_IFACE);
-        method.append(property);
-        method.append(data);
-
-        // There will be exceptions going forward and hence don't need a
-        // response
-        bus.call_noreply(method);
-        return;
-    }
-
-    /** @brief Populates map of Physical LED paths to service name */
-    void populateObjectMap();
 };
 
 } // namespace led
