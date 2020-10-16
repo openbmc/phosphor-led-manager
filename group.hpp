@@ -41,7 +41,7 @@ class Group :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
-            bus, objPath.c_str(), true),
+            DBusHandler::getBus(), objPath.c_str(), true),
         path(objPath), manager(manager), serialize(serialize)
     {
         // Initialize Asserted property value
