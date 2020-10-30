@@ -1,0 +1,349 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "743b0fd7_174f8557",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "This commit also seems to fix few errors that are complained by meson, please update the commit msg to include every detail.",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d326ef9_ee006f2d",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "There is already a tool called \u0027sdbus++-gendir\u0027 that automatically generates all these pieces. Look at \u0027example/meson.build\u0027 in sdbusplus repository to understand how it is used.  That tool will let you eliminate all these tree of meson.build files under xyz/",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0efaf7fe_cf77d3c2",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "this is redundant ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 1
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "14d6a105_e2c22fb1",
+        "filename": "fault-monitor/xyz/openbmc_project/Led/Fru/Monitor.errors.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "I dont know much about led-manager , but is this change related to this commit ?",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 36
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "24c2c964_69473a7d",
+        "filename": "fault-monitor/xyz/openbmc_project/Led/Fru/Monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "All this can be removed if we use the \u0027sdbus++-gendir\u0027 tool.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6219d92e_cd848276",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "Need to also include minimum meson version that this build file can compile. As meson version in CI and yocto changes quite often , its always good to add this.\n\nAnd also need a default build type flag as well , probably debugoptimized.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6d890294_86ad1fa9",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "Would be good if you give the required field as well, it would be easy for newbies to understand  better.",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 59
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dfb17761_989b1f37",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "I see lot of json stuff, is nlohmann json dependency not needed ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c0f7b59_f611019a",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "Do you want to sort them in any way ?",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 20
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "917272e0_451e914f",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "Need a conditional check to see if tests option is enabled, before calling the subdir otherwise..you will end up compiling tests even when they are disabled",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 14
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c25b678f_37ab41c4",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "the meson build files are triggered exactly in the order in which we call subdir(), so i would suggest to move this ahead of subdir(test)",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 23
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08bb97b6_b3b2a465",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "IMO meson options should be lower case. even it it not, lets maintain consistency across all meson options, that will look better.",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4934700e_a2f024cc",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "here as well",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6eacac1c_8bf5664a",
+        "filename": "test/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "Do you have access to docker CI ?  I suggest running the same environment as the OpenBMC-CI and just drop support for cross compiling unit tests.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 5
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5cf588c3_c21ff30c",
+        "filename": "test/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T04:53:24Z",
+      "side": 1,
+      "message": "can directly use deps here ?",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 42,
+        "endChar": 48
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
