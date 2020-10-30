@@ -1,0 +1,73 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6179c2b8_e0c51a69",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T13:35:19Z",
+      "side": 1,
+      "message": "Can we have all the dependencies at one place ? it looks easy \u0026 better that way.",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 53
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c1c3a441_ee1557db",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T13:35:19Z",
+      "side": 1,
+      "message": "This will break, without a meson wrap file under the subprojects directory. Are you planning on adding support for automatic dependency downloading when it is not found in the host system using meson wraps ? If not then this part would break the compilation as there is no nlohmann.wrap present in subprojects folder.\n\nfor reference on how to use meson subprojects, check this out https://github.com/openbmc/bmcweb/tree/master/subprojects",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 9
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "56efe55a_f12ead05",
+        "filename": "meson_options.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-10-30T13:35:19Z",
+      "side": 1,
+      "message": "On a second thought ? Can this value break the compilation ? if yes , I think its better to add min \u0026 max value for class_verison that the repo can compile with.",
+      "range": {
+        "startLine": 4,
+        "startChar": 97,
+        "endLine": 4,
+        "endChar": 107
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
