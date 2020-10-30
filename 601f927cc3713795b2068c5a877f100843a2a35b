@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "2aeb9182_922730bc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Since i have removed `xyz/` from fault-monitor, So my aim is to increase `meson build`.\n\nI only found that the Layout::LedAction construct parameter error in the test file.",
+      "parentUuid": "743b0fd7_174f8557",
+      "range": {
+        "startLine": 7,
+        "startChar": 0,
+        "endLine": 7,
+        "endChar": 15
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "9d326ef9_ee006f2d",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 2
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "41a380c8_294f871a",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d326ef9_ee006f2d",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 2,
+        "endChar": 40
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "0efaf7fe_cf77d3c2",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 2
@@ -59,6 +107,30 @@
       "writtenOn": "2020-10-30T04:53:24Z",
       "side": 1,
       "message": "this is redundant ?",
+      "range": {
+        "startLine": 13,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 1
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d84735f_a35fb56f",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "yes, removed",
+      "parentUuid": "0efaf7fe_cf77d3c2",
       "range": {
         "startLine": 13,
         "startChar": 0,
@@ -94,6 +166,30 @@
     },
     {
       "key": {
+        "uuid": "b6e48313_c1b5a337",
+        "filename": "fault-monitor/xyz/openbmc_project/Led/Fru/Monitor.errors.yaml",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Yeah.\nThe idea at the beginning was `xyz/` belongs to the fault-monitor process, so moved to the fault-monitor.\nIt has been restored.",
+      "parentUuid": "14d6a105_e2c22fb1",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 36
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "24c2c964_69473a7d",
         "filename": "fault-monitor/xyz/openbmc_project/Led/Fru/Monitor/meson.build",
         "patchSetId": 2
@@ -114,6 +210,30 @@
       "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f52d1fab_92319475",
+        "filename": "fault-monitor/xyz/openbmc_project/Led/Fru/Monitor/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "24c2c964_69473a7d",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 31,
+        "endChar": 1
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -140,6 +260,30 @@
     },
     {
       "key": {
+        "uuid": "391b5068_4bd042cd",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6219d92e_cd848276",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 1,
+        "endChar": 7
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6d890294_86ad1fa9",
         "filename": "meson.build",
         "patchSetId": 2
@@ -163,6 +307,30 @@
     },
     {
       "key": {
+        "uuid": "f402c1a4_ca328b6a",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6d890294_86ad1fa9",
+      "range": {
+        "startLine": 28,
+        "startChar": 0,
+        "endLine": 30,
+        "endChar": 59
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "dfb17761_989b1f37",
         "filename": "meson.build",
         "patchSetId": 2
@@ -174,6 +342,30 @@
       "writtenOn": "2020-10-30T04:53:24Z",
       "side": 1,
       "message": "I see lot of json stuff, is nlohmann json dependency not needed ?",
+      "range": {
+        "startLine": 43,
+        "startChar": 0,
+        "endLine": 43,
+        "endChar": 8
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89a09711_c305ef03",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "right, added.",
+      "parentUuid": "dfb17761_989b1f37",
       "range": {
         "startLine": 43,
         "startChar": 0,
@@ -209,6 +401,30 @@
     },
     {
       "key": {
+        "uuid": "aeba63fa_3247b01c",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Yes",
+      "parentUuid": "5c0f7b59_f611019a",
+      "range": {
+        "startLine": 50,
+        "startChar": 3,
+        "endLine": 54,
+        "endChar": 20
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "917272e0_451e914f",
         "filename": "meson.build",
         "patchSetId": 2
@@ -229,6 +445,30 @@
       "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ad744a8_df3bc0e3",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "917272e0_451e914f",
+      "range": {
+        "startLine": 65,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 14
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -255,6 +495,30 @@
     },
     {
       "key": {
+        "uuid": "6bb95e81_07027d66",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c25b678f_37ab41c4",
+      "range": {
+        "startLine": 66,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 23
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08bb97b6_b3b2a465",
         "filename": "meson_options.txt",
         "patchSetId": 2
@@ -275,6 +539,30 @@
       "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9ef87f65_fae5e309",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "i dont think we need it, removed.",
+      "parentUuid": "08bb97b6_b3b2a465",
+      "range": {
+        "startLine": 4,
+        "startChar": 8,
+        "endLine": 4,
+        "endChar": 16
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -301,6 +589,30 @@
     },
     {
       "key": {
+        "uuid": "cefc4a61_33763e0b",
+        "filename": "meson_options.txt",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4934700e_a2f024cc",
+      "range": {
+        "startLine": 5,
+        "startChar": 8,
+        "endLine": 5,
+        "endChar": 22
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6eacac1c_8bf5664a",
         "filename": "test/meson.build",
         "patchSetId": 2
@@ -312,6 +624,30 @@
       "writtenOn": "2020-10-30T04:53:24Z",
       "side": 1,
       "message": "Do you have access to docker CI ?  I suggest running the same environment as the OpenBMC-CI and just drop support for cross compiling unit tests.",
+      "range": {
+        "startLine": 1,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 5
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae63da0a_05780776",
+        "filename": "test/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "I think the original intention of adding meson is not to change the previous logic. \nMaybe I don\u0027t understand what u mean.\nSorry :)",
+      "parentUuid": "6eacac1c_8bf5664a",
       "range": {
         "startLine": 1,
         "startChar": 0,
@@ -344,6 +680,30 @@
       "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60d0e3f1_26504e5b",
+        "filename": "test/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-10-30T10:27:08Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5cf588c3_c21ff30c",
+      "range": {
+        "startLine": 40,
+        "startChar": 24,
+        "endLine": 42,
+        "endChar": 48
+      },
+      "revId": "601f927cc3713795b2068c5a877f100843a2a35b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
