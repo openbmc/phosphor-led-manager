@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "14333ffb_ccad842b",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-02T01:58:56Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6179c2b8_e0c51a69",
+      "range": {
+        "startLine": 30,
+        "startChar": 0,
+        "endLine": 32,
+        "endChar": 53
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c1c3a441_ee1557db",
         "filename": "meson.build",
         "patchSetId": 6
@@ -48,6 +72,30 @@
     },
     {
       "key": {
+        "uuid": "6313dfe8_e44f3186",
+        "filename": "meson.build",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-02T01:58:56Z",
+      "side": 1,
+      "message": "Thanks\nDone",
+      "parentUuid": "c1c3a441_ee1557db",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 65,
+        "endChar": 9
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "56efe55a_f12ead05",
         "filename": "meson_options.txt",
         "patchSetId": 6
@@ -59,6 +107,30 @@
       "writtenOn": "2020-10-30T13:35:19Z",
       "side": 1,
       "message": "On a second thought ? Can this value break the compilation ? if yes , I think its better to add min \u0026 max value for class_verison that the repo can compile with.",
+      "range": {
+        "startLine": 4,
+        "startChar": 97,
+        "endLine": 4,
+        "endChar": 107
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "705f90f3_431c3dec",
+        "filename": "meson_options.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-02T01:58:56Z",
+      "side": 1,
+      "message": "Right.\nBut, I am not familiar with `class_version`.\n@Vishwa, could u tell me what the min and max value of `class_version`, thanks :)",
+      "parentUuid": "56efe55a_f12ead05",
       "range": {
         "startLine": 4,
         "startChar": 97,
