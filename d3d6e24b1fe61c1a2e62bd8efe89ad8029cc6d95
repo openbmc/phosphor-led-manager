@@ -164,6 +164,30 @@
       "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "05a54d62_3e523db9",
+        "filename": "meson_options.txt",
+        "patchSetId": 6
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-11-03T13:14:34Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t know. I would say lets use what has been used before. If need be in the future, we can then add it\n\n@George, then In my opinion, it is better to hard code this option/value in config.h rather than exposing it outside with meson_options.txt. Because when we expose some option via meson_option.txt, bbappends from other meta-layers can override this value to anything(because it does not have a min/max value) and can lead to a failure.",
+      "parentUuid": "6ed1d51b_30c971fd",
+      "range": {
+        "startLine": 4,
+        "startChar": 97,
+        "endLine": 4,
+        "endChar": 107
+      },
+      "revId": "d3d6e24b1fe61c1a2e62bd8efe89ad8029cc6d95",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
