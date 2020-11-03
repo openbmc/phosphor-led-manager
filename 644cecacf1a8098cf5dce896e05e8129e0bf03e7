@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "adc2837b_f2178066",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-11-03T13:14:34Z",
+      "side": 1,
+      "message": "This is also a dependency right ? can you move it up ?",
+      "range": {
+        "startLine": 61,
+        "startChar": 0,
+        "endLine": 70,
+        "endChar": 9
+      },
+      "revId": "644cecacf1a8098cf5dce896e05e8129e0bf03e7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f3cac46_0b5a6947",
+        "filename": "meson.build",
+        "patchSetId": 7
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-11-03T13:14:34Z",
+      "side": 1,
+      "message": "this also should include nlohmann ? and this should be moved up",
+      "range": {
+        "startLine": 74,
+        "startChar": 0,
+        "endLine": 74,
+        "endChar": 5
+      },
+      "revId": "644cecacf1a8098cf5dce896e05e8129e0bf03e7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
