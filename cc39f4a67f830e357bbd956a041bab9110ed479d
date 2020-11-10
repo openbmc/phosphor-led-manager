@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "f1d30ee6_9ecd2c59",
+        "filename": "meson.build",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-10T00:38:21Z",
+      "side": 1,
+      "message": "Since these packages are required, I dont think these wraps are supported :)",
+      "parentUuid": "60efe164_b3f6a238",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 9
+      },
+      "revId": "cc39f4a67f830e357bbd956a041bab9110ed479d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc798d8b_1f3452d7",
         "filename": "serialize.cpp",
         "patchSetId": 15
@@ -36,6 +60,30 @@
       "writtenOn": "2020-11-06T08:50:26Z",
       "side": 1,
       "message": "This should go in config.h right ? should be something like below. \n\nconf_data.set(\u0027CLASS_VERSION\u0027, 1)",
+      "range": {
+        "startLine": 14,
+        "startChar": 47,
+        "endLine": 14,
+        "endChar": 49
+      },
+      "revId": "cc39f4a67f830e357bbd956a041bab9110ed479d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c479c86_4ac1cfda",
+        "filename": "serialize.cpp",
+        "patchSetId": 15
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-10T00:38:21Z",
+      "side": 1,
+      "message": "Yeah, Thanks:)",
+      "parentUuid": "dc798d8b_1f3452d7",
       "range": {
         "startLine": 14,
         "startChar": 47,
