@@ -73,6 +73,30 @@
     },
     {
       "key": {
+        "uuid": "980cb55f_47fb9227",
+        "filename": "meson.build",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-11-16T06:51:59Z",
+      "side": 1,
+      "message": "\u003e if sdbusplus is not found in sdk or in host, meson wraps will help us to download them at configure step and compile the code, so with that support - it will not break the compilation.\n\nRight, Thanks for your succession. :)\nDo we need to sync the version ID in meson wraps when the SDK updated?\nIf so, I think we can support these wraps in the future because I dont want to break the logic, Maybe @Vishwa agrees with me.\n@Vishwa, what do u think?",
+      "parentUuid": "d111f8ff_06b7d906",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 9
+      },
+      "revId": "cc39f4a67f830e357bbd956a041bab9110ed479d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc798d8b_1f3452d7",
         "filename": "serialize.cpp",
         "patchSetId": 15
