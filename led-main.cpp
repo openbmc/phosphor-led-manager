@@ -10,6 +10,9 @@
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"
+#ifdef USE_LAMP_TEST
+#include "lampTest.hpp"
+#endif
 
 #include <iostream>
 
@@ -41,9 +44,26 @@ int main(void)
             bus, grp.first, manager, serialize));
     }
 
+#ifdef USE_LAMP_TEST
+    // Get a default event loop
+    auto event = sdeventplus::Event::get_default();
+    phosphor::led::LampTest lampTest(event, manager);
+
+    groups.emplace_back(std::make_unique<phosphor::led::Group>(
+        bus, LAMPTESTPATH, manager, serialize,
+        std::bind(std::mem_fn(&phosphor::led::LampTest::lampTestHandler),
+                  &lampTest, std::placeholders::_1)));
+
+    // Attach the bus to sd_event to service user requests
+    bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
+#endif
+
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
 
+#ifdef USE_LAMP_TEST
+    event.loop();
+#else
     /** @brief Wait for client requests */
     while (true)
     {
@@ -51,5 +71,7 @@ int main(void)
         bus.process_discard();
         bus.wait();
     }
+#endif
+
     return 0;
 }

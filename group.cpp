@@ -18,6 +18,15 @@ bool Group::asserted(bool value)
         return value;
     }
 
+    if (callBack != nullptr)
+    {
+        // invoke lamp test
+        callBack(value);
+
+        return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
+            value);
+    }
+
     // Introducing these to enable gtest.
     Manager::group ledsAssert{};
     Manager::group ledsDeAssert{};
