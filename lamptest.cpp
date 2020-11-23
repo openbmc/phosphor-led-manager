@@ -13,6 +13,11 @@ namespace led
 
 void LampTest::stopLampTest()
 {
+    if (!manager.isLampTestRunning)
+    {
+        return;
+    }
+
     timer.setEnabled(false);
 
     // Set all the Physical action to Off for lamp test
@@ -22,12 +27,16 @@ void LampTest::stopLampTest()
     {
         manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
     }
+
+    manager.isLampTestRunning = false;
+    manager.restorePhysicalLedStates();
 }
 
 void LampTest::reStartLampTest()
 {
     // restart lamp test, it contains initiate or reset the timer.
     timer.restart(std::chrono::seconds(LAMP_TEST_TIMEOUT_IN_SECS));
+    manager.isLampTestRunning = true;
 
     // Set all the Physical action to On for lamp test
     std::vector<std::string> paths =
