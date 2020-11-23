@@ -10,11 +10,17 @@
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"
+#ifdef USE_LAMP_TEST
+#include "lamptest.hpp"
+#endif
 
 #include <iostream>
 
 int main(void)
 {
+    // Get a default event loop
+    auto event = sdeventplus::Event::get_default();
+
     /** @brief Dbus constructs used by LED Group manager */
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
@@ -41,15 +47,21 @@ int main(void)
             bus, grp.first, manager, serialize));
     }
 
+#ifdef USE_LAMP_TEST
+    phosphor::led::LampTest lampTest(event, manager);
+
+    groups.emplace_back(std::make_unique<phosphor::led::Group>(
+        bus, LAMP_TEST_OBJECT, manager, serialize,
+        std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
+                  &lampTest, std::placeholders::_1)));
+
+    // Attach the bus to sd_event to service user requests
+    bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
+#endif
+
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
+    event.loop();
 
-    /** @brief Wait for client requests */
-    while (true)
-    {
-        /** @brief process dbus calls / signals discarding unhandled */
-        bus.process_discard();
-        bus.wait();
-    }
     return 0;
 }
