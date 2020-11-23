@@ -50,8 +50,18 @@ microseconds LampTest::getTime() const
     return duration_cast<microseconds>(now.time_since_epoch());
 }
 
-bool LampTest::updatePhysicalAction(Layout::Action /* action */)
+bool LampTest::updatePhysicalAction(Layout::Action action)
 {
+    std::vector<std::string> paths =
+        dBusHandler.getSubTreePaths(PHY_LED_PATH, PHY_LED_IFACE);
+
+    for (auto& path : paths)
+    {
+        if (!manager.drivePhysicalLED(path, action, 0, 0))
+        {
+            return false;
+        }
+    }
 
     return true;
 }

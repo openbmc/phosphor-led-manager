@@ -1,6 +1,7 @@
 #pragma once
 
 #include "group.hpp"
+#include "manager.hpp"
 
 #include <com/ibm/Led/LampTest/server.hpp>
 #include <sdeventplus/event.hpp>
@@ -39,11 +40,12 @@ class LampTest : public LampTestInherit
      * @param[in] bus     - Handle to system dbus
      * @param[in] path    - lamp test path
      * @param[in] event   - sd event handler
+     * @param[in] manager - Reference to Manager
      */
     LampTest(sdbusplus::bus::bus& bus, const std::string& path,
-             const sdeventplus::Event& event) :
+             const sdeventplus::Event& event, Manager& manager) :
         LampTestInherit(bus, path.c_str()),
-        bus(bus), path(path), event(event),
+        bus(bus), path(path), event(event), manager(manager),
         timer(event, std::bind(&LampTest::lampTestTimeout, this))
     {
         status(OperationStatus::InProgress);
@@ -62,6 +64,9 @@ class LampTest : public LampTestInherit
 
     /** @brief sdbusplus event */
     const sdeventplus::Event& event;
+
+    /** @brief Reference to Manager object */
+    Manager& manager;
 
     /** DBusHandler class handles the D-Bus operations */
     DBusHandler dBusHandler;

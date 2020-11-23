@@ -13,6 +13,9 @@ namespace led
 {
 using namespace phosphor::led::utils;
 
+static constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
+static constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
+
 /** @class Manager
  *  @brief Manages group of LEDs and applies action on the elements of group
  */
@@ -115,6 +118,17 @@ class Manager
      */
     void setOperationalStatus(const std::string& path, bool value) const;
 
+    /** @brief Chooses appropriate action to be triggered on physical LED
+     *  and calls into function that applies the actual action.
+     *
+     *  @param[in]  objPath   -  dbus object path
+     *  @param[in]  action    -  Intended action to be triggered
+     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
+     *  @param[in]  period    -  Time taken for one blink cycle
+     */
+    bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                          uint8_t dutyOn, const uint16_t period);
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -143,17 +157,6 @@ class Manager
      *  @return string equivalent of the passed in enumeration
      */
     static std::string getPhysicalAction(Layout::Action action);
-
-    /** @brief Chooses appropriate action to be triggered on physical LED
-     *  and calls into function that applies the actual action.
-     *
-     *  @param[in]  objPath   -  dbus object path
-     *  @param[in]  action    -  Intended action to be triggered
-     *  @param[in]  dutyOn    -  Duty Cycle ON percentage
-     *  @param[in]  period    -  Time taken for one blink cycle
-     */
-    void drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                          uint8_t dutyOn, const uint16_t period);
 };
 
 } // namespace led
