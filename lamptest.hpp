@@ -60,6 +60,9 @@ class LampTest
     /** @brief Point to Group object */
     Group* groupPtr;
 
+    /** DBusHandler class handles the D-Bus operations */
+    DBusHandler dBusHandler;
+
     /** @brief  Sart lamp test. */
     void startLampTest();
 
