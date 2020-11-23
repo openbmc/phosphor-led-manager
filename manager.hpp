@@ -4,6 +4,7 @@
 #include "utils.hpp"
 
 #include <map>
+#include <queue>
 #include <set>
 #include <string>
 
@@ -129,6 +130,12 @@ class Manager
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Restore the physical LEDs states after the lamp test finished */
+    void restorePhysicalLedStates();
+
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning;
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -141,6 +148,9 @@ class Manager
 
     /** @brief Pointers to groups that are in asserted state */
     std::set<const group*> assertedGroups;
+
+    /** @brief Queue to save physical LED state */
+    std::queue<std::pair<group, group>> savedPhysicalLedStates;
 
     /** @brief Contains the highest priority actions for all
      *         asserted LEDs.
