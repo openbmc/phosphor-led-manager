@@ -48,7 +48,7 @@ int main(void)
     groups.emplace_back(std::make_unique<phosphor::led::Group>(
         bus, LAMP_TEST_OBJECT, manager, serialize,
         std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
-                  &lampTest, std::placeholders::_1)));
+                  &lampTest, std::placeholders::_1, std::placeholders::_2)));
 #endif
 
     /** Now create so many dbus objects as there are groups */
