@@ -88,8 +88,23 @@ AS_IF([test "x$enable_use_json" == "xyes"],
 AC_ARG_ENABLE([use-lamp-test],
     AS_HELP_STRING([--enable-use-lamp-test], [Enable lamp test configuration.]))
 AM_CONDITIONAL([WANTS_LAMP_TEST], [test "x$enable_use_lamp_test" == "xyes"])
+
+
+
 AS_IF([test "x$enable_use_lamp_test" == "xyes"],
     AC_DEFINE([USE_LAMP_TEST],[],[Enable lamp test configuration.])
+
+    # lamp test path
+    AC_ARG_VAR(LAMP_TEST_OBJECT, [The lamp test object])
+
+    # lamp test timeout secs
+    AC_ARG_VAR(LAMP_TEST_TIMEOUT_IN_SECS, [The lamp test timeout in seconds])
+
+    AS_IF([test "x$LAMP_TEST_OBJECT" == "x"], [LAMP_TEST_OBJECT="/xyz/openbmc_project/led/groups/lamp_test"])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_OBJECT], ["$LAMP_TEST_OBJECT"], [The lamp test D-Bus object])
+
+    AS_IF([test "x$LAMP_TEST_TIMEOUT_IN_SECS" == "x"], [LAMP_TEST_TIMEOUT_IN_SECS=240])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_TIMEOUT_IN_SECS], [$LAMP_TEST_TIMEOUT_IN_SECS], [The lamp test timeout in seconds])
 )
 
 # Path of file for storing the names of asserted groups

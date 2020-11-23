@@ -26,6 +26,10 @@ phosphor_ledmanager_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                               $(PHOSPHOR_DBUS_INTERFACES_CFLAGS) \
                               $(SDEVENTPLUS_CFLAGS)
 
+if WANTS_LAMP_TEST
+phosphor_ledmanager_SOURCES += lamptest.cpp
+endif
+
 led_default_configdir    	 = 	${datadir}/phosphor-led-manager
 led_ibm_rainier_2u_configdir = 	${datadir}/phosphor-led-manager/ibm,rainier-2u
 led_ibm_rainier_4u_configdir = 	${datadir}/phosphor-led-manager/ibm,rainier-4u
