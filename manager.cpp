@@ -100,9 +100,19 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     return assert;
 }
 
+void Manager::setLampTestCallBack(
+    std::function<void(group& ledsAssert, group& ledsDeAssert)> callBack)
+{
+    lampTestCallBack = callBack;
+}
+
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
+#ifdef USE_LAMP_TEST
+    lampTestCallBack(ledsAssert, ledsDeAssert);
+#endif
+
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
