@@ -56,6 +56,9 @@ class LampTest
     /** @brief Reference to Manager object */
     Manager& manager;
 
+    /** DBusHandler class handles the D-Bus operations */
+    DBusHandler dBusHandler;
+
     /** @brief  Sart lamp test. */
     void startLampTest();
 
