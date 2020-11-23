@@ -103,6 +103,13 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
+#ifdef USE_LAMP_TEST
+    if (isLampTestRunning)
+    {
+        savedPhysicalLedStates.emplace(
+            std::make_pair(ledsAssert, ledsDeAssert));
+    }
+#endif
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
@@ -232,6 +239,16 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
                             entry("ERROR=%s", e.what()),
                             entry("PATH=%s", fruInstancePath.c_str()));
         }
+    }
+}
+
+void Manager::restorePhysicalLedStates()
+{
+    while (!savedPhysicalLedStates.empty())
+    {
+        auto& iter = savedPhysicalLedStates.front();
+        driveLEDs(iter.first, iter.second);
+        savedPhysicalLedStates.pop();
     }
 }
 
