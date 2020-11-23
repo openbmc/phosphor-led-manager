@@ -92,6 +92,25 @@ void DBusHandler::setProperty(const std::string& objectPath,
     bus.call_noreply(method);
 }
 
+std::vector<std::string>
+    DBusHandler::getSubTreePaths(const std::string& objectPath,
+                                 const std::string& interface)
+{
+    std::vector<std::string> paths;
+
+    auto& bus = DBusHandler::getBus();
+
+    auto method = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
+                                      MAPPER_IFACE, "GetSubTreePaths");
+    method.append(objectPath.c_str());
+    method.append(0); // Depth 0 to search all
+    method.append(std::vector<std::string>({interface.c_str()}));
+    auto reply = bus.call(method);
+
+    reply.read(paths);
+
+    return paths;
+}
 } // namespace utils
 } // namespace led
 } // namespace phosphor
