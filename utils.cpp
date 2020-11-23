@@ -47,6 +47,30 @@ const std::string DBusHandler::getService(const std::string& path,
     return mapperResponse.cbegin()->first;
 }
 
+// Get all properties
+const PropertyMap
+    DBusHandler::getAllProperties(const std::string& objectPath,
+                                  const std::string& interface) const
+{
+    PropertyMap properties;
+
+    auto& bus = DBusHandler::getBus();
+    auto service = getService(objectPath, interface);
+    if (service.empty())
+    {
+        return properties;
+    }
+
+    auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
+                                      DBUS_PROPERTY_IFACE, "GetAll");
+    method.append(interface);
+
+    auto reply = bus.call(method);
+    reply.read(properties);
+
+    return properties;
+}
+
 // Get the property name
 const PropertyValue
     DBusHandler::getProperty(const std::string& objectPath,

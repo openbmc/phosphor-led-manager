@@ -20,6 +20,12 @@ constexpr auto DBUS_PROPERTY_IFACE = "org.freedesktop.DBus.Properties";
 using PropertyValue = std::variant<uint8_t, uint16_t, std::string,
                                    std::vector<std::string>, bool>;
 
+// The name of the property
+using DbusProperty = std::string;
+
+// The Map to constructs all properties values of the interface
+using PropertyMap = std::map<DbusProperty, PropertyValue>;
+
 /**
  *  @class DBusHandler
  *
@@ -48,6 +54,18 @@ class DBusHandler
      */
     const std::string getService(const std::string& path,
                                  const std::string& interface) const;
+
+    /** @brief Get All properties
+     *
+     *  @param[in] objectPath       -   D-Bus object path
+     *  @param[in] interface        -   D-Bus interface
+     *
+     *  @return The Map to constructs all properties values
+     *
+     *  @throw sdbusplus::exception::SdBusError when it fails
+     */
+    const PropertyMap getAllProperties(const std::string& objectPath,
+                                       const std::string& interface) const;
 
     /** @brief Get property(type: variant)
      *
