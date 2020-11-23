@@ -28,6 +28,8 @@ bool LampTest::updatePhysicalAction(Layout::Action action)
 void LampTest::stopLampTest()
 {
     timer.setEnabled(false);
+    manager.isLampTestRunning = false;
+    manager.restoreLedsAssert();
 }
 
 void LampTest::startLampTest()
@@ -36,11 +38,12 @@ void LampTest::startLampTest()
 
     // initiate lamp test.
     timer.restart(LAMP_TEST_TIMEOUT_SECS);
+    manager.isLampTestRunning = true;
 
     // Set all the Physical action to On for lamp test
     if (!updatePhysicalAction(Layout::Action::On))
     {
-        timer.setEnabled(false);
+        stopLampTest();
     }
 }
 

@@ -100,13 +100,15 @@ class Manager
 
     /** @brief Finds the set of LEDs to operate on and executes action
      *
+     *  @param[in]  path          -  dbus path of group
      *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
      *                               or to a different state
      *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
      *
      *  @return: None
      */
-    void driveLEDs(group& ledsAssert, group& ledsDeAssert);
+    void driveLEDs(const std::string& path, group& ledsAssert,
+                   group& ledsDeAssert);
 
     /** @brief Set OperationalStatus according to the status of asserted
      *         property
@@ -129,6 +131,12 @@ class Manager
     bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Restore the Led Assert after the lamp test */
+    void restoreLedsAssert();
+
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning;
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -141,6 +149,8 @@ class Manager
 
     /** @brief Pointers to groups that are in asserted state */
     std::set<const group*> assertedGroups;
+
+    std::map<std::string, std::tuple<group, group>> restoreLedAsserted;
 
     /** @brief Contains the highest priority actions for all
      *         asserted LEDs.
