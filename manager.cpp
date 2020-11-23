@@ -14,9 +14,6 @@ namespace led
 
 using namespace phosphor::logging;
 
-static constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
-static constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
-
 // Assert -or- De-assert
 bool Manager::setGroupState(const std::string& path, bool assert,
                             group& ledsAssert, group& ledsDeAssert)
