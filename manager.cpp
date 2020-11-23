@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "manager.hpp"
 
 #include <phosphor-logging/log.hpp>
@@ -100,9 +102,25 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     return assert;
 }
 
+void Manager::setLampTestCallBack(
+    std::function<bool(group& ledsAssert, group& ledsDeAssert)> callBack)
+{
+    lampTestCallBack = callBack;
+}
+
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
+#ifdef USE_LAMP_TEST
+    // Use the lampTestCallBack method and trigger the callback method in the
+    // lamp test(updatePhysicalLedStates), in this way, all lamp test operations
+    // are performed in the lamp test class.
+    if (lampTestCallBack(ledsAssert, ledsDeAssert))
+    {
+        return;
+    }
+#endif
+
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {

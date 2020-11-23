@@ -129,6 +129,13 @@ class Manager
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Set lamp test callback when enabled lamp test.
+     *
+     *  @param[in]  callBack   -  Custom callback when enabled lamp test
+     */
+    void setLampTestCallBack(
+        std::function<bool(group& ledsAssert, group& ledsDeAssert)> callBack);
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -149,6 +156,10 @@ class Manager
 
     /** @brief Contains the set of all actions for asserted LEDs */
     group combinedState;
+
+    /** @brief Custom callback when enabled lamp test */
+    std::function<bool(group& ledsAssert, group& ledsDeAssert)>
+        lampTestCallBack;
 
     /** @brief Returns action string based on enum
      *
