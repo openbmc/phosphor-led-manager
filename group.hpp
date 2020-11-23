@@ -39,7 +39,7 @@ class Group :
      */
     Group(sdbusplus::bus::bus& bus, const std::string& objPath,
           Manager& manager, Serialize& serialize,
-          std::function<void(bool)> callBack = nullptr) :
+          std::function<void(Group*, bool)> callBack = nullptr) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
@@ -76,7 +76,7 @@ class Group :
 
     /** @brief Custom callback when LED group is asserted
      */
-    std::function<void(bool)> customCallBack;
+    std::function<void(Group*, bool)> customCallBack;
 };
 
 } // namespace led
