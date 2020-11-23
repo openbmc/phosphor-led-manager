@@ -9,7 +9,7 @@ namespace phosphor
 namespace led
 {
 
-bool LampTest::updatePhysicalAction(Layout::Action action)
+bool LampTest::drivephysicalLEDs(Layout::Action action)
 {
     std::vector<std::string> paths =
         dBusHandler.getSubTreePaths(PHY_LED_PATH, PHY_LED_IFACE);
@@ -28,6 +28,8 @@ bool LampTest::updatePhysicalAction(Layout::Action action)
 void LampTest::stopLampTest()
 {
     timer.setEnabled(false);
+    manager.restorePhysicalLedStates();
+    manager.isLampTestRunning = false;
 }
 
 void LampTest::startLampTest()
@@ -36,11 +38,12 @@ void LampTest::startLampTest()
 
     // initiate lamp test.
     timer.restart(LAMP_TEST_TIMEOUT_SECS);
+    manager.isLampTestRunning = true;
 
-    // Set all the Physical action to On for lamp test
-    if (!updatePhysicalAction(Layout::Action::On))
+    // Set all the Physical LEDs to On for lamp test
+    if (!drivephysicalLEDs(Layout::Action::On))
     {
-        timer.setEnabled(false);
+        stopLampTest();
     }
 }
 

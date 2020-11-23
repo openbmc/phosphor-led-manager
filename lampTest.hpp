@@ -70,7 +70,7 @@ class LampTest
      *  @param[in]  action    -  Intended action to be triggered
      *  @return               -  Success or Failed
      */
-    bool updatePhysicalAction(Layout::Action action);
+    bool drivephysicalLEDs(Layout::Action action);
 };
 
 } // namespace led
