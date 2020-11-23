@@ -21,7 +21,7 @@ bool Group::asserted(bool value)
     if (customCallBack != nullptr)
     {
         // Call the custom callback method
-        customCallBack(value);
+        customCallBack(this, value);
 
         return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
             value);
