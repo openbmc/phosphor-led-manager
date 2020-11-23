@@ -53,7 +53,7 @@ int main(void)
     groups.emplace_back(std::make_unique<phosphor::led::Group>(
         bus, LAMP_TEST_OBJECT, manager, serialize,
         std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
-                  &lampTest, std::placeholders::_1)));
+                  &lampTest, std::placeholders::_1, std::placeholders::_2)));
 
     // Attach the bus to sd_event to service user requests
     bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
