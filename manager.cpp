@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "manager.hpp"
 
 #include <phosphor-logging/log.hpp>
@@ -101,8 +103,19 @@ bool Manager::setGroupState(const std::string& path, bool assert,
 }
 
 /** @brief Run through the map and apply action on the LEDs */
-void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
+void Manager::driveLEDs(const std::string& path, group& ledsAssert,
+                        group& ledsDeAssert)
 {
+#ifdef USE_LAMP_TEST
+    if (isLampTestRunning)
+    {
+        savedPhysicalLedStates.emplace(
+            std::make_tuple(path, ledsAssert, ledsDeAssert));
+        return;
+    }
+
+    lastLEDsState.emplace(path, std::make_pair(ledsAssert, ledsDeAssert));
+#endif
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
@@ -232,6 +245,23 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
                             entry("ERROR=%s", e.what()),
                             entry("PATH=%s", fruInstancePath.c_str()));
         }
+    }
+}
+
+// Restore the physical LEDs states after the lamp test finished
+void Manager::restorePhysicalLedStates()
+{
+    for (auto& it : lastLEDsState)
+    {
+        auto& [ledsAssert, ledsDeAssert] = it.second;
+        driveLEDs(it.first, ledsAssert, ledsDeAssert);
+    }
+
+    while (!savedPhysicalLedStates.empty())
+    {
+        auto& [path, ledsAssert, ledsDeAssert] = savedPhysicalLedStates.front();
+        driveLEDs(path, ledsAssert, ledsDeAssert);
+        savedPhysicalLedStates.pop();
     }
 }
 
