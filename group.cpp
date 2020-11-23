@@ -18,6 +18,12 @@ bool Group::asserted(bool value)
         return value;
     }
 
+#ifdef USE_LAMP_TEST
+    if (callBack != nullptr)
+    {
+        callBack();
+    }
+#else
     // Introducing these to enable gtest.
     Manager::group ledsAssert{};
     Manager::group ledsDeAssert{};
@@ -38,6 +44,7 @@ bool Group::asserted(bool value)
     // If something does not go right here, then there should be an
     // sdbusplus exception thrown.
     manager.driveLEDs(ledsAssert, ledsDeAssert);
+#endif
 
     // Set the base class's asserted to 'true' since the getter
     // operation is handled there.
