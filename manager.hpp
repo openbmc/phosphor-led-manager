@@ -4,6 +4,7 @@
 #include "utils.hpp"
 
 #include <map>
+#include <queue>
 #include <set>
 #include <string>
 
@@ -82,7 +83,7 @@ class Manager
     Manager(sdbusplus::bus::bus& bus, const LedLayout& ledLayout) :
         ledMap(ledLayout), bus(bus)
     {
-        // Nothing here
+        isLampTestRunning = false;
     }
 
     /** @brief Given a group name, applies the action on the group
@@ -129,6 +130,23 @@ class Manager
     void drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Restore the physical LEDs states after the lamp test finished */
+    void restorePhysicalLedStates();
+
+    /** @brief Store the last LED state by the object path
+     *
+     *  @param[in]  objPath       -  D-Bus object path
+     *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+     *                               or to a different state
+     *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
+     *
+     */
+    void addCurrectStatus(const std::string& objPath, group& ledsAssert,
+                          group& ledsDeAssert);
+
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning;
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
@@ -142,6 +160,9 @@ class Manager
     /** @brief Pointers to groups that are in asserted state */
     std::set<const group*> assertedGroups;
 
+    /** @brief Queue to save physical LED state */
+    std::queue<std::pair<group, group>> savedPhysicalLedStates;
+
     /** @brief Contains the highest priority actions for all
      *         asserted LEDs.
      */
@@ -149,6 +170,9 @@ class Manager
 
     /** @brief Contains the set of all actions for asserted LEDs */
     group combinedState;
+
+    /** @brief Map to store the last LED state */
+    std::map<std::string, std::pair<group, group>> lastLEDsState;
 
     /** @brief Returns action string based on enum
      *
