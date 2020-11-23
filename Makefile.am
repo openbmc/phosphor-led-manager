@@ -19,10 +19,16 @@ endif
 
 phosphor_ledmanager_LDFLAGS = $(SDBUSPLUS_LIBS) \
                               $(PHOSPHOR_LOGGING_LIBS) \
-                              $(PHOSPHOR_DBUS_INTERFACES_LIBS)
+                              $(PHOSPHOR_DBUS_INTERFACES_LIBS) \
+                              $(SDEVENTPLUS_LIBS)
 phosphor_ledmanager_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                               $(PHOSPHOR_LOGGING_CFLAGS) \
-                              $(PHOSPHOR_DBUS_INTERFACES_CFLAGS)
+                              $(PHOSPHOR_DBUS_INTERFACES_CFLAGS) \
+                              $(SDEVENTPLUS_CFLAGS)
+
+if WANTS_LAMP_TEST
+phosphor_ledmanager_SOURCES += lamptest.cpp
+endif
 
 led_default_configdir    	 = 	${datadir}/phosphor-led-manager
 led_ibm_rainier_2u_configdir = 	${datadir}/phosphor-led-manager/ibm,rainier-2u
