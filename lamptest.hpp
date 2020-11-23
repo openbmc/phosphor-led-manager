@@ -5,6 +5,7 @@
 
 #include <sdeventplus/utility/timer.hpp>
 
+#include <queue>
 #include <vector>
 
 namespace phosphor
@@ -38,6 +39,8 @@ class LampTest
         manager(manager), groupObj(NULL)
     {}
 
+    using group = std::set<phosphor::led::Layout::LedAction>;
+
     /** @brief the lamp test request handler
      *
      *  @param[in]  group    -  Pointer to Group object
@@ -46,6 +49,16 @@ class LampTest
      *  @return
      */
     void requestHandler(Group* group, bool value);
+
+    /** @brief Update physical LEDs states during lamp test
+     *
+     *  @param[in]  ledsAssert    -  LEDs that are to be asserted newly
+     *                               or to a different state
+     *  @param[in]  ledsDeAssert  -  LEDs that are to be Deasserted
+     *  @return Is running lamp test, true running
+     */
+    bool updatePhysicalLedStates(const group& ledsAssert,
+                                 const group& ledsDeAssert);
 
   private:
     /** @brief Timer used for LEDs lamp test period */
@@ -63,6 +76,15 @@ class LampTest
     /** all the Physical paths */
     std::vector<std::string> physicalLEDPaths;
 
+    /** @brief Queue to save physical LED state */
+    std::queue<std::pair<group, group>> savedPhysicalLedStates;
+
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestRunning{false};
+
+    /** @brief LEDs that are to be Asserted before start lamp test */
+    group lastLedsAssert;
+
     /** @brief Start and restart lamp test depending on what is the current
      *         state. */
     void start();
@@ -73,6 +95,20 @@ class LampTest
     /** @brief This method gets called when the lamp test procedure is done as
      *         part of timeout. */
     void timeOutHandler();
+
+    /** @brief Restore the physical LEDs states after the lamp test finishes */
+    void restorePhysicalLedStates();
+
+    /** @brief Store the physical LEDs states before the lamp test start */
+    void storePhysicalLEDsStates();
+
+    /** @brief Returns action enum based on string
+     *
+     *  @param[in]  str - Action string
+     *
+     *  @return enumeration equivalent of the passed in string
+     */
+    Layout::Action getActionFromString(const std::string& str);
 };
 
 } // namespace led
