@@ -42,6 +42,7 @@ AS_IF([test "x$enable_oe_sdk" == "xyes"],
 
 # Checks for modules
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, [AC_MSG_ERROR([Could not find sdbusplus...openbmc/sdbusplus package required])])
+PKG_CHECK_MODULES([SDEVENTPLUS], [sdeventplus],, [AC_MSG_ERROR([Could not find sdeventplus...openbmc/sdeventplus package required])])
 PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],, [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces],, [AC_MSG_ERROR([Could not find phosphor-dbus-interfaces...openbmc/phosphor-dbus-interfaces package required])])
 AC_CHECK_HEADER(nlohmann/json.hpp, ,[AC_MSG_ERROR([Could not find nlohmann/json.hpp...nlohmann/json package required])])
@@ -87,8 +88,21 @@ AS_IF([test "x$enable_use_json" == "xyes"],
 AC_ARG_ENABLE([use-lamp-test],
     AS_HELP_STRING([--enable-use-lamp-test], [Enable lamp test configuration.]))
 AM_CONDITIONAL([WANTS_LAMP_TEST], [test "x$enable_use_lamp_test" == "xyes"])
+
+# lamp test path
+AC_ARG_VAR(LAMP_TEST_OBJECT, [The lamp test object])
+
+# lamp test timeout secs
+AC_ARG_VAR(LAMP_TEST_TIMEOUT_IN_SECS, [The lamp test timeout in seconds])
+
 AS_IF([test "x$enable_use_lamp_test" == "xyes"],
     AC_DEFINE([USE_LAMP_TEST],[],[Enable lamp test configuration.])
+
+    AS_IF([test "x$LAMP_TEST_OBJECT" == "x"], [LAMP_TEST_OBJECT="/xyz/openbmc_project/led/groups/lamp_test"])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_OBJECT], ["$LAMP_TEST_OBJECT"], [The lamp test D-Bus object])
+
+    AS_IF([test "x$LAMP_TEST_TIMEOUT_IN_SECS" == "x"], [LAMP_TEST_TIMEOUT_IN_SECS=4 * 60])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_TIMEOUT_IN_SECS], [$LAMP_TEST_TIMEOUT_IN_SECS], [The lamp test timeout in seconds])
 )
 
 # Path of file for storing the names of asserted groups
