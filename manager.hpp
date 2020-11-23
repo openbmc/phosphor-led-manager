@@ -129,6 +129,9 @@ class Manager
     bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Restore the Led Assert after the lamp test */
+    void restoreLedsAssert();
+
     /** @brief Get state of the lamp test operation */
     bool isLampTestInProgress;
 

@@ -84,6 +84,8 @@ void LampTest::stopLampTest()
 
     completedTime(getTime().count());
     manager.isLampTestInProgress = false;
+
+    manager.restoreLedsAssert();
 }
 
 void LampTest::lampTestTimeout()

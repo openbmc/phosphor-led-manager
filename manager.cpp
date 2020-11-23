@@ -236,5 +236,11 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
     }
 }
 
+void Manager::restoreLedsAssert()
+{
+    group ledsDeAssert{};
+    driveLEDs(currentState, ledsDeAssert);
+}
+
 } // namespace led
 } // namespace phosphor
