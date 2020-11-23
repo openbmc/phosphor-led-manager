@@ -31,18 +31,21 @@ class Group :
 
     /** @brief Constructs LED Group
      *
-     * @param[in] bus     - Handle to system dbus
-     * @param[in] objPath - The D-Bus path that hosts LED group
-     * @param[in] manager - Reference to Manager
+     * @param[in] bus       - Handle to system dbus
+     * @param[in] objPath   - The D-Bus path that hosts LED group
+     * @param[in] manager   - Reference to Manager
      * @param[in] serialize - Serialize object
+     * @param[in] callBack  - Custom callback when LED group is asserted
      */
     Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager, Serialize& serialize) :
+          Manager& manager, Serialize& serialize,
+          std::function<void(bool)> callBack = nullptr) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
             bus, objPath.c_str(), true),
-        path(objPath), manager(manager), serialize(serialize)
+        path(objPath), manager(manager), serialize(serialize),
+        customCallBack(callBack)
     {
         // Initialize Asserted property value
         if (serialize.getGroupSavedState(objPath))
@@ -70,6 +73,10 @@ class Group :
 
     /** @brief The serialize class for storing and restoring groups of LEDs */
     Serialize& serialize;
+
+    /** @brief Custom callback when LED group is constructed
+     */
+    std::function<void(bool)> customCallBack;
 };
 
 } // namespace led
