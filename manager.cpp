@@ -14,9 +14,6 @@ namespace led
 
 using namespace phosphor::logging;
 
-static constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
-static constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
-
 // Assert -or- De-assert
 bool Manager::setGroupState(const std::string& path, bool assert,
                             group& ledsAssert, group& ledsDeAssert)
@@ -133,7 +130,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 }
 
 // Calls into driving physical LED post choosing the action
-void Manager::drivePhysicalLED(const std::string& objPath,
+bool Manager::drivePhysicalLED(const std::string& objPath,
                                Layout::Action action, uint8_t dutyOn,
                                const uint16_t period)
 {
@@ -159,9 +156,10 @@ void Manager::drivePhysicalLED(const std::string& objPath,
         log<level::ERR>("Error setting property for physical LED",
                         entry("ERROR=%s", e.what()),
                         entry("OBJECT_PATH=%s", objPath.c_str()));
+        return false;
     }
 
-    return;
+    return true;
 }
 
 /** @brief Returns action string based on enum */
