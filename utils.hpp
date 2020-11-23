@@ -76,6 +76,16 @@ class DBusHandler
                      const std::string& interface,
                      const std::string& propertyName,
                      const PropertyValue& value) const;
+
+    /** @brief Get sub tree paths by the path and interface of the DBus.
+     *
+     *  @param[in]  objectPath   -  dbus object path
+     *  @param[in]  interface    -  dbus object interface
+     *
+     *  @return std::vector<std::string> vector of subtree paths
+     */
+    std::vector<std::string> getSubTreePaths(const std::string& objectPath,
+                                             const std::string& interface);
 };
 
 } // namespace utils
