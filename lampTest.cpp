@@ -31,6 +31,7 @@ bool LampTest::active(bool value)
         status(OperationStatus::InProgress);
         startTime(getTime().count());
         completedTime(0);
+        manager.isLampTestInProgress = true;
 
         // Set all the Physical action to On for lamp test
         if (!updatePhysicalAction(Layout::Action::On))
@@ -38,6 +39,7 @@ bool LampTest::active(bool value)
             timer.setEnabled(false);
             status(OperationStatus::Failed);
             completedTime(getTime().count());
+            manager.isLampTestInProgress = false;
         }
     }
 
@@ -81,6 +83,7 @@ void LampTest::stopLampTest()
     }
 
     completedTime(getTime().count());
+    manager.isLampTestInProgress = false;
 }
 
 void LampTest::lampTestTimeout()

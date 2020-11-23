@@ -129,6 +129,9 @@ class Manager
     bool drivePhysicalLED(const std::string& objPath, Layout::Action action,
                           uint8_t dutyOn, const uint16_t period);
 
+    /** @brief Get state of the lamp test operation */
+    bool isLampTestInProgress;
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;
