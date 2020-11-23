@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "manager.hpp"
 
 #include <phosphor-logging/log.hpp>
@@ -100,9 +102,19 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     return assert;
 }
 
+void Manager::setLampTestCallBack(
+    std::function<void(group& ledsAssert, group& ledsDeAssert)> callBack)
+{
+    lampTestCallBack = callBack;
+}
+
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
 {
+#ifdef USE_LAMP_TEST
+    lampTestCallBack(ledsAssert, ledsDeAssert);
+#endif
+
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
@@ -126,6 +138,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
             drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
         }
     }
+
     return;
 }
 
@@ -189,7 +202,7 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
     using namespace phosphor::logging;
 
     // Get endpoints from the rType
-    std::string fru = path + "/fru_fault";
+    std::string fru = path + "/fru";
 
     // endpoint contains the vector of strings, where each string is a Inventory
     // D-Bus object that this, associated with this LED Group D-Bus object
