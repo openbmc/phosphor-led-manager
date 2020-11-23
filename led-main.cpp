@@ -56,6 +56,12 @@ int main(void)
         bus, LAMP_TEST_OBJECT, manager, serialize,
         std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
                   &lampTest, std::placeholders::_1, std::placeholders::_2)));
+
+    // Register a lamp test method in the manager class, and call this method
+    // when the lamp test is started
+    manager.setLampTestCallBack(
+        std::bind(std::mem_fn(&phosphor::led::LampTest::processLEDUpdates),
+                  &lampTest, std::placeholders::_1, std::placeholders::_2));
 #endif
 
     // Attach the bus to sd_event to service user requests
