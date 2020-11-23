@@ -42,6 +42,7 @@ AS_IF([test "x$enable_oe_sdk" == "xyes"],
 
 # Checks for modules
 PKG_CHECK_MODULES([SDBUSPLUS], [sdbusplus],, [AC_MSG_ERROR([Could not find sdbusplus...openbmc/sdbusplus package required])])
+PKG_CHECK_MODULES([SDEVENTPLUS], [sdeventplus],, [AC_MSG_ERROR([Could not find sdeventplus...openbmc/sdeventplus package required])])
 PKG_CHECK_MODULES([PHOSPHOR_LOGGING], [phosphor-logging],, [AC_MSG_ERROR([Could not find phosphor-logging...openbmc/phosphor-logging package required])])
 PKG_CHECK_MODULES([PHOSPHOR_DBUS_INTERFACES], [phosphor-dbus-interfaces],, [AC_MSG_ERROR([Could not find phosphor-dbus-interfaces...openbmc/phosphor-dbus-interfaces package required])])
 AC_CHECK_HEADER(nlohmann/json.hpp, ,[AC_MSG_ERROR([Could not find nlohmann/json.hpp...nlohmann/json package required])])
@@ -59,6 +60,11 @@ AC_DEFINE_UNQUOTED([BUSNAME], ["$BUSNAME"], [The Dbus busname to own])
 AC_ARG_VAR(OBJPATH, [The LED group Dbus root])
 AS_IF([test "x$OBJPATH" == "x"], [OBJPATH="/xyz/openbmc_project/led/groups"])
 AC_DEFINE_UNQUOTED([OBJPATH], ["$OBJPATH"], [The LED group Dbus root])
+
+# lamp test path
+AC_ARG_VAR(LAMP_TEST_PATH, [The lamp test Dbus root])
+AS_IF([test "x$LAMP_TEST_PATH" == "x"], [LAMP_TEST_PATH="/xyz/openbmc_project/led/groups/lamp_test"])
+AC_DEFINE_UNQUOTED([LAMP_TEST_PATH], ["$LAMP_TEST_PATH"], [The lamp test Dbus root])
 
 # Handling configuration files
 AC_ARG_VAR(YAML_PATH, [The path to the yaml config files.])

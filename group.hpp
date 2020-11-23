@@ -37,12 +37,14 @@ class Group :
      * @param[in] serialize - Serialize object
      */
     Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager, Serialize& serialize) :
+          Manager& manager, Serialize& serialize,
+          std::function<void(bool)> callBack = nullptr) :
 
         sdbusplus::server::object::object<
             sdbusplus::xyz::openbmc_project::Led::server::Group>(
             bus, objPath.c_str(), true),
-        path(objPath), manager(manager), serialize(serialize)
+        path(objPath), manager(manager), serialize(serialize),
+        callBack(callBack)
     {
         // Initialize Asserted property value
         if (serialize.getGroupSavedState(objPath))
@@ -70,6 +72,11 @@ class Group :
 
     /** @brief The serialize class for storing and restoring groups of LEDs */
     Serialize& serialize;
+
+    /** @brief Callback handler to be invoked during lamp test.
+     *         This is a handler in LampTest class
+     */
+    std::function<void(bool)> callBack;
 };
 
 } // namespace led
