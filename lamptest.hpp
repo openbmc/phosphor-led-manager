@@ -1,5 +1,6 @@
 #pragma once
 
+#include "group.hpp"
 #include "manager.hpp"
 
 #include <sdeventplus/event.hpp>
@@ -37,7 +38,7 @@ class LampTest
      */
     LampTest(const sdeventplus::Event& event, Manager& manager) :
         timer(event, std::bind(std::mem_fn(&LampTest::timeOutHandler), this)),
-        manager(manager)
+        manager(manager), groupObj(NULL)
     {}
 
     /** @brief the lamp test request handler
@@ -47,7 +48,7 @@ class LampTest
      *                          false: stop lamptest
      *  @return
      */
-    void requestHandler(bool value);
+    void requestHandler(Group* group, bool value);
 
   private:
     /** @brief Timer used for LEDs lamp test period */
@@ -55,6 +56,12 @@ class LampTest
 
     /** @brief Reference to Manager object */
     Manager& manager;
+
+    /** DBusHandler class handles the D-Bus operations */
+    DBusHandler dBusHandler;
+
+    /** @brief Point to Group object */
+    Group* groupObj;
 
     /** @brief  Sart lamp test. */
     void reStartLampTest();
