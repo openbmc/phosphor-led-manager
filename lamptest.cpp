@@ -20,12 +20,16 @@ void LampTest::stopLampTest()
     {
         manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
     }
+
+    manager.restorePhysicalLedStates();
+    manager.isLampTestRunning = false;
 }
 
 void LampTest::startLampTest()
 {
     // initiate lamp test.
     timer.restart(LAMP_TEST_TIMEOUT_SECS);
+    manager.isLampTestRunning = true;
 
     // Set all the Physical action to On for lamp test
     std::vector<std::string> paths =
