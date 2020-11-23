@@ -1,0 +1,82 @@
+#include "config.h"
+
+#include "lampTest.hpp"
+
+#include <iomanip>
+
+namespace phosphor
+{
+namespace led
+{
+
+bool LampTest::active(bool value)
+{
+    // If the value is already what is before, return right away
+    if (value == sdbusplus::com::ibm::Led::server::LampTest::active())
+    {
+        return value;
+    }
+
+    if (!value)
+    {
+        stopLampTest();
+    }
+    else
+    {
+        constexpr auto LAMP_TEST_TIMEOUT_SECS = seconds(4 * 60);
+
+        // initiate lamp test.
+        timer.restart(LAMP_TEST_TIMEOUT_SECS);
+
+        status(OperationStatus::InProgress);
+        startTime(getTime().count());
+        completedTime(0);
+
+        // Set all the Physical action to On for lamp test
+        if (!updatePhysicalAction(Layout::Action::On))
+        {
+            timer.setEnabled(false);
+            status(OperationStatus::Failed);
+            completedTime(getTime().count());
+        }
+    }
+
+    return sdbusplus::com::ibm::Led::server::LampTest::active(value);
+}
+
+microseconds LampTest::getTime() const
+{
+    auto now = system_clock::now();
+    return duration_cast<microseconds>(now.time_since_epoch());
+}
+
+bool LampTest::updatePhysicalAction(Layout::Action /* action */)
+{
+
+    return true;
+}
+
+void LampTest::stopLampTest()
+{
+    timer.setEnabled(false);
+
+    // Set all the Physical action to Off for lamp test
+    if (!updatePhysicalAction(Layout::Action::Off))
+    {
+        status(OperationStatus::Failed);
+    }
+    else
+    {
+        status(OperationStatus::Completed);
+    }
+
+    completedTime(getTime().count());
+}
+
+void LampTest::lampTestTimeout()
+{
+    active(false);
+}
+
+} // namespace led
+} // namespace phosphor
