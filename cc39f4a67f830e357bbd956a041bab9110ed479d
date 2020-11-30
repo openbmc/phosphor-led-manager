@@ -97,6 +97,30 @@
     },
     {
       "key": {
+        "uuid": "fde78796_92cdc7f1",
+        "filename": "meson.build",
+        "patchSetId": 15
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-11-30T12:16:48Z",
+      "side": 1,
+      "message": "My suggestion is to do anything else as part of another commit and use this commit to do only what is required to move to Meson.",
+      "parentUuid": "980cb55f_47fb9227",
+      "range": {
+        "startLine": 29,
+        "startChar": 0,
+        "endLine": 29,
+        "endChar": 9
+      },
+      "revId": "cc39f4a67f830e357bbd956a041bab9110ed479d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "dc798d8b_1f3452d7",
         "filename": "serialize.cpp",
         "patchSetId": 15
