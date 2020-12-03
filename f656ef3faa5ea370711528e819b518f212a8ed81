@@ -1,0 +1,84 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c174052c_dc31567e",
+        "filename": "group.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T07:56:45Z",
+      "side": 1,
+      "message": "ifdef Not needed.. It can be if(callback) then callback() else { }. This will enable any other custom ones",
+      "revId": "f656ef3faa5ea370711528e819b518f212a8ed81",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fef006ca_90fbf2ba",
+        "filename": "group.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T07:56:45Z",
+      "side": 1,
+      "message": "probably it can have \u003cvoid*\u003e so that the callers can pass in context ?.  just seeing it making generic",
+      "range": {
+        "startLine": 41,
+        "startChar": 24,
+        "endLine": 41,
+        "endChar": 30
+      },
+      "revId": "f656ef3faa5ea370711528e819b518f212a8ed81",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "45d4b424_0d4a4862",
+        "filename": "lampTest.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T07:56:45Z",
+      "side": 1,
+      "message": "need Monotonic time so that the time change won\u0027t affect absolute wait time",
+      "range": {
+        "startLine": 46,
+        "startChar": 45,
+        "endLine": 46,
+        "endChar": 62
+      },
+      "revId": "f656ef3faa5ea370711528e819b518f212a8ed81",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcbed631_24cc5e3f",
+        "filename": "led-main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T07:56:45Z",
+      "side": 1,
+      "message": "this needs to be before requesting the name",
+      "revId": "f656ef3faa5ea370711528e819b518f212a8ed81",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
