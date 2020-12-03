@@ -1,0 +1,130 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8beb222e_671cf4f6",
+        "filename": "group.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "don\u0027t need this change and we can not change the API signatures mid way",
+      "range": {
+        "startLine": 49,
+        "startChar": 22,
+        "endLine": 49,
+        "endChar": 27
+      },
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2d9d5911_77f777fc",
+        "filename": "lampTest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "order ends to be swapped",
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ad4c01e1_4da70570",
+        "filename": "lampTest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "is this about driving physical LEDs ?.. in that case : drivephysicalLEDs\n\nand sorry, why are we making the \"!\" check here ?",
+      "range": {
+        "startLine": 44,
+        "startChar": 9,
+        "endLine": 44,
+        "endChar": 29
+      },
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "369457f0_97e0619b",
+        "filename": "manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "hmm.. we don\u0027t really need this. All we need is ledsAssert and ledsDeAssert.. Basically std::queue\u003cgroup, group\u003e, where group \u003d ledsAssert and group\u003dledsDeAssert. Keep pushing onto it if lamp test and when done.. pop one by one.. so you always get the first in first out.",
+      "range": {
+        "startLine": 110,
+        "startChar": 19,
+        "endLine": 110,
+        "endChar": 43
+      },
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "898955e9_ee836b36",
+        "filename": "manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "we are not restoring the leds assert state.We are restoring physical LED states.\n\nso restorePhysicalLedStates()",
+      "range": {
+        "startLine": 135,
+        "startChar": 8,
+        "endLine": 135,
+        "endChar": 29
+      },
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "04c3ef8e_503c8f5b",
+        "filename": "manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T10:58:06Z",
+      "side": 1,
+      "message": "please add doxygen comment. But I believe this is the std::queue I mentioned.",
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
