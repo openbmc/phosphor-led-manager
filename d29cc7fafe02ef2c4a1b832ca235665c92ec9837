@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "116046ba_1f5f8d3c",
+        "filename": "lampTest.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:22:16Z",
+      "side": 1,
+      "message": "Need to drive all Physical LEDs to [Action::Off] before we apply the saved States.. Else, we will end up lighting LEDs that are not supposed to be lit up.",
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9bf46f47_aedd6283",
+        "filename": "lampTest.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:22:16Z",
+      "side": 1,
+      "message": "we need to somehow save the current states of physical LEDs and then apply at the end of test and then do restoreGroups for everything that has come after the lamp-test has started.",
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "36f627c5_51dd25c2",
+        "filename": "manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:22:16Z",
+      "side": 1,
+      "message": "!",
+      "range": {
+        "startLine": 247,
+        "startChar": 10,
+        "endLine": 247,
+        "endChar": 13
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ae4e24a8_00f161c5",
+        "filename": "manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:22:16Z",
+      "side": 1,
+      "message": "I would prefer std::pair",
+      "range": {
+        "startLine": 153,
+        "startChar": 15,
+        "endLine": 153,
+        "endChar": 25
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d67b938d_eb04ee95",
+        "filename": "manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:22:16Z",
+      "side": 1,
+      "message": "savedPhysicalLedStates;",
+      "range": {
+        "startLine": 153,
+        "startChar": 41,
+        "endLine": 153,
+        "endChar": 60
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
