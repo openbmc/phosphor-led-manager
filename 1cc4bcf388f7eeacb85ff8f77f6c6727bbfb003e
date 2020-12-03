@@ -49,6 +49,23 @@
     },
     {
       "key": {
+        "uuid": "bc09992d_7e6ffabf",
+        "filename": "lampTest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:12:16Z",
+      "side": 1,
+      "message": "the other big thing is to set the Group::asserted(false) as part of time expiration.. We need to make sure it does not get into loop.. So we can check if the laamp test is in process and then if we get called into handleLampTest method . then it means that the request is from external user.. else, it is from this lamp test itself. In that case, we can just return.\n\nThat is why, we need the Group reference passed to the LampTest object.. so the callback handler needs to be updated to take the reference to Group object and then it can refer to that",
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2d9d5911_77f777fc",
         "filename": "lampTest.cpp",
         "patchSetId": 2
@@ -119,6 +136,30 @@
       "side": 1,
       "message": "\u003e why are we making the \"!\" check here ?\nwe should stop the lamp test when we call the drivephysicalLEDs method in error.",
       "parentUuid": "ad4c01e1_4da70570",
+      "range": {
+        "startLine": 44,
+        "startChar": 9,
+        "endLine": 44,
+        "endChar": 29
+      },
+      "revId": "1cc4bcf388f7eeacb85ff8f77f6c6727bbfb003e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "877ed613_dec707f4",
+        "filename": "lampTest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 44,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-03T14:12:16Z",
+      "side": 1,
+      "message": "Not really. We could still have some of the LEDs lit up and some may not.. So the LampTest is really about finding those faults. LampTest as a functionality as such, it is still running..  so no need to handle this case",
+      "parentUuid": "626563e6_4e7883ec",
       "range": {
         "startLine": 44,
         "startChar": 9,
