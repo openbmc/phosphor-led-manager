@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f4c87457_200a243c",
+        "filename": "group.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:26:10Z",
+      "side": 1,
+      "message": "Please remove this check.. we  can handle this inside manager",
+      "revId": "e6d6502d1f47dd9a3a35e4380fd2d8e8d430b780",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63c0afb2_a2f43792",
+        "filename": "lampTest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:26:10Z",
+      "side": 1,
+      "message": "Physical LED.. We don\u0027t need to mention the D-Bus property names here",
+      "revId": "e6d6502d1f47dd9a3a35e4380fd2d8e8d430b780",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
