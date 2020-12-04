@@ -1,0 +1,268 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "705b9e9b_1083c7ed",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 6
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "or the timer expires",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 12,
+        "endChar": 11
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "93a9e7b8_abe1d82a",
+        "filename": "Makefile.am",
+        "patchSetId": 6
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "lamptest.cpp is good.. I don\u0027t think so we are using camelCase for file names",
+      "range": {
+        "startLine": 28,
+        "startChar": 31,
+        "endLine": 28,
+        "endChar": 43
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a731ee04_0802661c",
+        "filename": "configure.ac",
+        "patchSetId": 6
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "hmm.. it is not a root. lamp_test is nothing but just a LED Group object.\n\nI would use LAMP_TEST_OBJECT.\n\nAlso. how can we selectively do this based on WANTS_LAMP_TEST ?",
+      "range": {
+        "startLine": 65,
+        "startChar": 41,
+        "endLine": 65,
+        "endChar": 51
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ee59c358_07b70088",
+        "filename": "group.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "Please add the callback function",
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3cdac1a6_912314be",
+        "filename": "group.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "We. need to satisfy a case where lamp-test class gets a reference to Group Dbus object ( this ). We need this since we need to set the state of Group to `false` after the timer expires.\n\nWe need to see how we can efficiently and cleanly do that",
+      "range": {
+        "startLine": 41,
+        "startChar": 10,
+        "endLine": 41,
+        "endChar": 48
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3ce961a2_cd44d791",
+        "filename": "group.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "we don\u0027t want to call out lamp-test here. The reason is that any arbitrary group D-Bus object can use this facility to install custom group handlers",
+      "range": {
+        "startLine": 76,
+        "startChar": 15,
+        "endLine": 77,
+        "endChar": 50
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3061c83a_2930943f",
+        "filename": "group.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "customCallBack",
+      "range": {
+        "startLine": 79,
+        "startChar": 30,
+        "endLine": 79,
+        "endChar": 38
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b6f7d152_bef63ac7",
+        "filename": "lampTest.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "this needs to be in config.ac",
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9278f643_ada6c847",
+        "filename": "lampTest.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "this can be const reference too I guess ?",
+      "range": {
+        "startLine": 39,
+        "startChar": 46,
+        "endLine": 39,
+        "endChar": 62
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d7f604d7_697d20e7",
+        "filename": "lampTest.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "handleTimeout",
+      "range": {
+        "startLine": 40,
+        "startChar": 54,
+        "endLine": 40,
+        "endChar": 69
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "aac50fe9_f97fc5b9",
+        "filename": "lampTest.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "requestHandler",
+      "range": {
+        "startLine": 50,
+        "startChar": 8,
+        "endLine": 50,
+        "endChar": 24
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4d025a29_9bb1d0ea",
+        "filename": "lampTest.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T12:23:25Z",
+      "side": 1,
+      "message": "timeOutHandler",
+      "range": {
+        "startLine": 66,
+        "startChar": 9,
+        "endLine": 66,
+        "endChar": 24
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
