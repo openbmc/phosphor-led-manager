@@ -1,0 +1,107 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6edd4db9_588de146",
+        "filename": "Makefile.am",
+        "patchSetId": 6
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T11:16:57Z",
+      "side": 1,
+      "message": "hmm .. this looks like an unrelated change ?",
+      "revId": "539f75f439545787244f391acbb3e4ece78f07b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b4c3246e_fb1ef462",
+        "filename": "configure.ac",
+        "patchSetId": 6
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T11:16:57Z",
+      "side": 1,
+      "message": "use-lamp-test ? we have not used camelCase in this file before.",
+      "range": {
+        "startLine": 87,
+        "startChar": 15,
+        "endLine": 87,
+        "endChar": 27
+      },
+      "revId": "539f75f439545787244f391acbb3e4ece78f07b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "92f26a02_9d41b8de",
+        "filename": "configure.ac",
+        "patchSetId": 6
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T11:16:57Z",
+      "side": 1,
+      "message": "WANTS_LAMP_TEST",
+      "range": {
+        "startLine": 88,
+        "startChar": 30,
+        "endLine": 89,
+        "endChar": 22
+      },
+      "revId": "539f75f439545787244f391acbb3e4ece78f07b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "bcbfc27a_d9ac9484",
+        "filename": "group.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T11:16:57Z",
+      "side": 1,
+      "message": "looks like an unrelated change ?..",
+      "range": {
+        "startLine": 38,
+        "startChar": 66,
+        "endLine": 38,
+        "endChar": 67
+      },
+      "revId": "539f75f439545787244f391acbb3e4ece78f07b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0327b1ac_7813d30e",
+        "filename": "led-main.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-04T11:16:57Z",
+      "side": 1,
+      "message": "looks like an unrelated change ?. please could you remove un-related changes ?.. Thanks.",
+      "revId": "539f75f439545787244f391acbb3e4ece78f07b8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
