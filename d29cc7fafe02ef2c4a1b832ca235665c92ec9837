@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "9cfdbe13_98139bad",
+        "filename": "lampTest.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 30,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-04T03:31:01Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "116046ba_1f5f8d3c",
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9bf46f47_aedd6283",
         "filename": "lampTest.cpp",
         "patchSetId": 3
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "83ff3c0c_94f70578",
+        "filename": "lampTest.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-04T03:31:01Z",
+      "side": 1,
+      "message": "We store the physical LED state only at the beginning of the lamp test.\nAt the end of the lamp test, the physical light status is restored. \nAnd after the restoration, the queue must be empty.\n\nWhether it is a normal stop or timeout, the above logic is the same.",
+      "parentUuid": "f4521f8d_89e256ca",
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "36f627c5_51dd25c2",
         "filename": "manager.cpp",
         "patchSetId": 3
@@ -65,6 +101,30 @@
       "writtenOn": "2020-12-03T14:22:16Z",
       "side": 1,
       "message": "!",
+      "range": {
+        "startLine": 247,
+        "startChar": 10,
+        "endLine": 247,
+        "endChar": 13
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "ce159018_6e4b7052",
+        "filename": "manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-04T03:31:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "36f627c5_51dd25c2",
       "range": {
         "startLine": 247,
         "startChar": 10,
@@ -111,6 +171,54 @@
       "writtenOn": "2020-12-03T14:22:16Z",
       "side": 1,
       "message": "savedPhysicalLedStates;",
+      "range": {
+        "startLine": 153,
+        "startChar": 41,
+        "endLine": 153,
+        "endChar": 60
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b802b816_6aee2247",
+        "filename": "manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-04T03:31:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ae4e24a8_00f161c5",
+      "range": {
+        "startLine": 153,
+        "startChar": 15,
+        "endLine": 153,
+        "endChar": 25
+      },
+      "revId": "d29cc7fafe02ef2c4a1b832ca235665c92ec9837",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0da515bd_058a0aad",
+        "filename": "manager.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-04T03:31:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d67b938d_eb04ee95",
       "range": {
         "startLine": 153,
         "startChar": 41,
