@@ -249,6 +249,30 @@
     },
     {
       "key": {
+        "uuid": "012968c3_c78378b1",
+        "filename": "group.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-07T11:40:37Z",
+      "side": 1,
+      "message": "Right.\nWe need to pass the group object pointer.",
+      "parentUuid": "c7f4e3b1_b8411c23",
+      "range": {
+        "startLine": 41,
+        "startChar": 10,
+        "endLine": 41,
+        "endChar": 48
+      },
+      "revId": "cb1d964ca056d5f801d22a8f1cb884dd04f15610",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ce961a2_cd44d791",
         "filename": "group.hpp",
         "patchSetId": 6
