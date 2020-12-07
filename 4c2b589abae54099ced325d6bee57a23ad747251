@@ -1,0 +1,113 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "803b6f8a_7b11fdca",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:19:04Z",
+      "side": 1,
+      "message": "thought we changed this name ?",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e0ec52ea_b4c9cbb1",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:19:04Z",
+      "side": 1,
+      "message": "uppercase",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "69df5218_cb5c2d86",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:19:04Z",
+      "side": 1,
+      "message": "this function can get called in 2 paths.\n\n- When user calls asserted(false)\n- When timeOut handler sets asserted(false)\n\nwe need to handle that situation . Only do so if LampTest is currently marked running.. else ; no",
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b7aa3ab6_c914a90c",
+        "filename": "manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:19:04Z",
+      "side": 1,
+      "message": "D-Bus all over",
+      "range": {
+        "startLine": 124,
+        "startChar": 33,
+        "endLine": 124,
+        "endChar": 37
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1cfb5879_07a80ae9",
+        "filename": "utils.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:19:04Z",
+      "side": 1,
+      "message": "D-Bus all over",
+      "range": {
+        "startLine": 82,
+        "startChar": 36,
+        "endLine": 82,
+        "endChar": 40
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
