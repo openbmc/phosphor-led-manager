@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "83b9b94f_1e3971e2",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:23:47Z",
+      "side": 1,
+      "message": "hmm. I think this is mixing the concerns.. we don\u0027t want lamp-test class to set a property of manager class.",
+      "revId": "ec6f3c9a5f0bb421d9011a49e7a5311a43533fbb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e49fc047_7908c997",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:23:47Z",
+      "side": 1,
+      "message": "So this will restore everything for those that have come _after_ the lamp-test has started. However, this does not handle the asserted states and de-asserted states that were there prior to lamp-test. If we don\u0027t save that, we are going to loose those states.",
+      "revId": "ec6f3c9a5f0bb421d9011a49e7a5311a43533fbb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "be045c5e_9e01ad77",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:23:47Z",
+      "side": 1,
+      "message": "we would need a testRunning as a bool local to lamp_test and then have to accessible via manager",
+      "revId": "ec6f3c9a5f0bb421d9011a49e7a5311a43533fbb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
