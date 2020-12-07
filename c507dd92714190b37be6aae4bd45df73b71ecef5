@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "1ace3310_d33aa1e4",
+        "filename": "meson.build",
+        "patchSetId": 19
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-12-07T13:46:35Z",
+      "side": 1,
+      "message": "This calls fault-monitor/meson.build file which uses fault_files variable.But by the time we call. fault_files is undefined.Please define fault_files before calling subdir()\n\nfault-monitor/meson.build:1:0: ERROR: Unknown variable \"fault_files\".\n\nA full log can be found at /home/jenkins-op/workspace/ci-repository/openbmc/phosphor-led-manager/build/meson-logs/meson-log.txt\nTraceback (most recent call last):\n  File \"/home/jenkins-op/workspace/ci-repository/openbmc/unit-test.py\", line 873, in configure\n    check_call_cmd(\u0027meson\u0027, \u0027setup\u0027, \u0027--reconfigure\u0027, \u0027build\u0027,\n  File \"/home/jenkins-op/workspace/ci-repository/openbmc/unit-test.py\", line 229, in check_call_cmd\n    check_call(cmd)\n  File \"/usr/lib/python3.8/subprocess.py\", line 364, in check_call\n    raise CalledProcessError(retcode, cmd)\nsubprocess.CalledProcessError: Command \u0027(\u0027meson\u0027, \u0027setup\u0027, \u0027--reconfigure\u0027, \u0027build\u0027, \u0027-Db_colorout\u003dnever\u0027, \u0027-Dwerror\u003dtrue\u0027, \u0027-Dwarning_level\u003d3\u0027, \u0027--buildtype\u003ddebug\u0027, \u0027-Dtests\u003denabled\u0027)\u0027 returned non-zero exit status 1.",
+      "range": {
+        "startLine": 88,
+        "startChar": 1,
+        "endLine": 88,
+        "endChar": 23
+      },
+      "revId": "c507dd92714190b37be6aae4bd45df73b71ecef5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
