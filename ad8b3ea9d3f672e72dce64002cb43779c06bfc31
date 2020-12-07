@@ -1,0 +1,297 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "69e1acae_fd5af631",
+        "filename": "configure.ac",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "LAMP_TEST_TIMEOUT_IN_SECS",
+      "range": {
+        "startLine": 96,
+        "startChar": 11,
+        "endLine": 96,
+        "endChar": 33
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "a3e1bc61_b4c1a453",
+        "filename": "configure.ac",
+        "patchSetId": 9
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "lamp test timeout in seconds",
+      "range": {
+        "startLine": 96,
+        "startChar": 36,
+        "endLine": 96,
+        "endChar": 64
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "227f1134_b7afdcb2",
+        "filename": "configure.ac",
+        "patchSetId": 9
+      },
+      "lineNbr": 102,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "test D-Bus object",
+      "range": {
+        "startLine": 102,
+        "startChar": 76,
+        "endLine": 102,
+        "endChar": 87
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "3d4e361d_de3a8c9b",
+        "filename": "configure.ac",
+        "patchSetId": 9
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "timeout in seconds",
+      "range": {
+        "startLine": 105,
+        "startChar": 90,
+        "endLine": 105,
+        "endChar": 104
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "51677e98_a0e1fc2d",
+        "filename": "group.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 23,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "this can be any callback.",
+      "range": {
+        "startLine": 23,
+        "startChar": 8,
+        "endLine": 23,
+        "endChar": 27
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "8eb06262_c0c17986",
+        "filename": "lamptest.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "this is not only initiating. it is also that if we get a request on request, reset the timer to new value",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 26
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7d2e529a_f8add3b1",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "this is incorrect. Manage LampTest feature",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 39
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "71c049f7_bf09a882",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "method is called back to stop the timer and also end the lamp test",
+      "range": {
+        "startLine": 34,
+        "startChar": 8,
+        "endLine": 34,
+        "endChar": 57
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1b40aff8_61109c73",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "please update the doxygen",
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "7eb580ba_349c2851",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "in this commit, group is not being used.I would say put all the group related changes to a new commit and have this commit as base",
+      "range": {
+        "startLine": 41,
+        "startChar": 25,
+        "endLine": 41,
+        "endChar": 40
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "99d1a84c_6c76616d",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "please update the doxygen",
+      "range": {
+        "startLine": 48,
+        "startChar": 1,
+        "endLine": 48,
+        "endChar": 17
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f3ff0c4c_7210c90b",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 54,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "lamp test period",
+      "range": {
+        "startLine": 54,
+        "startChar": 35,
+        "endLine": 54,
+        "endChar": 60
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "9831fb40_7567b3ef",
+        "filename": "lamptest.hpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-07T12:09:17Z",
+      "side": 1,
+      "message": "\"groupObject\"\n\nAlso, is there anyway we can get a reference to instead of a pointer ?.. I know we have to pass a \"this\" pointer. Just thinking if there is a way,,",
+      "range": {
+        "startLine": 61,
+        "startChar": 11,
+        "endLine": 61,
+        "endChar": 20
+      },
+      "revId": "ad8b3ea9d3f672e72dce64002cb43779c06bfc31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
