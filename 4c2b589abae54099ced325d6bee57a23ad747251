@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "b3e3046e_98c5cff9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T02:55:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "803b6f8a_7b11fdca",
+      "range": {
+        "startLine": 7,
+        "startChar": 11,
+        "endLine": 7,
+        "endChar": 32
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e0ec52ea_b4c9cbb1",
         "filename": "/COMMIT_MSG",
         "patchSetId": 7
@@ -36,6 +60,30 @@
       "writtenOn": "2020-12-07T12:19:04Z",
       "side": 1,
       "message": "uppercase",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 1
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "4a830deb_3e1d3022",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 7
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T02:55:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e0ec52ea_b4c9cbb1",
       "range": {
         "startLine": 9,
         "startChar": 0,
@@ -65,6 +113,24 @@
     },
     {
       "key": {
+        "uuid": "784fb14b_b872e1a7",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T02:55:53Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "69df5218_cb5c2d86",
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7aa3ab6_c914a90c",
         "filename": "manager.hpp",
         "patchSetId": 7
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "483c63eb_c2cafbdc",
+        "filename": "manager.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T02:55:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "b7aa3ab6_c914a90c",
+      "range": {
+        "startLine": 124,
+        "startChar": 33,
+        "endLine": 124,
+        "endChar": 37
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1cfb5879_07a80ae9",
         "filename": "utils.hpp",
         "patchSetId": 7
@@ -99,6 +189,30 @@
       "writtenOn": "2020-12-07T12:19:04Z",
       "side": 1,
       "message": "D-Bus all over",
+      "range": {
+        "startLine": 82,
+        "startChar": 36,
+        "endLine": 82,
+        "endChar": 40
+      },
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "86c21bdd_e555de3b",
+        "filename": "utils.hpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T02:55:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1cfb5879_07a80ae9",
       "range": {
         "startLine": 82,
         "startChar": 36,
