@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "79eb9142_25623ee5",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 20
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2020-12-08T06:57:03Z",
+      "side": 1,
+      "message": "looks like we are failing to link the custom targets on a ppc machine only while creating the phosphor-fru-fault-monitor binray. I am not very sure of this but,\n\nCan we make the custom targets to link..explicitly rather than implicitly, something like below and see if this error goes away:\n\nsources \u003d [\n    \u0027fru-fault-monitor.cpp\u0027,\n    \u0027monitor-main.cpp\u0027,\n]\nexecutable(\n    \u0027phosphor-fru-fault-monitor\u0027,\n    sources,\n    include_directories: [\u0027../\u0027],\n    dependencies: deps,\n    link_with : fault_files,\t\n    install: true,\n    install_dir: get_option(\u0027bindir\u0027)\n)",
+      "revId": "1e779dc4bef7fb6e455f054224ba8ba81a55f7e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
