@@ -131,6 +131,24 @@
     },
     {
       "key": {
+        "uuid": "3fc44e61_d9cfdaf0",
+        "filename": "lamptest.cpp",
+        "patchSetId": 7
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-08T03:36:01Z",
+      "side": 1,
+      "message": "For now, we used the manager\u0027s property(isLampTestRunning), and I have updated it in the next commit:\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/8/lamptest.cpp#16",
+      "parentUuid": "784fb14b_b872e1a7",
+      "revId": "4c2b589abae54099ced325d6bee57a23ad747251",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b7aa3ab6_c914a90c",
         "filename": "manager.hpp",
         "patchSetId": 7
