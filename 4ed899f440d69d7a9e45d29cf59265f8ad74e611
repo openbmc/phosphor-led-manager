@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e663c62a_0bb5f068",
+        "filename": "manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-10T06:00:15Z",
+      "side": 1,
+      "message": "As mentioned before: This will only have the changes since the start of lamp-test. However, just doing this will result in we loosing whatever that was there prior to doing this.. so we need to restore the complete states",
+      "revId": "4ed899f440d69d7a9e45d29cf59265f8ad74e611",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
