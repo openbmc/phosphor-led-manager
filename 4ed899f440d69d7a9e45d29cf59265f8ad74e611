@@ -16,6 +16,24 @@
       "revId": "4ed899f440d69d7a9e45d29cf59265f8ad74e611",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "86f67bdf_a3b60b5b",
+        "filename": "manager.cpp",
+        "patchSetId": 10
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-12T07:10:25Z",
+      "side": 1,
+      "message": "yeah.\nI have done an update\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/12",
+      "parentUuid": "e663c62a_0bb5f068",
+      "revId": "4ed899f440d69d7a9e45d29cf59265f8ad74e611",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
