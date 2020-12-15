@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "1877b29e_47079b6e",
+        "filename": "lamptest.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-15T07:20:27Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/12/lamptest.cpp#14",
+      "parentUuid": "32144af0_937ee057",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 14,
+        "endChar": 28
+      },
+      "revId": "203cee0d48f8255a124c90d6a0ccf87f1d90da63",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ffbb7069_909b57a6",
         "filename": "lamptest.cpp",
         "patchSetId": 13
@@ -36,6 +60,30 @@
       "writtenOn": "2020-12-14T18:16:24Z",
       "side": 1,
       "message": "whatever the list we turned [ON]. the same ones must be the ones to be turned off. So, we can just get it once. May be have a reference in lamp_test class and populate that in start and use that here",
+      "range": {
+        "startLine": 17,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 65
+      },
+      "revId": "203cee0d48f8255a124c90d6a0ccf87f1d90da63",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "978d5f93_ed69b02b",
+        "filename": "lamptest.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-15T07:20:27Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "ffbb7069_909b57a6",
       "range": {
         "startLine": 17,
         "startChar": 0,
