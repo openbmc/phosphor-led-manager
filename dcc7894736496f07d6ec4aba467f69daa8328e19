@@ -93,6 +93,30 @@
       "revId": "dcc7894736496f07d6ec4aba467f69daa8328e19",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "449bd317_2810c10c",
+        "filename": "manager.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-15T07:19:38Z",
+      "side": 1,
+      "message": "moved\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/13/manager.hpp#146",
+      "parentUuid": "27f11689_93eda5db",
+      "range": {
+        "startLine": 86,
+        "startChar": 7,
+        "endLine": 86,
+        "endChar": 34
+      },
+      "revId": "dcc7894736496f07d6ec4aba467f69daa8328e19",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
