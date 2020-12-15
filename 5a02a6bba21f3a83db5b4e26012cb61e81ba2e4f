@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f353293e_bcf33e32",
+        "filename": "manager.cpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 255,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T15:40:09Z",
+      "side": 1,
+      "message": "same comment I made before still holds good :).. Lets say you get a request to turn on a LED during lamp test, then you store it in LampTest queue.. That means, the std;:map does not even know that.. \n\nNow, lamp-test finishes and you get one more lamp-test.. and now, we don\u0027t even know the state of that last [ON] request that was only put in the LamptestQueue and lost and never made an entry into the map.",
+      "range": {
+        "startLine": 252,
+        "startChar": 0,
+        "endLine": 255,
+        "endChar": 5
+      },
+      "revId": "5a02a6bba21f3a83db5b4e26012cb61e81ba2e4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "d57179d1_5b6d2381",
+        "filename": "manager.hpp",
+        "patchSetId": 13
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2020-12-15T15:40:09Z",
+      "side": 1,
+      "message": "could you please leave this unchanged ( have what\u0027s in GitHub ) since there is no update to this space.",
+      "range": {
+        "startLine": 85,
+        "startChar": 2,
+        "endLine": 85,
+        "endChar": 6
+      },
+      "revId": "5a02a6bba21f3a83db5b4e26012cb61e81ba2e4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    }
+  ]
+}
