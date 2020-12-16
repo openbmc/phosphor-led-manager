@@ -22,6 +22,30 @@
       "revId": "23eedf513b285e3d1b85c70010e194e514f1fcd2",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "206994f4_f8b849e0",
+        "filename": "manager.cpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2020-12-16T08:51:27Z",
+      "side": 1,
+      "message": "i have updated L:117 and test fine.\n\n```\nlastLEDsState[path] \u003d std::make_pair(ledsAssert, ledsDeAssert);\n```",
+      "parentUuid": "1272dfc6_c27f6362",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 5
+      },
+      "revId": "23eedf513b285e3d1b85c70010e194e514f1fcd2",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
