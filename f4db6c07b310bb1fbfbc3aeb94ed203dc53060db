@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "41618579_e9a9de9f",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-11T09:51:30Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "247eaa08_432630d1",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6da11e8f_541de548",
         "filename": "meson.build",
         "patchSetId": 23
@@ -53,6 +71,24 @@
     },
     {
       "key": {
+        "uuid": "2c96bce1_2721ccea",
+        "filename": "meson_options.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-11T09:51:30Z",
+      "side": 1,
+      "message": "No, it should be enabled.",
+      "parentUuid": "b2b698d8_81791b27",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "79850cbd_8f4f09b4",
         "filename": "subprojects/nlohmann.wrap",
         "patchSetId": 23
@@ -64,6 +100,24 @@
       "writtenOn": "2021-01-11T09:04:17Z",
       "side": 1,
       "message": "hmm.. why is this being put in here ?.. Is this the norm in all the repos ?\nThis is more of a openbmc/.bb/.bbappend construct. Why do we have it here ?",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a494dd44_8ff4f9eb",
+        "filename": "subprojects/nlohmann.wrap",
+        "patchSetId": 23
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-11T09:51:30Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/6/meson.build#65",
+      "parentUuid": "79850cbd_8f4f09b4",
       "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
