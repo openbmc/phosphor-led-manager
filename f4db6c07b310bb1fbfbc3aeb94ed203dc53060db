@@ -2,6 +2,23 @@
   "comments": [
     {
       "key": {
+        "uuid": "247eaa08_432630d1",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T09:04:17Z",
+      "side": 1,
+      "message": "fault_generated_files ?",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6da11e8f_541de548",
         "filename": "meson.build",
         "patchSetId": 23
@@ -13,6 +30,40 @@
       "writtenOn": "2021-01-11T07:23:11Z",
       "side": 1,
       "message": "wonder why it is not in the fault-monitor/meson.build ?",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b2b698d8_81791b27",
+        "filename": "meson_options.txt",
+        "patchSetId": 23
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T09:04:17Z",
+      "side": 1,
+      "message": "this is also to be \"disabled\" by default right ?",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79850cbd_8f4f09b4",
+        "filename": "subprojects/nlohmann.wrap",
+        "patchSetId": 23
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T09:04:17Z",
+      "side": 1,
+      "message": "hmm.. why is this being put in here ?.. Is this the norm in all the repos ?\nThis is more of a openbmc/.bb/.bbappend construct. Why do we have it here ?",
       "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
