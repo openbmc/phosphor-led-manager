@@ -1,0 +1,174 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a95b2bc7_e7e87904",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "will this be cleaned as part of completing the build ?",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c4389aa_02753dd1",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "Also : where is the equivalent of _CFLAGS and _LDFLAGS that we had in auto tools version.",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8a99bc4b_89113b30",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "I did not see this in some other repos. Is there anything that is demanding this to be explicitly specified ?",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2a807264_a68415d4",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "Is there a way where we can add comments to these like how we could add in configure.ac\n\nExample reference: \nAC_DEFINE(CALLOUT_FWD_ASSOCIATION, \"callout\", [The name of the callout\u0027s forward association.])",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1f64859_39b79f26",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "what about the usage of WANTS_JSON ?",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a83fccdc_80c9bdc6",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "Also, need to add the use-lamp-test",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c96bff7c_0aa087bc",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "Missing : YAML_PATH . how is this handled ?.. This is what gets passed from  .bb file",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bab30b8c_219cadb2",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "Just for my understanding, why are we not always putting the dependency by default ?",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "77b88a4c_4a1eb289",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "hmm.. But this is only if WANTS_JSON \u003d\u003d false right ?.\n\nAlso why is it not .hpp but _hpp ? And this is a generated file",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "705b14f8_ed10da55",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-11T13:45:51Z",
+      "side": 1,
+      "message": "We also need to take care of : scripts/led-set-all-groups-asserted.sh",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
