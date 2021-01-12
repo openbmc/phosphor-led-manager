@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "da4b1d51_d6bda98b",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "No, it will generate the following file:\n\nfault-monitor/xyz/openbmc_project/Led/Fru/Monitor/error.hpp\nfault-monitor/xyz/openbmc_project/Led/Fru/Monitor/error.cpp\nfault-monitor/xyz/openbmc_project/Led/Mapper/error.hpp\nfault-monitor/xyz/openbmc_project/Led/Mapper/error.cpp",
+      "parentUuid": "a95b2bc7_e7e87904",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c4389aa_02753dd1",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 24
@@ -30,6 +48,24 @@
       "writtenOn": "2021-01-11T13:45:51Z",
       "side": 1,
       "message": "Also : where is the equivalent of _CFLAGS and _LDFLAGS that we had in auto tools version.",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30d61a58_c66613df",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/24/meson.build#52",
+      "parentUuid": "5c4389aa_02753dd1",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "b912ec4a_c5d45bdb",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "This is ManojKiran\u0027s suggestion 😊\n\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/2/meson.build#1",
+      "parentUuid": "8a99bc4b_89113b30",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "2a807264_a68415d4",
         "filename": "meson.build",
         "patchSetId": 24
@@ -64,6 +118,24 @@
       "writtenOn": "2021-01-11T13:45:51Z",
       "side": 1,
       "message": "Is there a way where we can add comments to these like how we could add in configure.ac\n\nExample reference: \nAC_DEFINE(CALLOUT_FWD_ASSOCIATION, \"callout\", [The name of the callout\u0027s forward association.])",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52354096_812a9e8e",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "We can not add comments in the set_quoted method.\nhttps://mesonbuild.com/Reference-manual.html#files\n`set_quoted(varname, value) is same as set but quotes the value in double quotes (\")`\n\nWe can define it in the `meson_options.txt`, but i dont think this is a good way, because the value defined in the `meson_options.txt` file can be changed.",
+      "parentUuid": "2a807264_a68415d4",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "50373af9_b740ae52",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "No, I do not think need to add `WANTS_JSON` in meson.build file.\n\nIf we enable `use-json`, it won\u0027t be ran L:60-67.",
+      "parentUuid": "a1f64859_39b79f26",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a83fccdc_80c9bdc6",
         "filename": "meson.build",
         "patchSetId": 24
@@ -98,6 +188,24 @@
       "writtenOn": "2021-01-11T13:45:51Z",
       "side": 1,
       "message": "Also, need to add the use-lamp-test",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc6b791a_05b0d563",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "Right, Maybe this commit is too early.\nDone.",
+      "parentUuid": "a83fccdc_80c9bdc6",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "c1703631_236bf95f",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c96bff7c_0aa087bc",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bab30b8c_219cadb2",
         "filename": "meson.build",
         "patchSetId": 24
@@ -132,6 +258,24 @@
       "writtenOn": "2021-01-11T13:45:51Z",
       "side": 1,
       "message": "Just for my understanding, why are we not always putting the dependency by default ?",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4615984a_8c6c09da",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "Sorry, This is ManojKiran\u0027s suggestion 😊\n\nSee: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/6/meson.build#65",
+      "parentUuid": "bab30b8c_219cadb2",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "5313c2fe_29807af6",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "\u003e hmm.. But this is only if WANTS_JSON \u003d\u003d false right ?.\n\nNo, if if get_option(\u0027use-json\u0027).disabled()\n`sources +\u003d [led_gen_hpp]`\n\n\u003e Also why is it not .hpp but _hpp ? And this is a generated file\n\nNo, this is custom target, See: https://mesonbuild.com/Reference-manual.html#custom_target",
+      "parentUuid": "77b88a4c_4a1eb289",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "705b14f8_ed10da55",
         "filename": "meson.build",
         "patchSetId": 24
@@ -169,6 +331,24 @@
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0c4a717b_5f488f0d",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-12T07:43:02Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "705b14f8_ed10da55",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
