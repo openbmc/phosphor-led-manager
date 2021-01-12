@@ -96,6 +96,30 @@
     },
     {
       "key": {
+        "uuid": "65a0fa41_96c628b1",
+        "filename": "group.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T15:01:49Z",
+      "side": 1,
+      "message": "looks like I highlighted an incorrect string.. My comment was for the word \"constructed\" in the brief.",
+      "parentUuid": "e788cd5a_ffdacd82",
+      "range": {
+        "startLine": 79,
+        "startChar": 30,
+        "endLine": 79,
+        "endChar": 45
+      },
+      "revId": "b4d7ba1278f5cd88cd5a12771543c1a000f35dee",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ff44c356_abb9ba90",
         "filename": "led-main.cpp",
         "patchSetId": 14

@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "af6b3ec5_ab6b68f2",
+        "filename": "led-main.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T15:01:49Z",
+      "side": 1,
+      "message": "hmm.. so just to refresh my memory, we went down the route of \"events\" because we wanted to handle the sdevent:timer events .. right ?",
+      "range": {
+        "startLine": 66,
+        "startChar": 4,
+        "endLine": 66,
+        "endChar": 17
+      },
+      "revId": "262caab1fe3b292c2543e7ffcc463d7b8f6d564d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
