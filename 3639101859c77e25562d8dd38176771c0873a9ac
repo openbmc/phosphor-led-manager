@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bbe730da_70ac85d6",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T10:43:08Z",
+      "side": 1,
+      "message": "right.. I get it.. I\u0027m asking if these files get cleaned after compilation . They were getting cleaned in auto_tools version.\n\nCLEANFILES \u003d ${BUILT_SOURCES}",
+      "parentUuid": "da4b1d51_d6bda98b",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c4389aa_02753dd1",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 24
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "This is ManojKiran\u0027s suggestion 😊\n\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/2/meson.build#1",
       "parentUuid": "8a99bc4b_89113b30",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c62cc813_0ae53a5e",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T10:43:08Z",
+      "side": 1,
+      "message": "okay .. @Manoj : May I know why this is needed ?",
+      "parentUuid": "b912ec4a_c5d45bdb",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -276,6 +312,24 @@
       "side": 1,
       "message": "Sorry, This is ManojKiran\u0027s suggestion 😊\n\nSee: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661/6/meson.build#65",
       "parentUuid": "bab30b8c_219cadb2",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "279d8590_b301e46b",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-12T10:43:08Z",
+      "side": 1,
+      "message": "Okay.. @Manoj : May I know why this is needed than always putting a dependency ?",
+      "parentUuid": "4615984a_8c6c09da",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
