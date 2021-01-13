@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "a33cf421_6c70adfa",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-13T09:38:17Z",
+      "side": 1,
+      "message": "No, We do not need to `clean files` in `meson.build`.\n\nI asked @ManojKiran, and the reply I got was:\nmeson always does an out-off-tree build, it creates all these files inside a builddirectory",
+      "parentUuid": "bbe730da_70ac85d6",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c4389aa_02753dd1",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 24
