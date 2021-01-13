@@ -73,6 +73,24 @@
     },
     {
       "key": {
+        "uuid": "b4a0f474_a0d89029",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-13T10:14:57Z",
+      "side": 1,
+      "message": "sure.. but that does not answer the question. The question is : what happens to the generated files ?. should they not be deleted at the end of compilation like how they are done when done using auto tools ?",
+      "parentUuid": "a33cf421_6c70adfa",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c4389aa_02753dd1",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 24
@@ -173,6 +191,24 @@
       "side": 1,
       "message": "meson default build type is debug(which does not have any optimization at all) if nothing is specified, where as debugoptimized enables -O2 optimization during build time.\n\nwhen this repo is pulled and compiled in yocto environment, it forces an \"-O2\" optimization for all the repos while compiling for bmc.\n\nI idea behind explicitly mentioning the buildtype as debugoptimized would force the \"repo specific docker CI\" as well to do a similar build as yocto by enforcing an -O2. Its not a standard as such, but recent repos that are migrated to meson have been following this.",
       "parentUuid": "c62cc813_0ae53a5e",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af513c15_f39db1f2",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-13T10:14:57Z",
+      "side": 1,
+      "message": "Thank you Manoj",
+      "parentUuid": "7121b1fe_c68b022d",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -384,6 +420,24 @@
       "side": 1,
       "message": "By, having it this way, if nlohmann-json package is not present in the development machine/sdk, it will not break the compilation throwing an error , instead it fetches the nlohmann-json headers and then include them in the headers and proceeds for compilation.\n\nThis is a new feature in meson..by which we can automatically download the dependencies during the configure step if they are not found the machine.\n\nAgain, this is a new feature in meson \u0026 it does not harm us in anyway..but something nice to have.",
       "parentUuid": "279d8590_b301e46b",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "386c1139_5dc3df2b",
+        "filename": "meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-13T10:14:57Z",
+      "side": 1,
+      "message": "Thanks Manoj.",
+      "parentUuid": "84f926f7_8c5bb698",
       "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
