@@ -91,6 +91,24 @@
     },
     {
       "key": {
+        "uuid": "86a54d8d_e5386a58",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 24
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-01-13T10:35:51Z",
+      "side": 1,
+      "message": "Vishwa, meson by default genrates a \"clean\" target, so \"ninja -C builddir clean\" should clean all the built binaries \u0026 custom targets.\n\nBut fault_generated_files is not a custom  target as such, instead we are generating it from the sdbusgen_prog via a custom command, i dont think ninja can clean these files for us.\n\nBut unlike autotools ,meson generates all the build artifacts into a separate build folder rather than the source folder, so \"ninja -C builddir clean\" should be almost similar to \"rm -rf builddir\" right ?",
+      "parentUuid": "b4a0f474_a0d89029",
+      "revId": "3639101859c77e25562d8dd38176771c0873a9ac",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c4389aa_02753dd1",
         "filename": "fault-monitor/meson.build",
         "patchSetId": 24
