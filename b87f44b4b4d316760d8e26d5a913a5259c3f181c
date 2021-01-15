@@ -1,0 +1,95 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "60b73aea_3e219b54",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T11:15:20Z",
+      "side": 1,
+      "message": "hm.. I am not following why the manager is called .. lamptest.cpp is the lamp test implementer and has that knowledge",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "92161a6c_bdda7e93",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T11:15:20Z",
+      "side": 1,
+      "message": "even this one..",
+      "range": {
+        "startLine": 27,
+        "startChar": 4,
+        "endLine": 27,
+        "endChar": 38
+      },
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "973dc713_7a8a6f63",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T11:15:20Z",
+      "side": 1,
+      "message": "lamp test status must be set to false after this point",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "059f0938_7322d725",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T11:15:20Z",
+      "side": 1,
+      "message": "why the manager needs to maintain .. seems like a round about..",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43a0b903_88a4a108",
+        "filename": "manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T11:15:20Z",
+      "side": 1,
+      "message": "hmm.. I am still confused by this.. need to think more...",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
