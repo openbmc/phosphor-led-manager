@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f06bdd43_a94d10f9",
+        "filename": "manager.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 0,
+      "message": "why this change is needed ?",
+      "revId": "185f5a48f2ae7735c270af90a8cf281cbdc23060",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}

@@ -1,0 +1,159 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9c7e1404_b418aadf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 16
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "start",
+      "range": {
+        "startLine": 13,
+        "startChar": 57,
+        "endLine": 13,
+        "endChar": 72
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ca0eb1e_07c62ad9",
+        "filename": "lamptest.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "this comment is not needed and is not conveying anything",
+      "range": {
+        "startLine": 16,
+        "startChar": 42,
+        "endLine": 16,
+        "endChar": 55
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c7dde64d_fee25b80",
+        "filename": "lamptest.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "hmm.. so this is not a unique_ptr and not a shared_ptr..\n\nI am not sure I follow the move construct here",
+      "range": {
+        "startLine": 49,
+        "startChar": 30,
+        "endLine": 49,
+        "endChar": 42
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9be4f3e_db05fe8c",
+        "filename": "lamptest.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "Get paths of all the Physical LED objects",
+      "range": {
+        "startLine": 42,
+        "startChar": 11,
+        "endLine": 42,
+        "endChar": 51
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f44e0aa9_1ebd6d4b",
+        "filename": "lamptest.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "physicalLEDPaths {};",
+      "range": {
+        "startLine": 69,
+        "startChar": 29,
+        "endLine": 69,
+        "endChar": 35
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08a27c33_27f2c1d6",
+        "filename": "manager.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "Why this change is needed ?",
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dc6397d_8a872997",
+        "filename": "utils.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T10:46:02Z",
+      "side": 1,
+      "message": "can this be const ?",
+      "range": {
+        "startLine": 87,
+        "startChar": 4,
+        "endLine": 87,
+        "endChar": 14
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
