@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "59bc538e_495df5dd",
+        "filename": "meson_options.txt",
+        "patchSetId": 28
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-15T08:10:17Z",
+      "side": 1,
+      "message": "here is what is from auto tools :\n\nAC_ARG_VAR(YAML_PATH, [The path to the yaml config files.])\nAS_IF([test \"x$YAML_PATH\" \u003d\u003d \"x\"], [YAML_PATH\u003d\"$srcdir\"])\nLEDGEN\u003d\"$PYTHON $srcdir/parse_led.py -i $YAML_PATH\"\nAC_SUBST(LEDGEN)\n\nwhat is replacing this here in meson ?",
+      "range": {
+        "startLine": 5,
+        "startChar": 0,
+        "endLine": 5,
+        "endChar": 96
+      },
+      "revId": "4fc598596114f116e04a8f880e8dcf79f1873c11",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
