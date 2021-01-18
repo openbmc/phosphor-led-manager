@@ -19,6 +19,23 @@
     },
     {
       "key": {
+        "uuid": "50dd016c_a218ccb4",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-18T08:13:51Z",
+      "side": 1,
+      "message": "const auto\u0026 path: ?",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "92161a6c_bdda7e93",
         "filename": "lamptest.cpp",
         "patchSetId": 17
@@ -70,6 +87,23 @@
       "writtenOn": "2021-01-15T11:15:20Z",
       "side": 1,
       "message": "why the manager needs to maintain .. seems like a round about..",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7992f42_5d66c53e",
+        "filename": "manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-18T08:13:51Z",
+      "side": 1,
+      "message": "While I am still trying to understand the std::map below, I don\u0027t see we need queue and also a map given how we are using both at the end.",
       "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
