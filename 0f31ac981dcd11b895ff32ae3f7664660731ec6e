@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "819c66cd_78835532",
+        "filename": "meson.build",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-18T08:53:29Z",
+      "side": 1,
+      "message": "\u003e Sorry, I am not following. Are you saying when you have \".disabled()\", they are considered enabled and hence USE_JSON will be true ?\n\nNo.\nwhen we have `.disabled()` for `LED_USE_JSON`(this is by default), it will generate in config.h:\n#undef LED_USE_JSON\n\nBut, we have `.enabled()` for `LED_USE_JSON`(EXTRA_OEMESON_append \u003d \u0027Duse-json\u003denabled\u0027),  it will generate in config.h:\n#define LED_USE_JSON\n\ndoes make sense?",
+      "parentUuid": "6319cd08_b42f7696",
+      "revId": "0f31ac981dcd11b895ff32ae3f7664660731ec6e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba856d01_8cff7caf",
         "filename": "meson.build",
         "patchSetId": 29
