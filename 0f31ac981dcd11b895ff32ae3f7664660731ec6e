@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "a7903677_24256bb9",
+        "filename": "meson.build",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-18T08:38:28Z",
+      "side": 1,
+      "message": "\u003e Requirement is that : by default, USE_JSON and LAMP_TEST needs to be disabled\n\nYes, when USE_JSON and LAMP_TEST are disabled, they will generate in config.h:\n#undef LED_USE_JSON\n#undef USE_LAMP_TEST\nSo, I think this is correct.\n\n\u003e We need to set EXTRA_OECONF in .bb file to define these variables and then they should be taken here.\n\nnit: s/EXTRA_OECONF/EXTRA_OEMESON_append\nNo, we only added `EXTRA_OEMESON_append` to *.bbappend.",
+      "parentUuid": "792b9a9c_5b990879",
+      "revId": "0f31ac981dcd11b895ff32ae3f7664660731ec6e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba856d01_8cff7caf",
         "filename": "meson.build",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2021-01-18T08:26:13Z",
       "side": 1,
       "message": "could you add comments here ( at line: 86 ) since this change is being done  ? What issue is it going to resolve ?",
+      "revId": "0f31ac981dcd11b895ff32ae3f7664660731ec6e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "516d96dc_cec94481",
+        "filename": "meson.build",
+        "patchSetId": 29
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-18T08:38:28Z",
+      "side": 1,
+      "message": "a boolean telling whether Meson adds the current source and build directories to the include path, defaults to true.\n\nrefer to: https://mesonbuild.com/Reference-manual.html#include_directories",
+      "parentUuid": "ba856d01_8cff7caf",
       "revId": "0f31ac981dcd11b895ff32ae3f7664660731ec6e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
