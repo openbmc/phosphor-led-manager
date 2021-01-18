@@ -54,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "61879c2a_944e65e1",
+        "filename": "meson.build",
+        "patchSetId": 23
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-01-18T09:29:15Z",
+      "side": 1,
+      "message": "if we move this logic to fault-monitor/meson.build \u0026 change the input to meson.source_root()+\u0027/xyz\u0027,the sdbusgen_prog tool seems to creates meson.source_root() directory hierarchy in the build directory \u0026 then placing the output hpp \u0026 cpp files there. So, this needs a code as to include the headers from the right location as well. not sure , if there is another way to do this.\n\n@patrick,can you tell us ,how do we generate the hpp \u0026 cpp files inside builddir/xyz/.. even when the tool is run from a subdirectory ? or is the tool only to be used from the root meson.build file ?",
+      "parentUuid": "6da11e8f_541de548",
+      "revId": "f4db6c07b310bb1fbfbc3aeb94ed203dc53060db",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "b2b698d8_81791b27",
         "filename": "meson_options.txt",
         "patchSetId": 23
