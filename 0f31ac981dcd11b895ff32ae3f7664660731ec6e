@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6319cd08_b42f7696",
+        "filename": "meson.build",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-18T08:49:45Z",
+      "side": 1,
+      "message": "\u003e Yes, when USE_JSON and LAMP_TEST are disabled, they will generate in config.h:\n\u003e #undef LED_USE_JSON\n\u003e #undef USE_LAMP_TEST\n\nSorry, I am not following. Are you saying when you have \".disabled()\", they are considered enabled and hence USE_JSON will be true ?",
+      "parentUuid": "a7903677_24256bb9",
+      "revId": "0f31ac981dcd11b895ff32ae3f7664660731ec6e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ba856d01_8cff7caf",
         "filename": "meson.build",
         "patchSetId": 29
