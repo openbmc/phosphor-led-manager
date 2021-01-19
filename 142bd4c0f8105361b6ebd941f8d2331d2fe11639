@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "528524d4_5d78c8c2",
+        "filename": "configure.ac",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:47:10Z",
+      "side": 1,
+      "message": "should this be inside AS_IF(enable_use_lamp_test) ?",
+      "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "10cdd734_a544bfef",
+        "filename": "lamptest.hpp",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:47:10Z",
+      "side": 1,
+      "message": "please put a comment here on why std:;chrono is used",
+      "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
