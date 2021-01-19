@@ -191,6 +191,30 @@
     },
     {
       "key": {
+        "uuid": "1e2b57a5_d63e7fdc",
+        "filename": "lamptest.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:15:00Z",
+      "side": 1,
+      "message": "That is fine.. but I am not able to understand the std::move here",
+      "parentUuid": "d89378df_5addfd47",
+      "range": {
+        "startLine": 49,
+        "startChar": 30,
+        "endLine": 49,
+        "endChar": 42
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e9be4f3e_db05fe8c",
         "filename": "lamptest.hpp",
         "patchSetId": 16
@@ -350,6 +374,24 @@
       "side": 1,
       "message": "Okay, we used them in two files:\n1. manager.cpp\n2. lamptest.hpp\nThey all need to contain: `#include \"manager.hpp\"`",
       "parentUuid": "b3e014de_02d6afe7",
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fea76748_723162f7",
+        "filename": "manager.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:15:00Z",
+      "side": 1,
+      "message": "hmm.. Not sure what am I missing.. But, I don\u0027t see its usage in lamptest.hpp",
+      "parentUuid": "adcb9976_766bd3f3",
       "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
