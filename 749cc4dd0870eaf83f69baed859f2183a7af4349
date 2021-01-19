@@ -239,6 +239,30 @@
     },
     {
       "key": {
+        "uuid": "e39a4303_0c4d46ed",
+        "filename": "lamptest.cpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 49,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:55:09Z",
+      "side": 1,
+      "message": "I understand the copy vs move.. But I am asking what are we achieving here.. it\u0027s not a unique ptr and not a rvalue ref also.\n\nwhat am I missing ?",
+      "parentUuid": "c50569a7_28d669f2",
+      "range": {
+        "startLine": 49,
+        "startChar": 30,
+        "endLine": 49,
+        "endChar": 42
+      },
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "e9be4f3e_db05fe8c",
         "filename": "lamptest.hpp",
         "patchSetId": 16
@@ -434,6 +458,24 @@
       "side": 1,
       "message": "manager.cpp: \nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38519/18/manager.cpp#145\n\nlamptest.hpp: \nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38519/16/lamptest.hpp#43",
       "parentUuid": "fea76748_723162f7",
+      "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adec6fc2_e4488a9b",
+        "filename": "manager.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:55:09Z",
+      "side": 1,
+      "message": "Thanks.",
+      "parentUuid": "504183ba_3fecdd2a",
       "revId": "749cc4dd0870eaf83f69baed859f2183a7af4349",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
