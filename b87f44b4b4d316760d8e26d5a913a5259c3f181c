@@ -260,6 +260,24 @@
     },
     {
       "key": {
+        "uuid": "ceb6f35b_abcdff53",
+        "filename": "manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:57:18Z",
+      "side": 1,
+      "message": "Right.. But we are anyway merging the values from std::queue unto std::map .. right ?.. also, we need to do exhaustive testing on this. \n\nNeed GTEST cases added",
+      "parentUuid": "ac35eab6_06bbe782",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43a0b903_88a4a108",
         "filename": "manager.cpp",
         "patchSetId": 17
