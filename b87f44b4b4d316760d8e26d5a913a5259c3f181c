@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "7bfe2bd2_be950cec",
+        "filename": "lamptest.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:10:32Z",
+      "side": 1,
+      "message": "Yes. we need to think .. but I am not convinced lamp-test class can not maintain its own status and wants manager to handle it and goes round-about",
+      "parentUuid": "5979f0ff_87cdf610",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "50dd016c_a218ccb4",
         "filename": "lamptest.cpp",
         "patchSetId": 17
@@ -200,6 +218,24 @@
       "side": 1,
       "message": "Note:\nstd::map lastLEDsState: Used to save the last LEDs state for all LEDs when use-lamp-test enabled and restored the lamp state after the lamp test is stopped.\nstd::queue assertedGroups: Used to save all LEDs state for all LEDs when use-lamp-test enabled",
       "parentUuid": "f7992f42_5d66c53e",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "30c69c7a_c6d04f71",
+        "filename": "manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-19T05:10:32Z",
+      "side": 1,
+      "message": "Right.. I get how it is now. what I am wondering is : How different is this from maintaining all in std::map / std::unordered_map since we are anyway updating std::map with the contents in std::queue",
+      "parentUuid": "473032e3_13166acf",
       "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
