@@ -242,6 +242,24 @@
     },
     {
       "key": {
+        "uuid": "ac35eab6_06bbe782",
+        "filename": "manager.cpp",
+        "patchSetId": 17
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-19T05:53:42Z",
+      "side": 1,
+      "message": "\u003e How different is this from maintaining all in std::map / std::unordered_map\n\nI am Okay if we use `std::map` or `std::unordered_map`, because we only to save the last LEDs state.\n\n\u003e since we are anyway updating std::map with the contents in std::queue\n\nNo, Note:\n`std::map` should be updated only before the lamp test runs.\n`std::queue` should be updated only when the bulb test is running.",
+      "parentUuid": "30c69c7a_c6d04f71",
+      "revId": "b87f44b4b4d316760d8e26d5a913a5259c3f181c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "43a0b903_88a4a108",
         "filename": "manager.cpp",
         "patchSetId": 17
