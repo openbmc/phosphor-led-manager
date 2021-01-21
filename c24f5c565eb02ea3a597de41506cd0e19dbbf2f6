@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "34df3172_88137534",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "There is a little danger here...\n\nYou\u0027ve got a variable in (root)/meson.build named \u0027sources\u0027 and a variable here named \u0027sources\u0027.  You are, in effect, overwriting the \u0027sources\u0027 found in the parent directory at the point that you have the \u0027subdir(fault-monitor)\u0027 call.  If someone moves that line around you can end up with very different behavior.\n\nI suggest using another name (fault_monitor_sources maybe).",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bf7ae204_0a9e1d20",
+        "filename": "meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "I would suggest setting sdbusplus as a \u0027subproject\u0027 as needed also.  See phosphor-dbus-interfaces meson.build for an example.",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d45dfe0_a81c5378",
+        "filename": "meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "If you need to generate your own sdbus++ based files, you should use sdbus++-gen-meson and not sdbus++-gendir.  The `gendir` tool will be removed in the near future.\n\nI suggest looking at how phopshor-dbus-interfaces generates files.",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "af9743f3_10b7bcff",
+        "filename": "meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "I believe meson suggests that shell scripts are installed with \u0027executable\u0027 where \u0027native: true\u0027 is set?",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5595a121_9ae2a0d9",
+        "filename": "meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "Can we just set the mode correctly in the repository rather than fixing it up in meson?",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd6497b6_9ba1db4a",
+        "filename": "meson_options.txt",
+        "patchSetId": 32
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "Is there really any case where someone would need a different YAML_PATH?  It seems like excessive configuration when the sdbus++ files are all in (root)/xyz/... to make your private interfaces.",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a225551e_f9ba276b",
+        "filename": "serialize.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "Something complained about this extra semicolon? 😊",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "324cc6f1_c2f33680",
+        "filename": "test/meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "Wow!  What in the world is all this?  I see this set in a bunch of other repositories but I have absolutely no idea why.\n\nWe should figure this out and do it right.  There should be a meson cross-compile target in the sdk that handles all this for you.",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "aad35162_951196d8",
+        "filename": "test/meson.build",
+        "patchSetId": 32
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-21T17:32:40Z",
+      "side": 1,
+      "message": "Why are these handled as a dependency rather than just adding in the sources into the \u0027executable\u0027 call on line 30?  Are you intending to make a static library here?",
+      "revId": "c24f5c565eb02ea3a597de41506cd0e19dbbf2f6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
