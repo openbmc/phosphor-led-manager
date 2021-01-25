@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "manager.hpp"
 
 #include <phosphor-logging/log.hpp>

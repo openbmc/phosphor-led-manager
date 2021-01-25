@@ -29,6 +29,7 @@ void LampTest::stop()
     }
 
     timer.setEnabled(false);
+    doHostLampTest(false);
 
     // Set all the Physical action to Off
     for (const auto& path : physicalLEDPaths)
@@ -123,6 +124,9 @@ void LampTest::start()
     timer.restart(std::chrono::seconds(LAMP_TEST_TIMEOUT_IN_SECS));
     isLampTestRunning = true;
 
+    // Notify PHYP to start the lamp test
+    doHostLampTest(true);
+
     // Set all the Physical action to On for lamp test
     for (const auto& path : physicalLEDPaths)
     {
@@ -140,6 +144,7 @@ void LampTest::timeOutHandler()
     }
 
     groupObj->asserted(false);
+    doHostLampTest(false);
 }
 
 void LampTest::requestHandler(Group* group, bool value)
@@ -172,6 +177,23 @@ void LampTest::restorePhysicalLedStates()
         auto& [ledsAssert, ledsDeAssert] = savedPhysicalLedStates.front();
         manager.driveLEDs(ledsAssert, ledsDeAssert);
         savedPhysicalLedStates.pop();
+    }
+}
+
+void LampTest::doHostLampTest(bool value)
+{
+    try
+    {
+        PropertyValue assertedValue{value};
+        dBusHandler.setProperty(HOST_LAMP_TEST_OBJECT,
+                                "xyz.openbmc_project.Led.Group", "Asserted",
+                                assertedValue);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to set Asserted property",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
     }
 }
 
