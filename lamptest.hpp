@@ -110,6 +110,12 @@ class LampTest
      *  @return enumeration equivalent of the passed in string
      */
     Layout::Action getActionFromString(const std::string& str);
+
+    /** @brief Notify PHYP to start / stop the lamp test
+     *
+     *  @param[in]  value   -  the Asserted property value
+     */
+    void doHostLampTest(bool value);
 };
 
 } // namespace led
