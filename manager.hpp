@@ -136,6 +136,12 @@ class Manager
     void setLampTestCallBack(
         std::function<void(group& ledsAssert, group& ledsDeAssert)> callBack);
 
+    /** @brief Notify PHYP to start the lamp test
+     *
+     *  @param[in]  value   -  the Asserted property value
+     */
+    void startHostLampTest(bool value);
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;

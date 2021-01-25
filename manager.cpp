@@ -1,3 +1,5 @@
+#include "config.h"
+
 #include "manager.hpp"
 
 #include <phosphor-logging/log.hpp>
@@ -242,6 +244,23 @@ void Manager::setOperationalStatus(const std::string& path, bool value) const
                             entry("ERROR=%s", e.what()),
                             entry("PATH=%s", fruInstancePath.c_str()));
         }
+    }
+}
+
+void Manager::startHostLampTest(bool value)
+{
+    try
+    {
+        PropertyValue assertedValue{value};
+        dBusHandler.setProperty(HOST_LAMP_TEST_OBJECT,
+                                "xyz.openbmc_project.Led.Group", "Asserted",
+                                assertedValue);
+    }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        log<level::ERR>("Failed to set Asserted property",
+                        entry("ERROR=%s", e.what()),
+                        entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
     }
 }
 
