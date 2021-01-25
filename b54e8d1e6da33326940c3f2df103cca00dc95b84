@@ -34,6 +34,24 @@
       "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6ffab771_10fe7fe7",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-25T07:45:49Z",
+      "side": 1,
+      "message": "They are yet to define the specifics. What we know is what I have outlined in the github issue.",
+      "parentUuid": "27aaa91d_07ae5edc",
+      "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
