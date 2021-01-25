@@ -136,6 +136,8 @@ class Manager
     void setLampTestCallBack(
         std::function<void(group& ledsAssert, group& ledsDeAssert)> callBack);
 
+    void setHostLampTest(bool value);
+
   private:
     /** @brief sdbusplus handler */
     sdbusplus::bus::bus& bus;

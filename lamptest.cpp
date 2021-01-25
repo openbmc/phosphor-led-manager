@@ -29,6 +29,7 @@ void LampTest::stop()
     }
 
     timer.setEnabled(false);
+    manager.setHostLampTest(false);
 
     // Set all the Physical action to Off
     for (const auto& path : physicalLEDPaths)
@@ -119,6 +120,7 @@ void LampTest::start()
 
     // restart lamp test, it contains initiate or reset the timer.
     timer.restart(std::chrono::seconds(LAMP_TEST_TIMEOUT_IN_SECS));
+    manager.setHostLampTest(true);
     isLampTestRunning = true;
 
     // Set all the Physical action to On for lamp test
@@ -138,6 +140,7 @@ void LampTest::timeOutHandler()
     }
 
     groupObj->asserted(false);
+    manager.setHostLampTest(false);
 }
 
 void LampTest::requestHandler(Group* group, bool value)

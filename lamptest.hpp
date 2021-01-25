@@ -72,6 +72,9 @@ class LampTest
     /** @brief Pointer to Group object */
     Group* groupObj;
 
+    /** @brief Pointer to host lamp test Group object */
+    Group* hostGroupObj;
+
     /** all the Physical paths */
     std::vector<std::string> physicalLEDPaths;
 
