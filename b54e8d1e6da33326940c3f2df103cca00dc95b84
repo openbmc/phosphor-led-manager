@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2c6ae29f_767ab841",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-01-25T06:27:37Z",
+      "side": 1,
+      "message": "Hmm.. I believe, it should not be user configurable since it\u0027s something defined by PHYP and we need to use that... btw, how was it done for soft power off ?",
+      "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
