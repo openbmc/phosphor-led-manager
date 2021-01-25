@@ -95,6 +95,9 @@ AC_ARG_VAR(LAMP_TEST_OBJECT, [The lamp test object])
 # lamp test timeout secs
 AC_ARG_VAR(LAMP_TEST_TIMEOUT_IN_SECS, [The lamp test timeout in seconds])
 
+# The effecter id by the PHYP-provided
+AC_ARG_VAR(LAMP_TEST_EFFECTER_ID, [BMC sets a PHYP-provided Numeric Effecter to start lamp test])
+
 AS_IF([test "x$enable_use_lamp_test" == "xyes"],
     AC_DEFINE([USE_LAMP_TEST],[],[Enable lamp test configuration.])
 
@@ -103,6 +106,9 @@ AS_IF([test "x$enable_use_lamp_test" == "xyes"],
 
     AS_IF([test "x$LAMP_TEST_TIMEOUT_IN_SECS" == "x"], [LAMP_TEST_TIMEOUT_IN_SECS=240])
     AC_DEFINE_UNQUOTED([LAMP_TEST_TIMEOUT_IN_SECS], [$LAMP_TEST_TIMEOUT_IN_SECS], [The lamp test timeout in seconds])
+
+    AS_IF([test "x$LAMP_TEST_EFFECTER_ID" == "x"], [LAMP_TEST_EFFECTER_ID=0])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_EFFECTER_ID], [$LAMP_TEST_EFFECTER_ID], [BMC sets a PHYP-provided Numeric Effecter to start lamp test])
 )
 
 # Path of file for storing the names of asserted groups
