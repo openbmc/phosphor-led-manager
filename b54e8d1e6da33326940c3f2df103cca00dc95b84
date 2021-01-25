@@ -52,6 +52,24 @@
       "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "862a62a2_bdf0386d",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-25T07:49:21Z",
+      "side": 1,
+      "message": "Okay, Since these values are hard-cord, I think we can define a temporary value and we will update it later.",
+      "parentUuid": "6ffab771_10fe7fe7",
+      "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
