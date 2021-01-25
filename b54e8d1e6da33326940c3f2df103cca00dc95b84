@@ -16,6 +16,24 @@
       "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "27aaa91d_07ae5edc",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-25T06:57:14Z",
+      "side": 1,
+      "message": "Right, we can use the FindStateEffecterPDR interface to get effecterID.\nBut Do you know what the value of the StateSetId is?\nhttps://github.com/openbmc/phosphor-dbus-interfaces/blob/master/xyz/openbmc_project/PLDM/PDR.interface.yaml#L46",
+      "parentUuid": "2c6ae29f_767ab841",
+      "revId": "b54e8d1e6da33326940c3f2df103cca00dc95b84",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
