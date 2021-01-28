@@ -1,0 +1,112 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "39e53593_ced1cde7",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 34
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "I would suggest figuring out how to add these to the -I path instead of using relative paths.",
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8100a84f_b4f7e459",
+        "filename": "gen/meson.build",
+        "patchSetId": 34
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "You might want to copy the \u0027regenerate\u0027 script from phosphor-dbus-interfaces too.",
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09f687b9_977e5b51",
+        "filename": "meson.build",
+        "patchSetId": 34
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "I don\u0027t think you should be installing these in this repository.  These are internal-only interfaces so we do not want to pollute the rest of the world with them.",
+      "range": {
+        "startLine": 100,
+        "startChar": 0,
+        "endLine": 114,
+        "endChar": 1
+      },
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6af46453_414ff3b9",
+        "filename": "meson.build",
+        "patchSetId": 34
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "You certainly should not be building and generating this shared library.  You\u0027ll overwrite the real phosphor-dbus-interfaces.",
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e5da82b_8585e7a4",
+        "filename": "meson_options.txt",
+        "patchSetId": 34
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "Still have this around...",
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "13a2c8f9_4797f886",
+        "filename": "test/meson.build",
+        "patchSetId": 34
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-01-28T12:23:33Z",
+      "side": 1,
+      "message": "I think you should use a \u0027sources\u0027 array variable of some sort to find these.  Relative paths should rarely be used in meson.",
+      "revId": "66f601ae5b68c5fc769b5e00de807da7ee633919",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
