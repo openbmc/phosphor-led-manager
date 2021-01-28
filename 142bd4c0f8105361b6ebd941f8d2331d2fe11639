@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "00246f13_8e6b35cc",
+        "filename": "configure.ac",
+        "patchSetId": 18
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-28T08:41:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "528524d4_5d78c8c2",
+      "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "10cdd734_a544bfef",
         "filename": "lamptest.hpp",
         "patchSetId": 18
@@ -30,6 +48,47 @@
       "writtenOn": "2021-01-19T05:47:10Z",
       "side": 1,
       "message": "please put a comment here on why std:;chrono is used",
+      "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63a05f31_a5b7ebcc",
+        "filename": "lamptest.hpp",
+        "patchSetId": 18
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-28T08:41:59Z",
+      "side": 1,
+      "message": "sorry, this is redundant, removed.",
+      "parentUuid": "10cdd734_a544bfef",
+      "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f2fe72d1_3ba02863",
+        "filename": "lamptest.hpp",
+        "patchSetId": 18
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-01-28T08:41:59Z",
+      "side": 1,
+      "message": "should remove const.\n`binding reference of type \u0027phosphor::led::Manager\u0026\u0027 to \u0027const phosphor::led::Manager\u0027 discards qualifiers`",
+      "range": {
+        "startLine": 37,
+        "startChar": 46,
+        "endLine": 37,
+        "endChar": 51
+      },
       "revId": "142bd4c0f8105361b6ebd941f8d2331d2fe11639",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
