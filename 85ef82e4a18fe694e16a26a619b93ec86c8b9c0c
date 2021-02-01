@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9ae5ff89_37b0a2fe",
+        "filename": "lamptest.hpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-01T10:16:33Z",
+      "side": 1,
+      "message": "it does not contain anything.. Did you mean to say it will be called as part of fresh start or a test restart ?",
+      "revId": "85ef82e4a18fe694e16a26a619b93ec86c8b9c0c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fe9a55a0_94ef8f1a",
+        "filename": "lamptest.hpp",
+        "patchSetId": 19
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-01T10:16:33Z",
+      "side": 1,
+      "message": "Please put a comment explaining what it is. \n\n\"The lamp test timeout\" does not mean anything that describes the function.",
+      "revId": "85ef82e4a18fe694e16a26a619b93ec86c8b9c0c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
