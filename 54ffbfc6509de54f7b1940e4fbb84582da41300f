@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4d4804fe_56235254",
+        "filename": "lamptest.hpp",
+        "patchSetId": 20
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-02T15:55:29Z",
+      "side": 1,
+      "message": "hmm.. this does not bind with the timer .\n\nhow about \"This method gets called when the lamp test procedure is done as part of timeout\"",
+      "revId": "54ffbfc6509de54f7b1940e4fbb84582da41300f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
