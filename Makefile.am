@@ -24,4 +24,11 @@ phosphor_ledmanager_CFLAGS =  $(SDBUSPLUS_CFLAGS) \
                               $(PHOSPHOR_LOGGING_CFLAGS) \
                               $(PHOSPHOR_DBUS_INTERFACES_CFLAGS)
 
+led_default_configdir    	 = 	${datadir}/phosphor-led-manager
+led_ibm_rainier_2u_configdir = 	${datadir}/phosphor-led-manager/ibm,rainier-2u
+led_ibm_rainier_4u_configdir = 	${datadir}/phosphor-led-manager/ibm,rainier-4u
+
+led_ibm_rainier_2u_config_DATA = configs/ibm,rainier-2u/led-group-config.json
+led_ibm_rainier_4u_config_DATA = configs/ibm,rainier-4u/led-group-config.json
+
 SUBDIRS = test fault-monitor
