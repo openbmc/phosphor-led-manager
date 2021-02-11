@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "533764d5_531a10c2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm.. we don\u0027t have to explain how it\u0027s done since that is what the code tells.. The commit message tells what and why mostly and with test results",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a83c5af3_1ef8a1fb",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm.. I am not following this.. there is no assert / de-assert for this..\n\nIt\u0027s just about Physical LED D-Bus objects and its current state.\n\nIf something is in [OFF] state, we don\u0027t have to save \u0027em here. At the end of lamp test, we are going to make everything as OFF anyway and when we re-apply, we apply what was in On/Blink state..\n\nSo, all we need is just one set",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "94025030_f27ed635",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "this can be a second request.. we need to reset the timer and then return",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "590c4dd3_9e3866fe",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "Is there any call that gives all paths and all its properties in one call ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a60c5734_1fd01935",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm.. so we moved this from manager to this class ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d9f12c9_f753a8e7",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "there is nothing to be de-asserted. Don\u0027t need to make from OFF to OFF",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "01a8e82f_330d6ddb",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm... it can not be like this .\n\nwe need to : \n\n1 : Save physical LED states\n2 : Save ledsAssert and ledsDeAssert into queue in manager as part of SetGroupState\n3: Apply physical LED states ( that is saved from no: 1 )",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "552f0bf6_5db47ee6",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm.. I am confused .. the Queue needs to be in manager to store ledsAssert and ledsDeAssert when setGroupState comes in when lamp test is running",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3afd2314_4655bbe4",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "hmm.. we don\u0027t assert / de-assert anything before lamp test.",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f4d973f0_3a4cdf42",
+        "filename": "led-main.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "Please put comments on what and why is this needed.\n\nIn general, please always put appropriate comments all through the code.",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9e9bd3b7_1ff65cf8",
+        "filename": "manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "I would say I have not understood this whole change :(",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bb42f1ae_85bfc5d6",
+        "filename": "manager.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-11T07:01:48Z",
+      "side": 1,
+      "message": "sorry.. why is this needed ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
