@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "0d6751ea_d17642e0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T03:23:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bb33261e_4565c999",
+      "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "1d7ca405_8b732aa8",
         "filename": "lamptest.cpp",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e88e32b7_69707739",
+        "filename": "lamptest.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T03:23:59Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "1d7ca405_8b732aa8",
+      "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "be13fc26_243f81c0",
+        "filename": "lamptest.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T03:23:59Z",
+      "side": 1,
+      "message": "\u003e this needs to be after we set the variable to true\n\nAck\n\n\u003e BTW, why is this being routed via manager instead of from inside lamp test class itself ?\n\nRight, Done.",
+      "parentUuid": "7cbb203a_c559f6c6",
+      "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7ffd4acc_f49bd574",
         "filename": "manager.cpp",
         "patchSetId": 4
@@ -67,6 +121,24 @@
       "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "43e888de_ae470908",
+        "filename": "manager.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 250,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T03:23:59Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ffd4acc_f49bd574",
+      "revId": "817894a6599b94a10a9d9ca6fcce091e9b95380a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
