@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "4032d9ca_5b3ed475",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 25
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "533764d5_531a10c2",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a83c5af3_1ef8a1fb",
         "filename": "lamptest.cpp",
         "patchSetId": 25
@@ -30,6 +48,24 @@
       "writtenOn": "2021-02-11T07:01:48Z",
       "side": 1,
       "message": "hmm.. I am not following this.. there is no assert / de-assert for this..\n\nIt\u0027s just about Physical LED D-Bus objects and its current state.\n\nIf something is in [OFF] state, we don\u0027t have to save \u0027em here. At the end of lamp test, we are going to make everything as OFF anyway and when we re-apply, we apply what was in On/Blink state..\n\nSo, all we need is just one set",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "720093b7_ad761982",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Yes.\nFor logical clarity, I suggest using two sets, if you disagree, I can remove.",
+      "parentUuid": "a83c5af3_1ef8a1fb",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "e2eafa05_c5d6f42d",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "94025030_f27ed635",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "590c4dd3_9e3866fe",
         "filename": "lamptest.cpp",
         "patchSetId": 25
@@ -64,6 +118,24 @@
       "writtenOn": "2021-02-11T07:01:48Z",
       "side": 1,
       "message": "Is there any call that gives all paths and all its properties in one call ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "60b59641_9f44cb85",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Sorry, AFAIK, it doesn’t seem.",
+      "parentUuid": "590c4dd3_9e3866fe",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "47347a39_027f9dac",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Yes.\nThe manager only needs to call the callback method when starting the lamp test, so that the lamp test class is separated from the manager class",
+      "parentUuid": "a60c5734_1fd01935",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5d9f12c9_f753a8e7",
         "filename": "lamptest.cpp",
         "patchSetId": 25
@@ -98,6 +188,24 @@
       "writtenOn": "2021-02-11T07:01:48Z",
       "side": 1,
       "message": "there is nothing to be de-asserted. Don\u0027t need to make from OFF to OFF",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "be02a1ed_db8f0efd",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Sure, as I said, I will remove it if you disagree to use two sets.",
+      "parentUuid": "5d9f12c9_f753a8e7",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "db437188_f4f65b61",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "No, It just call the callback method in manager.\nIt replaces the following methods:\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/22/manager.cpp#112",
+      "parentUuid": "01a8e82f_330d6ddb",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "552f0bf6_5db47ee6",
         "filename": "lamptest.hpp",
         "patchSetId": 25
@@ -132,6 +258,24 @@
       "writtenOn": "2021-02-11T07:01:48Z",
       "side": 1,
       "message": "hmm.. I am confused .. the Queue needs to be in manager to store ledsAssert and ledsDeAssert when setGroupState comes in when lamp test is running",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b55e7049_663fd54e",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "\u003e the Queue needs to be in manager to store ledsAssert and ledsDeAssert when setGroupState comes in when lamp test is running\n\nYes. just call the callback method in manager. see:\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/25/lamptest.cpp#18",
+      "parentUuid": "552f0bf6_5db47ee6",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "617f920e_87da8025",
+        "filename": "lamptest.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Yes\nWe use assert/de-assert when starting lamp test.",
+      "parentUuid": "3afd2314_4655bbe4",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "f4d973f0_3a4cdf42",
         "filename": "led-main.cpp",
         "patchSetId": 25
@@ -169,6 +331,24 @@
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa198a5c_ece58d34",
+        "filename": "led-main.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f4d973f0_3a4cdf42",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -189,6 +369,24 @@
     },
     {
       "key": {
+        "uuid": "09b9900f_c83d6ce3",
+        "filename": "manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Use the callback method of the lamp test, we only need to call the callback method in manager, and all lamp test operations are performed in the lamp test class.\n\nAlso, We can discuss the overall logic in `discord` 😊",
+      "parentUuid": "9e9bd3b7_1ff65cf8",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "bb42f1ae_85bfc5d6",
         "filename": "manager.hpp",
         "patchSetId": 25
@@ -200,6 +398,24 @@
       "writtenOn": "2021-02-11T07:01:48Z",
       "side": 1,
       "message": "sorry.. why is this needed ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1dedcd5f_53d7eb74",
+        "filename": "manager.hpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:39Z",
+      "side": 1,
+      "message": "Register a lamp test method in the manager class, and call this method when the lamp test is started, which realizes the separation of the manager class and the lamp test class.",
+      "parentUuid": "bb42f1ae_85bfc5d6",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
