@@ -37,6 +37,23 @@
     },
     {
       "key": {
+        "uuid": "1dec5d93_ef108a32",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T08:28:54Z",
+      "side": 1,
+      "message": "hmm.. why is this a tuple and not a pair ?",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "a83c5af3_1ef8a1fb",
         "filename": "lamptest.cpp",
         "patchSetId": 25
@@ -212,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "154107d2_9107e10b",
+        "filename": "lamptest.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T08:28:54Z",
+      "side": 1,
+      "message": "If we are doing this in addition to powering off all physical LEDs, then it would un-necessarily make a lot of D-Bus calls here since they are anyway OFF. So, either have this contain only ledsAssert -or- have both here _and_ remove turning all OFF.",
+      "parentUuid": "be02a1ed_db8f0efd",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "01a8e82f_330d6ddb",
         "filename": "lamptest.hpp",
         "patchSetId": 25
@@ -381,6 +416,24 @@
       "side": 1,
       "message": "Use the callback method of the lamp test, we only need to call the callback method in manager, and all lamp test operations are performed in the lamp test class.\n\nAlso, We can discuss the overall logic in `discord` 😊",
       "parentUuid": "9e9bd3b7_1ff65cf8",
+      "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3cf500c7_69ee4b36",
+        "filename": "manager.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T08:28:54Z",
+      "side": 1,
+      "message": "That is why I recommend putting comments on _why_ we are doing anything.. Please put comments in the code.",
+      "parentUuid": "09b9900f_c83d6ce3",
       "revId": "eb185f007674f3eb6deac0d347bb201e568172e6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
