@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "2633289f_334d1002",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "please consider putting comments wherever appropriate",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2fe6b79a_49842812",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "auto name ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4580b5f6_b5dc5c33",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "name ? which name ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c5dd3e7_f7bb36df",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "ledState --\u003e state is enough I believe",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa888b47_ed38f3eb",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "const group\u0026 ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "25c870f7_2a790d48",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "std::pair ?. Any reason why tuple over pair ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "347fc312_045ac4c2",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "Assert is a group terminology and it\u0027s not for physical LED.\n\ngroup `lastLedOnState` and `lastLedOffState` ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "800521db_87c3b4d1",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "finished --\u003e finishes ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "85b8f4c4_b302e74c",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "hmm.. why is this needed ?.. We can use the standard sdbusplus one ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d479cde9_8f233b6e",
+        "filename": "manager.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "if lamp test is running, we should not be calling the below ones. We need to return from driveLEDs() function post saving in the Queue",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b66769f_27c57864",
+        "filename": "manager.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-15T15:09:31Z",
+      "side": 1,
+      "message": "Looks like this is kind of complex.. Do you think of any other ways ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
