@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5045f44a_32c12c78",
+        "filename": "lamptest.cpp",
+        "patchSetId": 21
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-15T02:15:59Z",
+      "side": 1,
+      "message": "Yes, see:\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/25/lamptest.cpp#118",
+      "parentUuid": "b0b6ba3a_e90a7ec3",
+      "revId": "4e20158e9b7f4b3e6b59ce1042d87128322c3d8c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "3c521218_4d6cbaf7",
         "filename": "lamptest.cpp",
         "patchSetId": 21
