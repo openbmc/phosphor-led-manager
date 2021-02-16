@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "87acd753_6ae3fec5",
+        "filename": "lamptest.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "hmm.. I am not following why it should return anything.. if the lamp test is running, it needs to store it in Queue..\n\nAlso, please could you use \"std::queue::push\" ?\n\nPlease put comments on why this is code does what it does. \n\nBasically, looking for comments that answer \"why\" something is being done the way it. Else, someone needs to understand the lamp test requirements",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7b61e0b1_0e447641",
+        "filename": "lamptest.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "not really.. the state can be ON/Blink.",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "163904d2_b864ae2c",
+        "filename": "lamptest.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "hmm.. but why would this need to return anything ?",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c78f4b4d_3877443a",
+        "filename": "manager.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "I mean, is there not way to know if the lamp test is currently in progress ?. This looks like a round about to me..",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}

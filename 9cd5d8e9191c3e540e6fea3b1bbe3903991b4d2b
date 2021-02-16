@@ -72,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "a62dd6a9_2ce396c5",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "right.. I was asking to use \"auto\" instead of \"std::string\". Does that not work ?",
+      "parentUuid": "434623f7_e12406a2",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4580b5f6_b5dc5c33",
         "filename": "lamptest.cpp",
         "patchSetId": 27
@@ -101,6 +119,24 @@
       "side": 1,
       "message": "the name of each member of the LED group",
       "parentUuid": "4580b5f6_b5dc5c33",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "93885310_a817f414",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "Right.. can that info be captured in the message ?. \"Failed to get name\" does not tell anything about what is the \"name\" about.",
+      "parentUuid": "14eef0ee_8b326545",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -364,6 +400,24 @@
       "side": 1,
       "message": "Right, if lamp test is running, return.",
       "parentUuid": "d479cde9_8f233b6e",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "869ae628_518d1e02",
+        "filename": "manager.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-16T12:39:17Z",
+      "side": 1,
+      "message": "Right.. but the code here continues to line 117",
+      "parentUuid": "4871898a_db78b574",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
