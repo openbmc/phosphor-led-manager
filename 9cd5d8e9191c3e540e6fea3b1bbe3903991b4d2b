@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e70b4d15_4df10458",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2633289f_334d1002",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2fe6b79a_49842812",
         "filename": "lamptest.cpp",
         "patchSetId": 27
@@ -30,6 +48,24 @@
       "writtenOn": "2021-02-15T15:09:31Z",
       "side": 1,
       "message": "auto name ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "434623f7_e12406a2",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "No\nBecause filename return std::string.",
+      "parentUuid": "2fe6b79a_49842812",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "14eef0ee_8b326545",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "the name of each member of the LED group",
+      "parentUuid": "4580b5f6_b5dc5c33",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5c5dd3e7_f7bb36df",
         "filename": "lamptest.cpp",
         "patchSetId": 27
@@ -67,6 +121,24 @@
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "71ff834d_c5ae81db",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5c5dd3e7_f7bb36df",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "b62b6085_41481bc2",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "fa888b47_ed38f3eb",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "25c870f7_2a790d48",
         "filename": "lamptest.hpp",
         "patchSetId": 27
@@ -101,6 +191,24 @@
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d50fda4d_0b6a0ab7",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "25c870f7_2a790d48",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +247,24 @@
     },
     {
       "key": {
+        "uuid": "6a27204b_a4c7a064",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 85,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "084fe019_4f92a32c",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "800521db_87c3b4d1",
         "filename": "lamptest.hpp",
         "patchSetId": 27
@@ -156,6 +282,24 @@
     },
     {
       "key": {
+        "uuid": "5e2d9024_5613174f",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 101,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "800521db_87c3b4d1",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "85b8f4c4_b302e74c",
         "filename": "lamptest.hpp",
         "patchSetId": 27
@@ -167,6 +311,24 @@
       "writtenOn": "2021-02-15T15:09:31Z",
       "side": 1,
       "message": "hmm.. why is this needed ?.. We can use the standard sdbusplus one ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "54aed8fc_e3ecbcbd",
+        "filename": "lamptest.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "sdbusplus using `enum class Action`, but LedManager using `enum Action`, so we can not use the standard sdbusplus, unless we remove `enum Action` and use `enum class Action`.",
+      "parentUuid": "85b8f4c4_b302e74c",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -190,6 +352,24 @@
     },
     {
       "key": {
+        "uuid": "4871898a_db78b574",
+        "filename": "manager.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Right, if lamp test is running, return.",
+      "parentUuid": "d479cde9_8f233b6e",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b66769f_27c57864",
         "filename": "manager.hpp",
         "patchSetId": 27
@@ -201,6 +381,24 @@
       "writtenOn": "2021-02-15T15:09:31Z",
       "side": 1,
       "message": "Looks like this is kind of complex.. Do you think of any other ways ?",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "355d443b_3635ad17",
+        "filename": "manager.hpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-16T07:55:20Z",
+      "side": 1,
+      "message": "Sorry, Currently, I think this is the best way 😊",
+      "parentUuid": "7b66769f_27c57864",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
