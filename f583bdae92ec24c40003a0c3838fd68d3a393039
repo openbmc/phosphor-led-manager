@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "16b13df7_2a5a5586",
+        "filename": "lamptest.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "\u003e hmm.. I am not following why it should return anything.. \n\nin the Manager::driveLEDs method, will retrun if the lamp test is running, correct?\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/29/manager.cpp#116\n\n\u003e if the lamp test is running, it needs to store it in Queue..\n\nYes, see L:19\n\n\u003e Also, please could you use \"std::queue::push\" ?\n\nNo, i dont recommend using push, Because `push` has one more copy than `emplace`\n\n\u003e Please put comments on why this is code does what it does. \n\nDone.",
+      "parentUuid": "87acd753_6ae3fec5",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7b61e0b1_0e447641",
         "filename": "lamptest.cpp",
         "patchSetId": 29
@@ -30,6 +48,24 @@
       "writtenOn": "2021-02-16T12:39:17Z",
       "side": 1,
       "message": "not really.. the state can be ON/Blink.",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9bc750c_41357035",
+        "filename": "lamptest.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "Yes, please see the getActionFormString method.\nMaybe i am not following what your mean?",
+      "parentUuid": "7b61e0b1_0e447641",
       "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "a926a100_39c9304d",
+        "filename": "lamptest.hpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "Notify the manager whether the lamp test is in progress through the callback method.",
+      "parentUuid": "163904d2_b864ae2c",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "c78f4b4d_3877443a",
         "filename": "manager.cpp",
         "patchSetId": 29
@@ -64,6 +118,24 @@
       "writtenOn": "2021-02-16T12:39:17Z",
       "side": 1,
       "message": "I mean, is there not way to know if the lamp test is currently in progress ?. This looks like a round about to me..",
+      "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fbd35c55_8c3ada5b",
+        "filename": "manager.cpp",
+        "patchSetId": 29
+      },
+      "lineNbr": 116,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "\u003e  is there not way to know if the lamp test is currently in progress ?\n\nAs like i said, we can know if the lamp test is currently in progress via the return value of the callback method.\nSorry, right now, i think this is good way 😊\n\n\u003e This looks like a round about to me..\n\nNo, Vishwa, This is just a call back method.",
+      "parentUuid": "c78f4b4d_3877443a",
       "revId": "f583bdae92ec24c40003a0c3838fd68d3a393039",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true

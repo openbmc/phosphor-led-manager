@@ -90,6 +90,24 @@
     },
     {
       "key": {
+        "uuid": "2ab6252d_8cb42d40",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "No, that work fine.\ni just want to say that using `auto` will cause confusion to the return type.\nBut i am OK if use `auto`.",
+      "parentUuid": "a62dd6a9_2ce396c5",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "4580b5f6_b5dc5c33",
         "filename": "lamptest.cpp",
         "patchSetId": 27
@@ -140,6 +158,24 @@
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "989b4585_87c6bbe3",
+        "filename": "lamptest.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "93885310_a817f414",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -418,6 +454,24 @@
       "side": 1,
       "message": "Right.. but the code here continues to line 117",
       "parentUuid": "4871898a_db78b574",
+      "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c54c5f39_ee67e9f9",
+        "filename": "manager.cpp",
+        "patchSetId": 27
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-17T01:39:05Z",
+      "side": 1,
+      "message": "updated.\nhttps://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/29/manager.cpp#118",
+      "parentUuid": "869ae628_518d1e02",
       "revId": "9cd5d8e9191c3e540e6fea3b1bbe3903991b4d2b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
