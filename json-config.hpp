@@ -1,147 +1,212 @@
-#include "config.h"
+#include "utils.hpp"
 
-#include "ledlayout.hpp"
+#include <unistd.h>
 
-#include <nlohmann/json.hpp>
 #include <phosphor-logging/log.hpp>
+#include <sdbusplus/exception.hpp>
 
 #include <filesystem>
 #include <fstream>
-#include <iostream>
 
 namespace fs = std::filesystem;
 
-using Json = nlohmann::json;
-using LedAction = std::set<phosphor::led::Layout::LedAction>;
-using LedMap = std::map<std::string, LedAction>;
+using namespace phosphor::logging;
 
-// Priority for a particular LED needs to stay SAME across all groups
-// phosphor::led::Layout::Action can only be one of `Blink` and `On`
-using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
-
-/** @brief Parse LED JSON file and output Json object
- *
- *  @param[in] path - path of LED JSON file
- *
- *  @return const Json - Json object
- */
-const Json readJson(const fs::path& path)
+namespace phosphor::led
 {
-    using namespace phosphor::logging;
 
-    if (!fs::exists(path) || fs::is_empty(path))
+static constexpr auto confOverridePath = "/etc/phosphor-led-manager";
+static constexpr auto confBasePath = "/usr/share/phosphor-led-manager";
+static constexpr auto confCompatIntf =
+    "xyz.openbmc_project.Configuration.IBMCompatibleSystem";
+static constexpr auto confCompatProp = "Names";
+
+class JsonConfig
+{
+  public:
+    /**
+     * @brief Constructor
+     *
+     * Looks for the JSON config file.  If it can't find one, then it
+     * will watch entity-manager for the IBMCompatibleSystem interface
+     * to show up.
+     *
+     * @param[in] bus       - The dbus bus object
+     * @param[in] fileName  - Application's configuration file's name
+     */
+    JsonConfig(sdbusplus::bus::bus& bus, const std::string& fileName) :
+        _fileName(fileName)
     {
-        log<level::ERR>("Incorrect File Path or empty file",
-                        entry("FILE_PATH=%s", path.c_str()));
-        throw std::runtime_error("Incorrect File Path or empty file");
+        _match = std::make_unique<sdbusplus::server::match::match>(
+            bus,
+            sdbusplus::bus::match::rules::interfacesAdded() +
+                sdbusplus::bus::match::rules::sender(
+                    "xyz.openbmc_project.EntityManager"),
+            std::bind(&JsonConfig::ifacesAddedCallback, this,
+                      std::placeholders::_1));
+        try
+        {
+            getFilePath();
+        }
+        catch (const std::runtime_error& e)
+        {
+            // No conf file found, so let the interfacesAdded
+            // match callback handle finding it.
+        }
+
+        if (!_confFile.empty())
+        {
+            _match.reset();
+        }
     }
 
-    try
+    /**
+     * @brief Get the configuration file
+     *
+     * @return filesystem path
+     */
+    const fs::path getConfFile()
     {
-        std::ifstream jsonFile(path);
-        return Json::parse(jsonFile);
+        return _confFile;
     }
-    catch (const std::exception& e)
+
+  private:
+    /**
+     * @brief The interfacesAdded callback function that looks for
+     *        the IBMCompatibleSystem interface.  If it finds it,
+     *        it uses the Names property in the interface to find
+     *        the JSON config file to use.
+     *
+     * @param[in] msg - The D-Bus message contents
+     */
+    void ifacesAddedCallback(sdbusplus::message::message& msg)
     {
-        log<level::ERR>("Failed to parse config file",
-                        entry("ERROR=%s", e.what()),
-                        entry("FILE_PATH=%s", path.c_str()));
-        throw std::runtime_error("Failed to parse config file");
+        sdbusplus::message::object_path path;
+        std::map<std::string,
+                 std::map<std::string, std::variant<std::vector<std::string>>>>
+            interfaces;
+
+        msg.read(path, interfaces);
+
+        if (interfaces.find(confCompatIntf) == interfaces.end())
+        {
+            return;
+        }
+
+        const auto& properties = interfaces.at(confCompatIntf);
+        auto names =
+            std::get<std::vector<std::string>>(properties.at(confCompatProp));
+
+        auto it =
+            std::find_if(names.begin(), names.end(), [this](auto const& name) {
+                auto confFile = fs::path{confBasePath} / name / _fileName;
+                if (fs::exists(confFile))
+                {
+                    _confFile = confFile;
+                    return true;
+                }
+                return false;
+            });
+
+        if (it != names.end())
+        {
+            _match.reset();
+        }
     }
-}
 
-/** @brief Returns action enum based on string
- *
- *  @param[in] action - action string
- *
- *  @return Action - action enum (On/Blink)
- */
-phosphor::led::Layout::Action getAction(const std::string& action)
-{
-    assert(action == "On" || action == "Blink");
-
-    return action == "Blink" ? phosphor::led::Layout::Blink
-                             : phosphor::led::Layout::On;
-}
-
-/** @brief Validate the Priority of an LED is same across ALL groups
- *
- *  @param[in] name - led name member of each group
- *  @param[in] priority - member priority of each group
- *  @param[out] priorityMap - std::map, key:name, value:priority
- *
- *  @return
- */
-void validatePriority(const std::string& name,
-                      const phosphor::led::Layout::Action& priority,
-                      PriorityMap& priorityMap)
-{
-    using namespace phosphor::logging;
-
-    auto iter = priorityMap.find(name);
-    if (iter == priorityMap.end())
+    /**
+     * Get the json configuration file. The first location found to contain
+     * the json config file for the given fan application is used from the
+     * following locations in order.
+     * 1.) From the confOverridePath location
+     * 2.) From the confBasePath location
+     * 3.) From config file found using an entry from a list obtained from an
+     * interface's property as a relative path extension on the base path where:
+     *     interface = Interface set in confCompatIntf with the property
+     *     property = Property set in confCompatProp containing a list of
+     *                subdirectories in priority order to find a config
+     *
+     * @brief Get the configuration file to be used
+     *
+     * @return
+     */
+    const void getFilePath()
     {
-        priorityMap.emplace(name, priority);
+        // Check override location
+        _confFile = fs::path{confOverridePath} / _fileName;
+        if (fs::exists(_confFile))
+        {
+            return;
+        }
+
+        // If the default file is there, use it
+        _confFile = fs::path{confBasePath} / _fileName;
+        if (fs::exists(_confFile))
+        {
+            return;
+        }
+        _confFile.clear();
+
+        // Get all objects implementing the compatible interface
+        auto objects = dBusHandler.getSubTreePaths("/", confCompatIntf);
+        for (auto& path : objects)
+        {
+            try
+            {
+                // Retrieve json config compatible relative path locations
+                PropertyValue value = dBusHandler.getProperty(
+                    path, confCompatIntf, confCompatProp);
+
+                auto confCompatValue =
+                    std::get<std::vector<std::string>>(value);
+                // Look for a config file at each entry relative to the base
+                // path and use the first one found
+                auto it =
+                    std::find_if(confCompatValue.begin(), confCompatValue.end(),
+                                 [this](auto const& entry) {
+                                     this->_confFile = fs::path{confBasePath} /
+                                                       entry / this->_fileName;
+                                     return fs::exists(this->_confFile);
+                                 });
+                if (it != confCompatValue.end())
+                {
+                    // Use the first config file found at a listed location
+                    break;
+                }
+                _confFile.clear();
+            }
+            catch (const sdbusplus::exception::SdBusError& e)
+            {
+                // Property unavailable on object.
+                log<level::ERR>("Failed to get Names property",
+                                entry("ERROR=%s", e.what()),
+                                entry("INTERFACE=%s", confCompatIntf),
+                                entry("PATH=%s", path.c_str()));
+            }
+        }
+
         return;
     }
 
-    if (iter->second != priority)
-    {
-        log<level::ERR>("Priority of LED is not same across all",
-                        entry("Name=%s", name.c_str()),
-                        entry(" Old Priority=%d", iter->second),
-                        entry(" New priority=%d", priority));
+  private:
+    /**
+     * @brief The config file name.
+     */
+    const std::string _fileName;
 
-        throw std::runtime_error(
-            "Priority of at least one LED is not same across groups");
-    }
-}
+    /**
+     * @brief The JSON config file
+     */
+    fs::path _confFile;
 
-/** @brief Load JSON config and return led map
- *
- *  @return LedMap - Generated an std::map of LedAction
- */
-const LedMap loadJsonConfig(const fs::path& path)
-{
-    LedMap ledMap{};
-    PriorityMap priorityMap{};
+    /**
+     * @brief The interfacesAdded match that is used to wait
+     *        for the IBMCompatibleSystem interface to show up.
+     */
+    std::unique_ptr<sdbusplus::server::match::match> _match;
 
-    // define the default JSON as empty
-    const Json empty{};
-    auto json = readJson(path);
-    auto leds = json.value("leds", empty);
+    /** DBusHandler class handles the D-Bus operations */
+    utils::DBusHandler dBusHandler;
+};
 
-    for (const auto& entry : leds)
-    {
-        fs::path tmpPath(std::string{OBJPATH});
-        tmpPath /= entry.value("group", "");
-        auto objpath = tmpPath.string();
-        auto members = entry.value("members", empty);
-
-        LedAction ledActions{};
-        for (const auto& member : members)
-        {
-            auto name = member.value("Name", "");
-            auto action = getAction(member.value("Action", ""));
-            uint8_t dutyOn = member.value("DutyOn", 50);
-            uint16_t period = member.value("Period", 0);
-
-            // Since only have Blink/On and default priority is Blink
-            auto priority = getAction(member.value("Priority", "Blink"));
-
-            // Same LEDs can be part of multiple groups. However, their
-            // priorities across groups need to match.
-            validatePriority(name, priority, priorityMap);
-
-            phosphor::led::Layout::LedAction ledAction{name, action, dutyOn,
-                                                       period, priority};
-            ledActions.emplace(ledAction);
-        }
-
-        // Generated an std::map of LedGroupNames to std::set of LEDs
-        // containing the name and properties.
-        ledMap.emplace(objpath, ledActions);
-    }
-
-    return ledMap;
-}
+} // namespace phosphor::led
