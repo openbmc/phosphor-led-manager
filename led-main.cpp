@@ -2,7 +2,7 @@
 
 #include "group.hpp"
 #ifdef LED_USE_JSON
-#include "json-config.hpp"
+#include "json-parser.hpp"
 #else
 #include "led-gen.hpp"
 #endif
@@ -11,16 +11,22 @@
 #include "serialize.hpp"
 #include "utils.hpp"
 
+#include <sdeventplus/event.hpp>
+
 #include <iostream>
 
 int main(void)
 {
-    /** @brief Dbus constructs used by LED Group manager */
-    auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
-    auto systemLedMap = loadJsonConfig(LED_JSON_FILE);
+    auto systemLedMap = getSystemLedMap();
 #endif
+
+    // Get a default event loop
+    auto event = sdeventplus::Event::get_default();
+
+    /** @brief Dbus constructs used by LED Group manager */
+    auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
     /** @brief Group manager object */
     phosphor::led::Manager manager(bus, systemLedMap);
@@ -43,13 +49,7 @@ int main(void)
 
     /** @brief Claim the bus */
     bus.request_name(BUSNAME);
+    event.loop();
 
-    /** @brief Wait for client requests */
-    while (true)
-    {
-        /** @brief process dbus calls / signals discarding unhandled */
-        bus.process_discard();
-        bus.wait();
-    }
     return 0;
 }
