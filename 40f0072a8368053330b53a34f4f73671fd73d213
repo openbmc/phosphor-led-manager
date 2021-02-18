@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "517c28b7_37561af2",
+        "filename": "led-main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-18T03:25:15Z",
+      "side": 1,
+      "message": "@Vishwa @Matt\nSince here can not use callback method, I used `sleep` to wait for the D-Bus interface to obtain the Names property.\nYes, I know maybe this is not a good way, Could you point to a better way?\nThanks.",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 5
+      },
+      "revId": "40f0072a8368053330b53a34f4f73671fd73d213",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
