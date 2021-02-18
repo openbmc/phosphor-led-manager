@@ -2,7 +2,7 @@
 
 #include "group.hpp"
 #ifdef LED_USE_JSON
-#include "json-config.hpp"
+#include "json-parser.hpp"
 #else
 #include "led-gen.hpp"
 #endif
@@ -19,7 +19,7 @@ int main(void)
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
-    auto systemLedMap = loadJsonConfig(LED_JSON_FILE);
+    auto systemLedMap = getSystemLedMap();
 #endif
 
     /** @brief Group manager object */
