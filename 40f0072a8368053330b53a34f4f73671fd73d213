@@ -22,6 +22,30 @@
       "revId": "40f0072a8368053330b53a34f4f73671fd73d213",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2277caed_93a584c9",
+        "filename": "led-main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-18T07:02:31Z",
+      "side": 1,
+      "message": "hmm.. without calling event.loop(), we won\u0027t get called on the InterfaceAdded signal.. We need to see how fan code has done it since they also need to have json before moving on.",
+      "parentUuid": "517c28b7_37561af2",
+      "range": {
+        "startLine": 33,
+        "startChar": 0,
+        "endLine": 36,
+        "endChar": 5
+      },
+      "revId": "40f0072a8368053330b53a34f4f73671fd73d213",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
