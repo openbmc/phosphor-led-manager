@@ -2,6 +2,29 @@
   "comments": [
     {
       "key": {
+        "uuid": "6a5c2a5d_e26473cc",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-02-22T22:53:23Z",
+      "side": 1,
+      "message": "You can do:\nconst fs::path\u0026 getConfFile() const",
+      "range": {
+        "startLine": 64,
+        "startChar": 3,
+        "endLine": 64,
+        "endChar": 32
+      },
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e31304c_4f1b88bd",
         "filename": "led-main.cpp",
         "patchSetId": 3
