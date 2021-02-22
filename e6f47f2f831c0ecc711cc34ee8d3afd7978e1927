@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8e31304c_4f1b88bd",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-22T15:40:58Z",
+      "side": 1,
+      "message": "hmm.. where I am missing on this is \n\nHow does the InterfaceAdded callback handler get called since we \n\n- did not claim bus\n- Are not waiting on the event.loop() ?",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
