@@ -2,6 +2,40 @@
   "comments": [
     {
       "key": {
+        "uuid": "f001fd2b_52a33fb3",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-23T10:57:32Z",
+      "side": 1,
+      "message": "Please expand Intf --\u003e Interface and Compat --\u003e Compatible, Prop --\u003e property so it\u0027s more readable",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2689438_f7c8f6dd",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-23T10:57:32Z",
+      "side": 1,
+      "message": "led-manager has not used \"_\" in the code so far. Kindly remove them to maintain the flow.",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "6a5c2a5d_e26473cc",
         "filename": "json-config.hpp",
         "patchSetId": 3
@@ -49,6 +83,23 @@
     },
     {
       "key": {
+        "uuid": "5dee28ea_fba4554b",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-23T10:57:32Z",
+      "side": 1,
+      "message": "what is confFileName pointing to ?",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e31304c_4f1b88bd",
         "filename": "led-main.cpp",
         "patchSetId": 3
@@ -78,6 +129,41 @@
       "side": 1,
       "message": "\u003e did not claim bus\n\nSee L: 33, used `busP`\n\n\u003e Are not waiting on the event.loop() ?\n\nSee L: 38, used `eventP`",
       "parentUuid": "8e31304c_4f1b88bd",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cf9d372_4ffc7c14",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-23T10:57:32Z",
+      "side": 1,
+      "message": "ah.. I missed seeing eventP.loop() in line : 38",
+      "parentUuid": "e692819d_433c7805",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4214c8f0_95c84a8d",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-23T10:57:32Z",
+      "side": 1,
+      "message": "And after this point, we have another instance of DBus ..leaking the ones that are from before ?\n\nCan the above code be in a function so that any auto variables are destroyed when it rolls back ?\n\nexample: auto systemLepMap \u003d loadJsonConfig(); and inside this file, we can have loadJsonConfig() make a call to everything that is above ^",
       "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
