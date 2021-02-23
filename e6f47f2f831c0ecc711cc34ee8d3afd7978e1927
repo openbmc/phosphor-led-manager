@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "97b78d19_039e7f6f",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-23T08:14:10Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "6a5c2a5d_e26473cc",
+      "range": {
+        "startLine": 64,
+        "startChar": 3,
+        "endLine": 64,
+        "endChar": 32
+      },
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8e31304c_4f1b88bd",
         "filename": "led-main.cpp",
         "patchSetId": 3
@@ -36,6 +60,24 @@
       "writtenOn": "2021-02-22T15:40:58Z",
       "side": 1,
       "message": "hmm.. where I am missing on this is \n\nHow does the InterfaceAdded callback handler get called since we \n\n- did not claim bus\n- Are not waiting on the event.loop() ?",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e692819d_433c7805",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-23T08:14:10Z",
+      "side": 1,
+      "message": "\u003e did not claim bus\n\nSee L: 33, used `busP`\n\n\u003e Are not waiting on the event.loop() ?\n\nSee L: 38, used `eventP`",
+      "parentUuid": "8e31304c_4f1b88bd",
       "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
