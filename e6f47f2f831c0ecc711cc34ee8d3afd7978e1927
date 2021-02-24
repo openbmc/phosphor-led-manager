@@ -275,6 +275,24 @@
       "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ca6f851_1adaeb23",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-24T06:27:42Z",
+      "side": 1,
+      "message": "I am not saying we call  loadJsonConfig() json-parser. I am saying, we shall have a local function in this file ( just the same name ) and that basically does everything that you have here above.",
+      "parentUuid": "3f5d9a1a_a56ff9d1",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
