@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "f436a5a7_5ae50d72",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-24T03:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f001fd2b_52a33fb3",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e2689438_f7c8f6dd",
         "filename": "json-config.hpp",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d9da334b_784684a3",
+        "filename": "json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-24T03:45:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e2689438_f7c8f6dd",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -100,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "07da9f6f_ea309b7f",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-24T03:45:42Z",
+      "side": 1,
+      "message": "Moved to: json-config.hpp L: 19",
+      "parentUuid": "5dee28ea_fba4554b",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "8e31304c_4f1b88bd",
         "filename": "led-main.cpp",
         "patchSetId": 3
@@ -153,6 +207,24 @@
     },
     {
       "key": {
+        "uuid": "e045a2b3_5db3bd5d",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-24T03:45:42Z",
+      "side": 1,
+      "message": "😊\nAck",
+      "parentUuid": "1cf9d372_4ffc7c14",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4214c8f0_95c84a8d",
         "filename": "led-main.cpp",
         "patchSetId": 3
@@ -182,6 +254,24 @@
       "side": 1,
       "message": "could also maybe just put the whole thing in a { } scope block?",
       "parentUuid": "4214c8f0_95c84a8d",
+      "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3f5d9a1a_a56ff9d1",
+        "filename": "led-main.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-02-24T03:45:42Z",
+      "side": 1,
+      "message": "\u003e example: auto systemLepMap \u003d loadJsonConfig(); and inside this file, we can have loadJsonConfig() make a call to everything that is above ^\n\nSorry, I disagree this way, because for the loadJsonConfig() method, it is a json parser, and it is best not to do other operations.\nAlso, I have updated 😊\n\n\u003e could also maybe just put the whole thing in a { } scope block?\n\nDone",
+      "parentUuid": "e80e4fbd_5d5a55e2",
       "revId": "e6f47f2f831c0ecc711cc34ee8d3afd7978e1927",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
