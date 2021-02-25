@@ -1,0 +1,6 @@
+{
+    # This json contains name of physical leds that will not get triggered
+    # during lamp test
+    # these will be hosted as /xyz/openbmc_project/led/physical/<$name_in_this_file>
+    "members":[]
+}
