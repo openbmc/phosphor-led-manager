@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "722b1feb_c4ca9f8f",
+        "filename": "json-config.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-25T18:38:44Z",
+      "side": 1,
+      "message": "hmm.. why is it not \n\nnamespace phosphor\n{\nnamespace led\n{\n\nThis has been followed all through. Kindly extend the same convention followed earlier.",
+      "revId": "028266bb057c2e1a259f56d2f198c9998f349dba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "841dab87_395d980f",
+        "filename": "json-config.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-25T18:38:44Z",
+      "side": 1,
+      "message": "Hmm.. Why do we need this ?. isn\u0027t confFile.empty() alone not enough ?",
+      "revId": "028266bb057c2e1a259f56d2f198c9998f349dba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e65802eb_cc4f6461",
+        "filename": "json-config.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 96,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-25T18:38:44Z",
+      "side": 1,
+      "message": "Please consider putting appropriate comments",
+      "revId": "028266bb057c2e1a259f56d2f198c9998f349dba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e22f8e5a_8b24b97c",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 152,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-25T18:38:44Z",
+      "side": 1,
+      "message": "ifdef is not needed here. This file won\u0027t get included otherwise.",
+      "revId": "028266bb057c2e1a259f56d2f198c9998f349dba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "65d7c596_90f167b1",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-02-25T18:38:44Z",
+      "side": 1,
+      "message": "hmm.. wonder why getConfFile.empty() alone is not sufficient ?",
+      "revId": "028266bb057c2e1a259f56d2f198c9998f349dba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
