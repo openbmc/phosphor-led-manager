@@ -25,7 +25,14 @@
                 {
                     "name": "front_fault",
                     "Action": "On"
-                }
+                },
+                {
+                    "Name" : "virtual_enclosure_fault",
+                    "Action" : "On",
+                    "DutyOn" : 50,
+                    "Period" : 0,
+                    "Priority" : "Blink"
+                 }
             ]
         },
         {
@@ -42,7 +49,14 @@
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000
-                }
+                },
+                {
+                    "Name" : "virtual_enclosure_identify",
+                    "Action" : "On",
+                    "DutyOn" : 50,
+                    "Period" : 0,
+                    "Priority" : "Blink"
+                 }
             ]
         },
         {
@@ -59,7 +73,14 @@
                 {
                     "name": "rear_fault",
                     "Action": "On"
-                }
+                },
+                {
+                    "Name" : "virtual_enclosure_fault",
+                    "Action" : "On",
+                    "DutyOn" : 50,
+                    "Period" : 0,
+                    "Priority" : "Blink"
+                 }
             ]
         },
         {
@@ -82,7 +103,14 @@
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000
-                }
+                },
+                {
+                    "Name" : "virtual_enclosure_identify",
+                    "Action" : "On",
+                    "DutyOn" : 50,
+                    "Period" : 0,
+                    "Priority" : "Blink"
+                 }
             ]
         }
     ]

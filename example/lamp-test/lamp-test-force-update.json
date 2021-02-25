@@ -1,0 +1,6 @@
+{
+    "members":[
+        "virtual_enclosure_fault",
+        "virtual_enclosure_identify"
+    ]
+}
