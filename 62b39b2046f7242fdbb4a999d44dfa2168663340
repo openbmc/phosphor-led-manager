@@ -16,6 +16,24 @@
       "revId": "62b39b2046f7242fdbb4a999d44dfa2168663340",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f83f77af_453322fe",
+        "filename": "example/lamp-test/lamp-test-force-update.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-01T06:47:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "37f8bdd9_c8645f87",
+      "revId": "62b39b2046f7242fdbb4a999d44dfa2168663340",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
