@@ -120,7 +120,6 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
         return;
     }
 #endif
-
     // This order of LED operation is important.
     if (ledsDeAssert.size())
     {
