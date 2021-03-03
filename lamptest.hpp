@@ -1,10 +1,14 @@
 #pragma once
 
+#include "config.h"
+
 #include "group.hpp"
 #include "manager.hpp"
 
+#include <nlohmann/json.hpp>
 #include <sdeventplus/utility/timer.hpp>
 
+#include <iostream>
 #include <queue>
 #include <vector>
 
@@ -37,7 +41,10 @@ class LampTest
     LampTest(const sdeventplus::Event& event, Manager& manager) :
         timer(event, std::bind(std::mem_fn(&LampTest::timeOutHandler), this)),
         manager(manager), groupObj(NULL)
-    {}
+    {
+        forcePaths = getPhysicalPathsFromJson(FORCE_UPDATE_LED_JSON_FILE);
+        skipPaths = getPhysicalPathsFromJson(SKIP_UPDATE_LED_JSON_FILE);
+    }
 
     using group = std::set<phosphor::led::Layout::LedAction>;
 
@@ -85,6 +92,12 @@ class LampTest
     /** @brief LEDs that are to be Asserted before start lamp test */
     group lastLedsAssert;
 
+    /** @brief Force update physical paths during on lamp test */
+    std::vector<std::string> forcePaths;
+
+    /** @brief Skip update physical paths during on lamp test */
+    std::vector<std::string> skipPaths;
+
     /** @brief Start and restart lamp test depending on what is the current
      *         state. */
     void start();
@@ -115,6 +128,14 @@ class LampTest
      *  @param[in]  value   -  the Asserted property value
      */
     void doHostLampTest(bool value);
+
+    /** @brief Get physical paths from lamp test JSON
+     *
+     *  @param[in]  path - path of LED JSON file
+     *
+     *  return std::vector<std::string> - Physical paths during on lamp test
+     */
+    std::vector<std::string> getPhysicalPathsFromJson(const fs::path& path);
 };
 
 } // namespace led
