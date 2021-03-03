@@ -1,5 +1,3 @@
-#include "config.h"
-
 #include "lamptest.hpp"
 
 #include <phosphor-logging/log.hpp>
@@ -10,6 +8,7 @@ namespace led
 {
 
 using namespace phosphor::logging;
+using Json = nlohmann::json;
 
 bool LampTest::updatePhysicalLedStates(const Manager::group& ledsAssert,
                                        const Manager::group& ledsDeAssert)
@@ -18,6 +17,34 @@ bool LampTest::updatePhysicalLedStates(const Manager::group& ledsAssert,
     // saved to Queue, and Queue will be updated after the lamp test is stopped.
     if (isLampTestRunning)
     {
+        // Physical LEDs will be updated during lamp test
+        for (const auto& it : ledsDeAssert)
+        {
+            std::string path = std::string(PHY_LED_PATH) + it.name;
+            auto iter = std::find_if(
+                forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
+                [&path](const auto& name) { return name == path; });
+
+            if (iter != forceUpdateLEDs.end())
+            {
+                manager.drivePhysicalLED(path, Layout::Action::Off, it.dutyOn,
+                                         it.period);
+            }
+        }
+
+        for (const auto& it : ledsAssert)
+        {
+            std::string path = std::string(PHY_LED_PATH) + it.name;
+            auto iter = std::find_if(
+                forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
+                [&path](const auto& name) { return name == path; });
+
+            if (iter != forceUpdateLEDs.end())
+            {
+                manager.drivePhysicalLED(path, it.action, it.dutyOn, it.period);
+            }
+        }
+
         savedPhysicalLedStates.emplace(
             std::make_pair(ledsAssert, ledsDeAssert));
         return true;
@@ -40,6 +67,16 @@ void LampTest::stop()
     // Set all the Physical action to Off
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter = std::find_if(
+            skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+            [&path](const auto& skipLed) { return skipLed == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Physical LEDs will be skipped
+            continue;
+        }
+
         manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
     }
 
@@ -65,10 +102,20 @@ Layout::Action LampTest::getActionFromString(const std::string& str)
 
 void LampTest::storePhysicalLEDsStates()
 {
-    savedLEDStatesAssert.clear();
+    physicalLEDStatesPriorToLampTest.clear();
 
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter = std::find_if(
+            skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+            [&path](const auto& skipLed) { return skipLed == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Physical LEDs will be skipped
+            continue;
+        }
+
         // Reverse intercept path, Get the name of each member of the LED group
         // e.g: path = /xyz/openbmc_project/led/physical/front_fan
         //      name = front_fan
@@ -106,7 +153,7 @@ void LampTest::storePhysicalLEDsStates()
         {
             phosphor::led::Layout::LedAction ledAction{
                 name, action, dutyOn, period, phosphor::led::Layout::On};
-            savedLEDStatesAssert.emplace(ledAction);
+            physicalLEDStatesPriorToLampTest.emplace(ledAction);
         }
     }
 }
@@ -136,6 +183,16 @@ void LampTest::start()
     // Set all the Physical action to On for lamp test
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter =
+            std::find_if(skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+                         [&path](const auto& skip) { return skip == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Skip update physical path
+            continue;
+        }
+
         manager.drivePhysicalLED(path, Layout::Action::On, 0, 0);
     }
 }
@@ -172,9 +229,9 @@ void LampTest::requestHandler(Group* group, bool value)
 void LampTest::restorePhysicalLedStates()
 {
     // restore physical LEDs states before lamp test
-    Manager::group savedLEDStatesDeAssert{};
-    manager.driveLEDs(savedLEDStatesAssert, savedLEDStatesDeAssert);
-    savedLEDStatesAssert.clear();
+    Manager::group deAssert{};
+    manager.driveLEDs(physicalLEDStatesPriorToLampTest, deAssert);
+    physicalLEDStatesPriorToLampTest.clear();
 
     // restore physical LEDs states during lamp test
     while (!savedPhysicalLedStates.empty())
@@ -200,6 +257,40 @@ void LampTest::doHostLampTest(bool value)
                         entry("ERROR=%s", e.what()),
                         entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
     }
+}
+
+const std::vector<std::string>
+    LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
+{
+    if (!fs::exists(path) || fs::is_empty(path))
+    {
+        log<level::INFO>("The file does not exist or is empty",
+                         entry("FILE_PATH=%s", path.c_str()));
+        return {};
+    }
+
+    std::vector<std::string> paths;
+    try
+    {
+        std::ifstream jsonFile(path);
+        auto json = Json::parse(jsonFile);
+
+        // define the default JSON as empty
+        const Json empty{};
+        std::vector<std::string> members = json.value("members", empty);
+        for (auto& member : members)
+        {
+            paths.push_back(PHY_LED_PATH + member);
+        }
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>("Failed to parse config file",
+                        entry("ERROR=%s", e.what()),
+                        entry("FILE_PATH=%s", path.c_str()));
+    }
+
+    return paths;
 }
 
 } // namespace led

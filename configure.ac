@@ -101,6 +101,12 @@ AS_IF([test "x$enable_use_lamp_test" == "xyes"],
     # lamp test timeout secs
     AC_ARG_VAR(LAMP_TEST_TIMEOUT_IN_SECS, [The lamp test timeout in seconds])
 
+    # JSON having list of physical LEDs that will be updated during lamp test overriding lamp-test needs
+    AC_ARG_VAR(LAMP_TEST_FORCE_UPDATE_JSON_FILE, [JSON file having led names that will be forcibly updated during lamp test])
+
+    # JSON having list of physical LEDs that are exempted from lamp test
+    AC_ARG_VAR(LAMP_TEST_SKIP_UPDATE_JSON_FILE, [JSON file having led names that will be skipped during lamp test])
+
     AS_IF([test "x$LAMP_TEST_OBJECT" == "x"], [LAMP_TEST_OBJECT="/xyz/openbmc_project/led/groups/lamp_test"])
     AC_DEFINE_UNQUOTED([LAMP_TEST_OBJECT], ["$LAMP_TEST_OBJECT"], [The lamp test D-Bus object])
 
@@ -109,6 +115,12 @@ AS_IF([test "x$enable_use_lamp_test" == "xyes"],
 
     AS_IF([test "x$LAMP_TEST_TIMEOUT_IN_SECS" == "x"], [LAMP_TEST_TIMEOUT_IN_SECS=240])
     AC_DEFINE_UNQUOTED([LAMP_TEST_TIMEOUT_IN_SECS], [$LAMP_TEST_TIMEOUT_IN_SECS], [The lamp test timeout in seconds])
+
+    AS_IF([test "x$LAMP_TEST_FORCE_UPDATE_JSON_FILE" == "x"], [LAMP_TEST_FORCE_UPDATE_JSON_FILE="/usr/share/phosphor-led-manager/lamp-test-force-update.json"])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_FORCE_UPDATE_JSON_FILE], ["$LAMP_TEST_FORCE_UPDATE_JSON_FILE"], [JSON file having led names that will be forcibly updated during lamp test])
+
+    AS_IF([test "x$LAMP_TEST_SKIP_UPDATE_JSON_FILE" == "x"], [LAMP_TEST_SKIP_UPDATE_JSON_FILE="/usr/share/phosphor-led-manager/lamp-test-skip-update.json"])
+    AC_DEFINE_UNQUOTED([LAMP_TEST_SKIP_UPDATE_JSON_FILE], ["$LAMP_TEST_SKIP_UPDATE_JSON_FILE"], [JSON file having led names that will be skipped during lamp test])
 )
 
 # Path of file for storing the names of asserted groups
