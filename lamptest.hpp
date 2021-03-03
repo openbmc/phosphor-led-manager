@@ -1,8 +1,11 @@
 #pragma once
 
+#include "config.h"
+
 #include "group.hpp"
 #include "manager.hpp"
 
+#include <nlohmann/json.hpp>
 #include <sdeventplus/utility/timer.hpp>
 
 #include <queue>
@@ -37,7 +40,12 @@ class LampTest
     LampTest(const sdeventplus::Event& event, Manager& manager) :
         timer(event, std::bind(std::mem_fn(&LampTest::timeOutHandler), this)),
         manager(manager), groupObj(NULL)
-    {}
+    {
+        forceUpdateLEDs =
+            getPhysicalLEDNamesFromJson(LAMP_TEST_FORCE_UPDATE_JSON_FILE);
+        skipUpdateLEDs =
+            getPhysicalLEDNamesFromJson(LAMP_TEST_SKIP_UPDATE_JSON_FILE);
+    }
 
     /** @brief the lamp test request handler
      *
@@ -86,6 +94,14 @@ class LampTest
     /** @brief Physical LEDs that are to be Asserted before start lamp test */
     Manager::group savedLEDStatesAssert;
 
+    /** @brief Vector of names of physical LEDs, whose changes will be forcibly
+     *         updated even during lamp test. */
+    std::vector<std::string> forceUpdateLEDs;
+
+    /** @brief Vector of names of physical LEDs, that will be exempted from lamp
+     *         test */
+    std::vector<std::string> skipUpdateLEDs;
+
     /** @brief Start and restart lamp test depending on what is the current
      *         state. */
     void start();
@@ -116,6 +132,14 @@ class LampTest
      *  @param[in]  value   -  the Asserted property value
      */
     void doHostLampTest(bool value);
+
+    /** @brief Get physical LED names from lamp test JSON config file
+     *
+     *  @param[in]  path - path of LED JSON file
+     *
+     *  return std::vector<std::string> - Physical LED names during on lamp test
+     */
+    std::vector<std::string> getPhysicalLEDNamesFromJson(const fs::path& path);
 };
 
 } // namespace led

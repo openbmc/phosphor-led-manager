@@ -1,8 +1,8 @@
-#include "config.h"
-
 #include "lamptest.hpp"
 
 #include <phosphor-logging/log.hpp>
+
+#include <iostream>
 
 namespace phosphor
 {
@@ -10,10 +10,39 @@ namespace led
 {
 
 using namespace phosphor::logging;
+using Json = nlohmann::json;
 
 bool LampTest::updatePhysicalLedStates(const Manager::group& ledsAssert,
                                        const Manager::group& ledsDeAssert)
 {
+    // Physical LEDs will be updated during lamp test
+    for (const auto& it : ledsDeAssert)
+    {
+        std::string path = std::string(PHY_LED_PATH) + it.name;
+        auto iter =
+            std::find_if(forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
+                         [&path](const auto& name) { return name == path; });
+
+        if (iter != forceUpdateLEDs.end())
+        {
+            manager.drivePhysicalLED(path, Layout::Action::Off, it.dutyOn,
+                                     it.period);
+        }
+    }
+
+    for (const auto& it : ledsAssert)
+    {
+        std::string path = std::string(PHY_LED_PATH) + it.name;
+        auto iter =
+            std::find_if(forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
+                         [&path](const auto& name) { return name == path; });
+
+        if (iter != forceUpdateLEDs.end())
+        {
+            manager.drivePhysicalLED(path, it.action, it.dutyOn, it.period);
+        }
+    }
+
     // If the physical LED status is updated during the lamp test, it should be
     // saved to Queue, and Queue will be updated after the lamp test is stopped.
     if (isLampTestRunning)
@@ -40,6 +69,16 @@ void LampTest::stop()
     // Set all the Physical action to Off
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter =
+            std::find_if(skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+                         [&path](const auto& skip) { return skip == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Skip update physical path
+            continue;
+        }
+
         manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
     }
 
@@ -69,6 +108,16 @@ void LampTest::storePhysicalLEDsStates()
 
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter =
+            std::find_if(skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+                         [&path](const auto& skip) { return skip == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Skip update physical path
+            continue;
+        }
+
         // Reverse intercept path, Get the name of each member of the LED group
         // e.g: path = /xyz/openbmc_project/led/physical/front_fan
         //      name = front_fan
@@ -136,6 +185,16 @@ void LampTest::start()
     // Set all the Physical action to On for lamp test
     for (const auto& path : physicalLEDPaths)
     {
+        auto iter =
+            std::find_if(skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+                         [&path](const auto& skip) { return skip == path; });
+
+        if (iter != skipUpdateLEDs.end())
+        {
+            // Skip update physical path
+            continue;
+        }
+
         manager.drivePhysicalLED(path, Layout::Action::On, 0, 0);
     }
 }
@@ -200,6 +259,39 @@ void LampTest::doHostLampTest(bool value)
                         entry("ERROR=%s", e.what()),
                         entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
     }
+}
+
+std::vector<std::string>
+    LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
+{
+    if (!fs::exists(path) || fs::is_empty(path))
+    {
+        log<level::ERR>("Incorrect File Path or empty file",
+                        entry("FILE_PATH=%s", path.c_str()));
+    }
+
+    std::vector<std::string> paths;
+    try
+    {
+        std::ifstream jsonFile(path);
+        auto json = Json::parse(jsonFile);
+
+        // define the default JSON as empty
+        const Json empty{};
+        std::vector<std::string> members = json.value("members", empty);
+        for (auto& member : members)
+        {
+            paths.push_back(PHY_LED_PATH + member);
+        }
+    }
+    catch (const std::exception& e)
+    {
+        log<level::ERR>("Failed to parse config file",
+                        entry("ERROR=%s", e.what()),
+                        entry("FILE_PATH=%s", path.c_str()));
+    }
+
+    return paths;
 }
 
 } // namespace led
