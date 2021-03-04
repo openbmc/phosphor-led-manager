@@ -1,0 +1,191 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "becf5f67_39680cf0",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "dbus --\u003e D-Bus all over to maintain consistency",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3e801d8e_8502d5fd",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "can this be inline method ?",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "364840b1_a0cf91c3",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "Please fix this description and this applies to everything in this whole file. It still has references to fan.\n\nAlso, please fix the commenting style to match the led-manager style that has always been followed before for consistency",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff848375_92e0efe7",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "(const auto\u0026 path: objects)\n\nagain. please change the style of this file to match that of led manager",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "059d3c00_2400fdc7",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "can this be auto value ?",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "16c58808_bf6efce7",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "Please put a line spacing .. Again .. :) please fix the style all through this code to match that of all other led manager code",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "639f700d_5443f43a",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 174,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "may be change \"entry\" to \"name\" so it looks uniform across this and the other code in ifaceAdded ?\n\nAlso : This code section seem duplicated in 2 places. One here and other in ifaceAdded.. Can we have one code called by 2 ?",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d89b75b_5d50fd1f",
+        "filename": "json-config.hpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 193,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "extra line space not needed here",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fb2a6b9_404d52b1",
+        "filename": "led-main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "don\u0027t need it in this file for this commit",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e0fb207_d8549281",
+        "filename": "led-main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "hmm.. Wonder why do we need event in this commit ?.. It\u0027s not being used here for anything.",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b224dfd0_7a296b99",
+        "filename": "led-main.cpp",
+        "patchSetId": 12
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T08:08:13Z",
+      "side": 1,
+      "message": "and this one too.. not needed for thing commit",
+      "revId": "551305f4cc68dc4c0e7d420d294029126a22029a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
