@@ -1,0 +1,344 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "4ee6499d_6cd22655",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "This feature adds the functionality that enables force updating certain physical LEDs and skip updating certain physical LEDs as part of lamp test. This is a generic feature that gives more control over handling physical LEDs.",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c2b0130_f40f218b",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 104,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "JSON having list of physical LEDs that will be updated during lamp test overriding lamp-test needs",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3507e205_c0155872",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "LAMP_TEST_FORCE_UPDATE_JSON_FILE",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "63d14454_dd95a86e",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "JSON having list of physical LEDs that are exempted from lamp test",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a6e6e895_04fad1db",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "LAMP_TEST_SKIP_UPDATE_JSON_FILE",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c5bbcc50_9c461460",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "json file having led names that will be forcibly updated during lamp test",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8b1ae9b0_5a4d3b78",
+        "filename": "configure.ac",
+        "patchSetId": 1
+      },
+      "lineNbr": 123,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "json file having led names that will be skipped during lamp test",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "475f6e25_d2b2d49e",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "please fix the comment(s) in this file",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a401f783_7bb784b1",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "force ?\u003e. it\u0027s actually the name of the led right ?",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d53aec47_cfd57c2c",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "The order must always be Deassert and then Assert",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "350061eb_62b111a6",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "do we really need to crash ?.. not really.. this can be just an error",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "585672fc_fbc62cd0",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "why is this needed ?",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e9ab0b88_12cb1a67",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "forceUpdateLEDs \u003d heyPhysicalLEDNamesFromJson();",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5f32fb09_fed0e7a9",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "skipUpdateLEDs",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a1b7f84e_bdedafe3",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "Vector of names of physical LEDs, whose changes will be forcibly updated even during lamp test.\n\nforUpdateLEDs",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1a44a260_40fbe22f",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 98,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "vector of names of physical LEDs, that will be exempted from lamp test\n\nskipUpdateLEDs",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ee000860_67853c59",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "Get physical LED names from lamp test json config file",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c93b894_49f1ef9a",
+        "filename": "lamptest.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 136,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "it\u0027s not physical path right .. just the name of physical LED.",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1cc783c5_1823fc2f",
+        "filename": "manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "please move endif to this line. There is a new line here that is not needed",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "79af6e6d_e3b4d3c9",
+        "filename": "manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 124,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T12:02:03Z",
+      "side": 1,
+      "message": "sorry, was my previous comment addressed ?..",
+      "revId": "da5e1b6ad93ecac01387488ae4b570c3a218fdfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
