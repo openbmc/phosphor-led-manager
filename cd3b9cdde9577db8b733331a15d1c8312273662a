@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "bb90c480_c531bca1",
+        "filename": "example/lamp-test/lamp-test-force-update.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-03-04T20:02:39Z",
+      "side": 1,
+      "message": "Agreed, I don\u0027t understand what this and the next JSON file are used for.",
+      "parentUuid": "8198900e_3892d5f2",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03dd8011_f2abead3",
         "filename": "example/lamp-test/lamp-test-skip-update.json",
         "patchSetId": 3
@@ -69,6 +87,23 @@
       "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c602b006_afb0465e",
+        "filename": "example/led-group-config.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-03-04T20:02:39Z",
+      "side": 1,
+      "message": "so from now on, every LED group will have an extra virtual LED group of itself?  Is there a way for the code to handle this without needing extra JSON?",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
