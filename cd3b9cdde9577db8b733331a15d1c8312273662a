@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0ae8db7_38643703",
+        "filename": "example/lamp-test/lamp-test-force-update.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T06:25:17Z",
+      "side": 1,
+      "message": "Is there anyway we can add a comment to this JSON on what the entries in json represent ?\n\nAs in : \n\n\u003c!--\nThis json contains name of physical leds that will get triggered during lamp test overriding lamp-test requirements\n\nthese will be hosted as /xyz/openbmc_project/led/physical/\u003c$name_in_this_file\u003e\n--\u003e",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03dd8011_f2abead3",
+        "filename": "example/lamp-test/lamp-test-skip-update.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T06:25:17Z",
+      "side": 1,
+      "message": "And same comment here",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
