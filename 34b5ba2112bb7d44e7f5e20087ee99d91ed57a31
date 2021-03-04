@@ -1,0 +1,157 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "00fc5480_8451a1bd",
+        "filename": "lamptest.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "please remove the blank lines.",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d04ed7e5_e40bf82f",
+        "filename": "lamptest.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "I would name is : savedLEDStates.",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "efba916d_83ac24e8",
+        "filename": "lamptest.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "This is already covered as part of manager.hpp and I see manager.hpp is already included.",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "571f4c5b_717b9427",
+        "filename": "lamptest.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "I think we shall rename : processLEDUpdate() ( ugh .. I changed 10 names now and I still can not find a good name here ) ?, Also, the comment says that \"during lamp test\".. However, the API gets called whether lamp test running or not.. Please put the description of what it does",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7036f1b1_0fd27e01",
+        "filename": "lamptest.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "Please put a line spacing..",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a2f9df9_a0d5a5f8",
+        "filename": "lamptest.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 80,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "These are not saved physical LED states.. Saved are those that we save during the start of lamp test.. However, this is the LED updates during lamp test.\n\nHow about : LedUpdatesDuringLampTest ? ( ugh .. I am still struggling with names )..",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6283a162_b412dbe3",
+        "filename": "lamptest.hpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "Is it the saved state of physical LEDs ?.If so, we need to change the naming.",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1e053f31_f73b6e3a",
+        "filename": "manager.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 122,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "please remove blank lines",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "40beecb1_fa321d44",
+        "filename": "utils.cpp",
+        "patchSetId": 32
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-04T17:04:18Z",
+      "side": 1,
+      "message": "Is the caller calling in try_catch ?",
+      "revId": "34b5ba2112bb7d44e7f5e20087ee99d91ed57a31",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
