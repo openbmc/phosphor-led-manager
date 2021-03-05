@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "39110023_d189855e",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "Now, we do not know what that particular interface is?",
+      "parentUuid": "2efe243d_0e48ee20",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1be5e10a_c9b2e0b7",
         "filename": "json-config.hpp",
         "patchSetId": 14
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "afc9313d_79bdbbaf",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1be5e10a_c9b2e0b7",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5d6dc578_201387f7",
         "filename": "json-config.hpp",
         "patchSetId": 14
@@ -47,6 +83,24 @@
       "writtenOn": "2021-03-04T11:18:57Z",
       "side": 1,
       "message": "is this \"auto const\u0026\" or \"const auto\u0026\" ?",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8f6c70b7_b7a67abb",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "Yeah, \"const auto\u0026 \" is correct.",
+      "parentUuid": "5d6dc578_201387f7",
       "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "832657b1_e3d72a3e",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 161,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "851c372f_9c39450c",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d467d52_a2f38c65",
         "filename": "json-config.hpp",
         "patchSetId": 14
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "27fba61e_5606fbe0",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 172,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4d467d52_a2f38c65",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8a6f747a_7ddafb46",
         "filename": "json-config.hpp",
         "patchSetId": 14
@@ -98,6 +188,24 @@
       "writtenOn": "2021-03-04T11:18:57Z",
       "side": 1,
       "message": "should we add a confFIle.clear() here also just in case ...",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d09aa3a7_8ebebfc2",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:29:14Z",
+      "side": 1,
+      "message": "No, I do not think so.\nBecause we have added \"confFile.clear()\" on L:159.\n“confFile” must be empty if it jump into cath.",
+      "parentUuid": "8a6f747a_7ddafb46",
       "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
