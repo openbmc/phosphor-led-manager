@@ -55,6 +55,24 @@
     },
     {
       "key": {
+        "uuid": "a2b9aabb_17cc9dc2",
+        "filename": "example/lamp-test/lamp-test-force-update.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:53:00Z",
+      "side": 1,
+      "message": "lamp-test-force-update.json: As mentioned above, it contains the physical LEDs that need to be triggered during the lamp test.\n\nFor example: \nall physical LEDs will be set to \"On\" when starting the lamp test, and then it will last for a period of time (default is 4 minutes). \nAt this time, if we need to set the `enclosure` physical LEDs status(On-\u003eOff/On-\u003eBlink), At this time, only the status information will be saved but not updated. \nIf users want to know the current status of the enclosure, we can only get \"On\" instead of \"Off/Blink\".\nSo we need to add this JSON configuration file to force the state of the `enclosure` physical LEDs to be updated.\n\nlamp-test-skip-update.json: Contrary to the above, it contains physical LEDs that need to be skipped during the lamp test.",
+      "parentUuid": "bb90c480_c531bca1",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "03dd8011_f2abead3",
         "filename": "example/lamp-test/lamp-test-skip-update.json",
         "patchSetId": 3
@@ -101,6 +119,24 @@
       "writtenOn": "2021-03-04T20:02:39Z",
       "side": 1,
       "message": "so from now on, every LED group will have an extra virtual LED group of itself?  Is there a way for the code to handle this without needing extra JSON?",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0edfe44f_5792f7d1",
+        "filename": "example/led-group-config.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T01:53:00Z",
+      "side": 1,
+      "message": "\u003e so from now on, every LED group will have an extra virtual LED group of itself?  \n\nYeah\nIf users need to enable `use-lamp-test`, the virtual LED group needs to be expanded, otherwise, it can be ignored.\n\n\u003e Is there a way for the code to handle this without needing extra JSON?\n\nSince this JSON is loaded once when the `phosphor-led-manager` starts, I think JSON needs to be extended.\nPlease let me know if you have a better way, Thanks.",
+      "parentUuid": "c602b006_afb0465e",
       "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
