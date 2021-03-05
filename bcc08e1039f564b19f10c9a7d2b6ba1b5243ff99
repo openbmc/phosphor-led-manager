@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "6559a7cf_1056c791",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:45:51Z",
+      "side": 1,
+      "message": "xyz.openbmc_project.Configuration.IBMCompatibleSystem is the interface",
+      "parentUuid": "39110023_d189855e",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "1be5e10a_c9b2e0b7",
         "filename": "json-config.hpp",
         "patchSetId": 14
@@ -206,6 +224,24 @@
       "side": 1,
       "message": "No, I do not think so.\nBecause we have added \"confFile.clear()\" on L:159.\n“confFile” must be empty if it jump into cath.",
       "parentUuid": "8a6f747a_7ddafb46",
+      "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5d9ea4cb_fe99facb",
+        "filename": "json-config.hpp",
+        "patchSetId": 14
+      },
+      "lineNbr": 185,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:45:51Z",
+      "side": 1,
+      "message": "Agreed. But I was just making sure clearing the confirmation in this case will handle any un handled paths that get into this leg.. more of good practise ..",
+      "parentUuid": "d09aa3a7_8ebebfc2",
       "revId": "bcc08e1039f564b19f10c9a7d2b6ba1b5243ff99",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
