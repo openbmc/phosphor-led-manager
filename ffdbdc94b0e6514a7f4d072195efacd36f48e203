@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "22fc9e7f_0779fbb3",
+        "filename": "configure.ac",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9719bbbe_6595c7eb",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "81c7351f_9e5ee26a",
         "filename": "configure.ac",
         "patchSetId": 2
@@ -33,6 +51,24 @@
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "adca20a1_7fec4a17",
+        "filename": "configure.ac",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "81c7351f_9e5ee26a",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "7459d1df_01b42fbf",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "938fc264_3b6b2621",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "076de676_4299ed22",
         "filename": "lamptest.cpp",
         "patchSetId": 2
@@ -64,6 +118,24 @@
       "writtenOn": "2021-03-05T06:07:44Z",
       "side": 1,
       "message": "hmm just wonder why \"Manager::group\" is needed instead of just \"group\" ?",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09c1d065_8baf25b0",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38521/32/lamptest.hpp#42\nI have removed it and used Manager::group",
+      "parentUuid": "076de676_4299ed22",
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -87,6 +159,24 @@
     },
     {
       "key": {
+        "uuid": "3ca43428_948193f3",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dffbe9c7_e2ef4879",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bc2a638e_99020bba",
         "filename": "lamptest.cpp",
         "patchSetId": 2
@@ -101,6 +191,24 @@
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "09ab916b_ee5c3ed9",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bc2a638e_99020bba",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -121,6 +229,24 @@
     },
     {
       "key": {
+        "uuid": "482a760e_bde51d2b",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "295a6ce7_efff3c5b",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "6b0864b5_2ac1676a",
         "filename": "lamptest.cpp",
         "patchSetId": 2
@@ -135,6 +261,24 @@
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9efc3557_38f7c1bf",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "6b0864b5_2ac1676a",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -155,6 +299,24 @@
     },
     {
       "key": {
+        "uuid": "c486286b_2b883545",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "83da7b08_8aa211e8",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4d108791_eb799456",
         "filename": "lamptest.cpp",
         "patchSetId": 2
@@ -172,6 +334,24 @@
     },
     {
       "key": {
+        "uuid": "4a804fb7_36978425",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4d108791_eb799456",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a845b157_4797ee90",
         "filename": "lamptest.cpp",
         "patchSetId": 2
@@ -183,6 +363,24 @@
       "writtenOn": "2021-03-05T06:07:44Z",
       "side": 1,
       "message": "Hmm.. it is not an error to not have this list. So, just INFO should be fine..What do you think ?\n\nAlso, we need to return from here.",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c380c61_26e19da3",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "\u003e Hmm.. it is not an error to not have this list. So, just INFO should be fine..What do you think ?\n\nRight.\n\n\u003e Also, we need to return from here.\n\nDone",
+      "parentUuid": "a845b157_4797ee90",
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -206,6 +404,24 @@
     },
     {
       "key": {
+        "uuid": "5b4995e6_0587ca18",
+        "filename": "lamptest.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "35db3ce4_f4a8fc42",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "9804e14d_cd893637",
         "filename": "lamptest.hpp",
         "patchSetId": 2
@@ -220,6 +436,24 @@
       "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c360c12_e56084d7",
+        "filename": "lamptest.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:46:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9804e14d_cd893637",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
