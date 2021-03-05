@@ -140,6 +140,24 @@
       "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "47ebe83a_bce4fdae",
+        "filename": "example/led-group-config.json",
+        "patchSetId": 3
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T05:38:22Z",
+      "side": 1,
+      "message": "Hi Matt, led-group-config.json is a group definition for all FRUs and enclosures. Now, the \"virtual_enclosure_fault\" that is mentioned here is a \"virtual physical led\" and is not a group itself. This \"virtual_enclosure_fault\" is to be treated as \"any other physical LED\". In reality, virtual_enclosure_fault will always be equal to physical enclosure fault indicators. However, during lamp test, we have a need that we have to communicate the actual status of physical LED _without_ actually turning on physical LEDs and this is resolved by \"virtual physical led\".\n\nThe 2 extra JSONs, \"force\" and \"skip\" are provided here to give flexibility for users to configure. If you don\u0027t want to have that, you can just get going without force.json and skip.json.",
+      "parentUuid": "0edfe44f_5792f7d1",
+      "revId": "cd3b9cdde9577db8b733331a15d1c8312273662a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
