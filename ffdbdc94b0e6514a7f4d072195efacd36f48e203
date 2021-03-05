@@ -1,0 +1,225 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "9719bbbe_6595c7eb",
+        "filename": "configure.ac",
+        "patchSetId": 2
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "Please change this description too",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81c7351f_9e5ee26a",
+        "filename": "configure.ac",
+        "patchSetId": 2
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "and this one too..",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "938fc264_3b6b2621",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "hmm.. why is this needed ?",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "076de676_4299ed22",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "hmm just wonder why \"Manager::group\" is needed instead of just \"group\" ?",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dffbe9c7_e2ef4879",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "hmm.. we should do this _only_ if lamp test is running. Otherwise, the regular driveLED() will handle this case.",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc2a638e_99020bba",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "should we call skipLed instead of \"skip\"",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "295a6ce7_efff3c5b",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "please fix this comment",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6b0864b5_2ac1676a",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "we don\u0027t have to use the word \"Asset\". we can call it physicalLEDStatesPriorToLampTest",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83da7b08_8aa211e8",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "should we call it skipLed instead of \"skip\" ?",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4d108791_eb799456",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 117,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "please fix this comment",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a845b157_4797ee90",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 270,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "Hmm.. it is not an error to not have this list. So, just INFO should be fine..What do you think ?\n\nAlso, we need to return from here.",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "35db3ce4_f4a8fc42",
+        "filename": "lamptest.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "please put a line space between these 2",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9804e14d_cd893637",
+        "filename": "lamptest.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-05T06:07:44Z",
+      "side": 1,
+      "message": "Physical LED names ( remove during lamp test ).\n\nAlso, can this be const std::vector ?",
+      "revId": "ffdbdc94b0e6514a7f4d072195efacd36f48e203",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
