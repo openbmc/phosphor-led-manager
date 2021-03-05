@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "8350d40a_1e248937",
+        "filename": "example/lamp-test/lamp-test-force-update.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:47:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f12db9df_83fa4cd6",
+      "revId": "d85e27f19e41800c1dd7ff2dd2c54c5f3c37c44a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "df8574ba_61e3de51",
         "filename": "example/lamp-test/lamp-test-skip-update.json",
         "patchSetId": 6
@@ -33,6 +51,24 @@
       "revId": "d85e27f19e41800c1dd7ff2dd2c54c5f3c37c44a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7929736e_8f3cec5f",
+        "filename": "example/lamp-test/lamp-test-skip-update.json",
+        "patchSetId": 6
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-05T06:47:23Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "df8574ba_61e3de51",
+      "revId": "d85e27f19e41800c1dd7ff2dd2c54c5f3c37c44a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
