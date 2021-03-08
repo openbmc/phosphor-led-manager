@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "ad63edb3_ae068299",
+        "filename": "json-config.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-08T07:00:23Z",
+      "side": 1,
+      "message": "hmm.. why is this needed ?. if needed, then it should be grouped with global below \u003cfstream\u003e. Is this also to be reported by clang ?",
+      "revId": "85e0ee962b50784281978a1a121021814d0d5173",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2c5397f7_5d90fa81",
+        "filename": "json-config.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-08T07:00:23Z",
+      "side": 1,
+      "message": "hmm.. just noticed it.. what is the need of thus ?",
+      "revId": "85e0ee962b50784281978a1a121021814d0d5173",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
