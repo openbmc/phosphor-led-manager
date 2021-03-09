@@ -16,6 +16,29 @@
       "revId": "1e404134cb590c4bf37647d6e9a12b60e0e6a7c5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9dea6285_87643394",
+        "filename": "lamptest.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 32,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-03-09T22:00:27Z",
+      "side": 1,
+      "message": "could you explain this to me again?  ledsDeAssert contains the LEDs to turn off, but this will only actually turn them off in they are in forceUpdateLEDs... why is that?  same question below.",
+      "range": {
+        "startLine": 24,
+        "startChar": 12,
+        "endLine": 32,
+        "endChar": 13
+      },
+      "revId": "1e404134cb590c4bf37647d6e9a12b60e0e6a7c5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
