@@ -87,6 +87,24 @@
       "revId": "85e0ee962b50784281978a1a121021814d0d5173",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c3920c93_a47f72d8",
+        "filename": "json-config.hpp",
+        "patchSetId": 16
+      },
+      "lineNbr": 128,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-09T06:52:15Z",
+      "side": 1,
+      "message": "Ignore my comment on event.exit(0).. I would feel we call this exit() in the json-parser.cpp, where the event.loop is being called. The way it is not, it\u0027s spread across",
+      "parentUuid": "5c5ecf48_a728e3f9",
+      "revId": "85e0ee962b50784281978a1a121021814d0d5173",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
