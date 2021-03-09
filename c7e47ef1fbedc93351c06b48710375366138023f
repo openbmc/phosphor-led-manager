@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "01957608_4c42f595",
+        "filename": "lamptest.cpp",
+        "patchSetId": 34
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-09T11:42:16Z",
+      "side": 1,
+      "message": "The queue will be processed after the lamp test is stopped.",
+      "revId": "c7e47ef1fbedc93351c06b48710375366138023f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bc2464b3_c4ba5ca9",
+        "filename": "lamptest.cpp",
+        "patchSetId": 34
+      },
+      "lineNbr": 69,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-09T11:42:16Z",
+      "side": 1,
+      "message": "Get the name of each member of physical led",
+      "revId": "c7e47ef1fbedc93351c06b48710375366138023f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f42609e4_64c23bfe",
+        "filename": "lamptest.cpp",
+        "patchSetId": 34
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-09T11:42:16Z",
+      "side": 1,
+      "message": "This trace is misleading. We are not acting on LED groups. We are acting on physical LEDs. \n\n\"Failed to get the name of member of physical LED path\"",
+      "revId": "c7e47ef1fbedc93351c06b48710375366138023f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7f957958_9f266279",
+        "filename": "lamptest.cpp",
+        "patchSetId": 34
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-09T11:42:16Z",
+      "side": 1,
+      "message": "is it possible to use decltype instead of using string, uint16_t etc ?.. These might not change .. but in case it changes in future.. We can get these types from the led layout definition.",
+      "revId": "c7e47ef1fbedc93351c06b48710375366138023f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
