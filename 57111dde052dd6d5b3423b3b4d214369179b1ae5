@@ -16,6 +16,24 @@
       "revId": "57111dde052dd6d5b3423b3b4d214369179b1ae5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9126732d_92455da3",
+        "filename": "lamptest.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-16T07:57:36Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "43be16fd_7058efe7",
+      "revId": "57111dde052dd6d5b3423b3b4d214369179b1ae5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
