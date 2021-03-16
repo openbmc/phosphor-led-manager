@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "a0a62e9e_3f519c25",
+        "filename": "led-main.cpp",
+        "patchSetId": 25
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-16T06:30:27Z",
+      "side": 1,
+      "message": "this needs to come before we initialise the groups. Else, ledmnager will crash failing to find lamp test callback in the cases where we patch ledmanager at bmc ready state and start",
+      "revId": "dfe63dc5d8e6f30131997c06a5e9b767af44e36c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
