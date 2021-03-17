@@ -22,6 +22,30 @@
       "revId": "e83d92433441f6cf5e609271bc944bde690fcb24",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7a0de1ca_cf961461",
+        "filename": "utils.hpp",
+        "patchSetId": 37
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-17T01:07:43Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "532e703a_cb49fe9f",
+      "range": {
+        "startLine": 67,
+        "startChar": 22,
+        "endLine": 67,
+        "endChar": 36
+      },
+      "revId": "e83d92433441f6cf5e609271bc944bde690fcb24",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
