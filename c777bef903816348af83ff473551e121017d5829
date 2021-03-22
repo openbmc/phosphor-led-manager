@@ -1,0 +1,9 @@
+Ok-To-Test+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: Matt Spinler <spinler@us.ibm.com>
+Code-Review+2: Vishwanatha Subbanna <vishwa@linux.vnet.ibm.com>
+Submitted-by: Vishwanatha Subbanna <vishwa@linux.vnet.ibm.com>
+Submitted-at: Mon, 22 Mar 2021 10:53:28 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/38518
+Project: openbmc/phosphor-led-manager
+Branch: refs/heads/master
