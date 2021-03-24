@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "213c8926_e167880f",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-24T10:55:54Z",
+      "side": 0,
+      "message": "honestly, I am still unable to understand why this is appearing in Dubai system. When I built rainier and Witherspoon, I did not see these files deployed. \n\nThe only way these files get deployed is by having FILE_ in the related openbmc layer and I did not have this in the .bb / .bbappend and hence I never saw these files in rainier and Witherspoon",
+      "revId": "8215032f795d468dd53ad8c42924bf5674b64c42",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
