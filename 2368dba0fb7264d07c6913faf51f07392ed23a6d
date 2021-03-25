@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f3ef346d_dafd030b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2021-03-25T15:28:08Z",
+      "side": 1,
+      "message": "Why is that?  If you look at a project like entity manager for example, all the configurations for all the hardware are installed by default.  This means that an \"out of the box build\" supports all the hardware.\n\nIt is also helpful to developers to have all the configurations in one place.  This makes it easy to make configuration format changes.  Please continue to add configurations that support specific hardware here.\n\nIf we could get an LED schema into entity manager, this entire problem would go away...we\u0027d just put the LED configurations in the correct entity-manager entity configuration files.\n\nIf you are looking to build a system that only supports a single configuration, thats fine - you can delete all the other configurations you don\u0027t care about in your bbappend.",
+      "range": {
+        "startLine": 14,
+        "startChar": 2,
+        "endLine": 15,
+        "endChar": 14
+      },
+      "revId": "2368dba0fb7264d07c6913faf51f07392ed23a6d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
