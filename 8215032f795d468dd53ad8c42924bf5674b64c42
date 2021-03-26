@@ -34,6 +34,24 @@
       "revId": "8215032f795d468dd53ad8c42924bf5674b64c42",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f03b889d_e995e9e7",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-03-26T07:55:36Z",
+      "side": 0,
+      "message": "I spoke to Brad y\u0027day and he was of the opinion that the needed bbappend files could remove the files that are not needed in their systems.\n\nHis rationale behind having all config in one image is to facilitate someone enabling all systems using 1 image.\n\nI think it\u0027s worth a discussion in discord",
+      "parentUuid": "fb359116_1dcb5a83",
+      "revId": "8215032f795d468dd53ad8c42924bf5674b64c42",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
