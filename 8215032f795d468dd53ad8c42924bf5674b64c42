@@ -16,6 +16,24 @@
       "revId": "8215032f795d468dd53ad8c42924bf5674b64c42",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fb359116_1dcb5a83",
+        "filename": "Makefile.am",
+        "patchSetId": 1
+      },
+      "lineNbr": 33,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-03-26T07:17:00Z",
+      "side": 0,
+      "message": "https://gerrit.openbmc-project.xyz/c/openbmc/openbmc/+/41532/2/meta-phosphor/recipes-phosphor/leds/phosphor-led-manager_git.bb#42\n\nCould you depend on this commit and test again?",
+      "parentUuid": "213c8926_e167880f",
+      "revId": "8215032f795d468dd53ad8c42924bf5674b64c42",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
