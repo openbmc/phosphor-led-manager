@@ -1,15 +1,24 @@
 AM_DEFAULT_SOURCE_EXT = .cpp
 AM_CPPFLAGS = -I$(top_srcdir)
 
+if WANTS_OPER_STATUS
+noinst_HEADERS = oper-status-monitor.hpp
+else
 noinst_HEADERS = fru-fault-monitor.hpp
+endif
 
 bin_PROGRAMS = phosphor-fru-fault-monitor
 
 phosphor_fru_fault_monitor_SOURCES = \
-               fru-fault-monitor.cpp \
                monitor-main.cpp \
                xyz/openbmc_project/Led/Mapper/error.cpp \
                xyz/openbmc_project/Led/Fru/Monitor/error.cpp
+
+if WANTS_OPER_STATUS
+phosphor_fru_fault_monitor_SOURCES += oper-status-monitor.cpp
+else
+phosphor_fru_fault_monitor_SOURCES += fru-fault-monitor.cpp
+endif
 
 BUILT_SOURCES =  xyz/openbmc_project/Led/Mapper/error.hpp \
                  xyz/openbmc_project/Led/Mapper/error.cpp \

@@ -84,6 +84,14 @@ AS_IF([test "x$enable_use_json" == "xyes"],
     AC_DEFINE([LED_USE_JSON],[],[Enable JSON configuration.])
 )
 
+# enable OperationalStatus monitor
+AC_ARG_ENABLE([monitor-oper-status],
+    AS_HELP_STRING([--enable-monitor-oper-status], [Enable OperationalStatus monitor.]))
+AM_CONDITIONAL([WANTS_OPER_STATUS], [test "x$enable_monitor_oper_status" == "xyes"])
+AS_IF([test "x$enable_monitor_oper_status" == "xyes"],
+    AC_DEFINE([MONITOR_OPER_STATUS],[],[Enable OperationalStatus monitor.])
+)
+
 # enable lamp test configuration
 AC_ARG_ENABLE([use-lamp-test],
     AS_HELP_STRING([--enable-use-lamp-test], [Enable lamp test configuration.]))
