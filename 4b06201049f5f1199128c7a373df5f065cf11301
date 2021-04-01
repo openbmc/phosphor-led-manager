@@ -1,0 +1,12 @@
+Ok-To-Test+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: Adriana Kobylak <anoo@linux.ibm.com>
+Code-Review+1: ManojKiran Eda <manojkiran.eda@gmail.com>
+Code-Review+1: Patrick Williams <patrick@stwcx.xyz>
+Code-Review+1: Chicago Duan <duanzhijia01@inspur.com>
+Code-Review+2: Vishwanatha Subbanna <vishwa@linux.vnet.ibm.com>
+Submitted-by: Vishwanatha Subbanna <vishwa@linux.vnet.ibm.com>
+Submitted-at: Thu, 01 Apr 2021 12:10:06 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/37661
+Project: openbmc/phosphor-led-manager
+Branch: refs/heads/master
