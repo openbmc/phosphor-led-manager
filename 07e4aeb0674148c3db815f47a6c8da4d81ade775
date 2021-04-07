@@ -53,6 +53,29 @@
     },
     {
       "key": {
+        "uuid": "cc3bd785_b24cbfe5",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-04-07T21:24:24Z",
+      "side": 1,
+      "message": "nit: spelling",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 40
+      },
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "82f7a483_e574e6fb",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -64,6 +87,23 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "static constexpr",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "11eceff2_8710ae89",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-04-07T21:24:24Z",
+      "side": 1,
+      "message": "Similar to what Vishwa mentioned about getService, you also have a getProperty in the utils file.  Maybe include that file in this app too so you can use all those functions?",
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -121,6 +161,23 @@
     },
     {
       "key": {
+        "uuid": "387795df_201a6685",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-04-07T21:24:24Z",
+      "side": 1,
+      "message": "it looks like you could simplify this whole thing down to:\nif (endpoints.empty())\n{\n   return std::string{};\n}\nelse\n{\n    return endpoints[0];\n}\n\nor do the \u0027?\u0027 ternary operator thing and do it in one line.",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cfdf2a3e_42779514",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -132,6 +189,29 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "static constexpr auto",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "38002432_abf09927",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-04-07T21:24:24Z",
+      "side": 1,
+      "message": "nit: missing space",
+      "range": {
+        "startLine": 153,
+        "startChar": 52,
+        "endLine": 153,
+        "endChar": 65
+      },
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
