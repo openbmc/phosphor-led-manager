@@ -1,0 +1,208 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "448a901f_52961dec",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "these are not needed since this is provided by utils.cpp",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "784d2845_47059e8f",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "https://github.com/openbmc/phosphor-led-manager/blob/master/utils.cpp#L15",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ba17d23c_57a5f4e5",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "Get all the properties of \"xyz.openbmc_project.State.Decorator.OperationalStatus\" interface",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "82f7a483_e574e6fb",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "static constexpr",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "12d8795c_26d73b88",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "please consider a line spacing fore readability",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f5be380b_c9927954",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "please leave a line spacing",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ada46804_a1f714c8",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "fruInstancePath --\u003e groupPath",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cfdf2a3e_42779514",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "static constexpr auto",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "83a27582_d4d5eb63",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "please leave a line spacing",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b3d1fe9e_b084a1d3",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "Is this not a part of dbusHandler utils ?\n\nhttps://github.com/openbmc/phosphor-led-manager/blob/master/utils.cpp#L15",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "904412ea_614d1efb",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "Callback handler that gets invoked when the PropertiesChanged signal is caught by this app. Message is scanned for Inventory D-Bus object path and if OperationalStatus :: Functional is changed, then corresponding LED Group D-Bus object is called to assert.",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8eec38c9_1a207378",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T11:03:36Z",
+      "side": 1,
+      "message": "From the Inventory D-Bus object, obtains the associated LED group D-Bus object, where the association name is \"fault_led_group\"",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
