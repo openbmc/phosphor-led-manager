@@ -1,0 +1,395 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8a3a3c28_e7d694a9",
+        "filename": "fault-monitor/monitor-main.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "phosphor::led::oper::status::monitor::Monitor operStatus(bus) ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d60a68b6_fe848b15",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "objectPath --\u003e invObjectPath ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5c935f04_a78a7005",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "why is this a pointer ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5032a2a9_b3f52597",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please capture the Inventory path here",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f803f3cc_d96e67d9",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please capture Object paths here also",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3efe82f_c063ab2e",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "I would call path --\u003e invObjectPath",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f15f2c05_bb35d465",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 59,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "hmm.. service should be ObjectMapper tho !\n\nbusctl get-property  xyz.openbmc_project.ObjectMapper  /xyz/openbmc_project/led/physical/cffps1_69/inventory xyz.openbmc_project.Association  endpoints\n`as 1 \"/xyz/openbmc_project/inventory/system/chassis/motherboard/powersupply0\"`\n\nbusctl get-property  xyz.openbmc_project.ObjectMapper  /xyz/openbmc_project/inventory/system/chassis/motherboard/powersupply0/leds  xyz.openbmc_project.Association  endpoints\n`as 1 \"/xyz/openbmc_project/led/physical/cffps1_69\"`",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fcb6eb26_730ed77f",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please put a line spacing after this and also a comment on what the objectPath is",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45393b42_a35c2081",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "we don\u0027t need the entire associations to be traversed.. we can just look at the fault_led_group by reading the property",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d677a2f6_beeb2565",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please capture Object path info here",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7c37ec4e_d8b41c17",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 110,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please put a comment on why we have !value here",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fbad9d5_b7ba65b4",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please use mapper to get the service name than hardcoded Led.GroupManager",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "395dd929_051e5f94",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "why is this needed ?.",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "72138a09_b42488b3",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "Function --\u003e Functional",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45dd8bfd_7e676632",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please leave a line spacing",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1b76168d_8e6ec4e1",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 21,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "This implements methods for watching OperationalStatus interface of Inventory D-Bus object and then assert corresponding LED Group D-Bus objects.",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "59b1cf85_754cce69",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "This seems a misnomer. I would just call it \"class Monitor\"",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1f860258_90623c5c",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 34,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "Please leave a line spacing between these 2. The comment applies generically to all the files in this commit",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3c506ba9_dbf85da5",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 65,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "matchHandler ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08573092_f73f2402",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "please specify which association is being looked for.",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "985bca1a_de0f3a68",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "path -\u003e inventoryPath ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ca036048_702c9323",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "(const std:string\u0026 inventoryPath) const ?",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff288325_f25c430e",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-07T07:17:40Z",
+      "side": 1,
+      "message": "updateAssertedProperty ?\n\npath --\u003e ledGroupPath",
+      "revId": "c0a4f43f5e58ed333fe67d3a577025554919b392",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
