@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "5cca0028_319fe2f7",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "448a901f_52961dec",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "784d2845_47059e8f",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "ff9ea000_4d9944f2",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 22,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "784d2845_47059e8f",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ba17d23c_57a5f4e5",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -50,6 +86,24 @@
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e752dbe7_a3025528",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ba17d23c_57a5f4e5",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -76,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "cb82a95e_86a72eba",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 87,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cc3bd785_b24cbfe5",
+      "range": {
+        "startLine": 87,
+        "startChar": 31,
+        "endLine": 87,
+        "endChar": 40
+      },
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "82f7a483_e574e6fb",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -87,6 +165,24 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "static constexpr",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2c40f90_aecac0fa",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Removed these",
+      "parentUuid": "82f7a483_e574e6fb",
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -110,6 +206,24 @@
     },
     {
       "key": {
+        "uuid": "c5338043_9bcd3f47",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 106,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "11eceff2_8710ae89",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "12d8795c_26d73b88",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -121,6 +235,24 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "please consider a line spacing fore readability",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "50089470_79255fb4",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 107,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Removed these",
+      "parentUuid": "12d8795c_26d73b88",
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -141,6 +273,24 @@
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "04b9830b_4d1e8e2c",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 118,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f5be380b_c9927954",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -178,6 +328,42 @@
     },
     {
       "key": {
+        "uuid": "41355148_fedac48d",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ada46804_a1f714c8",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "63515ef2_75a39db0",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Good point",
+      "parentUuid": "387795df_201a6685",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "cfdf2a3e_42779514",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -189,6 +375,24 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "static constexpr auto",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbca5858_951ec074",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 140,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "cfdf2a3e_42779514",
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -218,6 +422,30 @@
     },
     {
       "key": {
+        "uuid": "cf4daa3b_3b6b22f0",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "38002432_abf09927",
+      "range": {
+        "startLine": 153,
+        "startChar": 52,
+        "endLine": 153,
+        "endChar": 65
+      },
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "83a27582_d4d5eb63",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 3
@@ -229,6 +457,24 @@
       "writtenOn": "2021-04-07T11:03:36Z",
       "side": 1,
       "message": "please leave a line spacing",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ccf9dffb_c79ce3be",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 158,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Removed",
+      "parentUuid": "83a27582_d4d5eb63",
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -252,6 +498,24 @@
     },
     {
       "key": {
+        "uuid": "559d987a_1d59158e",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Yes.\nThe original idea was: these are two daemons, and I do not want to use methods that are not related to this daemon.\n\nUpdated",
+      "parentUuid": "b3d1fe9e_b084a1d3",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "904412ea_614d1efb",
         "filename": "fault-monitor/oper-status-monitor.hpp",
         "patchSetId": 3
@@ -269,6 +533,24 @@
     },
     {
       "key": {
+        "uuid": "b84942f3_ec26cea1",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "904412ea_614d1efb",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8eec38c9_1a207378",
         "filename": "fault-monitor/oper-status-monitor.hpp",
         "patchSetId": 3
@@ -283,6 +565,24 @@
       "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6048b6de_566c7157",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T01:58:38Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8eec38c9_1a207378",
+      "revId": "07e4aeb0674148c3db815f47a6c8da4d81ade775",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
