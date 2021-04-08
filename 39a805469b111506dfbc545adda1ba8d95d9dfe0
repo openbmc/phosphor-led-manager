@@ -194,6 +194,24 @@
     },
     {
       "key": {
+        "uuid": "8c112db2_a643fa2d",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-08T16:23:24Z",
+      "side": 1,
+      "message": "I spoke to Matt and it\u0027s technically possible to express that in Associations. Although I don\u0027t foresee more than 1 LED D_Bus objects for Inventory, we probably not want to have that restriction here. So. can this return array of LED D-Bus objects if there are more than 1 end points ?",
+      "parentUuid": "426d3301_2076c837",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "254b7be5_f9b84e2c",
         "filename": "fault-monitor/oper-status-monitor.hpp",
         "patchSetId": 4
