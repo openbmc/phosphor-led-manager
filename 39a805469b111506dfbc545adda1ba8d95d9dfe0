@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "99145618_34e65f45",
+        "filename": "configure.ac",
+        "patchSetId": 4
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dfb784c1_11bc9300",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "563dd8f3_2e31c431",
         "filename": "fault-monitor/Makefile.am",
         "patchSetId": 4
@@ -33,6 +51,24 @@
       "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "256e0ea8_bad2d546",
+        "filename": "fault-monitor/Makefile.am",
+        "patchSetId": 4
+      },
+      "lineNbr": 20,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "563dd8f3_2e31c431",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "21baf344_f6f038f9",
+        "filename": "fault-monitor/monitor-main.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "22d1928c_1ce60ac2",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e4662cb7_b1265af3",
         "filename": "fault-monitor/oper-status-monitor.cpp",
         "patchSetId": 4
@@ -64,6 +118,24 @@
       "writtenOn": "2021-04-08T11:07:07Z",
       "side": 1,
       "message": "In one of the commits where we were watching for InterfacesAdded signal from EntityManager, the code was checking (if interface \u003d\u003d \u003cInterfacesAdded\u003e ).. I believe that is not the case here ?.. do we ONLY get notified if it\u0027s coming from \n\nInventory-Manager + OperationalStatus + PropertiesCHanged ?\n\njust wonder why we had to do that check in that commit..",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e6fa446c_cdedf97b",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "\u003e do we ONLY get notified if it\u0027s coming from \n\nYes",
+      "parentUuid": "e4662cb7_b1265af3",
       "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -84,6 +156,24 @@
       "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eef5abce_0d0fba31",
+        "filename": "fault-monitor/oper-status-monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "dd0f93c0_668703fd",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -118,6 +208,24 @@
       "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5a8e9ad0_ad34620f",
+        "filename": "fault-monitor/oper-status-monitor.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-08T12:02:46Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "254b7be5_f9b84e2c",
+      "revId": "39a805469b111506dfbc545adda1ba8d95d9dfe0",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
