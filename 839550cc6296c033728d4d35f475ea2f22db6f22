@@ -1,0 +1,89 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "3c9a649b_19894bd8",
+        "filename": "fault-monitor/operational-status-monitor.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T05:20:00Z",
+      "side": 1,
+      "message": "I would prefer \u0027auto\u0027",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "81fcd87c_25285bd2",
+        "filename": "fault-monitor/operational-status-monitor.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T05:20:00Z",
+      "side": 1,
+      "message": "hmm.. does just having it make it work or should we walk the endpoint and pack ?. Can we please have more than 1 LED Group D-Bus object and put that in Tested section of Commit Message ?",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bd18689c_4dc94232",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T05:20:00Z",
+      "side": 1,
+      "message": "Inventory D-Bus object path",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d500c5c7_7b3f4da2",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T05:20:00Z",
+      "side": 1,
+      "message": "getLedGroupPaths ( just plural )",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "97813a90_15cf48ff",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T05:20:00Z",
+      "side": 1,
+      "message": "ledGroupPaths ( Just made it plural.. please change this and also the description )",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
