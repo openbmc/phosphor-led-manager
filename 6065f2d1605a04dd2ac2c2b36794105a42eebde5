@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "77341736_7577b7e4",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-09T06:43:37Z",
+      "side": 1,
+      "message": "It is not \"All\". We can just put this :\n \nLED Group D-Bus object Paths",
+      "revId": "6065f2d1605a04dd2ac2c2b36794105a42eebde5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
