@@ -16,6 +16,24 @@
       "revId": "6065f2d1605a04dd2ac2c2b36794105a42eebde5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7ae480b5_8032bca0",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 90,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:47:58Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "77341736_7577b7e4",
+      "revId": "6065f2d1605a04dd2ac2c2b36794105a42eebde5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
