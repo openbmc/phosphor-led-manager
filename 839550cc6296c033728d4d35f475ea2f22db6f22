@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "d51479fe_b65adb95",
+        "filename": "fault-monitor/operational-status-monitor.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3c9a649b_19894bd8",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "81fcd87c_25285bd2",
         "filename": "fault-monitor/operational-status-monitor.cpp",
         "patchSetId": 6
@@ -30,6 +48,24 @@
       "writtenOn": "2021-04-09T05:20:00Z",
       "side": 1,
       "message": "hmm.. does just having it make it work or should we walk the endpoint and pack ?. Can we please have more than 1 LED Group D-Bus object and put that in Tested section of Commit Message ?",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "76e18b33_a958c33a",
+        "filename": "fault-monitor/operational-status-monitor.cpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:36:25Z",
+      "side": 1,
+      "message": "\u003e does just having it make it work or should we walk the endpoint and pack ?\n\nhere we should walk the endpoint and pack\n\n\u003e Can we please have more than 1 LED Group D-Bus object and put that in Tested section of Commit Message ?\n\nAck",
+      "parentUuid": "81fcd87c_25285bd2",
       "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "ad2876db_39cff380",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 79,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "bd18689c_4dc94232",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "d500c5c7_7b3f4da2",
         "filename": "fault-monitor/operational-status-monitor.hpp",
         "patchSetId": 6
@@ -70,6 +124,24 @@
     },
     {
       "key": {
+        "uuid": "c05b0b84_234bf52f",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:36:25Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d500c5c7_7b3f4da2",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "97813a90_15cf48ff",
         "filename": "fault-monitor/operational-status-monitor.hpp",
         "patchSetId": 6
@@ -84,6 +156,24 @@
       "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1fd16464_9daf1cb8",
+        "filename": "fault-monitor/operational-status-monitor.hpp",
+        "patchSetId": 6
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-09T06:36:25Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "97813a90_15cf48ff",
+      "revId": "839550cc6296c033728d4d35f475ea2f22db6f22",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
