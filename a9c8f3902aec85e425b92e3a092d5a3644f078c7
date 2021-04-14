@@ -25,6 +25,30 @@
     },
     {
       "key": {
+        "uuid": "63cc783d_e3284b1e",
+        "filename": "configs/meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-14T10:40:22Z",
+      "side": 1,
+      "message": "Folder name : yes\n\nWhy is it having comma in between : That is to match with what is put in the EM config, so we can just look it up mapping to what\u0027s in EM.\n\nhttps://github.com/openbmc/phosphor-led-manager/tree/master/configs\n\nxyz.openbmc_project.Configuration.IBMCompatibleSystem interface -         -                                -\n.Name                                                 property  s         \"Compatible System\"              emits-change\n.Names                                                property  as        2 \"ibm,rainier-2u\" \"ibm,rainier\" emits-change\n.Type                                                 property  s         \"IBMCompatibleSystem\"            emits-change",
+      "parentUuid": "52f4f9be_109f3dfe",
+      "range": {
+        "startLine": 2,
+        "startChar": 15,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "a9c8f3902aec85e425b92e3a092d5a3644f078c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "95c63d2c_a990205a",
         "filename": "configs/meson.build",
         "patchSetId": 4
