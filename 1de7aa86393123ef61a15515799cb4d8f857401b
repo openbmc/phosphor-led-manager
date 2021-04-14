@@ -16,6 +16,24 @@
       "revId": "1de7aa86393123ef61a15515799cb4d8f857401b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "259c7bc1_0ac004f3",
+        "filename": "bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-04-14T12:02:35Z",
+      "side": 1,
+      "message": "Please let me know what your expectations are for this commit.  If you are uninterested in it, I can abandon it.\n\nThere are significant issues reported across our project by \u0027shellcheck\u0027 and I was using tools to [mostly] automatically apply fixes across all of our repositories.  I made approximately 30 commits across tons of repositories and the changes applied pretty cleanly to every one except this repository.  It seemed like this file was out of date compared to the content in the whole rest of the project, and so I just copied an updated/fixed version from another repository.\n\nIf you just want the config.* files changed back to a wildcard, let me know.",
+      "parentUuid": "c5fad46e_25b563d7",
+      "revId": "1de7aa86393123ef61a15515799cb4d8f857401b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
