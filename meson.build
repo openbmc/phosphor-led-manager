@@ -158,3 +158,7 @@ build_tests = get_option('tests')
 if not build_tests.disabled()
   subdir('test')
 endif
+
+install_subdir('configs',
+    install_dir: get_option('datadir') / 'phosphor-led-manager',
+    strip_directory: true)
