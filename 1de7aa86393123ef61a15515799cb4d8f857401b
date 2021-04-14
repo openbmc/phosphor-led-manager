@@ -34,6 +34,24 @@
       "revId": "1de7aa86393123ef61a15515799cb4d8f857401b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3a37650e_8707606d",
+        "filename": "bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-14T12:23:29Z",
+      "side": 1,
+      "message": "I am interested in it and thank you for making this change. I was just trying to understand why it was made explicit as opposed to config.*. \n\nThat said, phosphor-led-manager is moving to Meson in few days. So, it might not be needed when we move to Meson ?.\n\nFor now, config.* is all I was asking for.. Thanks.",
+      "parentUuid": "259c7bc1_0ac004f3",
+      "revId": "1de7aa86393123ef61a15515799cb4d8f857401b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
