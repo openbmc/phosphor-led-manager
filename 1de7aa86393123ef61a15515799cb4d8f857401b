@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c5fad46e_25b563d7",
+        "filename": "bootstrap.sh",
+        "patchSetId": 2
+      },
+      "lineNbr": 4,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-14T11:41:27Z",
+      "side": 1,
+      "message": "isn\u0027t config.* ( what\u0027s before ) a super set of config.guess / config.h.in / config.sub / config.$anything_else ?.. Or is the aim to be explicit hoping there may be some files with config.\u003csomething\u003e needed by the project ?",
+      "revId": "1de7aa86393123ef61a15515799cb4d8f857401b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
