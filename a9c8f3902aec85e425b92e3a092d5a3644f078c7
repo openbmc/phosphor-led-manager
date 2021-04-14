@@ -1,0 +1,50 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "52f4f9be_109f3dfe",
+        "filename": "configs/meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-04-14T10:32:12Z",
+      "side": 1,
+      "message": "is this a folder name ?why is it having a comma in between ?  i cannot find it in led-manager repo ?",
+      "range": {
+        "startLine": 2,
+        "startChar": 15,
+        "endLine": 2,
+        "endChar": 31
+      },
+      "revId": "a9c8f3902aec85e425b92e3a092d5a3644f078c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "95c63d2c_a990205a",
+        "filename": "configs/meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-04-14T10:32:12Z",
+      "side": 1,
+      "message": "can we use meson.project_name() ?",
+      "range": {
+        "startLine": 3,
+        "startChar": 40,
+        "endLine": 3,
+        "endChar": 60
+      },
+      "revId": "a9c8f3902aec85e425b92e3a092d5a3644f078c7",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
