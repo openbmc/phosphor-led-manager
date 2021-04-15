@@ -46,6 +46,30 @@
       "revId": "d76c07482dda29e159769ddca27c2521fd2a1966",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e2f6b6c8_3c86138f",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 26,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-04-15T11:51:10Z",
+      "side": 1,
+      "message": "apologies, now i see that the variable is being used in the code.",
+      "parentUuid": "77420031_7b90b20e",
+      "range": {
+        "startLine": 26,
+        "startChar": 0,
+        "endLine": 26,
+        "endChar": 95
+      },
+      "revId": "d76c07482dda29e159769ddca27c2521fd2a1966",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
