@@ -1,8 +1,18 @@
 fault_monitor_sources = [
     generated_sources,
-    'fru-fault-monitor.cpp',
     'monitor-main.cpp',
 ]
+
+if get_option('monitor-operational-status').enabled()
+    fault_monitor_sources += [
+        '../utils.cpp',
+        'operational-status-monitor.cpp',
+        ]
+else
+    fault_monitor_sources += [
+        'fru-fault-monitor.cpp',
+        ]
+endif
 
 executable(
     'phosphor-fru-fault-monitor',
