@@ -4137,6 +4137,13 @@
                "Priority" : "Blink"
             },
             {
+               "Name" : "cffps2_68",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
                "Name" : "front_enc_fault1",
                "Action" : "On",
                "DutyOn" : 50,
@@ -4164,6 +4171,13 @@
          "members" : [
             {
                "Name" : "cffps1_68",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "cffps2_68",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -4203,6 +4217,13 @@
                "Priority" : "Blink"
             },
             {
+               "Name" : "cffps2_69",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
                "Name" : "front_enc_fault1",
                "Action" : "On",
                "DutyOn" : 50,
@@ -4230,6 +4251,13 @@
          "members" : [
             {
                "Name" : "cffps1_69",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "cffps2_69",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -4269,6 +4297,13 @@
                "Priority" : "Blink"
             },
             {
+               "Name" : "cffps2_6a",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
                "Name" : "front_enc_fault1",
                "Action" : "On",
                "DutyOn" : 50,
@@ -4296,6 +4331,13 @@
          "members" : [
             {
                "Name" : "cffps1_6a",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "cffps2_6a",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -4335,6 +4377,13 @@
                "Priority" : "Blink"
             },
             {
+               "Name" : "cffps2_6b",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
                "Name" : "front_enc_fault1",
                "Action" : "On",
                "DutyOn" : 50,
@@ -4362,6 +4411,13 @@
          "members" : [
             {
                "Name" : "cffps1_6b",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "cffps2_6b",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
