@@ -4841,6 +4841,138 @@
                "Priority" : "Blink"
             }
          ]
+      },
+      {
+         "group" : "planar_fault",
+         "members" : [
+            {
+               "Name" : "planar",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "planar_identify",
+         "members" : [
+            {
+               "Name" : "planar",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "bmc_fault",
+         "members" : [
+            {
+               "Name" : "bmc",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "bmc_identify",
+         "members" : [
+            {
+               "Name" : "bmc",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
       }
    ]
 }
