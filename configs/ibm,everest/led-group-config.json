@@ -4115,6 +4115,732 @@
                "Priority" : "Blink"
             }
          ]
+      },
+      {
+         "group" : "dasd_backplane_fault",
+         "members" : [
+            {
+               "Name" : "dasd_backplane",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "dasd_backplane_identify",
+         "members" : [
+            {
+               "Name" : "dasd_backplane",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme0_fault",
+         "members" : [
+            {
+               "Name" : "nvme0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme0_identify",
+         "members" : [
+            {
+               "Name" : "nvme0",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme1_fault",
+         "members" : [
+            {
+               "Name" : "nvme1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme1_identify",
+         "members" : [
+            {
+               "Name" : "nvme1",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme2_fault",
+         "members" : [
+            {
+               "Name" : "nvme2",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme2_identify",
+         "members" : [
+            {
+               "Name" : "nvme2",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme3_fault",
+         "members" : [
+            {
+               "Name" : "nvme3",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme3_identify",
+         "members" : [
+            {
+               "Name" : "nvme3",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme4_fault",
+         "members" : [
+            {
+               "Name" : "nvme4",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme4_identify",
+         "members" : [
+            {
+               "Name" : "nvme4",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme5_fault",
+         "members" : [
+            {
+               "Name" : "nvme5",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme5_identify",
+         "members" : [
+            {
+               "Name" : "nvme5",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme6_fault",
+         "members" : [
+            {
+               "Name" : "nvme6",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme6_identify",
+         "members" : [
+            {
+               "Name" : "nvme6",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme7_fault",
+         "members" : [
+            {
+               "Name" : "nvme7",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme7_identify",
+         "members" : [
+            {
+               "Name" : "nvme7",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme8_fault",
+         "members" : [
+            {
+               "Name" : "nvme8",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme8_identify",
+         "members" : [
+            {
+               "Name" : "nvme8",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme9_fault",
+         "members" : [
+            {
+               "Name" : "nvme9",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_enc_fault1",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_fault0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_fault",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
+      },
+      {
+         "group" : "nvme9_identify",
+         "members" : [
+            {
+               "Name" : "nvme9",
+               "Action" : "Blink",
+               "DutyOn" : 50,
+               "Period" : 1000,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "front_sys_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "rear_enc_id0",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            },
+            {
+               "Name" : "virtual_enc_id",
+               "Action" : "On",
+               "DutyOn" : 50,
+               "Period" : 0,
+               "Priority" : "Blink"
+            }
+         ]
       }
    ]
 }
