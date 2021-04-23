@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "933b013c_32f3a21e",
+        "filename": "configs/ibm,everest/led-group-config.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3906,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-23T10:02:53Z",
+      "side": 1,
+      "message": "nit: tab",
+      "range": {
+        "startLine": 3906,
+        "startChar": 0,
+        "endLine": 3906,
+        "endChar": 1
+      },
+      "revId": "ed8a6a9763a26eebae07088c37acd77404a1decb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fe78c03_b7165397",
+        "filename": "configs/ibm,everest/led-group-config.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 3986,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-04-23T10:02:53Z",
+      "side": 1,
+      "message": "nit: tab",
+      "revId": "ed8a6a9763a26eebae07088c37acd77404a1decb",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
