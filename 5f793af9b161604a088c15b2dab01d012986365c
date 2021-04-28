@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "97985f34_3cee6601",
+        "filename": "configs/ibm,rainier-1s4u/led-group-config.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-04-28T21:36:18Z",
+      "side": 1,
+      "message": "This system doesn\u0027t have all fans populated.  https://github.com/openbmc/openbmc/blob/master/meta-ibm/recipes-phosphor/fans/phosphor-fan-presence-config/p10bmc/rainier-1s4u/config.json lists the available ones.",
+      "revId": "5f793af9b161604a088c15b2dab01d012986365c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
