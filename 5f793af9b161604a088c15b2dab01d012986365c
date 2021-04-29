@@ -16,6 +16,24 @@
       "revId": "5f793af9b161604a088c15b2dab01d012986365c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f1296c8d_f10313e2",
+        "filename": "configs/ibm,rainier-1s4u/led-group-config.json",
+        "patchSetId": 1
+      },
+      "lineNbr": 137,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-04-29T05:14:13Z",
+      "side": 1,
+      "message": "oh.. so I remove fan3 and fan5 from this config ?. Is it always fan0 / fan1 / fan2 / fan4 ?",
+      "parentUuid": "97985f34_3cee6601",
+      "revId": "5f793af9b161604a088c15b2dab01d012986365c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
