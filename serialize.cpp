@@ -22,7 +22,7 @@ namespace fs = std::filesystem;
 
 bool Serialize::getGroupSavedState(const std::string& objPath) const
 {
-    return savedGroups.find(objPath) == savedGroups.end() ? false : true;
+    return savedGroups.contains(objPath);
 }
 
 void Serialize::storeGroups(const std::string& group, bool asserted)
