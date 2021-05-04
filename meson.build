@@ -163,7 +163,6 @@ executable(
     sources,
     generated_sources,
     include_directories: include_directories('gen'),
-    dependencies: sdbusplus_dep,
     implicit_include_directories: true,
     dependencies: deps,
     install: true,
