@@ -46,6 +46,30 @@
       "revId": "2c211f8c2c9f97e93c19fa691afe97d967865a5a",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "406b03a8_243fbfca",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 150,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-04T06:02:00Z",
+      "side": 0,
+      "message": "this dependency was defined in L: 99.\nhere is a duplicate.\nSo I merged L: 150 and L: 152.",
+      "parentUuid": "e1b0c46d_e9aa804b",
+      "range": {
+        "startLine": 150,
+        "startChar": 3,
+        "endLine": 150,
+        "endChar": 32
+      },
+      "revId": "2c211f8c2c9f97e93c19fa691afe97d967865a5a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
