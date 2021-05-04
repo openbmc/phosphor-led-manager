@@ -12,9 +12,9 @@ TEST(loadJsonConfig, testGoodPath)
     std::string powerOn = objPath + "/power_on";
     std::string enclosureIdentify = objPath + "/enclosure_identify";
 
-    ASSERT_NE(ledMap.find(bmcBooted), ledMap.end());
-    ASSERT_NE(ledMap.find(powerOn), ledMap.end());
-    ASSERT_NE(ledMap.find(enclosureIdentify), ledMap.end());
+    ASSERT_EQ(ledMap.contains(bmcBooted), true);
+    ASSERT_EQ(ledMap.contains(powerOn), true);
+    ASSERT_EQ(ledMap.contains(enclosureIdentify), true);
 
     LedAction bmcBootedActions = ledMap.at(bmcBooted);
     LedAction powerOnActions = ledMap.at(powerOn);

@@ -26,8 +26,7 @@ bool Manager::setGroupState(const std::string& path, bool assert,
     }
     else
     {
-        auto search = assertedGroups.find(&ledMap.at(path));
-        if (search != assertedGroups.end())
+        if (assertedGroups.contains(&ledMap.at(path)))
         {
             assertedGroups.erase(&ledMap.at(path));
         }

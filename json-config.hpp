@@ -104,7 +104,7 @@ class JsonConfig
 
         msg.read(path, interfaces);
 
-        if (interfaces.find(confCompatibleInterface) == interfaces.end())
+        if (!interfaces.contains(confCompatibleInterface))
         {
             return;
         }
@@ -113,7 +113,7 @@ class JsonConfig
         // "xyz.openbmc_project.Configuration.IBMCompatibleSystem" interface
         const auto& properties = interfaces.at(confCompatibleInterface);
 
-        if (properties.find(confCompatibleProperty) == properties.end())
+        if (!properties.contains(confCompatibleProperty))
         {
             return;
         }
