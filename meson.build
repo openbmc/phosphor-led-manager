@@ -1,11 +1,11 @@
 project(
     'phosphor-ledmanager', 'cpp',
     version : '1.0.0',
-    meson_version: '>=0.54.1',
+    meson_version: '>=0.57.0',
     default_options: [
         'warning_level=3',
         'werror=true',
-        'cpp_std=c++17',
+        'cpp_std=c++20',
         'buildtype=debugoptimized'
     ]
 )
@@ -116,8 +116,8 @@ if get_option('use-json').disabled()
         'led-gen.hpp',
         command : [
             prog_python,
-            meson.source_root() + '/parse_led.py',
-            '-i', meson.source_root(),
+            meson.project_source_root() + '/parse_led.py',
+            '-i', meson.project_source_root(),
             '-o', meson.current_build_dir(),
         ],
         output : 'led-gen.hpp')
