@@ -38,11 +38,27 @@ else
     )
 endif
 
-sdeventplus = dependency('sdeventplus')
-phosphorlogging = dependency('phosphor-logging')
-phosphordbusinterfaces = dependency('phosphor-dbus-interfaces')
-gtest = dependency('gtest', main: true, disabler: true, required: true)
-gmock = dependency('gmock', disabler: true, required: true)
+sdeventplus_dep = dependency(
+    'sdeventplus',
+    fallback: [
+        'sdeventplus',
+        'sdeventplus_dep'
+    ],
+)
+phosphor_logging_dep = dependency(
+    'phosphor-logging',
+    fallback: [
+        'phosphor-logging',
+        'phosphor_logging_dep'
+    ],
+)
+phosphor_dbus_interfaces_dep = dependency(
+    'phosphor-dbus-interfaces',
+    fallback: [
+        'phosphor-dbus-interfaces',
+        'phosphor_dbus_interfaces_dep'
+    ],
+)
 prog_python = find_program('python3', required: true)
 realpath_prog = find_program('realpath')
 
@@ -97,9 +113,9 @@ endforeach
 
 deps = [
     sdbusplus_dep,
-    sdeventplus,
-    phosphorlogging,
-    phosphordbusinterfaces,
+    sdeventplus_dep,
+    phosphor_logging_dep,
+    phosphor_dbus_interfaces_dep,
     nlohmann_json
 ]
 
