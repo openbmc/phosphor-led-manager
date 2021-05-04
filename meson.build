@@ -38,11 +38,36 @@ else
     )
 endif
 
-sdeventplus = dependency('sdeventplus')
-phosphorlogging = dependency('phosphor-logging')
-phosphordbusinterfaces = dependency('phosphor-dbus-interfaces')
-gtest = dependency('gtest', main: true, disabler: true, required: true)
-gmock = dependency('gmock', disabler: true, required: true)
+if get_option('tests').enabled()
+    gtest = dependency('gtest', main: true, disabler: true, required : false)
+    gmock = dependency('gmock', disabler: true, required : false)
+    if not gtest.found() and get_option('tests').enabled()
+        gtest_proj = subproject('gtest', required: true)
+        gtest = gtest_proj.get_variable('gtest_main_dep')
+        gmock = gtest_proj.get_variable('gmock_dep')
+    endif
+    gtest = gtest.as_system('system')
+    gmock = gmock.as_system('system')
+endif
+
+sdeventplus = dependency(
+                'sdeventplus',
+                fallback: [
+                    'sdeventplus',
+                    'sdeventplus_dep'
+                ])
+phosphorlogging = dependency(
+                    'phosphor-logging',
+                    fallback: [
+                        'phosphor-logging',
+                        'phosphor_logging_dep'
+                    ])
+phosphordbusinterfaces = dependency(
+                            'phosphor-dbus-interfaces',
+                            fallback: [
+                                'phosphor-dbus-interfaces',
+                                'phosphor_dbus_interfaces_dep'
+                            ])
 prog_python = find_program('python3', required: true)
 realpath_prog = find_program('realpath')
 
