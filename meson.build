@@ -38,9 +38,24 @@ else
     )
 endif
 
-sdeventplus = dependency('sdeventplus')
-phosphorlogging = dependency('phosphor-logging')
-phosphordbusinterfaces = dependency('phosphor-dbus-interfaces')
+sdeventplus = dependency(
+                'sdeventplus',
+                fallback: [
+                    'sdeventplus',
+                    'sdeventplus_dep'
+                ])
+phosphorlogging = dependency(
+                    'phosphor-logging',
+                    fallback: [
+                        'phosphor-logging',
+                        'phosphor_logging_dep'
+                    ])
+phosphordbusinterfaces = dependency(
+                            'phosphor-dbus-interfaces',
+                            fallback: [
+                                'phosphor-dbus-interfaces',
+                                'phosphor_dbus_interfaces_dep'
+                            ])
 gtest = dependency('gtest', main: true, disabler: true, required: true)
 gmock = dependency('gmock', disabler: true, required: true)
 prog_python = find_program('python3', required: true)
