@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "72e7c12d_2b9bf700",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-04T08:37:45Z",
+      "side": 1,
+      "message": "compilt --\u003e compile\n\nThis does not need to be in chain with contains() commit. this commit can be by itself\n\nalso commit msg can probably say where is it defined for the first time",
+      "revId": "e49f07ce7effd2e388a49a092a125b84b51d1bfc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
