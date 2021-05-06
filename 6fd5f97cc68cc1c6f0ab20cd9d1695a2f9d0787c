@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "f1cd5fef_e67106ff",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1000206
+      },
+      "writtenOn": "2021-05-06T07:00:47Z",
+      "side": 1,
+      "message": "there are wraps available for gtest and gmock as well. missed them ?",
+      "range": {
+        "startLine": 59,
+        "startChar": 0,
+        "endLine": 60,
+        "endChar": 59
+      },
+      "revId": "6fd5f97cc68cc1c6f0ab20cd9d1695a2f9d0787c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
