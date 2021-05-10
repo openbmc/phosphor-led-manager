@@ -1,0 +1,72 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d72d2aa1_b8ad42cc",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-10T12:28:18Z",
+      "side": 1,
+      "message": "I download the zip file and I did not see this zip file.",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7af70da5_f770c5d3",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-10T12:28:18Z",
+      "side": 1,
+      "message": "Is this a Git commit ?.. If so, can this be HEAD ?",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "744a9dd4_ed222629",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-10T12:28:18Z",
+      "side": 1,
+      "message": "The zip file I downloaded did not have this.. May be I am missing something fundamental ?.. how is this supposed to work ?",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8420ace3_cd776393",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-10T12:28:18Z",
+      "side": 1,
+      "message": "Is this a Git commit ?.. If so, can this be HEAD ?",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
