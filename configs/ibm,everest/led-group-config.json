@@ -365,10 +365,10 @@
          ]
       },
       {
-         "group" : "cpu0_fault",
+         "group" : "cpu0_c14_fault",
          "members" : [
             {
-               "Name" : "pca955x_cpu0",
+               "Name" : "pca955x_cpu0_c14",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -398,10 +398,10 @@
          ]
       },
       {
-         "group" : "cpu0_identify",
+         "group" : "cpu0_c14_identify",
          "members" : [
             {
-               "Name" : "pca955x_cpu0",
+               "Name" : "pca955x_cpu0_c14",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -431,10 +431,10 @@
          ]
       },
       {
-         "group" : "cpu1_fault",
+         "group" : "cpu1_c19_fault",
          "members" : [
             {
-               "Name" : "pca955x_cpu1",
+               "Name" : "pca955x_cpu1_c19",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -464,10 +464,10 @@
          ]
       },
       {
-         "group" : "cpu1_identify",
+         "group" : "cpu1_c19_identify",
          "members" : [
             {
-               "Name" : "pca955x_cpu1",
+               "Name" : "pca955x_cpu1_c19",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -497,10 +497,10 @@
          ]
       },
       {
-         "group" : "cpu2_fault",
+         "group" : "cpu2_c56_fault",
          "members" : [
             {
-               "Name" : "pca955x_cpu2",
+               "Name" : "pca955x_cpu2_c56",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -530,10 +530,10 @@
          ]
       },
       {
-         "group" : "cpu2_identify",
+         "group" : "cpu2_c56_identify",
          "members" : [
             {
-               "Name" : "pca955x_cpu2",
+               "Name" : "pca955x_cpu2_c56",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -563,10 +563,10 @@
          ]
       },
       {
-         "group" : "cpu3_fault",
+         "group" : "cpu3_c61_fault",
          "members" : [
             {
-               "Name" : "pca955x_cpu3",
+               "Name" : "pca955x_cpu3_c61",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -596,10 +596,10 @@
          ]
       },
       {
-         "group" : "cpu3_identify",
+         "group" : "cpu3_c61_identify",
          "members" : [
             {
-               "Name" : "pca955x_cpu3",
+               "Name" : "pca955x_cpu3_c61",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -1685,10 +1685,10 @@
          ]
       },
       {
-         "group" : "pcieslot0_fault",
+         "group" : "pcieslot_c01_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot0",
+               "Name" : "pca955x_pcieslot_c01",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -1718,10 +1718,10 @@
          ]
       },
       {
-         "group" : "pcieslot0_identify",
+         "group" : "pcieslot_c01_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot0",
+               "Name" : "pca955x_pcieslot_c01",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -1751,7 +1751,7 @@
          ]
       },
       {
-         "group" : "pcieslot1_fault",
+         "group" : "pcieslot_c02_fault",
          "members" : [
             {
                "Name" : "pca955x_pcieslot1",
@@ -1817,10 +1817,10 @@
          ]
       },
       {
-         "group" : "pcieslot2_fault",
+         "group" : "pcieslot_c02_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot2",
+               "Name" : "pca955x_pcieslot_c02",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -1850,10 +1850,10 @@
          ]
       },
       {
-         "group" : "pcieslot2_identify",
+         "group" : "pcieslot_c02_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot2",
+               "Name" : "pca955x_pcieslot_c02",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -1883,10 +1883,10 @@
          ]
       },
       {
-         "group" : "pcieslot3_fault",
+         "group" : "pcieslot_c03_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot3",
+               "Name" : "pca955x_pcieslot_c03",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -1916,10 +1916,10 @@
          ]
       },
       {
-         "group" : "pcieslot3_identify",
+         "group" : "pcieslot_c03_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot3",
+               "Name" : "pca955x_pcieslot_c03",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -1949,10 +1949,10 @@
          ]
       },
       {
-         "group" : "pcieslot4_fault",
+         "group" : "pcieslot_c04_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot4",
+               "Name" : "pca955x_pcieslot_c04",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -1982,10 +1982,10 @@
          ]
       },
       {
-         "group" : "pcieslot4_identify",
+         "group" : "pcieslot_c04_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot4",
+               "Name" : "pca955x_pcieslot_c04",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2015,10 +2015,10 @@
          ]
       },
       {
-         "group" : "pcieslot5_fault",
+         "group" : "pcieslot_c05_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot5",
+               "Name" : "pca955x_pcieslot_c05",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2048,10 +2048,10 @@
          ]
       },
       {
-         "group" : "pcieslot5_identify",
+         "group" : "pcieslot_c05_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot5",
+               "Name" : "pca955x_pcieslot_c05",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2081,10 +2081,10 @@
          ]
       },
       {
-         "group" : "pcieslot6_fault",
+         "group" : "pcieslot_c06_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot6",
+               "Name" : "pca955x_pcieslot_c06",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2114,10 +2114,10 @@
          ]
       },
       {
-         "group" : "pcieslot6_identify",
+         "group" : "pcieslot_c06_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot6",
+               "Name" : "pca955x_pcieslot_c06",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2147,10 +2147,10 @@
          ]
       },
       {
-         "group" : "pcieslot7_fault",
+         "group" : "pcieslot_c07_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot7",
+               "Name" : "pca955x_pcieslot_c07",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2180,10 +2180,10 @@
          ]
       },
       {
-         "group" : "pcieslot7_identify",
+         "group" : "pcieslot_c07_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot7",
+               "Name" : "pca955x_pcieslot_c07",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2213,10 +2213,10 @@
          ]
       },
       {
-         "group" : "pcieslot8_fault",
+         "group" : "pcieslot_c08_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot8",
+               "Name" : "pca955x_pcieslot_c08",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2246,10 +2246,10 @@
          ]
       },
       {
-         "group" : "pcieslot8_identify",
+         "group" : "pcieslot_c08_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot8",
+               "Name" : "pca955x_pcieslot_c08",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2279,10 +2279,10 @@
          ]
       },
       {
-         "group" : "pcieslot9_fault",
+         "group" : "pcieslot_c09_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot9",
+               "Name" : "pca955x_pcieslot_c09",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2312,10 +2312,10 @@
          ]
       },
       {
-         "group" : "pcieslot9_identify",
+         "group" : "pcieslot_c09_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot9",
+               "Name" : "pca955x_pcieslot_c09",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2345,10 +2345,10 @@
          ]
 	  },
       {
-         "group" : "pcieslot10_fault",
+         "group" : "pcieslot_c10_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot10",
+               "Name" : "pca955x_pcieslot_c10",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2378,10 +2378,10 @@
          ]
       },
       {
-         "group" : "pcieslot10_identify",
+         "group" : "pcieslot_c10_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot10",
+               "Name" : "pca955x_pcieslot_c10",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2411,10 +2411,10 @@
          ]
       },
       {
-         "group" : "pcieslot11_fault",
+         "group" : "pcieslot_c11_fault",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot11",
+               "Name" : "pca955x_pcieslot_c11",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2444,10 +2444,10 @@
          ]
       },
       {
-         "group" : "pcieslot11_identify",
+         "group" : "pcieslot_c11_identify",
          "members" : [
             {
-               "Name" : "pca955x_pcieslot11",
+               "Name" : "pca955x_pcieslot_c11",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2477,10 +2477,10 @@
          ]
       },
       {
-         "group" : "cablecard0_cxp_top_fault",
+         "group" : "cablecard_c02_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard0_cxp_top",
+               "Name" : "pca955x_cablecard_c02_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2510,10 +2510,10 @@
          ]
       },
       {
-         "group" : "cablecard0_cxp_top_identify",
+         "group" : "cablecard_c02_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard0_cxp_top",
+               "Name" : "pca955x_cablecard_c02_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2543,10 +2543,10 @@
          ]
       },
       {
-         "group" : "cablecard0_cxp_bot_fault",
+         "group" : "cablecard_c02_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard0_cxp_bot",
+               "Name" : "pca955x_cablecard_c02_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2576,10 +2576,10 @@
          ]
       },
       {
-         "group" : "cablecard0_cxp_bot_identify",
+         "group" : "cablecard_c02_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard0_cxp_bot",
+               "Name" : "pca955x_cablecard_c02_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2609,10 +2609,10 @@
          ]
       },
       {
-         "group" : "cablecard2_cxp_top_fault",
+         "group" : "cablecard_c03_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard2_cxp_top",
+               "Name" : "pca955x_cablecard_c03_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2642,10 +2642,10 @@
          ]
       },
       {
-         "group" : "cablecard2_cxp_top_identify",
+         "group" : "cablecard_c03_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard2_cxp_top",
+               "Name" : "pca955x_cablecard_c03_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2675,10 +2675,10 @@
          ]
       },
       {
-         "group" : "cablecard2_cxp_bot_fault",
+         "group" : "cablecard_c03_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard2_cxp_bot",
+               "Name" : "pca955x_cablecard_c03_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2708,10 +2708,10 @@
          ]
       },
       {
-         "group" : "cablecard2_cxp_bot_identify",
+         "group" : "cablecard_c03_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard2_cxp_bot",
+               "Name" : "pca955x_cablecard_c03_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2741,10 +2741,10 @@
          ]
       },
       {
-         "group" : "cablecard3_cxp_top_fault",
+         "group" : "cablecard_c04_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard3_cxp_top",
+               "Name" : "pca955x_cablecard_c04_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2774,10 +2774,10 @@
          ]
       },
       {
-         "group" : "cablecard3_cxp_top_identify",
+         "group" : "cablecard_c04_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard3_cxp_top",
+               "Name" : "pca955x_cablecard_c04_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2807,10 +2807,10 @@
          ]
       },
       {
-         "group" : "cablecard3_cxp_bot_fault",
+         "group" : "cablecard_c04_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard3_cxp_bot",
+               "Name" : "pca955x_cablecard_c04_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2840,10 +2840,10 @@
          ]
       },
       {
-         "group" : "cablecard3_cxp_bot_identify",
+         "group" : "cablecard_c04_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard3_cxp_bot",
+               "Name" : "pca955x_cablecard_c04_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2873,10 +2873,10 @@
          ]
       },
       {
-         "group" : "cablecard4_cxp_top_fault",
+         "group" : "cablecard_c05_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard4_cxp_top",
+               "Name" : "pca955x_cablecard_c05_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2906,10 +2906,10 @@
          ]
       },
       {
-         "group" : "cablecard4_cxp_top_identify",
+         "group" : "cablecard_c05_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard4_cxp_top",
+               "Name" : "pca955x_cablecard_c05_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -2939,10 +2939,10 @@
          ]
       },
       {
-         "group" : "cablecard4_cxp_bot_fault",
+         "group" : "cablecard_c05_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard4_cxp_bot",
+               "Name" : "pca955x_cablecard_c05_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -2972,10 +2972,10 @@
          ]
       },
       {
-         "group" : "cablecard4_cxp_bot_identify",
+         "group" : "cablecard_c05_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard4_cxp_bot",
+               "Name" : "pca955x_cablecard_c05_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3005,10 +3005,10 @@
          ]
       },
       {
-         "group" : "cablecard5_cxp_top_fault",
+         "group" : "cablecard_c07_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard5_cxp_top",
+               "Name" : "pca955x_cablecard_c07_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3038,10 +3038,10 @@
          ]
       },
       {
-         "group" : "cablecard5_cxp_top_identify",
+         "group" : "cablecard_c07_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard5_cxp_top",
+               "Name" : "pca955x_cablecard_c07_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3071,10 +3071,10 @@
          ]
       },
       {
-         "group" : "cablecard5_cxp_bot_fault",
+         "group" : "cablecard_c07_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard5_cxp_bot",
+               "Name" : "pca955x_cablecard_c07_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3104,10 +3104,10 @@
          ]
       },
       {
-         "group" : "cablecard5_cxp_bot_identify",
+         "group" : "cablecard_c07_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard5_cxp_bot",
+               "Name" : "pca955x_cablecard_c07_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3137,10 +3137,10 @@
          ]
       },
       {
-         "group" : "cablecard7_cxp_top_fault",
+         "group" : "cablecard_c08_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard7_cxp_top",
+               "Name" : "pca955x_cablecard_c08_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3170,10 +3170,10 @@
          ]
       },
       {
-         "group" : "cablecard7_cxp_top_identify",
+         "group" : "cablecard_c08_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard7_cxp_top",
+               "Name" : "pca955x_cablecard_c08_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3203,10 +3203,10 @@
          ]
       },
       {
-         "group" : "cablecard7_cxp_bot_fault",
+         "group" : "cablecard_c08_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard7_cxp_bot",
+               "Name" : "pca955x_cablecard_c08_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3236,10 +3236,10 @@
          ]
       },
       {
-         "group" : "cablecard7_cxp_bot_identify",
+         "group" : "cablecard_c08_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard7_cxp_bot",
+               "Name" : "pca955x_cablecard_c08_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3269,10 +3269,10 @@
          ]
       },
       {
-         "group" : "cablecard8_cxp_top_fault",
+         "group" : "cablecard_c10_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard8_cxp_top",
+               "Name" : "pca955x_cablecard_c10_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3302,10 +3302,10 @@
          ]
       },
       {
-         "group" : "cablecard8_cxp_top_identify",
+         "group" : "cablecard_c10_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard8_cxp_top",
+               "Name" : "pca955x_cablecard_c10_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3335,10 +3335,10 @@
          ]
       },
       {
-         "group" : "cablecard8_cxp_bot_fault",
+         "group" : "cablecard_c10_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard8_cxp_bot",
+               "Name" : "pca955x_cablecard_c10_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3368,10 +3368,10 @@
          ]
       },
       {
-         "group" : "cablecard8_cxp_bot_identify",
+         "group" : "cablecard_c10_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard8_cxp_bot",
+               "Name" : "pca955x_cablecard_c10_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3401,10 +3401,10 @@
          ]
       },
       {
-         "group" : "cablecard10_cxp_top_fault",
+         "group" : "cablecard_c11_cxp_top_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard10_cxp_top",
+               "Name" : "pca955x_cablecard_c11_cxp_top",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3434,10 +3434,10 @@
          ]
       },
       {
-         "group" : "cablecard10_cxp_top_identify",
+         "group" : "cablecard_c11_cxp_top_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard10_cxp_top",
+               "Name" : "pca955x_cablecard_c11_cxp_top",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -3467,10 +3467,10 @@
          ]
       },
       {
-         "group" : "cablecard10_cxp_bot_fault",
+         "group" : "cablecard_c11_cxp_bot_fault",
          "members" : [
             {
-               "Name" : "pca955x_cablecard10_cxp_bot",
+               "Name" : "pca955x_cablecard_c11_cxp_bot",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -3500,142 +3500,10 @@
          ]
       },
       {
-         "group" : "cablecard10_cxp_bot_identify",
+         "group" : "cablecard_c11_cxp_bot_identify",
          "members" : [
             {
-               "Name" : "pca955x_cablecard10_cxp_bot",
-               "Action" : "Blink",
-               "DutyOn" : 50,
-               "Period" : 1000,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "pca955x_front_sys_id0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "led_rear_enc_id0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "virtual_enc_id",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            }
-         ]
-      },
-      {
-         "group" : "cablecard11_cxp_top_fault",
-         "members" : [
-            {
-               "Name" : "pca955x_cablecard11_cxp_top",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "pca955x_front_enc_fault1",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "led_rear_enc_fault0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "virtual_enc_fault",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            }
-         ]
-      },
-      {
-         "group" : "cablecard11_cxp_top_identify",
-         "members" : [
-            {
-               "Name" : "pca955x_cablecard11_cxp_top",
-               "Action" : "Blink",
-               "DutyOn" : 50,
-               "Period" : 1000,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "pca955x_front_sys_id0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "led_rear_enc_id0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "virtual_enc_id",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            }
-         ]
-      },
-      {
-         "group" : "cablecard11_cxp_bot_fault",
-         "members" : [
-            {
-               "Name" : "pca955x_cablecard11_cxp_bot",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "pca955x_front_enc_fault1",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "led_rear_enc_fault0",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            },
-            {
-               "Name" : "virtual_enc_fault",
-               "Action" : "On",
-               "DutyOn" : 50,
-               "Period" : 0,
-               "Priority" : "Blink"
-            }
-         ]
-      },
-      {
-         "group" : "cablecard11_cxp_bot_identify",
-         "members" : [
-            {
-               "Name" : "pca955x_cablecard11_cxp_bot",
+               "Name" : "pca955x_cablecard_c11_cxp_bot",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
@@ -9265,10 +9133,10 @@
          ]
       },
       {
-         "group" : "powersupply_riser_fault",
+         "group" : "power_distribution_fault",
          "members" : [
             {
-               "Name" : "pca955x_powersupply_riser",
+               "Name" : "pca955x_power_distribution",
                "Action" : "On",
                "DutyOn" : 50,
                "Period" : 0,
@@ -9298,10 +9166,10 @@
          ]
       },
       {
-         "group" : "powersupply_riser_identify",
+         "group" : "power_distribution_identify",
          "members" : [
             {
-               "Name" : "pca955x_powersupply_riser",
+               "Name" : "pca955x_power_distribution",
                "Action" : "Blink",
                "DutyOn" : 50,
                "Period" : 1000,
