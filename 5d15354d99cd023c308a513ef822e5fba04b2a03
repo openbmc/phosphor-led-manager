@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "41ad1028_7905e015",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-11T03:23:50Z",
+      "side": 1,
+      "message": "Right, I tested it and found a problem, source_filename \u003d googletest-release-1.10.0.zip\n\nAnd, TBH, I copied this wrap from BMCWEB repo.\n\nI think we can use [wrap-git] instead of [wrap-file]\nAnd I updated it and see: https://github.com/openbmc/entity-manager/blob/master/subprojects/gtest.wrap\n\nhttps://mesonbuild.com/Wrap-dependency-system-manual.html#specific-to-vcsbased-wraps",
+      "parentUuid": "d72d2aa1_b8ad42cc",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "7af70da5_f770c5d3",
         "filename": "subprojects/gtest.wrap",
         "patchSetId": 3
@@ -33,6 +51,24 @@
       "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e782aa5_0bead5ab",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 6,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-11T03:23:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "7af70da5_f770c5d3",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "9a10aa7b_fe643544",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-11T03:23:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "744a9dd4_ed222629",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8420ace3_cd776393",
         "filename": "subprojects/gtest.wrap",
         "patchSetId": 3
@@ -67,6 +121,24 @@
       "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29889ccc_6ea2e922",
+        "filename": "subprojects/gtest.wrap",
+        "patchSetId": 3
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-05-11T03:23:50Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8420ace3_cd776393",
+      "revId": "5d15354d99cd023c308a513ef822e5fba04b2a03",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
