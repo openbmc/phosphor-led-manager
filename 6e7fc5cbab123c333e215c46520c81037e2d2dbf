@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "b8116d26_0b2b52e4",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 5
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-14T12:40:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "62a18bbb_1e747aa4",
+      "revId": "6e7fc5cbab123c333e215c46520c81037e2d2dbf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "362f7f03_4fa8eb35",
         "filename": "meson.build",
         "patchSetId": 5
@@ -81,6 +99,30 @@
       "revId": "6e7fc5cbab123c333e215c46520c81037e2d2dbf",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c7d238c_002d5a1e",
+        "filename": "meson.build",
+        "patchSetId": 5
+      },
+      "lineNbr": 42,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-05-14T12:40:28Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "25e85db7_e99bd0b9",
+      "range": {
+        "startLine": 42,
+        "startChar": 68,
+        "endLine": 42,
+        "endChar": 70
+      },
+      "revId": "6e7fc5cbab123c333e215c46520c81037e2d2dbf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
