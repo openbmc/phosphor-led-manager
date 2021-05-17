@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "03f65f35_219c474e",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-17T07:19:35Z",
+      "side": 1,
+      "message": "I suppose this is assuming there won\u0027t be a directory called \"build\" and others in the source code ?\n\nAlso, if I do meson -c build_dir, then that won\u0027t be handled.",
+      "revId": "76ac9db40e625a3910b0b371c5e4ae3fdecf1d4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "afaaf543_6a60a519",
+        "filename": ".gitignore",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-05-17T07:19:35Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "76ac9db40e625a3910b0b371c5e4ae3fdecf1d4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
