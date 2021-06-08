@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "90d10d1d_3cead45b",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-06-08T17:42:30Z",
+      "side": 1,
+      "message": "I am fine with changing the name of YAML_PATH.\n\nhttps://github.com/openbmc/openbmc/commit/643d97391de9a5fc658db9a8b037c752624b847c\n\nI have no clue why that EXTRA_OECONF YAML_PATH was removed. I had not looked at that commit. \n\nAnyway, what I said was this : we are going to need the variable back on as part of OEMESON .. Similarly, if some other machine layer .bbappend files have that, we need to go make that change as well",
+      "parentUuid": "d2a96bc0_66d66198",
+      "revId": "3945fc7bd2190218d2c673c167198fb63f454ce4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a453dab5_066dece6",
         "filename": "meson.build",
         "patchSetId": 2
