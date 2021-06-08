@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "479cf098_da98bb7c",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 130,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-06-08T08:17:00Z",
+      "side": 1,
+      "message": "In the bb files, I see we have \n\nEXTRA_OECONF \u003d \"YAML_PATH\u003d${STAGING_DATADIR_NATIVE}/${PN}\"\n\nSo, when we moved over to meson, I believe we should have taken care of all the instances of this I think ?. \n\nShould we change this to OEMESON ?. and if so, should we retain the name YAML_PATH and not the \"led-yaml-path\" ?",
+      "revId": "3945fc7bd2190218d2c673c167198fb63f454ce4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a453dab5_066dece6",
+        "filename": "meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 142,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-06-08T08:17:00Z",
+      "side": 1,
+      "message": "Does this change make sure it takes the source_root() yaml if I don\u0027t give -I ?",
+      "revId": "3945fc7bd2190218d2c673c167198fb63f454ce4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
