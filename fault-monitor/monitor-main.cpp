@@ -1,5 +1,9 @@
 #include "config.h"
 
+#ifdef MULTI_PURPOSE_MONITOR
+#include "multi-purpose-status.hpp"
+#endif
+
 #ifdef MONITOR_OPERATIONAL_STATUS
 #include "operational-status-monitor.hpp"
 #else
@@ -11,11 +15,16 @@ int main(void)
     /** @brief Dbus constructs used by Fault Monitor */
     sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
 
+#ifdef MULTI_PURPOSE_MONITOR
+    phosphor::led::multi::purpose::status::Status Status(bus);
+#endif
+
 #ifdef MONITOR_OPERATIONAL_STATUS
     phosphor::led::Operational::status::monitor::Monitor monitor(bus);
 #else
     phosphor::led::fru::fault::monitor::Add monitor(bus);
 #endif
+
     /** @brief Wait for client requests */
     while (true)
     {
