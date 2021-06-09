@@ -16,6 +16,8 @@ endif
 
 executable(
     'phosphor-fru-fault-monitor',
+    '../utils.cpp',
+    'multi-purpose-status.cpp',
     fault_monitor_sources,
     include_directories: ['.', '../', '../gen'],
     dependencies: deps,
