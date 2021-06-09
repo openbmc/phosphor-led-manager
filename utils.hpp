@@ -18,7 +18,7 @@ constexpr auto DBUS_PROPERTY_IFACE = "org.freedesktop.DBus.Properties";
 // Eg: uint8_t : dutyOn, uint16_t : Period, std::string : Name,
 // std::vector<std::string> : endpoints, bool : Functional
 using PropertyValue = std::variant<uint8_t, uint16_t, std::string,
-                                   std::vector<std::string>, bool>;
+                                   std::vector<std::string>, bool, size_t>;
 
 // The name of the property
 using DbusProperty = std::string;
