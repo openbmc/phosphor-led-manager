@@ -2,8 +2,14 @@
 
 #ifdef MONITOR_OPERATIONAL_STATUS
 #include "operational-status-monitor.hpp"
-#else
+#endif
+
+#ifdef FRU_FAULT_MONITOR
 #include "fru-fault-monitor.hpp"
+#endif
+
+#ifdef MULTI_PURPOSE_MONITOR
+#include "multi-purpose-status.hpp"
 #endif
 
 int main(void)
@@ -13,9 +19,16 @@ int main(void)
 
 #ifdef MONITOR_OPERATIONAL_STATUS
     phosphor::led::Operational::status::monitor::Monitor monitor(bus);
-#else
+#endif
+
+#ifdef FRU_FAULT_MONITOR
     phosphor::led::fru::fault::monitor::Add monitor(bus);
 #endif
+
+#ifdef MULTI_PURPOSE_MONITOR
+    phosphor::led::multi::purpose::status::Status Status;
+#endif
+
     /** @brief Wait for client requests */
     while (true)
     {
