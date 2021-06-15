@@ -28,11 +28,8 @@ test_sources = [
 tests = [
   'utest.cpp',
   'utest-serialize.cpp',
+  'utest-led-json.cpp',
 ]
-
-if get_option('use-json').enabled()
-  tests += ['utest-led-json.cpp']
-endif
 
 foreach t : tests
   test(t, executable(t.underscorify(), t,
