@@ -70,6 +70,24 @@
       "revId": "d5a8a086ef81d4ba28ab83a3083fbc85f775f081",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "5c813c78_cfd085d0",
+        "filename": "meson_options.txt",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000188
+      },
+      "writtenOn": "2021-06-15T06:46:58Z",
+      "side": 1,
+      "message": "You want the bitbake file to not build unit tests just in case googletest gets transitively included as it was in the past. We only want to enable them if we actually have ptest or similar set up.",
+      "parentUuid": "46bd2b18_07c4e555",
+      "revId": "d5a8a086ef81d4ba28ab83a3083fbc85f775f081",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
