@@ -127,19 +127,13 @@ sources = [
     'utils.cpp',
 ]
 
-ledyamlpath = get_option('led-yaml-path')
-
-if ledyamlpath == ''
-    ledyamlpath = meson.project_source_root()
-endif
-
 if get_option('use-json').disabled()
     led_gen_hpp = custom_target(
         'led-gen.hpp',
         command : [
             prog_python,
             meson.project_source_root() + '/parse_led.py',
-            '-i', ledyamlpath,
+            '-i', meson.project_source_root(),
             '-o', meson.current_build_dir(),
         ],
         output : 'led-gen.hpp')
