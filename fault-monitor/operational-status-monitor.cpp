@@ -1,5 +1,7 @@
 #include "operational-status-monitor.hpp"
 
+#include <fmt/core.h>
+
 #include <phosphor-logging/elog.hpp>
 
 namespace phosphor
@@ -32,8 +34,11 @@ void Monitor::matchHandler(sdbusplus::message::message& msg)
         const bool* value = std::get_if<bool>(&it->second);
         if (!value)
         {
-            log<level::ERR>("Faild to get the Functional property",
-                            entry("INVENTORY_PATH=%s", invObjectPath.c_str()));
+            log<level::ERR>(
+                fmt::format(
+                    "Faild to get the Functional property, INVENTORY_PATH = {}",
+                    invObjectPath)
+                    .c_str());
             return;
         }
 
@@ -42,9 +47,11 @@ void Monitor::matchHandler(sdbusplus::message::message& msg)
         auto ledGroupPath = getLedGroupPaths(invObjectPath);
         if (ledGroupPath.empty())
         {
-            log<level::INFO>("The inventory D-Bus object is not associated "
-                             "with the LED group D-Bus object.",
-                             entry("INVENTORY_PATH=%s", invObjectPath.c_str()));
+            log<level::INFO>(
+                fmt::format("The inventory D-Bus object is not associated with "
+                            "the LED group D-Bus object. INVENTORY_PATH = {}",
+                            invObjectPath)
+                    .c_str());
             return;
         }
 
@@ -72,9 +79,11 @@ const std::vector<std::string>
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
-        log<level::ERR>("Failed to get endpoints property",
-                        entry("ERROR=%s", e.what()),
-                        entry("PATH=%s", faultLedAssociation.c_str()));
+        log<level::ERR>(
+            fmt::format(
+                "Failed to get endpoints property, errormsg = {}, PATH = {}",
+                e.what(), faultLedAssociation)
+                .c_str());
 
         return {};
     }
@@ -100,9 +109,11 @@ void Monitor::updateAssertedProperty(
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to set Asserted property",
-                            entry("ERROR=%s", e.what()),
-                            entry("PATH=%s", path.c_str()));
+            log<level::ERR>(
+                fmt::format(
+                    "Failed to set Asserted property, errormsg = {}, PATH = {}",
+                    e.what(), path)
+                    .c_str());
         }
     }
 }
