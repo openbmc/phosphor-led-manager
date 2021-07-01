@@ -1,5 +1,7 @@
 #include "utils.hpp"
 
+#include <fmt/core.h>
+
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
@@ -187,10 +189,11 @@ class JsonConfig
                 {
                     // Property unavailable on object.
                     log<level::ERR>(
-                        "Failed to get Names property",
-                        entry("ERROR=%s", e.what()),
-                        entry("INTERFACE=%s", confCompatibleInterface),
-                        entry("PATH=%s", path.c_str()));
+                        fmt::format("Failed to get Names property, errormsg = "
+                                    "{}, INTERFACE = {}, PATH = {}",
+                                    e.what(), confCompatibleInterface,
+                                    path.c_str())
+                            .c_str());
 
                     confFile.clear();
                 }
@@ -198,9 +201,10 @@ class JsonConfig
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to call the SubTreePaths method",
-                            entry("ERROR=%s", e.what()),
-                            entry("INTERFACE=%s", confCompatibleInterface));
+            log<level::ERR>(fmt::format("Failed to call the SubTreePaths "
+                                        "method, errormsg = {}, INTERFACE = {}",
+                                        e.what(), confCompatibleInterface)
+                                .c_str());
         }
         return;
     }

@@ -2,6 +2,8 @@
 
 #include "manager.hpp"
 
+#include <fmt/core.h>
+
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
@@ -125,8 +127,8 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
         for (const auto& it : ledsDeAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("De-Asserting LED",
-                              entry("NAME=%s", it.name.c_str()));
+            log<level::DEBUG>(
+                fmt::format("De-Asserting LED, NAME = {}", it.name).c_str());
             drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
                              it.period);
         }
@@ -137,8 +139,8 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
         for (const auto& it : ledsAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("Asserting LED",
-                              entry("NAME=%s", it.name.c_str()));
+            log<level::DEBUG>(
+                fmt::format("Asserting LED, NAME = {}", it.name).c_str());
             drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
         }
     }
@@ -169,9 +171,10 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Error setting property for physical LED",
-                        entry("ERROR=%s", e.what()),
-                        entry("OBJECT_PATH=%s", objPath.c_str()));
+        log<level::ERR>(fmt::format("Error setting property for physical LED, "
+                                    "errormsg = {}, OBJECT_PATH = {}",
+                                    e.what(), objPath)
+                            .c_str());
     }
 
     return;

@@ -1,5 +1,7 @@
 #include "lamptest.hpp"
 
+#include <fmt/core.h>
+
 #include <phosphor-logging/log.hpp>
 
 namespace phosphor
@@ -125,8 +127,10 @@ void LampTest::storePhysicalLEDsStates()
         if (name.empty())
         {
             log<level::ERR>(
-                "Failed to get the name of member of physical LED path",
-                entry("PATH=%s", path.c_str()), entry("NAME=%s", name.c_str()));
+                fmt::format("Failed to get the name of member of physical LED "
+                            "path, PATH = {}, NAME = {}",
+                            path, name)
+                    .c_str());
             continue;
         }
 
@@ -143,9 +147,11 @@ void LampTest::storePhysicalLEDsStates()
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to get All properties",
-                            entry("ERROR=%s", e.what()),
-                            entry("PATH=%s", path.c_str()));
+            log<level::ERR>(
+                fmt::format(
+                    "Failed to get All properties, errormsg = {}, PATH = {}",
+                    e.what(), path.c_str())
+                    .c_str());
             continue;
         }
 
@@ -254,9 +260,11 @@ void LampTest::doHostLampTest(bool value)
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
-        log<level::ERR>("Failed to set Asserted property",
-                        entry("ERROR=%s", e.what()),
-                        entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
+        log<level::ERR>(
+            fmt::format(
+                "Failed to set Asserted property, errormsg = {}, PATH = {}",
+                e.what(), HOST_LAMP_TEST_OBJECT)
+                .c_str());
     }
 }
 
@@ -264,8 +272,10 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
 {
     if (!fs::exists(path) || fs::is_empty(path))
     {
-        log<level::INFO>("The file does not exist or is empty",
-                         entry("FILE_PATH=%s", path.c_str()));
+        log<level::INFO>(
+            fmt::format("The file does not exist or is empty, FILE_PATH = {}",
+                        path.c_str())
+                .c_str());
         return;
     }
 
@@ -290,9 +300,11 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Failed to parse config file",
-                        entry("ERROR=%s", e.what()),
-                        entry("FILE_PATH=%s", path.c_str()));
+        log<level::ERR>(
+            fmt::format(
+                "Failed to parse config file, errormsg = {}, FILE_PATH = {}",
+                e.what(), path.c_str())
+                .c_str());
     }
     return;
 }
