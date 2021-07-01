@@ -2,6 +2,8 @@
 
 #include "serialize.hpp"
 
+#include <fmt/core.h>
+
 #include <cereal/archives/json.hpp>
 #include <cereal/types/set.hpp>
 #include <cereal/types/string.hpp>
@@ -59,8 +61,9 @@ void Serialize::restoreGroups()
 
     if (!fs::exists(path))
     {
-        log<level::INFO>("File does not exist",
-                         entry("FILE_PATH=%s", path.c_str()));
+        log<level::INFO>(
+            fmt::format("File does not exist, FILE_PATH = {}", path.c_str())
+                .c_str());
         return;
     }
 
@@ -72,7 +75,9 @@ void Serialize::restoreGroups()
     }
     catch (cereal::Exception& e)
     {
-        log<level::ERR>(e.what());
+        log<level::ERR>(
+            fmt::format("Failed to restore groups, ERROR = {}", e.what())
+                .c_str());
         fs::remove(path);
     }
 }

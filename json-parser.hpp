@@ -3,6 +3,8 @@
 #include "json-config.hpp"
 #include "ledlayout.hpp"
 
+#include <fmt/core.h>
+
 #include <nlohmann/json.hpp>
 #include <phosphor-logging/log.hpp>
 #include <sdbusplus/bus.hpp>
@@ -34,8 +36,10 @@ const Json readJson(const fs::path& path)
 
     if (!fs::exists(path) || fs::is_empty(path))
     {
-        log<level::ERR>("Incorrect File Path or empty file",
-                        entry("FILE_PATH=%s", path.c_str()));
+        log<level::ERR>(
+            fmt::format("Incorrect File Path or empty file, FILE_PATH = {}",
+                        path.c_str())
+                .c_str());
         throw std::runtime_error("Incorrect File Path or empty file");
     }
 
@@ -46,9 +50,11 @@ const Json readJson(const fs::path& path)
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Failed to parse config file",
-                        entry("ERROR=%s", e.what()),
-                        entry("FILE_PATH=%s", path.c_str()));
+        log<level::ERR>(
+            fmt::format(
+                "Failed to parse config file, ERROR = {}, FILE_PATH = {}",
+                e.what(), path.c_str())
+                .c_str());
         throw std::runtime_error("Failed to parse config file");
     }
 }
@@ -90,10 +96,11 @@ void validatePriority(const std::string& name,
 
     if (iter->second != priority)
     {
-        log<level::ERR>("Priority of LED is not same across all",
-                        entry("Name=%s", name.c_str()),
-                        entry(" Old Priority=%d", iter->second),
-                        entry(" New priority=%d", priority));
+        log<level::ERR>(
+            fmt::format("Priority of LED is not same across all, Name = {}, "
+                        "Old Priority = {}, New Priority = {}",
+                        name, iter->second, priority)
+                .c_str());
 
         throw std::runtime_error(
             "Priority of at least one LED is not same across groups");

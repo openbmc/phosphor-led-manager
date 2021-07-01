@@ -1,5 +1,7 @@
 #include "utils.hpp"
 
+#include <fmt/core.h>
+
 #include <phosphor-logging/log.hpp>
 
 namespace phosphor
@@ -28,18 +30,21 @@ const std::string DBusHandler::getService(const std::string& path,
     auto mapperResponseMsg = bus.call(mapper);
     if (mapperResponseMsg.is_method_error())
     {
-        log<level::ERR>("Failed to invoke ObjectMapper method",
-                        entry("OBJECT_PATH=%s", path.c_str()),
-                        entry("INTERFACE=%s", interface.c_str()));
+        log<level::ERR>(fmt::format("Failed to invoke ObjectMapper method, "
+                                    "OBJECT_PATH = {}, INTERFACE = {}",
+                                    path, interface)
+                            .c_str());
         return "";
     }
 
     mapperResponseMsg.read(mapperResponse);
     if (mapperResponse.empty())
     {
-        log<level::ERR>("Failed to read getService mapper response",
-                        entry("OBJECT_PATH=%s", path.c_str()),
-                        entry("INTERFACE=%s", interface.c_str()));
+        log<level::ERR>(
+            fmt::format("Failed to read getService mapper response, "
+                        "OBJECT_PATH = {}, INTERFACE = {}",
+                        path, interface)
+                .c_str());
         return "";
     }
 
