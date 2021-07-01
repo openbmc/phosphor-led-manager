@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 namespace phosphor
 {
@@ -8,8 +8,6 @@ namespace led
 {
 namespace utils
 {
-
-using namespace phosphor::logging;
 
 // Get service name
 const std::string DBusHandler::getService(const std::string& path,
@@ -29,9 +27,9 @@ const std::string DBusHandler::getService(const std::string& path,
     mapperResponseMsg.read(mapperResponse);
     if (mapperResponse.empty())
     {
-        log<level::ERR>("Failed to read getService mapper response",
-                        entry("OBJECT_PATH=%s", path.c_str()),
-                        entry("INTERFACE=%s", interface.c_str()));
+        lg2::error("Failed to read getService mapper response, OBJECT_PATH = "
+                   "{PATH}, INTERFACE = {INTERFACE}",
+                   "PATH", path, "INTERFACE", interface);
         return "";
     }
 

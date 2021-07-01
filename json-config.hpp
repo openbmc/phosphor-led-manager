@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
 
@@ -8,8 +8,6 @@
 #include <fstream>
 
 namespace fs = std::filesystem;
-
-using namespace phosphor::logging;
 
 namespace phosphor
 {
@@ -186,11 +184,10 @@ class JsonConfig
                 catch (const sdbusplus::exception::exception& e)
                 {
                     // Property unavailable on object.
-                    log<level::ERR>(
-                        "Failed to get Names property",
-                        entry("ERROR=%s", e.what()),
-                        entry("INTERFACE=%s", confCompatibleInterface),
-                        entry("PATH=%s", path.c_str()));
+                    lg2::error("Failed to get Names property, ERROR = {ERROR}, "
+                               "INTERFACES = {INTERFACES}, PATH = {PATH}",
+                               "ERROR", e, "INTERFACE", confCompatibleInterface,
+                               "PATH", path);
 
                     confFile.clear();
                 }
@@ -198,9 +195,10 @@ class JsonConfig
         }
         catch (const sdbusplus::exception::exception& e)
         {
-            log<level::ERR>("Failed to call the SubTreePaths method",
-                            entry("ERROR=%s", e.what()),
-                            entry("INTERFACE=%s", confCompatibleInterface));
+            lg2::error(
+                "Failed to call the SubTreePaths method, ERROR = {ERROR}, "
+                "INTERFACE = {INTERFACE}",
+                "ERROR", e, "INTERFACE", confCompatibleInterface);
         }
         return;
     }
