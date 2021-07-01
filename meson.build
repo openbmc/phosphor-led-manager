@@ -59,6 +59,7 @@ phosphor_dbus_interfaces_dep = dependency(
         'phosphor_dbus_interfaces_dep'
     ],
 )
+
 prog_python = find_program('python3', required: true)
 realpath_prog = find_program('realpath')
 

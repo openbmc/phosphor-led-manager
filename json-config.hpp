@@ -1,6 +1,6 @@
 #include "utils.hpp"
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
 
@@ -8,8 +8,6 @@
 #include <fstream>
 
 namespace fs = std::filesystem;
-
-using namespace phosphor::logging;
 
 namespace phosphor
 {
@@ -22,6 +20,8 @@ static constexpr auto confBasePath = "/usr/share/phosphor-led-manager";
 static constexpr auto confCompatibleInterface =
     "xyz.openbmc_project.Configuration.IBMCompatibleSystem";
 static constexpr auto confCompatibleProperty = "Names";
+
+PHOSPHOR_LOG2_USING_WITH_FLAGS;
 
 class JsonConfig
 {
@@ -186,11 +186,10 @@ class JsonConfig
                 catch (const sdbusplus::exception::SdBusError& e)
                 {
                     // Property unavailable on object.
-                    log<level::ERR>(
-                        "Failed to get Names property",
-                        entry("ERROR=%s", e.what()),
-                        entry("INTERFACE=%s", confCompatibleInterface),
-                        entry("PATH=%s", path.c_str()));
+                    // error("Failed to get Names property, ERROR = {ERROR}, "
+                    //       "INTERFACES = {INTERFACES}, PATH = {PATH}",
+                    //       "ERROR", e.what(), "INTERFACE",
+                    //       confCompatibleInterface, "PATH", path);
 
                     confFile.clear();
                 }
@@ -198,9 +197,9 @@ class JsonConfig
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to call the SubTreePaths method",
-                            entry("ERROR=%s", e.what()),
-                            entry("INTERFACE=%s", confCompatibleInterface));
+            // error("Failed to call the SubTreePaths method, ERROR = {ERROR}, "
+            //       "INTERFACE = {INTERFACE}",
+            //       "ERROR", e.what(), "INTERFACE", confCompatibleInterface);
         }
         return;
     }

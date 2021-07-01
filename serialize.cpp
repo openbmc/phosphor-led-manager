@@ -5,7 +5,7 @@
 #include <cereal/archives/json.hpp>
 #include <cereal/types/set.hpp>
 #include <cereal/types/string.hpp>
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 #include <filesystem>
 #include <fstream>
@@ -19,6 +19,8 @@ namespace led
 {
 
 namespace fs = std::filesystem;
+
+PHOSPHOR_LOG2_USING_WITH_FLAGS;
 
 bool Serialize::getGroupSavedState(const std::string& objPath) const
 {
@@ -55,12 +57,10 @@ void Serialize::storeGroups(const std::string& group, bool asserted)
 
 void Serialize::restoreGroups()
 {
-    using namespace phosphor::logging;
 
     if (!fs::exists(path))
     {
-        log<level::INFO>("File does not exist",
-                         entry("FILE_PATH=%s", path.c_str()));
+        info("File does not exist, FILE_PATH = {PATH}", "PATH", path.c_str());
         return;
     }
 
@@ -72,7 +72,7 @@ void Serialize::restoreGroups()
     }
     catch (cereal::Exception& e)
     {
-        log<level::ERR>(e.what());
+        error("Failed to restore groups, ERROR = {ERROR}", "ERROR", e.what());
         fs::remove(path);
     }
 }

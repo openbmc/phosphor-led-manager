@@ -1,14 +1,15 @@
 #include "lamptest.hpp"
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 
 namespace phosphor
 {
 namespace led
 {
 
-using namespace phosphor::logging;
 using Json = nlohmann::json;
+
+PHOSPHOR_LOG2_USING_WITH_FLAGS;
 
 bool LampTest::processLEDUpdates(const Manager::group& ledsAssert,
                                  const Manager::group& ledsDeAssert)
@@ -124,9 +125,9 @@ void LampTest::storePhysicalLEDsStates()
         auto name = object_path.filename();
         if (name.empty())
         {
-            log<level::ERR>(
-                "Failed to get the name of member of physical LED path",
-                entry("PATH=%s", path.c_str()), entry("NAME=%s", name.c_str()));
+            error("Failed to get the name of member of physical LED path, PATH "
+                  "= {PATH}, NAME = {NAME}",
+                  "PATH", path, "NAME", name);
             continue;
         }
 
@@ -143,9 +144,9 @@ void LampTest::storePhysicalLEDsStates()
         }
         catch (const sdbusplus::exception::SdBusError& e)
         {
-            log<level::ERR>("Failed to get All properties",
-                            entry("ERROR=%s", e.what()),
-                            entry("PATH=%s", path.c_str()));
+            error(
+                "Failed to get All properties, ERROR = {ERROR}, PATH = {PATH}",
+                "ERROR", e.what(), "PATH", path);
             continue;
         }
 
@@ -203,7 +204,7 @@ void LampTest::timeOutHandler()
     // set the Asserted property of lamp test to false
     if (!groupObj)
     {
-        log<level::ERR>("the Group object is nullptr");
+        error("the Group object is nullptr");
         throw std::runtime_error("the Group object is nullptr");
     }
 
@@ -254,9 +255,8 @@ void LampTest::doHostLampTest(bool value)
     }
     catch (const sdbusplus::exception::SdBusError& e)
     {
-        log<level::ERR>("Failed to set Asserted property",
-                        entry("ERROR=%s", e.what()),
-                        entry("PATH=%s", HOST_LAMP_TEST_OBJECT));
+        error("Failed to set Asserted property, ERROR = {ERROR}, PATH = {PATH}",
+              "ERROR", e.what(), "PATH", std::string(HOST_LAMP_TEST_OBJECT));
     }
 }
 
@@ -264,8 +264,9 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
 {
     if (!fs::exists(path) || fs::is_empty(path))
     {
-        log<level::INFO>("The file does not exist or is empty",
-                         entry("FILE_PATH=%s", path.c_str()));
+        // info("The file does not exist or is empty, FILE_PATH = {PATH}",
+        // "PATH",
+        //      path.c_str());
         return;
     }
 
@@ -290,9 +291,9 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Failed to parse config file",
-                        entry("ERROR=%s", e.what()),
-                        entry("FILE_PATH=%s", path.c_str()));
+        error(
+            "Failed to parse config file, ERROR = {ERROR}, FILE_PATH = {PATH}",
+            "ERROR", e.what(), "PATH", path.c_str());
     }
     return;
 }

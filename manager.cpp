@@ -2,7 +2,7 @@
 
 #include "manager.hpp"
 
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
@@ -14,7 +14,7 @@ namespace phosphor
 namespace led
 {
 
-using namespace phosphor::logging;
+PHOSPHOR_LOG2_USING_WITH_FLAGS;
 
 // Assert -or- De-assert
 bool Manager::setGroupState(const std::string& path, bool assert,
@@ -125,8 +125,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
         for (const auto& it : ledsDeAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("De-Asserting LED",
-                              entry("NAME=%s", it.name.c_str()));
+            debug("De-Asserting LED, NAME = {NAME}", "NAME", it.name);
             drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
                              it.period);
         }
@@ -137,8 +136,7 @@ void Manager::driveLEDs(group& ledsAssert, group& ledsDeAssert)
         for (const auto& it : ledsAssert)
         {
             std::string objPath = std::string(PHY_LED_PATH) + it.name;
-            log<level::DEBUG>("Asserting LED",
-                              entry("NAME=%s", it.name.c_str()));
+            debug("Asserting LED, NAME = {NAME}", "NAME", it.name);
             drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
         }
     }
@@ -169,9 +167,9 @@ void Manager::drivePhysicalLED(const std::string& objPath,
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Error setting property for physical LED",
-                        entry("ERROR=%s", e.what()),
-                        entry("OBJECT_PATH=%s", objPath.c_str()));
+        error("Error setting property for physical LED, ERROR = {ERROR}, "
+              "OBJECT_PATH = {PATH}",
+              "ERROR", e.what(), "PATH", objPath);
     }
 
     return;
