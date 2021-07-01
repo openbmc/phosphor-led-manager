@@ -4,7 +4,7 @@
 #include "ledlayout.hpp"
 
 #include <nlohmann/json.hpp>
-#include <phosphor-logging/log.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/bus.hpp>
 #include <sdeventplus/event.hpp>
 
@@ -30,12 +30,11 @@ using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
  */
 const Json readJson(const fs::path& path)
 {
-    using namespace phosphor::logging;
 
     if (!fs::exists(path) || fs::is_empty(path))
     {
-        log<level::ERR>("Incorrect File Path or empty file",
-                        entry("FILE_PATH=%s", path.c_str()));
+        lg2::error("Incorrect File Path or empty file, FILE_PATH = {PATH}",
+                   "PATH", path);
         throw std::runtime_error("Incorrect File Path or empty file");
     }
 
@@ -46,9 +45,9 @@ const Json readJson(const fs::path& path)
     }
     catch (const std::exception& e)
     {
-        log<level::ERR>("Failed to parse config file",
-                        entry("ERROR=%s", e.what()),
-                        entry("FILE_PATH=%s", path.c_str()));
+        lg2::error(
+            "Failed to parse config file, ERROR = {ERROR}, FILE_PATH = {PATH}",
+            "ERROR", e, "PATH", path);
         throw std::runtime_error("Failed to parse config file");
     }
 }
@@ -79,7 +78,6 @@ void validatePriority(const std::string& name,
                       const phosphor::led::Layout::Action& priority,
                       PriorityMap& priorityMap)
 {
-    using namespace phosphor::logging;
 
     auto iter = priorityMap.find(name);
     if (iter == priorityMap.end())
@@ -90,10 +88,10 @@ void validatePriority(const std::string& name,
 
     if (iter->second != priority)
     {
-        log<level::ERR>("Priority of LED is not same across all",
-                        entry("Name=%s", name.c_str()),
-                        entry(" Old Priority=%d", iter->second),
-                        entry(" New priority=%d", priority));
+        lg2::error("Priority of LED is not same across all, Name = {NAME}, Old "
+                   "Priority = {OLD_PRIO}, New Priority = {NEW_PRIO}",
+                   "NAME", name, "OLD_PRIO", int(iter->second), "NEW_PRIO",
+                   int(priority));
 
         throw std::runtime_error(
             "Priority of at least one LED is not same across groups");

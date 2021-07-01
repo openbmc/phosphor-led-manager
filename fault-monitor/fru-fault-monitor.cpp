@@ -3,6 +3,7 @@
 #include "elog-errors.hpp"
 
 #include <phosphor-logging/elog.hpp>
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Led/Fru/Monitor/error.hpp>
 #include <xyz/openbmc_project/Led/Mapper/error.hpp>
@@ -63,9 +64,9 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
     }
     catch (const sdbusplus::exception::exception& e)
     {
-        log<level::ERR>(
-            "Failed to GetObject or parse getService mapper response",
-            entry("ERROR=%s", e.what()));
+        lg2::error(
+            "Failed to parse getService mapper response, ERROR = {ERROR}",
+            "ERROR", e);
         using namespace xyz::openbmc_project::Led::Mapper;
         elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
                                 ObjectNotFoundError::PATH(path.c_str()),
@@ -127,8 +128,7 @@ void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
     catch (const sdbusplus::exception::exception& e)
     {
         // Log an info message, system may not have all the LED Groups defined
-        log<level::INFO>("Failed to Assert LED Group",
-                         entry("ERROR=%s", e.what()));
+        lg2::info("Failed to Assert LED Group, ERROR = {ERROR}", "ERROR", e);
     }
 
     return;
@@ -146,9 +146,8 @@ void Add::created(sdbusplus::message::message& msg)
     }
     catch (const sdbusplus::exception::exception& e)
     {
-        log<level::ERR>("Failed to parse created message",
-                        entry("ERROR=%s", e.what()),
-                        entry("REPLY_SIG=%s", msg.get_signature()));
+        lg2::error("Failed to parse created message, ERROR = {ERROR}", "ERROR",
+                   e);
         return;
     }
 
@@ -166,8 +165,9 @@ void Add::created(sdbusplus::message::message& msg)
 
     // Nothing else shows when a specific error log
     // has been created. Do it here.
-    std::string message{objectPath.str + " created"};
-    log<level::INFO>(message.c_str());
+    // TODO:(phosphor-logging#25): support sdbusplus::message::object_path
+    // directly.
+    lg2::info("{PATH} created", "PATH", objectPath.str);
 
     auto attr = iter->second.find("Associations");
     if (attr == iter->second.end())
@@ -211,10 +211,9 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
     }
     catch (const sdbusplus::exception::exception& e)
     {
-        log<level::ERR>(
-            "Failed to parse existing callouts subtree message",
-            entry("ERROR=%s", e.what()),
-            entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+        lg2::error(
+            "Failed to parse existing callouts subtree message, ERROR = {ERROR}",
+            "ERROR", e);
     }
     catch (const sdbusplus::exception::exception& e)
     {
@@ -244,7 +243,7 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         if (reply.is_method_error())
         {
             // do not stop, continue with next elog
-            log<level::ERR>("Error in getting associations");
+            lg2::error("Error in getting associations");
             continue;
         }
 
@@ -255,9 +254,9 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         }
         catch (const sdbusplus::exception::exception& e)
         {
-            log<level::ERR>("Failed to get Associations or  parse existing "
-                            "callouts associations message",
-                            entry("ERROR=%s", e.what()));
+            lg2::error(
+                "Failed to parse existing callouts associations message, ERROR = {ERROR}",
+                "ERROR", e);
             continue;
         }
         auto& assocs = std::get<AssociationList>(assoc);
