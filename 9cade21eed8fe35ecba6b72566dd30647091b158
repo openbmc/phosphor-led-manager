@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "b0403573_2e013d8c",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-07-08T21:52:15Z",
+      "side": 1,
+      "message": "I think this one was fine how it was?",
+      "revId": "9cade21eed8fe35ecba6b72566dd30647091b158",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5aefd6d_13fcd6c7",
+        "filename": "json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 195,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-07-08T21:52:15Z",
+      "side": 1,
+      "message": "shouldn\u0027t need the c_str() since path is a string.",
+      "range": {
+        "startLine": 195,
+        "startChar": 40,
+        "endLine": 195,
+        "endChar": 48
+      },
+      "revId": "9cade21eed8fe35ecba6b72566dd30647091b158",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c37f9604_ed012ac2",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000008
+      },
+      "writtenOn": "2021-07-08T21:52:15Z",
+      "side": 1,
+      "message": "don\u0027t need",
+      "range": {
+        "startLine": 153,
+        "startChar": 34,
+        "endLine": 153,
+        "endChar": 42
+      },
+      "revId": "9cade21eed8fe35ecba6b72566dd30647091b158",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
