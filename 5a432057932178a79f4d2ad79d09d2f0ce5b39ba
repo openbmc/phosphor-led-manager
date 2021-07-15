@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "aa2e4e16_fe258a75",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-07-15T14:40:39Z",
+      "side": 1,
+      "message": "May I know why this change is being made ?. Is there a limitation with the current approach ?. If so, please could you detail those in this commit message ?.\n\nAlso, if you could capture the before and after logs in this commit message, that would be helpful too.",
+      "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ade68df3_0780f4a6",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-07-15T14:40:39Z",
+      "side": 1,
+      "message": "We were having these as entries before.. How does that look with this change ?",
+      "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
