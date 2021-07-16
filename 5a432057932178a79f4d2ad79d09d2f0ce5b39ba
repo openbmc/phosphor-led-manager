@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "82d7eb31_9df64aaf",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-07-16T01:52:23Z",
+      "side": 1,
+      "message": "Since we have updated to C++20, GCC11, we can use the fmtlib to quickly format string, and just use\nhttps://github.com/fmtlib/fmt format like many repos are already doing.\n\n```\n{fmt} is an open-source formatting library providing a fast and safe alternative to C stdio and C++ iostreams.\n```\n\n\u003e Also, if you could capture the before and after logs in this commit message, that would be helpful too.\n\n~# journalctl -b | grep ledmanager\nJan 01 00:00:33 fp5280g2 phosphor-ledmanager[234]: File does not exist, FILE_PATH \u003d /var/lib/phosphor-led-manager/savedGroups\nJan 01 00:00:33 fp5280g2 phosphor-ledmanager[234]: The file does not exist or is empty, FILE_PATH \u003d /usr/share/phosphor-led-manager/lamp-test-led-overrides.json",
+      "parentUuid": "aa2e4e16_fe258a75",
+      "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ade68df3_0780f4a6",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 4
@@ -30,6 +48,24 @@
       "writtenOn": "2021-07-15T14:40:39Z",
       "side": 1,
       "message": "We were having these as entries before.. How does that look with this change ?",
+      "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f7baf2fd_27f50931",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-07-16T01:52:23Z",
+      "side": 1,
+      "message": "When we use the fmtlib format string, we do not need to customize some entities, which will make it more convenient for us to quickly query the log",
+      "parentUuid": "ade68df3_0780f4a6",
       "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
