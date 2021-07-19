@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "c3da0528_a9b6e53f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 4
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-07-19T13:48:45Z",
+      "side": 1,
+      "message": "Please capture the before and after traces for the same line of code in the commit message ?",
+      "parentUuid": "82d7eb31_9df64aaf",
+      "revId": "5a432057932178a79f4d2ad79d09d2f0ce5b39ba",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "ade68df3_0780f4a6",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 4
