@@ -155,6 +155,7 @@ configure_file(output: 'config.h',
 
 install_data(
     'scripts/led-set-all-groups-asserted.sh',
+    'scripts/led-clear-all-faults.sh',
     install_dir: get_option('bindir')
 )
 
