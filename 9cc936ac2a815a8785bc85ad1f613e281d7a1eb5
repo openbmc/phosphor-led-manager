@@ -1,0 +1,158 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "e02e760d_9af9eaa6",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "What is this global map??  Why are the values all empty strings?\n\nAt a minimum this should be part of the object.\n\nInstead of strings for keys, would it make more sense to use enumerations?  Using strings for lookup is kind of clumsy.",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa7749bb_1c7cddb2",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "Won\u0027t this further throw an exception if getPropertyValue threw an exception because it\u0027ll return an invalid variant.  I\u0027d suggest cleaning up the error paths throughout this code.",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "c46e606c_b8113322",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "Should these be driven by config as well?",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e5cb6a4f_eed36492",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "I would suggest \u0027Sled\u0027 rather than \u0027SLED\u0027 if you want to use that term.  \u0027SLED\u0027 is not an acronym and since this is in the LED controlling code it is quite possible to be confused with something related to LEDs.",
+      "range": {
+        "startLine": 237,
+        "startChar": 41,
+        "endLine": 237,
+        "endChar": 47
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c682e7e_c94a83ea",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "This seems to be a lot of code to put into the header.  Can you move this into the .cpp part?",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "53e10ace_d2dc11ca",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "Please use sdbusplus::bus::match::propertiesChanged() helper.",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 59
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a2e16ead_ea9b09ab",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "Why aren\u0027t you looking at the position at all here?  This doesn\u0027t seem right to me.  Can you at least leave comments as to why you are discarding the data in the signal?",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 21
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "45b30c79_e259c962",
+        "filename": "meson_options.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-10T11:05:11Z",
+      "side": 1,
+      "message": "I would suggest this is enabled by default and then disabled in the PACKAGECONFIG in the recipe.  By leaving as \u0027disabled\u0027 here we end up with a bunch of code that isn\u0027t compiled in CI and can potentially have un-realized problems until after it is merged.",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
