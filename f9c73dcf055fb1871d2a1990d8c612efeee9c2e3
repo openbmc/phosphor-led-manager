@@ -1,0 +1,617 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "27140a72_75fed7d3",
+        "filename": "fault-monitor/monitor-main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Doesn\u0027t this add this class for everyone?  Is that ok?",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "52fe4f04_cb2cefa4",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Please don\u0027t #define in C++ code and especially not something like \"BMC\".  What is this magic number used for?  Define a constant for it.  How do you know that there are only 4 hosts?",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "7499ddca_da9b7239",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "I see no description anywhere of what this function is intended to do.  There is a fairly complex algorithm and I have no idea why this is the right algorithm.",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bbd0a51b_389acc80",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Is there some kind of configuration we can use to know how many hosts there are suppose to be rather than relying on a static maximum?",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2e7746ab_16b31208",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Suggest a return here for short circuiting and reducing the indentation.",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e33a45bb_b8e71538",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Rather than using pointers, I would suggest std::holds_variant\u003cstring\u003e(power) and then us the normal std::get\u003cstring\u003e in the good path.",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 34
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5438b3e6_a15c767f",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Why 45?\n\nIs this expected to be an sdbusplus enumeration?  If so, use the appropriate sdbusplus::message::from_string\u003cenum\u003e(...) function.",
+      "range": {
+        "startLine": 72,
+        "startChar": 53,
+        "endLine": 72,
+        "endChar": 56
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5686aa07_2f84e3fd",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "It seems as if you never use this position as anything except a string.  Can we simply do the string conversion early then and pass it along as a (const string\u0026)?  It would save a lot of duplicate `to_string` calls.",
+      "range": {
+        "startLine": 81,
+        "startChar": 32,
+        "endLine": 81,
+        "endChar": 61
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "08554f60_02973697",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Still want to see a better error handling situation here.",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "49a4bb3e_d2876ded",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Rather than return a variant and make the caller deal with converting from a variant to an underlying type, can we make this a template function and handle the conversion in a consistent way here?  Maybe we should even refactor an enhance whatever is in this \u0027dbusHandler.getProperty\u0027 to similarly make it a template?",
+      "range": {
+        "startLine": 105,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 19
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "493b0a0d_e2247896",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Are there any cases where we are wanting an empty variant and not just turning it into another exception?  (Again, I think the error path here should be re-examined throughout).",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d24ebb0_16878a21",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "This is another case where a template seems appropriate (in the underlying setProperty method).  The caller shouldn\u0027t have to form a bogus variant.  This ends up being a dbus detail that is bubbling up pretty high into application layers; it happens that the dbus SetProperty method takes a variant, but applications would know what type the property really is and shouldn\u0027t be forced to know that the dbus transaction requires it to be sent across the bus as a variant type).",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 45
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "decc8ef9_2455892e",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Don\u0027t form these strings yourself.  Use the sdbusplus enum type throughout the code.",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 64
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0316b404_59488ad3",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Why uint16 and not a size_t?",
+      "range": {
+        "startLine": 173,
+        "startChar": 31,
+        "endLine": 173,
+        "endChar": 44
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cc7b4116_2f2712dd",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "If you use sdbusplus enumerations, this whole thing turns into a case statement.  Makes it much more obvious to know you\u0027ve covered the full space (actually, it becomes a compile failure if you don\u0027t).",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37f5801d_3317c746",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Suggest saving this once in the function if you want to continue to pass as an integer here.",
+      "range": {
+        "startLine": 178,
+        "startChar": 36,
+        "endLine": 178,
+        "endChar": 56
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3d5c22e0_890d9a3a",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "This is kind of silly to construct a string and then turn around and call `c_str` on it.\n\n    static const auto configFilePath \u003d \"...\";",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 54
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "64239e6c_ac8c41ea",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "This seems like a typical case on most machines and now we\u0027re making an Error-level journal statement.",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 214,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ae294545_7623b573",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "This is a bug.  You should not be constructing a *new* bus and then destructing it when you leave this function.  Figure out a way to get the application level bus.",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "356124fa_9b07f9f4",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "How do you know all PropertyChanged signals are this particular variant type?  Please use the Buttons::Selector::PropertiesVariant.",
+      "range": {
+        "startLine": 246,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 46
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0d9ac6ff_cd1864dd",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Suggest a decltype here to ensure simple refactoring if the underlying type changes (why isn\u0027t it size_t at a dbus level?).",
+      "range": {
+        "startLine": 253,
+        "startChar": 50,
+        "endLine": 253,
+        "endChar": 58
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cd42e12f_33985cd1",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "auto.  DRY.",
+      "range": {
+        "startLine": 253,
+        "startChar": 24,
+        "endLine": 253,
+        "endChar": 32
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a455538c_fb606b16",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "I have no idea what this means and why it is here.  Please add some more documentation.  Preferably a more self-documenting function name.",
+      "range": {
+        "startLine": 261,
+        "startChar": 0,
+        "endLine": 261,
+        "endChar": 15
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "2ba939de_62abe175",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Can we do something with include paths in meson to avoid a \"../\"?",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c498b94_db2cf4d7",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "size_t?",
+      "range": {
+        "startLine": 55,
+        "startChar": 19,
+        "endLine": 55,
+        "endChar": 27
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4491d49a_31e58377",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "Can you put units on this description?",
+      "range": {
+        "startLine": 82,
+        "startChar": 36,
+        "endLine": 82,
+        "endChar": 66
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "03cd6906_ca14920c",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "It isn\u0027t obvious why you chose uint8_t and uint16_t here.  I think you did it because the type in the dbus-interfaces are these?  I would suggest either using some kind of using/decltype to base the type on the underlying PDI property type, or defer the type conversion until the point where you are making the function calls to the PDI class.",
+      "range": {
+        "startLine": 85,
+        "startChar": 51,
+        "endLine": 86,
+        "endChar": 41
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fc5d4517_0cf3447e",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "size_t?",
+      "range": {
+        "startLine": 94,
+        "startChar": 27,
+        "endLine": 94,
+        "endChar": 35
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "bff1d1f2_a6ded944",
+        "filename": "meson_options.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-20T13:44:43Z",
+      "side": 1,
+      "message": "I don\u0027t see this used now.",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
