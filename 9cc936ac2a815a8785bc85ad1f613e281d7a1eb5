@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "b5f477c1_c0b77dda",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "The values for this map will be getting from machine layer, so it has empty strings. Now I declared this in const variable in the latest patch.",
+      "parentUuid": "e02e760d_9af9eaa6",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fa7749bb_1c7cddb2",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 4
@@ -36,6 +54,24 @@
     },
     {
       "key": {
+        "uuid": "88faa510_19ecf4b4",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "yes, that exception will be caught under getPropertValue func in line 122.",
+      "parentUuid": "fa7749bb_1c7cddb2",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "c46e606c_b8113322",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 4
@@ -47,6 +83,24 @@
       "writtenOn": "2021-08-10T11:05:11Z",
       "side": 1,
       "message": "Should these be driven by config as well?",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "89ca232d_e9a50b9f",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "Here, power and system led will be changed as per the position property and same leds will be changed based on power and health status. So, these leds has been triggered physically instead of config.",
+      "parentUuid": "c46e606c_b8113322",
       "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -76,6 +130,30 @@
     },
     {
       "key": {
+        "uuid": "92bdc7d3_cbeceaa0",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 237,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e5cb6a4f_eed36492",
+      "range": {
+        "startLine": 237,
+        "startChar": 41,
+        "endLine": 237,
+        "endChar": 47
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c682e7e_c94a83ea",
         "filename": "fault-monitor/multi-purpose-status.hpp",
         "patchSetId": 4
@@ -90,6 +168,24 @@
       "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0411d549_fe56b8aa",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 41,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "Ack, Moved this part to .cpp",
+      "parentUuid": "8c682e7e_c94a83ea",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -116,6 +212,30 @@
     },
     {
       "key": {
+        "uuid": "a0103189_44e5199f",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "Sure, updated in the latest patchset.",
+      "parentUuid": "53e10ace_d2dc11ca",
+      "range": {
+        "startLine": 45,
+        "startChar": 0,
+        "endLine": 50,
+        "endChar": 59
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a2e16ead_ea9b09ab",
         "filename": "fault-monitor/multi-purpose-status.hpp",
         "patchSetId": 4
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "bb45e070_5247cbbe",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 62,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "I have moved this part to .cpp file and also read the data from the signal.",
+      "parentUuid": "a2e16ead_ea9b09ab",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 62,
+        "endChar": 21
+      },
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "45b30c79_e259c962",
         "filename": "meson_options.txt",
         "patchSetId": 4
@@ -153,6 +297,24 @@
       "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "0fd833b5_5a6f6105",
+        "filename": "meson_options.txt",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-20T11:40:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "45b30c79_e259c962",
+      "revId": "9cc936ac2a815a8785bc85ad1f613e281d7a1eb5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
