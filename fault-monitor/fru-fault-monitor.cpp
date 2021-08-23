@@ -54,26 +54,18 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
     auto mapper = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
                                       MAPPER_IFACE, "GetObject");
     mapper.append(path.c_str(), std::vector<std::string>({OBJMGR_IFACE}));
-    auto mapperResponseMsg = bus.call(mapper);
-    if (mapperResponseMsg.is_method_error())
-    {
-        using namespace xyz::openbmc_project::Led::Mapper;
-        elog<MethodErr>(MethodError::METHOD_NAME("GetObject"),
-                        MethodError::PATH(path.c_str()),
-                        MethodError::INTERFACE(OBJMGR_IFACE));
-    }
 
     std::map<std::string, std::vector<std::string>> mapperResponse;
     try
     {
+        auto mapperResponseMsg = bus.call(mapper);
         mapperResponseMsg.read(mapperResponse);
     }
     catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>(
-            "Failed to parse getService mapper response",
-            entry("ERROR=%s", e.what()),
-            entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
+            "Failed to GetObject or parse getService mapper response",
+            entry("ERROR=%s", e.what()));
         using namespace xyz::openbmc_project::Led::Mapper;
         elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
                                 ObjectNotFoundError::PATH(path.c_str()),
@@ -215,26 +207,14 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
     try
     {
         auto mapperResponseMsg = bus.call(mapperCall);
-        if (mapperResponseMsg.is_method_error())
-        {
-            using namespace xyz::openbmc_project::Led::Mapper;
-            report<MethodErr>(MethodError::METHOD_NAME("GetSubTree"),
-                              MethodError::PATH(MAPPER_OBJ_PATH),
-                              MethodError::INTERFACE(OBJMGR_IFACE));
-            return;
-        }
-
-        try
-        {
-            mapperResponseMsg.read(subtree);
-        }
-        catch (const sdbusplus::exception::exception& e)
-        {
-            log<level::ERR>(
-                "Failed to parse existing callouts subtree message",
-                entry("ERROR=%s", e.what()),
-                entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
-        }
+        mapperResponseMsg.read(subtree);
+    }
+    catch (const sdbusplus::exception::exception& e)
+    {
+        log<level::ERR>(
+            "Failed to parse existing callouts subtree message",
+            entry("ERROR=%s", e.what()),
+            entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
     }
     catch (const sdbusplus::exception::exception& e)
     {
@@ -275,10 +255,9 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         }
         catch (const sdbusplus::exception::exception& e)
         {
-            log<level::ERR>(
-                "Failed to parse existing callouts associations message",
-                entry("ERROR=%s", e.what()),
-                entry("REPLY_SIG=%s", reply.get_signature()));
+            log<level::ERR>("Failed to get Associations or  parse existing "
+                            "callouts associations message",
+                            entry("ERROR=%s", e.what()));
             continue;
         }
         auto& assocs = std::get<AssociationList>(assoc);
