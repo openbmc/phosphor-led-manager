@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "e06ccb90_f8c59d8f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-08-23T15:40:35Z",
+      "side": 1,
+      "message": "I wouldn\u0027t even use the word deprecated here, but whatever.",
+      "parentUuid": "18b065f0_5dca243b",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "29d7e773_33b58284",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 2
