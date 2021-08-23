@@ -1,0 +1,78 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "5fab9728_466869ad",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-08-23T09:30:21Z",
+      "side": 1,
+      "message": "This commit handles two changes\n\n1) Remove the deprecated is_method_error() method \nRefer:https://github.com/openbmc/sdbusplus/blob/master/include/sdbusplus/bus.hpp#L282-L286\n2) Add try-catch to handle D-Bus exceptions around mapper call",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8c6217cb_300dec6b",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-08-23T09:30:21Z",
+      "side": 1,
+      "message": "Not just response, even mapper call can also fail. So, may be generalise this",
+      "range": {
+        "startLine": 66,
+        "startChar": 25,
+        "endLine": 66,
+        "endChar": 67
+      },
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b047d8aa_242488dc",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-08-23T09:30:21Z",
+      "side": 1,
+      "message": "same comment as above. Why are we going against earlier approach?",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "269ee177_e4c53c85",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-08-23T09:30:21Z",
+      "side": 1,
+      "message": "same comment as above",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
