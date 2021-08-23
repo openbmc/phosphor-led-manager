@@ -26,14 +26,6 @@ const std::string DBusHandler::getService(const std::string& path,
     mapper.append(path, InterfaceList({interface}));
 
     auto mapperResponseMsg = bus.call(mapper);
-    if (mapperResponseMsg.is_method_error())
-    {
-        log<level::ERR>("Failed to invoke ObjectMapper method",
-                        entry("OBJECT_PATH=%s", path.c_str()),
-                        entry("INTERFACE=%s", interface.c_str()));
-        return "";
-    }
-
     mapperResponseMsg.read(mapperResponse);
     if (mapperResponse.empty())
     {
