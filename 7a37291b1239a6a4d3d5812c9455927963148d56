@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "18b065f0_5dca243b",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-08-23T11:24:30Z",
+      "side": 1,
+      "message": "Remove the usage of deprecated is_method_error.",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "29d7e773_33b58284",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-08-23T11:24:30Z",
+      "side": 1,
+      "message": "what was contained in the REPLY_SIG ?. Is there any equivalent to be logged here ?..",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fd61c200_5dc7d153",
+        "filename": "utils.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-08-23T11:24:30Z",
+      "side": 1,
+      "message": "This is not handling the exceptions ?",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
