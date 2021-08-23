@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "fda177f7_35f10cd3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-23T10:15:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5fab9728_466869ad",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8c6217cb_300dec6b",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "0dfe5b3b_1d6f87d9",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-23T10:15:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "8c6217cb_300dec6b",
+      "range": {
+        "startLine": 66,
+        "startChar": 25,
+        "endLine": 66,
+        "endChar": 67
+      },
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "b047d8aa_242488dc",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 1
@@ -53,6 +95,24 @@
       "writtenOn": "2021-08-23T09:30:21Z",
       "side": 1,
       "message": "same comment as above. Why are we going against earlier approach?",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f79c92cb_89ed0f10",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 213,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-23T10:15:48Z",
+      "side": 1,
+      "message": "\u003e same comment as above\n\nAck.\n\n\u003e Why are we going against earlier approach?\n\n1. The is_method_error method was deprecated\n2. `call` and `read` can be integrated into a try to make the code concise and clear",
+      "parentUuid": "b047d8aa_242488dc",
       "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
@@ -76,6 +136,24 @@
     },
     {
       "key": {
+        "uuid": "8daf92fe_e3008ba3",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-23T10:15:48Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "269ee177_e4c53c85",
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2b988b89_d34955df",
         "filename": "utils.cpp",
         "patchSetId": 1
@@ -87,6 +165,30 @@
       "writtenOn": "2021-08-23T09:31:52Z",
       "side": 1,
       "message": "Why no exception handled around this?",
+      "range": {
+        "startLine": 28,
+        "startChar": 4,
+        "endLine": 29,
+        "endChar": 43
+      },
+      "revId": "87c7923f583b0eaa7b8e583bc63a2bd82a7f2867",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "1adcf493_e5616ffe",
+        "filename": "utils.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-23T10:15:48Z",
+      "side": 1,
+      "message": "Because this is common/utils, it will handled by the caller",
+      "parentUuid": "2b988b89_d34955df",
       "range": {
         "startLine": 28,
         "startChar": 4,
