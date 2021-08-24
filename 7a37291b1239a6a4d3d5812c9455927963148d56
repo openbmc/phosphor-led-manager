@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "ff247ec1_84b7ea57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-24T02:28:49Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e06ccb90_f8c59d8f",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "29d7e773_33b58284",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 2
@@ -54,6 +72,24 @@
     },
     {
       "key": {
+        "uuid": "7e30c07e_f019daec",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-24T02:28:49Z",
+      "side": 1,
+      "message": "I do not think we need to get the signature of a message. \nIf the call method fails, an exception will be thrown directly, and a valid message will not be obtained.",
+      "parentUuid": "29d7e773_33b58284",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "fd61c200_5dc7d153",
         "filename": "utils.cpp",
         "patchSetId": 2
@@ -65,6 +101,24 @@
       "writtenOn": "2021-08-23T11:24:30Z",
       "side": 1,
       "message": "This is not handling the exceptions ?",
+      "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "893265be_4b7fe1e5",
+        "filename": "utils.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-08-24T02:28:49Z",
+      "side": 1,
+      "message": "No.\nRegarding the exceptions thrown by the `call` and `read` methods, the caller needs to catch them.\nanyway, this is the exception of calling the getservice method.",
+      "parentUuid": "fd61c200_5dc7d153",
       "revId": "7a37291b1239a6a4d3d5812c9455927963148d56",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
