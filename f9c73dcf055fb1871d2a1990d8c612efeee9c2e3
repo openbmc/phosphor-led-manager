@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "bf149e59_2168520a",
+        "filename": "fault-monitor/monitor-main.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "yes, only if json file exists, this will proceed further. So I think, it won\u0027t affect others.",
+      "parentUuid": "27140a72_75fed7d3",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "52fe4f04_cb2cefa4",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -33,6 +51,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "37355c11_7d6a3c01",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Removed Macro and enabled \"OBMC_HOST_INSTANCES\" to get the number of hosts.",
+      "parentUuid": "52fe4f04_cb2cefa4",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -53,6 +89,24 @@
     },
     {
       "key": {
+        "uuid": "d6e15c87_d3c32eb4",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 47,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Added description in the latest patchset.",
+      "parentUuid": "7499ddca_da9b7239",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bbd0a51b_389acc80",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -67,6 +121,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fabb3d66_85e66687",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Enabled \"OBMC_HOST_INSTANCES\" to get the number of hosts.",
+      "parentUuid": "bbd0a51b_389acc80",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -93,6 +165,30 @@
     },
     {
       "key": {
+        "uuid": "195c89b8_19e2a030",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2e7746ab_16b31208",
+      "range": {
+        "startLine": 56,
+        "startChar": 0,
+        "endLine": 58,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "e33a45bb_b8e71538",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -113,6 +209,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "6a5d1a47_e6e1f295",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e33a45bb_b8e71538",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 66,
+        "endChar": 34
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -139,6 +259,30 @@
     },
     {
       "key": {
+        "uuid": "e9ad675a_f572bcae",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 72,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "5438b3e6_a15c767f",
+      "range": {
+        "startLine": 72,
+        "startChar": 53,
+        "endLine": 72,
+        "endChar": 56
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "5686aa07_2f84e3fd",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -162,6 +306,30 @@
     },
     {
       "key": {
+        "uuid": "d45b4cbb_5fb9fcc6",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Sure, Updated in the latest patchset.",
+      "parentUuid": "5686aa07_2f84e3fd",
+      "range": {
+        "startLine": 81,
+        "startChar": 32,
+        "endLine": 81,
+        "endChar": 61
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "08554f60_02973697",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -176,6 +344,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d51053b2_568e3246",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 89,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "08554f60_02973697",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -202,6 +388,30 @@
     },
     {
       "key": {
+        "uuid": "213303a3_6dd72344",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 105,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Modified code using template function to get the variant type.",
+      "parentUuid": "49a4bb3e_d2876ded",
+      "range": {
+        "startLine": 105,
+        "startChar": 6,
+        "endLine": 105,
+        "endChar": 19
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "493b0a0d_e2247896",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -222,6 +432,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a9f72636_6f160c1d",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 121,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "No cases for empty variant, Updated this in latest patchset.",
+      "parentUuid": "493b0a0d_e2247896",
+      "range": {
+        "startLine": 116,
+        "startChar": 0,
+        "endLine": 121,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -248,6 +482,30 @@
     },
     {
       "key": {
+        "uuid": "548bb5c1_e6e6fb1f",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 132,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0d24ebb0_16878a21",
+      "range": {
+        "startLine": 130,
+        "startChar": 0,
+        "endLine": 132,
+        "endChar": 45
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "decc8ef9_2455892e",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -268,6 +526,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "f179bac2_b0c603f9",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Added enum for led Action.",
+      "parentUuid": "decc8ef9_2455892e",
+      "range": {
+        "startLine": 159,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 64
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -294,6 +576,30 @@
     },
     {
       "key": {
+        "uuid": "96d05d91_16540c17",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 173,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0316b404_59488ad3",
+      "range": {
+        "startLine": 173,
+        "startChar": 31,
+        "endLine": 173,
+        "endChar": 44
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "cc7b4116_2f2712dd",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -308,6 +614,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "dced8ff2_03f9aa9b",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Changed this into switch case statement.",
+      "parentUuid": "cc7b4116_2f2712dd",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -334,6 +658,30 @@
     },
     {
       "key": {
+        "uuid": "82f204ab_98367a1d",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "37f5801d_3317c746",
+      "range": {
+        "startLine": 178,
+        "startChar": 36,
+        "endLine": 178,
+        "endChar": 56
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3d5c22e0_890d9a3a",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -354,6 +702,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "443a1988_bd2a7a23",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 205,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3d5c22e0_890d9a3a",
+      "range": {
+        "startLine": 204,
+        "startChar": 0,
+        "endLine": 205,
+        "endChar": 54
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -380,6 +752,30 @@
     },
     {
       "key": {
+        "uuid": "e8a1502d_a532edb0",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "64239e6c_ac8c41ea",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 214,
+        "endChar": 5
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "ae294545_7623b573",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -394,6 +790,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ff5b2ae1_cc86c10b",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 235,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "ae294545_7623b573",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -417,6 +831,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "264da2de_23ee2d49",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 247,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "356124fa_9b07f9f4",
+      "range": {
+        "startLine": 246,
+        "startChar": 0,
+        "endLine": 247,
+        "endChar": 46
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -466,6 +904,54 @@
     },
     {
       "key": {
+        "uuid": "b6fe1010_e6f0f444",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0d9ac6ff_cd1864dd",
+      "range": {
+        "startLine": 253,
+        "startChar": 50,
+        "endLine": 253,
+        "endChar": 58
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "2aee5306_02b1164a",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 253,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "cd42e12f_33985cd1",
+      "range": {
+        "startLine": 253,
+        "startChar": 24,
+        "endLine": 253,
+        "endChar": 32
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a455538c_fb606b16",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 5
@@ -489,6 +975,30 @@
     },
     {
       "key": {
+        "uuid": "15ce058a_83d5f868",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Added a description in the sled() function.",
+      "parentUuid": "a455538c_fb606b16",
+      "range": {
+        "startLine": 261,
+        "startChar": 0,
+        "endLine": 261,
+        "endChar": 15
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2ba939de_62abe175",
         "filename": "fault-monitor/multi-purpose-status.hpp",
         "patchSetId": 5
@@ -503,6 +1013,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "23886f4b_cc3b2ea6",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 3,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2ba939de_62abe175",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -529,6 +1057,30 @@
     },
     {
       "key": {
+        "uuid": "4845ca20_3e675570",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 55,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Updated in the latest patchset.",
+      "parentUuid": "8c498b94_db2cf4d7",
+      "range": {
+        "startLine": 55,
+        "startChar": 19,
+        "endLine": 55,
+        "endChar": 27
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "4491d49a_31e58377",
         "filename": "fault-monitor/multi-purpose-status.hpp",
         "patchSetId": 5
@@ -549,6 +1101,30 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "e321ff35_ef7bfe57",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "4491d49a_31e58377",
+      "range": {
+        "startLine": 82,
+        "startChar": 36,
+        "endLine": 82,
+        "endChar": 66
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -575,6 +1151,30 @@
     },
     {
       "key": {
+        "uuid": "e6c23798_5a7a494f",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 86,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Yes, based on dbus-interface property type, I have used this datatype. In updated patchset, I have used \"using\" to declare the type.",
+      "parentUuid": "03cd6906_ca14920c",
+      "range": {
+        "startLine": 85,
+        "startChar": 51,
+        "endLine": 86,
+        "endChar": 41
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "fc5d4517_0cf3447e",
         "filename": "fault-monitor/multi-purpose-status.hpp",
         "patchSetId": 5
@@ -598,6 +1198,30 @@
     },
     {
       "key": {
+        "uuid": "d3df1489_6f35a5e9",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 94,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack, Updated in the latest patchset.",
+      "parentUuid": "fc5d4517_0cf3447e",
+      "range": {
+        "startLine": 94,
+        "startChar": 27,
+        "endLine": 94,
+        "endChar": 35
+      },
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "bff1d1f2_a6ded944",
         "filename": "meson_options.txt",
         "patchSetId": 5
@@ -612,6 +1236,24 @@
       "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "15968032_c5d43c84",
+        "filename": "meson_options.txt",
+        "patchSetId": 5
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2021-08-30T14:26:18Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "bff1d1f2_a6ded944",
+      "revId": "f9c73dcf055fb1871d2a1990d8c612efeee9c2e3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
