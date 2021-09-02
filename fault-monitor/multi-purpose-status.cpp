@@ -113,7 +113,7 @@ const PropertyValue Status::getPropertyValue(const std::string& objectPath,
         propertyValue =
             dBusHandler.getProperty(objectPath, interface, propertyName);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Failed to get property", entry("ERROR=%s", e.what()),
                         entry("PATH=%s", objectPath.c_str()));
@@ -131,7 +131,7 @@ void Status::setLedGroup(const std::string& objectPath, bool value)
         dBusHandler.setProperty(objectPath, GROUP_LED_IFACE, "Asserted",
                                 assertedValue);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Failed to set Asserted property",
                         entry("ERROR=%s", e.what()),

@@ -68,7 +68,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
     {
         mapperResponseMsg.read(mapperResponse);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>(
             "Failed to parse getService mapper response",
@@ -132,7 +132,7 @@ void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
     {
         bus.call_noreply(method);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         // Log an info message, system may not have all the LED Groups defined
         log<level::INFO>("Failed to Assert LED Group",
@@ -152,7 +152,7 @@ void Add::created(sdbusplus::message::message& msg)
     {
         msg.read(objectPath, interfaces);
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Failed to parse created message",
                         entry("ERROR=%s", e.what()),
@@ -228,7 +228,7 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
         {
             mapperResponseMsg.read(subtree);
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>(
                 "Failed to parse existing callouts subtree message",
@@ -236,7 +236,7 @@ void getLoggingSubTree(sdbusplus::bus::bus& bus, MapperResponseType& subtree)
                 entry("REPLY_SIG=%s", mapperResponseMsg.get_signature()));
         }
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         // Just means no log entries at the moment
     }
@@ -273,7 +273,7 @@ void Add::processExistingCallouts(sdbusplus::bus::bus& bus)
         {
             reply.read(assoc);
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>(
                 "Failed to parse existing callouts associations message",
