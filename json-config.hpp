@@ -183,7 +183,7 @@ class JsonConfig
                     }
                     confFile.clear();
                 }
-                catch (const sdbusplus::exception::SdBusError& e)
+                catch (const sdbusplus::exception::exception& e)
                 {
                     // Property unavailable on object.
                     log<level::ERR>(
@@ -196,7 +196,7 @@ class JsonConfig
                 }
             }
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>("Failed to call the SubTreePaths method",
                             entry("ERROR=%s", e.what()),

@@ -70,7 +70,7 @@ const std::vector<std::string>
                                            "xyz.openbmc_project.Association",
                                            "endpoints");
     }
-    catch (const sdbusplus::exception::SdBusError& e)
+    catch (const sdbusplus::exception::exception& e)
     {
         log<level::ERR>("Failed to get endpoints property",
                         entry("ERROR=%s", e.what()),
@@ -98,7 +98,7 @@ void Monitor::updateAssertedProperty(
             dBusHandler.setProperty(path, "xyz.openbmc_project.Led.Group",
                                     "Asserted", assertedValue);
         }
-        catch (const sdbusplus::exception::SdBusError& e)
+        catch (const sdbusplus::exception::exception& e)
         {
             log<level::ERR>("Failed to set Asserted property",
                             entry("ERROR=%s", e.what()),
