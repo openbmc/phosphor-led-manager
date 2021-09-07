@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "c038452b_cbb27d20",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "I don\u0027t see any flags being used here, so you might want to just do:\n\nPHOSPHOR_LOG2_USING;\n\nTypically you\u0027ll see the flags only for hex/bin types.",
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "a3994278_9ae5e499",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "I\u0027ll let the maintainers here decide what they want to do with these, but generally I\u0027ve not put the tags in the messages.  Something like this is much less work:\n\n\"Failed to parse ({SIG}) getService mapper response: {ERROR}\"",
+      "range": {
+        "startLine": 76,
+        "startChar": 59,
+        "endLine": 76,
+        "endChar": 76
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d72b4fd5_d46cd2d7",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "It is suggested to also update .clang-format so that strings do not need to be broken anymore.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 34
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "3ce15572_a6d0695f",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "Remove `.what()` throughout.",
+      "range": {
+        "startLine": 78,
+        "startChar": 23,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8807f5b2_390b7c0f",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "Did this not work without the \".str\"?  Please open an issue to me for phosphor-logging support of sdbusplus::message::object_path and add a TODO here referencing it.",
+      "range": {
+        "startLine": 178,
+        "startChar": 35,
+        "endLine": 178,
+        "endChar": 49
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "9d525dff_ca130f80",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "Just \u0027path\u0027 should work here (and throughout).",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 39,
+        "endChar": 26
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4251f1a3_d96db029",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "There is no need for this \u0027to_string\u0027 here.  Best I can tell this is an enumeration.  I think a cast to int should suffice.\n\nIf this is a common pattern, in another project I know I\u0027ve written an \u0027underlying_cast\u003c...\u003e\u0027 using https://en.cppreference.com/w/cpp/types/underlying_type",
+      "range": {
+        "startLine": 95,
+        "startChar": 34,
+        "endLine": 95,
+        "endChar": 62
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "5ce2b43a_eed7c0fe",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-07T12:01:19Z",
+      "side": 1,
+      "message": "I would suggest a longer tag than \u0027OP\u0027/\u0027NP\u0027.  Maybe \"OLD_PRIO\" or \"OLD_PRIORITY\"?",
+      "range": {
+        "startLine": 95,
+        "startChar": 29,
+        "endLine": 95,
+        "endChar": 31
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
