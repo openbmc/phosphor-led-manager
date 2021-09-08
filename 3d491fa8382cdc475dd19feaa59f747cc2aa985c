@@ -37,6 +37,24 @@
     },
     {
       "key": {
+        "uuid": "17459cd1_d01f3a51",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-08T11:28:20Z",
+      "side": 1,
+      "message": "Sure.  You could have just switched to `PHOSPHOR_LOG2_USING;`, which simply reduces the usings to the log types themselves instead of also adding the flags.",
+      "parentUuid": "7df1161e_d728683e",
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3994278_9ae5e499",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 8
@@ -128,6 +146,30 @@
       "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "c01c64f1_9864e7ab",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-09-08T11:28:20Z",
+      "side": 1,
+      "message": "That commit you referenced does not have a .clang-format in it.  Please make a commit before this one to update the .clang-format and then unbreak all of the strings you added.",
+      "parentUuid": "b773c523_4a1252a5",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 34
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     },
     {
       "key": {
