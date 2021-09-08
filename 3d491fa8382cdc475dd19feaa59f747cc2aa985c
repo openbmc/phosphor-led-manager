@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "7df1161e_d728683e",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Thanks, I think we can remove it and use `lg2::`\nDone",
+      "parentUuid": "c038452b_cbb27d20",
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "a3994278_9ae5e499",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 8
@@ -30,6 +48,30 @@
       "writtenOn": "2021-09-07T12:01:19Z",
       "side": 1,
       "message": "I\u0027ll let the maintainers here decide what they want to do with these, but generally I\u0027ve not put the tags in the messages.  Something like this is much less work:\n\n\"Failed to parse ({SIG}) getService mapper response: {ERROR}\"",
+      "range": {
+        "startLine": 76,
+        "startChar": 59,
+        "endLine": 76,
+        "endChar": 76
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "156f1398_3b201cc6",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 76,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "I think we can let the maintainers here decide.\nNow I think it can be kept as it is 😊",
+      "parentUuid": "a3994278_9ae5e499",
       "range": {
         "startLine": 76,
         "startChar": 59,
@@ -65,6 +107,30 @@
     },
     {
       "key": {
+        "uuid": "b773c523_4a1252a5",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Yes, I have updated it in another patch: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/46118",
+      "parentUuid": "d72b4fd5_d46cd2d7",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 77,
+        "endChar": 34
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "3ce15572_a6d0695f",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 8
@@ -88,6 +154,30 @@
     },
     {
       "key": {
+        "uuid": "57b79ff6_59522469",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 78,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3ce15572_a6d0695f",
+      "range": {
+        "startLine": 78,
+        "startChar": 23,
+        "endLine": 78,
+        "endChar": 31
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "8807f5b2_390b7c0f",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
         "patchSetId": 8
@@ -99,6 +189,30 @@
       "writtenOn": "2021-09-07T12:01:19Z",
       "side": 1,
       "message": "Did this not work without the \".str\"?  Please open an issue to me for phosphor-logging support of sdbusplus::message::object_path and add a TODO here referencing it.",
+      "range": {
+        "startLine": 178,
+        "startChar": 35,
+        "endLine": 178,
+        "endChar": 49
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "4e543114_4b28e199",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "\u003e Did this not work without the \".str\"? \n\nYes, did not.\ncreated an issue: https://github.com/openbmc/phosphor-logging/issues/25",
+      "parentUuid": "8807f5b2_390b7c0f",
       "range": {
         "startLine": 178,
         "startChar": 35,
@@ -131,6 +245,30 @@
       "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "cbaddb1f_b37d06e0",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "9d525dff_ca130f80",
+      "range": {
+        "startLine": 39,
+        "startChar": 14,
+        "endLine": 39,
+        "endChar": 26
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     },
     {
       "key": {
@@ -177,6 +315,54 @@
       "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b56b9cef_c93aaa6d",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "4251f1a3_d96db029",
+      "range": {
+        "startLine": 95,
+        "startChar": 34,
+        "endLine": 95,
+        "endChar": 62
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "227ad781_3cb9fbdd",
+        "filename": "json-parser.hpp",
+        "patchSetId": 8
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-08T08:40:55Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5ce2b43a_eed7c0fe",
+      "range": {
+        "startLine": 95,
+        "startChar": 29,
+        "endLine": 95,
+        "endChar": 31
+      },
+      "revId": "3d491fa8382cdc475dd19feaa59f747cc2aa985c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
