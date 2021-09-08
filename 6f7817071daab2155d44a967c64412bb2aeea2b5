@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "affc2088_1476e345",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000014
+      },
+      "writtenOn": "2021-09-08T18:03:16Z",
+      "side": 1,
+      "message": "Please help put some more description on what this commit is intending to solve ?.",
+      "revId": "6f7817071daab2155d44a967c64412bb2aeea2b5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
