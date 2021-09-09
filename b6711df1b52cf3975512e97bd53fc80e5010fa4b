@@ -16,6 +16,24 @@
       "revId": "b6711df1b52cf3975512e97bd53fc80e5010fa4b",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "b4c0f26b_5974c6ab",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 9
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-09-09T12:52:42Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f14140da_1e1284fa",
+      "revId": "b6711df1b52cf3975512e97bd53fc80e5010fa4b",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
