@@ -92,12 +92,12 @@ void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
         groups.pop_back();
         service = getService(bus, groups);
     }
-    catch (MethodErr& e)
+    catch (const MethodErr& e)
     {
         commit<MethodErr>();
         return;
     }
-    catch (ObjectNotFoundErr& e)
+    catch (const ObjectNotFoundErr& e)
     {
         commit<ObjectNotFoundErr>();
         return;

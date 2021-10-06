@@ -68,7 +68,7 @@ void Serialize::restoreGroups()
         cereal::JSONInputArchive iarchive(is);
         iarchive(savedGroups);
     }
-    catch (cereal::Exception& e)
+    catch (const cereal::Exception& e)
     {
         lg2::error("Failed to restore groups, ERROR = {ERROR}", "ERROR", e);
         fs::remove(path);
