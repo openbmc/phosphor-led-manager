@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "88dcbe27_7300d0b8",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-10-25T11:24:40Z",
+      "side": 1,
+      "message": "@Lakshmi, can you confirm this is your discord?",
+      "revId": "8d2861fc98b93f741d6c9c7a50a9baec2c3d326d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
