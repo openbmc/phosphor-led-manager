@@ -16,6 +16,29 @@
       "revId": "8d2861fc98b93f741d6c9c7a50a9baec2c3d326d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "32388b2c_07c0bec1",
+        "filename": "OWNERS",
+        "patchSetId": 1
+      },
+      "lineNbr": 50,
+      "author": {
+        "id": 1000103
+      },
+      "writtenOn": "2021-10-25T11:31:13Z",
+      "side": 1,
+      "message": "lkammath",
+      "range": {
+        "startLine": 50,
+        "startChar": 11,
+        "endLine": 50,
+        "endChar": 30
+      },
+      "revId": "8d2861fc98b93f741d6c9c7a50a9baec2c3d326d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
     }
   ]
 }
