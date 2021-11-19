@@ -37,7 +37,7 @@ class JsonConfig
     JsonConfig(sdbusplus::bus::bus& bus, sdeventplus::Event& event) :
         event(event)
     {
-        match = std::make_unique<sdbusplus::server::match::match>(
+        match = std::make_unique<sdbusplus::bus::match_t>(
             bus,
             sdbusplus::bus::match::rules::interfacesAdded() +
                 sdbusplus::bus::match::rules::sender(
@@ -217,7 +217,7 @@ class JsonConfig
      * @brief The interfacesAdded match that is used to wait
      *        for the IBMCompatibleSystem interface to show up.
      */
-    std::unique_ptr<sdbusplus::server::match::match> match;
+    std::unique_ptr<sdbusplus::bus::match_t> match;
 
     /** DBusHandler class handles the D-Bus operations */
     utils::DBusHandler dBusHandler;
