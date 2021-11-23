@@ -1,0 +1,10 @@
+Ok-To-Test+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Code-Review+1: George Liu <liuxiwei@inspur.com>
+Code-Review+1: Lakshminarayana R Kammath <lkammath@in.ibm.com>
+Code-Review+2: Patrick Williams <patrick@stwcx.xyz>
+Submitted-by: Patrick Williams <patrick@stwcx.xyz>
+Submitted-at: Tue, 23 Nov 2021 18:51:31 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/48998
+Project: openbmc/phosphor-led-manager
+Branch: refs/heads/master
