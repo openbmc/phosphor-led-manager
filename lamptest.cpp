@@ -2,6 +2,8 @@
 
 #include <phosphor-logging/lg2.hpp>
 
+#include <algorithm>
+
 namespace phosphor
 {
 namespace led
@@ -276,16 +278,12 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
         // define the default JSON as empty
         const std::vector<std::string> empty{};
         auto forceLEDs = json.value("forceLEDs", empty);
-        for (auto& member : forceLEDs)
-        {
-            forceUpdateLEDs.push_back(PHY_LED_PATH + member);
-        }
+        std::ranges::transform(forceLEDs, std::back_inserter(forceUpdateLEDs),
+                               [](const auto& i) { return PHY_LED_PATH + i; });
 
         auto skipLEDs = json.value("skipLEDs", empty);
-        for (auto& member : skipLEDs)
-        {
-            skipUpdateLEDs.push_back(PHY_LED_PATH + member);
-        }
+        std::ranges::transform(skipLEDs, std::back_inserter(skipUpdateLEDs),
+                               [](const auto& i) { return PHY_LED_PATH + i; });
     }
     catch (const std::exception& e)
     {

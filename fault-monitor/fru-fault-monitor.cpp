@@ -78,6 +78,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
         elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
                                 ObjectNotFoundError::PATH(path.c_str()),
                                 ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
+        return {};
     }
 
     return mapperResponse.cbegin()->first;
