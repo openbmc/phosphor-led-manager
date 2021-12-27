@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "6d00ea19_960794d1",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T13:17:32Z",
+      "side": 0,
+      "message": "Should these have been emplace_back?\n\nWhat was being fixed here?",
+      "revId": "db6d763891a8526197478c24616b8740f92742d5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "ab819f6c_5c87ccbe",
+        "filename": "led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-27T13:17:32Z",
+      "side": 0,
+      "message": "What was the warning being fixed?  I\u0027m not convinced that the back_inserter is \"better\" than emplace_back because that does a direct construction inside the container rather than a copy.",
+      "revId": "db6d763891a8526197478c24616b8740f92742d5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    }
+  ]
+}
