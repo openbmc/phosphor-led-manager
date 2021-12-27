@@ -39,7 +39,7 @@ class Monitor
      *
      *  @param[in] bus -  D-Bus object
      */
-    Monitor(sdbusplus::bus::bus& bus) :
+    explicit Monitor(sdbusplus::bus::bus& bus) :
         bus(bus),
         matchSignal(bus,
                     "type='signal',member='PropertiesChanged', "
