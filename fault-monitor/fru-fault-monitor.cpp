@@ -61,6 +61,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
     {
         auto mapperResponseMsg = bus.call(mapper);
         mapperResponseMsg.read(mapperResponse);
+        return mapperResponse.cbegin()->first;
     }
     catch (const sdbusplus::exception::exception& e)
     {
@@ -72,15 +73,6 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
                                 ObjectNotFoundError::PATH(path.c_str()),
                                 ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
     }
-    if (mapperResponse.empty())
-    {
-        using namespace xyz::openbmc_project::Led::Mapper;
-        elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
-                                ObjectNotFoundError::PATH(path.c_str()),
-                                ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
-    }
-
-    return mapperResponse.cbegin()->first;
 }
 
 void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)

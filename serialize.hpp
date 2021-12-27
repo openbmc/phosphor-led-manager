@@ -21,7 +21,7 @@ using SavedGroups = std::set<std::string>;
 class Serialize
 {
   public:
-    Serialize(const fs::path& path) : path(path)
+    explicit Serialize(const fs::path& path) : path(path)
     {
         restoreGroups();
     }

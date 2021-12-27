@@ -81,9 +81,7 @@ const std::vector<std::string>
         return {};
     }
 
-    auto& endpoints = std::get<std::vector<std::string>>(endpoint);
-
-    return endpoints;
+    return std::get<std::vector<std::string>>(endpoint);
 }
 
 void Monitor::updateAssertedProperty(
