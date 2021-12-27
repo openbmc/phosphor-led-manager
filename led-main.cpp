@@ -16,6 +16,7 @@
 
 #include <sdeventplus/event.hpp>
 
+#include <algorithm>
 #include <iostream>
 
 int main(void)
@@ -58,11 +59,14 @@ int main(void)
 #endif
 
     /** Now create so many dbus objects as there are groups */
-    for (auto& grp : systemLedMap)
-    {
-        groups.emplace_back(std::make_unique<phosphor::led::Group>(
-            bus, grp.first, manager, serialize));
-    }
+    std::transform(
+        systemLedMap.begin(), systemLedMap.end(), std::back_inserter(groups),
+        [&bus, &manager, &serialize](
+            const std::pair<std::string,
+                            std::set<phosphor::led::Layout::LedAction>>& grp) {
+            return std::make_unique<phosphor::led::Group>(bus, grp.first,
+                                                          manager, serialize);
+        });
 
     // Attach the bus to sd_event to service user requests
     bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);

@@ -45,7 +45,7 @@ class Add
     /** @brief constructs Add a watch for FRU faults.
      *  @param[in] bus -  The Dbus bus object
      */
-    Add(sdbusplus::bus::bus& bus) :
+    explicit Add(sdbusplus::bus::bus& bus) :
         matchCreated(
             bus,
             sdbusplus::bus::match::rules::interfacesAdded() +
