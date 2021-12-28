@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "6d00ea19_960794d1",
         "filename": "lamptest.cpp",
@@ -14,10 +15,10 @@
       "side": 0,
       "message": "Should these have been emplace_back?\n\nWhat was being fixed here?",
       "revId": "db6d763891a8526197478c24616b8740f92742d5",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "e0cff20b_7f374810",
         "filename": "lamptest.cpp",
@@ -32,10 +33,10 @@
       "message": "\u003e Should these have been emplace_back?\n\u003e \n\u003e What was being fixed here?\n\n```\nlamptest.cpp:281:29: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]\n            forceUpdateLEDs.push_back(PHY_LED_PATH + member);\n                            ^\nlamptest.cpp:287:28: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]\n            skipUpdateLEDs.push_back(PHY_LED_PATH + member);\n```",
       "parentUuid": "6d00ea19_960794d1",
       "revId": "db6d763891a8526197478c24616b8740f92742d5",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "ab819f6c_5c87ccbe",
         "filename": "led-main.cpp",
@@ -49,10 +50,10 @@
       "side": 0,
       "message": "What was the warning being fixed?  I\u0027m not convinced that the back_inserter is \"better\" than emplace_back because that does a direct construction inside the container rather than a copy.",
       "revId": "db6d763891a8526197478c24616b8740f92742d5",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "76eb06ed_7097640b",
         "filename": "led-main.cpp",
@@ -67,8 +68,25 @@
       "message": "\u003e What was the warning being fixed?  I\u0027m not convinced that the back_inserter is \"better\" than emplace_back because that does a direct construction inside the container rather than a copy.\n\nSorry, I just noticed this warning when running cppcheck.\n```\nled-main.cpp:63:16: style: Consider using std::transform algorithm instead of a raw loop. [useStlAlgorithm]\n        groups.emplace_back(std::make_unique\u003cphosphor::led::Group\u003e(\n```",
       "parentUuid": "ab819f6c_5c87ccbe",
       "revId": "db6d763891a8526197478c24616b8740f92742d5",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58d2300b_2cba09d2",
+        "filename": "led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-28T23:10:54Z",
+      "side": 0,
+      "message": "Likely RVO allows the back_inserter to behave exactly like emplace_back would, so this is probably ok.",
+      "parentUuid": "76eb06ed_7097640b",
+      "revId": "db6d763891a8526197478c24616b8740f92742d5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

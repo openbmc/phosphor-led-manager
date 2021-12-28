@@ -1,6 +1,7 @@
 {
   "comments": [
     {
+      "unresolved": true,
       "key": {
         "uuid": "94b7768f_39f41c6f",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
@@ -14,10 +15,10 @@
       "side": 1,
       "message": "Doesn\u0027t this access \u0027cend()\u0027 if the mapperResponse is empty (ie, if cend \u003d\u003d cbegin)?\n\nWhat was being fixed here?",
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "559041d6_fa89bb5d",
         "filename": "fault-monitor/fru-fault-monitor.cpp",
@@ -32,10 +33,28 @@
       "message": "\u003e Doesn\u0027t this access \u0027cend()\u0027 if the mapperResponse is empty (ie, if cend \u003d\u003d cbegin)?\n\nAs previous logic, it will throw ObjectNotFoundErr if mapperResponse is empty\n\n\u003e \n\u003e What was being fixed here?\n\n```\nfault-monitor/fru-fault-monitor.cpp:83:33: warning: Either the condition \u0027mapperResponse.empty()\u0027 is redundant or expression \u0027mapperResponse.cbegin()\u0027 cause access out of bounds. [containerOutOfBounds]\n    return mapperResponse.cbegin()-\u003efirst;1\n```",
       "parentUuid": "94b7768f_39f41c6f",
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "eb77110b_67100570",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2021-12-28T23:10:54Z",
+      "side": 1,
+      "message": "\u003e As previous logic, it will throw ObjectNotFoundErr if mapperResponse is empty\n\nHow?  An empty array response will try to access \u0027cbegin()-\u003efirst\u0027 which is an invalid pointer.",
+      "parentUuid": "559041d6_fa89bb5d",
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "5fb25144_5eefaa7c",
         "filename": "lamptest.cpp",
@@ -55,10 +74,10 @@
         "endChar": 58
       },
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "2a8468d6_1dce2bf8",
         "filename": "lamptest.cpp",
@@ -79,10 +98,10 @@
         "endChar": 58
       },
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": true,
       "key": {
         "uuid": "2462fabe_186ecd25",
         "filename": "led-main.cpp",
@@ -102,10 +121,10 @@
         "endChar": 48
       },
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": true
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "328df363_a5a2625b",
         "filename": "led-main.cpp",
@@ -126,8 +145,7 @@
         "endChar": 48
       },
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
-      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
-      "unresolved": false
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
