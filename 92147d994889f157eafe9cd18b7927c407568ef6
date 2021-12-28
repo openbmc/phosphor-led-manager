@@ -19,6 +19,24 @@
     },
     {
       "key": {
+        "uuid": "559041d6_fa89bb5d",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-28T00:43:49Z",
+      "side": 1,
+      "message": "\u003e Doesn\u0027t this access \u0027cend()\u0027 if the mapperResponse is empty (ie, if cend \u003d\u003d cbegin)?\n\nAs previous logic, it will throw ObjectNotFoundErr if mapperResponse is empty\n\n\u003e \n\u003e What was being fixed here?\n\n```\nfault-monitor/fru-fault-monitor.cpp:83:33: warning: Either the condition \u0027mapperResponse.empty()\u0027 is redundant or expression \u0027mapperResponse.cbegin()\u0027 cause access out of bounds. [containerOutOfBounds]\n    return mapperResponse.cbegin()-\u003efirst;1\n```",
+      "parentUuid": "94b7768f_39f41c6f",
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": true
+    },
+    {
+      "key": {
         "uuid": "5fb25144_5eefaa7c",
         "filename": "lamptest.cpp",
         "patchSetId": 1
@@ -42,6 +60,30 @@
     },
     {
       "key": {
+        "uuid": "2a8468d6_1dce2bf8",
+        "filename": "lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-28T00:43:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5fb25144_5eefaa7c",
+      "range": {
+        "startLine": 281,
+        "startChar": 23,
+        "endLine": 281,
+        "endChar": 58
+      },
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "2462fabe_186ecd25",
         "filename": "led-main.cpp",
         "patchSetId": 1
@@ -62,6 +104,30 @@
       "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "328df363_a5a2625b",
+        "filename": "led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 63,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-28T00:43:49Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "2462fabe_186ecd25",
+      "range": {
+        "startLine": 63,
+        "startChar": 8,
+        "endLine": 63,
+        "endChar": 48
+      },
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4",
+      "unresolved": false
     }
   ]
 }
