@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4270df7f_47b389e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-29T00:41:45Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "a2b8a84e_80581743",
+      "revId": "d0bdd019930c08dd161c9a64971d01f40ee2cb01",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d2fd82ab_7a895884",
@@ -31,6 +49,30 @@
       "writtenOn": "2021-12-28T23:10:54Z",
       "side": 1,
       "message": "The whole point of ranges was to be able to simply do \u0027forceLEDs\u0027 and avoid the begin/end.",
+      "range": {
+        "startLine": 281,
+        "startChar": 31,
+        "endLine": 281,
+        "endChar": 66
+      },
+      "revId": "d0bdd019930c08dd161c9a64971d01f40ee2cb01",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6ea549c0_5acc6718",
+        "filename": "lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 281,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-29T00:41:45Z",
+      "side": 1,
+      "message": "Oops, it is my mistake\nDone",
+      "parentUuid": "d2fd82ab_7a895884",
       "range": {
         "startLine": 281,
         "startChar": 31,

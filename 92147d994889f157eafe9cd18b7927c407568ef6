@@ -56,6 +56,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c4a6b263_2af2117f",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-29T00:41:45Z",
+      "side": 1,
+      "message": "\u003e \u003e As previous logic, it will throw ObjectNotFoundErr if mapperResponse is empty\n\u003e \n\u003e How?  An empty array response will try to access \u0027cbegin()-\u003efirst\u0027 which is an invalid pointer.\n\nYes, So it will be captured by line 61 and throw ObjectNotFoundErr",
+      "parentUuid": "eb77110b_67100570",
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5fb25144_5eefaa7c",
         "filename": "lamptest.cpp",
         "patchSetId": 1
