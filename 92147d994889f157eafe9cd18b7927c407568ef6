@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "40f2a876_1dddd85d",
+        "filename": "fault-monitor/fru-fault-monitor.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 64,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2021-12-29T01:59:13Z",
+      "side": 1,
+      "message": "\u003e Sorry, I still don\u0027t understand this.  What is it you think is throwing to be caught by 60/66?\n\u003e \n\u003e The mapper could literally return us an empty array \"[]\", right?  This is valid on dbus.  Nothing in line 62 or line 63 with throw in that case.\n\nYeah, You are right.\n\nIf the mapperResponse is empty, no exception will be thrown, and a null value can be obtained by using `return mapperResponse.cbegin()-\u003efirst`\n\nBut in order to eliminate the above warning, I added `return {}`.",
+      "parentUuid": "0f10abe5_212269bb",
+      "revId": "92147d994889f157eafe9cd18b7927c407568ef6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5fb25144_5eefaa7c",
         "filename": "lamptest.cpp",
         "patchSetId": 1
