@@ -3,6 +3,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "40174a22_1df8b95d",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Can be replaced with constexpr string instead of hardcoded value ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 5
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "03a80ae7_e39100d7",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "`getSubTreePaths` will log an error when the response is empty, perhaps `getSubTreePathsRaw` should be used here instead?",
+      "range": {
+        "startLine": 75,
+        "startChar": 34,
+        "endLine": 75,
+        "endChar": 49
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c9a4c4f4_4633e609",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Please give meaningful variable name here?",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 20
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56f74f34_d64e85f1",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "This else if block is not necessary, if you add the code in the above if (action \u003d\u003d Action::Blink) ?",
+      "range": {
+        "startLine": 124,
+        "startChar": 7,
+        "endLine": 127,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "42733177_2588c922",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 11
@@ -72,6 +164,98 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0a5690cb_c4185f71",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Can use range based loop here ?",
+      "range": {
+        "startLine": 224,
+        "startChar": 12,
+        "endLine": 224,
+        "endChar": 66
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d7571703_daa6e115",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Can use range based loop here ?",
+      "range": {
+        "startLine": 261,
+        "startChar": 11,
+        "endLine": 261,
+        "endChar": 66
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2d9491f1_f57e4297",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Variable declaration should not be in middle of the function ? It should be in starting of the function.",
+      "range": {
+        "startLine": 271,
+        "startChar": 8,
+        "endLine": 272,
+        "endChar": 32
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "727b8506_2363f10e",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "getSubTreePathsRaw ?",
+      "range": {
+        "startLine": 280,
+        "startChar": 28,
+        "endLine": 280,
+        "endChar": 43
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "15826b9b_2d28d69d",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 11
@@ -88,6 +272,29 @@
         "startChar": 24,
         "endLine": 294,
         "endChar": 28
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "374f4fb8_486c11d1",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000546
+      },
+      "writtenOn": "2022-03-10T12:40:40Z",
+      "side": 1,
+      "message": "Declare meaningful name for pos, prop variables.",
+      "range": {
+        "startLine": 306,
+        "startChar": 16,
+        "endLine": 306,
+        "endChar": 19
       },
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
