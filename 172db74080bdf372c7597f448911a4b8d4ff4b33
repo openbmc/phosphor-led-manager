@@ -1,6 +1,69 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "9dd62486_3a77a7a4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "There\u0027s still quite a bit to do here.",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "038d049e_0b7634c8",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "We should probably just move utils.cpp into the primary list (line 4) and remove it from here and line 15.  LTO will remove any unused symbols in the executable so there really isn\u0027t much harm in including it all the time.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "352d1a2d_9d823d15",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "Just use ...Chassis::PowerState here.  sdbusplus / PDI already know how to parse the string into the C++ enum for you.  That eliminates all the if conditions below.",
+      "range": {
+        "startLine": 52,
+        "startChar": 33,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40174a22_1df8b95d",
@@ -18,6 +81,29 @@
         "startLine": 56,
         "startChar": 4,
         "endLine": 61,
+        "endChar": 5
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "14617f43_af87310f",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "What about the TransitioningToOff/On states?",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 68,
         "endChar": 5
       },
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
@@ -95,6 +181,47 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "c2954dd7_ae312c04",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "None of this is necessary.  Use PDI enums to begin with and they can automatically be converted in the setProperty call.  \u0027Action\u0027 should be of type `xyz::openbmc_project::Led::server::Physical::Action`.",
+      "parentUuid": "56f74f34_d64e85f1",
+      "range": {
+        "startLine": 124,
+        "startChar": 7,
+        "endLine": 127,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "35e09693_738a77e0",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "Why are we ever setting Physical LEDs?  We should trigger a group and the group should trigger the physical LEDs.  Never trigger physical LEDs directly in code.",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "42733177_2588c922",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 11
@@ -112,6 +239,23 @@
         "endLine": 153,
         "endChar": 30
       },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0c4720bf_e51ae130",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "This needs to be reworked to leverage LED groups.",
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -164,6 +308,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "609c2cca_0044bb11",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "Agreed.  An infinite loop isn\u0027t appropriate.  Spawn off sd_event timers as appropriate and/or react to dbus signals.",
+      "parentUuid": "a3074f8b_15bf7c45",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "0a5690cb_c4185f71",
         "filename": "fault-monitor/multi-purpose-status.cpp",
         "patchSetId": 11
@@ -180,6 +348,29 @@
         "startChar": 12,
         "endLine": 224,
         "endChar": 66
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3a15a817_1b55aabf",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "This should also be handled as a Group (sled identify).  If it has higher priority behavior on the Power/System LEDs, that should be represented in the JSON.",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 9
       },
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
@@ -295,6 +486,69 @@
         "startChar": 16,
         "endLine": 306,
         "endChar": 19
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3db83bfd_00a43650",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "Why are we defining these ourselves?  Use what is in phosphor-dbus-interfaces headers.",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 2
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f60f3fd6_8a4b0fae",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "Prefer you to use xyz::openbmc_project::Led::client::Group::interface and similar for all the interfaces.  Tie to what is in the PDI headers.",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "981b1f89_e4d6e45e",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-10T14:41:31Z",
+      "side": 1,
+      "message": "This is an undocumented internal interface in EM/fru-device.  Why are we using it?  There should be EM config that makes a real Inventory interface if we need this.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 18
       },
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
