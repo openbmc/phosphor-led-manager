@@ -18,6 +18,23 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c8b2436a_fb85318e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 11
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Thanks for your suggestions, I will work on the following review comments.",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "038d049e_0b7634c8",
@@ -31,6 +48,30 @@
       "writtenOn": "2022-03-10T14:41:31Z",
       "side": 1,
       "message": "We should probably just move utils.cpp into the primary list (line 4) and remove it from here and line 15.  LTO will remove any unused symbols in the executable so there really isn\u0027t much harm in including it all the time.",
+      "range": {
+        "startLine": 8,
+        "startChar": 0,
+        "endLine": 8,
+        "endChar": 23
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3194491d_820d3be3",
+        "filename": "fault-monitor/meson.build",
+        "patchSetId": 11
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "038d049e_0b7634c8",
       "range": {
         "startLine": 8,
         "startChar": 0,
@@ -64,6 +105,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b85ee528_1a7775d2",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "352d1a2d_9d823d15",
+      "range": {
+        "startLine": 52,
+        "startChar": 33,
+        "endLine": 52,
+        "endChar": 46
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "40174a22_1df8b95d",
@@ -77,6 +142,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "Can be replaced with constexpr string instead of hardcoded value ?",
+      "range": {
+        "startLine": 56,
+        "startChar": 4,
+        "endLine": 61,
+        "endChar": 5
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "20679073_d98f2809",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 61,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "40174a22_1df8b95d",
       "range": {
         "startLine": 56,
         "startChar": 4,
@@ -110,6 +199,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "de1819df_76d1c3d8",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 68,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "14617f43_af87310f",
+      "range": {
+        "startLine": 64,
+        "startChar": 0,
+        "endLine": 68,
+        "endChar": 5
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "03a80ae7_e39100d7",
@@ -133,6 +246,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4be591b_088b4b89",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 75,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "03a80ae7_e39100d7",
+      "range": {
+        "startLine": 75,
+        "startChar": 34,
+        "endLine": 75,
+        "endChar": 49
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c9a4c4f4_4633e609",
@@ -146,6 +283,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "Please give meaningful variable name here?",
+      "range": {
+        "startLine": 83,
+        "startChar": 16,
+        "endLine": 83,
+        "endChar": 20
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "981ce3fe_19108033",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 83,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c9a4c4f4_4633e609",
       "range": {
         "startLine": 83,
         "startChar": 16,
@@ -203,6 +364,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "783402e6_c46e0fad",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 127,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "c2954dd7_ae312c04",
+      "range": {
+        "startLine": 124,
+        "startChar": 7,
+        "endLine": 127,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "35e09693_738a77e0",
@@ -216,6 +401,24 @@
       "writtenOn": "2022-03-10T14:41:31Z",
       "side": 1,
       "message": "Why are we ever setting Physical LEDs?  We should trigger a group and the group should trigger the physical LEDs.  Never trigger physical LEDs directly in code.",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4ec1ed43_83e2eb8e",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 145,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "35e09693_738a77e0",
       "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
@@ -243,6 +446,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8331a32e_4ad55457",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 153,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "42733177_2588c922",
+      "range": {
+        "startLine": 153,
+        "startChar": 16,
+        "endLine": 153,
+        "endChar": 30
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0c4720bf_e51ae130",
@@ -260,6 +487,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "07db7c14_c82630fe",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 182,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0c4720bf_e51ae130",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f350eefc_1e53cec4",
@@ -273,6 +518,30 @@
       "writtenOn": "2022-03-09T13:15:36Z",
       "side": 1,
       "message": "here also multiple method calls can be reduced to two calls by providing a method named getLedAction() as 2nd parameter for setPhysicalLed() method",
+      "range": {
+        "startLine": 189,
+        "startChar": 12,
+        "endLine": 189,
+        "endChar": 26
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb614922_b887cada",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 189,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f350eefc_1e53cec4",
       "range": {
         "startLine": 189,
         "startChar": 12,
@@ -330,6 +599,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "af147073_b17705cf",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 210,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "609c2cca_0044bb11",
+      "range": {
+        "startLine": 210,
+        "startChar": 4,
+        "endLine": 210,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a5690cb_c4185f71",
@@ -343,6 +636,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "Can use range based loop here ?",
+      "range": {
+        "startLine": 224,
+        "startChar": 12,
+        "endLine": 224,
+        "endChar": 66
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c36e2bdb_1f593ab3",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 224,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "0a5690cb_c4185f71",
       "range": {
         "startLine": 224,
         "startChar": 12,
@@ -376,6 +693,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8f5c739_23fd6a6a",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 232,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3a15a817_1b55aabf",
+      "range": {
+        "startLine": 219,
+        "startChar": 0,
+        "endLine": 232,
+        "endChar": 9
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d7571703_daa6e115",
@@ -389,6 +730,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "Can use range based loop here ?",
+      "range": {
+        "startLine": 261,
+        "startChar": 11,
+        "endLine": 261,
+        "endChar": 66
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f2225a4_c8843ec4",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 261,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "d7571703_daa6e115",
       "range": {
         "startLine": 261,
         "startChar": 11,
@@ -422,6 +787,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d71d1979_9c2857a3",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 272,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "2d9491f1_f57e4297",
+      "range": {
+        "startLine": 271,
+        "startChar": 8,
+        "endLine": 272,
+        "endChar": 32
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "727b8506_2363f10e",
@@ -435,6 +824,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "getSubTreePathsRaw ?",
+      "range": {
+        "startLine": 280,
+        "startChar": 28,
+        "endLine": 280,
+        "endChar": 43
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "40909ffe_fb235a51",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 280,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "727b8506_2363f10e",
       "range": {
         "startLine": 280,
         "startChar": 28,
@@ -468,6 +881,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8a848070_e573a4b0",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 294,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "15826b9b_2d28d69d",
+      "range": {
+        "startLine": 294,
+        "startChar": 24,
+        "endLine": 294,
+        "endChar": 28
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "374f4fb8_486c11d1",
@@ -481,6 +918,30 @@
       "writtenOn": "2022-03-10T12:40:40Z",
       "side": 1,
       "message": "Declare meaningful name for pos, prop variables.",
+      "range": {
+        "startLine": 306,
+        "startChar": 16,
+        "endLine": 306,
+        "endChar": 19
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ebe95e26_affe1895",
+        "filename": "fault-monitor/multi-purpose-status.cpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 306,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "374f4fb8_486c11d1",
       "range": {
         "startLine": 306,
         "startChar": 16,
@@ -514,6 +975,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "66197353_b0d653e9",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 37,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "3db83bfd_00a43650",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 37,
+        "endChar": 2
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f60f3fd6_8a4b0fae",
@@ -531,6 +1016,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f20eb9b0_934b4763",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 43,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f60f3fd6_8a4b0fae",
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "981b1f89_e4d6e45e",
@@ -544,6 +1047,30 @@
       "writtenOn": "2022-03-10T14:41:31Z",
       "side": 1,
       "message": "This is an undocumented internal interface in EM/fru-device.  Why are we using it?  There should be EM config that makes a real Inventory interface if we need this.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 82,
+        "endChar": 18
+      },
+      "revId": "172db74080bdf372c7597f448911a4b8d4ff4b33",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "54f0bfdc_3733fb22",
+        "filename": "fault-monitor/multi-purpose-status.hpp",
+        "patchSetId": 11
+      },
+      "lineNbr": 82,
+      "author": {
+        "id": 1000869
+      },
+      "writtenOn": "2022-03-14T09:09:29Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "981b1f89_e4d6e45e",
       "range": {
         "startLine": 77,
         "startChar": 0,
