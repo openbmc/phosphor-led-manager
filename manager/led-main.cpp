@@ -11,7 +11,7 @@
 #include "serialize.hpp"
 #include "utils.hpp"
 #ifdef USE_LAMP_TEST
-#include "lamptest.hpp"
+#include "lamptest/lamptest.hpp"
 #endif
 
 #include <sdeventplus/event.hpp>

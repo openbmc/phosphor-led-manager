@@ -20,8 +20,8 @@ if not gtest_dep.found() or not gmock_dep.found()
 endif
 
 test_sources = [
-  '../manager.cpp',
-  '../serialize.cpp',
+  '../manager/manager.cpp',
+  '../manager/serialize.cpp',
   '../utils.cpp'
 ]
 
@@ -34,7 +34,7 @@ tests = [
 foreach t : tests
   test(t, executable(t.underscorify(), t,
                      test_sources,
-                     include_directories: ['..'],
+                     include_directories: ['..', '../manager'],
                      dependencies: [
                          gtest_dep,
                          gmock_dep,
