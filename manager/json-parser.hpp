@@ -28,7 +28,7 @@ using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
  *
  *  @return const Json - Json object
  */
-const Json readJson(const fs::path& path)
+Json readJson(const fs::path& path)
 {
 
     if (!fs::exists(path) || fs::is_empty(path))
@@ -98,18 +98,17 @@ void validatePriority(const std::string& name,
     }
 }
 
-/** @brief Load JSON config and return led map
+/** @brief Load JSON config and return led map (JSON version 1)
  *
  *  @return LedMap - Generated an std::map of LedAction
  */
-const LedMap loadJsonConfig(const fs::path& path)
+const LedMap loadJsonConfigV1(const Json& json)
 {
     LedMap ledMap{};
     PriorityMap priorityMap{};
 
     // define the default JSON as empty
     const Json empty{};
-    auto json = readJson(path);
     auto leds = json.value("leds", empty);
 
     for (const auto& entry : leds)
@@ -145,6 +144,29 @@ const LedMap loadJsonConfig(const fs::path& path)
     }
 
     return ledMap;
+}
+
+/** @brief Load JSON config and return led map
+ *
+ *  @return LedMap - Generated an std::map of LedAction
+ */
+const LedMap loadJsonConfig(const fs::path& path)
+{
+    auto json = readJson(path);
+
+    auto version = json.value("version", 1);
+    switch (version)
+    {
+        case 1:
+            return loadJsonConfigV1(json);
+
+        default:
+            lg2::error("Unsupported JSON Version: {VERSION}", "VERSION",
+                       version);
+            throw std::runtime_error("Unsupported version");
+    }
+
+    return LedMap{};
 }
 
 /** @brief Get led map from LED groups JSON config
