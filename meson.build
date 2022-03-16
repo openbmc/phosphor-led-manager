@@ -64,15 +64,33 @@ realpath_prog = find_program('realpath')
 
 cpp = meson.get_compiler('cpp')
 if cpp.has_header('nlohmann/json.hpp')
-    nlohmann_json = declare_dependency()
+    nlohmann_json_dep = declare_dependency()
 else
     subproject('nlohmann', required: false)
-    nlohmann_json = declare_dependency(
+    nlohmann_json_dep = declare_dependency(
         include_directories: [
             'subprojects/nlohmann/single_include',
             'subprojects/nlohmann/single_include/nlohmann',
         ]
     )
+endif
+
+# Get Cereal dependency.
+cereal_dep = dependency('cereal', required: false)
+has_cereal = cpp.has_header_symbol(
+    'cereal/cereal.hpp',
+    'cereal::specialize',
+    dependencies: cereal_dep,
+    required: false)
+if not has_cereal
+    cereal_opts = import('cmake').subproject_options()
+    cereal_opts.add_cmake_defines({'BUILD_TESTS': 'OFF'})
+    cereal_proj = import('cmake').subproject(
+        'cereal',
+        options: cereal_opts,
+        required: false)
+    assert(cereal_proj.found(), 'cereal is required')
+    cereal_dep = cereal_proj.dependency('cereal')
 endif
 
 selected_subdirs = []
@@ -116,7 +134,8 @@ deps = [
     sdeventplus_dep,
     phosphor_logging_dep,
     phosphor_dbus_interfaces_dep,
-    nlohmann_json
+    nlohmann_json_dep,
+    cereal_dep,
 ]
 
 sources = [
