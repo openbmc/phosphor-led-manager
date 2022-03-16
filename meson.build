@@ -64,6 +64,15 @@ else
     )
 endif
 
+if cpp.has_header('CLI/CLI.hpp')
+    CLI11_dep = declare_dependency()
+else
+    CLI11_dep = dependency(
+        'CLI11',
+        fallback: [ 'CLI11', 'CLI11_dep' ],
+    )
+endif
+
 # Get Cereal dependency.
 cereal_dep = dependency('cereal', required: false)
 has_cereal = cpp.has_header_symbol(
@@ -83,12 +92,13 @@ if not has_cereal
 endif
 
 deps = [
+    CLI11_dep,
+    cereal_dep,
+    nlohmann_json_dep,
+    phosphor_dbus_interfaces_dep,
+    phosphor_logging_dep,
     sdbusplus_dep,
     sdeventplus_dep,
-    phosphor_logging_dep,
-    phosphor_dbus_interfaces_dep,
-    nlohmann_json_dep,
-    cereal_dep,
 ]
 
 subdir('manager')
