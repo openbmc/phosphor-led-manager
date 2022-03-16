@@ -15,12 +15,22 @@
 #endif
 
 #include <sdeventplus/event.hpp>
+#include <CLI/CLI.hpp>
 
 #include <algorithm>
 #include <iostream>
 
-int main(void)
+int main(int argc, char** argv)
 {
+    CLI::App app("phosphor-led-manager");
+
+#ifdef LED_USE_JSON
+    std::string configFile{};
+    app.add_option("-c,--config", configFile, "Path to JSON config");
+#endif
+
+    CLI11_PARSE(app, argc, argv);
+
     // Get a default event loop
     auto event = sdeventplus::Event::get_default();
 
@@ -28,7 +38,7 @@ int main(void)
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
-    auto systemLedMap = getSystemLedMap();
+    auto systemLedMap = getSystemLedMap(configFile);
 #endif
 
     /** @brief Group manager object */

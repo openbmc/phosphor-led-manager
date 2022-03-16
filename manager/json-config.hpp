@@ -222,5 +222,32 @@ class JsonConfig
     /** DBusHandler class handles the D-Bus operations */
     utils::DBusHandler dBusHandler;
 };
+
+/** Blocking call to find the JSON Config from DBus. */
+auto getJsonConfig()
+{
+    // Get a new Dbus
+    auto bus = sdbusplus::bus::new_bus();
+
+    // Get a new event loop
+    auto event = sdeventplus::Event::get_new();
+
+    // Attach the bus to sd_event to service user requests
+    bus.attach_event(event.get(), SD_EVENT_PRIORITY_IMPORTANT);
+    phosphor::led::JsonConfig jsonConfig(bus, event);
+
+    // The event loop will be terminated from inside of a function in JsonConfig
+    // after finding the configuration file
+    if (jsonConfig.getConfFile().empty())
+    {
+        event.loop();
+    }
+
+    // Detach the bus from its sd_event event loop object
+    bus.detach_event();
+
+    return jsonConfig.getConfFile();
+}
+
 } // namespace led
 } // namespace phosphor

@@ -149,29 +149,18 @@ const LedMap loadJsonConfig(const fs::path& path)
 
 /** @brief Get led map from LED groups JSON config
  *
+ *  @param[in] config - Path to the JSON config.
  *  @return LedMap - Generated an std::map of LedAction
+ *
+ *  @note if config is an empty string, daemon will interrogate dbus for
+ *        compatible strings.
  */
-const LedMap getSystemLedMap()
+const LedMap getSystemLedMap(fs::path config)
 {
-    // Get a new Dbus
-    auto bus = sdbusplus::bus::new_bus();
-
-    // Get a new event loop
-    auto event = sdeventplus::Event::get_new();
-
-    // Attach the bus to sd_event to service user requests
-    bus.attach_event(event.get(), SD_EVENT_PRIORITY_IMPORTANT);
-    phosphor::led::JsonConfig jsonConfig(bus, event);
-
-    // The event loop will be terminated from inside of a function in JsonConfig
-    // after finding the configuration file
-    if (jsonConfig.getConfFile().empty())
+    if (config.empty())
     {
-        event.loop();
+        config = phosphor::led::getJsonConfig();
     }
 
-    // Detach the bus from its sd_event event loop object
-    bus.detach_event();
-
-    return loadJsonConfig(jsonConfig.getConfFile());
+    return loadJsonConfig(config);
 }
