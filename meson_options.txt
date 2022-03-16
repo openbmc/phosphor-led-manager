@@ -1,4 +1,4 @@
 option('tests', type : 'feature', description : 'Build tests')
-option('use-json', type : 'feature', description : 'LEDs JSON filepath', value: 'disabled')
+option('use-json', type : 'feature', description : 'LEDs JSON filepath', value: 'enabled')
 option('use-lamp-test', type : 'feature', description : 'LEDs lamp test configuration', value: 'disabled')
 option('monitor-operational-status', type : 'feature', description : 'Enable OperationalStatus monitor', value: 'disabled')
