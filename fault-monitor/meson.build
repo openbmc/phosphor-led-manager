@@ -1,5 +1,4 @@
 fault_monitor_sources = [
-    generated_sources,
     'monitor-main.cpp',
 ]
 
