@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "deae1ea3_c1667751",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-16T16:38:11Z",
+      "side": 1,
+      "message": "This does rely on https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-dbus-interfaces/+/52038 for the new metadata field.",
+      "revId": "489e015724b5d3cf4e24a6f7b1a029f6a1bc05df",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
