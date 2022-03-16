@@ -1,12 +1,10 @@
 #include "fru-fault-monitor.hpp"
 
-#include "elog-errors.hpp"
-
+#include <phosphor-logging/elog-errors.hpp>
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
-#include <xyz/openbmc_project/Led/Fru/Monitor/error.hpp>
-#include <xyz/openbmc_project/Led/Mapper/error.hpp>
+#include <xyz/openbmc_project/Common/error.hpp>
 
 namespace phosphor
 {
@@ -43,12 +41,10 @@ using Interface = std::string;
 using Interfaces = std::vector<Interface>;
 using MapperResponseType = std::map<Path, std::map<Service, Interfaces>>;
 
-using MethodErr =
-    sdbusplus::xyz::openbmc_project::Led::Mapper::Error::MethodError;
-using ObjectNotFoundErr =
-    sdbusplus::xyz::openbmc_project::Led::Mapper::Error::ObjectNotFoundError;
-using InventoryPathErr = sdbusplus::xyz::openbmc_project::Led::Fru::Monitor::
-    Error::InventoryPathError;
+using ResourceNotFoundErr =
+    sdbusplus::xyz::openbmc_project::Common::Error::ResourceNotFound;
+using InvalidArgumentErr =
+    sdbusplus::xyz::openbmc_project::Common::Error::InvalidArgument;
 
 std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
 {
@@ -67,17 +63,13 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
         lg2::error(
             "Failed to parse getService mapper response, ERROR = {ERROR}",
             "ERROR", e);
-        using namespace xyz::openbmc_project::Led::Mapper;
-        elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
-                                ObjectNotFoundError::PATH(path.c_str()),
-                                ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
+        using namespace xyz::openbmc_project::Common;
+        elog<ResourceNotFoundErr>(ResourceNotFound::RESOURCE(path.c_str()));
     }
     if (mapperResponse.empty())
     {
-        using namespace xyz::openbmc_project::Led::Mapper;
-        elog<ObjectNotFoundErr>(ObjectNotFoundError::METHOD_NAME("GetObject"),
-                                ObjectNotFoundError::PATH(path.c_str()),
-                                ObjectNotFoundError::INTERFACE(OBJMGR_IFACE));
+        using namespace xyz::openbmc_project::Common;
+        elog<ResourceNotFoundErr>(ResourceNotFound::RESOURCE(path.c_str()));
         return {};
     }
 
@@ -93,22 +85,19 @@ void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert)
         groups.pop_back();
         service = getService(bus, groups);
     }
-    catch (const MethodErr& e)
+    catch (const ResourceNotFoundErr& e)
     {
-        commit<MethodErr>();
-        return;
-    }
-    catch (const ObjectNotFoundErr& e)
-    {
-        commit<ObjectNotFoundErr>();
+        commit<ResourceNotFoundErr>();
         return;
     }
 
     auto pos = path.rfind("/");
     if (pos == std::string::npos)
     {
-        using namespace xyz::openbmc_project::Led::Fru::Monitor;
-        report<InventoryPathErr>(InventoryPathError::PATH(path.c_str()));
+        using namespace xyz::openbmc_project::Common;
+        report<InvalidArgumentErr>(
+            InvalidArgument::ARGUMENT_NAME("path"),
+            InvalidArgument::ARGUMENT_VALUE(path.c_str()));
         return;
     }
     auto unit = path.substr(pos + 1);
