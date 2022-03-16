@@ -1,5 +1,4 @@
 fault_monitor_sources = [
-    generated_sources,
     'monitor-main.cpp',
 ]
 
@@ -17,7 +16,7 @@ endif
 executable(
     'phosphor-fru-fault-monitor',
     fault_monitor_sources,
-    include_directories: ['.', '../', '../gen'],
+    include_directories: ['.', '../'],
     dependencies: deps,
     install: true,
     install_dir: get_option('bindir')
