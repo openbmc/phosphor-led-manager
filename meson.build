@@ -104,7 +104,7 @@ if get_option('use-json').disabled()
         'led-gen.hpp',
         command : [
             prog_python,
-            meson.project_source_root() + '/parse_led.py',
+            meson.project_source_root() + '/scripts/parse_led.py',
             '-i', meson.project_source_root(),
             '-o', meson.current_build_dir(),
         ],
