@@ -93,42 +93,6 @@ if not has_cereal
     cereal_dep = cereal_proj.dependency('cereal')
 endif
 
-selected_subdirs = []
-selected_subdirs += 'xyz/openbmc_project'
-
-generated_root = meson.current_build_dir() / 'gen'
-generated_others = []
-generated_sources = []
-
-# Source the generated meson files.
-subdir('gen')
-foreach d : selected_subdirs
-  subdir('gen' / d)
-endforeach
-
-# Parse through the list from sdbus++-gendir and put into sets.
-generated_headers = []
-generated_cpp = []
-generated_others_files = []
-
-foreach g : generated_sources generated_others
-    foreach f : g.to_list()
-        rel_path = run_command(
-            realpath_prog,
-            '--relative-to', generated_root,
-            f.full_path(),
-        ).stdout().strip().split('\n')[-1]
-
-        if rel_path.endswith('.hpp')
-            generated_headers += rel_path
-        elif rel_path.endswith('.cpp')
-            generated_cpp += rel_path
-        else
-            generated_others_files += rel_path
-        endif
-    endforeach
-endforeach
-
 deps = [
     sdbusplus_dep,
     sdeventplus_dep,
@@ -180,7 +144,6 @@ install_data(
 executable(
     'phosphor-ledmanager',
     sources,
-    generated_sources,
     include_directories: include_directories('gen'),
     implicit_include_directories: true,
     dependencies: deps,
