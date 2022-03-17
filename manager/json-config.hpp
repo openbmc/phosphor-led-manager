@@ -96,8 +96,10 @@ class JsonConfig
     void ifacesAddedCallback(sdbusplus::message::message& msg)
     {
         sdbusplus::message::object_path path;
-        std::map<std::string,
-                 std::map<std::string, std::variant<std::vector<std::string>>>>
+        std::unordered_map<
+            std::string,
+            std::unordered_map<std::string,
+                               std::variant<std::vector<std::string>>>>
             interfaces;
 
         msg.read(path, interfaces);

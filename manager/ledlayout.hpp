@@ -2,9 +2,9 @@
 
 #include <xyz/openbmc_project/Led/Physical/server.hpp>
 
-#include <map>
 #include <set>
 #include <string>
+#include <unordered_map>
 
 namespace phosphor
 {

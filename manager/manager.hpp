@@ -3,9 +3,9 @@
 #include "ledlayout.hpp"
 #include "utils.hpp"
 
-#include <map>
 #include <set>
 #include <string>
+#include <unordered_map>
 
 namespace phosphor
 {
@@ -69,7 +69,7 @@ class Manager
     }
 
     using group = std::set<phosphor::led::Layout::LedAction>;
-    using LedLayout = std::map<std::string, group>;
+    using LedLayout = std::unordered_map<std::string, group>;
 
     /** @brief static global map constructed at compile time */
     const LedLayout& ledMap;
@@ -131,7 +131,7 @@ class Manager
     sdbusplus::bus::bus& bus;
 
     /** Map of physical LED path to service name */
-    std::map<std::string, std::string> phyLeds{};
+    std::unordered_map<std::string, std::string> phyLeds{};
 
     /** DBusHandler class handles the D-Bus operations */
     DBusHandler dBusHandler;
