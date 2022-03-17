@@ -11,8 +11,8 @@ namespace led
 
 using Json = nlohmann::json;
 
-bool LampTest::processLEDUpdates(const Manager::group& ledsAssert,
-                                 const Manager::group& ledsDeAssert)
+bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
+                                 const ActionSet& ledsDeAssert)
 {
     // If the physical LED status is updated during the lamp test, it should be
     // saved to Queue, and the queue will be processed after the lamp test is
@@ -232,7 +232,7 @@ void LampTest::requestHandler(Group* group, bool value)
 void LampTest::restorePhysicalLedStates()
 {
     // restore physical LEDs states before lamp test
-    Manager::group ledsDeAssert{};
+    ActionSet ledsDeAssert{};
     manager.driveLEDs(physicalLEDStatesPriorToLampTest, ledsDeAssert);
     physicalLEDStatesPriorToLampTest.clear();
 

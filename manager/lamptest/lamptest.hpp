@@ -64,8 +64,8 @@ class LampTest
      *
      *  @return Is running lamp test, true running
      */
-    bool processLEDUpdates(const Manager::group& ledsAssert,
-                           const Manager::group& ledsDeAssert);
+    bool processLEDUpdates(const ActionSet& ledsAssert,
+                           const ActionSet& ledsDeAssert);
 
   private:
     /** @brief Timer used for LEDs lamp test period */
@@ -84,14 +84,13 @@ class LampTest
     std::vector<std::string> physicalLEDPaths;
 
     /** @brief Queue to save LED states during lamp test */
-    std::queue<std::pair<Manager::group, Manager::group>>
-        updatedLEDsDuringLampTest;
+    std::queue<std::pair<ActionSet, ActionSet>> updatedLEDsDuringLampTest;
 
     /** @brief Get state of the lamp test operation */
     bool isLampTestRunning{false};
 
     /** @brief Physical LED states prior to lamp test */
-    Manager::group physicalLEDStatesPriorToLampTest;
+    ActionSet physicalLEDStatesPriorToLampTest;
 
     /** @brief Vector of names of physical LEDs, whose changes will be forcibly
      *         updated even during lamp test. */
