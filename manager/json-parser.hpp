@@ -15,8 +15,6 @@
 namespace fs = std::filesystem;
 
 using Json = nlohmann::json;
-using LedAction = std::set<phosphor::led::Layout::LedAction>;
-using LedMap = std::unordered_map<std::string, LedAction>;
 
 // Priority for a particular LED needs to stay SAME across all groups
 // phosphor::led::Layout::Action can only be one of `Blink` and `On`
@@ -101,11 +99,11 @@ void validatePriority(const std::string& name,
 
 /** @brief Load JSON config and return led map (JSON version 1)
  *
- *  @return LedMap - Generated an std::unordered_map of LedAction
+ *  @return phosphor::led::GroupMap
  */
-const LedMap loadJsonConfigV1(const Json& json)
+const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 {
-    LedMap ledMap{};
+    phosphor::led::GroupMap ledMap{};
     PriorityMap priorityMap{};
 
     // define the default JSON as empty
@@ -119,7 +117,7 @@ const LedMap loadJsonConfigV1(const Json& json)
         auto objpath = tmpPath.string();
         auto members = entry.value("members", empty);
 
-        LedAction ledActions{};
+        phosphor::led::ActionSet ledActions{};
         for (const auto& member : members)
         {
             auto name = member.value("Name", "");
@@ -149,9 +147,9 @@ const LedMap loadJsonConfigV1(const Json& json)
 
 /** @brief Load JSON config and return led map
  *
- *  @return LedMap - Generated an std::unordered_map of LedAction
+ *  @return phosphor::led::GroupMap
  */
-const LedMap loadJsonConfig(const fs::path& path)
+const phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
 {
     auto json = readJson(path);
 
@@ -167,18 +165,18 @@ const LedMap loadJsonConfig(const fs::path& path)
             throw std::runtime_error("Unsupported version");
     }
 
-    return LedMap{};
+    return phosphor::led::GroupMap{};
 }
 
 /** @brief Get led map from LED groups JSON config
  *
  *  @param[in] config - Path to the JSON config.
- *  @return LedMap - Generated an std::unordered_map of LedAction
+ *  @return phosphor::led::GroupMap
  *
  *  @note if config is an empty string, daemon will interrogate dbus for
  *        compatible strings.
  */
-const LedMap getSystemLedMap(fs::path config)
+const phosphor::led::GroupMap getSystemLedMap(fs::path config)
 {
     if (config.empty())
     {
