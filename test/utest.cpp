@@ -38,8 +38,8 @@ TEST_F(LedTest, assertSingleLedOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -69,8 +69,8 @@ TEST_F(LedTest, assertSingleLedBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -100,8 +100,8 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -144,10 +144,12 @@ TEST_F(LedTest, assertMultipleLedOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -177,12 +179,12 @@ TEST_F(LedTest, assertMultipleLedBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -212,12 +214,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -241,12 +243,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -276,12 +278,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -305,12 +307,12 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -352,16 +354,16 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -391,11 +393,12 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -419,11 +422,12 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -453,10 +457,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -480,9 +486,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -513,10 +520,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -541,9 +550,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
         // Need just the ledsAssserted populated with these.
         // Does not action on [Three] since  priority is [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -567,9 +577,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
 
         // Need just the ledsDeAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -601,10 +612,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -629,9 +642,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         // Need just the ledsAssserted populated with these.
         // [Three] does not get actioned since it has Blink priority
         std::set<Layout::LedAction> refAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -655,8 +669,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
 
         // Need just the ledsDeAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -669,8 +685,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
 
         // Need just the ledsAssert populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -700,10 +716,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -728,11 +746,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         // Need just the ledsAssserted populated with these.
         // Three is set to ON due to ON priority.
         std::set<Layout::LedAction> refAssert = {
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -756,8 +775,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         // Need just the ledsDeAssserted populated with these.
         // [Three] stays in [On] since [B] has it [On]
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -788,10 +809,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -816,11 +839,12 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         // Need just the ledsAssserted populated with these.
         // Three is set to ON due to ON priority.
         std::set<Layout::LedAction> refAssert = {
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -843,9 +867,10 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 
         // Need just the ledsDeAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -859,8 +884,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         // Need just the ledsAssert populated with these.
         // Since [Three] stood [On], need to go back to [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -889,12 +914,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Seven", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Seven", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -918,7 +945,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -942,9 +970,10 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
 
         // Need just the ledsDeAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Seven", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Seven", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -974,12 +1003,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1005,9 +1036,10 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
         // [Two] remains [On] due to higher priority.
         // [Three] remains [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1038,13 +1070,14 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
         // Need just the ledsAssserted populated with these.'Two' gets to Blink
         // due to higher priority.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1070,10 +1103,12 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
         // [Three] remains [Blink] from previous
         // [Two] moves to [On] from [Blink] due to [On] priority
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1106,13 +1141,14 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1138,10 +1174,12 @@ TEST_F(LedTest,
         // [Two] turns [On] due to priority
         // [Three] remains [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1165,9 +1203,10 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -1181,8 +1220,8 @@ TEST_F(LedTest,
         // Need just the ledsAssert populated with these.
         // [Two] will go back to [Blink] from [On]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -1205,13 +1244,14 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
@@ -1257,15 +1297,16 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1292,10 +1333,12 @@ TEST_F(LedTest,
         // [Three] remains on since it never was in [Blink] before
         // [Ten] remains [Blink] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1319,9 +1362,10 @@ TEST_F(LedTest,
 
         // Need just the ledsDeAsssert populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -1330,8 +1374,8 @@ TEST_F(LedTest,
         // [Three] remains [On] since it never changed state.
         // [Two] remains [On] since it did not go back
         std::set<Layout::LedAction> refAssert = {
-            {"Ten", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Ten", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -1365,15 +1409,16 @@ TEST_F(
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1400,10 +1445,12 @@ TEST_F(
         // [Three] remains on since it never was in [Blink] before
         // [Ten] remains [Blink] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1427,9 +1474,10 @@ TEST_F(
 
         // Need just the ledsDeAsssert populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -1438,8 +1486,8 @@ TEST_F(
         // [Three] remains [On] since it never changed state.
         // [Two] moves to [Blink] since there is no prior [On]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -1472,14 +1520,16 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1506,11 +1556,12 @@ TEST_F(LedTest,
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1545,14 +1596,16 @@ TEST_F(
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1579,11 +1632,12 @@ TEST_F(
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1608,9 +1662,10 @@ TEST_F(
         // Need just the ledsAssserted populated with these.
         // [Ten] remains [Blink] due to priority.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -1619,8 +1674,8 @@ TEST_F(
         // [Three] remains [On] since it never was in [Blink] before
         // [Ten] moves to [On] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Ten", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Ten", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -1653,14 +1708,16 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"Two", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1687,11 +1744,12 @@ TEST_F(LedTest,
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
         EXPECT_EQ(0, ledsDeAssert.size());
@@ -1716,9 +1774,10 @@ TEST_F(LedTest,
         // Need just the ledsAssserted populated with these.
         // [Ten] remains [Blink] due to priority.
         std::set<Layout::LedAction> refDeAssert = {
-            {"Five", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Six", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
+            {"Five", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Six", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
@@ -1732,8 +1791,8 @@ TEST_F(LedTest,
         // Need just the ledsAssert populated with these.
         // [Two] will move to [Blink]
         std::set<Layout::LedAction> refAssert = {
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
@@ -1756,15 +1815,16 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         std::set<Layout::LedAction> refDeAssert = {
-            {"One", phosphor::led::Layout::On, 0, 0, phosphor::led::Layout::On},
-            {"Two", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::On},
-            {"Three", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::Blink},
-            {"Four", phosphor::led::Layout::On, 0, 0,
-             phosphor::led::Layout::On},
-            {"Ten", phosphor::led::Layout::Blink, 0, 0,
-             phosphor::led::Layout::Blink},
+            {"One", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Three", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::Blink},
+            {"Four", phosphor::led::Layout::Action::On, 0, 0,
+             phosphor::led::Layout::Action::On},
+            {"Ten", phosphor::led::Layout::Action::Blink, 0, 0,
+             phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
         EXPECT_EQ(0, ledsAssert.size());
