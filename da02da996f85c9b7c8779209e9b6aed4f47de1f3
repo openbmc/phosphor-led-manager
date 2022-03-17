@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5257c1ec_5350da64",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-17T13:27:34Z",
+      "side": 1,
+      "message": "Yeah, I haven\u0027t gotten to fully implementing it yet.  Trying to get there but I keep finding lots of things to clean up first.\n\nI\u0027m going to introduce a new JSON format and wanted to ensure backwards compatibility.  The current format is unable to express priorities such as if we have two different groups that trigger \"Blink\".\n\nConsider the following LED behavior:\n    Powered-On: On\n    Identify: Blink-Fast\n    Fault: Blink-Slow\n\nThere currently isn\u0027t any way to set \"Identify\" as the highest priority behavior.",
+      "parentUuid": "5ec87e29_0e685e4a",
+      "revId": "da02da996f85c9b7c8779209e9b6aed4f47de1f3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f45abebc_6059a18e",
@@ -31,6 +49,30 @@
       "writtenOn": "2022-03-17T12:36:42Z",
       "side": 1,
       "message": "remove",
+      "range": {
+        "startLine": 162,
+        "startChar": 12,
+        "endLine": 162,
+        "endChar": 17
+      },
+      "revId": "da02da996f85c9b7c8779209e9b6aed4f47de1f3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "617b4e9c_d94668c9",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 162,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2022-03-17T13:27:34Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "f45abebc_6059a18e",
       "range": {
         "startLine": 162,
         "startChar": 12,
