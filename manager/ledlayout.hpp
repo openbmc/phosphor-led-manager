@@ -1,5 +1,7 @@
 #pragma once
 
+#include <xyz/openbmc_project/Led/Physical/server.hpp>
+
 #include <map>
 #include <set>
 #include <string>
@@ -13,15 +15,8 @@ namespace led
  */
 namespace Layout
 {
-/** @brief Define possible actions on a given LED.
- *  For the BLINK operation, follow 50-50 duty cycle
- */
-enum Action
-{
-    Off,
-    On,
-    Blink,
-};
+
+using Action = sdbusplus::xyz::openbmc_project::Led::server::Physical::Action;
 
 /** @brief Name of the LED and it's proposed action.
  *  This structure is supplied as configuration at build time

@@ -62,8 +62,8 @@ phosphor::led::Layout::Action getAction(const std::string& action)
 {
     assert(action == "On" || action == "Blink");
 
-    return action == "Blink" ? phosphor::led::Layout::Blink
-                             : phosphor::led::Layout::On;
+    return action == "Blink" ? phosphor::led::Layout::Action::Blink
+                             : phosphor::led::Layout::Action::On;
 }
 
 /** @brief Validate the Priority of an LED is same across ALL groups

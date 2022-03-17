@@ -88,15 +88,15 @@ void LampTest::stop()
 
 Layout::Action LampTest::getActionFromString(const std::string& str)
 {
-    Layout::Action action = Layout::Off;
+    Layout::Action action = Layout::Action::Off;
 
     if (str == "xyz.openbmc_project.Led.Physical.Action.On")
     {
-        action = Layout::On;
+        action = Layout::Action::On;
     }
     else if (str == "xyz.openbmc_project.Led.Physical.Action.Blink")
     {
-        action = Layout::Blink;
+        action = Layout::Action::Blink;
     }
 
     return action;
@@ -151,10 +151,11 @@ void LampTest::storePhysicalLEDsStates()
         }
 
         phosphor::led::Layout::Action action = getActionFromString(state);
-        if (action != phosphor::led::Layout::Off)
+        if (action != phosphor::led::Layout::Action::Off)
         {
             phosphor::led::Layout::LedAction ledAction{
-                name, action, dutyOn, period, phosphor::led::Layout::On};
+                name, action, dutyOn, period,
+                phosphor::led::Layout::Action::On};
             physicalLEDStatesPriorToLampTest.emplace(ledAction);
         }
     }
