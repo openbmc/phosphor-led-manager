@@ -77,12 +77,12 @@ if __name__ == '__main__':
                     priority_dict[led_name] = value
 
                 ofile.write('        {\"' + underscore(led_name) + '\",')
-                ofile.write('phosphor::led::Layout::' +
+                ofile.write('phosphor::led::Layout::Action::' +
                             str(list_dict.get('Action', 'Off')) + ',')
                 ofile.write(str(list_dict.get('DutyOn', 50)) + ',')
                 ofile.write(str(list_dict.get('Period', 0)) + ',')
                 priority = str(list_dict.get('Priority', 'Blink'))
-                ofile.write('phosphor::led::Layout::' + priority + ',')
+                ofile.write('phosphor::led::Layout::Action::' + priority + ',')
                 ofile.write('},\n')
             ofile.write('   }},\n')
         ofile.write('};\n')
