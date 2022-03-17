@@ -16,11 +16,12 @@ namespace fs = std::filesystem;
 
 using Json = nlohmann::json;
 using LedAction = std::set<phosphor::led::Layout::LedAction>;
-using LedMap = std::map<std::string, LedAction>;
+using LedMap = std::unordered_map<std::string, LedAction>;
 
 // Priority for a particular LED needs to stay SAME across all groups
 // phosphor::led::Layout::Action can only be one of `Blink` and `On`
-using PriorityMap = std::map<std::string, phosphor::led::Layout::Action>;
+using PriorityMap =
+    std::unordered_map<std::string, phosphor::led::Layout::Action>;
 
 /** @brief Parse LED JSON file and output Json object
  *
@@ -70,7 +71,7 @@ phosphor::led::Layout::Action getAction(const std::string& action)
  *
  *  @param[in] name - led name member of each group
  *  @param[in] priority - member priority of each group
- *  @param[out] priorityMap - std::map, key:name, value:priority
+ *  @param[out] priorityMap - std::unordered_map, key:name, value:priority
  *
  *  @return
  */
@@ -100,7 +101,7 @@ void validatePriority(const std::string& name,
 
 /** @brief Load JSON config and return led map (JSON version 1)
  *
- *  @return LedMap - Generated an std::map of LedAction
+ *  @return LedMap - Generated an std::unordered_map of LedAction
  */
 const LedMap loadJsonConfigV1(const Json& json)
 {
@@ -138,7 +139,7 @@ const LedMap loadJsonConfigV1(const Json& json)
             ledActions.emplace(ledAction);
         }
 
-        // Generated an std::map of LedGroupNames to std::set of LEDs
+        // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
         // containing the name and properties.
         ledMap.emplace(objpath, ledActions);
     }
@@ -148,7 +149,7 @@ const LedMap loadJsonConfigV1(const Json& json)
 
 /** @brief Load JSON config and return led map
  *
- *  @return LedMap - Generated an std::map of LedAction
+ *  @return LedMap - Generated an std::unordered_map of LedAction
  */
 const LedMap loadJsonConfig(const fs::path& path)
 {
@@ -172,7 +173,7 @@ const LedMap loadJsonConfig(const fs::path& path)
 /** @brief Get led map from LED groups JSON config
  *
  *  @param[in] config - Path to the JSON config.
- *  @return LedMap - Generated an std::map of LedAction
+ *  @return LedMap - Generated an std::unordered_map of LedAction
  *
  *  @note if config is an empty string, daemon will interrogate dbus for
  *        compatible strings.

@@ -23,7 +23,7 @@ void Monitor::matchHandler(sdbusplus::message::message& msg)
     // Get all the properties of
     // "xyz.openbmc_project.State.Decorator.OperationalStatus" interface
     std::string interfaceName{};
-    std::map<std::string, std::variant<bool>> properties;
+    std::unordered_map<std::string, std::variant<bool>> properties;
     msg.read(interfaceName, properties);
 
     const auto it = properties.find("Functional");
