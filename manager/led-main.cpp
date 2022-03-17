@@ -1,12 +1,12 @@
 #include "config.h"
 
 #include "group.hpp"
+#include "ledlayout.hpp"
 #ifdef LED_USE_JSON
 #include "json-parser.hpp"
 #else
 #include "led-gen.hpp"
 #endif
-#include "ledlayout.hpp"
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"
@@ -69,14 +69,11 @@ int main(int argc, char** argv)
 #endif
 
     /** Now create so many dbus objects as there are groups */
-    std::ranges::transform(
-        systemLedMap, std::back_inserter(groups),
-        [&bus, &manager, &serialize](
-            const std::pair<std::string,
-                            std::set<phosphor::led::Layout::LedAction>>& grp) {
-            return std::make_unique<phosphor::led::Group>(bus, grp.first,
-                                                          manager, serialize);
-        });
+    std::ranges::transform(systemLedMap, std::back_inserter(groups),
+                           [&bus, &manager, &serialize](auto& grp) {
+                               return std::make_unique<phosphor::led::Group>(
+                                   bus, grp.first, manager, serialize);
+                           });
 
     // Attach the bus to sd_event to service user requests
     bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);

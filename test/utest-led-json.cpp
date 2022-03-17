@@ -5,7 +5,7 @@
 TEST(loadJsonConfig, testGoodPath)
 {
     static constexpr auto jsonPath = "config/led-group-config.json";
-    LedMap ledMap = loadJsonConfig(jsonPath);
+    auto ledMap = loadJsonConfig(jsonPath);
 
     std::string objPath = "/xyz/openbmc_project/led/groups";
     std::string bmcBooted = objPath + "/bmc_booted";
@@ -16,9 +16,9 @@ TEST(loadJsonConfig, testGoodPath)
     ASSERT_EQ(ledMap.contains(powerOn), true);
     ASSERT_EQ(ledMap.contains(enclosureIdentify), true);
 
-    LedAction bmcBootedActions = ledMap.at(bmcBooted);
-    LedAction powerOnActions = ledMap.at(powerOn);
-    LedAction enclosureIdentifyActions = ledMap.at(enclosureIdentify);
+    auto& bmcBootedActions = ledMap.at(bmcBooted);
+    auto& powerOnActions = ledMap.at(powerOn);
+    auto& enclosureIdentifyActions = ledMap.at(enclosureIdentify);
 
     for (const auto& group : bmcBootedActions)
     {

@@ -28,8 +28,8 @@ TEST_F(LedTest, assertSingleLedOn)
     Manager manager(bus, singleLedOn);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/SingleLed";
         auto result =
@@ -37,7 +37,7 @@ TEST_F(LedTest, assertSingleLedOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
@@ -45,7 +45,7 @@ TEST_F(LedTest, assertSingleLedOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -59,8 +59,8 @@ TEST_F(LedTest, assertSingleLedBlink)
     Manager manager(bus, singleLedBlink);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/SingleLed";
         auto result =
@@ -68,7 +68,7 @@ TEST_F(LedTest, assertSingleLedBlink)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
@@ -76,7 +76,7 @@ TEST_F(LedTest, assertSingleLedBlink)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -90,8 +90,8 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
     Manager manager(bus, singleLedOn);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/SingleLed";
         auto result =
@@ -99,7 +99,7 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
@@ -107,7 +107,7 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -115,8 +115,8 @@ TEST_F(LedTest, assertSingleLedOnAndreAssert)
     }
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/SingleLed";
         auto result =
@@ -134,8 +134,8 @@ TEST_F(LedTest, assertMultipleLedOn)
     Manager manager(bus, multipleLedsOn);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -143,7 +143,7 @@ TEST_F(LedTest, assertMultipleLedOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -155,7 +155,7 @@ TEST_F(LedTest, assertMultipleLedOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -169,8 +169,8 @@ TEST_F(LedTest, assertMultipleLedBlink)
     Manager manager(bus, multipleLedsBlink);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -178,7 +178,7 @@ TEST_F(LedTest, assertMultipleLedBlink)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -190,7 +190,7 @@ TEST_F(LedTest, assertMultipleLedBlink)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -204,8 +204,8 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
     Manager manager(bus, multipleLedsBlink);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -213,7 +213,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -225,7 +225,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -233,8 +233,8 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
     }
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -242,7 +242,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
         EXPECT_EQ(false, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -254,7 +254,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssert)
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -268,8 +268,8 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
     Manager manager(bus, multipleLedsBlink);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -277,7 +277,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -289,7 +289,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -297,8 +297,8 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
     }
     {
         // DeAssert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -306,7 +306,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
         EXPECT_EQ(false, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -318,7 +318,7 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -326,8 +326,8 @@ TEST_F(LedTest, assertMultipleLedBlinkAndDeAssertTwice)
     }
     {
         // DeAssert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLeds";
         auto result =
@@ -344,8 +344,8 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
     Manager manager(bus, multipleLedsOnAndBlink);
     {
         // Assert the LEDs.
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsMix";
         auto result =
@@ -353,7 +353,7 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -369,7 +369,7 @@ TEST_F(LedTest, assertMultipleLedOnAndBlink)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -383,8 +383,8 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
     Manager manager(bus, twoGroupsWithDistinctLEDsOn);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -392,7 +392,7 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -404,7 +404,7 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -412,8 +412,8 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -421,7 +421,7 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
@@ -433,7 +433,7 @@ TEST_F(LedTest, assertTwoGroupsOnWithDistinctLEDOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -447,8 +447,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
     Manager manager(bus, twoGroupsWithOneComonLEDOn);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -456,7 +456,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -468,7 +468,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -476,8 +476,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -485,7 +485,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -495,7 +495,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOn)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -510,8 +510,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
     Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -519,7 +519,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -531,7 +531,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -539,8 +539,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -549,7 +549,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
 
         // Need just the ledsAssserted populated with these.
         // Does not action on [Three] since  priority is [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -559,7 +559,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -567,8 +567,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
     }
     {
         // De-Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -576,7 +576,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -587,7 +587,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertB)
 
         // difference of refDeAssert and ledsDeAssert must be null.
         // [Three] is not touched since its already [Blink]
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -602,8 +602,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
     Manager manager(bus, twoGroupsWithOneComonLEDOnOneLEDBlinkPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -611,7 +611,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -623,7 +623,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -631,8 +631,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -641,7 +641,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
 
         // Need just the ledsAssserted populated with these.
         // [Three] does not get actioned since it has Blink priority
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -651,7 +651,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -659,8 +659,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
     }
     {
         // De-Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -668,7 +668,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -677,21 +677,21 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDBlinkPriorityAndDeAssertA)
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
         EXPECT_EQ(0, temp.size());
 
         // Need just the ledsAssert populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp1{};
+        ActionSet temp1{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp1, temp1.begin()));
@@ -706,8 +706,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
     Manager manager(bus, twoGroupsWithOneComonLEDOnPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -715,7 +715,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -727,7 +727,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -735,8 +735,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -745,7 +745,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
 
         // Need just the ledsAssserted populated with these.
         // Three is set to ON due to ON priority.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -757,15 +757,15 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
     }
     {
         // De-Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -774,7 +774,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
 
         // Need just the ledsDeAssserted populated with these.
         // [Three] stays in [On] since [B] has it [On]
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -784,7 +784,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertA)
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -799,8 +799,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
     Manager manager(bus, twoGroupsWithOneComonLEDOnPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -808,7 +808,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
@@ -820,7 +820,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -828,8 +828,8 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -838,7 +838,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 
         // Need just the ledsAssserted populated with these.
         // Three is set to ON due to ON priority.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -850,15 +850,15 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
     }
     {
         // De-Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -866,7 +866,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -875,7 +875,7 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -883,14 +883,14 @@ TEST_F(LedTest, asserttwoGroupsWithOneComonLEDOnOneLEDOnPriorityAndDeAssertB)
 
         // Need just the ledsAssert populated with these.
         // Since [Three] stood [On], need to go back to [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp1{};
+        ActionSet temp1{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -904,8 +904,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
     Manager manager(bus, twoGroupsWithMultiplComonLEDOn);
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -913,7 +913,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -927,7 +927,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -935,8 +935,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
     }
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -944,7 +944,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
         };
@@ -952,7 +952,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -960,8 +960,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
     }
     {
         // De-Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -969,7 +969,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Seven", phosphor::led::Layout::Action::On, 0, 0,
@@ -979,7 +979,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultiplComonLEDOnAndDeAssert)
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -993,8 +993,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
     Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1002,7 +1002,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Three", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1016,7 +1016,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1024,8 +1024,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
     }
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1035,7 +1035,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
         // Need just the ledsAssserted populated with these
         // [Two] remains [On] due to higher priority.
         // [Three] remains [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1045,7 +1045,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateBandA)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1059,8 +1059,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
     Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1069,7 +1069,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
 
         // Need just the ledsAssserted populated with these.'Two' gets to Blink
         // due to higher priority.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1083,7 +1083,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1091,8 +1091,8 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1102,7 +1102,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
         // Need just the ledsAssserted populated with these.
         // [Three] remains [Blink] from previous
         // [Two] moves to [On] from [Blink] due to [On] priority
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
@@ -1114,7 +1114,7 @@ TEST_F(LedTest, assertTwoGroupsWithMultipleComonLEDInDifferentStateAtoB)
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1131,8 +1131,8 @@ TEST_F(LedTest,
     Manager manager(bus, twoGroupsWithMultipleComonLEDInDifferentState);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1140,7 +1140,7 @@ TEST_F(LedTest,
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1154,7 +1154,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1162,8 +1162,8 @@ TEST_F(LedTest,
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1173,7 +1173,7 @@ TEST_F(LedTest,
         // Need just the ledsAssserted populated with these.
         // [Two] turns [On] due to priority
         // [Three] remains [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
@@ -1185,7 +1185,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1193,8 +1193,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1202,7 +1202,7 @@ TEST_F(LedTest,
         EXPECT_EQ(false, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -1211,7 +1211,7 @@ TEST_F(LedTest,
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1219,14 +1219,14 @@ TEST_F(LedTest,
 
         // Need just the ledsAssert populated with these.
         // [Two] will go back to [Blink] from [On]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp1{};
+        ActionSet temp1{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp1, temp1.begin()));
@@ -1234,8 +1234,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1243,7 +1243,7 @@ TEST_F(LedTest,
         EXPECT_EQ(false, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1257,7 +1257,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1265,8 +1265,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-A again and make sure we get all empty
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1287,8 +1287,8 @@ TEST_F(LedTest,
                     twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1296,7 +1296,7 @@ TEST_F(LedTest,
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1312,7 +1312,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1320,8 +1320,8 @@ TEST_F(LedTest,
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1332,7 +1332,7 @@ TEST_F(LedTest,
         // [Two] gets to [ON] due to higher priority.
         // [Three] remains on since it never was in [Blink] before
         // [Ten] remains [Blink] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
@@ -1344,7 +1344,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1352,8 +1352,8 @@ TEST_F(LedTest,
     }
     {
         // De-Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1361,7 +1361,7 @@ TEST_F(LedTest,
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAsssert populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1373,14 +1373,14 @@ TEST_F(LedTest,
         // [Ten] Moves to [On] since there is no prior [Blink]
         // [Three] remains [On] since it never changed state.
         // [Two] remains [On] since it did not go back
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Ten", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1399,8 +1399,8 @@ TEST_F(
                     twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1408,7 +1408,7 @@ TEST_F(
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1424,7 +1424,7 @@ TEST_F(
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1432,8 +1432,8 @@ TEST_F(
     }
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1444,7 +1444,7 @@ TEST_F(
         // [Two] gets to [ON] due to higher priority.
         // [Three] remains on since it never was in [Blink] before
         // [Ten] remains [Blink] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
@@ -1456,7 +1456,7 @@ TEST_F(
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1464,8 +1464,8 @@ TEST_F(
     }
     {
         // De-Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1473,7 +1473,7 @@ TEST_F(
         EXPECT_EQ(false, result);
 
         // Need just the ledsDeAsssert populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -1485,14 +1485,14 @@ TEST_F(
         // [Ten] remains [Blink] since it did not move to [On]
         // [Three] remains [On] since it never changed state.
         // [Two] moves to [Blink] since there is no prior [On]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1510,8 +1510,8 @@ TEST_F(LedTest,
                     twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1519,7 +1519,7 @@ TEST_F(LedTest,
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
@@ -1535,7 +1535,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1543,8 +1543,8 @@ TEST_F(LedTest,
     }
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1555,7 +1555,7 @@ TEST_F(LedTest,
         // [Two] remains [ON] due to higher priority.
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1567,7 +1567,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1586,8 +1586,8 @@ TEST_F(
                     twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1595,7 +1595,7 @@ TEST_F(
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
@@ -1611,7 +1611,7 @@ TEST_F(
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1619,8 +1619,8 @@ TEST_F(
     }
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1631,7 +1631,7 @@ TEST_F(
         // [Two] remains [ON] due to higher priority.
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1643,7 +1643,7 @@ TEST_F(
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1651,8 +1651,8 @@ TEST_F(
     }
     {
         // De-Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1661,7 +1661,7 @@ TEST_F(
 
         // Need just the ledsAssserted populated with these.
         // [Ten] remains [Blink] due to priority.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1673,14 +1673,14 @@ TEST_F(
         // [Two] remains [ON] due to higher priority.
         // [Three] remains [On] since it never was in [Blink] before
         // [Ten] moves to [On] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Ten", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::Blink},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1698,8 +1698,8 @@ TEST_F(LedTest,
                     twoGroupsWithMultipleComonLEDInDifferentStateDiffPriority);
     {
         // Assert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1707,7 +1707,7 @@ TEST_F(LedTest,
         EXPECT_EQ(true, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Three", phosphor::led::Layout::Action::On, 0, 0,
@@ -1723,7 +1723,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1731,8 +1731,8 @@ TEST_F(LedTest,
     }
     {
         // Assert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1743,7 +1743,7 @@ TEST_F(LedTest,
         // [Two] remains [ON] due to higher priority.
         // [Three] remains on since it never was in [Blink] before
         // [Ten] moves to [Blink] due to priority: [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Four", phosphor::led::Layout::Action::On, 0, 0,
@@ -1755,7 +1755,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsDeAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1763,8 +1763,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-B
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =
@@ -1773,7 +1773,7 @@ TEST_F(LedTest,
 
         // Need just the ledsAssserted populated with these.
         // [Ten] remains [Blink] due to priority.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"Five", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Six", phosphor::led::Layout::Action::On, 0, 0,
@@ -1782,7 +1782,7 @@ TEST_F(LedTest,
         EXPECT_EQ(refDeAssert.size(), ledsDeAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1790,14 +1790,14 @@ TEST_F(LedTest,
 
         // Need just the ledsAssert populated with these.
         // [Two] will move to [Blink]
-        std::set<Layout::LedAction> refAssert = {
+        ActionSet refAssert = {
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
              phosphor::led::Layout::Action::On},
         };
         EXPECT_EQ(refAssert.size(), ledsAssert.size());
 
         // difference of refAssert and ledsAssert must be null.
-        Manager::group temp1{};
+        ActionSet temp1{};
         std::set_difference(ledsAssert.begin(), ledsAssert.end(),
                             refAssert.begin(), refAssert.end(),
                             std::inserter(temp1, temp1.begin()));
@@ -1805,8 +1805,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-A
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsASet";
         auto result =
@@ -1814,7 +1814,7 @@ TEST_F(LedTest,
         EXPECT_EQ(false, result);
 
         // Need just the ledsAssserted populated with these.
-        std::set<Layout::LedAction> refDeAssert = {
+        ActionSet refDeAssert = {
             {"One", phosphor::led::Layout::Action::On, 0, 0,
              phosphor::led::Layout::Action::On},
             {"Two", phosphor::led::Layout::Action::Blink, 0, 0,
@@ -1830,7 +1830,7 @@ TEST_F(LedTest,
         EXPECT_EQ(0, ledsAssert.size());
 
         // difference of refDeAssert and ledsDeAssert must be null.
-        Manager::group temp{};
+        ActionSet temp{};
         std::set_difference(ledsDeAssert.begin(), ledsDeAssert.end(),
                             refDeAssert.begin(), refDeAssert.end(),
                             std::inserter(temp, temp.begin()));
@@ -1838,8 +1838,8 @@ TEST_F(LedTest,
     }
     {
         // DeAssert Set-B again and make sure we get all empty
-        Manager::group ledsAssert{};
-        Manager::group ledsDeAssert{};
+        ActionSet ledsAssert{};
+        ActionSet ledsDeAssert{};
 
         auto group = "/xyz/openbmc_project/ledmanager/groups/MultipleLedsBSet";
         auto result =

@@ -47,8 +47,7 @@ if __name__ == "__main__":
         ofile.write("/* !!! WARNING: This is a GENERATED Code..")
         ofile.write("Please do NOT Edit !!! */\n\n")
 
-        ofile.write("static const std::unordered_map<std::string,")
-        ofile.write(" std::set<phosphor::led::Layout::LedAction>>")
+        ofile.write("static const phosphor::led::GroupMap")
         ofile.write(" systemLedMap = {\n\n")
         for group in list(ifile.keys()):
             # This section generates an std::unordered_map of LedGroupNames to

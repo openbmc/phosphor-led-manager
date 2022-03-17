@@ -1,6 +1,7 @@
 #include "config.h"
 
 #include "group.hpp"
+#include "ledlayout.hpp"
 
 #include <sdbusplus/message.hpp>
 namespace phosphor
@@ -28,8 +29,8 @@ bool Group::asserted(bool value)
     }
 
     // Introducing these to enable gtest.
-    Manager::group ledsAssert{};
-    Manager::group ledsDeAssert{};
+    ActionSet ledsAssert{};
+    ActionSet ledsDeAssert{};
 
     // Group management is handled by Manager. The populated leds* sets are not
     // really used by production code. They are there to enable gtest for
