@@ -15,7 +15,7 @@ const std::string DBusHandler::getService(const std::string& path,
 {
 
     using InterfaceList = std::vector<std::string>;
-    std::map<std::string, std::vector<std::string>> mapperResponse;
+    std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
 
     auto& bus = DBusHandler::getBus();
 

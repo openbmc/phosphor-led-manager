@@ -31,15 +31,16 @@ using AssociationList =
     std::vector<std::tuple<std::string, std::string, std::string>>;
 using Attributes = std::variant<bool, AssociationList>;
 using PropertyName = std::string;
-using PropertyMap = std::map<PropertyName, Attributes>;
+using PropertyMap = std::unordered_map<PropertyName, Attributes>;
 using InterfaceName = std::string;
-using InterfaceMap = std::map<InterfaceName, PropertyMap>;
+using InterfaceMap = std::unordered_map<InterfaceName, PropertyMap>;
 
 using Service = std::string;
 using Path = std::string;
 using Interface = std::string;
 using Interfaces = std::vector<Interface>;
-using MapperResponseType = std::map<Path, std::map<Service, Interfaces>>;
+using MapperResponseType =
+    std::unordered_map<Path, std::unordered_map<Service, Interfaces>>;
 
 using ResourceNotFoundErr =
     sdbusplus::xyz::openbmc_project::Common::Error::ResourceNotFound;
@@ -52,7 +53,7 @@ std::string getService(sdbusplus::bus::bus& bus, const std::string& path)
                                       MAPPER_IFACE, "GetObject");
     mapper.append(path.c_str(), std::vector<std::string>({OBJMGR_IFACE}));
 
-    std::map<std::string, std::vector<std::string>> mapperResponse;
+    std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
     try
     {
         auto mapperResponseMsg = bus.call(mapper);
