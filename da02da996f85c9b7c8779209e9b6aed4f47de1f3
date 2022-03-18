@@ -36,6 +36,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "8056f3d0_8340df29",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2022-03-18T00:54:22Z",
+      "side": 1,
+      "message": "\u003e Yeah, I haven\u0027t gotten to fully implementing it yet.  Trying to get there but I keep finding lots of things to clean up first.\n\u003e \n\u003e I\u0027m going to introduce a new JSON format and wanted to ensure backwards compatibility.  The current format is unable to express priorities such as if we have two different groups that trigger \"Blink\".\n\u003e \n\u003e Consider the following LED behavior:\n\u003e     Powered-On: On\n\u003e     Identify: Blink-Fast\n\u003e     Fault: Blink-Slow\n\u003e \n\u003e There currently isn\u0027t any way to set \"Identify\" as the highest priority behavior.\n\nIf there are two different groups triggering \"Blink\", we can set the priority \"Priority\", for example:\n\n````\n\"group\" : \"g1\",\n\"members\" : [\n  {\n    \"Name\" : \"pca955x_front_sys_pwron0\",\n    \"Action\" : \"Blink\",\n    \"DutyOn\" : 50,\n    \"Period\" : 1000,\n    \"Priority\" : \"On\"\n  }\n]\n\n\"group\" : \"g2\",\n\"members\" : [\n  {\n    \"Name\" : \"pca955x_front_sys_pwron0\",\n    \"Action\" : \"On\",\n    \"DutyOn\" : 50,\n    \"Period\" : 1000,\n    \"Priority\" : \"On\"\n  }\n]\n````\n\nIf not set, the default is Blink.\n\nHowever, at present, the priority only supports two states of On and Blink.",
+      "parentUuid": "5257c1ec_5350da64",
+      "revId": "da02da996f85c9b7c8779209e9b6aed4f47de1f3",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f45abebc_6059a18e",
