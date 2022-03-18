@@ -45,9 +45,6 @@ openbmc:
 - name: George Liu
   email: liuxiwei@inspur.com
   discord: George Liu
-- name: Lakshminarayana Kamath
-  email: lkammath@in.ibm.com
-  discord: lkammath
 - name: Patrick Williams
   email: patrick@stwcx.xyz
   discord: stwcx
