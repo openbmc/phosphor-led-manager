@@ -37,7 +37,7 @@ owners:
 
 reviewers:
 - liuxiwei@inspur.com
-- lkammath@in.ibm.com
+- jinu.joy.thomas@in.ibm.com
 
 matches:
 
@@ -51,3 +51,6 @@ openbmc:
 - name: Vishwanatha Subbanna
   email: vishwa@linux.vnet.ibm.com
   discord: vishwa
+- name: Jinu Joy Thomas
+  email: jinu.joy.thomas@in.ibm.com
+  discord: Jinu Joy
