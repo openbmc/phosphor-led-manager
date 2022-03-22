@@ -36,8 +36,8 @@ owners:
 - vishwa@linux.vnet.ibm.com
 
 reviewers:
+- jinu.joy.thomas@in.ibm.com
 - liuxiwei@inspur.com
-- lkammath@in.ibm.com
 
 matches:
 
@@ -45,6 +45,9 @@ openbmc:
 - name: George Liu
   email: liuxiwei@inspur.com
   discord: George Liu
+- name: Jinu Joy Thomas
+  email: jinu.joy.thomas@in.ibm.com
+  discord: Jinu Joy
 - name: Patrick Williams
   email: patrick@stwcx.xyz
   discord: stwcx
