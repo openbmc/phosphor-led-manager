@@ -1,0 +1,7 @@
+Code-Review+2: Patrick Williams <patrick@stwcx.xyz>
+Verified+1: OpenBMC CI <openbmcbump-ci@yahoo.com>
+Submitted-by: Patrick Williams <patrick@stwcx.xyz>
+Submitted-at: Wed, 23 Mar 2022 14:16:03 +0000
+Reviewed-on: https://gerrit.openbmc-project.xyz/c/openbmc/phosphor-led-manager/+/52217
+Project: openbmc/phosphor-led-manager
+Branch: refs/heads/master
