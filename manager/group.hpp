@@ -14,12 +14,16 @@ namespace phosphor
 namespace led
 {
 
+namespace
+{
+using GroupInherit = sdbusplus::server::object_t<
+    sdbusplus::xyz::openbmc_project::Led::server::Group>;
+}
+
 /** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
  */
-class Group :
-    sdbusplus::server::object::object<
-        sdbusplus::xyz::openbmc_project::Led::server::Group>
+class Group : public GroupInherit
 {
   public:
     Group() = delete;
@@ -41,9 +45,7 @@ class Group :
           Manager& manager, Serialize& serialize,
           std::function<void(Group*, bool)> callBack = nullptr) :
 
-        sdbusplus::server::object::object<
-            sdbusplus::xyz::openbmc_project::Led::server::Group>(
-            bus, objPath.c_str(), true),
+        GroupInherit(bus, objPath.c_str(), GroupInherit::action::defer_emit),
         path(objPath), manager(manager), serialize(serialize),
         customCallBack(callBack)
     {
