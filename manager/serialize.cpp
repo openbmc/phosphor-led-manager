@@ -55,7 +55,6 @@ void Serialize::storeGroups(const std::string& group, bool asserted)
 
 void Serialize::restoreGroups()
 {
-
     if (!fs::exists(path))
     {
         lg2::info("File does not exist, FILE_PATH = {PATH}", "PATH", path);
