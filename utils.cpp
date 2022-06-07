@@ -13,7 +13,6 @@ namespace utils
 const std::string DBusHandler::getService(const std::string& path,
                                           const std::string& interface) const
 {
-
     using InterfaceList = std::vector<std::string>;
     std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
 
