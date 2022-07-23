@@ -14,7 +14,7 @@ namespace status
 namespace monitor
 {
 
-void Monitor::matchHandler(sdbusplus::message::message& msg)
+void Monitor::matchHandler(sdbusplus::message_t& msg)
 {
     // Get the ObjectPath of the `xyz.openbmc_project.Inventory.Manager`
     // service
@@ -72,7 +72,7 @@ const std::vector<std::string>
                                            "xyz.openbmc_project.Association",
                                            "endpoints");
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "Failed to get endpoints property, ERROR = {ERROR}, PATH = {PATH}",
@@ -98,7 +98,7 @@ void Monitor::updateAssertedProperty(
             dBusHandler.setProperty(path, "xyz.openbmc_project.Led.Group",
                                     "Asserted", assertedValue);
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             lg2::error(
                 "Failed to set Asserted property, ERROR = {ERROR}, PATH = {PATH}",

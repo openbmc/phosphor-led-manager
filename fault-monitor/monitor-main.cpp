@@ -9,7 +9,7 @@
 int main(void)
 {
     /** @brief Dbus constructs used by Fault Monitor */
-    sdbusplus::bus::bus bus = sdbusplus::bus::new_default();
+    sdbusplus::bus_t bus = sdbusplus::bus::new_default();
 
 #ifdef MONITOR_OPERATIONAL_STATUS
     phosphor::led::Operational::status::monitor::Monitor monitor(bus);

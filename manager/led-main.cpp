@@ -45,7 +45,7 @@ int main(int argc, char** argv)
     phosphor::led::Manager manager(bus, systemLedMap);
 
     /** @brief sd_bus object manager */
-    sdbusplus::server::manager::manager objManager(bus, OBJPATH);
+    sdbusplus::server::manager_t objManager(bus, OBJPATH);
 
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;

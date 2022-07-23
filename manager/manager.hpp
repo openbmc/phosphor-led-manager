@@ -76,7 +76,7 @@ class Manager
      *  @param [in] bus       - sdbusplus handler
      *  @param [in] GroupMap - LEDs group layout
      */
-    Manager(sdbusplus::bus::bus& bus, const GroupMap& ledLayout) :
+    Manager(sdbusplus::bus_t& bus, const GroupMap& ledLayout) :
         ledMap(ledLayout), bus(bus)
     {
         // Nothing here
@@ -126,7 +126,7 @@ class Manager
 
   private:
     /** @brief sdbusplus handler */
-    sdbusplus::bus::bus& bus;
+    sdbusplus::bus_t& bus;
 
     /** Map of physical LED path to service name */
     std::unordered_map<std::string, std::string> phyLeds{};

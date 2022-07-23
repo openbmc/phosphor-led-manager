@@ -41,8 +41,8 @@ class Group : public GroupInherit
      * @param[in] serialize - Serialize object
      * @param[in] callBack  - Custom callback when LED group is asserted
      */
-    Group(sdbusplus::bus::bus& bus, const std::string& objPath,
-          Manager& manager, Serialize& serialize,
+    Group(sdbusplus::bus_t& bus, const std::string& objPath, Manager& manager,
+          Serialize& serialize,
           std::function<void(Group*, bool)> callBack = nullptr) :
 
         GroupInherit(bus, objPath.c_str(), GroupInherit::action::defer_emit),

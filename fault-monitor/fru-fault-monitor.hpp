@@ -23,7 +23,7 @@ namespace monitor
  *  @param[in] path      -  Inventory path of the FRU
  *  @param[in] assert    -  Assert if true deassert if false
  */
-void action(sdbusplus::bus::bus& bus, const std::string& path, bool assert);
+void action(sdbusplus::bus_t& bus, const std::string& path, bool assert);
 
 class Remove;
 
@@ -45,7 +45,7 @@ class Add
     /** @brief constructs Add a watch for FRU faults.
      *  @param[in] bus -  The Dbus bus object
      */
-    explicit Add(sdbusplus::bus::bus& bus) :
+    explicit Add(sdbusplus::bus_t& bus) :
         matchCreated(
             bus,
             sdbusplus::bus::match::rules::interfacesAdded() +
@@ -65,12 +65,12 @@ class Add
     /** @brief Callback function for fru fault created
      *  @param[in] msg       - Data associated with subscribed signal
      */
-    void created(sdbusplus::message::message& msg);
+    void created(sdbusplus::message_t& msg);
 
     /** @brief This function process all callouts at application start
      *  @param[in] bus - The Dbus bus object
      */
-    void processExistingCallouts(sdbusplus::bus::bus& bus);
+    void processExistingCallouts(sdbusplus::bus_t& bus);
 };
 
 /** @class Remove
@@ -92,7 +92,7 @@ class Remove
      *  @param[in] bus  -  The Dbus bus object
      *  @param[in] path -  Inventory path to fru
      */
-    Remove(sdbusplus::bus::bus& bus, const std::string& path) :
+    Remove(sdbusplus::bus_t& bus, const std::string& path) :
         inventoryPath(path),
         matchRemoved(bus, match(path),
                      std::bind(std::mem_fn(&Remove::removed), this,
@@ -111,7 +111,7 @@ class Remove
     /** @brief Callback function for fru fault created
      *  @param[in] msg       - Data associated with subscribed signal
      */
-    void removed(sdbusplus::message::message& msg);
+    void removed(sdbusplus::message_t& msg);
 
     /** @brief function to create fault remove match for a fru
      *  @param[in] path  - Inventory path of the faulty unit.

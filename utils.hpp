@@ -62,7 +62,7 @@ class DBusHandler
      *
      *  @return The Map to constructs all properties values
      *
-     *  @throw sdbusplus::exception::exception when it fails
+     *  @throw sdbusplus::exception_t when it fails
      */
     const PropertyMap getAllProperties(const std::string& objectPath,
                                        const std::string& interface) const;
@@ -75,7 +75,7 @@ class DBusHandler
      *
      *  @return The value of the property(type: variant)
      *
-     *  @throw sdbusplus::exception::exception when it fails
+     *  @throw sdbusplus::exception_t when it fails
      */
     const PropertyValue getProperty(const std::string& objectPath,
                                     const std::string& interface,
@@ -88,7 +88,7 @@ class DBusHandler
      *  @param[in] propertyName     -   D-Bus property name
      *  @param[in] value            -   The value to be set
      *
-     *  @throw sdbusplus::exception::exception when it fails
+     *  @throw sdbusplus::exception_t when it fails
      */
     void setProperty(const std::string& objectPath,
                      const std::string& interface,

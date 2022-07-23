@@ -11,7 +11,7 @@ using namespace phosphor::led;
 class LedTest : public ::testing::Test
 {
   public:
-    sdbusplus::bus::bus bus;
+    sdbusplus::bus_t bus;
     LedTest() : bus(sdbusplus::bus::new_default())
     {
         // Nothing here

@@ -39,7 +39,7 @@ class Monitor
      *
      *  @param[in] bus -  D-Bus object
      */
-    explicit Monitor(sdbusplus::bus::bus& bus) :
+    explicit Monitor(sdbusplus::bus_t& bus) :
         bus(bus),
         matchSignal(bus,
                     "type='signal',member='PropertiesChanged', "
@@ -54,7 +54,7 @@ class Monitor
 
   private:
     /** @brief sdbusplus D-Bus connection. */
-    sdbusplus::bus::bus& bus;
+    sdbusplus::bus_t& bus;
 
     /** @brief sdbusplus signal matches for Monitor */
     sdbusplus::bus::match_t matchSignal;
@@ -70,7 +70,7 @@ class Monitor
      *
      * @param[in] msg - The D-Bus message contents
      */
-    void matchHandler(sdbusplus::message::message& msg);
+    void matchHandler(sdbusplus::message_t& msg);
 
     /**
      * @brief From the Inventory D-Bus object, obtains the associated LED group

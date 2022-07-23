@@ -34,8 +34,7 @@ class JsonConfig
      * @param[in] bus       - The D-Bus object
      * @param[in] event     - sd event handler
      */
-    JsonConfig(sdbusplus::bus::bus& bus, sdeventplus::Event& event) :
-        event(event)
+    JsonConfig(sdbusplus::bus_t& bus, sdeventplus::Event& event) : event(event)
     {
         match = std::make_unique<sdbusplus::bus::match_t>(
             bus,
@@ -93,7 +92,7 @@ class JsonConfig
      *
      * @param[in] msg - The D-Bus message contents
      */
-    void ifacesAddedCallback(sdbusplus::message::message& msg)
+    void ifacesAddedCallback(sdbusplus::message_t& msg)
     {
         sdbusplus::message::object_path path;
         std::unordered_map<
@@ -183,7 +182,7 @@ class JsonConfig
                     }
                     confFile.clear();
                 }
-                catch (const sdbusplus::exception::exception& e)
+                catch (const sdbusplus::exception_t& e)
                 {
                     // Property unavailable on object.
                     lg2::error(
@@ -195,7 +194,7 @@ class JsonConfig
                 }
             }
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             lg2::error(
                 "Failed to call the SubTreePaths method, ERROR = {ERROR}, INTERFACE = {INTERFACE}",

@@ -142,7 +142,7 @@ void LampTest::storePhysicalLEDsStates()
             period = std::get<uint16_t>(properties["Period"]);
             dutyOn = std::get<uint8_t>(properties["DutyOn"]);
         }
-        catch (const sdbusplus::exception::exception& e)
+        catch (const sdbusplus::exception_t& e)
         {
             lg2::error(
                 "Failed to get All properties, ERROR = {ERROR}, PATH = {PATH}",
@@ -254,7 +254,7 @@ void LampTest::doHostLampTest(bool value)
                                 "xyz.openbmc_project.Led.Group", "Asserted",
                                 assertedValue);
     }
-    catch (const sdbusplus::exception::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "Failed to set Asserted property, ERROR = {ERROR}, PATH = {PATH}",
