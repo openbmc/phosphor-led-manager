@@ -167,6 +167,10 @@ void LampTest::start()
     {
         // reset the timer and then return
         timer.restart(std::chrono::seconds(LAMP_TEST_TIMEOUT_IN_SECS));
+
+        // Notify host to reset the timer
+        doHostLampTest(true);
+
         return;
     }
 
@@ -190,7 +194,7 @@ void LampTest::start()
     timer.restart(std::chrono::seconds(LAMP_TEST_TIMEOUT_IN_SECS));
     isLampTestRunning = true;
 
-    // Notify PHYP to start the lamp test
+    // Notify host to start the lamp test
     doHostLampTest(true);
 
     // Set all the Physical action to On for lamp test
@@ -222,7 +226,7 @@ void LampTest::timeOutHandler()
     groupObj->asserted(false);
 }
 
-void LampTest::requestHandler(Group* group, bool value)
+bool LampTest::requestHandler(Group* group, bool value)
 {
     if (groupObj == NULL)
     {
@@ -232,10 +236,30 @@ void LampTest::requestHandler(Group* group, bool value)
     if (value)
     {
         start();
+
+        // Return true in both cases (F -> T && T -> T)
+        return true;
     }
     else
     {
-        stop();
+        if (timer.hasExpired())
+        {
+            stop();
+
+            // Return true as the request to stop the lamptest is handled
+            // successfully.
+            return true;
+        }
+        else if (timer.isEnabled())
+        {
+            lg2::info(
+                "Lamp test is still running. Cannot force stop the lamp test. Asserted is set back to true.");
+
+            // Return false as the request to stop lamptest is not handled as
+            // the lamptest is still running.
+            return false;
+        }
+        return false;
     }
 }
 
@@ -304,6 +328,5 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
     }
     return;
 }
-
 } // namespace led
 } // namespace phosphor
