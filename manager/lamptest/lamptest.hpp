@@ -48,12 +48,18 @@ class LampTest
 
     /** @brief the lamp test request handler
      *
+     * If lamp test is running (Asserted=true) and if user requests to stop lamp
+     * test (Asserted input=false), Stop operation will not take place and set
+     * the Asserted to true itself. LampTest Asserted is/can be set to false
+     * only when the lamptest timer expires.
+     *
      *  @param[in]  group    -  Pointer to Group object
      *  @param[in]  value    -  true: start lamptest
      *                          false: stop lamptest
-     *  @return
+     *
+     *  @return Whether lamp test request is handled successfully or not.
      */
-    void requestHandler(Group* group, bool value);
+    bool requestHandler(Group* group, bool value);
 
     /** @brief Update physical LEDs states during lamp test and the lamp test is
      *         running

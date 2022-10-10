@@ -13,20 +13,23 @@ namespace led
 /** @brief Overloaded Property Setter function */
 bool Group::asserted(bool value)
 {
+    if (customCallBack != nullptr)
+    {
+        // Call the custom callback method
+        if (customCallBack(this, value))
+        {
+            return sdbusplus::xyz::openbmc_project::Led::server::Group::
+                asserted(value);
+        }
+
+        return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted();
+    }
+
     // If the value is already what is before, return right away
     if (value ==
         sdbusplus::xyz::openbmc_project::Led::server::Group::asserted())
     {
         return value;
-    }
-
-    if (customCallBack != nullptr)
-    {
-        // Call the custom callback method
-        customCallBack(this, value);
-
-        return sdbusplus::xyz::openbmc_project::Led::server::Group::asserted(
-            value);
     }
 
     // Introducing these to enable gtest.

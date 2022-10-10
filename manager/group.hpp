@@ -43,7 +43,7 @@ class Group : public GroupInherit
      */
     Group(sdbusplus::bus_t& bus, const std::string& objPath, Manager& manager,
           std::shared_ptr<Serialize> serializePtr,
-          std::function<void(Group*, bool)> callBack = nullptr) :
+          std::function<bool(Group*, bool)> callBack = nullptr) :
 
         GroupInherit(bus, objPath.c_str(), GroupInherit::action::defer_emit),
         path(objPath), manager(manager), serializePtr(serializePtr),
@@ -77,8 +77,14 @@ class Group : public GroupInherit
     std::shared_ptr<Serialize> serializePtr;
 
     /** @brief Custom callback when LED group is asserted
+     * Callback that holds LED group method which handles lamp test request.
+     *
+     * @param[in] Group object - Pointer to Group object
+     * @param[in] bool - Input value (true/false)
+     *
+     * @return bool which tells if execution succeeds(true) or fails(false).
      */
-    std::function<void(Group*, bool)> customCallBack;
+    std::function<bool(Group*, bool)> customCallBack;
 };
 
 } // namespace led
