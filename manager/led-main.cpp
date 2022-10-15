@@ -62,6 +62,9 @@ int main(int argc, char** argv)
 #ifdef USE_LAMP_TEST
     phosphor::led::LampTest lampTest(event, manager);
 
+    // Clear leds triggerred by lamp test in previous boot
+    lampTest.clearLamps();
+
     groups.emplace_back(std::make_unique<phosphor::led::Group>(
         bus, LAMP_TEST_OBJECT, manager, serializePtr,
         std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
