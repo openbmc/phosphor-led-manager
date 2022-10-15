@@ -73,6 +73,14 @@ class LampTest
     bool processLEDUpdates(const ActionSet& ledsAssert,
                            const ActionSet& ledsDeAssert);
 
+    /** @brief Clear LEDs triggerred by lamptest
+     * When system reboots during lamptest, leds triggerred by lamptest needs to
+     * be cleared in the upcoming boot. This method clears all the leds along
+     * with the persisted lamp test indicator file so that there is no sign of
+     * lamptest.
+     */
+    void clearLamps();
+
   private:
     /** @brief Timer used for LEDs lamp test period */
     sdeventplus::utility::Timer<sdeventplus::ClockId::Monotonic> timer;
