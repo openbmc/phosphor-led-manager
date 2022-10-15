@@ -10,6 +10,8 @@ namespace led
 {
 
 using Json = nlohmann::json;
+static constexpr auto lampTestIndicator =
+    "/var/lib/phosphor-led-manager/lamp-test-running";
 
 bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
                                  const ActionSet& ledsDeAssert)
@@ -80,6 +82,15 @@ void LampTest::stop()
         }
 
         manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
+    }
+
+    if (std::filesystem::exists(lampTestIndicator))
+    {
+        if (!std::filesystem::remove(lampTestIndicator))
+        {
+            lg2::error(
+                "Error removing lamp test on indicator file after lamp test execution.");
+        }
     }
 
     isLampTestRunning = false;
@@ -196,6 +207,19 @@ void LampTest::start()
 
     // Notify host to start the lamp test
     doHostLampTest(true);
+
+    // Create a file to maintain the state across reboots that Lamp test is on.
+    // This is required as there was a scenario where it has been found that
+    // LEDs remains in "on" state if lamp test is triggered and reboot takes
+    // place.
+    const auto ledDirectory = lampTestIndicator.parent_path();
+
+    if (!fs::exists(ledDirectory))
+    {
+        fs::create_directories(ledDirectory);
+    }
+
+    std::ofstream(lampTestIndicator);
 
     // Set all the Physical action to On for lamp test
     for (const auto& path : physicalLEDPaths)
@@ -327,6 +351,30 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
             "ERROR", e, "PATH", path);
     }
     return;
+}
+
+void LampTest::clearLamps()
+{
+    if (std::filesystem::exists(lampTestIndicator))
+    {
+        // we need to off all the LEDs.
+        phosphor::led::utils::DBusHandler dBusHandler;
+        std::vector<std::string> physicalLedPaths = dBusHandler.getSubTreePaths(
+            phosphor::led::PHY_LED_PATH, phosphor::led::PHY_LED_IFACE);
+
+        for (const auto& path : physicalLedPaths)
+        {
+            manager.drivePhysicalLED(path, phosphor::led::Layout::Action::Off,
+                                     0, 0);
+        }
+
+        // Also remove the lamp test on indicator file.
+        if (!std::filesystem::remove(lampTestIndicator))
+        {
+            lg2::error(
+                "Error removing lamp test on indicator file after lamp test execution.");
+        }
+    }
 }
 } // namespace led
 } // namespace phosphor
