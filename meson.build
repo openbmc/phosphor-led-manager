@@ -17,6 +17,7 @@ conf_data.set_quoted('CALLOUT_FWD_ASSOCIATION', 'callout')
 conf_data.set_quoted('CALLOUT_REV_ASSOCIATION', 'fault')
 conf_data.set_quoted('ELOG_ENTRY', 'entry')
 conf_data.set_quoted('LED_FAULT', 'fault')
+conf_data.set_quoted('LAMP_TEST_INDICATOR_FILE', '/var/lib/phosphor-led-manager/lampTestOn')
 
 conf_data.set('CLASS_VERSION', 1)
 conf_data.set('LED_USE_JSON', get_option('use-json').enabled())

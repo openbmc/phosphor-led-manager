@@ -49,6 +49,29 @@ int main(int argc, char** argv)
     sdbusplus::server::manager_t objManager(bus,
                                             "/xyz/openbmc_project/led/groups");
 
+#ifdef USE_LAMP_TEST
+    if (std::filesystem::exists(LAMP_TEST_INDICATOR_FILE))
+    {
+        // we need to off all the LEDs.
+        phosphor::led::utils::DBusHandler dBusHandler;
+        std::vector<std::string> physicalLedPaths = dBusHandler.getSubTreePaths(
+            phosphor::led::PHY_LED_PATH, phosphor::led::PHY_LED_IFACE);
+
+        for (const auto& path : physicalLedPaths)
+        {
+            manager.drivePhysicalLED(path, phosphor::led::Layout::Action::Off,
+                                     0, 0);
+        }
+
+        // Also remove the lamp test on indicator file.
+        if (!std::filesystem::remove(LAMP_TEST_INDICATOR_FILE))
+        {
+            lg2::error(
+                "Error removing lamp test on indicator file after lamp test execution.");
+        }
+    }
+#endif
+
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
