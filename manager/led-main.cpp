@@ -49,6 +49,11 @@ int main(int argc, char** argv)
     sdbusplus::server::manager_t objManager(bus,
                                             "/xyz/openbmc_project/led/groups");
 
+#ifdef USE_LAMP_TEST
+    // Clear leds triggerred by lamp test in previous boot
+    clearLamps();
+#endif
+
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
