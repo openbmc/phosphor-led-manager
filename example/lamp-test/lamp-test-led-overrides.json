@@ -3,16 +3,11 @@
     // will get triggered during lamp test overriding lamp-test
     // requirements these will be hosted as
     // /xyz/openbmc_project/led/physical/<$name_in_this_file>
-    "forceLEDs":[
-        "virtual_enclosure_fault",
-        "virtual_enclosure_identify"
-    ],
+    "forceLEDs": ["virtual_enclosure_fault", "virtual_enclosure_identify"],
 
     // This section of this json contains name of physical leds that
     // will not get triggered during lamp test
     // these will be hosted as
     // /xyz/openbmc_project/led/physical/<$name_in_this_file>
-    "skipLEDs":[
-    ]
+    "skipLEDs": []
 }
-

@@ -27,12 +27,12 @@
                     "Action": "On"
                 },
                 {
-                    "Name" : "virtual_enclosure_fault",
-                    "Action" : "On",
-                    "DutyOn" : 50,
-                    "Period" : 0,
-                    "Priority" : "Blink"
-                 }
+                    "Name": "virtual_enclosure_fault",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
             ]
         },
         {
@@ -51,12 +51,12 @@
                     "Period": 1000
                 },
                 {
-                    "Name" : "virtual_enclosure_identify",
-                    "Action" : "On",
-                    "DutyOn" : 50,
-                    "Period" : 0,
-                    "Priority" : "Blink"
-                 }
+                    "Name": "virtual_enclosure_identify",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
             ]
         },
         {
@@ -75,12 +75,12 @@
                     "Action": "On"
                 },
                 {
-                    "Name" : "virtual_enclosure_fault",
-                    "Action" : "On",
-                    "DutyOn" : 50,
-                    "Period" : 0,
-                    "Priority" : "Blink"
-                 }
+                    "Name": "virtual_enclosure_fault",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
             ]
         },
         {
@@ -105,12 +105,12 @@
                     "Period": 1000
                 },
                 {
-                    "Name" : "virtual_enclosure_identify",
-                    "Action" : "On",
-                    "DutyOn" : 50,
-                    "Period" : 0,
-                    "Priority" : "Blink"
-                 }
+                    "Name": "virtual_enclosure_identify",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
             ]
         }
     ]

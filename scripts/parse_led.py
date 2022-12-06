@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-import yaml
-import os
 import argparse
+import os
+
+import yaml
 from inflection import underscore
 
 if __name__ == "__main__":

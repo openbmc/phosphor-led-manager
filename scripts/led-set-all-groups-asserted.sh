@@ -36,17 +36,17 @@ excluded_groups=""
 
 for arg in "$@"
 do
-   if [ "$arg" == "$action" ]
-   then
-       # Must be true/false
-       continue
-   elif [ $index -eq $# ]
-   then
-       excluded_groups="${excluded_groups}$arg"
-   else
-       excluded_groups="${excluded_groups}$arg|"
-   fi
-   ((index+=1))
+    if [ "$arg" == "$action" ]
+    then
+        # Must be true/false
+        continue
+    elif [ $index -eq $# ]
+    then
+        excluded_groups="${excluded_groups}$arg"
+    else
+        excluded_groups="${excluded_groups}$arg|"
+    fi
+    ((index+=1))
 done
 
 # Now, set the LED group to what has been requested

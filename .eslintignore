@@ -1,3 +1,0 @@
-# eslintignore file would contain files/patterns that should
-# be ignored by the eslint json validator
-test/config/led-group-config-malformed.json

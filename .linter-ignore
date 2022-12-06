@@ -1,0 +1,2 @@
+# Ignore formatting purposefully malformed json.
+test/config/led-group-config-malformed.json
