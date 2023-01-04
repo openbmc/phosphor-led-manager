@@ -156,9 +156,7 @@ void Add::created(sdbusplus::message_t& msg)
 
     // Nothing else shows when a specific error log
     // has been created. Do it here.
-    // TODO:(phosphor-logging#25): support sdbusplus::message::object_path
-    // directly.
-    lg2::info("{PATH} created", "PATH", objectPath.str);
+    lg2::info("{PATH} created", "PATH", objectPath);
 
     auto attr = iter->second.find("Associations");
     if (attr == iter->second.end())
