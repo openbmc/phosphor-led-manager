@@ -108,9 +108,10 @@ void LampTest::storePhysicalLEDsStates()
 
     for (const auto& path : physicalLEDPaths)
     {
-        auto iter = std::find_if(
-            skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
-            [&path](const auto& skipLed) { return skipLed == path; });
+        auto iter = std::find_if(skipUpdateLEDs.begin(), skipUpdateLEDs.end(),
+                                 [&path](const auto& skipLed) {
+            return skipLed == path;
+        });
 
         if (iter != skipUpdateLEDs.end())
         {
