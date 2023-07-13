@@ -42,7 +42,7 @@ int main(int argc, char** argv)
 #endif
 
     /** @brief Group manager object */
-    phosphor::led::Manager manager(bus, systemLedMap);
+    phosphor::led::Manager manager(bus, systemLedMap, event);
 
     /** @brief sd_bus object manager */
     sdbusplus::server::manager_t objManager(bus,

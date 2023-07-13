@@ -118,34 +118,41 @@ void Manager::driveLEDs(ActionSet& ledsAssert, ActionSet& ledsDeAssert)
         return;
     }
 #endif
-    // This order of LED operation is important.
-    if (ledsDeAssert.size())
+    ActionSet newReqChangedLeds;
+    std::vector<std::pair<ActionSet&, ActionSet&>> actionsVec = {
+        {reqLedsAssert, ledsAssert}, {reqLedsDeAssert, ledsDeAssert}};
+
+    timer.setEnabled(false);
+    std::set_union(ledsAssert.begin(), ledsAssert.end(), ledsDeAssert.begin(),
+                   ledsDeAssert.end(),
+                   std::inserter(newReqChangedLeds, newReqChangedLeds.begin()),
+                   ledLess);
+
+    // prepare reqLedsAssert & reqLedsDeAssert
+    for (auto pair : actionsVec)
     {
-        for (const auto& it : ledsDeAssert)
-        {
-            std::string objPath = std::string(phyLedPath) + it.name;
-            lg2::debug("De-Asserting LED, NAME = {NAME}", "NAME", it.name);
-            drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
-                             it.period);
-        }
+        ActionSet tmpSet;
+
+        // Discard current required LED actions, if these LEDs have new actions
+        // in newReqChangedLeds.
+        std::set_difference(pair.first.begin(), pair.first.end(),
+                            newReqChangedLeds.begin(), newReqChangedLeds.end(),
+                            std::inserter(tmpSet, tmpSet.begin()), ledLess);
+
+        // Union the remaining LED actions with new LED actions.
+        pair.first.clear();
+        std::set_union(tmpSet.begin(), tmpSet.end(), pair.second.begin(),
+                       pair.second.end(),
+                       std::inserter(pair.first, pair.first.begin()), ledLess);
     }
 
-    if (ledsAssert.size())
-    {
-        for (const auto& it : ledsAssert)
-        {
-            std::string objPath = std::string(phyLedPath) + it.name;
-            lg2::debug("Asserting LED, NAME = {NAME}", "NAME", it.name);
-            drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
-        }
-    }
+    driveLedsHandler();
     return;
 }
 
 // Calls into driving physical LED post choosing the action
-void Manager::drivePhysicalLED(const std::string& objPath,
-                               Layout::Action action, uint8_t dutyOn,
-                               const uint16_t period)
+int Manager::drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                              uint8_t dutyOn, const uint16_t period)
 {
     try
     {
@@ -167,9 +174,10 @@ void Manager::drivePhysicalLED(const std::string& objPath,
         lg2::error(
             "Error setting property for physical LED, ERROR = {ERROR}, OBJECT_PATH = {PATH}",
             "ERROR", e, "PATH", objPath);
+        return -1;
     }
 
-    return;
+    return 0;
 }
 
 /** @brief Returns action string based on enum */
@@ -192,6 +200,56 @@ std::string Manager::getPhysicalAction(Layout::Action action)
     {
         return server::convertForMessage(server::Physical::Action::Off);
     }
+}
+
+void Manager::driveLedsHandler(void)
+{
+    ActionSet failedLedsAssert;
+    ActionSet failedLedsDeAssert;
+
+    // This order of LED operation is important.
+    if (reqLedsDeAssert.size())
+    {
+        for (const auto& it : reqLedsDeAssert)
+        {
+            std::string objPath = std::string(phyLedPath) + it.name;
+            lg2::debug("De-Asserting LED, NAME = {NAME}, ACTION = {ACTION}",
+                       "NAME", it.name, "ACTION", it.action);
+            if (drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
+                                 it.period))
+            {
+                failedLedsDeAssert.insert(it);
+            }
+        }
+    }
+
+    if (reqLedsAssert.size())
+    {
+        for (const auto& it : reqLedsAssert)
+        {
+            std::string objPath = std::string(phyLedPath) + it.name;
+            lg2::debug("Asserting LED, NAME = {NAME}, ACTION = {ACTION}",
+                       "NAME", it.name, "ACTION", it.action);
+            if (drivePhysicalLED(objPath, it.action, it.dutyOn, it.period))
+            {
+                failedLedsAssert.insert(it);
+            }
+        }
+    }
+
+    reqLedsAssert = failedLedsAssert;
+    reqLedsDeAssert = failedLedsDeAssert;
+
+    if (reqLedsDeAssert.empty() && reqLedsAssert.empty())
+    {
+        timer.setEnabled(false);
+    }
+    else
+    {
+        timer.restartOnce(std::chrono::seconds(1));
+    }
+
+    return;
 }
 
 } // namespace led
