@@ -22,6 +22,7 @@ conf_data.set('CLASS_VERSION', 1)
 conf_data.set('LED_USE_JSON', get_option('use-json').enabled())
 conf_data.set('USE_LAMP_TEST', get_option('use-lamp-test').enabled())
 conf_data.set('MONITOR_OPERATIONAL_STATUS', get_option('monitor-operational-status').enabled())
+conf_data.set('MAX_LED_FAILED_RETRY', get_option('max-led-failed-retry'))
 
 sdbusplus_dep = dependency('sdbusplus')
 sdeventplus_dep = dependency('sdeventplus')
