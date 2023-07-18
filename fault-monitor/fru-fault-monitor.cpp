@@ -23,7 +23,6 @@ static constexpr auto mapperBusName = "xyz.openbmc_project.ObjectMapper";
 static constexpr auto mapperObjPath = "/xyz/openbmc_project/object_mapper";
 static constexpr auto mapperIntf = "xyz.openbmc_project.ObjectMapper";
 static constexpr auto objMgrIntf = "org.freedesktop.DBus.ObjectManager";
-static constexpr auto ledGroups = "/xyz/openbmc_project/led/groups/";
 static constexpr auto logIntf = "xyz.openbmc_project.Logging.Entry";
 
 using AssociationList =
@@ -81,7 +80,7 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
     std::string service;
     try
     {
-        std::string groups{ledGroups};
+        std::string groups{OBJPATH};
         groups.pop_back();
         service = getService(bus, groups);
     }
@@ -102,7 +101,7 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
     }
     auto unit = path.substr(pos + 1);
 
-    std::string ledPath = ledGroups + unit + '_' + LED_FAULT;
+    std::string ledPath = std::string(OBJPATH) + '/' + unit + '_' + LED_FAULT;
 
     auto method = bus.new_method_call(service.c_str(), ledPath.c_str(),
                                       "org.freedesktop.DBus.Properties", "Set");
