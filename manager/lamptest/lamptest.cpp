@@ -172,7 +172,18 @@ void LampTest::start()
     }
 
     // Get paths of all the Physical LED objects
-    physicalLEDPaths = dBusHandler.getSubTreePaths(PHY_LED_PATH, PHY_LED_IFACE);
+    try
+    {
+        physicalLEDPaths = dBusHandler.getSubTreePaths(PHY_LED_PATH,
+                                                       PHY_LED_IFACE);
+    }
+    catch (const sdbusplus::exception_t& e)
+    {
+        lg2::error(
+            "Failed to call the SubTreePaths method: {ERROR}, ledPath: {PATH}, ledInterface: {INTERFACE}",
+            "ERROR", e, "PATH", PHY_LED_PATH, "INTERFACE", PHY_LED_IFACE);
+        return;
+    }
 
     // Get physical LEDs states before lamp test
     storePhysicalLEDsStates();
