@@ -162,7 +162,7 @@ void Manager::drivePhysicalLED(const std::string& objPath,
         PropertyValue actionValue{getPhysicalAction(action)};
         dBusHandler.setProperty(objPath, phyLedIntf, "State", actionValue);
     }
-    catch (const std::exception& e)
+    catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "Error setting property for physical LED, ERROR = {ERROR}, OBJECT_PATH = {PATH}",
