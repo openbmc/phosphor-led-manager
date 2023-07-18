@@ -16,6 +16,24 @@
       "message": "I\u0027d rather go the other direction and eliminate it from the meson.build.  There is no need to have this as a configure option.",
       "revId": "18074672d149227a7b1e6fbd86572ba4d0f640b9",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f37e2f0e_83e5746c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-07-18T03:13:12Z",
+      "side": 1,
+      "message": "\u003e I\u0027d rather go the other direction and eliminate it from the meson.build.  There is no need to have this as a configure option.\n\nAgreed, I will fix it, thanks",
+      "parentUuid": "49e72764_293689f1",
+      "revId": "18074672d149227a7b1e6fbd86572ba4d0f640b9",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
