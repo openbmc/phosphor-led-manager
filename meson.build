@@ -11,8 +11,6 @@ project(
 )
 
 conf_data = configuration_data()
-conf_data.set_quoted('BUSNAME', 'xyz.openbmc_project.LED.GroupManager')
-conf_data.set_quoted('OBJPATH', '/xyz/openbmc_project/led/groups')
 conf_data.set_quoted('LED_JSON_FILE', '/usr/share/phosphor-led-manager/led-group-config.json')
 conf_data.set_quoted('SAVED_GROUPS_FILE', '/var/lib/phosphor-led-manager/savedGroups')
 conf_data.set_quoted('CALLOUT_FWD_ASSOCIATION', 'callout')

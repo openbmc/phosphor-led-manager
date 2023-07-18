@@ -45,7 +45,7 @@ int main(int argc, char** argv)
     phosphor::led::Manager manager(bus, systemLedMap);
 
     /** @brief sd_bus object manager */
-    sdbusplus::server::manager_t objManager(bus, OBJPATH);
+    sdbusplus::server::manager_t objManager(bus, ledGroups);
 
     /** @brief vector of led groups */
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
@@ -79,7 +79,7 @@ int main(int argc, char** argv)
     bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
 
     /** @brief Claim the bus */
-    bus.request_name(BUSNAME);
+    bus.request_name("xyz.openbmc_project.LED.GroupManager");
     event.loop();
 
     return 0;
