@@ -9,10 +9,10 @@ namespace led
 {
 namespace utils
 {
-constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
-constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
-constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
-constexpr auto DBUS_PROPERTY_IFACE = "org.freedesktop.DBus.Properties";
+static constexpr auto mapperBusName = "xyz.openbmc_project.ObjectMapper";
+static constexpr auto mapperObjPath = "/xyz/openbmc_project/object_mapper";
+static constexpr auto mapperIntf = "xyz.openbmc_project.ObjectMapper";
+static constexpr auto proIntf = "org.freedesktop.DBus.Properties";
 
 // The value of the property(type: variant, contains some basic types)
 // Eg: uint8_t : dutyOn, uint16_t : Period, std::string : Name,

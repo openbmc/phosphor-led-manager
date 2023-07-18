@@ -123,7 +123,7 @@ void Manager::driveLEDs(ActionSet& ledsAssert, ActionSet& ledsDeAssert)
     {
         for (const auto& it : ledsDeAssert)
         {
-            std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            std::string objPath = std::string(phyLedPath) + it.name;
             lg2::debug("De-Asserting LED, NAME = {NAME}", "NAME", it.name);
             drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
                              it.period);
@@ -134,7 +134,7 @@ void Manager::driveLEDs(ActionSet& ledsAssert, ActionSet& ledsDeAssert)
     {
         for (const auto& it : ledsAssert)
         {
-            std::string objPath = std::string(PHY_LED_PATH) + it.name;
+            std::string objPath = std::string(phyLedPath) + it.name;
             lg2::debug("Asserting LED, NAME = {NAME}", "NAME", it.name);
             drivePhysicalLED(objPath, it.action, it.dutyOn, it.period);
         }
@@ -155,14 +155,12 @@ void Manager::drivePhysicalLED(const std::string& objPath,
             PropertyValue dutyOnValue{dutyOn};
             PropertyValue periodValue{period};
 
-            dBusHandler.setProperty(objPath, PHY_LED_IFACE, "DutyOn",
-                                    dutyOnValue);
-            dBusHandler.setProperty(objPath, PHY_LED_IFACE, "Period",
-                                    periodValue);
+            dBusHandler.setProperty(objPath, phyLedIntf, "DutyOn", dutyOnValue);
+            dBusHandler.setProperty(objPath, phyLedIntf, "Period", periodValue);
         }
 
         PropertyValue actionValue{getPhysicalAction(action)};
-        dBusHandler.setProperty(objPath, PHY_LED_IFACE, "State", actionValue);
+        dBusHandler.setProperty(objPath, phyLedIntf, "State", actionValue);
     }
     catch (const std::exception& e)
     {

@@ -13,8 +13,8 @@ namespace led
 {
 using namespace phosphor::led::utils;
 
-static constexpr auto PHY_LED_PATH = "/xyz/openbmc_project/led/physical/";
-static constexpr auto PHY_LED_IFACE = "xyz.openbmc_project.Led.Physical";
+static constexpr auto phyLedPath = "/xyz/openbmc_project/led/physical/";
+static constexpr auto phyLedIntf = "xyz.openbmc_project.Led.Physical";
 
 /** @class Manager
  *  @brief Manages group of LEDs and applies action on the elements of group

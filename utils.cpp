@@ -18,8 +18,8 @@ const std::string DBusHandler::getService(const std::string& path,
 
     auto& bus = DBusHandler::getBus();
 
-    auto mapper = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                      MAPPER_IFACE, "GetObject");
+    auto mapper = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
+                                      "GetObject");
     mapper.append(path, InterfaceList({interface}));
 
     auto mapperResponseMsg = bus.call(mapper);
@@ -51,7 +51,7 @@ const PropertyMap
     }
 
     auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      DBUS_PROPERTY_IFACE, "GetAll");
+                                      proIntf, "GetAll");
     method.append(interface);
 
     auto reply = bus.call(method);
@@ -76,7 +76,7 @@ const PropertyValue
     }
 
     auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      DBUS_PROPERTY_IFACE, "Get");
+                                      proIntf, "Get");
     method.append(interface, propertyName);
 
     auto reply = bus.call(method);
@@ -99,7 +99,7 @@ void DBusHandler::setProperty(const std::string& objectPath,
     }
 
     auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      DBUS_PROPERTY_IFACE, "Set");
+                                      proIntf, "Set");
     method.append(interface.c_str(), propertyName.c_str(), value);
 
     bus.call_noreply(method);
@@ -113,8 +113,8 @@ const std::vector<std::string>
 
     auto& bus = DBusHandler::getBus();
 
-    auto method = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                      MAPPER_IFACE, "GetSubTreePaths");
+    auto method = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
+                                      "GetSubTreePaths");
     method.append(objectPath.c_str());
     method.append(0); // Depth 0 to search all
     method.append(std::vector<std::string>({interface.c_str()}));

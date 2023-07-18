@@ -19,13 +19,12 @@ namespace monitor
 
 using namespace phosphor::logging;
 
-constexpr auto MAPPER_BUSNAME = "xyz.openbmc_project.ObjectMapper";
-constexpr auto MAPPER_OBJ_PATH = "/xyz/openbmc_project/object_mapper";
-constexpr auto MAPPER_IFACE = "xyz.openbmc_project.ObjectMapper";
-constexpr auto OBJMGR_IFACE = "org.freedesktop.DBus.ObjectManager";
-constexpr auto LED_GROUPS = "/xyz/openbmc_project/led/groups/";
-constexpr auto LOG_PATH = "/xyz/openbmc_project/logging";
-constexpr auto LOG_IFACE = "xyz.openbmc_project.Logging.Entry";
+static constexpr auto mapperBusName = "xyz.openbmc_project.ObjectMapper";
+static constexpr auto mapperObjPath = "/xyz/openbmc_project/object_mapper";
+static constexpr auto mapperIntf = "xyz.openbmc_project.ObjectMapper";
+static constexpr auto objMgrIntf = "org.freedesktop.DBus.ObjectManager";
+static constexpr auto ledGroups = "/xyz/openbmc_project/led/groups/";
+static constexpr auto logIntf = "xyz.openbmc_project.Logging.Entry";
 
 using AssociationList =
     std::vector<std::tuple<std::string, std::string, std::string>>;
@@ -49,9 +48,9 @@ using InvalidArgumentErr =
 
 std::string getService(sdbusplus::bus_t& bus, const std::string& path)
 {
-    auto mapper = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                      MAPPER_IFACE, "GetObject");
-    mapper.append(path.c_str(), std::vector<std::string>({OBJMGR_IFACE}));
+    auto mapper = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
+                                      "GetObject");
+    mapper.append(path.c_str(), std::vector<std::string>({objMgrIntf}));
 
     std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
     try
@@ -82,7 +81,7 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
     std::string service;
     try
     {
-        std::string groups{LED_GROUPS};
+        std::string groups{ledGroups};
         groups.pop_back();
         service = getService(bus, groups);
     }
@@ -103,7 +102,7 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
     }
     auto unit = path.substr(pos + 1);
 
-    std::string ledPath = LED_GROUPS + unit + '_' + LED_FAULT;
+    std::string ledPath = ledGroups + unit + '_' + LED_FAULT;
 
     auto method = bus.new_method_call(service.c_str(), ledPath.c_str(),
                                       "org.freedesktop.DBus.Properties", "Set");
@@ -187,11 +186,11 @@ void Add::created(sdbusplus::message_t& msg)
 void getLoggingSubTree(sdbusplus::bus_t& bus, MapperResponseType& subtree)
 {
     auto depth = 0;
-    auto mapperCall = bus.new_method_call(MAPPER_BUSNAME, MAPPER_OBJ_PATH,
-                                          MAPPER_IFACE, "GetSubTree");
+    auto mapperCall = bus.new_method_call(mapperBusName, mapperObjPath,
+                                          mapperIntf, "GetSubTree");
     mapperCall.append("/");
     mapperCall.append(depth);
-    mapperCall.append(std::vector<Interface>({LOG_IFACE}));
+    mapperCall.append(std::vector<Interface>({logIntf}));
 
     try
     {

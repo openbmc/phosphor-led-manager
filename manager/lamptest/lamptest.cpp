@@ -22,7 +22,7 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
         // Physical LEDs will be updated during lamp test
         for (const auto& it : ledsDeAssert)
         {
-            std::string path = std::string(PHY_LED_PATH) + it.name;
+            std::string path = std::string(phyLedPath) + it.name;
             auto iter = std::find_if(
                 forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
                 [&path](const auto& name) { return name == path; });
@@ -36,7 +36,7 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
 
         for (const auto& it : ledsAssert)
         {
-            std::string path = std::string(PHY_LED_PATH) + it.name;
+            std::string path = std::string(phyLedPath) + it.name;
             auto iter = std::find_if(
                 forceUpdateLEDs.begin(), forceUpdateLEDs.end(),
                 [&path](const auto& name) { return name == path; });
@@ -137,7 +137,7 @@ void LampTest::storePhysicalLEDsStates()
         uint8_t dutyOn{};
         try
         {
-            auto properties = dBusHandler.getAllProperties(path, PHY_LED_IFACE);
+            auto properties = dBusHandler.getAllProperties(path, phyLedIntf);
 
             state = std::get<std::string>(properties["State"]);
             period = std::get<uint16_t>(properties["Period"]);
@@ -174,14 +174,13 @@ void LampTest::start()
     // Get paths of all the Physical LED objects
     try
     {
-        physicalLEDPaths = dBusHandler.getSubTreePaths(PHY_LED_PATH,
-                                                       PHY_LED_IFACE);
+        physicalLEDPaths = dBusHandler.getSubTreePaths(phyLedPath, phyLedIntf);
     }
     catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "Failed to call the SubTreePaths method: {ERROR}, ledPath: {PATH}, ledInterface: {INTERFACE}",
-            "ERROR", e, "PATH", PHY_LED_PATH, "INTERFACE", PHY_LED_IFACE);
+            "ERROR", e, "PATH", phyLedPath, "INTERFACE", phyLedIntf);
         return;
     }
 
@@ -292,11 +291,11 @@ void LampTest::getPhysicalLEDNamesFromJson(const fs::path& path)
         const std::vector<std::string> empty{};
         auto forceLEDs = json.value("forceLEDs", empty);
         std::ranges::transform(forceLEDs, std::back_inserter(forceUpdateLEDs),
-                               [](const auto& i) { return PHY_LED_PATH + i; });
+                               [](const auto& i) { return phyLedPath + i; });
 
         auto skipLEDs = json.value("skipLEDs", empty);
         std::ranges::transform(skipLEDs, std::back_inserter(skipUpdateLEDs),
-                               [](const auto& i) { return PHY_LED_PATH + i; });
+                               [](const auto& i) { return phyLedPath + i; });
     }
     catch (const std::exception& e)
     {
