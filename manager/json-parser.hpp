@@ -21,8 +21,6 @@ using Json = nlohmann::json;
 using PriorityMap =
     std::unordered_map<std::string, phosphor::led::Layout::Action>;
 
-static constexpr auto ledGroups = "/xyz/openbmc_project/led/groups";
-
 /** @brief Parse LED JSON file and output Json object
  *
  *  @param[in] path - path of LED JSON file
@@ -112,7 +110,7 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 
     for (const auto& entry : leds)
     {
-        fs::path tmpPath(std::string{ledGroups});
+        fs::path tmpPath("/xyz/openbmc_project/led/groups");
         tmpPath /= entry.value("group", "");
         auto objpath = tmpPath.string();
         auto members = entry.value("members", empty);
