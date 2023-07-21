@@ -22,6 +22,30 @@
       },
       "revId": "1dba90849636e4fdb083b01525e32f201ae67844",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "362a111c_d2bbd019",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001264
+      },
+      "writtenOn": "2023-07-21T06:06:33Z",
+      "side": 1,
+      "message": "Will it looks better if adding a variable called MaxRetryCount (default: 3 times?) to prevent timer keep running?",
+      "parentUuid": "bc61673d_b078c45f",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 51
+      },
+      "revId": "1dba90849636e4fdb083b01525e32f201ae67844",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
