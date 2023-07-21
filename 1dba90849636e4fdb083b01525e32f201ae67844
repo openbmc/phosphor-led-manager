@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bc61673d_b078c45f",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-07-21T01:15:45Z",
+      "side": 1,
+      "message": "Will this timer keep running if the physical LED or driver is never ready?\nI do not think this is correct.\n\nI think we can just return an error and record this log when setting the physical LED fails(drivePhysicalLED). In this case, we don’t need to update the Asserted property of LedGroupManager, and then the caller will handle the subsequent logic.\n\n@Patrick, What do you think?",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 51
+      },
+      "revId": "1dba90849636e4fdb083b01525e32f201ae67844",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
