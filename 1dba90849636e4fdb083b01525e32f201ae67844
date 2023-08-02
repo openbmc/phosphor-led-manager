@@ -46,6 +46,30 @@
       },
       "revId": "1dba90849636e4fdb083b01525e32f201ae67844",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "69261441_7ba6b64b",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 259,
+      "author": {
+        "id": 1001264
+      },
+      "writtenOn": "2023-08-02T06:22:57Z",
+      "side": 1,
+      "message": "Hi George,\nI keep current method (retry until physical LED ready) base on Patrick\u0027s comment. Please let me know if any more suggestions of this, thank you.\n\nMake it as resolved for now.",
+      "parentUuid": "362a111c_d2bbd019",
+      "range": {
+        "startLine": 259,
+        "startChar": 8,
+        "endLine": 259,
+        "endChar": 51
+      },
+      "revId": "1dba90849636e4fdb083b01525e32f201ae67844",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }

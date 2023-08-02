@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5af9862_e96f4096",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1001264
+      },
+      "writtenOn": "2023-08-02T06:22:57Z",
+      "side": 1,
+      "message": "Done.",
+      "parentUuid": "48c0967f_cb82c17d",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7186fa7d_86ca1ea9",
@@ -47,6 +71,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "dbfc7e1e_c24c73ab",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001264
+      },
+      "writtenOn": "2023-08-02T06:22:57Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7186fa7d_86ca1ea9",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 78
+      },
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "fab0ac04_ceecea27",
@@ -60,6 +108,24 @@
       "writtenOn": "2023-08-02T01:32:22Z",
       "side": 1,
       "message": "I\u0027m not really sure why we need a retry count.  Can\u0027t we always queue up a \"check for this object to exist at some point in the future and set the state on it\"?  It seems like there is a much bigger problem of not really being able to support dynamic LEDs, which are a common element of many blade-like designs.",
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7020bf36_c6b39045",
+        "filename": "meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001264
+      },
+      "writtenOn": "2023-08-02T06:22:57Z",
+      "side": 1,
+      "message": "Remove retry count to keep trying setting LED state until it success.",
+      "parentUuid": "fab0ac04_ceecea27",
       "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
