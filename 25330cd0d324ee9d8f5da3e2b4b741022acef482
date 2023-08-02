@@ -1,0 +1,67 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48c0967f_cb82c17d",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-02T01:32:22Z",
+      "side": 1,
+      "message": "This feels like a copy/paste of code from elsewhere.  Is there something better we can do here?",
+      "range": {
+        "startLine": 124,
+        "startChar": 0,
+        "endLine": 160,
+        "endChar": 0
+      },
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7186fa7d_86ca1ea9",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-02T01:32:22Z",
+      "side": 1,
+      "message": "Can this be a lambda instead of a bind/mem_fun?",
+      "range": {
+        "startLine": 88,
+        "startChar": 21,
+        "endLine": 88,
+        "endChar": 78
+      },
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fab0ac04_ceecea27",
+        "filename": "meson.build",
+        "patchSetId": 4
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-08-02T01:32:22Z",
+      "side": 1,
+      "message": "I\u0027m not really sure why we need a retry count.  Can\u0027t we always queue up a \"check for this object to exist at some point in the future and set the state on it\"?  It seems like there is a much bigger problem of not really being able to support dynamic LEDs, which are a common element of many blade-like designs.",
+      "revId": "25330cd0d324ee9d8f5da3e2b4b741022acef482",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
