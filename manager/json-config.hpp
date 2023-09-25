@@ -3,9 +3,10 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
-
+#include <nlohmann/json.hpp>
 #include <filesystem>
 #include <fstream>
+#include <unordered_map>
 
 namespace fs = std::filesystem;
 
@@ -20,6 +21,8 @@ static constexpr auto confBasePath = "/usr/share/phosphor-led-manager";
 static constexpr auto confCompatibleInterface =
     "xyz.openbmc_project.Configuration.IBMCompatibleSystem";
 static constexpr auto confCompatibleProperty = "Names";
+static constexpr auto modelFilePath = "/sys/firmware/devicetree/base/model";
+static constexpr auto configMapJson = "config-map.json";
 
 class JsonConfig
 {
@@ -155,6 +158,47 @@ class JsonConfig
             return;
         }
         confFile.clear();
+
+        try
+        {
+            auto configMapJsonPath = fs::path{confBasePath} / configMapJson;
+
+            // based on device tree check if config file exists for the model.
+            if (fs::exists(modelFilePath) && fs::exists(configMapJsonPath))
+            {
+                std::ifstream modelFile(modelFilePath);
+                std::ifstream configMapFile(configMapJsonPath);
+                if (modelFile.is_open() && configMapFile.is_open())
+                {
+                    std::string model;
+                    std::getline(modelFile, model, '\0');
+
+                    auto configMap = nlohmann::json::parse(configMapFile);
+
+                    if (configMap.contains("CompatibleSystems"))
+                    {
+                        if (configMap["CompatibleSystems"].contains(model))
+                        {
+                            std::vector<std::string> name;
+                            name.push_back(
+                                configMap["CompatibleSystems"][model]);
+                            if (filePathExists(name))
+                            {
+                                // Use the first config file found at a listed
+                                // location
+                                return;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        catch (const std::exception& ex)
+        {
+            lg2::error(
+                "Failed to fetch config file using model data. ERROR = {ERROR}",
+                "ERROR", ex.what());
+        }
 
         try
         {

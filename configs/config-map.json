@@ -1,0 +1,10 @@
+{
+    "CompatibleSystems": {
+        "Bonnell": "ibm,bonnell",
+        "Everest": "ibm,everest",
+        "Rainier 2U": "ibm,rainier-2u",
+        "Rainier 2U Pass 1": "ibm,rainier-2u",
+        "Rainier 4U": "ibm,rainier-4u",
+        "Rainier 4U Pass 1": "ibm,rainier-4u"
+    }
+}
