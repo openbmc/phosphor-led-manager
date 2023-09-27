@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6a9537f_b82c5373",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1000522
+      },
+      "writtenOn": "2023-09-27T06:43:42Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "e416d7a5_767261af",
+      "range": {
+        "startLine": 15,
+        "startChar": 33,
+        "endLine": 15,
+        "endChar": 43
+      },
+      "revId": "b336326ca389b4781ba72c553eb37128872f3623",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c7a166da_4b352752",
@@ -54,6 +78,30 @@
       "writtenOn": "2023-09-26T00:56:19Z",
       "side": 1,
       "message": "Nit: Can you write this as a separate method?",
+      "range": {
+        "startLine": 163,
+        "startChar": 7,
+        "endLine": 202,
+        "endChar": 9
+      },
+      "revId": "b336326ca389b4781ba72c553eb37128872f3623",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d26774f4_30e3f420",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 202,
+      "author": {
+        "id": 1000522
+      },
+      "writtenOn": "2023-09-27T06:43:42Z",
+      "side": 1,
+      "message": "As this API is to get the file conf file path and the implementation done is a subset of that, I thought of adding the details here itself.\nAlso, all the multiple scenarios to get the conf file is handled under this api itself I thought of keeping it aligned with the current way of implementation.\nIn case you have a different thought process behind moving this implementation to another function, please do let me know.",
+      "parentUuid": "3fa8f12c_014510bd",
       "range": {
         "startLine": 163,
         "startChar": 7,
