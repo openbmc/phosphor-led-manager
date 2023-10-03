@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c809c42_06839c17",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-03T22:14:30Z",
+      "side": 1,
+      "message": "Not interested in OEM content in every repository.  Please suggest a non-oem / non-shell way to accomplish what you\u0027re intending.",
+      "revId": "0722a4e85755a31d57e2e3cdd56f0776c53e5969",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
