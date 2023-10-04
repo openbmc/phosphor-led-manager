@@ -57,6 +57,24 @@
       "parentUuid": "d979fc4b_66bbbe27",
       "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c394bfd1_6fcbc792",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-10-04T16:29:04Z",
+      "side": 1,
+      "message": "\u003e The requirement driving this change was to bring led-manager up without waiting for Entity manager.\n\nThis might be a requirement you have floating around in your head but you haven\u0027t expressed it anywhere.  I would argue that isn\u0027t even a requirement but an example of an XY problem : https://en.wikipedia.org/wiki/XY_problem .\n\n\u003e Also, the code is already probing some of the hard coded paths for conf file other than Entity manager. Why is this case different?\n\nUse of undocumented dbus interfaces that I\u0027ve been asking to have refactored for 2 years isn\u0027t an example of behavior that should be further enhanced.  Do you have something specific you\u0027d like to point out as reference code?",
+      "parentUuid": "d03b4f69_40cc8937",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
