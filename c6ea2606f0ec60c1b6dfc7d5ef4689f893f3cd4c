@@ -39,6 +39,24 @@
       "message": "Nope.  This is specific to your implementation.  I\u0027m not going to accept code all over the organization that randomly looks at device-tree entries.\n\nIf you want to have entity-manager be able to look at device-tree entries as a Probe, please take it up with them.  We should keep this in one spot.",
       "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d03b4f69_40cc8937",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000522
+      },
+      "writtenOn": "2023-10-04T09:57:32Z",
+      "side": 1,
+      "message": "The requirement driving this change was to bring led-manager up without waiting for Entity manager.\nThe amount of time in getting the signal \"interfaceAdded\" under entity manager is causing a delay in launching led-manager which in turn is causing us loose LEDs glow, which are required in case of some very early fault in BMC boot.\n\nAlso, the code is already probing some of the hard coded paths for conf file other than Entity manager. Why is this case different?",
+      "parentUuid": "d979fc4b_66bbbe27",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
