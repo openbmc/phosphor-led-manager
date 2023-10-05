@@ -202,6 +202,24 @@
       "parentUuid": "c394bfd1_6fcbc792",
       "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "92990a68_16d3c837",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000522
+      },
+      "writtenOn": "2023-10-05T03:58:03Z",
+      "side": 1,
+      "message": "\u003e Use of undocumented dbus interfaces that I\u0027ve been asking to have refactored for 2 years isn\u0027t an example of behavior that should be further enhanced. Do you have something specific you\u0027d like to point out as reference code?\n\nOh, I was not aware of the fact that there are code upstream which are under dispute. I assumed since it has been up-streamed it must have been accepted and can be taken as a reference.\nNevertheless, X\u0026Y w.r.t the patch set was driven by the team facing problem while handling early boot errors. Lets see if they can weigh in here for their Y.\n\n\u003e This sounds like you should be addressing a performance issue by measurement and optimisation.\nThis is more of a dependency problem where led-manager needs the interface to be added under entity manager to get the conf file.",
+      "parentUuid": "7cd5df5e_88e5d749",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
