@@ -3,6 +3,115 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "dc7f709d_71107fb7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "Please avoid phrases like \"this commit implements a change to\", as it\u0027s self-evident that we\u0027re discussing the commit. Removing the phrase leaves us with the same information:\n\n\u003e Read the machine model from the `/sys` path and pick a config json based on that.",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21d52183_ffc7a48d",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "Can you please give a concrete example of a bug you observed that\u0027s solved by this patch?",
+      "range": {
+        "startLine": 12,
+        "startChar": 0,
+        "endLine": 13,
+        "endChar": 67
+      },
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0364358_e2b26ee7",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "Again a concrete example would be helpful here.",
+      "range": {
+        "startLine": 15,
+        "startChar": 0,
+        "endLine": 18,
+        "endChar": 5
+      },
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3629218_64123b8e",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 3
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "What happens to phosphor-logging\u0027s need to light an LED in this case?",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 28
+      },
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "016bdeba_46c709da",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "Hi Sunny. I\u0027m a little concerned with the the proliferation of this solution. I also think the motivation is a little unclear at this point, and we could do with some more concrete examples.",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5daf611d_47bc4a73",
         "filename": "configs/config-map.json",
         "patchSetId": 3
@@ -73,6 +182,24 @@
       "side": 1,
       "message": "\u003e The requirement driving this change was to bring led-manager up without waiting for Entity manager.\n\nThis might be a requirement you have floating around in your head but you haven\u0027t expressed it anywhere.  I would argue that isn\u0027t even a requirement but an example of an XY problem : https://en.wikipedia.org/wiki/XY_problem .\n\n\u003e Also, the code is already probing some of the hard coded paths for conf file other than Entity manager. Why is this case different?\n\nUse of undocumented dbus interfaces that I\u0027ve been asking to have refactored for 2 years isn\u0027t an example of behavior that should be further enhanced.  Do you have something specific you\u0027d like to point out as reference code?",
       "parentUuid": "d03b4f69_40cc8937",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cd5df5e_88e5d749",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000009
+      },
+      "writtenOn": "2023-10-05T03:38:12Z",
+      "side": 1,
+      "message": "\u003e The amount of time in getting the signal \"interfaceAdded\" under entity manager is causing a delay in launching led-manager which in turn is causing us loose LEDs glow, which are required in case of some very early fault in BMC boot.\n\nThis sounds like you should be addressing a performance issue by measurement and optimisation. What numbers have you captured that demonstrate it\u0027s not possible to move EM/PLM initialisation earlier in the boot sequence? How early is early enough? What is it that forces us to accept a solution like what\u0027s in this patch?",
+      "parentUuid": "c394bfd1_6fcbc792",
       "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
