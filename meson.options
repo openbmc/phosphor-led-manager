@@ -21,3 +21,9 @@ option(
     value: 'disabled',
     description : 'Enable OperationalStatus monitor'
 )
+
+option(
+    'persistent-led-asserted', type : 'feature',
+    value: 'enabled',
+    description : 'Persistent the asserted status of ledgroup'
+)

@@ -21,15 +21,24 @@ endif
 
 test_sources = [
   '../manager/manager.cpp',
-  '../manager/serialize.cpp',
   '../utils.cpp'
 ]
 
+if get_option('persistent-led-asserted').enabled()
+  test_sources += [
+    '../manager/serialize.cpp',
+  ]
+endif
+
 tests = [
   'utest.cpp',
-  'utest-serialize.cpp',
   'utest-led-json.cpp',
 ]
+if get_option('persistent-led-asserted').enabled()
+  tests += [
+    'utest-serialize.cpp',
+  ]
+endif
 
 foreach t : tests
   test(t, executable(t.underscorify(), t,

@@ -35,22 +35,22 @@ class Group : public GroupInherit
 
     /** @brief Constructs LED Group
      *
-     * @param[in] bus       - Handle to system dbus
-     * @param[in] objPath   - The D-Bus path that hosts LED group
-     * @param[in] manager   - Reference to Manager
-     * @param[in] serialize - Serialize object
-     * @param[in] callBack  - Custom callback when LED group is asserted
+     * @param[in] bus           - Handle to system dbus
+     * @param[in] objPath       - The D-Bus path that hosts LED group
+     * @param[in] manager       - Reference to Manager
+     * @param[in] serializePtr  - Serialize object
+     * @param[in] callBack      - Custom callback when LED group is asserted
      */
     Group(sdbusplus::bus_t& bus, const std::string& objPath, Manager& manager,
-          Serialize& serialize,
+          std::shared_ptr<Serialize> serializePtr,
           std::function<void(Group*, bool)> callBack = nullptr) :
 
         GroupInherit(bus, objPath.c_str(), GroupInherit::action::defer_emit),
-        path(objPath), manager(manager), serialize(serialize),
+        path(objPath), manager(manager), serializePtr(serializePtr),
         customCallBack(callBack)
     {
         // Initialize Asserted property value
-        if (serialize.getGroupSavedState(objPath))
+        if (serializePtr && serializePtr->getGroupSavedState(objPath))
         {
             asserted(true);
         }
@@ -74,7 +74,7 @@ class Group : public GroupInherit
     Manager& manager;
 
     /** @brief The serialize class for storing and restoring groups of LEDs */
-    Serialize& serialize;
+    std::shared_ptr<Serialize> serializePtr;
 
     /** @brief Custom callback when LED group is asserted
      */
