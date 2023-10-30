@@ -39,7 +39,10 @@ bool Group::asserted(bool value)
     auto result = manager.setGroupState(path, value, ledsAssert, ledsDeAssert);
 
     // Store asserted state
-    serialize.storeGroups(path, result);
+    if (serializePtr)
+    {
+        serializePtr->storeGroups(path, result);
+    }
 
     // If something does not go right here, then there should be an sdbusplus
     // exception thrown.
