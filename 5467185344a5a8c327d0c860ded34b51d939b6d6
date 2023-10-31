@@ -22,6 +22,30 @@
       },
       "revId": "5467185344a5a8c327d0c860ded34b51d939b6d6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "57abb71c_fe6b90b3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-10-31T00:41:13Z",
+      "side": 1,
+      "message": "\u003e So if your BMC reboots at runtime with some groups asserted and LEDs on, and the GPIO driver chips still hold their values, the LEDs will be on, the physical LED objects will be On, won\u0027t the groups be out of sync? \n\nWhether BMC is a hot reboot or a cold reboot, we do not need persistence because:\n1. Reset all physical LEDs to off state and will not perform persistent LED actions.\n2. Some monitoring processes monitor all faults, including reading the value of the GPIO driver chip\n3. If the fault is still present, the LED is retriggered.\n4. Our dimension of whether persistence is required is not the LED, but the fault so that we will persist some special faults. These faults will be restored after booting again, and then the Asserted of the corresponding group will be triggered and the LED will light up.\n\nThere is a problem when the persistence group is asserted:\n1. When the BMC is cold rebooted and the previous fault has been restored, the ledManager will still restore the asserted of the corresponding group. Currently, the LED status will be inconsistent with the actual status.\n2. If there is logic for sensor warning and LED triggering, can the persistence function satisfy the situation where multiple sensors hold a group of LED groups simultaneously?\n\n\u003e Or do you have code that runs that turns off all the LEDs?\n\nIn our BMC, whether we control physical LEDs through GPIO or CPLD, we will initialize all physical LEDs to off when the BMC starts and listen for sensor (discrete \u0026 threshold) faults again.",
+      "parentUuid": "abd7ff1e_b62871f5",
+      "range": {
+        "startLine": 10,
+        "startChar": 29,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "5467185344a5a8c327d0c860ded34b51d939b6d6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
