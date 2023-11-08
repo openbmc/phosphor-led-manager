@@ -16,6 +16,24 @@
       "message": "There are two questions:\n1. Whether the Asserted property of the lamp test group persisted?\n2. if yes, I think the lamp test will start again right？",
       "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e7579a51_e6224730",
+        "filename": "manager/led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2023-11-08T16:03:41Z",
+      "side": 1,
+      "message": "1. Based on the flag persistent-led-asserted, the lamp test groups are persisted. As you mentioned here https://github.com/openbmc/phosphor-led-manager/commit/5467185344a5a8c327d0c860ded34b51d939b6d6, by default this flag is disabled in yocto build.\n2. Even if the lamp test group is persisted by enabling the flag during build time, it doesn\u0027t start the lamp test again. This commit makes sure that leds triggerred by lamptest are turned off after reboot.",
+      "parentUuid": "5d48f3e8_703deaf6",
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
