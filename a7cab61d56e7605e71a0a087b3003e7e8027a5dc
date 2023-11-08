@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "73a483d4_984a384f",
+        "filename": "manager/group.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-11-08T16:15:40Z",
+      "side": 1,
+      "message": "Why doesn\u0027t value get passed in?\n\nWe need some comments here as to what this logic is doing because it is entirely non-obvious.",
+      "revId": "a7cab61d56e7605e71a0a087b3003e7e8027a5dc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4460f2fc_b7b7329c",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 171,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2023-11-08T16:15:40Z",
+      "side": 1,
+      "message": "I don\u0027t know what PHYP is.",
+      "revId": "a7cab61d56e7605e71a0a087b3003e7e8027a5dc",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
