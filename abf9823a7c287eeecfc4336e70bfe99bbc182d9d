@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5d48f3e8_703deaf6",
+        "filename": "manager/led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-11-08T00:37:35Z",
+      "side": 1,
+      "message": "There are two questions:\n1. Whether the Asserted property of the lamp test group persisted?\n2. if yes, I think the lamp test will start again right？",
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
