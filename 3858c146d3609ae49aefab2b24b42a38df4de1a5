@@ -16,6 +16,24 @@
       "message": "Isn\u0027t there a fall-through where we haven\u0027t returned yet?\n\nif `value \u003d\u003d false` and `!time.hasExpired` and `!timer.isEnabled` ?\n\nYou had it in the PS1 and then removed it.  Unless, `timer.isEnabled` doesn\u0027t even need to be checked and line 253 should just be `else`?",
       "revId": "3858c146d3609ae49aefab2b24b42a38df4de1a5",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b8518d5c_67b80f05",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 262,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2023-11-09T11:06:16Z",
+      "side": 1,
+      "message": "\u003eIsn\u0027t there a fall-through where we haven\u0027t returned yet?\n\nI agree. I thought timer.hasExpired() might work for the case where lamptest request to set assert\u003dfalse even when the lamptest is not running. But that doesn\u0027t work. so I\u0027ll handle this case ( if value \u003d\u003d false and !time.hasExpired and !timer.isEnabled ) by returning false.\n\n\n\n\u003eUnless, timer.isEnabled doesn\u0027t even need to be checked and line 253 should just be else\n\nif we don\u0027t have the check timer.isEnabled(), then the log \"Lamptest is still running\" gets printed, when there is a request to set assert\u003dfalse even when the lamp test is not running.",
+      "parentUuid": "456fb0ff_b3cc6df6",
+      "revId": "3858c146d3609ae49aefab2b24b42a38df4de1a5",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
