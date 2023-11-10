@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "69c1de61_737f38c7",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-11-10T07:32:58Z",
+      "side": 1,
+      "message": "If persistent-led-asserted is disabled by default, the lampTestOn file will not be created here. Because `/var/lib/phosphor-led-manager` folder does not exist.",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 44
+      },
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5d48f3e8_703deaf6",
         "filename": "manager/led-main.cpp",
         "patchSetId": 1
@@ -32,6 +55,24 @@
       "side": 1,
       "message": "1. Based on the flag persistent-led-asserted, the lamp test groups are persisted. As you mentioned here https://github.com/openbmc/phosphor-led-manager/commit/5467185344a5a8c327d0c860ded34b51d939b6d6, by default this flag is disabled in yocto build.\n2. Even if the lamp test group is persisted by enabling the flag during build time, it doesn\u0027t start the lamp test again. This commit makes sure that leds triggerred by lamptest are turned off after reboot.",
       "parentUuid": "5d48f3e8_703deaf6",
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f4da2c9f_112392c6",
+        "filename": "manager/led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 53,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-11-10T07:32:58Z",
+      "side": 1,
+      "message": "Ack",
+      "parentUuid": "e7579a51_e6224730",
       "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
