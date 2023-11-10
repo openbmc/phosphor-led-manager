@@ -34,6 +34,29 @@
       "parentUuid": "5d48f3e8_703deaf6",
       "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3179edaa_ac8ad7e1",
+        "filename": "manager/led-main.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 58,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-11-10T06:02:00Z",
+      "side": 1,
+      "message": "build failed after cherry pick this patch:\n\n```\nin.cpp.o -c ../../../../../../workspace/sources/phosphor-led-manager/manager/led-main.cpp\n| ../../../../../../workspace/sources/phosphor-led-manager/manager/led-main.cpp: In function \u0027int main(int, char**)\u0027:\n| ../../../../../../workspace/sources/phosphor-led-manager/manager/led-main.cpp:58:28: error: \u0027PHY_LED_PATH\u0027 is not a member of \u0027phosphor::led\u0027\n|    58 |             phosphor::led::PHY_LED_PATH, phosphor::led::PHY_LED_IFACE);\n|       |                            ^~~~~~~~~~~~\n| ../../../../../../workspace/sources/phosphor-led-manager/manager/led-main.cpp:58:57: error: \u0027PHY_LED_IFACE\u0027 is not a member of \u0027phosphor::led\u0027\n|    58 |             phosphor::led::PHY_LED_PATH, phosphor::led::PHY_LED_IFACE);\n|       |                                                         ^~~~~~~~~~~~~\n\n```",
+      "range": {
+        "startLine": 58,
+        "startChar": 11,
+        "endLine": 58,
+        "endChar": 69
+      },
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
