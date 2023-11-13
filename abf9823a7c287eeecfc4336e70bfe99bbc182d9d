@@ -50,6 +50,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "abb882b7_6119e3ac",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 209,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2023-11-13T03:18:04Z",
+      "side": 1,
+      "message": "Refer: https://github.com/openbmc/phosphor-led-manager/blob/180090cfc92211bad83efcabf60d267a2627129f/manager/serialize.cpp#L45-L49 ?",
+      "parentUuid": "ea933c9a_1666b221",
+      "range": {
+        "startLine": 209,
+        "startChar": 0,
+        "endLine": 209,
+        "endChar": 44
+      },
+      "revId": "abf9823a7c287eeecfc4336e70bfe99bbc182d9d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5d48f3e8_703deaf6",
         "filename": "manager/led-main.cpp",
         "patchSetId": 1
