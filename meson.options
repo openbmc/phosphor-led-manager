@@ -12,7 +12,7 @@ option(
 
 option(
     'use-lamp-test', type : 'feature',
-    value: 'disabled',
+    value: 'enabled',
     description : 'LEDs lamp test configuration'
 )
 
