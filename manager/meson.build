@@ -19,7 +19,7 @@ if get_option('use-json').disabled()
     sources += [led_gen_hpp]
 endif
 
-if get_option('use-lamp-test').enabled()
+if get_option('use-lamp-test').allowed()
     conf_data.set_quoted('LAMP_TEST_OBJECT', '/xyz/openbmc_project/led/groups/lamp_test')
     conf_data.set_quoted('HOST_LAMP_TEST_OBJECT', '/xyz/openbmc_project/led/groups/host_lamp_test')
     conf_data.set_quoted('LAMP_TEST_LED_OVERRIDES_JSON', '/usr/share/phosphor-led-manager/lamp-test-led-overrides.json')
