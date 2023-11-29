@@ -2,7 +2,7 @@ fault_monitor_sources = [
     'monitor-main.cpp',
 ]
 
-if get_option('monitor-operational-status').enabled()
+if get_option('monitor-operational-status').allowed()
     fault_monitor_sources += [
         '../utils.cpp',
         'operational-status-monitor.cpp',
