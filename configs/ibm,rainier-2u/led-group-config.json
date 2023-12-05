@@ -79,23 +79,23 @@
             "members": [
                 {
                     "Name": "pca955x_front_sys_id0",
-                    "Action": "Blink",
+                    "Action": "On",
                     "DutyOn": 50,
-                    "Period": 1000,
+                    "Period": 0,
                     "Priority": "Blink"
                 },
                 {
                     "Name": "rear_enc_id0",
-                    "Action": "Blink",
+                    "Action": "On",
                     "DutyOn": 50,
-                    "Period": 1000,
+                    "Period": 0,
                     "Priority": "Blink"
                 },
                 {
                     "Name": "virtual_enc_id",
-                    "Action": "Blink",
+                    "Action": "On",
                     "DutyOn": 50,
-                    "Period": 1000,
+                    "Period": 0,
                     "Priority": "Blink"
                 }
             ]
@@ -698,7 +698,7 @@
             "group": "cpu1_vrm0_fault",
             "members": [
                 {
-                    "Name": "pca955x_cpu1_vrm0",
+                    "Name": "pca955x_cpu_vrm1",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -731,7 +731,7 @@
             "group": "cpu1_vrm0_identify",
             "members": [
                 {
-                    "Name": "pca955x_cpu1_vrm0",
+                    "Name": "pca955x_cpu_vrm1",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
@@ -4144,7 +4144,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_enc_fault1",
+                    "Name": "pca955x_front_enc_fault1",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4184,7 +4184,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_sys_id0",
+                    "Name": "pca955x_front_sys_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4224,7 +4224,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_enc_fault1",
+                    "Name": "pca955x_front_enc_fault1",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4264,7 +4264,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_sys_id0",
+                    "Name": "pca955x_front_sys_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4627,7 +4627,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_enc_fault1",
+                    "Name": "pca955x_front_enc_fault1",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4660,7 +4660,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_sys_id0",
+                    "Name": "pca955x_front_sys_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4786,72 +4786,6 @@
             "members": [
                 {
                     "Name": "pca955x_dasd_pyramid1",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_sys_id0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_id0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_id",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "dasd_pyramid2_fault",
-            "members": [
-                {
-                    "Name": "pca955x_dasd_pyramid2",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "dasd_pyramid2_identify",
-            "members": [
-                {
-                    "Name": "pca955x_dasd_pyramid2",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
@@ -5914,7 +5848,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "front_sys_id0",
+                    "Name": "pca955x_front_sys_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -5937,48 +5871,8 @@
             ]
         },
         {
-            "group": "nvme16_fault",
+            "group": "connector0_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme16",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme16_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme16",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6003,48 +5897,8 @@
             ]
         },
         {
-            "group": "nvme17_fault",
+            "group": "connector1_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme17",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme17_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme17",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6069,48 +5923,8 @@
             ]
         },
         {
-            "group": "nvme18_fault",
+            "group": "connector2_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme18",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme18_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme18",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6135,48 +5949,8 @@
             ]
         },
         {
-            "group": "nvme19_fault",
+            "group": "connector3_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme19",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme19_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme19",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6201,48 +5975,8 @@
             ]
         },
         {
-            "group": "nvme20_fault",
+            "group": "connector4_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme20",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme20_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme20",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6267,48 +6001,8 @@
             ]
         },
         {
-            "group": "nvme21_fault",
+            "group": "connector5_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme21",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme21_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme21",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6333,48 +6027,8 @@
             ]
         },
         {
-            "group": "nvme22_fault",
+            "group": "connector6_identify",
             "members": [
-                {
-                    "Name": "pca955x_nvme22",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "pca955x_front_enc_fault1",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "nvme22_identify",
-            "members": [
-                {
-                    "Name": "pca955x_nvme22",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
@@ -6399,31 +6053,24 @@
             ]
         },
         {
-            "group": "nvme23_fault",
+            "group": "connector7_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme23",
+                    "Name": "pca955x_front_sys_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "rear_enc_id0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "rear_enc_fault0",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "virtual_enc_fault",
+                    "Name": "virtual_enc_id",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -6432,15 +6079,866 @@
             ]
         },
         {
-            "group": "nvme23_identify",
+            "group": "connector8_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme23",
-                    "Action": "Blink",
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
                     "DutyOn": 50,
-                    "Period": 1000,
+                    "Period": 0,
                     "Priority": "Blink"
                 },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector9_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector11_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector12_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector13_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector14_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector15_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector17_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "connector18_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "ethernet0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "ethernet1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "usb0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "displayport0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "usb1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c10_connector0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c10_connector1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c10_connector2_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c10_connector3_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c11_connector0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c11_connector1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c11_connector2_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c11_connector3_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c8_connector0_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c8_connector1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c8_connector2_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "c8_connector3_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp0_connector1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp0_connector2_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp0_connector4_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp0_connector5_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp1_connector1_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp1_connector2_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp1_connector4_identify",
+            "members": [
+                {
+                    "Name": "pca955x_front_sys_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "rear_enc_id0",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                },
+                {
+                    "Name": "virtual_enc_id",
+                    "Action": "On",
+                    "DutyOn": 50,
+                    "Period": 0,
+                    "Priority": "Blink"
+                }
+            ]
+        },
+        {
+            "group": "dp1_connector5_identify",
+            "members": [
                 {
                     "Name": "pca955x_front_sys_id0",
                     "Action": "On",
