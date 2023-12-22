@@ -1,0 +1,9 @@
+{
+    "CompatibleSystems": {
+        "com.ibm.Hardware.Chassis.Model.Bonnell": "ibm,bonnell",
+        "com.ibm.Hardware.Chassis.Model.Everest": "ibm,everest",
+        "com.ibm.Hardware.Chassis.Model.Rainier1S4U": "ibm,rainier-1s4u",
+        "com.ibm.Hardware.Chassis.Model.Rainier2U": "ibm,rainier-2u",
+        "com.ibm.Hardware.Chassis.Model.Rainier4U": "ibm,rainier-4u"
+    }
+}
