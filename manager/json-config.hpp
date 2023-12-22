@@ -1,5 +1,6 @@
 #include "utils.hpp"
 
+#include <nlohmann/json.hpp>
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
@@ -18,8 +19,9 @@ static constexpr auto confFileName = "led-group-config.json";
 static constexpr auto confOverridePath = "/etc/phosphor-led-manager";
 static constexpr auto confBasePath = "/usr/share/phosphor-led-manager";
 static constexpr auto confCompatibleInterface =
-    "xyz.openbmc_project.Configuration.IBMCompatibleSystem";
+    "xyz.openbmc_project.Inventory.Decorator.Compatible";
 static constexpr auto confCompatibleProperty = "Names";
+static constexpr auto compatibleSystemsMap = "compatible_systems.json";
 
 class JsonConfig
 {
@@ -28,8 +30,8 @@ class JsonConfig
      * @brief Constructor
      *
      * Looks for the JSON config file.  If it can't find one, then it
-     * will watch entity-manager for the IBMCompatibleSystem interface
-     * to show up.
+     * will watch entity-manager for the
+     * xyz.openbmc_project.Inventory.Decorator.Compatible interface to show up.
      *
      * @param[in] bus       - The D-Bus object
      * @param[in] event     - sd event handler
@@ -62,6 +64,30 @@ class JsonConfig
     }
 
   private:
+    std::string findConfigDir(const std::string& model)
+    {
+        auto compatibleSystemsJsonPath = fs::path{confBasePath} /
+                                         compatibleSystemsMap;
+
+        if (fs::exists(compatibleSystemsJsonPath))
+        {
+            std::ifstream compatibleSystemsFile(compatibleSystemsJsonPath);
+            if (compatibleSystemsFile.is_open())
+            {
+                auto configMap = nlohmann::json::parse(compatibleSystemsFile);
+                if (configMap.contains("CompatibleSystems"))
+                {
+                    if (configMap["CompatibleSystems"].contains(model))
+                    {
+                        return configMap["CompatibleSystems"][model];
+                    }
+                }
+            }
+        }
+
+        return std::string();
+    }
+
     /** @brief Check the file path exists
      *
      *  @param[in]  names   -  Vector of the confCompatible Property
@@ -72,7 +98,12 @@ class JsonConfig
     {
         auto it = std::find_if(names.begin(), names.end(),
                                [this](const auto& name) {
-            auto tempConfFile = fs::path{confBasePath} / name / confFileName;
+            const auto confDir = findConfigDir(name);
+            if (confDir.empty())
+            {
+                return false;
+            }
+            auto tempConfFile = fs::path{confBasePath} / confDir / confFileName;
             if (fs::exists(tempConfFile))
             {
                 confFile = tempConfFile;
@@ -85,9 +116,9 @@ class JsonConfig
 
     /**
      * @brief The interfacesAdded callback function that looks for
-     *        the IBMCompatibleSystem interface.  If it finds it,
-     *        it uses the Names property in the interface to find
-     *        the JSON config file to use.
+     *        the xyz.openbmc_project.Inventory.Decorator.Compatible interface.
+     * If it finds it, it uses the Names property in the interface to find the
+     * JSON config file to use.
      *
      * @param[in] msg - The D-Bus message contents
      */
@@ -108,7 +139,7 @@ class JsonConfig
         }
 
         // Get the "Name" property value of the
-        // "xyz.openbmc_project.Configuration.IBMCompatibleSystem" interface
+        // "xyz.openbmc_project.Inventory.Decorator.Compatible" interface
         const auto& properties = interfaces.at(confCompatibleInterface);
 
         if (!properties.contains(confCompatibleProperty))
@@ -215,7 +246,8 @@ class JsonConfig
 
     /**
      * @brief The interfacesAdded match that is used to wait
-     *        for the IBMCompatibleSystem interface to show up.
+     *        for the xyz.openbmc_project.Inventory.Decorator.Compatible
+     * interface to show up.
      */
     std::unique_ptr<sdbusplus::bus::match_t> match;
 
