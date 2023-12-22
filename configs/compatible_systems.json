@@ -1,0 +1,8 @@
+{
+    "CompatibleSystems": {
+        "com.ibm.Hardware.Chassis.Model.Everest": "everest-led-config.json",
+        "com.ibm.Hardware.Chassis.Model.Rainier1S4U": "rain1s4u-led-config.json",
+        "com.ibm.Hardware.Chassis.Model.Rainier2U": "rain2u-led-config.json",
+        "com.ibm.Hardware.Chassis.Model.Rainier4U": "rain4u-led-config.json"
+    }
+}
