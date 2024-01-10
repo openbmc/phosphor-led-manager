@@ -86,6 +86,6 @@ if get_option('tests').allowed()
   subdir('test')
 endif
 
-install_subdir('configs',
+install_subdir('configs/ibm',
     install_dir: get_option('datadir') / 'phosphor-led-manager',
     strip_directory: true)
