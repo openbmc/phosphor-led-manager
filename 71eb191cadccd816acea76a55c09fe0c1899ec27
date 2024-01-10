@@ -153,6 +153,30 @@
       },
       "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c2ae17d1_de4e940b",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2024-01-10T19:48:07Z",
+      "side": 1,
+      "message": "fyi, here is the busctl output\n\nbusctl get-property  xyz.openbmc_project.EntityManager /xyz/openbmc_project/inventory/system/chassis/Rainier_4U_Chassis xyz.openbmc_project.Inventory.Decorator.Compatible Names\n\nas 2 \"com.ibm.Hardware.Chassis.Model.Rainier4U\" \"com.ibm.Hardware.Chassis.Model.Rainier\"",
+      "parentUuid": "0cef1011_2f38f95d",
+      "range": {
+        "startLine": 88,
+        "startChar": 15,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
