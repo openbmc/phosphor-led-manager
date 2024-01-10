@@ -129,6 +129,30 @@
       },
       "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0cef1011_2f38f95d",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2024-01-10T19:41:40Z",
+      "side": 1,
+      "message": "just found that handling exception is not meaningful here, since the Names property returns one or more values ( like \"com.ibm.Hardware.Chassis.Model.Rainier2U\" and \"com.ibm.Hardware.Chassis.Model.Rainier\") and in the map we hardcode only the value which specifies the machine model. so its good to return null statement here rather than throwing exception.",
+      "parentUuid": "e94bd57c_54cfe997",
+      "range": {
+        "startLine": 88,
+        "startChar": 15,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
