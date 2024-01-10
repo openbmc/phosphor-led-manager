@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "de6eb059_76cb57c8",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 84,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-10T20:16:30Z",
+      "side": 1,
+      "message": "I don\u0027t understand why we still have this config.  The point of the compatibles is to not have an _extra_ mapping.  Just name the file `com.ibm.Hardware.Chassis.Model.Rainier.json` or `com/ibm/Hardware/Chassis/Model/Rainier.json`.",
+      "range": {
+        "startLine": 77,
+        "startChar": 0,
+        "endLine": 84,
+        "endChar": 17
+      },
+      "revId": "c86bea92eb202afeb123a01e05c15b8f20816d8d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
