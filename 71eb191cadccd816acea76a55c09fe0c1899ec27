@@ -105,6 +105,30 @@
       },
       "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e94bd57c_54cfe997",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2024-01-10T19:17:46Z",
+      "side": 1,
+      "message": "right, it helps in debugging, if we throw and handle this exception.",
+      "parentUuid": "e6e5f915_e384f635",
+      "range": {
+        "startLine": 88,
+        "startChar": 15,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
