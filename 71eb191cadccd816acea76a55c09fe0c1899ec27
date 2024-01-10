@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "bbb72402_c69b7ae4",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 67,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2024-01-10T18:11:07Z",
+      "side": 1,
+      "message": "yup that works. I\u0027ll take a separate commit to rename the files and will rebase this commit on top of it.",
+      "parentUuid": "db42f93a_1d499c17",
+      "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "3427f494_cee9d6c8",
         "filename": "manager/json-config.hpp",
         "patchSetId": 2
@@ -31,6 +49,30 @@
       "writtenOn": "2024-01-09T19:27:12Z",
       "side": 1,
       "message": "Do we really want to return an empty string for this?  Or is this an exception?\n\n\n`return {}` is good enough.",
+      "range": {
+        "startLine": 88,
+        "startChar": 15,
+        "endLine": 88,
+        "endChar": 28
+      },
+      "revId": "71eb191cadccd816acea76a55c09fe0c1899ec27",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cfbb4ab2_444ba9ad",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000362
+      },
+      "writtenOn": "2024-01-10T18:11:07Z",
+      "side": 1,
+      "message": "this is an exception case where the file path we are searching for is not found. I\u0027ll use return {} instead.",
+      "parentUuid": "3427f494_cee9d6c8",
       "range": {
         "startLine": 88,
         "startChar": 15,
