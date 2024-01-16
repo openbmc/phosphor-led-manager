@@ -27,3 +27,9 @@ option(
     value: 'enabled',
     description : 'Persistent the asserted status of ledgroup'
 )
+
+option(
+    'use-configs', type : 'feature',
+    value: 'enabled',
+    description : 'All json configuration files in configs are compiled by default.'
+)
