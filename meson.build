@@ -85,6 +85,10 @@ if get_option('tests').allowed()
   subdir('test')
 endif
 
-install_subdir('configs',
+if get_option('use-configs').allowed()
+  install_subdir('configs',
     install_dir: get_option('datadir') / 'phosphor-led-manager',
     strip_directory: true)
+else
+  install_emptydir(get_option('datadir') / 'phosphor-led-manager')
+endif
