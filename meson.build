@@ -13,7 +13,6 @@ project(
 cpp = meson.get_compiler('cpp')
 
 conf_data = configuration_data()
-conf_data.set_quoted('LED_JSON_FILE', '/usr/share/phosphor-led-manager/led-group-config.json')
 conf_data.set_quoted('SAVED_GROUPS_FILE', '/var/lib/phosphor-led-manager/savedGroups')
 conf_data.set_quoted('CALLOUT_FWD_ASSOCIATION', 'callout')
 conf_data.set_quoted('CALLOUT_REV_ASSOCIATION', 'fault')
