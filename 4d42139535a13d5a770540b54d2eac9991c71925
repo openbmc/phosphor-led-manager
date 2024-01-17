@@ -16,6 +16,24 @@
       "message": "why would we not treat this similar to entity manager and expect everyone to add Jason to the repository?",
       "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "023ae132_177bf582",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-01-17T01:17:33Z",
+      "side": 1,
+      "message": "For PLM, currently, only IBM has contributed rainier-related configuration files. I found that the size of each file is more than 200kb. If more machine configurations are added in the future, this will occupy part of the capacity.\nFor other specific machines, these files are meaningless, so we do not want to install the configuration files of other machines into our own image.\n\nFor EM, personally, I don\u0027t like this installation way. When the EM process starts, it will traverse all configuration files. Maybe for some machines, only a few configuration files are enough. we can imagine that if there are hundreds of configuration files that need to be traversed, then the EM process startup will take up a lot of time to parse some meaningless files.\n\nIn fact, I prefer to add some example configuration files to the configs in EM or PIM, and then install the files required for each machine in the bbappend file.",
+      "parentUuid": "262b43ed_d93817eb",
+      "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
