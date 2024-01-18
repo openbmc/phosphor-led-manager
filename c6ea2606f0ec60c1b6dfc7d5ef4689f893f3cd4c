@@ -292,6 +292,24 @@
       "parentUuid": "11d0b4eb_ea70fd36",
       "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "537ce179_c010710d",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 25,
+      "author": {
+        "id": 1001932
+      },
+      "writtenOn": "2024-01-18T15:55:01Z",
+      "side": 1,
+      "message": "Hi Andrew,\n    \n           I have observed there is 17-30sec delay in IBM systems for EntityManager to create an interface from its launching.\n\nThere is 5sec delay in EntityManager’s propertiesChangedCallback() api, I checked the system by reducing timer.expires_after() to 500ms, \nwith this EntityManager has not taken any delay in creating new interfaces for matching probes.\n\nis it fine to reduce the expire time in propertiesChangedCallback() in EntityManager ?",
+      "parentUuid": "e9de1015_6e0b62c6",
+      "revId": "c6ea2606f0ec60c1b6dfc7d5ef4689f893f3cd4c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
