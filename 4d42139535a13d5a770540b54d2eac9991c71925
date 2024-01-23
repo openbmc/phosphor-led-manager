@@ -51,6 +51,24 @@
       "message": "@Patrick\nAny comments on this one?",
       "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d413e70_c275804e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-23T12:44:01Z",
+      "side": 1,
+      "message": "\u003e For EM, personally, I don\u0027t like this installation way.\n\nNo offence, but it doesn\u0027t really matter what you personally like or dislike if that is the overall direction of the project.  We generally want configs to be moved to the consuming repository and a reactor-based implementation.  If you don\u0027t like that overall direction, you need to propose an alternative.\n\n\u003e I found that the size of each file is more than 200kb. If more machine configurations are added in the future, this will occupy part of the capacity.\n\nYou\u0027re looking at the raw size of the files.  These are text and compress very very well.\n\n\u003e For other specific machines, these files are meaningless, so we do not want to install the configuration files of other machines into our own image.\n\nSince we\u0027ve gotten these to now have the \"com.ibm\" format, like our dbus interfaces (which had intention behind this choice), I\u0027d be fine if you added changes to the recipe to:\n\n1. Add a packageconfig for \"limited config install\".\n2. As part of that packageconfig look at OBMC_ORG_YAML_SUBDIRS and `do_install:append` code that deletes any config that doesn\u0027t start with a prefix found in that variable.\n\nI don\u0027t want to add complexity to this meson and additional meson options to select which hardware images we install.  Generally, I don\u0027t think anyone really is that space constrained after the compression (except perhaps 32MB SPI chips).",
+      "parentUuid": "023ae132_177bf582",
+      "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
