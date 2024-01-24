@@ -87,6 +87,24 @@
       "parentUuid": "8d413e70_c275804e",
       "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "65d3f557_c647d141",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-24T12:27:21Z",
+      "side": 1,
+      "message": "\u003e Well, to be honest, I still don’t understand the original intention of doing this.\n\nWe give no guarantee that configs outside of the repository will not break due to code changes.  If they are in the repository, we will handle the refactoring.\n\n\u003e But in any case, for fp5280g3 (or other models), we only hope to install the configuration related to fp5280g3. If it is not recognized by the upstream, then we will go directly downstream.\n\nI\u0027ve already suggested how you can handle that upstream (by changing the recipe).",
+      "parentUuid": "9d3ee317_f5e12249",
+      "revId": "4d42139535a13d5a770540b54d2eac9991c71925",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
