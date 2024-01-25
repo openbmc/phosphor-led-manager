@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "07facd69_27932ad9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-01-25T20:54:00Z",
+      "side": 1,
+      "message": "See comments in bitbake recipe proposal.  I don\u0027t want to adjust the meson build for this.",
+      "revId": "195c420b10da4eaf68f94720d75669c51ae4d1fa",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
