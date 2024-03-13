@@ -33,7 +33,6 @@
 
 owners:
 - patrick@stwcx.xyz
-- vishwa@linux.vnet.ibm.com
 
 reviewers:
 - jinu.joy.thomas@in.ibm.com
@@ -51,6 +50,3 @@ openbmc:
 - name: Patrick Williams
   email: patrick@stwcx.xyz
   discord: stwcx
-- name: Vishwanatha Subbanna
-  email: vishwa@linux.vnet.ibm.com
-  discord: vishwa
