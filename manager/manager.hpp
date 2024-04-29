@@ -83,8 +83,8 @@ class Manager
     Manager(
         sdbusplus::bus_t& bus, const GroupMap& ledLayout,
         const sdeventplus::Event& event = sdeventplus::Event::get_default()) :
-        ledMap(ledLayout),
-        bus(bus), timer(event, [this](auto&) { driveLedsHandler(); })
+        ledMap(ledLayout), bus(bus),
+        timer(event, [this](auto&) { driveLedsHandler(); })
     {
         // Nothing here
     }
