@@ -30,7 +30,7 @@ if [ "$action" != "true" ] && [ "$action" != "false" ]; then
     exit 1;
 fi
 
-# Get the excluded groups, where $@ is all the agruments passed
+# Get the excluded groups, where $@ is all the arguments passed
 index=2;
 excluded_groups=""
 

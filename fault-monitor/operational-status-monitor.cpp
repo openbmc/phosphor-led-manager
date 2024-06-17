@@ -33,7 +33,7 @@ void Monitor::matchHandler(sdbusplus::message_t& msg)
         if (!value)
         {
             lg2::error(
-                "Faild to get the Functional property, INVENTORY_PATH = {PATH}",
+                "Failed to get the Functional property, INVENTORY_PATH = {PATH}",
                 "PATH", invObjectPath);
             return;
         }
