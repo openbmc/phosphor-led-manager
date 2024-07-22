@@ -25,54 +25,6 @@ namespace monitor
  */
 void action(sdbusplus::bus_t& bus, const std::string& path, bool assert);
 
-class Remove;
-
-/** @class Add
- *  @brief Implementation of LED handling during FRU fault
- *  @details This implements methods for watching for a FRU fault
- *  being logged to assert the corresponding LED
- */
-class Add
-{
-  public:
-    Add() = delete;
-    ~Add() = default;
-    Add(const Add&) = delete;
-    Add& operator=(const Add&) = delete;
-    Add(Add&&) = default;
-    Add& operator=(Add&&) = default;
-
-    /** @brief constructs Add a watch for FRU faults.
-     *  @param[in] bus -  The Dbus bus object
-     */
-    explicit Add(sdbusplus::bus_t& bus) :
-        matchCreated(
-            bus,
-            sdbusplus::bus::match::rules::interfacesAdded() +
-                sdbusplus::bus::match::rules::path_namespace(
-                    "/xyz/openbmc_project/logging"),
-            std::bind(std::mem_fn(&Add::created), this, std::placeholders::_1))
-    {
-        processExistingCallouts(bus);
-    }
-
-  private:
-    /** @brief sdbusplus signal match for fault created */
-    sdbusplus::bus::match_t matchCreated;
-
-    std::vector<std::unique_ptr<Remove>> removeWatches;
-
-    /** @brief Callback function for fru fault created
-     *  @param[in] msg       - Data associated with subscribed signal
-     */
-    void created(sdbusplus::message_t& msg);
-
-    /** @brief This function process all callouts at application start
-     *  @param[in] bus - The Dbus bus object
-     */
-    void processExistingCallouts(sdbusplus::bus_t& bus);
-};
-
 /** @class Remove
  *  @brief Implementation of LED handling after resolution of FRU fault
  *  @details Implement methods for watching the resolution of FRU faults
@@ -126,6 +78,52 @@ class Remove
 
         return matchStmt;
     }
+};
+
+/** @class Add
+ *  @brief Implementation of LED handling during FRU fault
+ *  @details This implements methods for watching for a FRU fault
+ *  being logged to assert the corresponding LED
+ */
+class Add
+{
+  public:
+    Add() = delete;
+    ~Add() = default;
+    Add(const Add&) = delete;
+    Add& operator=(const Add&) = delete;
+    Add(Add&&) = default;
+    Add& operator=(Add&&) = default;
+
+    /** @brief constructs Add a watch for FRU faults.
+     *  @param[in] bus -  The Dbus bus object
+     */
+    explicit Add(sdbusplus::bus_t& bus) :
+        matchCreated(
+            bus,
+            sdbusplus::bus::match::rules::interfacesAdded() +
+                sdbusplus::bus::match::rules::path_namespace(
+                    "/xyz/openbmc_project/logging"),
+            std::bind(std::mem_fn(&Add::created), this, std::placeholders::_1))
+    {
+        processExistingCallouts(bus);
+    }
+
+  private:
+    /** @brief sdbusplus signal match for fault created */
+    sdbusplus::bus::match_t matchCreated;
+
+    std::vector<std::unique_ptr<Remove>> removeWatches;
+
+    /** @brief Callback function for fru fault created
+     *  @param[in] msg       - Data associated with subscribed signal
+     */
+    void created(sdbusplus::message_t& msg);
+
+    /** @brief This function process all callouts at application start
+     *  @param[in] bus - The Dbus bus object
+     */
+    void processExistingCallouts(sdbusplus::bus_t& bus);
 };
 } // namespace monitor
 } // namespace fault
