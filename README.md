@@ -44,7 +44,7 @@ This is our configuration file. It describes 2 LEDs for the
 Then start the program with
 
 ```text
-$ ./phosphor-led-manager --config example.json
+~# ./phosphor-led-manager --config example.json
 ```
 
 ## Dbus interface
