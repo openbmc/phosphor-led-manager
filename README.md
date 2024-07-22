@@ -15,8 +15,7 @@ The configuration can happen via json or yaml.
 This is our configuration file. It describes 2 LEDs for the
 '_enclosure_identify_' group, with their respective states and duty cycles.
 
-```
-$ cat example.json
+```json
 {
   "leds": [
     {
@@ -44,7 +43,7 @@ $ cat example.json
 
 Then start the program with
 
-```
+```text
 $ ./phosphor-led-manager --config example.json
 ```
 
@@ -53,7 +52,7 @@ $ ./phosphor-led-manager --config example.json
 When starting the program, our LED group shows up on dbus. Usually there will be
 many more groups.
 
-```
+```text
 $ busctl tree xyz.openbmc_project.LED.GroupManager
 `- /xyz
   `- /xyz/openbmc_project
@@ -74,7 +73,7 @@ to keep it readable.
 
 We can now drive the entire group by setting it's 'Asserted' property on dbus.
 
-```
+```text
 $ busctl set-property \
 xyz.openbmc_project.LED.GroupManager \
 /xyz/openbmc_project/led/groups/enclosure_identify \
@@ -86,7 +85,7 @@ exposed by _phosphor-led-sysfs_ to set each LED state.
 
 ## How to Build
 
-```
+```text
 meson setup build
 cd build
 ninja
