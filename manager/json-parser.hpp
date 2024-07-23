@@ -95,6 +95,54 @@ void validatePriority(const std::string& name,
     }
 }
 
+static void loadJsonConfigV1GroupMember(const Json& member,
+                                        PriorityMap& priorityMap,
+                                        phosphor::led::ActionSet& ledActions)
+{
+    auto name = member.value("Name", "");
+    auto action = getAction(member.value("Action", ""));
+    uint8_t dutyOn = member.value("DutyOn", 50);
+    uint16_t period = member.value("Period", 0);
+
+    // Since only have Blink/On and default priority is Blink
+    auto priority = getAction(member.value("Priority", "Blink"));
+
+    // Same LEDs can be part of multiple groups. However, their
+    // priorities across groups need to match.
+    validatePriority(name, priority, priorityMap);
+
+    phosphor::led::Layout::LedAction ledAction{name, action, dutyOn, period,
+                                               priority};
+    ledActions.emplace(ledAction);
+}
+
+static void loadJsonConfigV1Group(const Json& entry,
+                                  phosphor::led::GroupMap& ledMap,
+                                  PriorityMap& priorityMap)
+{
+    const Json empty{};
+
+    fs::path tmpPath("/xyz/openbmc_project/led/groups");
+
+    const std::string groupName = entry.value("group", "");
+
+    tmpPath /= groupName;
+    auto objpath = tmpPath.string();
+    auto members = entry.value("members", empty);
+
+    lg2::debug("config for '{GROUP}'", "GROUP", groupName);
+
+    phosphor::led::ActionSet ledActions{};
+    for (const auto& member : members)
+    {
+        loadJsonConfigV1GroupMember(member, priorityMap, ledActions);
+    }
+
+    // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
+    // containing the name and properties.
+    ledMap.emplace(objpath, ledActions);
+}
+
 /** @brief Load JSON config and return led map (JSON version 1)
  *
  *  @return phosphor::led::GroupMap
@@ -110,34 +158,7 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 
     for (const auto& entry : leds)
     {
-        fs::path tmpPath("/xyz/openbmc_project/led/groups");
-        tmpPath /= entry.value("group", "");
-        auto objpath = tmpPath.string();
-        auto members = entry.value("members", empty);
-
-        phosphor::led::ActionSet ledActions{};
-        for (const auto& member : members)
-        {
-            auto name = member.value("Name", "");
-            auto action = getAction(member.value("Action", ""));
-            uint8_t dutyOn = member.value("DutyOn", 50);
-            uint16_t period = member.value("Period", 0);
-
-            // Since only have Blink/On and default priority is Blink
-            auto priority = getAction(member.value("Priority", "Blink"));
-
-            // Same LEDs can be part of multiple groups. However, their
-            // priorities across groups need to match.
-            validatePriority(name, priority, priorityMap);
-
-            phosphor::led::Layout::LedAction ledAction{name, action, dutyOn,
-                                                       period, priority};
-            ledActions.emplace(ledAction);
-        }
-
-        // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
-        // containing the name and properties.
-        ledMap.emplace(objpath, ledActions);
+        loadJsonConfigV1Group(entry, ledMap, priorityMap);
     }
 
     return ledMap;
