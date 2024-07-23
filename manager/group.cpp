@@ -4,6 +4,7 @@
 
 #include "ledlayout.hpp"
 
+#include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/message.hpp>
 namespace phosphor
 {
@@ -13,6 +14,7 @@ namespace led
 /** @brief Overloaded Property Setter function */
 bool Group::asserted(bool value)
 {
+    lg2::debug("Asserting LED Group {PATH}", "PATH", path);
     if (customCallBack != nullptr)
     {
         // Custom callback method tells if the lamptest request is handled
@@ -34,6 +36,7 @@ bool Group::asserted(bool value)
     if (value ==
         sdbusplus::xyz::openbmc_project::Led::server::Group::asserted())
     {
+        lg2::debug("LED Group {PATH} was already asserted", "PATH", path);
         return value;
     }
 
