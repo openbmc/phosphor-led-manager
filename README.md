@@ -10,7 +10,18 @@ identify the system, they should all light up together.
 
 The configuration can happen via json or yaml.
 
-## Configuration Example (JSON)
+### Configuration: LED Priority
+
+Each LED can have "Priority" as "Blink" or "On". If this property is defined, it
+should be defined on each instance of the LED in the config.
+
+When multiple LED groups are asserted and contain the same LED, "Priority"
+determines the state of the LED.
+
+For example, Group 1 says LED1 should be "Blink", and Group 2 says it should be
+"On". LED1 will then have the state declared in "Priority".
+
+### Configuration Example (JSON)
 
 This is our configuration file. It describes 2 LEDs for the
 '_enclosure_identify_' group, with their respective states and duty cycles.
