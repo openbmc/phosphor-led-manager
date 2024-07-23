@@ -21,6 +21,71 @@ determines the state of the LED.
 For example, Group 1 says LED1 should be "Blink", and Group 2 says it should be
 "On". LED1 will then have the state declared in "Priority".
 
+## Configuration: LED Group Priority
+
+Using LED Priority is fine for simple configurations, but when group state needs
+to always be consistent, Group Priority can be used to enforce the consistent
+representation.
+
+The Group `Priority` is optional and a higher priority means that when 2 groups
+are asserted, the one with highest `Priority` will be represented consistently.
+Meaning all its LEDs will have the state as per the configuration.
+
+## Configuration Example with Group Priorities (JSON)
+
+Here we prioritize the locating group above the fault group since locating may
+be required to fix the fault.
+
+So independent of the order that these groups are asserted, if both are
+asserted, "sys_id" should be in "Blink" state.
+
+The "unrelated" group will have the default group priority of 0.
+
+```
+$ cat example.json
+{
+  "leds": [
+    {
+      "group": "enclosure_identify",
+      "Priority": 2,
+      "members": [
+        {
+          "Name": "sys_id",
+          "Action": "Blink"
+        },
+        {
+          "Name": "rear_id",
+          "Action": "Blink"
+        }
+      ]
+    },
+    {
+      "group": "fault",
+      "Priority": 1,
+      "members": [
+        {
+          "Name": "sys_id",
+          "Action": "On"
+        },
+        {
+          "Name": "fault",
+          "Action": "On"
+        }
+      ]
+    },
+    {
+      "group": "unrelated",
+      "members": [
+        {
+          "Name": "rear_id",
+          "Action": "On"
+        }
+      ]
+    }
+  ]
+}
+```
+
 ### Configuration Example (JSON)
 
 This is our configuration file. It describes 2 LEDs for the
