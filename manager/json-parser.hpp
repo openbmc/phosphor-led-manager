@@ -108,12 +108,16 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
     const Json empty{};
     auto leds = json.value("leds", empty);
 
+    lg2::debug("parsing {N} LED groups", "N", leds.size());
+
     for (const auto& entry : leds)
     {
         fs::path tmpPath("/xyz/openbmc_project/led/groups");
         tmpPath /= entry.value("group", "");
         auto objpath = tmpPath.string();
         auto members = entry.value("members", empty);
+
+        lg2::debug("config for '{GROUP}'", "GROUP", objpath);
 
         phosphor::led::ActionSet ledActions{};
         for (const auto& member : members)
@@ -149,6 +153,7 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
  */
 const phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
 {
+    lg2::debug("reading json from {PATH}", "PATH", path);
     auto json = readJson(path);
 
     auto version = json.value("version", 1);

@@ -39,6 +39,7 @@ int main(int argc, char** argv)
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
+    lg2::debug("json config enabled");
     auto systemLedMap = getSystemLedMap(configFile);
 #endif
 
