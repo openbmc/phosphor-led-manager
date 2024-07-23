@@ -164,11 +164,6 @@ void Add::created(sdbusplus::message_t& msg)
     }
 
     auto& assocs = std::get<AssociationList>(attr->second);
-    if (assocs.empty())
-    {
-        // No associations skip
-        return;
-    }
 
     for (const auto& item : assocs)
     {
@@ -244,11 +239,6 @@ void Add::processExistingCallouts(sdbusplus::bus_t& bus)
             continue;
         }
         auto& assocs = std::get<AssociationList>(assoc);
-        if (assocs.empty())
-        {
-            // no associations, skip
-            continue;
-        }
 
         for (const auto& item : assocs)
         {
