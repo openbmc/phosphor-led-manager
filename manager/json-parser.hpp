@@ -1,5 +1,6 @@
 #include "config.h"
 
+#include "grouplayout.hpp"
 #include "json-config.hpp"
 #include "ledlayout.hpp"
 
@@ -129,10 +130,12 @@ static void loadJsonConfigV1Group(const Json& entry,
     tmpPath /= groupName;
     auto objpath = tmpPath.string();
     auto members = entry.value("members", empty);
+    int priority = entry.value("Priority", 0);
 
     lg2::debug("config for '{GROUP}'", "GROUP", groupName);
 
     phosphor::led::ActionSet ledActions{};
+    phosphor::led::Layout::GroupLayout groupLayout{};
     for (const auto& member : members)
     {
         loadJsonConfigV1GroupMember(member, priorityMap, ledActions);
@@ -140,7 +143,10 @@ static void loadJsonConfigV1Group(const Json& entry,
 
     // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
     // containing the name and properties.
-    ledMap.emplace(objpath, ledActions);
+    groupLayout.actionSet = ledActions;
+    groupLayout.priority = priority;
+
+    ledMap.emplace(objpath, groupLayout);
 }
 
 /** @brief Load JSON config and return led map (JSON version 1)
