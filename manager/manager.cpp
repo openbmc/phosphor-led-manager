@@ -61,18 +61,15 @@ bool Manager::setGroupState(const std::string& path, bool assert,
                             ledLess);
 
         // Remove the elements from Current that are being DeAsserted.
-        if (ledsDeAssert.size())
+        // Power off LEDs that are to be really DeAsserted
+        for (auto& it : ledsDeAssert)
         {
-            // Power off LEDs that are to be really DeAsserted
-            for (auto& it : ledsDeAssert)
+            // Update LEDs in "physically asserted" set by removing those
+            // LEDs which are De-Asserted
+            auto found = currentState.find(it);
+            if (found != currentState.end())
             {
-                // Update LEDs in "physically asserted" set by removing those
-                // LEDs which are De-Asserted
-                auto found = currentState.find(it);
-                if (found != currentState.end())
-                {
-                    currentState.erase(found);
-                }
+                currentState.erase(found);
             }
         }
     }
@@ -208,32 +205,26 @@ void Manager::driveLedsHandler(void)
     ActionSet failedLedsDeAssert;
 
     // This order of LED operation is important.
-    if (reqLedsDeAssert.size())
+    for (const auto& it : reqLedsDeAssert)
     {
-        for (const auto& it : reqLedsDeAssert)
+        std::string objPath = std::string(phyLedPath) + it.name;
+        lg2::debug("De-Asserting LED, NAME = {NAME}, ACTION = {ACTION}", "NAME",
+                   it.name, "ACTION", it.action);
+        if (drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
+                             it.period))
         {
-            std::string objPath = std::string(phyLedPath) + it.name;
-            lg2::debug("De-Asserting LED, NAME = {NAME}, ACTION = {ACTION}",
-                       "NAME", it.name, "ACTION", it.action);
-            if (drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
-                                 it.period))
-            {
-                failedLedsDeAssert.insert(it);
-            }
+            failedLedsDeAssert.insert(it);
         }
     }
 
-    if (reqLedsAssert.size())
+    for (const auto& it : reqLedsAssert)
     {
-        for (const auto& it : reqLedsAssert)
+        std::string objPath = std::string(phyLedPath) + it.name;
+        lg2::debug("Asserting LED, NAME = {NAME}, ACTION = {ACTION}", "NAME",
+                   it.name, "ACTION", it.action);
+        if (drivePhysicalLED(objPath, it.action, it.dutyOn, it.period))
         {
-            std::string objPath = std::string(phyLedPath) + it.name;
-            lg2::debug("Asserting LED, NAME = {NAME}, ACTION = {ACTION}",
-                       "NAME", it.name, "ACTION", it.action);
-            if (drivePhysicalLED(objPath, it.action, it.dutyOn, it.period))
-            {
-                failedLedsAssert.insert(it);
-            }
+            failedLedsAssert.insert(it);
         }
     }
 
