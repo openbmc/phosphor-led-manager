@@ -37,20 +37,69 @@ static void applyGroupAction(std::map<LedName, Layout::LedAction>& newState,
 }
 
 // create the resulting new map from all currently asserted groups
-auto Manager::getNewMap(std::set<const ActionSet*> assertedGroups)
+static auto getNewMapWithGroupPriorities(
+    std::set<const Layout::GroupLayout*, Layout::CompareGroupLayout> sorted)
     -> std::map<LedName, Layout::LedAction>
 {
     std::map<LedName, Layout::LedAction> newState;
 
     // update the new map with the desired state
-    for (const auto it : assertedGroups)
+    for (const auto it : sorted)
     {
         // apply all led actions of that group to the map
-        for (auto action : *it)
+        for (Layout::LedAction action : it->actionSet)
+        {
+            newState[action.name] = action;
+        }
+    }
+    return newState;
+}
+
+static std::map<LedName, Layout::LedAction> getNewMapWithLEDPriorities(
+    std::set<const Layout::GroupLayout*> assertedGroups)
+{
+    std::map<LedName, Layout::LedAction> newState;
+    // update the new map with the desired state
+    for (const Layout::GroupLayout* it : assertedGroups)
+    {
+        // apply all led actions of that group to the map
+        for (Layout::LedAction action : it->actionSet)
         {
             applyGroupAction(newState, action);
         }
     }
+    return newState;
+}
+
+// create the resulting new map from all currently asserted groups
+std::map<LedName, Layout::LedAction>
+    Manager::getNewMap(std::set<const Layout::GroupLayout*> assertedGroups)
+{
+    std::map<LedName, Layout::LedAction> newState;
+
+    std::set<const Layout::GroupLayout*, Layout::CompareGroupLayout> sorted;
+
+    bool groupPriorities = false;
+
+    for (const Layout::GroupLayout* it : assertedGroups)
+    {
+        sorted.insert(it);
+
+        if (it->priority != 0)
+        {
+            groupPriorities = true;
+        }
+    }
+
+    if (groupPriorities)
+    {
+        newState = getNewMapWithGroupPriorities(sorted);
+    }
+    else
+    {
+        newState = getNewMapWithLEDPriorities(assertedGroups);
+    }
+
     return newState;
 }
 

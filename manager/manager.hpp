@@ -1,5 +1,6 @@
 #pragma once
 
+#include "grouplayout.hpp"
 #include "ledlayout.hpp"
 #include "utils.hpp"
 
@@ -93,7 +94,7 @@ class Manager
     }
 
     /* create the resulting map from all currently asserted groups */
-    static auto getNewMap(std::set<const ActionSet*> assertedGroups)
+    static auto getNewMap(std::set<const Layout::GroupLayout*> assertedGroups)
         -> std::map<LedName, Layout::LedAction>;
 
     /** @brief Given a group name, applies the action on the group
@@ -151,7 +152,7 @@ class Manager
     DBusHandler dBusHandler;
 
     /** @brief Pointers to groups that are in asserted state */
-    std::set<const ActionSet*> assertedGroups;
+    std::set<const Layout::GroupLayout*> assertedGroups;
 
     /** Map of led name to current state */
     std::map<std::string, Layout::LedAction> ledStateMap;
