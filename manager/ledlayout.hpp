@@ -51,7 +51,6 @@ struct LedAction
 } // namespace Layout
 
 using ActionSet = std::set<Layout::LedAction>;
-using GroupMap = std::unordered_map<std::string, ActionSet>;
 
 } // namespace led
 } // namespace phosphor
