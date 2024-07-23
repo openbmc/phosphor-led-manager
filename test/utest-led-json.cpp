@@ -16,9 +16,9 @@ TEST(loadJsonConfig, testGoodPath)
     ASSERT_EQ(ledMap.contains(powerOn), true);
     ASSERT_EQ(ledMap.contains(enclosureIdentify), true);
 
-    auto& bmcBootedActions = ledMap.at(bmcBooted);
-    auto& powerOnActions = ledMap.at(powerOn);
-    auto& enclosureIdentifyActions = ledMap.at(enclosureIdentify);
+    auto& bmcBootedActions = ledMap.at(bmcBooted).actionSet;
+    auto& powerOnActions = ledMap.at(powerOn).actionSet;
+    auto& enclosureIdentifyActions = ledMap.at(enclosureIdentify).actionSet;
 
     for (const auto& group : bmcBootedActions)
     {

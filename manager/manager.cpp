@@ -36,21 +36,68 @@ static void applyGroupAction(std::map<LedName, Layout::LedAction>& newState,
     newState[action.name] = action;
 }
 
+static std::map<LedName, Layout::LedAction> getNewMapWithGroupPriorities(
+    std::set<const Layout::GroupLayout*, Layout::CompareGroupLayout> sorted)
+{
+    std::map<LedName, Layout::LedAction> newState;
+
+    // update the new map with the desired state
+    for (const Layout::GroupLayout* it : sorted)
+    {
+        // apply all led actions of that group to the map
+        for (Layout::LedAction action : it->actionSet)
+        {
+            newState[action.name] = action;
+        }
+    }
+    return newState;
+}
+
+static std::map<LedName, Layout::LedAction> getNewMapWithLEDPriorities(
+    std::set<const Layout::GroupLayout*> assertedGroups)
+{
+    std::map<LedName, Layout::LedAction> newState;
+    // update the new map with the desired state
+    for (const Layout::GroupLayout* it : assertedGroups)
+    {
+        // apply all led actions of that group to the map
+        for (Layout::LedAction action : it->actionSet)
+        {
+            applyGroupAction(newState, action);
+        }
+    }
+    return newState;
+}
+
 // create the resulting new map from all currently asserted groups
 std::map<LedName, Layout::LedAction>
     Manager::getNewMap(std::set<const Layout::GroupLayout*> assertedGroups)
 {
     std::map<LedName, Layout::LedAction> newState;
 
-    // update the new map with the desired state
-    for (const ActionSet* it : assertedGroups)
+    std::set<const Layout::GroupLayout*, Layout::CompareGroupLayout> sorted;
+
+    bool groupPriorities = false;
+
+    for (const Layout::GroupLayout* it : assertedGroups)
     {
-        // apply all led actions of that group to the map
-        for (Layout::LedAction action : *it)
+        sorted.insert(it);
+
+        if (it->priority != 0)
         {
-            applyGroupAction(newState, action);
+            groupPriorities = true;
         }
     }
+
+    if (groupPriorities)
+    {
+        newState = getNewMapWithGroupPriorities(sorted);
+    }
+    else
+    {
+        newState = getNewMapWithLEDPriorities(assertedGroups);
+    }
+
     return newState;
 }
 

@@ -1,5 +1,6 @@
 #pragma once
 
+#include "grouplayout.hpp"
 #include "ledlayout.hpp"
 #include "utils.hpp"
 
@@ -151,7 +152,7 @@ class Manager
     DBusHandler dBusHandler;
 
     /** @brief Pointers to groups that are in asserted state */
-    std::set<const ActionSet*> assertedGroups;
+    std::set<const Layout::GroupLayout*> assertedGroups;
 
     /** Map of led name to current state */
     std::map<std::string, Layout::LedAction> ledStateMap;
