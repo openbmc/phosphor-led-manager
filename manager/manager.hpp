@@ -10,6 +10,9 @@
 #include <string>
 #include <unordered_map>
 
+// to better see what the string is representing
+using LedName = std::string;
+
 namespace phosphor
 {
 namespace led
@@ -89,6 +92,10 @@ class Manager
         // Nothing here
     }
 
+    /* create the resulting map from all currently asserte groups */
+    static std::map<LedName, Layout::LedAction>
+        getNewMap(std::set<const Layout::GroupLayout*> assertedGroups);
+
     /** @brief Given a group name, applies the action on the group
      *
      *  @param[in]  path          -  dbus path of group
@@ -146,13 +153,8 @@ class Manager
     /** @brief Pointers to groups that are in asserted state */
     std::set<const ActionSet*> assertedGroups;
 
-    /** @brief Contains the highest priority actions for all
-     *         asserted LEDs.
-     */
-    ActionSet currentState;
-
-    /** @brief Contains the set of all actions for asserted LEDs */
-    ActionSet combinedState;
+    /** Map of led name to current state */
+    std::map<std::string, Layout::LedAction> ledStateMap;
 
     /** @brief Custom callback when enabled lamp test */
     std::function<bool(ActionSet& ledsAssert, ActionSet& ledsDeAssert)>
