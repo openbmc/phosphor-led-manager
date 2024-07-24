@@ -20,7 +20,8 @@ using Json = nlohmann::json;
 // Priority for a particular LED needs to stay SAME across all groups
 // phosphor::led::Layout::Action can only be one of `Blink` and `On`
 using PriorityMap =
-    std::unordered_map<std::string, phosphor::led::Layout::Action>;
+    std::unordered_map<std::string,
+                       std::optional<phosphor::led::Layout::Action>>;
 
 /** @brief Parse LED JSON file and output Json object
  *
@@ -65,6 +66,25 @@ phosphor::led::Layout::Action getAction(const std::string& action)
                              : phosphor::led::Layout::Action::On;
 }
 
+static std::string priorityToString(
+    const std::optional<phosphor::led::Layout::Action>& priority)
+{
+    if (!priority.has_value())
+    {
+        return "none";
+    }
+    switch (priority.value())
+    {
+        case phosphor::led::Layout::Action::Off:
+            return "Off";
+        case phosphor::led::Layout::Action::On:
+            return "On";
+        case phosphor::led::Layout::Action::Blink:
+            return "Blink";
+    }
+    return "?";
+}
+
 /** @brief Validate the Priority of an LED is same across ALL groups
  *
  *  @param[in] name - led name member of each group
@@ -73,9 +93,10 @@ phosphor::led::Layout::Action getAction(const std::string& action)
  *
  *  @return
  */
-void validatePriority(const std::string& name,
-                      const phosphor::led::Layout::Action& priority,
-                      PriorityMap& priorityMap)
+void validatePriority(
+    const std::string& name,
+    const std::optional<phosphor::led::Layout::Action>& priority,
+    PriorityMap& priorityMap)
 {
     auto iter = priorityMap.find(name);
     if (iter == priorityMap.end())
@@ -88,8 +109,8 @@ void validatePriority(const std::string& name,
     {
         lg2::error(
             "Priority of LED is not same across all, Name = {NAME}, Old Priority = {OLD_PRIO}, New Priority = {NEW_PRIO}",
-            "NAME", name, "OLD_PRIO", int(iter->second), "NEW_PRIO",
-            int(priority));
+            "NAME", name, "OLD_PRIO", priorityToString(iter->second),
+            "NEW_PRIO", priorityToString(priority));
 
         throw std::runtime_error(
             "Priority of at least one LED is not same across groups");
@@ -105,8 +126,13 @@ static void loadJsonConfigV1GroupMember(const Json& member,
     uint8_t dutyOn = member.value("DutyOn", 50);
     uint16_t period = member.value("Period", 0);
 
-    // Since only have Blink/On and default priority is Blink
-    auto priority = getAction(member.value("Priority", "Blink"));
+    const std::string priorityStr = member.value("Priority", "");
+    std::optional<phosphor::led::Layout::Action> priority = std::nullopt;
+
+    if (!priorityStr.empty())
+    {
+        priority = getAction(priorityStr);
+    }
 
     // Same LEDs can be part of multiple groups. However, their
     // priorities across groups need to match.
