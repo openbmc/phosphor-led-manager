@@ -20,6 +20,16 @@
             ]
         },
         {
+            "group": "power_off",
+            "members": [
+                {
+                    "Name": "power_off_led",
+                    "Action": "Off",
+                    "Priority": "Off"
+                }
+            ]
+        },
+        {
             "group": "enclosure_identify",
             "members": [
                 {

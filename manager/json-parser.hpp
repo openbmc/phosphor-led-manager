@@ -18,7 +18,6 @@ namespace fs = std::filesystem;
 using Json = nlohmann::json;
 
 // Priority for a particular LED needs to stay SAME across all groups
-// phosphor::led::Layout::Action can only be one of `Blink` and `On`
 using PriorityMap =
     std::unordered_map<std::string,
                        std::optional<phosphor::led::Layout::Action>>;
@@ -56,14 +55,26 @@ Json readJson(const fs::path& path)
  *
  *  @param[in] action - action string
  *
- *  @return Action - action enum (On/Blink)
+ *  @return Action - action enum (On/Off/Blink)
  */
 phosphor::led::Layout::Action getAction(const std::string& action)
 {
-    assert(action == "On" || action == "Blink");
+    assert(action == "On" || action == "Blink" || action == "Off");
 
-    return action == "Blink" ? phosphor::led::Layout::Action::Blink
-                             : phosphor::led::Layout::Action::On;
+    if (action == "On")
+    {
+        return phosphor::led::Layout::Action::On;
+    }
+    if (action == "Off")
+    {
+        return phosphor::led::Layout::Action::Off;
+    }
+    if (action == "Blink")
+    {
+        return phosphor::led::Layout::Action::Blink;
+    }
+
+    return phosphor::led::Layout::Action::Blink;
 }
 
 static int
