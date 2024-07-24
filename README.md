@@ -12,8 +12,8 @@ The configuration can happen via json or yaml.
 
 ### Configuration: LED Priority
 
-Each LED can have "Priority" as "Blink" or "On". If this property is defined, it
-should be defined on each instance of the LED in the config.
+Each LED can have "Priority" as "Blink", "Off" or "On". If this property is
+defined, it should be defined on each instance of the LED in the config.
 
 When multiple LED groups are asserted and contain the same LED, "Priority"
 determines the state of the LED.
