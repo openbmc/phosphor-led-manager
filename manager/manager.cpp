@@ -14,6 +14,46 @@ namespace phosphor
 namespace led
 {
 
+// apply the led action to the map
+static void applyGroupAction(std::map<LedName, Layout::LedAction>& newState,
+                             Layout::LedAction action)
+{
+    if (!newState.contains(action.name))
+    {
+        newState[action.name] = action;
+        return;
+    }
+
+    auto currentAction = newState[action.name];
+
+    if (currentAction.action == action.priority)
+    {
+        // if the current action is already the priority action,
+        // we cannot override it
+        return;
+    }
+
+    newState[action.name] = action;
+}
+
+// create the resulting new map from all currently asserted groups
+std::map<LedName, Layout::LedAction>
+    Manager::getNewMap(std::set<const ActionSet*> assertedGroups)
+{
+    std::map<LedName, Layout::LedAction> newState;
+
+    // update the new map with the desired state
+    for (const ActionSet* it : assertedGroups)
+    {
+        // apply all led actions of that group to the map
+        for (Layout::LedAction action : *it)
+        {
+            applyGroupAction(newState, action);
+        }
+    }
+    return newState;
+}
+
 // Assert -or- De-assert
 bool Manager::setGroupState(const std::string& path, bool assert,
                             ActionSet& ledsAssert, ActionSet& ledsDeAssert)
@@ -30,67 +70,39 @@ bool Manager::setGroupState(const std::string& path, bool assert,
         }
     }
 
-    // This will contain the union of what's already in the asserted ActionSet
-    ActionSet desiredState{};
-    for (const auto& grp : assertedGroups)
+    // create the new map from the asserted groups
+    std::map<std::string, Layout::LedAction> newState =
+        getNewMap(assertedGroups);
+
+    // the ledsAssert are those that are in the new map and change state
+    // + those in the new map and not in the old map
+    for (const auto& [name, action] : newState)
     {
-        desiredState.insert(grp->cbegin(), grp->cend());
-    }
-
-    // Find difference between Combined and Desired to identify
-    // which LEDs are getting altered
-    ActionSet transient{};
-    std::set_difference(combinedState.begin(), combinedState.end(),
-                        desiredState.begin(), desiredState.end(),
-                        std::inserter(transient, transient.begin()), ledComp);
-    if (transient.size())
-    {
-        // Find common LEDs between transient and Desired to know if some LEDs
-        // are changing state and not really getting DeAsserted
-        ActionSet ledsTransient{};
-        std::set_intersection(
-            transient.begin(), transient.end(), desiredState.begin(),
-            desiredState.end(),
-            std::inserter(ledsTransient, ledsTransient.begin()), ledLess);
-
-        // Find difference between above 2 to identify those LEDs which are
-        // really getting DeAsserted
-        std::set_difference(transient.begin(), transient.end(),
-                            ledsTransient.begin(), ledsTransient.end(),
-                            std::inserter(ledsDeAssert, ledsDeAssert.begin()),
-                            ledLess);
-
-        // Remove the elements from Current that are being DeAsserted.
-        // Power off LEDs that are to be really DeAsserted
-        for (auto& it : ledsDeAssert)
+        if (ledStateMap.contains(name))
         {
-            // Update LEDs in "physically asserted" set by removing those
-            // LEDs which are De-Asserted
-            auto found = currentState.find(it);
-            if (found != currentState.end())
+            // check if the led action has changed
+            auto& currentAction = ledStateMap[name];
+            if (currentAction.action != action.action)
             {
-                currentState.erase(found);
+                ledsAssert.insert(action);
             }
+        }
+        else
+        {
+            ledsAssert.insert(action);
         }
     }
 
-    // Now LEDs that are to be Asserted. These could either be fresh asserts
-    // -or- change between [On]<-->[Blink]
-    ActionSet temp{};
-    std::unique_copy(desiredState.begin(), desiredState.end(),
-                     std::inserter(temp, temp.begin()), ledEqual);
-    if (temp.size())
+    // the ledsDeAssert are those in the old map but not in the new map
+    for (const auto& [name, action] : ledStateMap)
     {
-        // Find difference between [desired to be Asserted] and those LEDs
-        // that are physically asserted currently.
-        std::set_difference(
-            temp.begin(), temp.end(), currentState.begin(), currentState.end(),
-            std::inserter(ledsAssert, ledsAssert.begin()), ledComp);
+        if (!newState.contains(name))
+        {
+            ledsDeAssert.insert(action);
+        }
     }
 
-    // Update the current actual and desired(the virtual actual)
-    currentState = std::move(temp);
-    combinedState = std::move(desiredState);
+    ledStateMap = newState;
 
     // If we survive, then set the state accordingly.
     return assert;
