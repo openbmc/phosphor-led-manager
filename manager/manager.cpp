@@ -26,7 +26,9 @@ static void applyGroupAction(std::map<LedName, Layout::LedAction>& newState,
 
     auto currentAction = newState[action.name];
 
-    if (currentAction.action == action.priority)
+    const bool hasPriority = currentAction.priority.has_value();
+
+    if (hasPriority && currentAction.action == action.priority)
     {
         // if the current action is already the priority action,
         // we cannot override it
