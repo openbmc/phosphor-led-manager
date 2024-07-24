@@ -26,7 +26,7 @@ TEST(loadJsonConfig, testGoodPath)
         ASSERT_EQ(group.action, phosphor::led::Layout::Action::On);
         ASSERT_EQ(group.dutyOn, 50);
         ASSERT_EQ(group.period, 0);
-        ASSERT_EQ(group.priority, phosphor::led::Layout::Action::Blink);
+        ASSERT_EQ(group.priority, std::nullopt);
     }
 
     for (const auto& group : powerOnActions)
@@ -45,14 +45,14 @@ TEST(loadJsonConfig, testGoodPath)
             ASSERT_EQ(group.action, phosphor::led::Layout::Action::Blink);
             ASSERT_EQ(group.dutyOn, 50);
             ASSERT_EQ(group.period, 1000);
-            ASSERT_EQ(group.priority, phosphor::led::Layout::Action::Blink);
+            ASSERT_EQ(group.priority, std::nullopt);
         }
         else if (group.name == "rear_id")
         {
             ASSERT_EQ(group.action, phosphor::led::Layout::Action::Blink);
             ASSERT_EQ(group.dutyOn, 50);
             ASSERT_EQ(group.period, 1000);
-            ASSERT_EQ(group.priority, phosphor::led::Layout::Action::Blink);
+            ASSERT_EQ(group.priority, std::nullopt);
         }
         else
         {
