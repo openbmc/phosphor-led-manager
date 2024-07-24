@@ -27,7 +27,7 @@ struct LedAction
     Action action;
     uint8_t dutyOn;
     uint16_t period;
-    Action priority;
+    std::optional<Action> priority;
 
     // Order LEDs such that same LEDs are grouped next to
     // each other and the same LEDs are in priority order
