@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "546dde4e_50d6f799",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-07-25T03:07:43Z",
+      "side": 1,
+      "message": "IMPO, I don\u0027t think this patch refactoring has any advantages.\n\n@Patrick, what do you think?",
+      "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
