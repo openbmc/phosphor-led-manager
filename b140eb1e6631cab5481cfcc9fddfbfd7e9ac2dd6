@@ -3,6 +3,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d29808e9_f3918f38",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-25T19:15:21Z",
+      "side": 1,
+      "message": "If you\u0027re going to do refactoring... A much more nlohmann-standard approach is to write a `from_json` function that is specialized for an `LedAction` (and `GroupMap`?).  You can take a look at this as an example:  https://github.com/openbmc/phosphor-health-monitor/blob/e99437fc385930888300b887e73c26c206d915a2/health_metric_config.cpp#L66",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 57
+      },
+      "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "546dde4e_50d6f799",
         "filename": "manager/json-parser.hpp",
         "patchSetId": 1
@@ -14,6 +37,24 @@
       "writtenOn": "2024-07-25T03:07:43Z",
       "side": 1,
       "message": "IMPO, I don\u0027t think this patch refactoring has any advantages.\n\n@Patrick, what do you think?",
+      "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3d6bbb92_a64ea759",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-25T19:15:21Z",
+      "side": 1,
+      "message": "Its ok... it looks like it is mostly a copy of the existing code.",
+      "parentUuid": "546dde4e_50d6f799",
       "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
