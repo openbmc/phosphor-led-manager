@@ -16,6 +16,24 @@
       "message": "Can you explain why add debug loggin?",
       "revId": "5293deec48e6ad0e42e9e85ce5f850c7fb32f55c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "743134ac_510d21a9",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-07-26T14:06:55Z",
+      "side": 1,
+      "message": "It just makes things easier when developing. Just set the log policy to ```debug``` and then can directly see what\u0027s happening, and approximately at which point we are in the program. \n\nSo if there is any crash or exception it\u0027s very easy to guess where it might have happened. \n\nFor example which path we are using to load the json and perhaps at which group the config parser failed.\n\nIt\u0027s basically what most programs do when you give --verbose flag.",
+      "parentUuid": "b280d78d_9abb5b02",
+      "revId": "5293deec48e6ad0e42e9e85ce5f850c7fb32f55c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
