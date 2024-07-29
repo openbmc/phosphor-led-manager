@@ -27,6 +27,7 @@ test_sources = [
 tests = [
   'utest.cpp',
   'utest-led-json.cpp',
+  'utest-group-priority.cpp',
 ]
 if get_option('persistent-led-asserted').allowed()
   test_sources += [
