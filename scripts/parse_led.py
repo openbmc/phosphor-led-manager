@@ -107,6 +107,13 @@ if __name__ == "__main__":
         "-f", "--filename", default="led.yaml", help="Input File Name"
     )
     parser.add_argument(
+        "-l",
+        "--output-filename",
+        dest="outputfilename",
+        default="led-gen.hpp",
+        help="Output File Name",
+    )
+    parser.add_argument(
         "-i",
         "--input-dir",
         dest="inputdir",
@@ -136,5 +143,5 @@ if __name__ == "__main__":
     with open(yaml_file, "r") as f:
         ifile = yaml.safe_load(f)
 
-    with open(os.path.join(args.outputdir, "led-gen.hpp"), "w") as ofile:
+    with open(os.path.join(args.outputdir, args.outputfilename), "w") as ofile:
         generate_file(ifile, ofile)
