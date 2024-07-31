@@ -1,0 +1,222 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "60602ed4_b6e58d12",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: cleanup.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b32d030a_5881a80c",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "As written, doesn\u0027t this regress the current behavior in that \"Blink\" in an earlier defined group can be overwritten by \"On\" in a later defined group?\n\n(\"earlier\" and \"later\" are ... memory pointer ordering per line 46; unrelated to JSON definition order)",
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "31941cf8_ac49e7fd",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: auto?",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d50cf325_3766d335",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: I\u0027d be fine with `auto` here (I prefer almost-always-auto, but I know some maintainers don\u0027t).",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 44
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91522432_683a311b",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: would it simplify this logic further to do\n\n`if (currentAction.action \u003d\u003d action.action) continue;`\n\nand then put `ledsAssert.insert(action)` as the final clause in the for loop for all cases?",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "66b42223_c7eeeea2",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "Frankly, I feel like some of this change is just a matter of opinion.  `set_difference` more clearly expresses _what_ you are doing, despite the syntax for it being complicated.  Now I have to read the comments _and_ the code to see if they match.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 5
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "911d1dde_98a8a3b8",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "private?\n\nWhy static + takes assertedGroups rather than member using this-\u003eassertedGroups?",
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "fbe88f5a_b12fbee3",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: spelling",
+      "range": {
+        "startLine": 95,
+        "startChar": 51,
+        "endLine": 95,
+        "endChar": 58
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "19ac27d1_6d00376a",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: for modern code, I prefer trailing-type syntax because it makes the function definitions more consistent.\n\n`auto getNewMap(...) -\u003e std::map\u003c...\u003e`\n\n(At the definition location it also makes the use of class typedefs less verbose: `classname::type classname::foo()` vs `auto classname::foo() -\u003e type`.)",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 61
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ebf04d2e_e014a023",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T20:52:48Z",
+      "side": 1,
+      "message": "nit: prefer a typedef for this.",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 45
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
