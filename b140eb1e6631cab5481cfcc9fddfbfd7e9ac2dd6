@@ -48,6 +48,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "243ab626_04dd2274",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 115,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-07-31T14:53:21Z",
+      "side": 1,
+      "message": "I\u0027m not sure it has to tightly couple the configuration to the struct definition, but it is just a different structuring of the code from free-standing functions to class members that know how to load themselves (possibly from multiple different formats).\n\nAnyhow, you\u0027re doing the work here and not me.",
+      "parentUuid": "1cf2de3e_23eb6257",
+      "range": {
+        "startLine": 114,
+        "startChar": 0,
+        "endLine": 115,
+        "endChar": 57
+      },
+      "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "546dde4e_50d6f799",
