@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "88e61856_e1b167b6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "60602ed4_b6e58d12",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 64
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "b32d030a_5881a80c",
@@ -43,6 +67,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "b8e48a00_8ebec568",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 36,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "I did not look into the undocumented or untested behavior.\n\n\nI think it\u0027s fine if we stay within what the configuration defines and is documented / tested.\n\n\nCan you give an example (does not have to be a valid config) to the scenario you are describing? \n\nIf it\u0027s important to keep the behavior i can perhaps try to turn it into a test, document it and consider it in the implementation.",
+      "parentUuid": "b32d030a_5881a80c",
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "31941cf8_ac49e7fd",
         "filename": "manager/manager.cpp",
         "patchSetId": 2
@@ -54,6 +96,30 @@
       "writtenOn": "2024-07-31T20:52:48Z",
       "side": 1,
       "message": "nit: auto?",
+      "range": {
+        "startLine": 46,
+        "startChar": 9,
+        "endLine": 46,
+        "endChar": 25
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "925fc01f_6d413286",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31941cf8_ac49e7fd",
       "range": {
         "startLine": 46,
         "startChar": 9,
@@ -87,6 +153,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "c09c3780_4d591935",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 74,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d50cf325_3766d335",
+      "range": {
+        "startLine": 74,
+        "startChar": 4,
+        "endLine": 74,
+        "endChar": 44
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "91522432_683a311b",
@@ -110,6 +200,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "d7ab4bd4_2f6447f3",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 88,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "91522432_683a311b",
+      "range": {
+        "startLine": 85,
+        "startChar": 0,
+        "endLine": 88,
+        "endChar": 13
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "66b42223_c7eeeea2",
@@ -123,6 +237,30 @@
       "writtenOn": "2024-07-31T20:52:48Z",
       "side": 1,
       "message": "Frankly, I feel like some of this change is just a matter of opinion.  `set_difference` more clearly expresses _what_ you are doing, despite the syntax for it being complicated.  Now I have to read the comments _and_ the code to see if they match.",
+      "range": {
+        "startLine": 95,
+        "startChar": 0,
+        "endLine": 103,
+        "endChar": 5
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01aaf4f1_daa3ed68",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Yes. If we are doing set operations, that is cool but when using the custom inserters, they are no longer simple.\n\nIn my opinion the proposed code is easier to read, and uses less state (getting rid of a class member).\n\nI try to have code use the least amount of state, it makes it easier to test.",
+      "parentUuid": "66b42223_c7eeeea2",
       "range": {
         "startLine": 95,
         "startChar": 0,
@@ -173,6 +311,48 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4a460d2e_08c005dc",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "fbe88f5a_b12fbee3",
+      "range": {
+        "startLine": 95,
+        "startChar": 51,
+        "endLine": 95,
+        "endChar": 58
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d9a689ea_8333bbea",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 95,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Wanted to make this public since it\u0027s a pure function. It\u0027s easier to unit-test a public function.",
+      "parentUuid": "911d1dde_98a8a3b8",
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "19ac27d1_6d00376a",
@@ -196,6 +376,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "7d774310_14ed5f3e",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 97,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "19ac27d1_6d00376a",
+      "range": {
+        "startLine": 96,
+        "startChar": 4,
+        "endLine": 97,
+        "endChar": 61
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ebf04d2e_e014a023",
@@ -209,6 +413,30 @@
       "writtenOn": "2024-07-31T20:52:48Z",
       "side": 1,
       "message": "nit: prefer a typedef for this.",
+      "range": {
+        "startLine": 157,
+        "startChar": 4,
+        "endLine": 157,
+        "endChar": 45
+      },
+      "revId": "70018641fba7dbf12f398bab9615d455457bd32a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "81c23d66_3784f24a",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "It\u0027s easier to read this way. When reading the code, people do not have to chase the indirection to find out what the type is.\n\nIs there a reason to prefer the typedef? Besides it being shorter.\n\nI mean we are not re-using this type all over the place. It\u0027s not a building block like LedAction is.",
+      "parentUuid": "ebf04d2e_e014a023",
       "range": {
         "startLine": 157,
         "startChar": 4,

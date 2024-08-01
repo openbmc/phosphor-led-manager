@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e49a3a13_2b285664",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-01T15:37:48Z",
+      "side": 1,
+      "message": "😞 cleaning up the commit message made gerrit choose the other change-id.\n\nSo i abandon this in favor of https://gerrit.openbmc.org/c/openbmc/phosphor-led-manager/+/73254",
+      "revId": "17996df99a575303627280aa2c9599e727a91ecf",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
