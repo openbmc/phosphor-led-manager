@@ -4,7 +4,7 @@
             "group": "bmc_booted",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_pwron0",
+                    "Name": "front_sys_pwron0_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
@@ -16,7 +16,7 @@
             "group": "power_on",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_pwron0",
+                    "Name": "front_sys_pwron0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -28,7 +28,7 @@
             "group": "partition_system_attention_indicator",
             "members": [
                 {
-                    "Name": "pca955x_front_check_log0",
+                    "Name": "front_check_log0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -40,7 +40,7 @@
             "group": "platform_system_attention_indicator",
             "members": [
                 {
-                    "Name": "pca955x_front_check_log0",
+                    "Name": "front_check_log0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -52,7 +52,7 @@
             "group": "enclosure_fault",
             "members": [
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -78,7 +78,7 @@
             "group": "enclosure_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -104,14 +104,14 @@
             "group": "fan0_fault",
             "members": [
                 {
-                    "Name": "pca955x_fan0",
+                    "Name": "fan0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -137,14 +137,14 @@
             "group": "fan0_identify",
             "members": [
                 {
-                    "Name": "pca955x_fan0",
+                    "Name": "fan0_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -170,14 +170,14 @@
             "group": "fan1_fault",
             "members": [
                 {
-                    "Name": "pca955x_fan1",
+                    "Name": "fan1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -203,14 +203,14 @@
             "group": "fan1_identify",
             "members": [
                 {
-                    "Name": "pca955x_fan1",
+                    "Name": "fan1_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -236,14 +236,14 @@
             "group": "fan2_fault",
             "members": [
                 {
-                    "Name": "pca955x_fan2",
+                    "Name": "fan2_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -269,14 +269,14 @@
             "group": "fan2_identify",
             "members": [
                 {
-                    "Name": "pca955x_fan2",
+                    "Name": "fan2_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -302,14 +302,14 @@
             "group": "fan4_fault",
             "members": [
                 {
-                    "Name": "pca955x_fan4",
+                    "Name": "fan4_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -335,14 +335,14 @@
             "group": "fan4_identify",
             "members": [
                 {
-                    "Name": "pca955x_fan4",
+                    "Name": "fan4_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -375,7 +375,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -408,7 +408,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -441,7 +441,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -474,7 +474,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -507,7 +507,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -540,7 +540,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -573,7 +573,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -606,7 +606,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -639,7 +639,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -672,7 +672,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -705,7 +705,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -738,7 +738,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -771,7 +771,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -804,7 +804,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -837,7 +837,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -870,7 +870,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -903,7 +903,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -936,7 +936,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -969,7 +969,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1002,7 +1002,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1035,7 +1035,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1068,7 +1068,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1101,7 +1101,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1134,7 +1134,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1167,7 +1167,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1200,7 +1200,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1233,7 +1233,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1266,7 +1266,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1299,7 +1299,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1332,7 +1332,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1365,7 +1365,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1398,7 +1398,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1431,7 +1431,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1464,7 +1464,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1497,7 +1497,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1530,7 +1530,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1570,7 +1570,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1610,7 +1610,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1650,7 +1650,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1690,7 +1690,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1730,7 +1730,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1770,7 +1770,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1810,7 +1810,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1850,7 +1850,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1883,7 +1883,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1916,7 +1916,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1949,7 +1949,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -1982,7 +1982,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2015,7 +2015,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2048,7 +2048,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2081,7 +2081,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2114,7 +2114,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2147,7 +2147,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2180,7 +2180,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2213,7 +2213,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2246,7 +2246,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2279,7 +2279,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2312,7 +2312,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2345,7 +2345,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2378,7 +2378,7 @@
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2404,14 +2404,14 @@
             "group": "nvme0_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme0",
+                    "Name": "nvme0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2437,14 +2437,14 @@
             "group": "nvme0_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme0",
+                    "Name": "nvme0_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2470,14 +2470,14 @@
             "group": "nvme1_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme1",
+                    "Name": "nvme1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2503,14 +2503,14 @@
             "group": "nvme1_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme1",
+                    "Name": "nvme1_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2536,14 +2536,14 @@
             "group": "nvme2_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme2",
+                    "Name": "nvme2_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2569,14 +2569,14 @@
             "group": "nvme2_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme2",
+                    "Name": "nvme2_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2602,14 +2602,14 @@
             "group": "nvme3_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme3",
+                    "Name": "nvme3_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2635,14 +2635,14 @@
             "group": "nvme3_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme3",
+                    "Name": "nvme3_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2668,14 +2668,14 @@
             "group": "nvme4_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme4",
+                    "Name": "nvme4_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2701,14 +2701,14 @@
             "group": "nvme4_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme4",
+                    "Name": "nvme4_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2734,14 +2734,14 @@
             "group": "nvme5_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme5",
+                    "Name": "nvme5_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2767,14 +2767,14 @@
             "group": "nvme5_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme5",
+                    "Name": "nvme5_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2800,14 +2800,14 @@
             "group": "nvme6_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme6",
+                    "Name": "nvme6_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2833,14 +2833,14 @@
             "group": "nvme6_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme6",
+                    "Name": "nvme6_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2866,14 +2866,14 @@
             "group": "nvme7_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme7",
+                    "Name": "nvme7_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2899,14 +2899,14 @@
             "group": "nvme7_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme7",
+                    "Name": "nvme7_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2932,14 +2932,14 @@
             "group": "nvme8_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme8",
+                    "Name": "nvme8_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2965,14 +2965,14 @@
             "group": "nvme8_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme8",
+                    "Name": "nvme8_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -2998,14 +2998,14 @@
             "group": "nvme9_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme9",
+                    "Name": "nvme9_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3031,14 +3031,14 @@
             "group": "nvme9_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme9",
+                    "Name": "nvme9_pca955x",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3064,14 +3064,14 @@
             "group": "nvme10_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme10",
+                    "Name": "nvme1_pca955x0",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3097,14 +3097,14 @@
             "group": "nvme10_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme10",
+                    "Name": "nvme1_pca955x0",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3130,14 +3130,14 @@
             "group": "nvme11_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme11",
+                    "Name": "nvme1_pca955x1",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3163,14 +3163,14 @@
             "group": "nvme11_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme11",
+                    "Name": "nvme1_pca955x1",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3196,14 +3196,14 @@
             "group": "nvme12_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme12",
+                    "Name": "nvme1_pca955x2",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3229,14 +3229,14 @@
             "group": "nvme12_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme12",
+                    "Name": "nvme1_pca955x2",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3262,14 +3262,14 @@
             "group": "nvme13_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme13",
+                    "Name": "nvme1_pca955x3",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3295,14 +3295,14 @@
             "group": "nvme13_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme13",
+                    "Name": "nvme1_pca955x3",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3328,14 +3328,14 @@
             "group": "nvme14_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme14",
+                    "Name": "nvme1_pca955x4",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3361,14 +3361,14 @@
             "group": "nvme14_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme14",
+                    "Name": "nvme1_pca955x4",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3394,14 +3394,14 @@
             "group": "nvme15_fault",
             "members": [
                 {
-                    "Name": "pca955x_nvme15",
+                    "Name": "nvme1_pca955x5",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_enc_fault1",
+                    "Name": "front_enc_fault1_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3427,14 +3427,14 @@
             "group": "nvme15_identify",
             "members": [
                 {
-                    "Name": "pca955x_nvme15",
+                    "Name": "nvme1_pca955x5",
                     "Action": "Blink",
                     "DutyOn": 50,
                     "Period": 1000,
                     "Priority": "Blink"
                 },
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3460,7 +3460,7 @@
             "group": "connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3486,7 +3486,7 @@
             "group": "connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3512,7 +3512,7 @@
             "group": "connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3538,7 +3538,7 @@
             "group": "connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3564,7 +3564,7 @@
             "group": "connector4_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3590,7 +3590,7 @@
             "group": "connector5_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3616,7 +3616,7 @@
             "group": "connector6_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3642,7 +3642,7 @@
             "group": "connector7_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3668,7 +3668,7 @@
             "group": "connector8_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3694,7 +3694,7 @@
             "group": "connector9_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3720,7 +3720,7 @@
             "group": "connector10_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3746,7 +3746,7 @@
             "group": "connector11_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3772,7 +3772,7 @@
             "group": "connector12_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3798,7 +3798,7 @@
             "group": "connector13_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3824,7 +3824,7 @@
             "group": "connector14_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3850,7 +3850,7 @@
             "group": "connector15_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3876,7 +3876,7 @@
             "group": "connector16_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3902,7 +3902,7 @@
             "group": "connector17_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3928,7 +3928,7 @@
             "group": "connector18_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3954,7 +3954,7 @@
             "group": "connector19_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -3980,7 +3980,7 @@
             "group": "connector20_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4006,7 +4006,7 @@
             "group": "connector21_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4032,7 +4032,7 @@
             "group": "rdx0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4058,7 +4058,7 @@
             "group": "media0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4084,7 +4084,7 @@
             "group": "rdx_power_connector_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4110,7 +4110,7 @@
             "group": "rdx_usb_connector_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4136,7 +4136,7 @@
             "group": "ethernet0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4162,7 +4162,7 @@
             "group": "ethernet1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4188,7 +4188,7 @@
             "group": "usb0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4214,7 +4214,7 @@
             "group": "displayport0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4240,7 +4240,7 @@
             "group": "usb1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4266,7 +4266,7 @@
             "group": "c0_cxp_top_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4292,7 +4292,7 @@
             "group": "c0_cxp_bot_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4318,7 +4318,7 @@
             "group": "c3_cxp_top_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4344,7 +4344,7 @@
             "group": "c3_cxp_bot_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4370,7 +4370,7 @@
             "group": "c4_cxp_top_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4396,7 +4396,7 @@
             "group": "c4_cxp_bot_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4422,7 +4422,7 @@
             "group": "c10_cxp_top_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4448,7 +4448,7 @@
             "group": "c10_cxp_bot_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4474,7 +4474,7 @@
             "group": "c10_connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4500,7 +4500,7 @@
             "group": "c10_connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4526,7 +4526,7 @@
             "group": "c10_connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4552,7 +4552,7 @@
             "group": "c10_connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4578,7 +4578,7 @@
             "group": "c11_connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4604,7 +4604,7 @@
             "group": "c11_connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4630,7 +4630,7 @@
             "group": "c11_connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4656,7 +4656,7 @@
             "group": "c11_connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4682,7 +4682,7 @@
             "group": "c8_connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4708,7 +4708,7 @@
             "group": "c8_connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4734,7 +4734,7 @@
             "group": "c8_connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4760,7 +4760,7 @@
             "group": "c8_connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4786,7 +4786,7 @@
             "group": "dp0_connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4812,7 +4812,7 @@
             "group": "dp0_connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4838,7 +4838,7 @@
             "group": "dp0_connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4864,7 +4864,7 @@
             "group": "dp0_connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4890,7 +4890,7 @@
             "group": "dp0_connector4_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4916,7 +4916,7 @@
             "group": "dp0_connector5_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4942,7 +4942,7 @@
             "group": "dp1_connector0_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4968,7 +4968,7 @@
             "group": "dp1_connector1_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -4994,7 +4994,7 @@
             "group": "dp1_connector2_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -5020,7 +5020,7 @@
             "group": "dp1_connector3_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -5046,7 +5046,7 @@
             "group": "dp1_connector4_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
@@ -5072,7 +5072,7 @@
             "group": "dp1_connector5_identify",
             "members": [
                 {
-                    "Name": "pca955x_front_sys_id0",
+                    "Name": "front_sys_id0_pca955x",
                     "Action": "On",
                     "DutyOn": 50,
                     "Period": 0,
