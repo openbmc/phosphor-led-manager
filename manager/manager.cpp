@@ -166,10 +166,29 @@ int Manager::drivePhysicalLED(const std::string& objPath, Layout::Action action,
         PropertyValue actionValue{getPhysicalAction(action)};
         dBusHandler.setProperty(objPath, phyLedIntf, "State", actionValue);
     }
+    catch (const sdbusplus::exception::SdBusError& e)
+    {
+        std::string_view errorMessage = e.get_error()->name;
+        if (errorMessage ==
+            std::string_view(
+                "xyz.openbmc_project.Common.Error.ResourceNotFound"))
+        {
+            lg2::warning("LED not found, will ignore PATH:{PATH}", "PATH",
+                         objPath);
+            // Just fall to exit and return success
+        }
+        else
+        {
+            lg2::error(
+                "exception:SdBusError: Unhandled error setting physical LED, ERROR = {ERROR}, OBJECT_PATH = {PATH}",
+                "ERROR", e, "PATH", objPath);
+            return -1;
+        }
+    }
     catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
-            "Error setting property for physical LED, ERROR = {ERROR}, OBJECT_PATH = {PATH}",
+            "exception: Error setting property for physical LED, ERROR = {ERROR}, OBJECT_PATH = {PATH}",
             "ERROR", e, "PATH", objPath);
         return -1;
     }
