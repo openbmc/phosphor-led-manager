@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "50d236f5_59002277",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 1000348
+      },
+      "writtenOn": "2024-08-14T12:33:59Z",
+      "side": 1,
+      "message": "we have retry mechanism for this as this resource might come up later and possibly just that it is not up at this time. so it should return a failure for retry.",
+      "revId": "b0be6e6e7ea435cc6aff0526790262f40b644c1c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
