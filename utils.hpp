@@ -102,9 +102,8 @@ class DBusHandler
      *
      *  @return std::vector<std::string> vector of subtree paths
      */
-    const std::vector<std::string>
-        getSubTreePaths(const std::string& objectPath,
-                        const std::string& interface);
+    const std::vector<std::string> getSubTreePaths(
+        const std::string& objectPath, const std::string& interface);
 };
 
 } // namespace utils

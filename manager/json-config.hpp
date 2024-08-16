@@ -70,17 +70,17 @@ class JsonConfig
      */
     bool filePathExists(const std::vector<std::string>& names)
     {
-        auto it = std::find_if(names.begin(), names.end(),
-                               [this](const auto& name) {
-            auto configFileName = name + ".json";
-            auto configFilePath = fs::path{confBasePath} / configFileName;
-            if (fs::exists(configFilePath))
-            {
-                confFile = configFilePath;
-                return true;
-            }
-            return false;
-        });
+        auto it =
+            std::find_if(names.begin(), names.end(), [this](const auto& name) {
+                auto configFileName = name + ".json";
+                auto configFilePath = fs::path{confBasePath} / configFileName;
+                if (fs::exists(configFilePath))
+                {
+                    confFile = configFilePath;
+                    return true;
+                }
+                return false;
+            });
         return it == names.end() ? false : true;
     }
 
@@ -160,8 +160,8 @@ class JsonConfig
         try
         {
             // Get all objects implementing the compatible interface
-            auto objects = dBusHandler.getSubTreePaths("/",
-                                                       confCompatibleInterface);
+            auto objects =
+                dBusHandler.getSubTreePaths("/", confCompatibleInterface);
             for (const auto& path : objects)
             {
                 try

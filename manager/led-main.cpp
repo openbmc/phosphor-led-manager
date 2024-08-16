@@ -80,9 +80,9 @@ int main(int argc, char** argv)
     /** Now create so many dbus objects as there are groups */
     std::ranges::transform(systemLedMap, std::back_inserter(groups),
                            [&bus, &manager, serializePtr](auto& grp) {
-        return std::make_unique<phosphor::led::Group>(bus, grp.first, manager,
-                                                      serializePtr);
-    });
+                               return std::make_unique<phosphor::led::Group>(
+                                   bus, grp.first, manager, serializePtr);
+                           });
 
     // Attach the bus to sd_event to service user requests
     bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);

@@ -37,9 +37,8 @@ const std::string DBusHandler::getService(const std::string& path,
 }
 
 // Get all properties
-const PropertyMap
-    DBusHandler::getAllProperties(const std::string& objectPath,
-                                  const std::string& interface) const
+const PropertyMap DBusHandler::getAllProperties(
+    const std::string& objectPath, const std::string& interface) const
 {
     PropertyMap properties;
 
@@ -61,10 +60,9 @@ const PropertyMap
 }
 
 // Get the property name
-const PropertyValue
-    DBusHandler::getProperty(const std::string& objectPath,
-                             const std::string& interface,
-                             const std::string& propertyName) const
+const PropertyValue DBusHandler::getProperty(
+    const std::string& objectPath, const std::string& interface,
+    const std::string& propertyName) const
 {
     PropertyValue value{};
 
@@ -86,10 +84,9 @@ const PropertyValue
 }
 
 // Set property
-void DBusHandler::setProperty(const std::string& objectPath,
-                              const std::string& interface,
-                              const std::string& propertyName,
-                              const PropertyValue& value) const
+void DBusHandler::setProperty(
+    const std::string& objectPath, const std::string& interface,
+    const std::string& propertyName, const PropertyValue& value) const
 {
     auto& bus = DBusHandler::getBus();
     auto service = getService(objectPath, interface);
@@ -105,9 +102,8 @@ void DBusHandler::setProperty(const std::string& objectPath,
     bus.call_noreply(method);
 }
 
-const std::vector<std::string>
-    DBusHandler::getSubTreePaths(const std::string& objectPath,
-                                 const std::string& interface)
+const std::vector<std::string> DBusHandler::getSubTreePaths(
+    const std::string& objectPath, const std::string& interface)
 {
     std::vector<std::string> paths;
 
