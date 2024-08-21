@@ -16,6 +16,23 @@
       "message": "This change is used to be able to define ```Off``` state as the priority state.\n\nIf a group is active that wants an LED to be off, that will be done if that\u0027s the priority state.\n\nI see this change as uncontroversial, naturally extending the Priority concept to the ```Off``` state.\n\nAs seen by the lack of change in tests, there should be no change in behavior for existing configurations. There is only a case added in the tests to cover this new possibility.",
       "revId": "3144168d2c51efb90268868c835fd180ee94d200",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1f8b6fc_9961d0a2",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-21T11:13:54Z",
+      "side": 1,
+      "message": "Can we move the assert here?  Not much point in duplicate string compares.",
+      "revId": "3144168d2c51efb90268868c835fd180ee94d200",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
