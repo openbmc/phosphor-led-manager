@@ -105,6 +105,24 @@
       "parentUuid": "546dde4e_50d6f799",
       "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ce2e4fd0_62c7ab8f",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 163,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-08-21T03:04:11Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "3d6bbb92_a64ea759",
+      "revId": "b140eb1e6631cab5481cfcc9fddfbfd7e9ac2dd6",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
