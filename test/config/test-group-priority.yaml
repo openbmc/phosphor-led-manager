@@ -1,10 +1,13 @@
 group1:
+    Priority: 1
     led1:
         Action: "On"
 group2:
+    Priority: 2
     led1:
         Action: "Off"
 group3:
+    Priority: 3
     led1:
         Action: "Blink"
         DutyOn: 50
