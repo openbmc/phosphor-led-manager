@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "05b3896b_25428894",
+        "filename": "test/led-test-map.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 223,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-21T08:28:47Z",
+      "side": 1,
+      "message": "sorry about the huge diff caused by these GroupMap literals.\n\nThey have to accomodate the group priority now.\n\nOther than that there should be no change on them.",
+      "revId": "7ba70c820ed1ff5c19ea2af337ecad82732f383d",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
