@@ -127,9 +127,9 @@ void validatePriority(
     }
 }
 
-static void loadJsonConfigV1GroupMember(const Json& member,
-                                        PriorityMap& priorityMap,
-                                        phosphor::led::ActionSet& ledActions)
+static void loadJsonConfigV1GroupMember(
+    const Json& member, PriorityMap& priorityMap,
+    phosphor::led::ActionSet& ledActions, const bool hasGroupPriority)
 {
     auto name = member.value("Name", "");
     auto action = getAction(member.value("Action", ""));
@@ -142,6 +142,22 @@ static void loadJsonConfigV1GroupMember(const Json& member,
     if (!priorityStr.empty())
     {
         priority = getAction(priorityStr);
+    }
+
+    if (priority != std::nullopt && hasGroupPriority)
+    {
+        lg2::error("Cannot mix group priority and led priority for LED: {NAME}",
+                   "NAME", name);
+        throw std::runtime_error(
+            "Cannot mix group priority and led priority for LED: " + name);
+    }
+
+    if (priority == std::nullopt && !hasGroupPriority)
+    {
+        lg2::error("Need valid led priority or group priority for LED: {NAME}",
+                   "NAME", name);
+        throw std::runtime_error(
+            "Need valid led priority or group priority for LED: " + name);
     }
 
     // Same LEDs can be part of multiple groups. However, their
@@ -170,11 +186,14 @@ static void loadJsonConfigV1Group(const Json& entry,
 
     lg2::debug("config for '{GROUP}'", "GROUP", groupName);
 
+    const bool hasGroupPriority = entry.contains("Priority");
+
     phosphor::led::ActionSet ledActions{};
     phosphor::led::Layout::GroupLayout groupLayout{};
     for (const auto& member : members)
     {
-        loadJsonConfigV1GroupMember(member, priorityMap, ledActions);
+        loadJsonConfigV1GroupMember(member, priorityMap, ledActions,
+                                    hasGroupPriority);
     }
 
     // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
