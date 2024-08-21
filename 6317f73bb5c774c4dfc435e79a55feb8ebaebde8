@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c5eef7c_62335672",
+        "filename": "test/utest-led-json.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 29,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-21T08:20:09Z",
+      "side": 1,
+      "message": "This is something we can discuss in review as the default has changed. Before the default led priority has been ```Blink``` and  now it\u0027s become std::nullopt, meaning no led priority is assumed by default.\n\nWe can change it back if needed but i would need feedback on that. \n\nThe benefit of this is making configuration more explicit, as ```Blink``` Priority is an arbitrary choice.\n\nThe downside is the changed behavior.",
+      "revId": "6317f73bb5c774c4dfc435e79a55feb8ebaebde8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
