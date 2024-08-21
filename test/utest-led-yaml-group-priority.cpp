@@ -88,11 +88,13 @@ TEST(YamlGroupPriorityTest, assertYAMLGroupPriority)
         if (led.name == "led1")
         {
             EXPECT_EQ(led.action, Action::On);
+            EXPECT_EQ(led.priority, std::nullopt);
             found++;
         }
         if (led.name == "led2")
         {
             EXPECT_EQ(led.action, Action::Off);
+            EXPECT_EQ(led.priority, std::nullopt);
             found++;
         }
     }
