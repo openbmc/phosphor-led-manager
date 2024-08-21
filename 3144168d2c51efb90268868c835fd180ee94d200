@@ -33,6 +33,24 @@
       "message": "Can we move the assert here?  Not much point in duplicate string compares.",
       "revId": "3144168d2c51efb90268868c835fd180ee94d200",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8a3a682_94442032",
+        "filename": "manager/json-parser.hpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 77,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-21T12:24:00Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "f1f8b6fc_9961d0a2",
+      "revId": "3144168d2c51efb90268868c835fd180ee94d200",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
