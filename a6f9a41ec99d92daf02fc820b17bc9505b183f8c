@@ -1,0 +1,44 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "53911cde_eebf5b9d",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-21T10:58:38Z",
+      "side": 1,
+      "message": "nit: You\u0027re effectively doing two lookups here for the same thing.  You\u0027re better to use a find and save the iterator.",
+      "range": {
+        "startLine": 21,
+        "startChar": 0,
+        "endLine": 27,
+        "endChar": 47
+      },
+      "revId": "a6f9a41ec99d92daf02fc820b17bc9505b183f8c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a4025397_ce6dc8e3",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-21T10:58:38Z",
+      "side": 1,
+      "message": "nit: this is now unused?",
+      "revId": "a6f9a41ec99d92daf02fc820b17bc9505b183f8c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
