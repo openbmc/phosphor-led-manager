@@ -1,5 +1,6 @@
 #include "config.h"
 
+#include "config-validator.hpp"
 #include "grouplayout.hpp"
 #include "json-config.hpp"
 #include "ledlayout.hpp"
@@ -76,59 +77,7 @@ phosphor::led::Layout::Action getAction(const std::string& action)
     return phosphor::led::Layout::Action::Blink;
 }
 
-static std::string priorityToString(
-    const std::optional<phosphor::led::Layout::Action>& priority)
-{
-    if (!priority.has_value())
-    {
-        return "none";
-    }
-    switch (priority.value())
-    {
-        case phosphor::led::Layout::Action::Off:
-            return "Off";
-        case phosphor::led::Layout::Action::On:
-            return "On";
-        case phosphor::led::Layout::Action::Blink:
-            return "Blink";
-    }
-    return "?";
-}
-
-/** @brief Validate the Priority of an LED is same across ALL groups
- *
- *  @param[in] name - led name member of each group
- *  @param[in] priority - member priority of each group
- *  @param[out] priorityMap - std::unordered_map, key:name, value:priority
- *
- *  @return
- */
-void validatePriority(
-    const std::string& name,
-    const std::optional<phosphor::led::Layout::Action>& priority,
-    PriorityMap& priorityMap)
-{
-    auto iter = priorityMap.find(name);
-    if (iter == priorityMap.end())
-    {
-        priorityMap.emplace(name, priority);
-        return;
-    }
-
-    if (iter->second != priority)
-    {
-        lg2::error(
-            "Priority of LED is not same across all, Name = {NAME}, Old Priority = {OLD_PRIO}, New Priority = {NEW_PRIO}",
-            "NAME", name, "OLD_PRIO", priorityToString(iter->second),
-            "NEW_PRIO", priorityToString(priority));
-
-        throw std::runtime_error(
-            "Priority of at least one LED is not same across groups");
-    }
-}
-
 static void loadJsonConfigV1GroupMember(const Json& member,
-                                        PriorityMap& priorityMap,
                                         phosphor::led::ActionSet& ledActions)
 {
     auto name = member.value("Name", "");
@@ -144,18 +93,13 @@ static void loadJsonConfigV1GroupMember(const Json& member,
         priority = getAction(priorityStr);
     }
 
-    // Same LEDs can be part of multiple groups. However, their
-    // priorities across groups need to match.
-    validatePriority(name, priority, priorityMap);
-
     phosphor::led::Layout::LedAction ledAction{name, action, dutyOn, period,
                                                priority};
     ledActions.emplace(ledAction);
 }
 
 static void loadJsonConfigV1Group(const Json& entry,
-                                  phosphor::led::GroupMap& ledMap,
-                                  PriorityMap& priorityMap)
+                                  phosphor::led::GroupMap& ledMap)
 {
     const Json empty{};
 
@@ -166,15 +110,16 @@ static void loadJsonConfigV1Group(const Json& entry,
     tmpPath /= groupName;
     auto objpath = tmpPath.string();
     auto members = entry.value("members", empty);
-    int priority = entry.value("Priority", 0);
 
     lg2::debug("config for '{GROUP}'", "GROUP", groupName);
+
+    int priority = entry.value("Priority", 0);
 
     phosphor::led::ActionSet ledActions{};
     phosphor::led::Layout::GroupLayout groupLayout{};
     for (const auto& member : members)
     {
-        loadJsonConfigV1GroupMember(member, priorityMap, ledActions);
+        loadJsonConfigV1GroupMember(member, ledActions);
     }
 
     // Generated an std::unordered_map of LedGroupNames to std::set of LEDs
@@ -192,7 +137,6 @@ static void loadJsonConfigV1Group(const Json& entry,
 const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 {
     phosphor::led::GroupMap ledMap{};
-    PriorityMap priorityMap{};
 
     // define the default JSON as empty
     const Json empty{};
@@ -200,7 +144,7 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 
     for (const auto& entry : leds)
     {
-        loadJsonConfigV1Group(entry, ledMap, priorityMap);
+        loadJsonConfigV1Group(entry, ledMap);
     }
 
     return ledMap;

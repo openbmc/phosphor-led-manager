@@ -6,16 +6,30 @@ import yaml
 from inflection import underscore
 
 
-def check_led_priority(led_name, value, priority_dict):
+def config_error(ofile, led_name, group_name, message):
+    ofile.close()
+    os.remove(ofile.name)
+    raise ValueError(
+        "Invalid Configuration for LED ["
+        + led_name
+        + "] in Group ["
+        + group_name
+        + "]: "
+        + message
+    )
+
+
+def check_led_priority(led_name, group, value, priority_dict):
 
     if led_name in priority_dict:
         if value != priority_dict[led_name]:
             # Priority for a particular LED needs to stay SAME
             # across all groups
-            ofile.close()
-            os.remove(ofile.name)
-            raise ValueError(
-                "Priority for [" + led_name + "] is NOT same across all groups"
+            config_error(
+                ofile,
+                led_name,
+                group,
+                "Priority is NOT same across all groups",
             )
     else:
         priority_dict[led_name] = value
@@ -23,20 +37,41 @@ def check_led_priority(led_name, value, priority_dict):
     return 0
 
 
-def generate_file_single_led(ifile, led_name, list_dict, priority_dict, ofile):
+def led_action_literal(action):
+    if action == "":
+        return "std::nullopt"
 
-    value = list_dict.get("Priority")
+    return "phosphor::led::Layout::Action::" + str(action)
 
-    check_led_priority(led_name, value, priority_dict)
 
-    action = "phosphor::led::Layout::Action::" + str(
-        list_dict.get("Action", "Off")
-    )
+def generate_file_single_led(
+    ifile, led_name, list_dict, priority_dict, ofile, has_group_priority, group
+):
+
+    has_led_priority = "Priority" in list_dict
+
+    if has_group_priority and has_led_priority:
+        config_error(
+            ofile,
+            led_name,
+            group,
+            "cannot mix group priority with led priority",
+        )
+
+    if (not has_group_priority) and (not has_led_priority):
+        config_error(
+            ofile, led_name, group, "no group priority or led priority defined"
+        )
+
+    led_priority = list_dict.get("Priority", "")
+
+    if has_led_priority:
+        check_led_priority(led_name, group, led_priority, priority_dict)
+
+    action = led_action_literal(list_dict.get("Action", "Off"))
     dutyOn = str(list_dict.get("DutyOn", 50))
     period = str(list_dict.get("Period", 0))
-    priority = "phosphor::led::Layout::Action::" + str(
-        list_dict.get("Priority", "Blink")
-    )
+    priority = led_action_literal(led_priority)
 
     ofile.write('        {"' + underscore(led_name) + '",')
     ofile.write(action + ",")
@@ -75,7 +110,13 @@ def generate_file_single_group(ifile, group, priority_dict, ofile):
 
     for led_name, list_dict in list(led_dict.items()):
         generate_file_single_led(
-            ifile, led_name, list_dict, priority_dict, ofile
+            ifile,
+            led_name,
+            list_dict,
+            priority_dict,
+            ofile,
+            has_group_priority,
+            group,
         )
 
     ofile.write("   }}},\n")
