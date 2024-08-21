@@ -4,6 +4,7 @@ sources = [
     'manager.cpp',
     'serialize.cpp',
     '../utils.cpp',
+    'config-validator.cpp',
 ]
 
 if get_option('use-json').disabled()

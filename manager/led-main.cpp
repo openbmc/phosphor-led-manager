@@ -42,6 +42,8 @@ int main(int argc, char** argv)
     auto systemLedMap = getSystemLedMap(configFile);
 #endif
 
+    phosphor::led::validateConfigV1(systemLedMap);
+
     /** @brief Group manager object */
     phosphor::led::Manager manager(bus, systemLedMap, event);
 

@@ -5,7 +5,8 @@
             "members": [
                 {
                     "Name": "heartbeat",
-                    "Action": "On"
+                    "Action": "On",
+                    "Priority": "Blink"
                 }
             ]
         },
@@ -36,13 +37,15 @@
                     "Name": "front_id",
                     "Action": "Blink",
                     "DutyOn": 50,
-                    "Period": 1000
+                    "Period": 1000,
+                    "Priority": "Blink"
                 },
                 {
                     "Name": "rear_id",
                     "Action": "Blink",
                     "DutyOn": 50,
-                    "Period": 1000
+                    "Period": 1000,
+                    "Priority": "Blink"
                 }
             ]
         }

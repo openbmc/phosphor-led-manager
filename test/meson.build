@@ -26,6 +26,7 @@ test_yamls = [
 
 test_sources = [
   '../manager/manager.cpp',
+  '../manager/config-validator.cpp',
   '../utils.cpp',
 ]
 
@@ -50,6 +51,7 @@ tests = [
   'utest-group-priority.cpp',
   'utest-led-yaml-group-priority.cpp',
   'utest-led-yaml-led-priority.cpp',
+  'utest-config-validator.cpp'
 ]
 if get_option('persistent-led-asserted').allowed()
   test_sources += [
