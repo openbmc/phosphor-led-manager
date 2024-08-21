@@ -39,6 +39,24 @@
       "message": "nit: this is now unused?",
       "revId": "a6f9a41ec99d92daf02fc820b17bc9505b183f8c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "681e33a9_3ee8274c",
+        "filename": "manager/manager.hpp",
+        "patchSetId": 2
+      },
+      "lineNbr": 40,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-08-21T11:59:12Z",
+      "side": 1,
+      "message": "probably. I thought there would be some error in CI in those cases but apparently not. Can add it to my to-do to remove this or enable the check.",
+      "parentUuid": "a4025397_ce6dc8e3",
+      "revId": "a6f9a41ec99d92daf02fc820b17bc9505b183f8c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
