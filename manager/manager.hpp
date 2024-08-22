@@ -146,7 +146,7 @@ class Manager
     sdbusplus::bus_t& bus;
 
     /** Map of physical LED path to service name */
-    std::unordered_map<std::string, std::string> phyLeds{};
+    std::unordered_map<std::string, std::string> phyLeds;
 
     /** DBusHandler class handles the D-Bus operations */
     DBusHandler dBusHandler;
