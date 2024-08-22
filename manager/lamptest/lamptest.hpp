@@ -39,7 +39,7 @@ class LampTest
      */
     LampTest(const sdeventplus::Event& event, Manager& manager) :
         timer(event, [this](auto&) { timeOutHandler(); }), manager(manager),
-        groupObj(NULL)
+        groupObj(nullptr)
     {
         // Get the force update and/or skipped physical LEDs names from the
         // lamp-test-led-overrides.json file during lamp
