@@ -208,7 +208,7 @@ void Manager::driveLEDs(ActionSet& ledsAssert, ActionSet& ledsDeAssert)
 
 // Calls into driving physical LED post choosing the action
 int Manager::drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                              uint8_t dutyOn, const uint16_t period)
+                              uint8_t dutyOn, uint16_t period)
 {
     try
     {
