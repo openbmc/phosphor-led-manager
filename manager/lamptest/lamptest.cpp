@@ -249,7 +249,7 @@ void LampTest::timeOutHandler()
 
 bool LampTest::requestHandler(Group* group, bool value)
 {
-    if (groupObj == NULL)
+    if (groupObj == nullptr)
     {
         groupObj = std::move(group);
     }
