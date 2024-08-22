@@ -49,7 +49,7 @@ static auto getNewMapWithGroupPriorities(
     for (const auto it : sorted)
     {
         // apply all led actions of that group to the map
-        for (Layout::LedAction action : it->actionSet)
+        for (const Layout::LedAction& action : it->actionSet)
         {
             newState[action.name] = action;
         }
@@ -65,7 +65,7 @@ static std::map<LedName, Layout::LedAction> getNewMapWithLEDPriorities(
     for (const Layout::GroupLayout* it : assertedGroups)
     {
         // apply all led actions of that group to the map
-        for (Layout::LedAction action : it->actionSet)
+        for (const Layout::LedAction& action : it->actionSet)
         {
             applyGroupAction(newState, action);
         }
