@@ -91,7 +91,7 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
         return;
     }
 
-    auto pos = path.rfind("/");
+    auto pos = path.rfind('/');
     if (pos == std::string::npos)
     {
         using namespace xyz::openbmc_project::Common;
