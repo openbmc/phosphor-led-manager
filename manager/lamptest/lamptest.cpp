@@ -49,8 +49,7 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
             }
         }
 
-        updatedLEDsDuringLampTest.emplace(
-            std::make_pair(ledsAssert, ledsDeAssert));
+        updatedLEDsDuringLampTest.emplace(ledsAssert, ledsDeAssert);
         return true;
     }
     return false;
