@@ -251,7 +251,7 @@ bool LampTest::requestHandler(Group* group, bool value)
 {
     if (groupObj == nullptr)
     {
-        groupObj = std::move(group);
+        groupObj = group;
     }
 
     if (value)
