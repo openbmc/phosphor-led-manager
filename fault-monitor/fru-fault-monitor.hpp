@@ -47,8 +47,7 @@ class Remove
     Remove(sdbusplus::bus_t& bus, const std::string& path) :
         inventoryPath(path),
         matchRemoved(bus, match(path),
-                     std::bind(std::mem_fn(&Remove::removed), this,
-                               std::placeholders::_1))
+                     [this](sdbusplus::message_t& m) { removed(m); })
     {
         // Do nothing
     }
@@ -99,12 +98,11 @@ class Add
      *  @param[in] bus -  The Dbus bus object
      */
     explicit Add(sdbusplus::bus_t& bus) :
-        matchCreated(
-            bus,
-            sdbusplus::bus::match::rules::interfacesAdded() +
-                sdbusplus::bus::match::rules::path_namespace(
-                    "/xyz/openbmc_project/logging"),
-            std::bind(std::mem_fn(&Add::created), this, std::placeholders::_1))
+        matchCreated(bus,
+                     sdbusplus::bus::match::rules::interfacesAdded() +
+                         sdbusplus::bus::match::rules::path_namespace(
+                             "/xyz/openbmc_project/logging"),
+                     [this](sdbusplus::message_t& m) { created(m); })
     {
         processExistingCallouts(bus);
     }
