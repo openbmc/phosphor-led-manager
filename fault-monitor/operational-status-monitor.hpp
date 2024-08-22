@@ -47,8 +47,7 @@ class Monitor
                     "sender='xyz.openbmc_project.Inventory.Manager', "
                     "arg0namespace='xyz.openbmc_project.State.Decorator."
                     "OperationalStatus'",
-                    std::bind(std::mem_fn(&Monitor::matchHandler), this,
-                              std::placeholders::_1))
+                    [this](sdbusplus::message_t& m) { matchHandler(m); })
 
     {}
 

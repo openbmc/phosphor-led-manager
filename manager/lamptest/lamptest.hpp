@@ -38,8 +38,8 @@ class LampTest
      * @param[in] manager - reference to manager instance
      */
     LampTest(const sdeventplus::Event& event, Manager& manager) :
-        timer(event, std::bind(std::mem_fn(&LampTest::timeOutHandler), this)),
-        manager(manager), groupObj(NULL)
+        timer(event, [this](auto&) { timeOutHandler(); }), manager(manager),
+        groupObj(NULL)
     {
         // Get the force update and/or skipped physical LEDs names from the
         // lamp-test-led-overrides.json file during lamp
