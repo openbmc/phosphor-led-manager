@@ -17,10 +17,7 @@ class LedTest : public ::testing::Test
     {
         // Nothing here
     }
-    ~LedTest()
-    {
-        // Leaving up to auto cleanup.
-    }
+    ~LedTest() = default;
 };
 
 static void assertMap(std::map<LedName, Layout::LedAction> map,
