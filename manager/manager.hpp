@@ -149,9 +149,6 @@ class Manager
     /** Map of physical LED path to service name */
     std::unordered_map<std::string, std::string> phyLeds{};
 
-    /** DBusHandler class handles the D-Bus operations */
-    DBusHandler dBusHandler;
-
     /** @brief Pointers to groups that are in asserted state */
     std::set<const Layout::GroupLayout*> assertedGroups;
 

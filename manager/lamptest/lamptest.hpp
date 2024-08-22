@@ -88,9 +88,6 @@ class LampTest
     /** @brief Reference to Manager object */
     Manager& manager;
 
-    /** DBusHandler class handles the D-Bus operations */
-    DBusHandler dBusHandler;
-
     /** @brief Pointer to Group object */
     Group* groupObj;
 
