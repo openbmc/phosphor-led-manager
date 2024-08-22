@@ -70,14 +70,17 @@ int main(int argc, char** argv)
 
     groups.emplace_back(std::make_unique<phosphor::led::Group>(
         bus, LAMP_TEST_OBJECT, manager, serializePtr,
-        std::bind(std::mem_fn(&phosphor::led::LampTest::requestHandler),
-                  &lampTest, std::placeholders::_1, std::placeholders::_2)));
+        [&lampTest](auto&& arg1, auto&& arg2) {
+            return lampTest.requestHandler(std::forward<decltype(arg1)>(arg1),
+                                           std::forward<decltype(arg2)>(arg2));
+        }));
 
     // Register a lamp test method in the manager class, and call this method
     // when the lamp test is started
-    manager.setLampTestCallBack(
-        std::bind(std::mem_fn(&phosphor::led::LampTest::processLEDUpdates),
-                  &lampTest, std::placeholders::_1, std::placeholders::_2));
+    manager.setLampTestCallBack([&lampTest](auto&& arg1, auto&& arg2) {
+        return lampTest.processLEDUpdates(std::forward<decltype(arg1)>(arg1),
+                                          std::forward<decltype(arg2)>(arg2));
+    });
 #endif
 
     /** Now create so many dbus objects as there are groups */
