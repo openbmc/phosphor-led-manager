@@ -131,7 +131,7 @@ class Manager
      *  @return:              -  0: success, -1: LED set failed
      */
     int drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                         uint8_t dutyOn, const uint16_t period);
+                         uint8_t dutyOn, uint16_t period);
 
     /** @brief Set lamp test callback when enabled lamp test.
      *
