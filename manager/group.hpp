@@ -30,8 +30,8 @@ class Group : public GroupInherit
     ~Group() = default;
     Group(const Group&) = delete;
     Group& operator=(const Group&) = delete;
-    Group(Group&&) = default;
-    Group& operator=(Group&&) = default;
+    Group(Group&&) = delete;
+    Group& operator=(Group&&) = delete;
 
     /** @brief Constructs LED Group
      *
