@@ -59,7 +59,7 @@ TEST_F(LedTest, assertOneGroup)
     assertedGroups.insert(&mygroup);
 
     std::map<LedName, Layout::LedAction> map =
-        manager.getNewMap(assertedGroups);
+        phosphor::led::Manager::getNewMap(assertedGroups);
 
     assertMap(map, {
                        {"led1", Layout::Action::On},
@@ -107,7 +107,7 @@ TEST_F(LedTest, assertMultipleGroups)
     assertedGroups.insert(&groupC);
 
     std::map<LedName, Layout::LedAction> map =
-        manager.getNewMap(assertedGroups);
+        phosphor::led::Manager::getNewMap(assertedGroups);
 
     assertMap(map, {
                        {"led1", Layout::Action::On},
@@ -190,7 +190,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
     // Off Service Action
     assertedGroups.insert(&groups->at(groupOffServiceAction));
 
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::Off},
                   {fault, Layout::Action::Off},
@@ -198,7 +198,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // On Ok
     assertedGroups.insert(&groups->at(groupSysOnOk));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::On},
                   {fault, Layout::Action::Off},
@@ -206,7 +206,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // Off Fault
     assertedGroups.insert(&groups->at(groupSysOffFault));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::Off},
                   {fault, Layout::Action::On},
@@ -214,7 +214,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // Off Fault
     assertedGroups.insert(&groups->at(groupSysOffFault));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::Off},
                   {fault, Layout::Action::On},
@@ -222,7 +222,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // On Fault
     assertedGroups.insert(&groups->at(groupSysOnFault));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::On},
                   {fault, Layout::Action::On},
@@ -230,7 +230,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // Off Locate
     assertedGroups.insert(&groups->at(groupSysOffLocate));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::Off},
                   {fault, Layout::Action::Blink},
@@ -238,7 +238,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_1_System_Power_Status)
 
     // On Locate
     assertedGroups.insert(&groups->at(groupSysOnLocate));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {pwr, Layout::Action::On},
                   {fault, Layout::Action::Blink},
@@ -336,7 +336,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_5_BBU_status)
 
     // Sleep
     assertedGroups.insert(&groups->at(gBBUSleep));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {bbu_ok, Layout::Action::Off},
                   {bbu_fault, Layout::Action::Off},
@@ -346,7 +346,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_5_BBU_status)
 
     // Fault
     assertedGroups.insert(&groups->at(gBBUFault));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {bbu_ok, Layout::Action::Off},
                   {bbu_fault, Layout::Action::On},
@@ -356,7 +356,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_5_BBU_status)
 
     // EOL
     assertedGroups.insert(&groups->at(gBBUEOL));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {bbu_ok, Layout::Action::Off},
                   {bbu_fault, Layout::Action::On},
@@ -366,7 +366,7 @@ TEST_F(LedTest, test_OCP_Panel_Indicator_6_5_BBU_status)
 
     // On + Locate
     assertedGroups.insert(&groups->at(gBBUOnLocate));
-    assertMap(manager.getNewMap(assertedGroups),
+    assertMap(phosphor::led::Manager::getNewMap(assertedGroups),
               {
                   {bbu_ok, Layout::Action::On},
                   {bbu_fault, Layout::Action::Blink},
