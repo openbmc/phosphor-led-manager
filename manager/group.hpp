@@ -24,7 +24,7 @@ class Group : public GroupInherit
 {
   public:
     Group() = delete;
-    ~Group() = default;
+    ~Group() override = default;
     Group(const Group&) = delete;
     Group& operator=(const Group&) = delete;
     Group(Group&&) = delete;
