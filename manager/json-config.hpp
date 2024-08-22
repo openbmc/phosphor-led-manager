@@ -202,7 +202,6 @@ class JsonConfig
         return;
     }
 
-  private:
     /**
      * @brief sd event handler.
      */
