@@ -52,8 +52,8 @@ class DBusHandler
      *  @return std::string  -  the D-Bus service name
      *
      */
-    const std::string getService(const std::string& path,
-                                 const std::string& interface) const;
+    std::string getService(const std::string& path,
+                           const std::string& interface) const;
 
     /** @brief Get All properties
      *
@@ -64,8 +64,8 @@ class DBusHandler
      *
      *  @throw sdbusplus::exception_t when it fails
      */
-    const PropertyMap getAllProperties(const std::string& objectPath,
-                                       const std::string& interface) const;
+    PropertyMap getAllProperties(const std::string& objectPath,
+                                 const std::string& interface) const;
 
     /** @brief Get property(type: variant)
      *
@@ -77,9 +77,9 @@ class DBusHandler
      *
      *  @throw sdbusplus::exception_t when it fails
      */
-    const PropertyValue getProperty(const std::string& objectPath,
-                                    const std::string& interface,
-                                    const std::string& propertyName) const;
+    PropertyValue getProperty(const std::string& objectPath,
+                              const std::string& interface,
+                              const std::string& propertyName) const;
 
     /** @brief Set D-Bus property
      *
@@ -102,8 +102,8 @@ class DBusHandler
      *
      *  @return std::vector<std::string> vector of subtree paths
      */
-    const std::vector<std::string> getSubTreePaths(
-        const std::string& objectPath, const std::string& interface);
+    std::vector<std::string> getSubTreePaths(
+        const std::string& objectPath, const std::string& interface) const;
 };
 
 } // namespace utils

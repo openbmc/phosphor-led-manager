@@ -79,7 +79,7 @@ class Monitor
      *
      * @return std::vector<std::string> - Vector of LED Group D-Bus object paths
      */
-    const std::vector<std::string>
+    std::vector<std::string>
         getLedGroupPaths(const std::string& inventoryPath) const;
 
     /**
