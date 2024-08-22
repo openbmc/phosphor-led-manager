@@ -134,7 +134,7 @@ static void loadJsonConfigV1Group(const Json& entry,
  *
  *  @return phosphor::led::GroupMap
  */
-const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
+phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
 {
     phosphor::led::GroupMap ledMap{};
 
@@ -154,7 +154,7 @@ const phosphor::led::GroupMap loadJsonConfigV1(const Json& json)
  *
  *  @return phosphor::led::GroupMap
  */
-const phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
+phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
 {
     auto json = readJson(path);
 
@@ -181,7 +181,7 @@ const phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
  *  @note if config is an empty string, daemon will interrogate dbus for
  *        compatible strings.
  */
-const phosphor::led::GroupMap getSystemLedMap(fs::path config)
+phosphor::led::GroupMap getSystemLedMap(fs::path config)
 {
     if (config.empty())
     {
