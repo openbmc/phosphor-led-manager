@@ -132,7 +132,7 @@ class Manager
      */
     static int drivePhysicalLED(const std::string& objPath,
                                 Layout::Action action, uint8_t dutyOn,
-                                const uint16_t period);
+                                uint16_t period);
 
     /** @brief Set lamp test callback when enabled lamp test.
      *
