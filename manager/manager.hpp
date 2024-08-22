@@ -147,7 +147,7 @@ class Manager
     sdbusplus::bus_t& bus;
 
     /** Map of physical LED path to service name */
-    std::unordered_map<std::string, std::string> phyLeds{};
+    std::unordered_map<std::string, std::string> phyLeds;
 
     /** @brief Pointers to groups that are in asserted state */
     std::set<const Layout::GroupLayout*> assertedGroups;
