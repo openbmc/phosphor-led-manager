@@ -219,8 +219,6 @@ void LampTest::start()
         fs::create_directories(ledDirectory);
     }
 
-    std::ofstream(lampTestIndicator.c_str());
-
     // Set all the Physical action to On for lamp test
     for (const auto& path : physicalLEDPaths)
     {

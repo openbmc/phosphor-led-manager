@@ -26,8 +26,8 @@ class LampTest
     ~LampTest() = default;
     LampTest(const LampTest&) = delete;
     LampTest& operator=(const LampTest&) = delete;
-    LampTest(LampTest&&) = default;
-    LampTest& operator=(LampTest&&) = default;
+    LampTest(LampTest&&) = delete;
+    LampTest& operator=(LampTest&&) = delete;
 
     /** @brief Constructs LED LampTest
      *
