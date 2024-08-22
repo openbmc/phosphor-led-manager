@@ -167,7 +167,7 @@ void Add::created(sdbusplus::message_t& msg)
 
     for (const auto& item : assocs)
     {
-        if (std::get<1>(item).compare(CALLOUT_REV_ASSOCIATION) == 0)
+        if (std::get<1>(item) == CALLOUT_REV_ASSOCIATION)
         {
             removeWatches.emplace_back(
                 std::make_unique<Remove>(bus, std::get<2>(item)));
@@ -242,7 +242,7 @@ void Add::processExistingCallouts(sdbusplus::bus_t& bus)
 
         for (const auto& item : assocs)
         {
-            if (std::get<1>(item).compare(CALLOUT_REV_ASSOCIATION) == 0)
+            if (std::get<1>(item) == CALLOUT_REV_ASSOCIATION)
             {
                 removeWatches.emplace_back(
                     std::make_unique<Remove>(bus, std::get<2>(item)));
