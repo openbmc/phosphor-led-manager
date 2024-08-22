@@ -16,10 +16,7 @@ class LedTest : public ::testing::Test
     {
         // Nothing here
     }
-    ~LedTest()
-    {
-        // Leaving up to auto cleanup.
-    }
+    ~LedTest() = default;
 };
 
 /** @brief Assert Single LED to On */
