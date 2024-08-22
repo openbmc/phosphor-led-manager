@@ -41,8 +41,7 @@ class JsonConfig
             sdbusplus::bus::match::rules::interfacesAdded() +
                 sdbusplus::bus::match::rules::sender(
                     "xyz.openbmc_project.EntityManager"),
-            std::bind(&JsonConfig::ifacesAddedCallback, this,
-                      std::placeholders::_1));
+            [this](sdbusplus::message_t& m) { ifacesAddedCallback(m); });
         getFilePath();
 
         if (!confFile.empty())
