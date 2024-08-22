@@ -16,7 +16,7 @@ class LedTest : public ::testing::Test
     {
         // Nothing here
     }
-    ~LedTest() = default;
+    ~LedTest() override = default;
 };
 
 /** @brief Assert Single LED to On */

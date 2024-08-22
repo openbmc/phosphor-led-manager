@@ -17,7 +17,7 @@ class LedTest : public ::testing::Test
     {
         // Nothing here
     }
-    ~LedTest() = default;
+    ~LedTest() override = default;
 };
 
 static void assertMap(std::map<LedName, Layout::LedAction> map,
