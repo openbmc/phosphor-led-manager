@@ -14,11 +14,8 @@ namespace phosphor
 namespace led
 {
 
-namespace
-{
 using GroupInherit = sdbusplus::server::object_t<
     sdbusplus::xyz::openbmc_project::Led::server::Group>;
-}
 
 /** @class Group
  *  @brief Manages group of LEDs and applies action on the elements of group
