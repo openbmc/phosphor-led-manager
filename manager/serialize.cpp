@@ -32,7 +32,7 @@ void Serialize::storeGroups(const std::string& group, bool asserted)
     // If the name of asserted group exist in the archive and the Asserted
     // property is false, entry is removed from the archive.
     auto iter = savedGroups.find(group);
-    if (iter != savedGroups.end() && asserted == false)
+    if (iter != savedGroups.end() && !asserted)
     {
         savedGroups.erase(iter);
     }
