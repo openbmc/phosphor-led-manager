@@ -246,7 +246,7 @@ void LampTest::start()
 void LampTest::timeOutHandler()
 {
     // set the Asserted property of lamp test to false
-    if (!groupObj)
+    if (groupObj == nullptr)
     {
         lg2::error("the Group object is nullptr");
         throw std::runtime_error("the Group object is nullptr");

@@ -273,7 +273,7 @@ void Manager::driveLedsHandler(void)
         lg2::debug("De-Asserting LED, NAME = {NAME}, ACTION = {ACTION}", "NAME",
                    it.name, "ACTION", it.action);
         if (drivePhysicalLED(objPath, Layout::Action::Off, it.dutyOn,
-                             it.period))
+                             it.period) != 0)
         {
             failedLedsDeAssert.insert(it);
         }
@@ -284,7 +284,7 @@ void Manager::driveLedsHandler(void)
         std::string objPath = std::string(phyLedPath) + it.name;
         lg2::debug("Asserting LED, NAME = {NAME}, ACTION = {ACTION}", "NAME",
                    it.name, "ACTION", it.action);
-        if (drivePhysicalLED(objPath, it.action, it.dutyOn, it.period))
+        if (drivePhysicalLED(objPath, it.action, it.dutyOn, it.period) != 0)
         {
             failedLedsAssert.insert(it);
         }
