@@ -11,7 +11,7 @@ namespace utils
 
 // Get service name
 std::string DBusHandler::getService(const std::string& path,
-                                    const std::string& interface) const
+                                    const std::string& interface)
 {
     using InterfaceList = std::vector<std::string>;
     std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
@@ -38,7 +38,7 @@ std::string DBusHandler::getService(const std::string& path,
 
 // Get all properties
 PropertyMap DBusHandler::getAllProperties(const std::string& objectPath,
-                                          const std::string& interface) const
+                                          const std::string& interface)
 {
     PropertyMap properties;
 
@@ -62,7 +62,7 @@ PropertyMap DBusHandler::getAllProperties(const std::string& objectPath,
 // Get the property name
 PropertyValue DBusHandler::getProperty(const std::string& objectPath,
                                        const std::string& interface,
-                                       const std::string& propertyName) const
+                                       const std::string& propertyName)
 {
     PropertyValue value{};
 
@@ -86,7 +86,7 @@ PropertyValue DBusHandler::getProperty(const std::string& objectPath,
 // Set property
 void DBusHandler::setProperty(
     const std::string& objectPath, const std::string& interface,
-    const std::string& propertyName, const PropertyValue& value) const
+    const std::string& propertyName, const PropertyValue& value)
 {
     auto& bus = DBusHandler::getBus();
     auto service = getService(objectPath, interface);

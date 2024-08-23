@@ -67,7 +67,7 @@ class Remove
     /** @brief function to create fault remove match for a fru
      *  @param[in] path  - Inventory path of the faulty unit.
      */
-    std::string match(const std::string& path)
+    static std::string match(const std::string& path)
     {
         namespace MatchRules = sdbusplus::bus::match::rules;
 

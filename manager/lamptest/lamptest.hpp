@@ -79,7 +79,7 @@ class LampTest
      * with the persisted lamp test indicator file so that there is no sign of
      * lamptest.
      */
-    void clearLamps();
+    static void clearLamps();
 
   private:
     /** @brief Timer used for LEDs lamp test period */
@@ -137,13 +137,13 @@ class LampTest
      *
      *  @return enumeration equivalent of the passed in string
      */
-    Layout::Action getActionFromString(const std::string& str);
+    static Layout::Action getActionFromString(const std::string& str);
 
     /** @brief Notify host to start / stop the lamp test
      *
      *  @param[in]  value   -  the Asserted property value
      */
-    void doHostLampTest(bool value);
+    static void doHostLampTest(bool value);
 
     /** @brief Get physical LED names from lamp test JSON config file
      *
