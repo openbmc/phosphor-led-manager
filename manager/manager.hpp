@@ -49,14 +49,7 @@ class Manager
         // this case its {fan0, 1, 1}
         if (left.name == right.name)
         {
-            if (left.action == right.action)
-            {
-                return false;
-            }
-            else
-            {
-                return true;
-            }
+            return left.action != right.action;
         }
         return left.name < right.name;
     }
