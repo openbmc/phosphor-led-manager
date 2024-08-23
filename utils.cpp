@@ -113,7 +113,7 @@ std::vector<std::string> DBusHandler::getSubTreePaths(
                                       "GetSubTreePaths");
     method.append(objectPath.c_str());
     method.append(0); // Depth 0 to search all
-    method.append(std::vector<std::string>({interface.c_str()}));
+    method.append(std::vector<std::string>({interface}));
     auto reply = bus.call(method);
 
     reply.read(paths);
