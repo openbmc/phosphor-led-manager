@@ -29,7 +29,7 @@ TEST(YamlLedPriorityTest, assertPriorityOn)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led1");
         EXPECT_EQ(led.action, Action::On);
@@ -47,7 +47,7 @@ TEST(YamlLedPriorityTest, assertPriorityOff)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led2");
         EXPECT_EQ(led.action, Action::Off);
@@ -65,7 +65,7 @@ TEST(YamlLedPriorityTest, assertPriorityBlink)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led3");
         EXPECT_EQ(led.action, Action::Blink);

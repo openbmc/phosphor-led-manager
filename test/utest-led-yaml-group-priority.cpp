@@ -29,7 +29,7 @@ TEST(YamlGroupPriorityTest, assertYAMLLedOn)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led1");
         EXPECT_EQ(led.action, Action::On);
@@ -46,7 +46,7 @@ TEST(YamlGroupPriorityTest, assertYAMLLedOff)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led1");
         EXPECT_EQ(led.action, Action::Off);
@@ -63,7 +63,7 @@ TEST(YamlGroupPriorityTest, assertYAMLLedBlink)
     EXPECT_EQ(group.priority, 0);
     EXPECT_EQ(group.actionSet.size(), 1);
 
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         EXPECT_EQ(led.name, "led1");
         EXPECT_EQ(led.action, Action::Blink);
@@ -83,7 +83,7 @@ TEST(YamlGroupPriorityTest, assertYAMLGroupPriority)
     EXPECT_EQ(group.actionSet.size(), 2);
 
     int found = 0;
-    for (auto& led : group.actionSet)
+    for (const auto& led : group.actionSet)
     {
         if (led.name == "led1")
         {

@@ -10,11 +10,11 @@ TEST(SerializeTest, testStoreGroups)
 {
     namespace fs = std::filesystem;
 
-    static constexpr auto& path = "config/led-save-group.json";
-    static constexpr auto& bmcBooted =
+    static constexpr auto path = "config/led-save-group.json";
+    static constexpr auto bmcBooted =
         "/xyz/openbmc_project/led/groups/bmc_booted";
-    static constexpr auto& powerOn = "/xyz/openbmc_project/led/groups/power_on";
-    static constexpr auto& enclosureIdentify =
+    static constexpr auto powerOn = "/xyz/openbmc_project/led/groups/power_on";
+    static constexpr auto enclosureIdentify =
         "/xyz/openbmc_project/led/groups/EnclosureIdentify";
 
     Serialize serialize(path);
