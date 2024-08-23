@@ -52,8 +52,8 @@ class DBusHandler
      *  @return std::string  -  the D-Bus service name
      *
      */
-    std::string getService(const std::string& path,
-                           const std::string& interface) const;
+    static std::string getService(const std::string& path,
+                                  const std::string& interface);
 
     /** @brief Get All properties
      *
@@ -64,8 +64,8 @@ class DBusHandler
      *
      *  @throw sdbusplus::exception_t when it fails
      */
-    PropertyMap getAllProperties(const std::string& objectPath,
-                                 const std::string& interface) const;
+    static PropertyMap getAllProperties(const std::string& objectPath,
+                                        const std::string& interface);
 
     /** @brief Get property(type: variant)
      *
@@ -77,9 +77,9 @@ class DBusHandler
      *
      *  @throw sdbusplus::exception_t when it fails
      */
-    PropertyValue getProperty(const std::string& objectPath,
-                              const std::string& interface,
-                              const std::string& propertyName) const;
+    static PropertyValue getProperty(const std::string& objectPath,
+                                     const std::string& interface,
+                                     const std::string& propertyName);
 
     /** @brief Set D-Bus property
      *
@@ -90,10 +90,10 @@ class DBusHandler
      *
      *  @throw sdbusplus::exception_t when it fails
      */
-    void setProperty(const std::string& objectPath,
-                     const std::string& interface,
-                     const std::string& propertyName,
-                     const PropertyValue& value) const;
+    static void setProperty(const std::string& objectPath,
+                            const std::string& interface,
+                            const std::string& propertyName,
+                            const PropertyValue& value);
 
     /** @brief Get sub tree paths by the path and interface of the DBus.
      *
@@ -102,8 +102,8 @@ class DBusHandler
      *
      *  @return std::vector<std::string> vector of subtree paths
      */
-    std::vector<std::string> getSubTreePaths(const std::string& objectPath,
-                                             const std::string& interface);
+    static std::vector<std::string> getSubTreePaths(
+        const std::string& objectPath, const std::string& interface);
 };
 
 } // namespace utils
