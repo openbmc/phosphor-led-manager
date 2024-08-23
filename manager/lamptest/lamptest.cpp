@@ -31,8 +31,8 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
 
             if (iter != forceUpdateLEDs.end())
             {
-                manager.drivePhysicalLED(path, Layout::Action::Off, it.dutyOn,
-                                         it.period);
+                phosphor::led::Manager::drivePhysicalLED(
+                    path, Layout::Action::Off, it.dutyOn, it.period);
             }
         }
 
@@ -45,7 +45,8 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
 
             if (iter != forceUpdateLEDs.end())
             {
-                manager.drivePhysicalLED(path, it.action, it.dutyOn, it.period);
+                phosphor::led::Manager::drivePhysicalLED(path, it.action,
+                                                         it.dutyOn, it.period);
             }
         }
 
@@ -80,7 +81,8 @@ void LampTest::stop()
             continue;
         }
 
-        manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
+        phosphor::led::Manager::drivePhysicalLED(path, Layout::Action::Off, 0,
+                                                 0);
     }
 
     if (std::filesystem::exists(lampTestIndicator))
@@ -146,7 +148,9 @@ void LampTest::storePhysicalLEDsStates()
         uint8_t dutyOn{};
         try
         {
-            auto properties = dBusHandler.getAllProperties(path, phyLedIntf);
+            auto properties =
+                phosphor::led::utils::DBusHandler::getAllProperties(path,
+                                                                    phyLedIntf);
 
             state = std::get<std::string>(properties["State"]);
             period = std::get<uint16_t>(properties["Period"]);
@@ -187,7 +191,8 @@ void LampTest::start()
     // Get paths of all the Physical LED objects
     try
     {
-        physicalLEDPaths = dBusHandler.getSubTreePaths(phyLedPath, phyLedIntf);
+        physicalLEDPaths = phosphor::led::utils::DBusHandler::getSubTreePaths(
+            phyLedPath, phyLedIntf);
     }
     catch (const sdbusplus::exception_t& e)
     {
@@ -233,7 +238,8 @@ void LampTest::start()
             continue;
         }
 
-        manager.drivePhysicalLED(path, Layout::Action::On, 0, 0);
+        phosphor::led::Manager::drivePhysicalLED(path, Layout::Action::On, 0,
+                                                 0);
     }
 }
 
@@ -307,9 +313,9 @@ void LampTest::doHostLampTest(bool value)
     try
     {
         PropertyValue assertedValue{value};
-        dBusHandler.setProperty(HOST_LAMP_TEST_OBJECT,
-                                "xyz.openbmc_project.Led.Group", "Asserted",
-                                assertedValue);
+        phosphor::led::utils::DBusHandler::setProperty(
+            HOST_LAMP_TEST_OBJECT, "xyz.openbmc_project.Led.Group", "Asserted",
+            assertedValue);
     }
     catch (const sdbusplus::exception_t& e)
     {
@@ -357,14 +363,14 @@ void LampTest::clearLamps()
     if (std::filesystem::exists(lampTestIndicator))
     {
         // we need to off all the LEDs.
-        phosphor::led::utils::DBusHandler dBusHandler;
-        std::vector<std::string> physicalLedPaths = dBusHandler.getSubTreePaths(
-            phosphor::led::phyLedPath, phosphor::led::phyLedIntf);
+        std::vector<std::string> physicalLedPaths =
+            phosphor::led::utils::DBusHandler::getSubTreePaths(
+                phosphor::led::phyLedPath, phosphor::led::phyLedIntf);
 
         for (const auto& path : physicalLedPaths)
         {
-            manager.drivePhysicalLED(path, phosphor::led::Layout::Action::Off,
-                                     0, 0);
+            phosphor::led::Manager::drivePhysicalLED(
+                path, phosphor::led::Layout::Action::Off, 0, 0);
         }
 
         // Also remove the lamp test on indicator file.
