@@ -41,8 +41,7 @@ asserted, "sys_id" should be in "Blink" state.
 
 The "unrelated" group will have the default group priority of 0.
 
-```
-$ cat example.json
+```json
 {
   "leds": [
     {
