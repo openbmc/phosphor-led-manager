@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5993a9bd_5c8f8d27",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-23T13:39:45Z",
+      "side": 0,
+      "message": "Not sure why you changed the behavior here.  I think these files have purpose, right?",
+      "revId": "eb1f46a82bfc3822b59ede7b92832c0ee40f8f86",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
