@@ -7,6 +7,7 @@
 #else
 #include "led-gen.hpp"
 #endif
+#include "config-validator.hpp"
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"

@@ -1,3 +1,5 @@
+#pragma once
+
 #include "grouplayout.hpp"
 #include "ledlayout.hpp"
 

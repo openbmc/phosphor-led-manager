@@ -1,6 +1,5 @@
 #include "config.h"
 
-#include "config-validator.hpp"
 #include "grouplayout.hpp"
 #include "json-config.hpp"
 #include "ledlayout.hpp"
