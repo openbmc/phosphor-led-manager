@@ -134,7 +134,9 @@ bool Manager::setGroupState(const std::string& path, bool assert,
             auto& currentAction = ledStateMap[name];
 
             if (currentAction.action == action.action)
+            {
                 continue;
+            }
         }
 
         ledsAssert.insert(action);
