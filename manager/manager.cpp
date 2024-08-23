@@ -46,7 +46,7 @@ static auto getNewMapWithGroupPriorities(
     std::map<LedName, Layout::LedAction> newState;
 
     // update the new map with the desired state
-    for (const auto it : sorted)
+    for (const auto* it : sorted)
     {
         // apply all led actions of that group to the map
         for (const Layout::LedAction& action : it->actionSet)
