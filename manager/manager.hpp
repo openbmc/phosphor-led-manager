@@ -130,8 +130,9 @@ class Manager
      *
      *  @return:              -  0: success, -1: LED set failed
      */
-    int drivePhysicalLED(const std::string& objPath, Layout::Action action,
-                         uint8_t dutyOn, const uint16_t period);
+    static int drivePhysicalLED(const std::string& objPath,
+                                Layout::Action action, uint8_t dutyOn,
+                                const uint16_t period);
 
     /** @brief Set lamp test callback when enabled lamp test.
      *
@@ -147,9 +148,6 @@ class Manager
 
     /** Map of physical LED path to service name */
     std::unordered_map<std::string, std::string> phyLeds{};
-
-    /** DBusHandler class handles the D-Bus operations */
-    DBusHandler dBusHandler;
 
     /** @brief Pointers to groups that are in asserted state */
     std::set<const Layout::GroupLayout*> assertedGroups;

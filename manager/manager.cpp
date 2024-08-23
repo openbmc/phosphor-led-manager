@@ -218,12 +218,15 @@ int Manager::drivePhysicalLED(const std::string& objPath, Layout::Action action,
             PropertyValue dutyOnValue{dutyOn};
             PropertyValue periodValue{period};
 
-            dBusHandler.setProperty(objPath, phyLedIntf, "DutyOn", dutyOnValue);
-            dBusHandler.setProperty(objPath, phyLedIntf, "Period", periodValue);
+            phosphor::led::utils::DBusHandler::setProperty(
+                objPath, phyLedIntf, "DutyOn", dutyOnValue);
+            phosphor::led::utils::DBusHandler::setProperty(
+                objPath, phyLedIntf, "Period", periodValue);
         }
 
         PropertyValue actionValue{getPhysicalAction(action)};
-        dBusHandler.setProperty(objPath, phyLedIntf, "State", actionValue);
+        phosphor::led::utils::DBusHandler::setProperty(objPath, phyLedIntf,
+                                                       "State", actionValue);
     }
     catch (const sdbusplus::exception_t& e)
     {
