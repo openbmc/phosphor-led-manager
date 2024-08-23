@@ -80,7 +80,7 @@ class JsonConfig
                 }
                 return false;
             });
-        return it == names.end() ? false : true;
+        return it != names.end();
     }
 
     /**
