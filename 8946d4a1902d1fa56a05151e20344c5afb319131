@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "13b435ae_8814805e",
+        "filename": "test/utest.cpp",
+        "patchSetId": 4
+      },
+      "lineNbr": 31,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-26T14:52:12Z",
+      "side": 1,
+      "message": "I really hate this check.  It just adds noise in most cases to me.\n\nCan we make these strings \"static constexpr auto\"?",
+      "revId": "8946d4a1902d1fa56a05151e20344c5afb319131",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
