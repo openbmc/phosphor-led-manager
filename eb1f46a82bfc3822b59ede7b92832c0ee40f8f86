@@ -16,6 +16,24 @@
       "message": "Not sure why you changed the behavior here.  I think these files have purpose, right?",
       "revId": "eb1f46a82bfc3822b59ede7b92832c0ee40f8f86",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "97a8cae0_69575134",
+        "filename": "manager/lamptest/lamptest.cpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 222,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-08-26T00:42:56Z",
+      "side": 0,
+      "message": "\u003e Not sure why you changed the behavior here.  I think these files have purpose, right?\n\nSorry, It was my oversight.\nUpdated",
+      "parentUuid": "5993a9bd_5c8f8d27",
+      "revId": "eb1f46a82bfc3822b59ede7b92832c0ee40f8f86",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
