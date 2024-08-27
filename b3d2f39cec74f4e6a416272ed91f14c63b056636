@@ -93,6 +93,30 @@
       },
       "revId": "b3d2f39cec74f4e6a416272ed91f14c63b056636",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f1fb8deb_d2e06a1d",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 5
+      },
+      "lineNbr": 139,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-27T01:43:36Z",
+      "side": 1,
+      "message": "Huh.  It seems like we don\u0027t have this option on.  https://clang.llvm.org/docs/ClangFormatStyleOptions.html#insertbraces",
+      "parentUuid": "6ba9303b_d08fe573",
+      "range": {
+        "startLine": 136,
+        "startChar": 0,
+        "endLine": 139,
+        "endChar": 13
+      },
+      "revId": "b3d2f39cec74f4e6a416272ed91f14c63b056636",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
