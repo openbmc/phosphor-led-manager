@@ -16,6 +16,24 @@
       "message": "I wonder if most of these were intended to have the function listed as const (meaning it didn\u0027t modify any members)?",
       "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "36532666_fbf38b04",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-08-27T01:00:38Z",
+      "side": 1,
+      "message": "The return type of a function does not usually need to be declared const, because the return value of a function is usually a temporary, read-only result of an expression. Declaring the return type of a function as const is usually redundant and may cause compiler optimizations to be blocked because the compiler may incorrectly believe that the return value needs to be protected from modification, even though it is actually just a temporary value.",
+      "parentUuid": "39065e87_251ae45b",
+      "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
