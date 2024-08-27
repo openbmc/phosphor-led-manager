@@ -70,6 +70,24 @@
       "parentUuid": "bf9d5282_0607ff84",
       "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e211659b_4d586eda",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-08-27T12:02:27Z",
+      "side": 1,
+      "message": "\u003e it means that the member variables inside the function are not allowed to be modified \n\nCan you add it for any methods you\u0027ve modified here for which it is allowed?  Returning `const foo` never makes sense, so I don\u0027t know why the original coder would have used it.  My suspicion is that they intended `foo() const` and didn\u0027t know any better.",
+      "parentUuid": "bda1722c_8d491c06",
+      "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
