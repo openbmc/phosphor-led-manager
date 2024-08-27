@@ -52,6 +52,24 @@
       "parentUuid": "36532666_fbf38b04",
       "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "bda1722c_8d491c06",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000397
+      },
+      "writtenOn": "2024-08-27T03:18:09Z",
+      "side": 1,
+      "message": "Sorry, Maybe I still haven\u0027t understood the answer you\u0027re looking for, I\u0027ll try to explain:\n\n1. `readability-const-return-type` is just a matter of optimizing away `const auto foo();`\n2. For `auto foo() const;`, it means that the member variables inside the function are not allowed to be modified (unless mutable is declared), so this method cannot be used for the loadJsonConfig and loadJsonConfigV1 methods because they modify the member variables of the class.",
+      "parentUuid": "bf9d5282_0607ff84",
+      "revId": "fb86ce3fef7cb244034fbc69467ec99df43bc618",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
