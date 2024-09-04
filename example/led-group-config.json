@@ -1,117 +1,117 @@
 {
-    "leds": [
+  "leds": [
+    {
+      "group": "bmc_booted",
+      "members": [
         {
-            "group": "bmc_booted",
-            "members": [
-                {
-                    "Name": "heartbeat",
-                    "Action": "On"
-                }
-            ]
-        },
-        {
-            "group": "power_on",
-            "members": [
-                {
-                    "Name": "power",
-                    "Action": "On",
-                    "Priority": "On"
-                }
-            ]
-        },
-        {
-            "group": "enclosure_fault",
-            "members": [
-                {
-                    "Name": "front_fault",
-                    "Action": "On"
-                },
-                {
-                    "Name": "virtual_enclosure_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "enclosure_identify",
-            "members": [
-                {
-                    "Name": "front_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000
-                },
-                {
-                    "Name": "rear_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000
-                },
-                {
-                    "Name": "virtual_enclosure_identify",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "fan_fault",
-            "members": [
-                {
-                    "Name": "front_fault",
-                    "Action": "On"
-                },
-                {
-                    "Name": "fan0",
-                    "Action": "On"
-                },
-                {
-                    "Name": "rear_fault",
-                    "Action": "On"
-                },
-                {
-                    "Name": "virtual_enclosure_fault",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "fan_identify",
-            "members": [
-                {
-                    "Name": "front_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000
-                },
-                {
-                    "Name": "rear_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000
-                },
-                {
-                    "Name": "fan0",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000
-                },
-                {
-                    "Name": "virtual_enclosure_identify",
-                    "Action": "On",
-                    "DutyOn": 50,
-                    "Period": 0,
-                    "Priority": "Blink"
-                }
-            ]
+          "Name": "heartbeat",
+          "Action": "On"
         }
-    ]
+      ]
+    },
+    {
+      "group": "power_on",
+      "members": [
+        {
+          "Name": "power",
+          "Action": "On",
+          "Priority": "On"
+        }
+      ]
+    },
+    {
+      "group": "enclosure_fault",
+      "members": [
+        {
+          "Name": "front_fault",
+          "Action": "On"
+        },
+        {
+          "Name": "virtual_enclosure_fault",
+          "Action": "On",
+          "DutyOn": 50,
+          "Period": 0,
+          "Priority": "Blink"
+        }
+      ]
+    },
+    {
+      "group": "enclosure_identify",
+      "members": [
+        {
+          "Name": "front_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000
+        },
+        {
+          "Name": "rear_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000
+        },
+        {
+          "Name": "virtual_enclosure_identify",
+          "Action": "On",
+          "DutyOn": 50,
+          "Period": 0,
+          "Priority": "Blink"
+        }
+      ]
+    },
+    {
+      "group": "fan_fault",
+      "members": [
+        {
+          "Name": "front_fault",
+          "Action": "On"
+        },
+        {
+          "Name": "fan0",
+          "Action": "On"
+        },
+        {
+          "Name": "rear_fault",
+          "Action": "On"
+        },
+        {
+          "Name": "virtual_enclosure_fault",
+          "Action": "On",
+          "DutyOn": 50,
+          "Period": 0,
+          "Priority": "Blink"
+        }
+      ]
+    },
+    {
+      "group": "fan_identify",
+      "members": [
+        {
+          "Name": "front_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000
+        },
+        {
+          "Name": "rear_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000
+        },
+        {
+          "Name": "fan0",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000
+        },
+        {
+          "Name": "virtual_enclosure_identify",
+          "Action": "On",
+          "DutyOn": 50,
+          "Period": 0,
+          "Priority": "Blink"
+        }
+      ]
+    }
+  ]
 }

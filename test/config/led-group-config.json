@@ -1,53 +1,53 @@
 {
-    "leds": [
+  "leds": [
+    {
+      "group": "bmc_booted",
+      "members": [
         {
-            "group": "bmc_booted",
-            "members": [
-                {
-                    "Name": "heartbeat",
-                    "Action": "On",
-                    "Priority": "Blink"
-                }
-            ]
-        },
-        {
-            "group": "power_on",
-            "members": [
-                {
-                    "Name": "power",
-                    "Action": "On",
-                    "Priority": "On"
-                }
-            ]
-        },
-        {
-            "group": "power_off",
-            "members": [
-                {
-                    "Name": "power_off_led",
-                    "Action": "Off",
-                    "Priority": "Off"
-                }
-            ]
-        },
-        {
-            "group": "enclosure_identify",
-            "members": [
-                {
-                    "Name": "front_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                },
-                {
-                    "Name": "rear_id",
-                    "Action": "Blink",
-                    "DutyOn": 50,
-                    "Period": 1000,
-                    "Priority": "Blink"
-                }
-            ]
+          "Name": "heartbeat",
+          "Action": "On",
+          "Priority": "Blink"
         }
-    ]
+      ]
+    },
+    {
+      "group": "power_on",
+      "members": [
+        {
+          "Name": "power",
+          "Action": "On",
+          "Priority": "On"
+        }
+      ]
+    },
+    {
+      "group": "power_off",
+      "members": [
+        {
+          "Name": "power_off_led",
+          "Action": "Off",
+          "Priority": "Off"
+        }
+      ]
+    },
+    {
+      "group": "enclosure_identify",
+      "members": [
+        {
+          "Name": "front_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000,
+          "Priority": "Blink"
+        },
+        {
+          "Name": "rear_id",
+          "Action": "Blink",
+          "DutyOn": 50,
+          "Period": 1000,
+          "Priority": "Blink"
+        }
+      ]
+    }
+  ]
 }
