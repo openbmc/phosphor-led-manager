@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a52b1e1f_beaf3947",
+        "filename": ".editorconfig",
+        "patchSetId": 1
+      },
+      "lineNbr": 1,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-09-04T13:06:34Z",
+      "side": 1,
+      "message": "I don\u0027t know if this file actually does anything now?  Do you have references to it?",
+      "revId": "b7ec5b0ebff95d0d0b584be8a931eb8284866e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0ba6ad9b_2278b38e",
+        "filename": ".prettierrc.yaml",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2024-09-04T13:06:34Z",
+      "side": 1,
+      "message": "Please use the version from docs.  Looks like every repository except phosphor-virtual-sensor has the same version of this file as the one from docs.\n\nremote:   https://gerrit.openbmc.org/c/openbmc/phosphor-virtual-sensor/+/74285 prettier: use config from docs [NEW]",
+      "revId": "b7ec5b0ebff95d0d0b584be8a931eb8284866e93",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
