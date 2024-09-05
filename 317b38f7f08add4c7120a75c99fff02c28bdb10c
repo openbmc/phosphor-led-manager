@@ -1,0 +1,38 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94aeaa05_32798a98",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-09-05T21:13:40Z",
+      "side": 1,
+      "message": "Looks ok to me but i would like to have a testcase for this behavior.\nSince i introduced the regression, it is probably on me to write it.\n\nSo im fine with this change, if you dont want to add the test, i can follow up with that.\n\nIf you have the time for a 2nd revision, the other minor comment could also be addressed to avoid duplicating the string literal.",
+      "revId": "317b38f7f08add4c7120a75c99fff02c28bdb10c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24d2bea2_9e101a56",
+        "filename": "scripts/parse_led.py",
+        "patchSetId": 1
+      },
+      "lineNbr": 113,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-09-05T21:13:40Z",
+      "side": 1,
+      "message": "This looks correct but i would prefer to set led_dict to the empty dict to avoid having the string duplicated. Then the below loop would not run and we achieve the same outcome.",
+      "revId": "317b38f7f08add4c7120a75c99fff02c28bdb10c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
