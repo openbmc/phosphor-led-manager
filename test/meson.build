@@ -20,6 +20,7 @@ if not gtest_dep.found() or not gmock_dep.found()
 endif
 
 test_yamls = [
+  'test-empty-group',
   'test-group-priority',
   'test-led-priority'
 ]
@@ -51,6 +52,7 @@ tests = [
   'utest-group-priority.cpp',
   'utest-led-yaml-group-priority.cpp',
   'utest-led-yaml-led-priority.cpp',
+  'utest-led-yaml-empty-group.cpp',
   'utest-config-validator.cpp'
 ]
 if get_option('persistent-led-asserted').allowed()

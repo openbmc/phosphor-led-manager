@@ -90,7 +90,7 @@ def generate_file_single_group(ifile, group, priority_dict, ofile):
     led_dict = ifile[group]
 
     group_priority = 0
-    has_group_priority = "Priority" in led_dict
+    has_group_priority = led_dict and "Priority" in led_dict
 
     if has_group_priority:
         group_priority = led_dict["Priority"]
@@ -107,6 +107,10 @@ def generate_file_single_group(ifile, group, priority_dict, ofile):
         + ",\n"
         + "{\n"
     )
+
+    # Some LED groups could be empty
+    if not led_dict:
+        led_dict = {}
 
     for led_name, list_dict in list(led_dict.items()):
         generate_file_single_led(
