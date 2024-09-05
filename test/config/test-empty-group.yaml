@@ -1,0 +1,20 @@
+group1:
+
+group2:
+    led2:
+        Action: "Off"
+        Priority: "Off"
+group3:
+    led3:
+        Action: "Blink"
+        Priority: "Blink"
+group4:
+    led1:
+        Action: "Off"
+        Priority: "On"
+    led2:
+        Action: "On"
+        Priority: "Off"
+    led3:
+        Action: "On"
+        Priority: "Blink"

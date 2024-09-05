@@ -20,6 +20,7 @@ if not gtest_dep.found() or not gmock_dep.found()
 endif
 
 test_yamls = [
+  'test-empty-group',
   'test-group-priority',
   'test-led-priority'
 ]
