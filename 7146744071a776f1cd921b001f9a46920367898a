@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e9acdc92_24c48bc0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000276
+      },
+      "writtenOn": "2024-09-09T20:46:13Z",
+      "side": 1,
+      "message": "I created a simple empty group test yaml and confirmed that it fails before this change.  Please let me know if you\u0027d like it to look different (or feel free to modify).",
+      "revId": "7146744071a776f1cd921b001f9a46920367898a",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
