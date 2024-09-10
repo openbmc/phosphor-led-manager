@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "08435106_98b66b3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-09-10T12:16:20Z",
+      "side": 1,
+      "message": "Added a small cpp testcase here to assert that the empty group really does get created and does not contain any led actions.\n\nAlso removed some of the other redundant groups from that test config and added a call to the validation function to ensure that it does not throw.\n\nA small comment documents why led-manager supports the empty group and why it is needed.",
+      "revId": "f2669fabb9a9e4803fdd1d2648b9897f9e7c4fb8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
