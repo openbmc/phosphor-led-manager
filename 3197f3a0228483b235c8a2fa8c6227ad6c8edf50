@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2656f49_dd8eae4b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2024-09-18T16:09:56Z",
+      "side": 1,
+      "message": "my bad. Would be nice to have a test for the default config.\n\nI assume this can be merged as is. Every led has a priority, and it\u0027s all the same so i don\u0027t see how this could go wrong.",
+      "revId": "3197f3a0228483b235c8a2fa8c6227ad6c8edf50",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
