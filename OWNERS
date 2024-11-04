@@ -35,12 +35,16 @@ owners:
 - patrick@stwcx.xyz
 
 reviewers:
+- alexander.hansen@9elements.com
 - jinu.joy.thomas@in.ibm.com
 - liuxiwei@ieisystem.com
 
 matchers:
 
 openbmc:
+- name: Alexander Hansen
+  email: alexander.hansen@9elements.com
+  discord: Alexander
 - name: George Liu
   email: liuxiwei@ieisystem.com
   discord: George Liu
