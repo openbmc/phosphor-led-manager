@@ -37,6 +37,7 @@ owners:
 reviewers:
 - jinu.joy.thomas@in.ibm.com
 - liuxiwei@ieisystem.com
+- alexander.hansen@9elements.com
 
 matchers:
 
@@ -50,3 +51,6 @@ openbmc:
 - name: Patrick Williams
   email: patrick@stwcx.xyz
   discord: stwcx
+- name: Alexander Hansen
+  email: alexander.hansen@9elements.com
+  discord: Alexander
