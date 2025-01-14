@@ -1,9 +1,68 @@
 #!/usr/bin/env python3
 import argparse
 import os
+import re
+import sys
 
 import yaml
 from inflection import underscore
+
+
+def is_dbus_safe(name: str) -> bool:
+    """
+    Check if a string is safe for use on D-Bus.
+
+    Args:
+        name (str): The input string.
+
+    Returns:
+        bool: True if the string is safe for D-Bus, False otherwise.
+    """
+    if not name:
+        return False  # Empty names are not allowed
+
+    # Check for invalid characters
+    if not re.match(r"^[a-zA-Z0-9_]+$", name):
+        return False
+
+    # Check for leading or trailing dots/underscores
+    if name[0] in "._" or name[-1] in "._":
+        return False
+
+    # Check for consecutive dots or underscores
+    if ".." in name or "__" in name:
+        return False
+
+    # Check length restriction
+    if len(name) > 255:
+        return False
+
+    return True
+
+
+def convert_dbus_name_error(name: str) -> str:
+
+    if not is_dbus_safe(name):
+        print("WARNING: '" + name + "' is not dbus safe", file=sys.stderr)
+        raise ValueError("WARNING: '" + name + "' is not dbus safe")
+
+    return name
+
+
+def convert_dbus_name_warn(name: str) -> str:
+
+    if not is_dbus_safe(name):
+        print("WARNING: '" + name + "' is not dbus safe", file=sys.stderr)
+
+    result = underscore(name)
+
+    if name != result:
+        print(
+            "WARNING: converted '" + name + "' to '" + result + "'",
+            file=sys.stderr,
+        )
+
+    return result
 
 
 def config_error(ofile, led_name, group_name, message):
@@ -73,7 +132,7 @@ def generate_file_single_led(
     period = str(list_dict.get("Period", 0))
     priority = led_action_literal(led_priority)
 
-    ofile.write('        {"' + underscore(led_name) + '",')
+    ofile.write('        {"' + convert_dbus_name_warn(led_name) + '",')
     ofile.write(action + ",")
     ofile.write(dutyOn + ",")
     ofile.write(period + ",")
@@ -100,7 +159,7 @@ def generate_file_single_group(ifile, group, priority_dict, ofile):
     ofile.write(
         '   {"'
         + "/xyz/openbmc_project/led/groups/"
-        + underscore(group)
+        + convert_dbus_name_error(group)
         + '"'
         + ",{ "
         + str(group_priority)
