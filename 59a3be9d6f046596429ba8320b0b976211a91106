@@ -333,6 +333,23 @@
       "parentUuid": "fb9248b1_bcb18368",
       "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "dd2b7a9a_a28a9782",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000153
+      },
+      "writtenOn": "2025-01-17T18:32:25Z",
+      "side": 1,
+      "message": "A patchset that just copy/pastes the existing isn\u0027t the best place to have this discussion about the pros/cons of merging these.\n\nI can imagine a case where I would be in support of this action, but definitely not without discussion with the maintainers of both repos, as well as discussion on how it would be executed.\n\nAs written, this patchset can\u0027t merge.  I fully support you starting a discussion with the maintainers and TOF around if this is the right direction, then if you don\u0027t get to the agreement you want, starting a design doc that can be voted on in the TOF.",
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
