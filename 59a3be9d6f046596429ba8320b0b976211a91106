@@ -24,6 +24,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e33638b_59eac039",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "Me + obviously the guy from \n\u003e (other than the naming concern that was raised this week after 6 months)?",
+      "parentUuid": "fc235550_da8039a0",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c435c5a0_ca5c7c70",
@@ -49,6 +73,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "0ecd937b_8c1fc018",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "No data. People do not express themselves negatively about such things since its unproductive unless there is a patch. Same as creating github issues or bug reports.\n\nLet\u0027s see what comments folks will make.\n\nIn general, this patch is more of an opinion piece. It\u0027s solving a subjective problem, not a technical one. It\u0027s still possible to develop OpenBMC with 100 or even 300 repositories. It\u0027s a valid architecture and there is no need to have any specific limit on the amount.\n\nJust in this case, i don\u0027t feel like the extra repo is providing any benefit.",
+      "parentUuid": "c435c5a0_ca5c7c70",
+      "range": {
+        "startLine": 10,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 0
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "5b6d879a_c383e3f0",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -60,6 +108,30 @@
       "writtenOn": "2025-01-17T15:27:02Z",
       "side": 1,
       "message": "Why do we even have this issue?  We have well-formed dbus interfaces, right?  Are those dbus interfaces also changing?  That means you have to make a change in another repo already.",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 60
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5f69accb_b253e754",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "I\u0027m not suggesting any specific change.\n\n\u003e That means you have to make a change in another repo already.\n\nIf you were to want to change how the led subsystem works in openbmc, by changing the dbus interface, that would be a change involving 3 repositories.\n\nWith this patch, it would only be 2 patches required.",
+      "parentUuid": "5b6d879a_c383e3f0",
       "range": {
         "startLine": 16,
         "startChar": 35,
@@ -116,6 +188,54 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "e6f75f1a_deb4b71f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "\u003e There\u0027s actually an argument that it makes the code worse because it lowers the barrier to entry\n\nJust switch to mailing list for development. Everything will be harder by default.\n\n\n\nLet\u0027s not think about individual people or how to put barriers for them.\nLet\u0027s instead think in terms of features and patches. Separate the patch from the contributor.\n\n\nThe barrier is not the problem, the problem is contributors being slowed down by having to communicate with 3 different maintainers who basically ignore each others existence and have wildly different ideas about how things should work.\n\nThe problem is the code duplication and wildly different coding styles that emerge when people are left to their own devices in their small little repository.\n\n\n\u003e we have trouble with insufficient high-quality reviewers to get the code merged.\n\nMaybe this can be solved by having fewer (not monorepo, but fewer) repositories.\nWhich will increase the overlap between reviewers. When one goes to sleep, the other one wakes up and there is no freeze time when someone goes on vacation.",
+      "parentUuid": "7a550bac_1494c587",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3b7b9c18_b1135982",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "\u003e \"integration testing\" isn\u0027t something we do at a repository level. \n\nWhich is understandable given the considerable resource requirements to test a full bmc image.\n\nHowever there is a lot that can be tested without building the full image.\n\nFor example using the PDI, the dbus interfaces provided by led-sysfs can already be created and then check if the led-manager can pick it up.\n\nThat then provides protection against people messing up the dbus path or anything of that sort.",
+      "parentUuid": "99bb2318_490a575f",
+      "range": {
+        "startLine": 16,
+        "startChar": 65,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f2304746_87493754",
@@ -129,6 +249,30 @@
       "writtenOn": "2025-01-17T15:27:02Z",
       "side": 1,
       "message": "Well, this isn\u0027t really ideal.  Part of the reason for separation is due to different levels of expertise.\n\n\u0027-sysfs\u0027 is the kernel-level interaction.\n\u0027-manager\u0027 is the algorithms around LED management for different LED policies.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 7
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "50e426e6_5e667aeb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "\u003e Part of the reason for separation is due to different levels of expertise.\n\nThat\u0027s easily done with partial code ownership over specific paths in the repo.\n\nhttps://github.com/openbmc/entity-manager/blob/582d24f083af87c19d2e9d5c45561f7b535876cb/OWNERS#L44\n\nIf i remember correctly, the different expertise is one of the big motivations behind the invention of the path matching for the review and such. Github has something similar.\n\nPeople can focus on their expertise without losing track of work done by others.\n\nIn the case of the 2 code owners for the repos being discussed here, i doubt the argument about lack of expertise applies here.",
+      "parentUuid": "f2304746_87493754",
       "range": {
         "startLine": 34,
         "startChar": 0,
@@ -169,6 +313,24 @@
       "writtenOn": "2025-01-17T15:27:02Z",
       "side": 1,
       "message": "There has been discussions on the mailing list about monorepos previously:\n\nhttps://lore.kernel.org/openbmc/?q\u003dmonorepo\n\nI\u0027m not really liking all the motion I see towards \"monorepo by fiat\" without solving the issues already raised on the ML.",
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c041b63_df782f1c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-01-17T16:38:12Z",
+      "side": 1,
+      "message": "Which specific issue is there in this case?\n\nMany of the issues you described in that ML thread come down to the actual code owners following bad patters and merging the tightly coupled code.\n\n\nI\u0027m not suggesting OpenBMC to become a monorepo.\n\nThis patch is only about merging these 2 repos because i believe it will provide some benefit.\n\n\nI\u0027m not against having well defined dbus interfaces or separate processes, or being able to change one thing independently from another.\n\nBut enforcing that separation should be done consistently and not on an ad-hoc basis, right?\nShould each program be it\u0027s own repo?\nEach service?\nEverything under 10000 LoC?\nEvery C++ namespace?\nEverything that a user might want to opt-out of and not install into their image?\n\nNone of that makes sense to me. What makes sense to me is to separate it out if it is used as a dependency in multiple repositories.\n\nI have not seen phosphor-led-sysfs used as a library or dependency to another program (besides led-manager).",
+      "parentUuid": "fb9248b1_bcb18368",
       "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
