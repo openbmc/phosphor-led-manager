@@ -1,6 +1,144 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "fc235550_da8039a0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "Who are the \"different people\" and where have they expressed themselves?",
+      "range": {
+        "startLine": 9,
+        "startChar": 0,
+        "endLine": 9,
+        "endChar": 31
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c435c5a0_ca5c7c70",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "Do we have data to back this up?  How often has this happened (other than the naming concern that was raised this week after 6 months)?",
+      "range": {
+        "startLine": 10,
+        "startChar": 6,
+        "endLine": 12,
+        "endChar": 0
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5b6d879a_c383e3f0",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 16,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "Why do we even have this issue?  We have well-formed dbus interfaces, right?  Are those dbus interfaces also changing?  That means you have to make a change in another repo already.",
+      "range": {
+        "startLine": 16,
+        "startChar": 35,
+        "endLine": 16,
+        "endChar": 60
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99bb2318_490a575f",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "\"integration testing\" isn\u0027t something we do at a repository level.  That belongs in openbmc-test-automation.",
+      "range": {
+        "startLine": 16,
+        "startChar": 65,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7a550bac_1494c587",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 17,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "That was somewhat the argument for one big monorepo so this isn\u0027t new information.\n\nBut, we don\u0027t actually have trouble with people writing code.  We have trouble with people writing *good* code and we have trouble with insufficient high-quality reviewers to get the code merged.  I\u0027m not convinced that merging code into bigger repos helps either of those statements.  \n\n[There\u0027s actually an argument that it makes the code worse because it lowers the barrier to entry. :D ]",
+      "range": {
+        "startLine": 16,
+        "startChar": 0,
+        "endLine": 17,
+        "endChar": 27
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f2304746_87493754",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 35,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "Well, this isn\u0027t really ideal.  Part of the reason for separation is due to different levels of expertise.\n\n\u0027-sysfs\u0027 is the kernel-level interaction.\n\u0027-manager\u0027 is the algorithms around LED management for different LED policies.",
+      "range": {
+        "startLine": 34,
+        "startChar": 0,
+        "endLine": 35,
+        "endChar": 7
+      },
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "2be0b793_2daa33b7",
@@ -14,6 +152,23 @@
       "writtenOn": "2025-01-17T10:46:29Z",
       "side": 1,
       "message": "I generally think it\u0027s a good idea to merge those code bases eventually. I\u0027m not familiar if something like was done before and what the best procedure is but this already looks like a solid start.",
+      "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fb9248b1_bcb18368",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-17T15:27:02Z",
+      "side": 1,
+      "message": "There has been discussions on the mailing list about monorepos previously:\n\nhttps://lore.kernel.org/openbmc/?q\u003dmonorepo\n\nI\u0027m not really liking all the motion I see towards \"monorepo by fiat\" without solving the issues already raised on the ML.",
       "revId": "59a3be9d6f046596429ba8320b0b976211a91106",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
