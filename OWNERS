@@ -32,12 +32,15 @@
 # data within them will be kept sorted.
 
 owners:
+- andrew@codeconstruct.com.au
 - patrick@stwcx.xyz
 
 reviewers:
 - alexander.hansen@9elements.com
+- bradleyb@fuzziesquirrel.com
 - jinu.joy.thomas@in.ibm.com
 - liuxiwei@ieisystem.com
+- spinler@us.ibm.com
 
 matchers:
 
@@ -45,12 +48,21 @@ openbmc:
 - name: Alexander Hansen
   email: alexander.hansen@9elements.com
   discord: Alexander
+- name: Andrew Jeffery
+  email: andrew@codeconstruct.com.au
+  discord: arj
+- name: Brad Bishop
+  email: bradleyb@fuzziesquirrel.com
+  discord: radsquirrel
 - name: George Liu
   email: liuxiwei@ieisystem.com
   discord: George Liu
 - name: Jinu Joy Thomas
   email: jinu.joy.thomas@in.ibm.com
   discord: Jinu Joy
+- name: Matt Spinler
+  email: spinler@us.ibm.com
+  discord: mspinler
 - name: Patrick Williams
   email: patrick@stwcx.xyz
   discord: stwcx

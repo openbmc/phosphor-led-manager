@@ -27,3 +27,9 @@ option(
     value: 'enabled',
     description : 'Persistent the asserted status of ledgroup'
 )
+
+option(
+    'integrated-led-sysfs', type: 'feature',
+    value: 'enabled',
+    description: 'Also build everything that was previously found in phosphor-led-sysfs repo'
+)

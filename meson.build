@@ -72,6 +72,10 @@ deps = [
 subdir('manager')
 subdir('fault-monitor')
 
+if get_option('integrated-led-sysfs').enabled()
+  subdir('led-sysfs')
+endif
+
 configure_file(output: 'config.h',
     configuration: conf_data
 )
