@@ -69,7 +69,7 @@ class Monitor
      *
      * @param[in] msg - The D-Bus message contents
      */
-    void matchHandler(sdbusplus::message_t& msg);
+    static void matchHandler(sdbusplus::message_t& msg);
 
     /**
      * @brief From the Inventory D-Bus object, obtains the associated LED group
@@ -79,8 +79,8 @@ class Monitor
      *
      * @return std::vector<std::string> - Vector of LED Group D-Bus object paths
      */
-    std::vector<std::string>
-        getLedGroupPaths(const std::string& inventoryPath) const;
+    static std::vector<std::string>
+        getLedGroupPaths(const std::string& inventoryPath);
 
     /**
      * @brief Update the Asserted property of the LED Group Manager.
@@ -88,8 +88,8 @@ class Monitor
      * @param[in] ledGroupPaths   - LED Group D-Bus object Paths
      * @param[in] value           - The Asserted property value, True / False
      */
-    void updateAssertedProperty(const std::vector<std::string>& ledGroupPaths,
-                                bool value);
+    static void updateAssertedProperty(
+        const std::vector<std::string>& ledGroupPaths, bool value);
 };
 } // namespace monitor
 } // namespace status

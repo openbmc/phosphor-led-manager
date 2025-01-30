@@ -5,12 +5,6 @@ option(
 )
 
 option(
-    'use-json', type : 'feature',
-    value: 'enabled',
-    description : 'LEDs JSON filepath'
-)
-
-option(
     'use-lamp-test', type : 'feature',
     value: 'enabled',
     description : 'LEDs lamp test configuration'

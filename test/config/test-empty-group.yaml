@@ -1,6 +1,0 @@
-emptygroup:
-
-nonemptygroup:
-    led2:
-        Action: "Off"
-        Priority: "Off"
