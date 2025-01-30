@@ -1,13 +1,9 @@
 #include "config.h"
 
-#include "group.hpp"
-#include "ledlayout.hpp"
-#ifdef LED_USE_JSON
-#include "json-parser.hpp"
-#else
-#include "led-gen.hpp"
-#endif
 #include "config-validator.hpp"
+#include "group.hpp"
+#include "json-parser.hpp"
+#include "ledlayout.hpp"
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"
@@ -26,10 +22,8 @@ int main(int argc, char** argv)
 {
     CLI::App app("phosphor-led-manager");
 
-#ifdef LED_USE_JSON
     std::string configFile{};
     app.add_option("-c,--config", configFile, "Path to JSON config");
-#endif
 
     CLI11_PARSE(app, argc, argv);
 
@@ -39,9 +33,7 @@ int main(int argc, char** argv)
     /** @brief Dbus constructs used by LED Group manager */
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
-#ifdef LED_USE_JSON
     auto systemLedMap = getSystemLedMap(configFile);
-#endif
 
     phosphor::led::validateConfigV1(systemLedMap);
 

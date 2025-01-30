@@ -8,7 +8,7 @@ identify the system, they should all light up together.
 
 ## Configuration
 
-The configuration can happen via json or yaml.
+The configuration can happen via json.
 
 ### Configuration: LED Priority
 
