@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8e85c762_057fe6ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-01-30T22:00:23Z",
+      "side": 1,
+      "message": "Wait, what?\n\nThis doesn\u0027t \"deprecate\", it \"removes\", right?\n\nWe have all these upstream systems relying on this support.  Who is going to modernize them?\n\n```\n$ find -name \"*.yaml\" | grep -i led-manager\n./meta-ibm/meta-palmetto/recipes-phosphor/leds/palmetto-led-manager-config/led.yaml\n./meta-ibm/meta-romulus/recipes-phosphor/leds/romulus-led-manager-config/led.yaml\n./meta-ibm/recipes-phosphor/leds/swift-led-manager-config/led.yaml\n./meta-ibm/meta-genesis3/recipes-phosphor/leds/gen3-led-manager-config/led.yaml\n./meta-ibm/meta-sbp1/recipes-phosphor/leds/sbp1-led-manager-config/led.yaml\n./meta-facebook/meta-bletchley/recipes-phosphor/leds/bletchley-led-manager-config/led.yaml\n./meta-facebook/meta-yosemite4/recipes-phosphor/leds/yosemite4-led-manager-config/led.yaml\n./meta-inventec/meta-starscream/recipes-phosphor/leds/starscream-led-manager-config/led.yaml\n./meta-nuvoton/meta-evb-npcm845/recipes-phosphor/leds/evb-npcm845-led-manager-config/led.yaml\n./meta-quanta/meta-olympus-nuvoton/recipes-phosphor/leds/olympus-nuvoton-led-manager-config/led.yaml\n./meta-quanta/meta-gbs/recipes-phosphor/leds/gbs-led-manager-config/led.yaml\n./meta-yadro/meta-nicole/recipes-phosphor/leds/nicole-led-manager-config/led.yaml\n./meta-yadro/meta-vegman/recipes-phosphor/leds/rx20-led-manager-config/led.yaml\n./meta-yadro/meta-vegman/recipes-phosphor/leds/vegman-led-manager-config/led.yaml\n./meta-amd/meta-ethanolx/recipes-phosphor/leds/ethanolx-led-manager-config/led.yaml\n./meta-amd/meta-daytonax/recipes-phosphor/leds/daytonax-led-manager-config/led.yaml\n./meta-fii/meta-mori/recipes-phosphor/leds/mori-led-manager-config/led.yaml\n./meta-intel-openbmc/meta-common/recipes-phosphor/leds/intel-led-manager-config/led.yaml\n./meta-ufispace/meta-ncplite/recipes-phosphor/leds/ncplite-led-manager-config/led.yaml\n```",
+      "revId": "7197fc4caf7b5b3a71a2d92216928394f0975e4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
