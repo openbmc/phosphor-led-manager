@@ -19,40 +19,16 @@ if not gtest_dep.found() or not gmock_dep.found()
     endif
 endif
 
-test_yamls = ['test-empty-group', 'test-group-priority', 'test-led-priority']
-
 test_sources = [
     '../manager/manager.cpp',
     '../manager/config-validator.cpp',
     '../utils.cpp',
 ]
 
-foreach yaml : test_yamls
-    gen_hpp = custom_target(
-        yaml + '.hpp',
-        command: [
-            prog_python,
-            meson.project_source_root() + '/scripts/parse_led.py',
-            '--filename',
-            meson.project_source_root() + '/test/config/' + yaml + '.yaml',
-            '-o',
-            meson.current_build_dir(),
-            '--output-filename',
-            yaml + '.hpp',
-        ],
-        output: yaml + '.hpp',
-    )
-
-    test_sources += [gen_hpp]
-endforeach
-
 tests = [
     'utest.cpp',
     'utest-led-json.cpp',
     'utest-group-priority.cpp',
-    'utest-led-yaml-group-priority.cpp',
-    'utest-led-yaml-led-priority.cpp',
-    'utest-led-yaml-empty-group.cpp',
     'utest-config-validator.cpp',
 ]
 if get_option('persistent-led-asserted').allowed()
