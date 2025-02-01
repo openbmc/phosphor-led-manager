@@ -55,8 +55,8 @@ void Monitor::matchHandler(sdbusplus::message_t& msg)
     }
 }
 
-std::vector<std::string>
-    Monitor::getLedGroupPaths(const std::string& inventoryPath) const
+std::vector<std::string> Monitor::getLedGroupPaths(
+    const std::string& inventoryPath) const
 {
     // Get endpoints from fType
     std::string faultLedAssociation = inventoryPath + "/fault_identifying";
