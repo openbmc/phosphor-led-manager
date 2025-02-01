@@ -1,29 +1,29 @@
+option('tests', type: 'feature', value: 'enabled', description: 'Build tests')
+
 option(
-    'tests', type : 'feature',
+    'use-json',
+    type: 'feature',
     value: 'enabled',
-    description : 'Build tests'
+    description: 'LEDs JSON filepath',
 )
 
 option(
-    'use-json', type : 'feature',
+    'use-lamp-test',
+    type: 'feature',
     value: 'enabled',
-    description : 'LEDs JSON filepath'
+    description: 'LEDs lamp test configuration',
 )
 
 option(
-    'use-lamp-test', type : 'feature',
-    value: 'enabled',
-    description : 'LEDs lamp test configuration'
-)
-
-option(
-    'monitor-operational-status', type : 'feature',
+    'monitor-operational-status',
+    type: 'feature',
     value: 'disabled',
-    description : 'Enable OperationalStatus monitor'
+    description: 'Enable OperationalStatus monitor',
 )
 
 option(
-    'persistent-led-asserted', type : 'feature',
+    'persistent-led-asserted',
+    type: 'feature',
     value: 'enabled',
-    description : 'Persistent the asserted status of ledgroup'
+    description: 'Persistent the asserted status of ledgroup',
 )

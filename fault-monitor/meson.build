@@ -1,16 +1,9 @@
-fault_monitor_sources = [
-    'monitor-main.cpp',
-]
+fault_monitor_sources = ['monitor-main.cpp']
 
 if get_option('monitor-operational-status').allowed()
-    fault_monitor_sources += [
-        '../utils.cpp',
-        'operational-status-monitor.cpp',
-        ]
+    fault_monitor_sources += ['../utils.cpp', 'operational-status-monitor.cpp']
 else
-    fault_monitor_sources += [
-        'fru-fault-monitor.cpp',
-        ]
+    fault_monitor_sources += ['fru-fault-monitor.cpp']
 endif
 
 executable(
@@ -19,5 +12,5 @@ executable(
     include_directories: ['.', '../'],
     dependencies: deps,
     install: true,
-    install_dir: get_option('bindir')
+    install_dir: get_option('bindir'),
 )
