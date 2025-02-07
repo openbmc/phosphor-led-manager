@@ -153,10 +153,6 @@ void Add::created(sdbusplus::message_t& msg)
         return;
     }
 
-    // Nothing else shows when a specific error log
-    // has been created. Do it here.
-    lg2::info("{PATH} created", "PATH", objectPath);
-
     auto attr = iter->second.find("Associations");
     if (attr == iter->second.end())
     {
