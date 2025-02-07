@@ -30,7 +30,7 @@ void Monitor::matchHandler(sdbusplus::message_t& msg)
     if (it != properties.end())
     {
         const bool* value = std::get_if<bool>(&it->second);
-        if (!value)
+        if (value == nullptr)
         {
             lg2::error(
                 "Failed to get the Functional property, INVENTORY_PATH = {PATH}",
@@ -68,9 +68,9 @@ std::vector<std::string>
 
     try
     {
-        endpoint = dBusHandler.getProperty(faultLedAssociation,
-                                           "xyz.openbmc_project.Association",
-                                           "endpoints");
+        endpoint = phosphor::led::utils::DBusHandler::getProperty(
+            faultLedAssociation, "xyz.openbmc_project.Association",
+            "endpoints");
     }
     catch (const sdbusplus::exception_t& e)
     {
@@ -95,8 +95,9 @@ void Monitor::updateAssertedProperty(
             // false Call "Group Asserted --> false" if the value of Functional
             // is true
             PropertyValue assertedValue{!value};
-            dBusHandler.setProperty(path, "xyz.openbmc_project.Led.Group",
-                                    "Asserted", assertedValue);
+            phosphor::led::utils::DBusHandler::setProperty(
+                path, "xyz.openbmc_project.Led.Group", "Asserted",
+                assertedValue);
         }
         catch (const sdbusplus::exception_t& e)
         {
