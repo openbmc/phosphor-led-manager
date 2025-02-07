@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5c8fd0b0_fe404422",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-02-07T09:29:47Z",
+      "side": 1,
+      "message": "FWIW i traced the git blame for this one for a while \n\nand stumbled upon 3d2b0d62ed1567ffba53ffb44d0a8617869ea08c\n\nwhich says it is used for debug, but that it could be removed entirely.\n\n\u003e Another option would have been to remove the trace\n    completely, but it is fairly useful for debug.\n\nAnd i guess the statement was originally added all the way back in\naebfde81481ee93d78ade02803b931b2bd1e4419 at error level.\n\nI would advise this to just become lg2::debug, since multiple people have touched this line in multiple commits and left it in there.\n\nThen you avoid the logspam which is the stated intention of the patch.",
+      "revId": "f0929392d42bea63d07cdde9a986b1bd7a60e056",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
