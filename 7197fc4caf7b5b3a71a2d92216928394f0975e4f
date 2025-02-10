@@ -34,6 +34,24 @@
       "parentUuid": "8e85c762_057fe6ee",
       "revId": "7197fc4caf7b5b3a71a2d92216928394f0975e4f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "55db6e66_905f6338",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-02-10T11:06:00Z",
+      "side": 1,
+      "message": "pushed the corresponding change in openbmc/openbmc gerrit\n\nhttps://gerrit.openbmc.org/c/openbmc/openbmc/+/78131\n\nhappy to receive any feedback on that 😊",
+      "parentUuid": "5cc4da17_b93e56b4",
+      "revId": "7197fc4caf7b5b3a71a2d92216928394f0975e4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
