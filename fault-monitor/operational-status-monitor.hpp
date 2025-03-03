@@ -79,8 +79,8 @@ class Monitor
      *
      * @return std::vector<std::string> - Vector of LED Group D-Bus object paths
      */
-    static std::vector<std::string>
-        getLedGroupPaths(const std::string& inventoryPath);
+    static std::vector<std::string> getLedGroupPaths(
+        const std::string& inventoryPath);
 
     /**
      * @brief Update the Asserted property of the LED Group Manager.

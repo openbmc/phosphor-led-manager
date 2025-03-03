@@ -105,8 +105,8 @@ static void validateConfigV1GroupForLedPriority(
     }
 }
 
-static void
-    validateConfigV1ForLedPriority(const phosphor::led::GroupMap& ledMap)
+static void validateConfigV1ForLedPriority(
+    const phosphor::led::GroupMap& ledMap)
 {
     PriorityMap priorityMap{};
     for (const auto& [groupName, group] : ledMap)
@@ -137,8 +137,8 @@ static void validateConfigV1GroupForGroupPriority(
     }
 }
 
-static void
-    validateConfigV1ForGroupPriority(const phosphor::led::GroupMap& ledMap)
+static void validateConfigV1ForGroupPriority(
+    const phosphor::led::GroupMap& ledMap)
 {
     std::set<int> groupPriorities;
     for (const auto& [_, group] : ledMap)
