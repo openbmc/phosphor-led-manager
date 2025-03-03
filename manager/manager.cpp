@@ -74,8 +74,8 @@ static std::map<LedName, Layout::LedAction> getNewMapWithLEDPriorities(
 }
 
 // create the resulting new map from all currently asserted groups
-std::map<LedName, Layout::LedAction>
-    Manager::getNewMap(std::set<const Layout::GroupLayout*> assertedGroups)
+std::map<LedName, Layout::LedAction> Manager::getNewMap(
+    std::set<const Layout::GroupLayout*> assertedGroups)
 {
     std::map<LedName, Layout::LedAction> newState;
 
