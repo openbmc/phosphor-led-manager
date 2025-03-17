@@ -52,6 +52,24 @@
       "parentUuid": "5cc4da17_b93e56b4",
       "revId": "7197fc4caf7b5b3a71a2d92216928394f0975e4f",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1dae549d_85e6cf64",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-03-17T11:32:37Z",
+      "side": 1,
+      "message": "Changed the wording to clarify that the patch indeed removes the yaml configuration option.\n\n\u003e We have all these upstream systems relying on this support. Who is going to modernize them?\n\nAdded a link to the corresponding change in openbmc/openbmc which migrates the configurations.",
+      "parentUuid": "55db6e66_905f6338",
+      "revId": "7197fc4caf7b5b3a71a2d92216928394f0975e4f",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
