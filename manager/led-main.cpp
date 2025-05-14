@@ -66,7 +66,7 @@ int main(int argc, char** argv)
     phosphor::led::LampTest lampTest(event, manager);
 
     // Clear leds triggered by lamp test in previous boot
-    phosphor::led::LampTest::clearLamps();
+    lampTest.clearLamps();
 
     groups.emplace_back(std::make_unique<phosphor::led::Group>(
         bus, LAMP_TEST_OBJECT, manager, serializePtr,

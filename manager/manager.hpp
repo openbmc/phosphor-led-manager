@@ -7,6 +7,7 @@
 #include <sdeventplus/event.hpp>
 #include <sdeventplus/utility/timer.hpp>
 
+#include <chrono>
 #include <set>
 #include <string>
 #include <unordered_map>
@@ -123,9 +124,8 @@ class Manager
      *
      *  @return:              -  0: success, -1: LED set failed
      */
-    static int drivePhysicalLED(const std::string& objPath,
-                                Layout::Action action, uint8_t dutyOn,
-                                uint16_t period);
+    int drivePhysicalLED(const std::string& objPath, Layout::Action action,
+                         uint8_t dutyOn, uint16_t period);
 
     /** @brief Set lamp test callback when enabled lamp test.
      *
@@ -160,6 +160,11 @@ class Manager
 
     /** @brief Contains the required set of deassert LEDs action */
     ActionSet reqLedsDeAssert;
+
+    /** @brief Map to store the last error time for physical LED paths */
+    std::unordered_map<std::string,
+                       std::chrono::time_point<std::chrono::steady_clock>>
+        physicalLEDErrors;
 
     /** @brief LEDs handler callback */
     void driveLedsHandler();
