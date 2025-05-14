@@ -33,33 +33,26 @@ class Monitor
     Monitor(const Monitor&) = delete;
     Monitor& operator=(const Monitor&) = delete;
     Monitor(Monitor&&) = default;
-    Monitor& operator=(Monitor&&) = default;
+    Monitor& operator=(Monitor&&) = delete;
 
     /** @brief Add a watch for OperationalStatus.
      *
      *  @param[in] bus -  D-Bus object
      */
     explicit Monitor(sdbusplus::bus_t& bus) :
-        bus(bus),
         matchSignal(bus,
                     "type='signal',member='PropertiesChanged', "
                     "interface='org.freedesktop.DBus.Properties', "
                     "sender='xyz.openbmc_project.Inventory.Manager', "
                     "arg0namespace='xyz.openbmc_project.State.Decorator."
                     "OperationalStatus'",
-                    [this](sdbusplus::message_t& m) { matchHandler(m); })
+                    [](sdbusplus::message_t& m) { matchHandler(m); })
 
     {}
 
   private:
-    /** @brief sdbusplus D-Bus connection. */
-    sdbusplus::bus_t& bus;
-
     /** @brief sdbusplus signal matches for Monitor */
     sdbusplus::bus::match_t matchSignal;
-
-    /** DBusHandler class handles the D-Bus operations */
-    DBusHandler dBusHandler;
 
     /**
      * @brief Callback handler that gets invoked when the PropertiesChanged
