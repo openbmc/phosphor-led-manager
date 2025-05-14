@@ -31,8 +31,8 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
 
             if (iter != forceUpdateLEDs.end())
             {
-                phosphor::led::Manager::drivePhysicalLED(
-                    path, Layout::Action::Off, it.dutyOn, it.period);
+                manager.drivePhysicalLED(path, Layout::Action::Off, it.dutyOn,
+                                         it.period);
             }
         }
 
@@ -45,8 +45,7 @@ bool LampTest::processLEDUpdates(const ActionSet& ledsAssert,
 
             if (iter != forceUpdateLEDs.end())
             {
-                phosphor::led::Manager::drivePhysicalLED(path, it.action,
-                                                         it.dutyOn, it.period);
+                manager.drivePhysicalLED(path, it.action, it.dutyOn, it.period);
             }
         }
 
@@ -81,8 +80,7 @@ void LampTest::stop()
             continue;
         }
 
-        phosphor::led::Manager::drivePhysicalLED(path, Layout::Action::Off, 0,
-                                                 0);
+        manager.drivePhysicalLED(path, Layout::Action::Off, 0, 0);
     }
 
     if (std::filesystem::exists(lampTestIndicator))
@@ -238,8 +236,7 @@ void LampTest::start()
             continue;
         }
 
-        phosphor::led::Manager::drivePhysicalLED(path, Layout::Action::On, 0,
-                                                 0);
+        manager.drivePhysicalLED(path, Layout::Action::On, 0, 0);
     }
 }
 
@@ -369,8 +366,8 @@ void LampTest::clearLamps()
 
         for (const auto& path : physicalLedPaths)
         {
-            phosphor::led::Manager::drivePhysicalLED(
-                path, phosphor::led::Layout::Action::Off, 0, 0);
+            manager.drivePhysicalLED(path, phosphor::led::Layout::Action::Off,
+                                     0, 0);
         }
 
         // Also remove the lamp test on indicator file.
