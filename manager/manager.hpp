@@ -78,10 +78,9 @@ class Manager
      *  @param [in] Event    - sd event handler
      */
     Manager(
-        sdbusplus::bus_t& bus, const GroupMap& ledLayout,
+        sdbusplus::bus_t&, const GroupMap& ledLayout,
         const sdeventplus::Event& event = sdeventplus::Event::get_default()) :
-        ledMap(ledLayout), bus(bus),
-        timer(event, [this](auto&) { driveLedsHandler(); })
+        ledMap(ledLayout), timer(event, [this](auto&) { driveLedsHandler(); })
     {
         // Nothing here
     }
@@ -136,9 +135,6 @@ class Manager
             callBack);
 
   private:
-    /** @brief sdbusplus handler */
-    sdbusplus::bus_t& bus;
-
     /** Map of physical LED path to service name */
     std::unordered_map<std::string, std::string> phyLeds;
 
