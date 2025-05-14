@@ -79,7 +79,7 @@ class LampTest
      * with the persisted lamp test indicator file so that there is no sign of
      * lamptest.
      */
-    static void clearLamps();
+    void clearLamps();
 
   private:
     /** @brief Timer used for LEDs lamp test period */
