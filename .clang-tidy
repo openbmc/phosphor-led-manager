@@ -266,7 +266,6 @@ readability-isolate-declaration,
 readability-make-member-function-const,
 readability-misleading-indentation,
 readability-misplaced-array-index,
-readability-named-parameter,
 readability-non-const-parameter,
 readability-qualified-auto,
 readability-redundant-access-specifiers,
@@ -286,4 +285,4 @@ readability-uniqueptr-delete-release,
 readability-uppercase-literal-suffix'
 
 WarningsAsErrors: '*'
-HeaderFilterRegex: '.*.hpp'
+HeaderFilterRegex: '(?!^subprojects).*'
