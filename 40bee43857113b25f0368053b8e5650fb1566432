@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "2198c095_e812f995",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T12:07:11Z",
+      "side": 1,
+      "message": "\u003e The problem is that there is no consistency on these and they lead to a bad developer experience.\n\nConsistently having almost no checks enabled seems worse to me than having 20+ checks inconsistently applied.",
+      "parentUuid": "d1c56f46_caa5d2a2",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee802146_710caebb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -67,6 +85,24 @@
       "side": 1,
       "message": "Correct.  The docs is intended to be the maximal set.  The complexity ones do not apply cleanly to this repository and were removed.",
       "parentUuid": "ee802146_710caebb",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4265fdf5_2a202c46",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T12:07:11Z",
+      "side": 1,
+      "message": "\u003e The complexity ones do not apply cleanly to this repository and were removed.\n\nWhat\u0027s the value of the consensus there if people are going to drop these checks anyways.",
+      "parentUuid": "0cd02fb7_1cc046e6",
       "revId": "40bee43857113b25f0368053b8e5650fb1566432",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
