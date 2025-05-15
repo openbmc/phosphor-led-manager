@@ -20,6 +20,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "d1c56f46_caa5d2a2",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-15T11:32:49Z",
+      "side": 1,
+      "message": "\u003e I assume people did a lot of work to enable all of these checks and there is a reason clang-tidy developed them in the first place.\n\n\u003e The .clang-tidy in docs repo is missing a lot of essential checks and not suitable to just copy-paste apply everywhere.\n\nThis [local] work was done before Jayanth did some more project wide work.  The consensus on Jayanth\u0027s work was that we would enable a very small set everywhere and then get more and more individual checks added to docs.  The problem is that there is no consistency on these and they lead to a bad developer experience.\n\n\u003e Can\u0027t we just drop the individual checks which are causing problems or fix the code if it\u0027s a valid issue?\n\nThe \"readability-named-parameter\" is the one that specifically pissed me off because it is a \"style policy\" that we do not have documented anywhere, breaks a development pattern in C++ (tag-dispatch), and is something the C++ standard explicitly allows over the C standard.\n\nI\u0027d rather we revert this to the consensus level checks rather than bicker about individual ones in individual repositories across the project.  Let\u0027s keep that discussion all in one place.  (btw, I\u0027m having very similar discussions at https://gerrit.openbmc.org/c/openbmc/pldm/+/73859 because they recently added a bunch of these to PLDM after we already had the project decision to have a common one.)",
+      "parentUuid": "e4b69902_2a6010ee",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee802146_710caebb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -31,6 +49,24 @@
       "writtenOn": "2025-05-15T07:47:38Z",
       "side": 1,
       "message": "The config you pushed is not exactly matching the one in docs.",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cd02fb7_1cc046e6",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-15T11:32:49Z",
+      "side": 1,
+      "message": "Correct.  The docs is intended to be the maximal set.  The complexity ones do not apply cleanly to this repository and were removed.",
+      "parentUuid": "ee802146_710caebb",
       "revId": "40bee43857113b25f0368053b8e5650fb1566432",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
