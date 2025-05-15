@@ -16,6 +16,24 @@
       "message": "can we\n\n```return -1;``` here and not need the ```bool log``` variable?",
       "revId": "e44895df47c94cf0bb552b4ed4f742833c2b6ad8",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "acde174b_b914b08b",
+        "filename": "manager/manager.cpp",
+        "patchSetId": 3
+      },
+      "lineNbr": 248,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-15T11:26:35Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "31ac4e35_30348ad5",
+      "revId": "e44895df47c94cf0bb552b4ed4f742833c2b6ad8",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
