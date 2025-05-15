@@ -1,0 +1,55 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e4b69902_2a6010ee",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T07:47:38Z",
+      "side": 1,
+      "message": "\u003e We don\u0027t want projects having their own clang-tidy\n\nI assume people did a lot of work to enable all of these checks and there is a reason clang-tidy developed them in the first place.\n\nThe ```.clang-tidy``` in docs repo is missing a lot of essential checks and not suitable to just copy-paste apply everywhere.\n\nCan\u0027t we just drop the individual checks which are causing problems or fix the code if it\u0027s a valid issue?",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ee802146_710caebb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T07:47:38Z",
+      "side": 1,
+      "message": "The config you pushed is not exactly matching the one in docs.",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c968dc32_37768f3b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T07:47:38Z",
+      "side": 1,
+      "message": "The propo.clang-tidy",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
