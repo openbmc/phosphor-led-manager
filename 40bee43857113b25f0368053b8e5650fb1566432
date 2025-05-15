@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "5a2551ec_e0aca083",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T13:50:32Z",
+      "side": 1,
+      "message": "\u003e Would you like to pick up Jayanth’s work and continue it? \n\nNo, but i would also not like to throw away that work and allow people to regress on the quality that\u0027s already been achieved through those checks.\n\nI see at least 3 ways to improve the code quality.\n- review changes\n- have tests to fail changes which break the code\n- enable static checks\n\nMy favorites are the last two of those since that puts the effort on those who are creating changes. Reviewing changes for code quality is like playing whack-a-mole.\n\n\u003e  If there are ones you think are “critical”, let’s get a proposal to docs and start pushing them.\n\nI think people already have problems following and implementing those checks which are already in ```docs``` repo. So i am hesitating to add more to the list.",
+      "parentUuid": "6bb05d3f_9ec6ad50",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee802146_710caebb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -139,6 +157,24 @@
       "side": 1,
       "message": "Great question. They claimed they were unaware.",
       "parentUuid": "4265fdf5_2a202c46",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "17f2f8a8_09c47177",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2025-05-15T13:50:32Z",
+      "side": 1,
+      "message": "I\u0027m wondering how consensus is reached on the openbmc project if not all subproject maintainers are aware of project-wide designs and conventions.\n\nMaybe this can be scripted in some way. Have a script go through all ```OWNERS``` files in subprojects and get those (+2) people added to ```docs``` repo for review of project-wide changes.\n\nSince any project wide decisions and designs are kind of doomed without their approval.",
+      "parentUuid": "72097f0a_15f9828d",
       "revId": "40bee43857113b25f0368053b8e5650fb1566432",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
