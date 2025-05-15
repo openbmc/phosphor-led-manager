@@ -92,6 +92,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "61a499f8_7b234345",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-15T15:23:44Z",
+      "side": 1,
+      "message": "\u003e My favorites are the last two of those since that puts the effort on those who are creating changes. Reviewing changes for code quality is like playing whack-a-mole.\n\nI don\u0027t disagree.\n\n\u003e I think people already have problems following and implementing those checks which are already in docs repo. So i am hesitating to add more to the list.\n\nSo... why are we having this discussion?",
+      "parentUuid": "5a2551ec_e0aca083",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ee802146_710caebb",
         "filename": "/COMMIT_MSG",
         "patchSetId": 1
@@ -175,6 +193,24 @@
       "side": 1,
       "message": "I\u0027m wondering how consensus is reached on the openbmc project if not all subproject maintainers are aware of project-wide designs and conventions.\n\nMaybe this can be scripted in some way. Have a script go through all ```OWNERS``` files in subprojects and get those (+2) people added to ```docs``` repo for review of project-wide changes.\n\nSince any project wide decisions and designs are kind of doomed without their approval.",
       "parentUuid": "72097f0a_15f9828d",
+      "revId": "40bee43857113b25f0368053b8e5650fb1566432",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "946bb055_3db325ae",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 12,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-05-15T15:23:44Z",
+      "side": 1,
+      "message": "\u003e I\u0027m wondering how consensus is reached on the openbmc project if not all subproject maintainers are aware of project-wide designs and conventions.\n\nI don\u0027t understand the connection between \"consensus\" and \"awareness\".  These are two separate aspects.\n\n\u003e Maybe this can be scripted in some way. \n\nThe community-membership document, which already tells the responsibilities of subproject maintainers says:\n\nhttps://github.com/openbmc/docs/blob/master/community-membership.md#subproject-owner\n```\nKeep abreast of technical changes to the overall project and maintain and/or delegate maintenance of the subproject to keep it aligned with the overall project.\n```\n\nIt is the responsibility of subproject maintainers to keep themselves informed.  This is not the right forum to discuss if there is a better process, but I think the maintainers should come up with it and/or raise this to the TOF if it is a problem.\n\n\u003e Since any project wide decisions and designs are kind of doomed without their approval.\n\nNo... we don\u0027t need every subproject maintainer to weigh in on every single change.\n\nThis is partially what the TOF is for.  Honestly, if some other developer came here and did this exact same commit and I gave it a -1, they could go to the TOF and say \"hey, this was the consensus... why is this one maintainer not following it?\"  And, that is the method to deal with subproject maintainers doing the wrong thing and refusing to do the right thing.\n\nWhat I\u0027m going to do for now is redo this change to just turn off `readability-named-parameter`.",
+      "parentUuid": "17f2f8a8_09c47177",
       "revId": "40bee43857113b25f0368053b8e5650fb1566432",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
