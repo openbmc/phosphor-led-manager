@@ -47,5 +47,5 @@ executable(
     include_directories: ['..'],
     dependencies: deps,
     install: true,
-    install_dir: get_option('bindir'),
+    install_dir: get_option('libexecdir') / 'phosphor-led-manager',
 )
