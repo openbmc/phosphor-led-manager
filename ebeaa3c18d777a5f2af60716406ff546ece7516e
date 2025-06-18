@@ -1,0 +1,124 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "58e300dd_a9339560",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "nit: since this is phosphor-led-manager repistory, you don\u0027t need the prefix here.\n\nI often recommend to people that if the title has \"and\" in it, that usually belongs in two commits.  You might want to split this or at least reword the title in a way to be shorter (since you\u0027re getting a lint warning about the title length).",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1735d6b7_baec8c57",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "You\u0027ll need to use markdown bookmark syntax for this long line:\n\n[1]: https://...",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 125
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d49dfc9a_1507c5e3",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "Some of this stuff looks like it is coming from the Meta-internal git template.  You\u0027ll want to remove this.  Same with \"Summary\".  Upstream usually uses \"Tested:\" for the \"Test Plan:\".",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 5
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "48272fc8_8ca720c1",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "nit: should we do a for-each on these?  Can meson install an array worth of files at once?  I forget.",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "78137e72_a6d43f01",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "If we make a meson.build in the subdirectory where these live we can avoid all the path pieces here.",
+      "range": {
+        "startLine": 108,
+        "startChar": 5,
+        "endLine": 108,
+        "endChar": 28
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ab16b9f_367724bf",
+        "filename": "systemd/system/obmc-fru-fault-monitor.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-06-18T15:16:50Z",
+      "side": 1,
+      "message": "I\u0027d prefer we move these to a single directory in the root, following the pattern of many of the other recipes, rather than trying to mimic the install path.",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
