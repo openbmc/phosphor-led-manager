@@ -102,3 +102,21 @@ install_subdir(
     install_dir: get_option('datadir') / 'phosphor-led-manager',
     strip_directory: true,
 )
+
+systemd = dependency('systemd')
+install_data(
+    ['systemd' / 'system' / 'obmc-fru-fault-monitor.service'],
+    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+)
+install_data(
+    ['systemd' / 'system' / 'obmc-led-group-start@.service'],
+    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+)
+install_data(
+    ['systemd' / 'system' / 'obmc-led-group-stop@.service'],
+    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+)
+install_data(
+    ['systemd' / 'system' / 'xyz.openbmc_project.LED.GroupManager.service'],
+    install_dir: systemd.get_variable(pkgconfig: 'systemdsystemunitdir'),
+)
