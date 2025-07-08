@@ -1,0 +1,153 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f26a3cde_71e3be6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "I run this and I get an empty set:\n\n```\n$ meson install -C builddir --destdir /tmp/phosphor-led-manager\n$ find /tmp/phosphor-led-manager -type f | grep service\n```\n\nSomething is missing here.",
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "32be80c3_e06c86ee",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "I think you\u0027re missing adding this subdirectory to the top-level?",
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6bde57d1_501eca95",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "Should this be `systemd_system_unit_dir`?",
+      "range": {
+        "startLine": 2,
+        "startChar": 59,
+        "endLine": 2,
+        "endChar": 79
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c756acb6_6bcfd8c2",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "I don\u0027t think this part is needed.  Isn\u0027t it just svc?\n\n```\n$ rg \"systemd_system_unit_dir\" /usr/share/pkgconfig/systemd.pc       \n28:systemd_system_unit_dir\u003d${prefix}/lib/systemd/system\n29:systemdsystemunitdir\u003d${systemd_system_unit_dir}\n```\n\n`systemd/system` seems to already be there.",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "716ded59_cd10cde1",
+        "filename": "service_files/obmc-led-group-start@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "Can we just use a `busctl set-property` call?  (I know you copied this; maybe we can refactor in a follow up commit?)",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 192
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a1f795c_150a0d74",
+        "filename": "service_files/obmc-led-group-stop@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "`busctl set-property` could be used here too.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 193
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "74c54a8e_afb899c5",
+        "filename": "service_files/xyz.openbmc_project.LED.GroupManager.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-07-08T19:35:58Z",
+      "side": 1,
+      "message": "Something needs to be fixed here.\n\n```\n$ rg request_name\nmanager/led-main.cpp\n97:    bus.request_name(\"xyz.openbmc_project.LED.GroupManager\");\n```\n\nI think this is the value to put here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
