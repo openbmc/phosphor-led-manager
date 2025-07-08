@@ -35,6 +35,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "db35baef_e99fef70",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "Correct. Thanks!",
+      "parentUuid": "32be80c3_e06c86ee",
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "6bde57d1_501eca95",
@@ -60,6 +78,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "cc81b6a3_bac8d084",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "Maybe I am missing some context, but isn\u0027t this the standard one provided by pkg-config?\n```\n$ pkg-config systemd --variable\u003dsystemdsystemunitdir\n/usr/lib/systemd/system\n```",
+      "parentUuid": "6bde57d1_501eca95",
+      "range": {
+        "startLine": 2,
+        "startChar": 59,
+        "endLine": 2,
+        "endChar": 79
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "c756acb6_6bcfd8c2",
         "filename": "service_files/meson.build",
         "patchSetId": 2
@@ -71,6 +113,30 @@
       "writtenOn": "2025-07-08T19:35:58Z",
       "side": 1,
       "message": "I don\u0027t think this part is needed.  Isn\u0027t it just svc?\n\n```\n$ rg \"systemd_system_unit_dir\" /usr/share/pkgconfig/systemd.pc       \n28:systemd_system_unit_dir\u003d${prefix}/lib/systemd/system\n29:systemdsystemunitdir\u003d${systemd_system_unit_dir}\n```\n\n`systemd/system` seems to already be there.",
+      "range": {
+        "startLine": 11,
+        "startChar": 9,
+        "endLine": 11,
+        "endChar": 31
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a4f6947e_4b5f498b",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "c756acb6_6bcfd8c2",
       "range": {
         "startLine": 11,
         "startChar": 9,
@@ -106,6 +172,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "297e2851_d2e320d0",
+        "filename": "service_files/obmc-led-group-start@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "Thanks, Patrick! Sure, I can refactor in a follow up commit.",
+      "parentUuid": "716ded59_cd10cde1",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 192
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9a1f795c_150a0d74",
         "filename": "service_files/obmc-led-group-stop@.service",
         "patchSetId": 2
@@ -117,6 +207,30 @@
       "writtenOn": "2025-07-08T19:35:58Z",
       "side": 1,
       "message": "`busctl set-property` could be used here too.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 193
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2f3dc3f8_5336961b",
+        "filename": "service_files/obmc-led-group-stop@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "9a1f795c_150a0d74",
       "range": {
         "startLine": 11,
         "startChar": 0,
@@ -140,6 +254,30 @@
       "writtenOn": "2025-07-08T19:35:58Z",
       "side": 1,
       "message": "Something needs to be fixed here.\n\n```\n$ rg request_name\nmanager/led-main.cpp\n97:    bus.request_name(\"xyz.openbmc_project.LED.GroupManager\");\n```\n\nI think this is the value to put here.",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 17
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "62ae0c71_0c73536b",
+        "filename": "service_files/xyz.openbmc_project.LED.GroupManager.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T23:03:54Z",
+      "side": 1,
+      "message": "You are correct. This placeholder seems to be automatically replaced by Yocto through the definition in `obmc-phosphor-dbus-service.bbclass`.",
+      "parentUuid": "74c54a8e_afb899c5",
       "range": {
         "startLine": 11,
         "startChar": 0,
