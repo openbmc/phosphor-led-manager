@@ -18,6 +18,24 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "27347817_f9f8ddbc",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "58e300dd_a9339560",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "1735d6b7_baec8c57",
@@ -41,6 +59,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "343069bf_e978bc15",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 14,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "1735d6b7_baec8c57",
+      "range": {
+        "startLine": 14,
+        "startChar": 0,
+        "endLine": 14,
+        "endChar": 125
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d49dfc9a_1507c5e3",
@@ -54,6 +96,30 @@
       "writtenOn": "2025-06-18T15:16:50Z",
       "side": 1,
       "message": "Some of this stuff looks like it is coming from the Meta-internal git template.  You\u0027ll want to remove this.  Same with \"Summary\".  Upstream usually uses \"Tested:\" for the \"Test Plan:\".",
+      "range": {
+        "startLine": 22,
+        "startChar": 0,
+        "endLine": 28,
+        "endChar": 5
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d8d93f34_3f55e09c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 28,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "d49dfc9a_1507c5e3",
       "range": {
         "startLine": 22,
         "startChar": 0,
@@ -104,6 +170,48 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "17f2763e_f21b24ba",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "78137e72_a6d43f01",
+      "range": {
+        "startLine": 108,
+        "startChar": 5,
+        "endLine": 108,
+        "endChar": 28
+      },
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3de6b88b_718cdc69",
+        "filename": "meson.build",
+        "patchSetId": 1
+      },
+      "lineNbr": 108,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "48272fc8_8ca720c1",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "7ab16b9f_367724bf",
@@ -117,6 +225,24 @@
       "writtenOn": "2025-06-18T15:16:50Z",
       "side": 1,
       "message": "I\u0027d prefer we move these to a single directory in the root, following the pattern of many of the other recipes, rather than trying to mimic the install path.",
+      "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "796f8043_7e8e992d",
+        "filename": "systemd/system/obmc-fru-fault-monitor.service",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-08T18:04:52Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "7ab16b9f_367724bf",
       "revId": "ebeaa3c18d777a5f2af60716406ff546ece7516e",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
