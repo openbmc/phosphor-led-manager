@@ -100,6 +100,30 @@
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec612d95_3dacb163",
+        "filename": "service_files/meson.build",
+        "patchSetId": 2
+      },
+      "lineNbr": 2,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-09T15:02:57Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "cc81b6a3_bac8d084",
+      "range": {
+        "startLine": 2,
+        "startChar": 59,
+        "endLine": 2,
+        "endChar": 79
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "c756acb6_6bcfd8c2",
@@ -184,6 +208,30 @@
       "side": 1,
       "message": "Thanks, Patrick! Sure, I can refactor in a follow up commit.",
       "parentUuid": "716ded59_cd10cde1",
+      "range": {
+        "startLine": 11,
+        "startChar": 0,
+        "endLine": 11,
+        "endChar": 192
+      },
+      "revId": "eb0a7f9fdf3d8fd4e0a8e88de96387862caf3f37",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e4d8138a_94398ac9",
+        "filename": "service_files/obmc-led-group-start@.service",
+        "patchSetId": 2
+      },
+      "lineNbr": 11,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-07-09T15:02:57Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "297e2851_d2e320d0",
       "range": {
         "startLine": 11,
         "startChar": 0,
