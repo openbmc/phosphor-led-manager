@@ -34,6 +34,24 @@
       "parentUuid": "d50025f6_37ec442e",
       "revId": "bdfaa4dc5856ffd368b4710ceecbc93e3e66d50c",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "586e4425_61b54259",
+        "filename": "service_files/obmc-fru-fault-monitor.service",
+        "patchSetId": 4
+      },
+      "lineNbr": 8,
+      "author": {
+        "id": 1002515
+      },
+      "writtenOn": "2025-08-06T16:17:40Z",
+      "side": 1,
+      "message": "@paligill@gmail.com, @jamesatha@meta.com, here is the patch: https://gerrit.openbmc.org/c/openbmc/phosphor-led-manager/+/82597",
+      "parentUuid": "d0a81b9b_a6058aa0",
+      "revId": "bdfaa4dc5856ffd368b4710ceecbc93e3e66d50c",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ],
   "submitRequirementResults": []
