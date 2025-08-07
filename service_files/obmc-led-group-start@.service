@@ -8,5 +8,5 @@ Conflicts=obmc-led-group-stop@%i.service
 Type=oneshot
 RemainAfterExit=yes
 Restart=no
-ExecStart=/bin/sh -c "busctl call xyz.openbmc_project.LED.GroupManager /xyz/openbmc_project/led/groups/%i org.freedesktop.DBus.Properties Set ssv xyz.openbmc_project.Led.Group Asserted b true"
+ExecStart=/bin/sh -c "busctl set-property xyz.openbmc_project.LED.GroupManager /xyz/openbmc_project/led/groups/%i xyz.openbmc_project.Led.Group Asserted b true"
 SyslogIdentifier=obmc-led-group-start
