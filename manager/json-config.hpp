@@ -1,9 +1,12 @@
+#include "sdeventplus/clock.hpp"
+#include "sdeventplus/source/time.hpp"
 #include "utils.hpp"
 
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
 
+#include <chrono>
 #include <filesystem>
 #include <fstream>
 
@@ -237,6 +240,21 @@ auto getJsonConfig()
     // after finding the configuration file
     if (jsonConfig.getConfFile().empty())
     {
+        // Cannot wait forever here, otherwise systemd will timeout waiting for
+        // the well-known name to be claimed.
+        static constexpr auto accuracy = std::chrono::seconds(0);
+        static constexpr auto waitDurationSeconds = 75;
+        static constexpr auto waitDuration =
+            std::chrono::seconds(waitDurationSeconds);
+        auto expireTime =
+            sdeventplus::Clock<sdeventplus::ClockId::Monotonic>(event).now() +
+            waitDuration;
+        sdeventplus::source::Time<sdeventplus::ClockId::Monotonic> source(
+            event, expireTime, accuracy, [&event](auto&, auto) {
+                lg2::info("No configuration after {SECONDS} seconds", "SECONDS",
+                          waitDurationSeconds);
+                event.exit(0);
+            });
         event.loop();
     }
 

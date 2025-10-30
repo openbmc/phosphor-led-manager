@@ -40,7 +40,13 @@ int main(int argc, char** argv)
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
 #ifdef LED_USE_JSON
-    auto systemLedMap = getSystemLedMap(configFile);
+    auto optionalMap = getSystemLedMap(configFile);
+    if (!optionalMap.has_value())
+    {
+        lg2::info("No configuration found, exiting");
+        return 0;
+    }
+    auto systemLedMap = *optionalMap;
 #endif
 
     phosphor::led::validateConfigV1(systemLedMap);
