@@ -16,6 +16,24 @@
       "message": "I don\u0027t know what number is appropriate, if any, but this seems kind of short.  Shouldn\u0027t we just go ahead and claim the busname earlier so that systemd continues on, but continue to wait forever for an EM config to show up?\n\nThis feature to watch the Compatible seems to currently only be relied on by IBM so I\u0027ll see if some of them can respond.",
       "revId": "7edf11098ec1ea3b96250f14f440a50de761cde4",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d8d30ab_9c0e2de0",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2025-10-30T20:07:38Z",
+      "side": 1,
+      "message": "\u003e I don\u0027t know what number is appropriate, if any, but this seems kind of short.\n\nOct 30 12:55:42 evb-ast2600 systemd[1]: Starting Phosphor LED Group Management Daemon...\nOct 30 12:57:12 evb-ast2600 systemd[1]: xyz.openbmc_project.LED.GroupManager.service: start operation timed out. Terminating.\n\nThe upper bound would be this duration here (looks like 90s).  If the configuration doesn\u0027t show up by this point, systemd is going to kill the application.\n\nI didn\u0027t think very hard about 30s.  I think 75-85 seconds could work?\n\n\u003e Shouldn\u0027t we just go ahead and claim the busname earlier so that systemd continues on\n\nI had the same thought and that would certainly be simpler.  I chose this route because it means we\u0027ll be moving startup object creation after claiming the busname which is problematic isn\u0027t it?",
+      "parentUuid": "c3d66c44_a519eec2",
+      "revId": "7edf11098ec1ea3b96250f14f440a50de761cde4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
