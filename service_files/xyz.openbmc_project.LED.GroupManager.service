@@ -4,7 +4,7 @@ Before=mapper-wait@-xyz-openbmc_project-led-groups.service
 After=phosphor-ledcontroller.service
 
 [Service]
-Restart=always
+Restart=on-failure
 ExecStart=/usr/libexec/phosphor-led-manager/phosphor-ledmanager
 SyslogIdentifier=phosphor-ledmanager
 Type=dbus
