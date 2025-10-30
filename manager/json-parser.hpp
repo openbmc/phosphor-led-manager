@@ -180,11 +180,15 @@ phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
  *  @note if config is an empty string, daemon will interrogate dbus for
  *        compatible strings.
  */
-phosphor::led::GroupMap getSystemLedMap(fs::path config)
+std::optional<phosphor::led::GroupMap> getSystemLedMap(fs::path config)
 {
     if (config.empty())
     {
         config = phosphor::led::getJsonConfig();
+        if (config.empty())
+        {
+            return {};
+        }
     }
 
     return loadJsonConfig(config);
