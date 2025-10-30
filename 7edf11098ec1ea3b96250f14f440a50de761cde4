@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c3d66c44_a519eec2",
+        "filename": "manager/json-config.hpp",
+        "patchSetId": 1
+      },
+      "lineNbr": 246,
+      "author": {
+        "id": 1000000
+      },
+      "writtenOn": "2025-10-30T19:48:17Z",
+      "side": 1,
+      "message": "I don\u0027t know what number is appropriate, if any, but this seems kind of short.  Shouldn\u0027t we just go ahead and claim the busname earlier so that systemd continues on, but continue to wait forever for an EM config to show up?\n\nThis feature to watch the Compatible seems to currently only be relied on by IBM so I\u0027ll see if some of them can respond.",
+      "revId": "7edf11098ec1ea3b96250f14f440a50de761cde4",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
