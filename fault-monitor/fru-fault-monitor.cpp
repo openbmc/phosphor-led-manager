@@ -218,17 +218,11 @@ void Add::processExistingCallouts(sdbusplus::bus_t& bus)
             "org.freedesktop.DBus.Properties", "Get");
         method.append("xyz.openbmc_project.Association.Definitions");
         method.append("Associations");
-        auto reply = bus.call(method);
-        if (reply.is_method_error())
-        {
-            // do not stop, continue with next elog
-            lg2::error("Error in getting associations");
-            continue;
-        }
-
-        std::variant<AssociationList> assoc;
         try
         {
+            auto reply = bus.call(method);
+
+            std::variant<AssociationList> assoc;
             reply.read(assoc);
         }
         catch (const sdbusplus::exception_t& e)
