@@ -16,6 +16,23 @@
       "message": "I think that should be enough time.",
       "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e934377e_81fd1c9f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2025-11-10T15:59:49Z",
+      "side": 1,
+      "message": "I\u0027m a bit torn on this one. I get the frustration but also, with this change we\u0027re basically going to silently fail. If this feature is enabled, the expectation is the system better serve up the configuration and if it doesn\u0027t, we want to know. Should the vanilla default be to not enable this \"use-json\" PACKAGECONFIG?",
+      "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
