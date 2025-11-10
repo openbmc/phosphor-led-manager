@@ -33,6 +33,24 @@
       "message": "I\u0027m a bit torn on this one. I get the frustration but also, with this change we\u0027re basically going to silently fail. If this feature is enabled, the expectation is the system better serve up the configuration and if it doesn\u0027t, we want to know. Should the vanilla default be to not enable this \"use-json\" PACKAGECONFIG?",
       "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "c5fa3d5e_90a8492b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000002
+      },
+      "writtenOn": "2025-11-10T22:20:24Z",
+      "side": 1,
+      "message": "\u003e  If this feature is enabled, the expectation is the system better serve up the configuration\n\nSomeone could just as easily want to use this feature flag to support two systems, one with leds and one without, in a single flash image and their expectation would be that the service does something sane on the system without any configuration.\n\n\u003e and if it doesn\u0027t, we want to know.\n\nWell, you do know, because its in the journal when this happens.  Can you say more about what you want to happen?  Maybe I can do something about it.\n\n\u003e Should the vanilla default be to not enable this \"use-json\" PACKAGECONFIG?\n\nYes probably, but I think we\u0027d want a proper entity-manager schema for led groups before we did that.",
+      "parentUuid": "e934377e_81fd1c9f",
+      "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
