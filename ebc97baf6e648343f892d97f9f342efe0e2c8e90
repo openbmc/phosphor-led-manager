@@ -51,6 +51,24 @@
       "parentUuid": "e934377e_81fd1c9f",
       "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5ebd9c19_c96ee35c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2025-11-11T21:25:44Z",
+      "side": 1,
+      "message": "\u003e Well, you do know, because its in the journal when this happens. Can you say more about what you want to happen? Maybe I can do something about it.\n\nA reported error would be great, maybe just a warning error level as a compromise to address your use case of 2 systems being supported by a single flash image.",
+      "parentUuid": "c5fa3d5e_90a8492b",
+      "revId": "ebc97baf6e648343f892d97f9f342efe0e2c8e90",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
