@@ -168,8 +168,6 @@ phosphor::led::GroupMap loadJsonConfig(const fs::path& path)
                        version);
             throw std::runtime_error("Unsupported version");
     }
-
-    return phosphor::led::GroupMap{};
 }
 
 /** @brief Get led map from LED groups JSON config
