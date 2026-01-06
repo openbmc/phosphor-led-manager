@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbefa26e_3ea6d2cc",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1001712
+      },
+      "writtenOn": "2026-01-06T09:05:17Z",
+      "side": 1,
+      "message": "kindly reconsider this change since https://gerrit.openbmc.org/c/openbmc/openbmc/+/78131\n\nhas been merged and upstream configs have been migrated to use the json configuration format.",
+      "revId": "79bb5a039d78d9b3f0a1606b7364743d152facfd",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    }
+  ]
+}
