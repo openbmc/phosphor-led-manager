@@ -1,10 +1,7 @@
 #include "config.h"
 
-#ifdef MONITOR_OPERATIONAL_STATUS
-#include "operational-status-monitor.hpp"
-#else
 #include "fru-fault-monitor.hpp"
-#endif
+#include "operational-status-monitor.hpp"
 
 int main(void)
 {
