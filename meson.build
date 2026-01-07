@@ -40,10 +40,6 @@ phosphor_logging_dep = dependency('phosphor-logging')
 sdbusplus_dep = dependency('sdbusplus')
 sdeventplus_dep = dependency('sdeventplus')
 
-prog_python = find_program('python3', required: true)
-realpath_prog = find_program('realpath')
-
-
 if cpp.has_header('CLI/CLI.hpp')
     CLI11_dep = declare_dependency()
 else
