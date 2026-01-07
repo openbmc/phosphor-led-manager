@@ -46,32 +46,38 @@ int main(int argc, char** argv)
     std::vector<std::unique_ptr<phosphor::led::Group>> groups;
 
     std::shared_ptr<phosphor::led::Serialize> serializePtr = nullptr;
-#ifdef PERSISTENT_LED_ASSERTED
-    /** @brief store and re-store Group */
-    serializePtr =
-        std::make_shared<phosphor::led::Serialize>(SAVED_GROUPS_FILE);
-#endif
+    if constexpr (PERSISTENT_LED_ASSERTED)
+    {
+        /** @brief store and re-store Group */
+        serializePtr =
+            std::make_shared<phosphor::led::Serialize>(SAVED_GROUPS_FILE);
+    }
 
-#ifdef USE_LAMP_TEST
-    phosphor::led::LampTest lampTest(event, manager);
+    std::unique_ptr<phosphor::led::LampTest> lampTest;
 
-    // Clear leds triggered by lamp test in previous boot
-    lampTest.clearLamps();
+    if constexpr (USE_LAMP_TEST)
+    {
+        lampTest = std::make_unique<phosphor::led::LampTest>(event, manager);
 
-    groups.emplace_back(std::make_unique<phosphor::led::Group>(
-        bus, LAMP_TEST_OBJECT, manager, serializePtr,
-        [&lampTest](auto&& arg1, auto&& arg2) {
-            return lampTest.requestHandler(std::forward<decltype(arg1)>(arg1),
-                                           std::forward<decltype(arg2)>(arg2));
-        }));
+        // Clear leds triggered by lamp test in previous boot
+        lampTest->clearLamps();
 
-    // Register a lamp test method in the manager class, and call this method
-    // when the lamp test is started
-    manager.setLampTestCallBack([&lampTest](auto&& arg1, auto&& arg2) {
-        return lampTest.processLEDUpdates(std::forward<decltype(arg1)>(arg1),
-                                          std::forward<decltype(arg2)>(arg2));
-    });
-#endif
+        groups.emplace_back(std::make_unique<phosphor::led::Group>(
+            bus, LAMP_TEST_OBJECT, manager, serializePtr,
+            [&lampTest](auto&& arg1, auto&& arg2) {
+                return lampTest->requestHandler(
+                    std::forward<decltype(arg1)>(arg1),
+                    std::forward<decltype(arg2)>(arg2));
+            }));
+
+        // Register a lamp test method in the manager class, and call this
+        // method when the lamp test is started
+        manager.setLampTestCallBack([&lampTest](auto&& arg1, auto&& arg2) {
+            return lampTest->processLEDUpdates(
+                std::forward<decltype(arg1)>(arg1),
+                std::forward<decltype(arg2)>(arg2));
+        });
+    }
 
     /** Now create so many dbus objects as there are groups */
     std::ranges::transform(systemLedMap, std::back_inserter(groups),

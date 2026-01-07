@@ -169,15 +169,17 @@ void Manager::setLampTestCallBack(
 /** @brief Run through the map and apply action on the LEDs */
 void Manager::driveLEDs(ActionSet& ledsAssert, ActionSet& ledsDeAssert)
 {
-#ifdef USE_LAMP_TEST
-    // Use the lampTestCallBack method and trigger the callback method in the
-    // lamp test(processLEDUpdates), in this way, all lamp test operations
-    // are performed in the lamp test class.
-    if (lampTestCallBack(ledsAssert, ledsDeAssert))
+    if constexpr (USE_LAMP_TEST)
     {
-        return;
+        // Use the lampTestCallBack method and trigger the callback method in
+        // the lamp test(processLEDUpdates), in this way, all lamp test
+        // operations are performed in the lamp test class.
+        if (lampTestCallBack(ledsAssert, ledsDeAssert))
+        {
+            return;
+        }
     }
-#endif
+
     ActionSet newReqChangedLeds;
     std::vector<std::pair<ActionSet&, ActionSet&>> actionsVec = {
         {reqLedsAssert, ledsAssert}, {reqLedsDeAssert, ledsDeAssert}};

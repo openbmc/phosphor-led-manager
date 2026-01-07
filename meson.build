@@ -24,12 +24,12 @@ conf_data.set_quoted('ELOG_ENTRY', 'entry')
 conf_data.set_quoted('LED_FAULT', 'fault')
 
 conf_data.set('CLASS_VERSION', 1)
-conf_data.set('USE_LAMP_TEST', get_option('use-lamp-test').allowed())
-conf_data.set(
+conf_data.set10('USE_LAMP_TEST', get_option('use-lamp-test').allowed())
+conf_data.set10(
     'MONITOR_OPERATIONAL_STATUS',
     get_option('monitor-operational-status').allowed(),
 )
-conf_data.set(
+conf_data.set10(
     'PERSISTENT_LED_ASSERTED',
     get_option('persistent-led-asserted').allowed(),
 )
