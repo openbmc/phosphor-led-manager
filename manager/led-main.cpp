@@ -3,13 +3,11 @@
 #include "config-validator.hpp"
 #include "group.hpp"
 #include "json-parser.hpp"
+#include "lamptest/lamptest.hpp"
 #include "ledlayout.hpp"
 #include "manager.hpp"
 #include "serialize.hpp"
 #include "utils.hpp"
-#ifdef USE_LAMP_TEST
-#include "lamptest/lamptest.hpp"
-#endif
 
 #include <CLI/CLI.hpp>
 #include <sdeventplus/event.hpp>
