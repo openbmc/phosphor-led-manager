@@ -1,8 +1,11 @@
 #include "lamptest.hpp"
 
 #include <phosphor-logging/lg2.hpp>
+#include <xyz/openbmc_project/Led/Physical/common.hpp>
 
 #include <algorithm>
+
+using LedPhysical = sdbusplus::common::xyz::openbmc_project::led::Physical;
 
 namespace phosphor
 {
@@ -147,8 +150,8 @@ void LampTest::storePhysicalLEDsStates()
         try
         {
             auto properties =
-                phosphor::led::utils::DBusHandler::getAllProperties(path,
-                                                                    phyLedIntf);
+                phosphor::led::utils::DBusHandler::getAllProperties(
+                    path, LedPhysical::interface);
 
             state = std::get<std::string>(properties["State"]);
             period = std::get<uint16_t>(properties["Period"]);
@@ -190,13 +193,14 @@ void LampTest::start()
     try
     {
         physicalLEDPaths = phosphor::led::utils::DBusHandler::getSubTreePaths(
-            phyLedPath, phyLedIntf);
+            phyLedPath, LedPhysical::interface);
     }
     catch (const sdbusplus::exception_t& e)
     {
         lg2::error(
             "Failed to call the SubTreePaths method: {ERROR}, ledPath: {PATH}, ledInterface: {INTERFACE}",
-            "ERROR", e, "PATH", phyLedPath, "INTERFACE", phyLedIntf);
+            "ERROR", e, "PATH", phyLedPath, "INTERFACE",
+            LedPhysical::interface);
         return;
     }
 
@@ -362,7 +366,7 @@ void LampTest::clearLamps()
         // we need to off all the LEDs.
         std::vector<std::string> physicalLedPaths =
             phosphor::led::utils::DBusHandler::getSubTreePaths(
-                phosphor::led::phyLedPath, phosphor::led::phyLedIntf);
+                phosphor::led::phyLedPath, LedPhysical::interface);
 
         for (const auto& path : physicalLedPaths)
         {

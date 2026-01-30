@@ -11,6 +11,8 @@
 #include <iostream>
 #include <string>
 
+using LedPhysical = sdbusplus::common::xyz::openbmc_project::led::Physical;
+
 namespace phosphor
 {
 namespace led
@@ -225,14 +227,17 @@ int Manager::drivePhysicalLED(const std::string& objPath, Layout::Action action,
             PropertyValue periodValue{period};
 
             phosphor::led::utils::DBusHandler::setProperty(
-                objPath, phyLedIntf, "DutyOn", dutyOnValue);
+                objPath, LedPhysical::interface,
+                LedPhysical::property_names::duty_on, dutyOnValue);
             phosphor::led::utils::DBusHandler::setProperty(
-                objPath, phyLedIntf, "Period", periodValue);
+                objPath, LedPhysical::interface,
+                LedPhysical::property_names::period, periodValue);
         }
 
         PropertyValue actionValue{getPhysicalAction(action)};
-        phosphor::led::utils::DBusHandler::setProperty(objPath, phyLedIntf,
-                                                       "State", actionValue);
+        phosphor::led::utils::DBusHandler::setProperty(
+            objPath, LedPhysical::interface, LedPhysical::property_names::state,
+            actionValue);
     }
     catch (const sdbusplus::exception_t& e)
     {
