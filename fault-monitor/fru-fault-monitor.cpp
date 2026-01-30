@@ -7,11 +7,13 @@
 #include <xyz/openbmc_project/Association/Definitions/common.hpp>
 #include <xyz/openbmc_project/Common/error.hpp>
 #include <xyz/openbmc_project/Led/Group/common.hpp>
+#include <xyz/openbmc_project/Logging/Entry/common.hpp>
 #include <xyz/openbmc_project/ObjectMapper/common.hpp>
 
 using ObjectMapper = sdbusplus::common::xyz::openbmc_project::ObjectMapper;
 using AssociationDefinitions =
     sdbusplus::common::xyz::openbmc_project::association::Definitions;
+using LoggingEntry = sdbusplus::common::xyz::openbmc_project::logging::Entry;
 
 namespace phosphor
 {
@@ -28,7 +30,6 @@ using namespace phosphor::logging;
 
 static constexpr auto objMgrIntf = "org.freedesktop.DBus.ObjectManager";
 static constexpr auto ledGroups = "/xyz/openbmc_project/led/groups/";
-static constexpr auto logIntf = "xyz.openbmc_project.Logging.Entry";
 
 using AssociationList =
     std::vector<std::tuple<std::string, std::string, std::string>>;
@@ -194,7 +195,7 @@ void getLoggingSubTree(sdbusplus::bus_t& bus, MapperResponseType& subtree)
         ObjectMapper::interface, ObjectMapper::method_names::get_sub_tree);
     mapperCall.append("/");
     mapperCall.append(depth);
-    mapperCall.append(std::vector<Interface>({logIntf}));
+    mapperCall.append(std::vector<Interface>({LoggingEntry::interface}));
 
     try
     {
