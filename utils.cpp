@@ -1,6 +1,9 @@
 #include "utils.hpp"
 
 #include <phosphor-logging/lg2.hpp>
+#include <xyz/openbmc_project/ObjectMapper/common.hpp>
+
+using ObjectMapper = sdbusplus::common::xyz::openbmc_project::ObjectMapper;
 
 namespace phosphor
 {
@@ -18,8 +21,9 @@ std::string DBusHandler::getService(const std::string& path,
 
     auto& bus = DBusHandler::getBus();
 
-    auto mapper = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
-                                      "GetObject");
+    auto mapper = bus.new_method_call(
+        ObjectMapper::default_service, ObjectMapper::instance_path,
+        ObjectMapper::interface, ObjectMapper::method_names::get_object);
     mapper.append(path, InterfaceList({interface}));
 
     auto mapperResponseMsg = bus.call(mapper);
@@ -49,8 +53,9 @@ PropertyMap DBusHandler::getAllProperties(const std::string& objectPath,
         return properties;
     }
 
-    auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      proIntf, "GetAll");
+    auto method =
+        bus.new_method_call(service.c_str(), objectPath.c_str(),
+                            "org.freedesktop.DBus.Properties", "GetAll");
     method.append(interface);
 
     auto reply = bus.call(method);
@@ -74,7 +79,7 @@ PropertyValue DBusHandler::getProperty(const std::string& objectPath,
     }
 
     auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      proIntf, "Get");
+                                      "org.freedesktop.DBus.Properties", "Get");
     method.append(interface, propertyName);
 
     auto reply = bus.call(method);
@@ -96,7 +101,7 @@ void DBusHandler::setProperty(
     }
 
     auto method = bus.new_method_call(service.c_str(), objectPath.c_str(),
-                                      proIntf, "Set");
+                                      "org.freedesktop.DBus.Properties", "Set");
     method.append(interface.c_str(), propertyName.c_str(), value);
 
     bus.call_noreply(method);
@@ -109,8 +114,10 @@ std::vector<std::string> DBusHandler::getSubTreePaths(
 
     auto& bus = DBusHandler::getBus();
 
-    auto method = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
-                                      "GetSubTreePaths");
+    auto method = bus.new_method_call(
+        ObjectMapper::default_service, ObjectMapper::instance_path,
+        ObjectMapper::interface,
+        ObjectMapper::method_names::get_sub_tree_paths);
     method.append(objectPath.c_str());
     method.append(0); // Depth 0 to search all
     method.append(std::vector<std::string>({interface}));

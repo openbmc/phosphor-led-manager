@@ -5,6 +5,9 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Common/error.hpp>
+#include <xyz/openbmc_project/ObjectMapper/common.hpp>
+
+using ObjectMapper = sdbusplus::common::xyz::openbmc_project::ObjectMapper;
 
 namespace phosphor
 {
@@ -19,9 +22,6 @@ namespace monitor
 
 using namespace phosphor::logging;
 
-static constexpr auto mapperBusName = "xyz.openbmc_project.ObjectMapper";
-static constexpr auto mapperObjPath = "/xyz/openbmc_project/object_mapper";
-static constexpr auto mapperIntf = "xyz.openbmc_project.ObjectMapper";
 static constexpr auto objMgrIntf = "org.freedesktop.DBus.ObjectManager";
 static constexpr auto ledGroups = "/xyz/openbmc_project/led/groups/";
 static constexpr auto logIntf = "xyz.openbmc_project.Logging.Entry";
@@ -48,8 +48,9 @@ using InvalidArgumentErr =
 
 std::string getService(sdbusplus::bus_t& bus, const std::string& path)
 {
-    auto mapper = bus.new_method_call(mapperBusName, mapperObjPath, mapperIntf,
-                                      "GetObject");
+    auto mapper = bus.new_method_call(
+        ObjectMapper::default_service, ObjectMapper::instance_path,
+        ObjectMapper::interface, ObjectMapper::method_names::get_object);
     mapper.append(path.c_str(), std::vector<std::string>({objMgrIntf}));
 
     std::unordered_map<std::string, std::vector<std::string>> mapperResponse;
@@ -181,8 +182,9 @@ void Add::created(sdbusplus::message_t& msg)
 void getLoggingSubTree(sdbusplus::bus_t& bus, MapperResponseType& subtree)
 {
     auto depth = 0;
-    auto mapperCall = bus.new_method_call(mapperBusName, mapperObjPath,
-                                          mapperIntf, "GetSubTree");
+    auto mapperCall = bus.new_method_call(
+        ObjectMapper::default_service, ObjectMapper::instance_path,
+        ObjectMapper::interface, ObjectMapper::method_names::get_sub_tree);
     mapperCall.append("/");
     mapperCall.append(depth);
     mapperCall.append(std::vector<Interface>({logIntf}));
