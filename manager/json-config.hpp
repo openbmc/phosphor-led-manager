@@ -3,9 +3,13 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <sdeventplus/event.hpp>
+#include <xyz/openbmc_project/Inventory/Decorator/Compatible/common.hpp>
 
 #include <filesystem>
 #include <fstream>
+
+using InventoryDecoratorCompatible =
+    sdbusplus::common::xyz::openbmc_project::inventory::decorator::Compatible;
 
 namespace fs = std::filesystem;
 
@@ -17,9 +21,6 @@ namespace led
 static constexpr auto confFileName = "led-group-config.json";
 static constexpr auto confOverridePath = "/etc/phosphor-led-manager";
 static constexpr auto confBasePath = "/usr/share/phosphor-led-manager";
-static constexpr auto confCompatibleInterface =
-    "xyz.openbmc_project.Inventory.Decorator.Compatible";
-static constexpr auto confCompatibleProperty = "Names";
 
 class JsonConfig
 {
@@ -102,21 +103,23 @@ class JsonConfig
 
         msg.read(path, interfaces);
 
-        if (!interfaces.contains(confCompatibleInterface))
+        if (!interfaces.contains(InventoryDecoratorCompatible::interface))
         {
             return;
         }
 
         // Get the "Name" property value of the
         // "xyz.openbmc_project.Inventory.Decorator.Compatible" interface
-        const auto& properties = interfaces.at(confCompatibleInterface);
+        const auto& properties =
+            interfaces.at(InventoryDecoratorCompatible::interface);
 
-        if (!properties.contains(confCompatibleProperty))
+        if (!properties.contains(
+                InventoryDecoratorCompatible::property_names::names))
         {
             return;
         }
         auto names = std::get<std::vector<std::string>>(
-            properties.at(confCompatibleProperty));
+            properties.at(InventoryDecoratorCompatible::property_names::names));
 
         if (filePathExists(names))
         {
@@ -132,7 +135,8 @@ class JsonConfig
      * json config file from the following locations in order.
      * confOverridePath: /etc/phosphor-led-manager/led-group-config.json
      * confBasePath: /usr/shard/phosphor-led-manager/led-group-config.json
-     * the name property of the confCompatibleInterface:
+     * the name property of the
+     * xyz.openbmc_project.Inventory.Decorator.Compatible interface:
      * /usr/shard/phosphor-led-manager/${Name}/led-group-config.json
      *
      * @brief Get the configuration file to be used
@@ -160,14 +164,15 @@ class JsonConfig
         {
             // Get all objects implementing the compatible interface
             auto objects = phosphor::led::utils::DBusHandler::getSubTreePaths(
-                "/", confCompatibleInterface);
+                "/", InventoryDecoratorCompatible::interface);
             for (const auto& path : objects)
             {
                 try
                 {
                     // Retrieve json config compatible relative path locations
                     auto value = phosphor::led::utils::DBusHandler::getProperty(
-                        path, confCompatibleInterface, confCompatibleProperty);
+                        path, InventoryDecoratorCompatible::interface,
+                        InventoryDecoratorCompatible::property_names::names);
 
                     auto confCompatValues =
                         std::get<std::vector<std::string>>(value);
@@ -186,8 +191,8 @@ class JsonConfig
                     // Property unavailable on object.
                     lg2::error(
                         "Failed to get Names property, ERROR = {ERROR}, INTERFACE = {INTERFACE}, PATH = {PATH}",
-                        "ERROR", e, "INTERFACE", confCompatibleInterface,
-                        "PATH", path);
+                        "ERROR", e, "INTERFACE",
+                        InventoryDecoratorCompatible::interface, "PATH", path);
 
                     confFile.clear();
                 }
@@ -197,7 +202,8 @@ class JsonConfig
         {
             lg2::error(
                 "Failed to call the SubTreePaths method, ERROR = {ERROR}, INTERFACE = {INTERFACE}",
-                "ERROR", e, "INTERFACE", confCompatibleInterface);
+                "ERROR", e, "INTERFACE",
+                InventoryDecoratorCompatible::interface);
         }
         return;
     }
