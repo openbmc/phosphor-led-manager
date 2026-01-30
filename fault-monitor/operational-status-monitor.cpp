@@ -2,9 +2,11 @@
 
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/lg2.hpp>
+#include <xyz/openbmc_project/Association/common.hpp>
 #include <xyz/openbmc_project/Led/Group/common.hpp>
 
 using LedGroup = sdbusplus::common::xyz::openbmc_project::led::Group;
+using Association = sdbusplus::common::xyz::openbmc_project::Association;
 
 namespace phosphor
 {
@@ -72,8 +74,8 @@ std::vector<std::string> Monitor::getLedGroupPaths(
     try
     {
         endpoint = phosphor::led::utils::DBusHandler::getProperty(
-            faultLedAssociation, "xyz.openbmc_project.Association",
-            "endpoints");
+            faultLedAssociation, Association::interface,
+            Association::property_names::endpoints);
     }
     catch (const sdbusplus::exception_t& e)
     {
