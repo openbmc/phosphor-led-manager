@@ -185,7 +185,7 @@ class JsonConfig
                 {
                     // Property unavailable on object.
                     lg2::error(
-                        "Failed to get Names property, ERROR = {ERROR}, INTERFACES = {INTERFACES}, PATH = {PATH}",
+                        "Failed to get Names property, ERROR = {ERROR}, INTERFACE = {INTERFACE}, PATH = {PATH}",
                         "ERROR", e, "INTERFACE", confCompatibleInterface,
                         "PATH", path);
 
