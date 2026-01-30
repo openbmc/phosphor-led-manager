@@ -2,6 +2,9 @@
 
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/lg2.hpp>
+#include <xyz/openbmc_project/Led/Group/common.hpp>
+
+using LedGroup = sdbusplus::common::xyz::openbmc_project::led::Group;
 
 namespace phosphor
 {
@@ -96,7 +99,7 @@ void Monitor::updateAssertedProperty(
             // is true
             PropertyValue assertedValue{!value};
             phosphor::led::utils::DBusHandler::setProperty(
-                path, "xyz.openbmc_project.Led.Group", "Asserted",
+                path, LedGroup::interface, LedGroup::property_names::asserted,
                 assertedValue);
         }
         catch (const sdbusplus::exception_t& e)

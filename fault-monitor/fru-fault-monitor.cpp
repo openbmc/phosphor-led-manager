@@ -5,6 +5,7 @@
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
 #include <xyz/openbmc_project/Common/error.hpp>
+#include <xyz/openbmc_project/Led/Group/common.hpp>
 #include <xyz/openbmc_project/ObjectMapper/common.hpp>
 
 using ObjectMapper = sdbusplus::common::xyz::openbmc_project::ObjectMapper;
@@ -45,6 +46,8 @@ using ResourceNotFoundErr =
     sdbusplus::xyz::openbmc_project::Common::Error::ResourceNotFound;
 using InvalidArgumentErr =
     sdbusplus::xyz::openbmc_project::Common::Error::InvalidArgument;
+
+using LedGroup = sdbusplus::common::xyz::openbmc_project::led::Group;
 
 std::string getService(sdbusplus::bus_t& bus, const std::string& path)
 {
@@ -107,8 +110,8 @@ void action(sdbusplus::bus_t& bus, const std::string& path, bool assert)
 
     auto method = bus.new_method_call(service.c_str(), ledPath.c_str(),
                                       "org.freedesktop.DBus.Properties", "Set");
-    method.append("xyz.openbmc_project.Led.Group");
-    method.append("Asserted");
+    method.append(LedGroup::interface);
+    method.append(LedGroup::property_names::asserted);
 
     method.append(std::variant<bool>(assert));
 

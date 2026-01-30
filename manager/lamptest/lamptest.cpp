@@ -1,11 +1,13 @@
 #include "lamptest.hpp"
 
 #include <phosphor-logging/lg2.hpp>
+#include <xyz/openbmc_project/Led/Group/common.hpp>
 #include <xyz/openbmc_project/Led/Physical/common.hpp>
 
 #include <algorithm>
 
 using LedPhysical = sdbusplus::common::xyz::openbmc_project::led::Physical;
+using LedGroup = sdbusplus::common::xyz::openbmc_project::led::Group;
 
 namespace phosphor
 {
@@ -315,8 +317,8 @@ void LampTest::doHostLampTest(bool value)
     {
         PropertyValue assertedValue{value};
         phosphor::led::utils::DBusHandler::setProperty(
-            HOST_LAMP_TEST_OBJECT, "xyz.openbmc_project.Led.Group", "Asserted",
-            assertedValue);
+            HOST_LAMP_TEST_OBJECT, LedGroup::interface,
+            LedGroup::property_names::asserted, assertedValue);
     }
     catch (const sdbusplus::exception_t& e)
     {
