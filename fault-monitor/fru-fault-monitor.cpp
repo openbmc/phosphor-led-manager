@@ -4,11 +4,14 @@
 #include <phosphor-logging/elog.hpp>
 #include <phosphor-logging/lg2.hpp>
 #include <sdbusplus/exception.hpp>
+#include <xyz/openbmc_project/Association/Definitions/common.hpp>
 #include <xyz/openbmc_project/Common/error.hpp>
 #include <xyz/openbmc_project/Led/Group/common.hpp>
 #include <xyz/openbmc_project/ObjectMapper/common.hpp>
 
 using ObjectMapper = sdbusplus::common::xyz::openbmc_project::ObjectMapper;
+using AssociationDefinitions =
+    sdbusplus::common::xyz::openbmc_project::association::Definitions;
 
 namespace phosphor
 {
@@ -151,7 +154,7 @@ void Add::created(sdbusplus::message_t& msg)
         // Not a new error entry skip
         return;
     }
-    auto iter = interfaces.find("xyz.openbmc_project.Association.Definitions");
+    auto iter = interfaces.find(AssociationDefinitions::interface);
     if (iter == interfaces.end())
     {
         return;
@@ -161,7 +164,8 @@ void Add::created(sdbusplus::message_t& msg)
     // has been created. Do it here.
     lg2::debug("{PATH} created", "PATH", objectPath);
 
-    auto attr = iter->second.find("Associations");
+    auto attr =
+        iter->second.find(AssociationDefinitions::property_names::associations);
     if (attr == iter->second.end())
     {
         return;
@@ -221,8 +225,8 @@ void Add::processExistingCallouts(sdbusplus::bus_t& bus)
         auto method = bus.new_method_call(
             elem.second.begin()->first.c_str(), elem.first.c_str(),
             "org.freedesktop.DBus.Properties", "Get");
-        method.append("xyz.openbmc_project.Association.Definitions");
-        method.append("Associations");
+        method.append(AssociationDefinitions::interface);
+        method.append(AssociationDefinitions::property_names::associations);
 
         std::variant<AssociationList> assoc;
         try
