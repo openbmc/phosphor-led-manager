@@ -136,7 +136,7 @@ void LampTest::storePhysicalLEDsStates()
         // Reverse intercept path, Get the name of each member of physical led
         // e.g: path = /xyz/openbmc_project/led/physical/front_fan
         //      name = front_fan
-        sdbusplus::message::object_path object_path(path);
+        sdbusplus::object_path object_path(path);
         auto name = object_path.filename();
         if (name.empty())
         {

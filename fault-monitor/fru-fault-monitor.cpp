@@ -136,7 +136,7 @@ void Add::created(sdbusplus::message_t& msg)
 {
     auto bus = msg.get_bus();
 
-    sdbusplus::message::object_path objectPath;
+    sdbusplus::object_path objectPath;
     InterfaceMap interfaces;
     try
     {
