@@ -9,6 +9,7 @@ ExecStart=/usr/libexec/phosphor-led-manager/phosphor-ledmanager
 SyslogIdentifier=phosphor-ledmanager
 Type=dbus
 BusName=xyz.openbmc_project.LED.GroupManager
+TimeoutStartSec=5min
 
 [Install]
 WantedBy=multi-user.target
