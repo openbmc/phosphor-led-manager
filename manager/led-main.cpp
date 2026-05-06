@@ -31,6 +31,12 @@ int main(int argc, char** argv)
     /** @brief Dbus constructs used by LED Group manager */
     auto& bus = phosphor::led::utils::DBusHandler::getBus();
 
+    // Attach the bus to sd_event to service user requests
+    bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
+
+    /** @brief Claim the bus name early to satisfy systemd Type=dbus */
+    bus.request_name("xyz.openbmc_project.LED.GroupManager");
+
     auto systemLedMap = getSystemLedMap(configFile);
 
     phosphor::led::validateConfigV1(systemLedMap);
@@ -86,11 +92,6 @@ int main(int argc, char** argv)
                                    bus, grp.first, manager, serializePtr);
                            });
 
-    // Attach the bus to sd_event to service user requests
-    bus.attach_event(event.get(), SD_EVENT_PRIORITY_NORMAL);
-
-    /** @brief Claim the bus */
-    bus.request_name("xyz.openbmc_project.LED.GroupManager");
     event.loop();
 
     return 0;
