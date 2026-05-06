@@ -16,6 +16,24 @@
       "message": "I\u0027m wondering if it could be resolved with systemd service dependency on EM acquiring it\u0027s bus name.\n\nAnd changing EM to acquire its bus name only after reading all the config files.\nCurrently it is acquiring its bus name before reading the configs, which that alone can take 9 seconds (without extra load).\n\n 20     systemBus-\u003erequest_name(\"xyz.openbmc_project.EntityManager\");\n 21     EntityManager em(systemBus, io, configurationDirectories, schemaDirectory);\n 22 \n 23     boost::asio::post(io, [\u0026]() { em.propertiesChangedCallback(); });\n\nThat being said i do not want to investigate it further since i already have lots of other EM patches pending on review.",
       "revId": "19d58b50e66c9a5cb8aad0a31e05c9186c735110",
       "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ea40139a_82bf7222",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1000004
+      },
+      "writtenOn": "2026-05-06T14:45:12Z",
+      "side": 1,
+      "message": "Yeah, we\u0027ve had a variety of issues in this area, where it\u0027s non-deterministic when EM puts something on the bus. That\u0027s optimal if all of the code using it is written to handle that dynamic approach but a lot of code is not written that way. EM itself though depends on other things to appear, and at times it has no guarantees on what \"must\" show up.",
+      "parentUuid": "87aee295_157b7881",
+      "revId": "19d58b50e66c9a5cb8aad0a31e05c9186c735110",
+      "serverId": "adbd0a64-1f21-4d83-b585-671fe73cb6e4"
     }
   ]
 }
